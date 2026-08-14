@@ -399,3 +399,28 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
   tout en annulant le moment transverse.
 - Décision : fermer négativement la classe log-rectifiée à axe fixe sous les
   hypothèses suivies et activer `GAP-WANDERING-AXIS-PROFILE`.
+
+## 2026-08-14 — Cycle 0023
+
+- Veille différentielle : Lei–Ren–Tian `arXiv:2501.08976` reste en v1,
+  Grujić `arXiv:2607.08866` en v2 et Pineau–Vicol `arXiv:2607.09619` en v2.
+  Aucune publication ou nouvelle version ne ferme l'axe spatial errant ou les
+  configurations multicoeurs.
+- Source ajoutée : Miller 2021 (`0089`), article publié, DOI
+  `10.1090/bproc/74`. Son critère admet un plan variable en espace-temps avec
+  gradient spatial borné et contrôle critique de `v×omega`; il n'extrait pas
+  ce plan depuis l'énergie.
+- Correction de portée : le théorème 1.1 de Lei–Ren–Tian a un axe fixe, mais
+  le corollaire 1.6 pairwise tolère un axe dépendant du temps. Le verrou du
+  cycle est spatial et inter-échelles, pas une simple rotation temporelle.
+- Résultat de veille négatif : log-BMO contrôle les incréments des moyennes
+  dyadiques mais ni leur non-annulation, ni leur normalisation en axe, ni les
+  grands niveaux de vorticité.
+- Test adverse : la phase radiale `log log(e/r)` est log-BMO, parcourt un grand
+  cercle et échappe à tout cône fixe; ce n'est qu'un champ de directions.
+- Résultat analytique interne : le budget de moment mobile exclut les axes à
+  variation et erreur pondérée sublinéaires sous amplitude bornée et masse
+  critique par bloc.
+- Décision : resserrer le pivot vers `GAP-MULTICORE-ANGULAR-CASCADE`, où la
+  moyenne active peut dégénérer et aucune sélection d'axe unique n'est
+  disponible.

@@ -810,6 +810,66 @@ dans le double cône de Lei–Ren–Tian v1. Le verrou actif devient
 `GAP-WANDERING-AXIS-PROFILE`, où l'axe ou les cœurs doivent échapper à tout
 cône fixe.
 
+## `FAIL-NS-0036` — Dérive logarithmique de l'axe supposée suffisante
+
+- Date : 2026-08-14.
+- Cadre : profil spatial `W=r^-2 Omega(log(R_*/r),theta)` dans une boule
+  ponctuée; aucune évolution Navier–Stokes simulée.
+- Cible : conserver une amplitude critique bornée et une masse non dégénérée
+  par coquille en remplaçant l'axe fixe par
+  `e(s)=(cos[beta log(1+s)],sin[beta log(1+s)],0)`.
+- Attaque : différencier le moment mobile
+  `J=<[e(s) dot theta]Omega_r>` et suivre exactement le terme `e' dot b`.
+- Résultat : sur `N` blocs,
+  `N*2kappa²/(3M²L)<=M+(M/2)Var(e)+D`. Or la variation de cet axe est seulement
+  `beta log(1+T)=o(T)` et son erreur pondérée est nulle dans l'ansatz radial.
+- Portée : l'implication « dérive logarithmique donc recharge suffisante » est
+  réfutée sous `Phi<=M` et masse critique par bloc. Aucun profil complet
+  solénoïdal ou dynamique n'est construit.
+- Statut : `REFUTED` pour ce mécanisme; identité analytique et constantes
+  rationnelles vérifiées par `WANDERING-AXIS-1`.
+
+## `FAIL-NS-0037` — Rotation persistante supposée compatible avec log-BMO
+
+- Date : 2026-08-14.
+- Cadre : direction radiale sur `R³`, testée seulement sur les boules centrées
+  au point du profil; aucune PDE.
+- Cible : payer une variation linéaire de l'axe tout en gardant une oscillation
+  `O(1/|log r|)`.
+- Contre-test : pour
+  `e(s)=(cos(alpha s),sin(alpha s),0)`, la moyenne volumique exacte sur une
+  boule centrée vérifie `|m|²=9/(9+alpha²)`.
+- Résultat :
+  `MO>=alpha²/[2(9+alpha²)]>0`, indépendamment du rayon. Le coût log-pondéré
+  diverge. Au seuil rationnel `alpha=1/216`, la borne est exactement
+  `1/839810`.
+- Portée : réfute seulement la rotation uniforme radiale. Des sauts rares,
+  plusieurs cœurs, un centre mobile ou une amplitude intermittente ne sont pas
+  exclus. Le test centré ne certifie pas la semi-norme BMO globale.
+- Statut : famille explicite réfutée; 44 contrôles rationnels sans échec.
+
+## `FAIL-NS-0038` — Grande variation totale assimilée à un axe qui s'échappe
+
+- Date : 2026-08-14.
+- Cadre : chemins abstraits `e(s)` sur `S²`.
+- Cible : interpréter la minoration de variation du cycle 0023 comme une
+  diffusion angulaire macroscopique ou un échappement à tout cône fixe.
+- Attaque : faire parcourir à `e(s)` de petites boucles de rayon tendant vers
+  zéro avec fréquence croissante autour d'un axe fixe.
+- Résultat : la longueur totale peut être linéaire ou surlinéaire alors que
+  `e(s)` reste finalement dans tout cône fixé autour de cet axe. La variation
+  n'est donc qu'un budget nécessaire, pas un observable canonique
+  d'échappement.
+- Réparation : contrôler le diamètre ou l'occupation angulaire à amplitude
+  pondérée, ou quotienter les boucles par une sélection d'axe canonique.
+- Statut : implication géométrique `REFUTED`; le budget de moment lui-même
+  n'est pas réfuté.
+
+Décision de pivot : les axes fixes et les axes à variation sublinéaire sont
+fermés sous les hypothèses de tranche suivies; la rotation uniforme persistante
+échoue au test log-BMO centré. Le prochain verrou est
+`GAP-MULTICORE-ANGULAR-CASCADE`.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,

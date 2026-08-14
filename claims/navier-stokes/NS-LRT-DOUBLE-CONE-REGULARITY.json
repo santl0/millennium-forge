@@ -19,6 +19,10 @@
     {
       "kind": "derivation",
       "reference": "docs/reports/navier-stokes/reviews/cycle-0022-literature.md: transfert explicite d'une rectification uniforme vers le double cône"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0023-literature.md: distinction entre le théorème 1.1 à axe fixe et le corollaire 1.6 pairwise à même temps"
     }
   ],
   "provenance": {
@@ -31,6 +35,6 @@
   "review": {
     "status": "adversarial_pass",
     "reviewer": "Passe bibliographique Codex séparée, même famille de modèle; non indépendante au sens externe",
-    "notes": "Le statut SOURCE_VERIFIED atteste l'extraction de l'énoncé primaire, pas une reproduction de la preuve. Le raccord au cas log-rectifié exige uniformité espace-temps, confinement de tous les grands niveaux et un axe fixe."
+    "notes": "Le statut SOURCE_VERIFIED atteste l'extraction de l'énoncé primaire, pas une reproduction de la preuve. Le théorème 1.1 exige un axe fixe et un seuil de forte vorticité; le corollaire 1.6 permet implicitement un axe variable en temps mais porte sur toute vorticité non nulle et une condition pairwise à temps égal."
   }
 }

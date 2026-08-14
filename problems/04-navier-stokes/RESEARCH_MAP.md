@@ -899,3 +899,48 @@ amplitude bornée et masse critique par bloc. Le verrou actif devient
 `GAP-WANDERING-AXIS-PROFILE` : un axe `e(s)` ou plusieurs cœurs doivent
 échapper à tout cône fixe, et le terme de recharge du moment, les harmoniques,
 Biot–Savart, la pression et le résidu visqueux doivent être suivis ensemble.
+
+## Cycle 0023 : budget de moment pour un axe mobile
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| budget du premier harmonique pour un axe mobile | 5 | 5 | 5 | 5 | **20** |
+| test centré log-BMO pour rotation lente/persistante | 4 | 5 | 5 | 5 | 19 |
+| construction par harmoniques angulaires croissants | 5 | 2 | 4 | 4 | 15 |
+
+Pour une sélection absolument continue `e(s)∈S²`, le moment mobile vérifie
+
+```text
+J'=<[e' dot theta]Omega_r>
+   -<Phi(1-(e dot theta)²)>
+   -<Phi(xi-e) dot nabla_S(e dot theta)>.
+```
+
+La moyenne sphérique donne le coût optimal sans information additionnelle
+`|<[e' dot theta]Omega_r>|<=M|e'|/2`. Sous `Phi<=M` et masse critique
+`kappa` sur chaque bloc de longueur `L`, on obtient donc
+
+```text
+N*2kappa²/(3M²L)
+ <= M+(M/2)Var(e;[S,S+NL])+D(S,S+NL).
+```
+
+Si l'erreur directionnelle `D` est sublinéaire, tout profil survivant exige
+une vitesse moyenne asymptotique au moins
+`4kappa²/(3M³L²)`. Les axes `|e'|=O(1/s)` sont exclus.
+
+Le test radial sur les boules centrées sépare deux familles. Une rotation
+uniforme de vitesse `alpha` a une oscillation au moins
+`alpha²/[2(9+alpha²)]`, indépendante de l'échelle, donc échoue au taux
+log-BMO. La rotation lente de phase `beta log(1+s)` a l'oscillation au plus
+`beta/[3(1+s)]`, mais seulement une variation logarithmique, insuffisante pour
+le budget solénoïdal.
+
+La variation totale ne suffit pas à mesurer l'échappement : de petites boucles
+rapides autour d'un axe fixe peuvent être longues, et retombent alors dans
+l'obstruction fixe du cycle 0022. `GAP-WANDERING-AXIS-PROFILE` est fermé
+négativement pour une sélection unique à variation sublinéaire et erreur
+pondérée sublinéaire. Le verrou actif devient
+`GAP-MULTICORE-ANGULAR-CASCADE` : construire ou exclure une occupation
+angulaire multivaluée, intermittente ou à centre mobile sans axe global
+admissible.

@@ -443,3 +443,36 @@ solution ou précise qu'il s'agit seulement d'un champ test.
 - Artefact : `ENDGAME-SYNCHRONIZATION-AUDIT-1`, onze contrôles exacts, zéro
   échec, empreinte
   `41b27f8649977c8a2d564c80418678017eb5d409956c8f3c5e3eb9016f916a3b`.
+
+## 2026-08-14 — Axe mobile et coût de variation logarithmique
+
+- Objet : profil spatial de vorticité
+  `W=r^-2 Omega(log(R_*/r),theta)` dans `R³` ponctué; porte cinématique
+  `div W=0`, aucune évolution NS.
+- Entrées : `Phi=|Omega|<=M`, masse critique de bloc
+  `integral <Phi^(3/2)> ds>=kappa`, axe absolument continu `e(s)` et erreur
+  `D=integral<Phi|xi-e|>ds`.
+- Identité : le moment `J=<[e dot theta]Omega_r>` a un terme de recharge
+  borné par `(M/2)|e'|`; sa plage totale est `M`.
+- Budget : sur `N` blocs de longueur `L`,
+
+  ```text
+  N*2kappa²/(3M²L)<=M+(M/2)Var(e)+D.
+  ```
+
+- Gain/perte : toutes les quantités sont invariantes d'échelle. Sous
+  `D=o(NL)`, la variation doit avoir une densité au moins
+  `4kappa²/(3M³L²)`. L'énergie physique ne produit ni la borne de tranche, ni
+  la masse de bloc.
+- Test BMO : une rotation uniforme de vitesse `alpha` a une oscillation
+  centrée au moins `alpha²/[2(9+alpha²)]`; une phase
+  `beta log(1+s)` a une oscillation centrée au plus `beta/[3(1+s)]` mais une
+  variation seulement logarithmique.
+- Attaques : grande variation sans déplacement macroscopique, axe non unique,
+  boules décentrées, intermittence de `Phi`, blocs lacunaires et absence de
+  pression ou de résidu d'évolution.
+- Artefact : `WANDERING-AXIS-1`, 44 contrôles rationnels exacts, zéro échec,
+  empreinte
+  `23802f4b094aaccd020ab6d5d0ae9b136cc8cf70738b069c712fa6cddc432ba4`.
+- Pivot : l'axe unique lent est fermé sous les hypothèses suivies;
+  `GAP-MULTICORE-ANGULAR-CASCADE` devient actif.

@@ -512,3 +512,28 @@ Le verrou restant n'est donc plus l'axe fixe : il faut construire ou exclure
 un axe errant, une cascade angulaire ou plusieurs cœurs qui échappent à tout
 double cône fixe, tout en conservant divergence, masse critique, Biot–Savart,
 pression et résidu Navier–Stokes. C'est `GAP-WANDERING-AXIS-PROFILE`.
+
+Le cycle 0023 resserre ce verrou. Pour un axe mobile absolument continu, le
+premier harmonique donne un budget où la recharge maximale vaut
+`(M/2)Var(e)`. Une masse critique non dégénérée par bloc force donc une
+variation linéaire explicite, sauf densité positive de l'erreur
+directionnelle. Une dérive de phase `beta log(1+s)` satisfait le taux
+d'oscillation centré `O(1/s)` mais sa variation n'est que logarithmique; elle
+est exclue. À l'inverse, une rotation uniforme accumule assez de variation
+mais conserve une oscillation moyenne strictement positive sur toutes les
+boules centrées et échoue au taux log-BMO.
+
+Cette dichotomie ne traite pas une direction multivaluée, plusieurs cœurs ou
+une intermittence angulaire rendant toute sélection d'axe non canonique. Elle
+ne produit pas les hypothèses de masse et de tranche depuis l'énergie, et ne
+calcule ni Biot–Savart, ni pression, ni résidu NS. Le verrou actif est donc
+`GAP-MULTICORE-ANGULAR-CASCADE`.
+
+La veille ajoute le critère publié de Miller 2021 : un plan variable en
+espace-temps est permis si son gradient spatial est borné et si la composante
+transverse de la vorticité appartient à `L⁴_tL²_x`. Cela tolère une rotation
+purement temporelle mais pas un axe radial de gradient
+`1/[r|log r|]`. Le corollaire 1.6 de Lei–Ren–Tian tolère lui aussi un axe par
+tranche sous une condition pairwise sur toute vorticité non nulle. Aucun de
+ces résultats ne convertit la seule hypothèse log-BMO en axe normalisable ni
+ne ferme les configurations multicoeurs.

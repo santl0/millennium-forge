@@ -35,9 +35,12 @@
   sous-critique après coupure, dans la sous-classe à axe fixe, amplitude
   bornée et masse critique par bloc : exclusion cinématique au cycle 0022;
   l'échappatoire dégénérée n'est pas stationnaire.
-- [ ] Construire ou exclure un profil à axe `e(s)` errant ou multicœur qui
-  échappe à tout double cône fixe; suivre le terme `e'(s)`, les harmoniques,
-  le faible-`L^(3/2)`, Biot–Savart et le résidu visqueux.
+- [x] Exclure, sous borne de tranche et masse critique par bloc, les axes
+  `e(s)` dont la variation et l'erreur directionnelle sont sublinéaires;
+  séparer rotation uniforme et phase logarithmique par un test BMO centré.
+- [ ] Construire ou exclure une cascade multicoeur sans axe global : définir
+  une mesure d'occupation angulaire, suivre la non-dégénérescence de sa
+  moyenne active, le faible-`L^(3/2)`, Biot–Savart et le résidu visqueux.
 - [ ] Quantifier une formulation pré-singulière cohérente par rayon de cœur
   `r_c(t)` ou convergence de profils remis à l'échelle.
 - [ ] Formaliser le lemme scalaire de séparation de phases

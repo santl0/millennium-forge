@@ -1242,3 +1242,44 @@ cellule reste donc `NOT_PROVIDED`.
 - Limites : l'hypothèse faible-`L^(3/2)` globale seule ne donne pas la masse
   par coquille ni la borne de trace. Aucun calcul de pression, coupure
   corrigée, évolution temporelle ou raccord Clay n'est fourni.
+
+## `WANDERING-AXIS-1` — budget mobile et oscillation centrée
+
+- Question falsifiable : un axe `e=e(s)` peut-il recharger le moment
+  solénoïdal d'un profil critique non dégénéré tout en gardant une oscillation
+  directionnelle `O(1/s)` ?
+- Équation : porte cinématique `div W=0` pour
+  `W=r^-2 Omega(log(R_*/r),theta)`; application nécessaire à NS
+  incompressible 3D non forcé sur `R³`, `nu>0`, sans trajectoire simulée.
+- Discrétisation : aucune grille ni intégrateur. Fractions rationnelles exactes,
+  aucune graine et aucun flottant.
+- Résultat analytique : avec `Phi<=M`, masse de bloc `kappa`, longueur `L` et
+  erreur pondérée `D`, tout axe absolument continu satisfait
+
+  ```text
+  N*2kappa²/(3M²L) <= M+(M/2) Var(e;[S,S+NL])+D.
+  ```
+
+  Si `D=o(NL)`, une survie exige une vitesse moyenne asymptotique au moins
+  `4kappa²/(3M³L²)`.
+- Rotation uniforme : sur toute boule centrée,
+  `MO>=alpha²/[2(9+alpha²)]`. La rotation persistante échoue donc au taux
+  log-BMO centré.
+- Dérive lente : pour la phase `beta log(1+s)`, l'oscillation centrée est au
+  plus `beta/[3(1+S)]`, mais la variation totale `beta log(1+T)` est
+  sublinéaire et ne peut payer le budget.
+- Paramètres exacts : `M=2`, `kappa=1/2`, `L=3`, baisse positive `1/72`,
+  vitesse minimale `1/216`, oscillation uniforme au seuil au moins
+  `1/839810`.
+- Commande :
+
+  ```text
+  python -B experiments/navier-stokes/wandering-axis/wandering_axis_audit.py
+  ```
+
+- Résidus : 44 contrôles, `assertion_failure_count=0`. Empreinte :
+  `23802f4b094aaccd020ab6d5d0ae9b136cc8cf70738b069c712fa6cddc432ba4`.
+- Limites : les oscillations sont testées seulement sur les boules centrées;
+  aucun `Omega` mobile complet, vitesse, pression, résidu NS, coupure ou passage
+  au continuum n'est construit. Une grande variation peut provenir de petites
+  boucles qui restent dans un cône fixe.

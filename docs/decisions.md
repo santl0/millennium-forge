@@ -79,3 +79,23 @@
   conditionnel du double cône, sans reproduction de la preuve.
 - `GAP-LOG-RECTIFIED-PROFILE` est fermé pour l'axe fixe sous les prémisses
   suivies. `GAP-WANDERING-AXIS-PROFILE` devient le verrou actif.
+
+### 2026-08-14 — budget de l'axe mobile et pivot multicoeur
+
+- `NS-WANDERING-AXIS-MOMENT-BUDGET` borne la recharge du premier harmonique
+  par `(M/2)Var(e)` et exclut toute sélection absolument continue à variation
+  et erreur pondérée sublinéaires sous amplitude bornée et masse critique par
+  bloc.
+- La rotation radiale uniforme échoue au taux log-BMO centré; la phase
+  logarithmique lente passe ce test mais ne fournit pas la variation linéaire
+  nécessaire.
+- Grande variation ne signifie pas échappement : de petites boucles rapides
+  peuvent rester dans un cône fixe. Aucune conclusion n'est tirée de la
+  variation seule.
+- Miller 2021 est ajouté comme critère publié à plan variable; Lei–Ren–Tian
+  v1 est relu en distinguant le cône fixe du théorème 1.1 et le corollaire
+  pairwise tolérant un axe temporel.
+- Le résultat reste `COMPUTATION_ONLY`, sans pression, vitesse, évolution ou
+  passage au continuum.
+- Le programme active `GAP-MULTICORE-ANGULAR-CASCADE` : moyennes actives
+  dégénérées, occupation angulaire multivaluée et intermittence.

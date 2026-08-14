@@ -89,6 +89,8 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | magnitude `r^-2` + `div W=0` + faible-`L^(3/2)` | direction globale `bmo_phi` | réfutée | `NS-CRITICAL-MAGNITUDE-IMPLIES-BMO`, profil exact du cycle 0021 | l'hypothèse directionnelle reste indépendante |
 | champ vectoriel critique exactement récurrent par dilatation + direction `bmo_phi` | profil solénoïdal non nul faible-`L^p` | exclu, `COMPUTATION_ONLY` | `NS-DILATION-RECURRENT-BMO-RIGIDITY` | ne couvre ni récurrence de la seule magnitude, ni profil asymptotique, ni rectification logarithmique |
 | amplitude critique bornée + masse `L^(3/2)` non dégénérée par bloc + direction rectifiée vers un axe fixe | profil log-radial solénoïdal jusqu'au centre | exclu, `COMPUTATION_ONLY` | `NS-LOG-RECTIFIED-SOLENOIDAL-OBSTRUCTION`, budget du premier harmonique, cycle 0022 | faible-Lorentz seul ne donne ni borne de tranche ni masse par bloc; axe errant hors champ |
+| mêmes bornes + axe mobile absolument continu + erreur directionnelle pondérée sublinéaire | profil solénoïdal avec variation d'axe sublinéaire | exclu, `COMPUTATION_ONLY` | `NS-WANDERING-AXIS-MOMENT-BUDGET`, cycle 0023 : recharge au plus `(M/2)Var(e)` | axe non canonique, multicœurs, intermittence angulaire et centre mobile hors champ |
+| rotation radiale uniforme en profondeur logarithmique | direction globale `bmo_(1/|log r|)` | réfutée déjà sur les boules centrées | variance exacte `alpha²/(9+alpha²)`, `WANDERING-AXIS-1` | ne traite pas des chemins irréguliers ou multivalués |
 | toute forte vorticité confinée uniformément dans un double cône fixe | régularité intérieure d'une solution faible adaptée | `SOURCE_VERIFIED`, prépublication v1 | `NS-LRT-DOUBLE-CONE-REGULARITY`, Lei–Ren–Tian `2501.08976v1` | preuve non reproduite; le cône n'est pas produit depuis Clay |
 | direction dans `bmo_(1/|log r|)` | axe fixe ou double cône uniforme sur tous les grands niveaux | manquante | séparation multicœur et moyenne contre contrôle ponctuel | un axe errant ou des phases multiples peuvent échapper à tout cône fixe |
 | profil solénoïdal homogène + coupure radiale scalaire | profil tronqué solénoïdal avec erreur critique petite | réfutée | défaut exact `Var(chi)||Omega_r||_L1`, cycle 0021 | correcteur sphérique explicite requis; sa taille critique ne décroît pas |
@@ -128,25 +130,29 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | `GAP-ACTIVE-CORE-BMO` | géométrie/extension | direction cohérente seulement sur `{omega>lambda}` vers prémisse globale `bmo_phi` | fermé négativement au cycle 0020 pour l'implication universelle : optimum `4ab/(a+b)`, famille divergence-free à deux cœurs et ambiguïté aux zéros; une réouverture exige un packing inter-composantes quantitatif |
 | `GAP-CRITICAL-PROFILE-ADMISSIBILITY` | admissibilité/pression | profil critique ponctuel de vorticité vers champ divergence-free énergétique et direction globale `bmo_phi` | fermé négativement au cycle 0021 pour la classe vectorielle exactement récurrente : porte sphérique, rigidité log-BMO et défaut de coupure; la Definition 2.1 scalaire reste sous-quantifiée |
 | `GAP-LOG-RECTIFIED-PROFILE` | géométrie/admissibilité | direction vers un axe fixe, amplitude critique bornée et masse non dégénérée vers profil solénoïdal | fermé négativement au cycle 0022 sous masse par bloc : signe radial corrigé, budget de degré un et construction dégénérée tranchante; le faible-Lorentz seul reste insuffisant |
-| `GAP-WANDERING-AXIS-PROFILE` | géométrie/multi-échelle | axe `e=e(s)` ou multicœurs échappant à tout double cône fixe vers profil critique solénoïdal, faible-Lorentz et solution-admissible | actif : quantifier le terme de recharge `e'(s)` du moment, les harmoniques croissants, Biot–Savart et le résidu visqueux |
+| `GAP-WANDERING-AXIS-PROFILE` | géométrie/multi-échelle | axe `e=e(s)` échappant à tout double cône fixe vers profil critique solénoïdal | fermé négativement au cycle 0023 pour variation et erreur pondérée sublinéaires; une rotation uniforme assez rapide échoue au test log-BMO centré |
+| `GAP-MULTICORE-ANGULAR-CASCADE` | géométrie/multi-échelle | phases multiples ou intermittentes sans axe global vers profil critique solénoïdal, faible-Lorentz et solution-admissible | actif : remplacer la sélection d'axe par une mesure d'occupation angulaire, suivre sa coercivité, Biot–Savart et le résidu visqueux |
 | `GAP-LIMIT-ADMISSIBLE` | stabilité/admissibilité | profil singulier vers donnée de Schwartz | trois portes distinctes fermées : `FAIL-NS-0013` réfute la compacité `L³`, `0014` annule le mode impair sous lissage symétrique, `0015` réfute l'identification trace asymptotique/donnée finie; axe suspendu |
 | `GAP-NUM-CONTINUUM` | calcul vers continuum | discrétisation finie | résidu d'intervalle + queue analytique |
 
 ## Arêtes prioritaires
 
-1. `GAP-WANDERING-AXIS-PROFILE` : tester un axe `e(s)` de variation minimale
-   qui recharge le moment sphérique, échappe à tout double cône fixe et garde
-   masse critique, faible-`L^(3/2)`, Biot–Savart et résidu visqueux suivis.
-2. `GAP-LOG-RECTIFIED-PROFILE` : fermé négativement pour l'axe fixe sous
+1. `GAP-MULTICORE-ANGULAR-CASCADE` : construire une mesure d'occupation
+   angulaire multicoeur et tester si masse critique, log-BMO et solénoïdalité
+   peuvent coexister sans sélection d'axe à budget contrôlé.
+2. `GAP-WANDERING-AXIS-PROFILE` : fermé négativement pour variation et erreur
+   sublinéaires; ne le rouvrir qu'avec une sélection non `BV`, un centre mobile
+   ou un terme de recharge effectif non contrôlé par la variation.
+3. `GAP-LOG-RECTIFIED-PROFILE` : fermé négativement pour l'axe fixe sous
    amplitude bornée et masse par bloc; ne le rouvrir qu'en quantifiant une
    intermittence angulaire non bornée ou une perte de masse.
-3. `GAP-CRITICAL-PROFILE-ADMISSIBILITY` : fermé négativement pour la
+4. `GAP-CRITICAL-PROFILE-ADMISSIBILITY` : fermé négativement pour la
    récurrence vectorielle exacte; ne le rouvrir qu'avec un profil non
    récurrent ou une limite espace-temps quantifiée.
-4. `GAP-VORTICITY-TAIL` : confronter la queue de strain annulaire réparée à
+5. `GAP-VORTICITY-TAIL` : confronter la queue de strain annulaire réparée à
    un contre-profil multi-échelle divergence-free issu d'une dynamique.
-5. `GAP-NUM-CONTINUUM` : isoler un opérateur compact à queues certifiables.
-6. Noyau Fourier–Leray formel : certifier les identités d'énergie finies avant
+6. `GAP-NUM-CONTINUUM` : isoler un opérateur compact à queues certifiables.
+7. Noyau Fourier–Leray formel : certifier les identités d'énergie finies avant
    toute formalisation de scénario PDE.
 
 `GAP-COMPACT-Q` est suspendu sous énergie seule après trois stratégies
@@ -167,8 +173,10 @@ homogène/log-périodique après trois portes différentes : la magnitude scalai
 ne fixe pas une vorticité, la récurrence vectorielle contredit log-BMO pour un
 profil non nul, et la coupure radiale porte un défaut critique invariant. Le
 pivot `GAP-LOG-RECTIFIED-PROFILE` a rompu la récurrence exacte mais échoue à
-axe fixe sous masse critique par bloc. `GAP-WANDERING-AXIS-PROFILE` doit
-désormais quantifier une dérive qui échappe réellement au double cône.
+axe fixe sous masse critique par bloc. `GAP-WANDERING-AXIS-PROFILE` échoue à
+son tour pour tout axe à variation et erreur pondérée sublinéaires. Le pivot
+actif `GAP-MULTICORE-ANGULAR-CASCADE` doit éviter une sélection d'axe unique
+sans perdre les contraintes critiques suivies.
 
 `GAP-SIGN-FLUX` est borné par deux résultats négatifs : l'hélicité globale ne
 fixe pas le flux triadique et la cohérence d'un seul patch ne fixe pas le

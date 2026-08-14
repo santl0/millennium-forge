@@ -94,7 +94,7 @@ d'énergie; les zooms de blow-up ne possèdent pas cette précompacité a priori
 | Solutions anciennes | [Koch–Nadirashvili–Seregin–Šverák 2009](https://arxiv.org/abs/0709.3599) (`0015`) | distingue les anciennes faibles des anciennes mild; exhibe les parasites `u=b(t)`, `p=-b'(t)·x`; Liouville dans plusieurs sous-classes | cible de rigidité après zoom et porte de jauge/mildness | aucun Liouville général pour les anciennes mild bornées 3D; la classe seulement locale/adaptée admet déjà des parasites |
 | Self-similarité | [Nečas–Růžička–Šverák 1996](https://doi.org/10.1007/BF02551584) (`0016`), [Tsai 1998](https://doi.org/10.1007/s002050050099) (`0017`), [Chae 2007](https://doi.org/10.1007/s00208-007-0082-6) (`0018`), [Hou–Li 2007](https://doi.org/10.3934/dcds.2007.18.637) (`0019`) | exclusion de profils exacts ou asymptotiques sous intégrabilité/convergence | scénarios structurés éliminés | Type II, modulation, intermittence et multi-échelles restent ouverts |
 | Auto-similarité forward | [Tsai 2014](https://arxiv.org/abs/1210.2783) (`0020`) | existence globale pour données discrètement self-similaires singulières | laboratoire de profils critiques | direction forward et donnée non lisse |
-| Géométrie de vorticité | [Constantin–Fefferman 1993](https://doi.org/10.1512/iumj.1993.42.42034) (`0021`), [Beirão da Veiga–Berselli 2002](https://doi.org/10.57262/die/1356060864) (`0060`), [Berselli 2023](https://doi.org/10.1088/1361-6544/ace096) (`0063`) | cohérence high–high Lipschitz, seuil demi-Hölder pondéré, puis petits sauts discrets conditionnels | critères géométriques intégrés et conditionnels | ni module uniforme déduit de l'énergie, ni signe ponctuel du stretching |
+| Géométrie de vorticité | [Constantin–Fefferman 1993](https://doi.org/10.1512/iumj.1993.42.42034) (`0021`), [Beirão da Veiga–Berselli 2002](https://doi.org/10.57262/die/1356060864) (`0060`), [Berselli 2023](https://doi.org/10.1088/1361-6544/ace096) (`0063`), [Miller 2021](https://doi.org/10.1090/bproc/74) (`0089`) | cohérence high–high Lipschitz, seuil demi-Hölder pondéré, petits sauts discrets et plan variable conditionnel | critères géométriques intégrés et conditionnels | ni module uniforme déduit de l'énergie, ni signe ponctuel du stretching; Miller suppose gradient spatial borné et contrôle transverse critique |
 | Axisymétrie | [Ukhovskii–Yudovich 1968](https://doi.org/10.1016/0021-8928(68)90147-0) (`0022`), [Chen–Strain–Tsai–Yau 2008](https://doi.org/10.1093/imrn/rnn016) (`0023`) | régularité sans swirl; taux/critères avec swirl | sous-cas invariants et contraintes près de l'axe | le swirl et les perturbations 3D réintroduisent le mécanisme critique |
 | Cascade | [Dascaliuc–Grujić 2011](https://arxiv.org/abs/1101.2193) (`0024`) | flux positif comparable sur une plage d'échelles sous condition suffisante | transfert physique rigoureux | pas d'uniformité jusqu'à l'échelle zéro |
 | Intermittence | [Cheskidov–Shvydkoy 2014](https://doi.org/10.1137/120876447) (`0026`) | dimension active Littlewood–Paley pour Euler/turbulence | dictionnaire multi-échelle | pas de borne NS a priori de la dimension active |
@@ -538,3 +538,34 @@ critique `Phi` vaut seulement `e^-2s s²` à constante près. La singularité
 non couverte doit donc faire errer son axe, multiplier les cœurs ou concentrer
 les amplitudes de manière à échapper à tout double cône fixe; faible-
 `L^(3/2)` seul ne contrôle pas ces traces angulaires.
+
+## Audit ciblé du cycle 0023 — axes mobiles et log-BMO non-Dini
+
+| Source primaire | Passage contrôlé | Verdict exact |
+|---|---|---|
+| Miller 2021 (`0089`) | théorème 1.6, plan variable | critère publié avec `v×omega∈L⁴_tL²_x` et gradient spatial borné de `v`; aucune dérivée temporelle requise, mais un axe radial logarithmique a un gradient singulier |
+| Lei–Ren–Tian `arXiv:2501.08976v1` (`0061`) | théorème 1.1 et corollaires 1.5–1.6 | axe fixe pour le cône de forte vorticité; le critère pairwise tolère un axe par tranche mais porte sur toute vorticité non nulle; preuve non reproduite |
+| Grujić `arXiv:2607.08866v2` (`0059`) | définition log-BMO et équation (16) | les moyennes dyadiques ont des incréments `O(1/k)` mais peuvent s'annuler; aucun axe unitaire normalisable ni confinement de grands niveaux n'en découle |
+| Giga–Miura 2011 (`0087`) | direction spatialement uniformément continue | tolère une rotation temporelle commune mais exclut conditionnellement une dérive spatiale de taille macroscopique sous borne Type I |
+| Pineau–Vicol `arXiv:2607.09619v2` (`0051`) | RSS/RDSS backward | rotation structurée en temps similaire et Type I; aucun transfert vers une phase radiale apériodique ou Type II |
+
+Le poids `1/|log r|` n'est pas Dini. Un champ directionnel radial explicite,
+de phase `log log(e/r)`, reste dans la classe log-BMO tout en parcourant un
+grand cercle et en échappant à tout cône fixe. Cette construction est un
+falsificateur fonctionnel, pas une vorticité : elle ne satisfait pas à elle
+seule `div omega=0`, Biot–Savart ou Navier–Stokes.
+
+La conclusion négative de veille est précise : aucune source primaire
+inspectée ne donne
+
+```text
+direction log-BMO
+  -> moyenne active non nulle
+  -> axe unitaire global à variation contrôlée
+  -> confinement des grands niveaux.
+```
+
+Le budget mobile du cycle 0023 exclut néanmoins toute sélection déjà obtenue
+dont la variation et l'erreur pondérée sont sublinéaires, sous amplitude
+bornée et masse critique par bloc. Le prochain maillon doit donc traiter les
+moyennes actives dégénérées, les phases multiples ou l'intermittence.

@@ -21,7 +21,7 @@ Le projet complète les formulations Lean existantes et les corpus de conjecture
 
 Une ressemblance, un calcul numérique ou une preuve générée par IA ne change jamais seul le statut d'une affirmation. Les conclusions canoniques doivent rester proportionnées à la meilleure preuve effectivement disponible.
 
-## État Navier–Stokes au cycle 0021
+## État Navier–Stokes au cycle 0023
 
 Le programme actif a reproduit conditionnellement la chaîne fonctionnelle et
 l'endgame `(8)->(58)` de `arXiv:2607.08866v2`, avec corrections des temps,
@@ -62,3 +62,17 @@ forte vorticité autour d'un axe fixe tombe déjà, conditionnellement, sous le
 critère de double cône de Lei–Ren–Tian v1. Le verrou actif devient donc un axe
 errant, une cascade angulaire ou plusieurs cœurs échappant à tout cône fixe,
 avec le coût de recharge du moment et le résidu visqueux suivis.
+
+Le cycle 0023 quantifie ce coût pour un axe mobile. La recharge du premier
+harmonique est au plus `(M/2)Var(e)`, tandis que la masse critique par blocs
+impose une dépense linéaire. Une sélection d'axe à variation et erreur
+pondérée sublinéaires est donc impossible. La rotation uniforme possède le
+budget de variation mais échoue au taux log-BMO déjà sur les boules centrées;
+la phase `beta log(1+s)` possède le taux d'oscillation mais seulement une
+variation logarithmique.
+
+Cette conclusion reste cinématique et `COMPUTATION_ONLY`. Log-BMO ne produit
+pas automatiquement un axe unitaire : les moyennes actives peuvent s'annuler
+ou refléter plusieurs phases. Le pivot actif est
+`GAP-MULTICORE-ANGULAR-CASCADE`, avec occupation angulaire, divergence,
+Biot–Savart et résidu visqueux à suivre.
