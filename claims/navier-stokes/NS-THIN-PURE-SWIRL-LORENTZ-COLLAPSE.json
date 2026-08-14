@@ -1,0 +1,53 @@
+{
+  "id": "NS-THIN-PURE-SWIRL-LORENTZ-COLLAPSE",
+  "problem": "navier-stokes",
+  "statement": "Soient R>0, F dans C_c^infinity du plan méridien, supp F inclus dans {R/2<r<3R/2}, S_2 la mesure dr dz de son support, U=(R/r)F(r,z)e_theta et W=curl U sur R^3. Il existe une constante universelle C telle que ||U||_(L^(3,infinity))<=C(S_2/R^2)^(1/6)||W||_(L^(3/2,infinity)). Par conséquent, toute famille de swirls purs compacts de vorticité faible critique uniformément bornée et d'aire méridienne o(R^2) a une vitesse faible-L^3 tendant vers zéro, indépendamment du nombre, des signes, des décalages ou des annulations de ses couches.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "F est une fonction scalaire C_c^infinity du demi-plan méridien et son support reste dans l'anneau R/2<r<3R/2",
+    "S_2 est la mesure bidimensionnelle dr dz du support réel de F",
+    "U=(R/r)F e_theta est interprété comme un champ axisymétrique à swirl pur sur R^3 et W=curl U",
+    "les quasi-normes faibles sont sup_lambda lambda |{|f|>lambda}|^(1/p)",
+    "la constante dépend seulement de la dimension, de la convention de quasi-norme et de la marge annulaire",
+    "le corollaire de collapse suppose S_(2,n)/R_n^2->0 et une borne uniforme de ||W_n||_(L^(3/2,infinity))"
+  ],
+  "dependencies": [
+    "NS-COMPACT-SWIRL-ASPECT-ENDPOINT-GATE",
+    "NS-ONEIL-LOG-TRANSFER"
+  ],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0067 (O'Neil 1963) pour la convolution de Lorentz et NS-SRC-0070 (Peetre 1966) pour le cadre Sobolev–Lorentz; la spécialisation bidimensionnelle et le facteur de support sont dérivés dans le dépôt"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0032-two-layer-support-collapse.md"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0032-countermodel.md"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0032-analysis.md, théorème 9.1 et verdict VALIDÉ"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/two-layer-pure-swirl/two_layer_pure_swirl_audit.py, 272726 contrôles rationnels exacts sur 384 masques P1",
+      "sha256": "597dc2e2828df34d836556c5419904d39e6ee240aa93b353a49683699ae40443"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0032-two-layer-support-collapse"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois passes Codex séparées: analyse fonctionnelle, contre-modèle et veille primaire; aucune revue humaine externe indépendante",
+    "notes": "La passe fonctionnelle valide le weak HLS aussi par interpolation réelle entre deux cas HLS forts, vérifie le sens de l'inclusion sur support fini et les deux comparaisons cylindriques. Le support touchant l'axe, les sections d'aire comparable à R^2, les composantes poloïdales et toute évolution Navier–Stokes restent hors portée."
+  }
+}
