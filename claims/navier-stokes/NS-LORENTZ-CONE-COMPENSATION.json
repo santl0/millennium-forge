@@ -1,0 +1,46 @@
+{
+  "id": "NS-LORENTZ-CONE-COMPENSATION",
+  "problem": "navier-stokes",
+  "statement": "Sur un domaine D de mesure finie, tout champ W de moyenne vectorielle nulle et de quasi-norme faible-L^(3/2) K impose à toute extension L1 de sa direction l'oscillation MO_D au moins 2 alpha^3 m^3/(27 K^3 |D|), où m est la masse L1 de W dans un cône xi·e>=alpha; sans moyenne nulle une borne canonique utilise la masse projetée négative, et l'exposant cubique est optimal dans la classe mesurable.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "0<|D|<infinity et W appartient à L^(3/2,infinity)(D;R³)",
+    "integral_D W dx=0; pour un blob W=curl U cette identité exige par exemple U compactement supporté avec régularité suffisante",
+    "K=sup_(lambda>0) lambda |{x dans D:|W(x)|>lambda}|^(2/3)",
+    "e appartient à S², 0<alpha<=1, xi=W/|W| sur A={W!=0}, G={xi·e>=alpha} et m=integral_G|W|",
+    "zeta appartient à L1(D;R³) et coïncide presque partout avec xi sur A",
+    "si K=0 alors W=0 presque partout et le cas est traité séparément; si m=0 la conclusion est triviale"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0097 et NS-SRC-0067 pour les briques classiques de Lorentz/réarrangement; aucune antériorité ciblée du chaînage pondéré complet"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0026-lorentz-cone-compensation.md et docs/reports/navier-stokes/reviews/cycle-0026-analysis.md"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "famille deux amplitudes epsilon=n^-3, a=n²/(n³-1), b=n² : K=1, moyenne nulle, masse conique 1/n et MO=4n^-3(1-n^-3), montrant l'exposant cubique optimal"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/cone-compensation/cone_compensation_audit.py, 670 contrôles rationnels exacts",
+      "sha256": "12eadf58f6bf5fdec9855527f58d9a7e6ba98650c3fd8fca78adbbbcfc1e1727"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0026-lorentz-cone-compensation"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois passes Codex séparées, même famille de modèle; non indépendantes au sens externe",
+    "notes": "La passe analytique a renforcé la borne provisoire alpha^4/27 en 2 alpha^3/27 en conservant la projection négative pondérée. La convention de quasi-norme, les cas dégénérés, la constante Lorentz trois, l'intégrabilité de l'extension, l'annulation vectorielle et l'invariance d'échelle sont explicites. Le modèle sharp est seulement mesurable et ne construit ni curl compact, ni BMO global, ni solution Navier-Stokes."
+  }
+}

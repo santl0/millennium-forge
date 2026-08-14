@@ -1357,3 +1357,40 @@ cellule reste donc `NOT_PROVIDED`.
 - Limites : le champ infini est irrégulier dès `t=0`, les normes fortes
   critiques divergent, la pression dynamique et l'évolution ne sont pas
   construites.
+
+## `LORENTZ-CONE-COMPENSATION-1` — retour directionnel critique
+
+- Question falsifiable : l'annulation vectorielle d'un curl compact et une
+  borne faible-`L^(3/2)` imposent-elles une oscillation quantitative dès qu'une
+  masse `L¹` non nulle reste dans un cône ?
+- Équation : aucune évolution; porte statique `integral W=0`, satisfaite par
+  `W=curl U` compact sous régularité suffisante.
+- Lemme certifié après passe adverse : si `K` est la quasi-norme fixée,
+  `G={xi·e>=alpha}`, `m=integral_G|W|` et `integral W=0`, alors
+
+  ```text
+  MO_D(zeta)>=2alpha^3 m^3/[27K^3|D|].
+  ```
+
+- Test sharp : `epsilon=n^-3`, amplitudes `n²/(n³-1)` et `-n²` donnent
+  moyenne nulle, `K=1`, masse conique `1/n` et
+  `MO=4n^-3(1-n^-3)`.
+- Conclusion adverse : l'exposant cubique est optimal et la masse critique
+  `L^(3/2)` peut rester non dégénérée tandis que la masse conique `L¹` tend
+  vers zéro.
+- Commande :
+
+  ```text
+  python -B experiments/navier-stokes/cone-compensation/cone_compensation_audit.py
+  ```
+
+- Environnement : Python 3.13.14, bibliothèque standard uniquement.
+- Discrétisation : aucune grille, aucun flottant, aucune graine; 670 contrôles
+  rationnels exacts, zéro échec et résidus algébriques nuls.
+- Empreinte :
+  `12eadf58f6bf5fdec9855527f58d9a7e6ba98650c3fd8fca78adbbbcfc1e1727`.
+- Limites : le modèle sharp n'a ni géométrie spatiale, ni divergence, ni
+  vitesse, ni pression. Une interface régulière entre les phases garde une
+  oscillation locale égale à un; un corridor de zéros peut abaisser ce coût à
+  l'ordre `1/log(R/h)`. Un lift collinéaire compact divergence-free est
+  nécessairement nul, d'où le prochain test axisymétrique.

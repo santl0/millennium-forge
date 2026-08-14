@@ -469,3 +469,24 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
   aucune pression ne ferme la construction.
 - Décision : abandonner le blob de forme fixe et activer
   `GAP-DIRECTIONALLY-FLAT-INTERMITTENCY`.
+
+## 2026-08-14 — Cycle 0026
+
+- Veille différentielle : Grujić `arXiv:2607.08866` reste en v2 et
+  Lei–Ren–Tian `arXiv:2501.08976` en v1 dans les notices primaires contrôlées.
+  Aucun résultat repéré ne relie une compensation vectorielle globale au BMO
+  de toutes les sous-boules d'un curl compact critique.
+- Sources ajoutées : Lorentz 1950 (`0097`), Grujić–Guberović 2010 (`0098`),
+  Smirnov 1993/1994 (`0099`), Daneri–Székelyhidi 2017 (`0100`) et
+  Enciso–Peralta-Salas 2015 (`0101`). Le corpus atteint 101 sources.
+- Résultat bibliographique : chaque brique de la borne pondérée est classique,
+  mais aucune source ciblée n'anticipe son chaînage conique complet. Statut
+  maintenu `AI_DERIVATION`, jamais `PAPER_PROOF`.
+- Passe analytique : la borne provisoire `alpha^4/27` est renforcée en
+  `2alpha^3/27` en conservant la projection négative pondérée.
+- Passe géométrique : une interface directe coûte une oscillation un, un
+  corridor annulaire peut réduire ce coût à `Theta(1/log(R/h))`, et un lift
+  collinéaire compact divergence-free est nécessairement nul.
+- Décision : activer `GAP-NESTED-RETURN-FLOW-CASCADE` avec un potentiel
+  axisymétrique explicite; les Mikado flows et tubes de Beltrami servent de
+  comparateurs, pas de transferts vers Clay.

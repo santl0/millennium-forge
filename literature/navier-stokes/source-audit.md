@@ -619,3 +619,34 @@ faible-`L^(3/2)`, masse critique et petite oscillation centrée ne produisent
 pas le BMO global. Une forme directionnelle interne récurrente conserve une
 oscillation positive sur des boules décentrées. Aucune source primaire trouvée
 ne transforme un tel train en scénario dynamique de blow-up.
+
+## Audit ciblé du cycle 0026 — compensation conique et return-flow
+
+| Source primaire | Passage contrôlé | Verdict exact |
+|---|---|---|
+| Lorentz 1950 (`0097`) et O'Neil 1963 (`0067`) | réarrangement et faible-`L^p` | pour la quasi-norme de distribution fixée, `integral_E f<=p'K|E|^(1/p')`; la constante vaut exactement trois à `p=3/2` |
+| Grujić–Guberović 2010 (`0098`) | cohérence directionnelle localisée | critère projectif pairwise, insensible au signe `+e/-e`; aucune masse conique orientée ni compensation globale |
+| Smirnov 1993/1994 (`0099`) | décomposition de charges solénoïdales | formalise le retour par solénoïdes élémentaires, sans contrôle faible-Lorentz, BMO, Biot–Savart ou lissage compact |
+| Daneri–Székelyhidi 2017 (`0100`) | Mikado flows | contre-courants tubulaires périodiques de vitesse Euler; pas une vorticité compacte NS et aucun raccord Clay |
+| Enciso–Peralta-Salas 2015 (`0101`) | tubes de vorticité fermés | retour géométrique dans des champs de Beltrami Euler non compacts et d'énergie infinie; hors classe visqueuse énergétique |
+
+La veille ne trouve aucune source primaire qui assemble la borne faible-
+Lorentz pondérée, la compensation conique et l'identité des parties positive
+et négative. Le lemme renforcé
+
+```text
+MO_D(zeta)>=2alpha³m³/(27K³|D|)
+```
+
+reste donc une `AI_DERIVATION` interne composée de briques classiques, jamais
+un `PAPER_PROOF`. Sa constante globale n'est pas annoncée optimale. L'identité
+`integral curl U=0` est globale; sur une boule, le terme de bord
+`integral_(partial B)n cross U` interdit une localisation silencieuse.
+
+Les critères de Constantin–Fefferman, Beirão da Veiga–Berselli, Miller et
+Lei–Ren–Tian ne ferment pas ce trou : les trois premiers mécanismes sont
+projectifs ou exigent un champ auxiliaire régulier, et le dernier autorise un
+double cône contenant simultanément `+e` et `-e`. Les antécédents constructifs
+ferment les lignes de flux, mais dans Euler, sur le tore ou hors énergie. Le
+premier test transférable reste donc un curl compact explicite avec contrôle
+de toutes les boules.

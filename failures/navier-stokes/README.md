@@ -998,6 +998,77 @@ respectant l'annulation du curl compact, la divergence et la masse critique.
 - Sources : `NS-SRC-0092`, `NS-SRC-0093` et revue littérature du cycle 0025.
 - Statut : stratégie `REFUTED` dans la classe forte positive.
 
+## `FAIL-NS-0046` — Masse critique assimilée à une masse conique `L¹`
+
+- Date : 2026-08-14.
+- Cadre : espace de probabilité, champ vectoriel à deux phases et moyenne
+  vectorielle nulle.
+- Cible : déduire une minoration uniforme de
+  `integral_{xi·e>=alpha}|W|` depuis une borne faible-`L^(3/2)` et une masse
+  forte `L^(3/2)` non dégénérée.
+- Contre-profil : fractions `1-n^-3` et `n^-3`, amplitudes respectives
+  `n²/(n³-1)` et `-n²`.
+- Résultat : quasi-norme faible égale à un, masse forte comprise entre un et
+  deux, moyenne nulle, mais masse conique positive égale à `1/n->0`.
+- Portée : modèle mesurable sans contrainte div–curl ni disposition spatiale;
+  il réfute exactement le raccord de normes, pas un lemme PDE plus fort.
+- Statut : implication `REFUTED`.
+
+## `FAIL-NS-0047` — Petite oscillation du blob entier assimilée au BMO global
+
+- Date : 2026-08-14.
+- Cadre : même modèle directionnel `+e/-e`, oscillation moyenne globale
+  `4n^-3(1-n^-3)`.
+- Cible : conclure au log-BMO après avoir placé les deux phases dans un blob.
+- Attaque : séparer les phases par une interface régulière et tester une boule
+  qui voit des fractions `1/2,1/2`.
+- Résultat : l'oscillation locale exacte vaut un, indépendamment de la petite
+  fraction globale. Une réalisation spatiale simple échoue immédiatement.
+- Portée corrigée : ce coût d'ordre un utilise une interface directe. Une
+  région de zéros peut étaler une extension unitaire avec coût seulement
+  logarithmique; aucun no-go universel n'est conclu.
+- Réparation : répartir le retournement sur une cascade interne non-Dini et
+  contrôler toutes les boules, pas seulement le domaine parent.
+- Statut : raccord spatial `REFUTED`; active
+  `GAP-NESTED-RETURN-FLOW-CASCADE`.
+
+Décision de pivot : l'inégalité conique ferme toute famille à masse conique
+normalisée uniforme. La seule échappatoire mesure-théorique perd cette masse
+comme la racine cubique de l'oscillation; son lifting div–curl et BMO global
+reste à construire ou exclure.
+
+## `FAIL-NS-0048` — Coût BMO d'ordre un supposé universel entre deux phases
+
+- Date : 2026-08-14.
+- Cadre : cœur directionnel `-e` de rayon `h`, phase `+e` au-delà du rayon
+  `R`, et vorticité nulle dans le corridor annulaire.
+- Cible : étendre la conclusion d'interface de `FAIL-NS-0047` à toute
+  disposition spatiale ou toute extension unitaire sur les zéros.
+- Contre-profil : rotation radiale de `-e` vers `+e`, affine en `log r` dans
+  `h<r<R`.
+- Résultat : le BMO est `O(1/log(R/h))`; un télescopage sur les boules
+  concentriques donne aussi `>=7/[32 ceil(log_2(2R/h))]` dans ce modèle.
+- Portée : ce profil est une extension de direction sur une région où `W=0`,
+  pas encore un curl compact. Le volume seul ne fixe ni épaisseur ni capacité.
+- Statut : minoration universelle d'ordre un `REFUTED`; coût logarithmique à
+  tester après lift div–curl.
+
+## `FAIL-NS-0049` — Profil collinéaire relevé directement en curl compact
+
+- Date : 2026-08-14.
+- Cadre : `R³`, champ distributionnel `W=f e` exactement collinéaire,
+  compactement supporté et supposé divergence-free.
+- Cible : spatialiser littéralement le modèle à deux amplitudes sans ajouter
+  de composante transverse.
+- Attaque : après rotation `e=e_3`, `div W=partial_3 f=0`; ainsi `f` est
+  indépendant de `x_3`, ce qui est incompatible avec un support compact sauf
+  si `f=0`.
+- Résultat : aucun champ collinéaire non nul de cette classe n'est un curl
+  compact.
+- Réparation : fermer des tubes de flux ou utiliser un potentiel axisymétrique,
+  en auditant les composantes transverses créées par les cutoffs.
+- Statut : lift direct `REFUTED`; ansatz axisymétrique actif.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,
