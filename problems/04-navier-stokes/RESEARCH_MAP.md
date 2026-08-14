@@ -76,9 +76,13 @@ Le graphe annoté et les arêtes manquantes sont détaillés dans
 - Lemme minimal : un commutateur localisé de la projection de Leray est borné
   uniformément par une quantité critique locale plus un terme de queue
   sommable.
-- Échec actuel : `p=R_iR_j(u_i u_j)` couple la boule active à tout l'espace.
-- Test discriminant : séparer deux paquets très éloignés et mesurer la pression
-  induite dans la zone active avec bornes analytiques des queues.
+- Échec actuel révisé : la queue distante centrée est petite sous la tension
+  pondérée `L²(|y|^-4dy)`, et une borne globale `L³` donne cette tension en
+  `A^-3`. L'énergie seule ne la donne pas après zoom; la pression proche et la
+  compacité forte du produit restent ouvertes.
+- Test discriminant : construire des suites divergence-free qui convergent
+  faiblement mais gardent un défaut non nul de `u_n tensor u_n` et de pression
+  proche sous les bornes exactes disponibles.
 - Circularité : absorber la queue par une norme globale critique non disponible.
 - Coût : moyen.
 - Abandon local : famille éloignée à énergie bornée dont le commutateur ne tend
@@ -150,3 +154,22 @@ qui ne peuvent être uniformes sous cutoff. Expérience décisive : calcul
 symbolique/exact des exposants et test multi-`epsilon`. Le résultat visé est une
 barrière pour certaines méthodes de transfert, pas une obstruction dynamique
 générale ni une réfutation de la prépublication.
+
+## Cycle 0003 : décision automatisée
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| contre-profil de pression après zoom multi-échelle | 4 | 5 | 5 | 5 | **19** |
+| défaut quadratique par oscillations faibles | 3 | 5 | 5 | 4 | 17 |
+| extraction Liouville Type II théorème par théorème | 3 | 4 | 3 | 5 | 15 |
+
+Décision : tester l'implication « norme physique `L²` bornée -> tension uniforme
+de la pression distante après zoom ». Le critère positif minimal est la tension
+de `integral |U_n|²|y|^-4`; l'expérience cherche une suite lisse qui la viole
+tout en conservant une norme physique `L²` bornée.
+
+Résultat : implication réfutée par des paquets lisses; critère pondéré positif
+isolé. L'extraction ESS/GKP montre qu'une borne globale uniforme `L³` implique
+ce critère avec taux `A^-3`. La queue distante n'est donc pas un verrou nouveau
+dans leurs chaînes conditionnelles; le programme pivote vers le défaut
+quadratique et la pression proche.

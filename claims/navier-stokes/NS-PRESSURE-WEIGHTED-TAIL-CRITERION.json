@@ -1,0 +1,35 @@
+{
+  "id": "NS-PRESSURE-WEIGHTED-TAIL-CRITERION",
+  "problem": "navier-stokes",
+  "statement": "Pour une famille de champs sur R^3, la tension uniforme de l'énergie pondérée intégrale_{|y|>A}|u_n(y)|^2|y|^-4 dy quand A tend vers l'infini suffit à rendre uniformément petite sur toute boule fixe la différence de pression distante définie directement par l'intégrale de [K(x-y)-K(-y)]u_i(y)u_j(y).",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "u_n appartient localement à L^2(R^3;R^3), est divergence-free et les intégrales pondérées affichées sont finies",
+    "x appartient à B_a(0), A>2a et seule la contribution |y|>A est considérée",
+    "la différence centrée est définie directement par integrale_{|y|>A}[K_ij(x-y)-K_ij(-y)]u_{n,i}(y)u_{n,j}(y)dy",
+    "l'existence séparée des deux intégrales de pression brute n'est pas revendiquée",
+    "lim_{A->infini} sup_n integrale_{|y|>A}|u_n(y)|^2|y|^-4dy=0",
+    "aucune conclusion sur la pression proche ou la compacité du terme quadratique"
+  ],
+  "dependencies": [
+    "NS-PRESSURE-TAIL-CENTERED"
+  ],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "experiments/navier-stokes/README.md, section PRESSURE-MULTISCALE-1"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-state-of-art/cycle-0003"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Sous-agent Codex distinct, même famille de modèle; non indépendant au sens externe",
+    "notes": "La différence est définie directement pour éviter de supposer l'intégrabilité |y|^-3; constante du noyau et quantificateurs contrôlés."
+  }
+}

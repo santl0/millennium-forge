@@ -48,3 +48,18 @@ solution ou précise qu'il s'agit seulement d'un champ test.
 - Obstacle : aucune constante de stabilité dépendant uniformément de ces normes
   ne survit au cutoff; une stabilité exotique n'est pas exclue.
 - Artefact : `DESINGULARIZATION-GATE-1`, résidu rationnel zéro.
+
+## 2026-08-14 — Pression multi-échelle après zoom
+
+- Objet : suite de données lisses compactes divergence-free, pas trajectoire.
+- Échelles : distance `L_n=2^-6n`, zoom `r_n=2^-7n`, moment
+  `mu_n=2^-3n`, distance rescalée `R_n=2^n`.
+- Énergie : `||v_n||_2²=2mu_n->0`, mais
+  `||r_n v_n(r_n·)||_2²=2R_n^4`.
+- Quantité critique de queue :
+  `Theta_n(A)=integral_(|y|>A)|U_n(y)|²|y|^-4dy`.
+- Contre-profil : pour tout `A`, des indices avec `R_n>A` gardent
+  `Theta_n(A)` proche de `2`; la pression centrée converge vers `3/(4pi)`.
+- Perte localisée : l'énergie globale ne donne aucune tension uniforme après
+  des zooms plus fins que l'échelle porteuse de l'énergie.
+- Artefact : `PRESSURE-MULTISCALE-1`, résidus rationnels zéro.

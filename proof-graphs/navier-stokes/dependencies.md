@@ -41,7 +41,10 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | borne Prodi–Serrin | prolongement | classique et sourcée | Prodi, Serrin | hypothèse conditionnelle |
 | borne critique + minimalité | profil compact modulo symétries | conditionnelle | décomposition de profils | dichotomie et pression |
 | suite de blow-up sous énergie seule | solution ancienne | manquante | — | une puissance d'échelle et compacité forte |
-| limite locale de vitesse | limite de pression | conditionnelle | Calderón–Zygmund + queues; la pression distante centrée décroît comme `R^-4` à énergie fixe | uniformité de l'énergie après zoom et pression proche |
+| tension pondérée `sup_n integral |U_n|²|y|^-4` | petite pression lointaine centrée | dérivation locale, `COMPUTATION_ONLY` | pression proche encore incontrôlée |
+| borne critique uniforme `L³` | tension pondérée `A^-3` | Hölder à constante explicite, passe adverse; compatible ESS/GKP | la borne `L³` n'est pas issue de l'énergie |
+| norme `L²` physique bornée | tension pondérée après zoom | réfutée | contre-paquets lisses multi-échelles | structure dynamique ou borne critique nécessaire |
+| limite locale de vitesse | limite de pression | conditionnelle | Calderón–Zygmund + tension pondérée | obtenir la tension et contrôler la pression proche |
 | profil rétrograde `L³` | trivialité | classique et sourcée | Nečas–Růžička–Šverák | ne couvre pas Type II/DSS général |
 | solution ancienne bornée générale 3D | trivialité | manquante | Liouville partiel seulement | rigidité |
 | alignement critique de vorticité | régularité | conditionnelle, sourcée | Constantin–Fefferman | alignement non déduit de NS |
@@ -59,7 +62,7 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | `GAP-DERIV-NL` | dérivée | `u dot nabla u` dans l'énergie haute | triades haute–basse signées |
 | `GAP-CONST-TRUNC` | constante | Galerkin ou troncature renormalisée | tracer la constante avec le cutoff |
 | `GAP-COMPACT-Q` | compacité | passage `u_n tensor u_n` | défaut de produit sous convergence faible |
-| `GAP-PRESSURE-TAIL` | pression/localisation | `R_iR_j(u_i u_j)` | deux paquets éloignés |
+| `GAP-PRESSURE-TAIL` | pression/localisation | défaut de tension de `integral |U_n|²|y|^-4` après zoom | paquets multi-échelles; extraction ESS/GKP |
 | `GAP-SIGN-FLUX` | positivité | flux d'énergie inter-échelles | contre-triades exactes |
 | `GAP-LIMIT-ADMISSIBLE` | stabilité/admissibilité | profil singulier vers donnée de Schwartz | troncature `epsilon` et temps local |
 | `GAP-NUM-CONTINUUM` | calcul vers continuum | discrétisation finie | résidu d'intervalle + queue analytique |
@@ -68,9 +71,9 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 
 1. `GAP-LIMIT-ADMISSIBLE` : faible coût pour déterminer si la nouvelle
    construction non unique a un premier maillon vers Clay.
-2. `GAP-PRESSURE-TAIL` : la queue physique lointaine est contrôlée à énergie
-   fixe après centrage; déplacer la priorité vers l'uniformité après zoom et la
-   pression proche.
+2. `GAP-COMPACT-Q` / pression proche : `L³` ferme la queue distante, l'énergie
+   seule non; tester maintenant le défaut quadratique local sous convergence
+   faible et les bornes réellement disponibles.
 3. `GAP-SIGN-FLUX` : élimination rapide de fonctionnelles candidates.
 
 Une arête ne passe à « classique et sourcée » qu'avec une source primaire et

@@ -72,6 +72,26 @@ ou une nouvelle affirmation, jamais à supprimer l'échec.
 - Statut : implication dynamique réfutée par la passe contradictoire séparée;
   le lemme radial restreint est conservé `COMPUTATION_ONLY`.
 
+## `FAIL-NS-0006` — Énergie physique et séparation supposées suffisantes pour la pression
+
+- Date : 2026-08-14.
+- Cible : déduire d'une norme physique `L²` uniformément bornée et d'une distance
+  rescalée `R_n->infinity` la disparition uniforme de la pression distante
+  centrée.
+- Attaque : paquets lisses compacts divergence-free avec
+  `L_n=2^-6n`, `r_n=2^-7n`, moment `mu_n=2^-3n`, puis zoom NS à l'échelle
+  `r_n`.
+- Résultat : `||v_n||_2²=2mu_n->0` (énergie cinétique `mu_n`), mais le moment rescalé vaut
+  `R_n^4`; la queue d'énergie pondérée tend vers `2` et
+  `P_n(e_1)-P_n(0)->3/(4pi)`.
+- Résidus : six familles d'identités d'échelle exactement nulles en fractions
+  rationnelles pour `1<=n<=12`; la dépendance générale est symbolique.
+- Portée : les champs sont des données Clay admissibles séparées, pas une même
+  trajectoire NS. Le contre-profil ne réfute ni une tension critique supposée,
+  ni un mécanisme dynamique de non-concentration.
+- Statut : l'implication universelle depuis l'énergie seule est `REFUTED`;
+  le critère positif de tension pondérée reste `COMPUTATION_ONLY`.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,

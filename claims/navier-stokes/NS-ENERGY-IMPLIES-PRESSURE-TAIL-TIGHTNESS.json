@@ -1,0 +1,40 @@
+{
+  "id": "NS-ENERGY-IMPLIES-PRESSURE-TAIL-TIGHTNESS",
+  "problem": "navier-stokes",
+  "statement": "Pour toute suite de champs lisses compacts divergence-free (v_n) telle que sup_n ||v_n||_2^2 soit fini, et pour toute suite de zooms r_n>0, les champs U_n(y)=r_n v_n(r_n y) sont uniformément tendus pour le poids |y|^-4 et leur différence de pression distante entre e_1 et 0 disparaît uniformément.",
+  "status": "REFUTED",
+  "hypotheses": [
+    "champs C_c^infinity(R^3;R^3) divergence-free",
+    "sup_n ||v_n||_2^2<infini",
+    "quantificateur universel sur les suites (v_n) et les suites de zooms r_n>0",
+    "zoom U_n(y)=r_n v_n(r_n y) et probe x=e_1",
+    "pression reconstruite par K_ij=partial_i partial_j(1/(4 pi |z|))",
+    "les v_n sont des données initiales distinctes, pas une trajectoire NS"
+  ],
+  "dependencies": [
+    "NS-PRESSURE-WEIGHTED-TAIL-CRITERION"
+  ],
+  "evidence": [
+    {
+      "kind": "counterexample",
+      "reference": "experiments/navier-stokes/pressure-multiscale/pressure_multiscale.py",
+      "sha256": "c69d3c45b5383596cb3ccc1b804ad94ef3ccbfa9b5d49c7e7f237c72abbe12fd"
+    },
+    {
+      "kind": "derivation",
+      "reference": "experiments/navier-stokes/README.md, construction lisse du cycle PRESSURE-MULTISCALE-1"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-state-of-art/cycle-0003"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Sous-agent Codex distinct, même famille de modèle; non indépendant au sens externe",
+    "notes": "Le contre-profil fournit une paire explicite de suites; facteurs de zoom, moment lisse, tension pondérée et pression centrée recalculés. Aucune implication dynamique."
+  }
+}

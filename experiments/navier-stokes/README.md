@@ -13,6 +13,7 @@ leur rapport JSON sur la sortie standard.
 | `TRI-PHASE-1` | divergence nulle et hélicité nulle imposent-elles un flux sous-linéaire universel ? | modes Fourier finis, rationnels gaussiens exacts | `python -B experiments/navier-stokes/triad-phase/test_triad_phase.py` | zéro |
 | `DESINGULARIZATION-GATE-1` | les normes d'une troncature de `r^-1` restent-elles uniformes quand `epsilon -> 0` ? | intégrales radiales exactes; logarithme symbolique | `python -B experiments/navier-stokes/desingularization-gate/desingularization_gate.py` | zéro pour les identités rationnelles |
 | `PRESSURE-TAIL-1` | centrer la pression d'un paquet distant gagne-t-il une puissance de distance ? | noyau multipolaire exact, tenseur ponctuel | `python -B experiments/navier-stokes/pressure-tail/pressure_tail.py` | zéro |
+| `PRESSURE-MULTISCALE-1` | une borne physique `L²` seule impose-t-elle la tension uniforme de la pression après zoom ? | lois d'échelle et moments exacts | `python -B experiments/navier-stokes/pressure-multiscale/pressure_multiscale.py` | zéro |
 
 Environnement reproduit au checkpoint initial : Windows, Python 3.13.14,
 bibliothèque standard uniquement. Les scripts ne lisent aucun fichier, n'ont
@@ -92,7 +93,7 @@ aucune dépendance réseau et ne produisent pas d'artefact lourd.
 
 ## Passage au continuum
 
-Aucune des quatre expériences ne part d'une discrétisation PDE : il n'y a donc
+Aucune des cinq expériences ne part d'une discrétisation PDE : il n'y a donc
 pas de passage grille-vers-continuum. Le raccord analytique restant est
 explicite dans chaque cas. Tout futur solveur doit ajouter divergence mesurée,
 convergence multi-résolution, second schéma, bornes de troncature, contrôle des
@@ -136,3 +137,122 @@ empreintes des sorties.
   `(a,rho,R)/lambda`, tandis que
   `||v_lambda||_2²=lambda^-1||v||_2²`; le membre droit acquiert exactement
   `lambda²`, comme `p_lambda`. Le lemme ne crée donc aucun gain d'échelle caché.
+
+## `PRESSURE-MULTISCALE-1` — défaut de tension après zoom
+
+### Lemme positif borné
+
+Pour une famille `U_n`, définissons directement la différence distante, sans
+supposer l'existence séparée des deux pressions brutes,
+
+```text
+D_n^far(x;A)=integral_(|y|>A)
+  [K_ij(x-y)-K_ij(-y)] U_(n,i)(y)U_(n,j)(y) dy.
+```
+
+Pour `|y|>A>2a`, la même borne directionnelle du noyau donne
+
+```text
+sup_(|x|<=a) |D_n^far(x;A)|
+ <= (21/pi) a (1-a/A)^(-4)
+    integral_(|y|>A) |U_n(y)|² |y|^(-4) dy.
+```
+
+La condition de tension pondérée
+
+```text
+lim_(A->infinity) sup_n
+  integral_(|y|>A) |U_n(y)|² |y|^(-4) dy = 0
+```
+
+suffit donc à rendre la pression distante centrée uniformément petite sur les
+boules fixes. Ce lemme ne contrôle pas la pression proche.
+
+Une borne critique `L³` implique cette tension par Hölder :
+
+```text
+integral_(|y|>A)|U(y)|²|y|^-4dy
+ <= ||U||_3² (integral_(|y|>A)|y|^-12dy)^(1/3)
+ = (4pi/9)^(1/3) A^-3 ||U||_3².
+```
+
+Par conséquent, si `sup_n||U_n||_3<=M`, le supremum des queues est au plus
+`(4pi/9)^(1/3)A^-3M²` et tend vers zéro avec `A`.
+
+Ainsi, dans une chaîne de compacité qui suppose déjà
+`sup_n ||U_n||_3<infinity`, la pression lointaine centrée n'est pas le verrou.
+Cette observation ne produit évidemment pas la borne `L³` depuis l'énergie.
+
+### Famille adverse lisse
+
+Fixons `0<kappa<1/4` et un champ
+
+```text
+w=(partial_2 psi,-partial_1 psi,0) in C_c^infinity(B_kappa)
+```
+
+où `psi` est radial, puis normalisons-le pour que
+
+```text
+integral w_i w_j = diag(1,1,0)_ij,
+||w||_2²=2.
+```
+
+Pour `n>=1`, posons
+
+```text
+L_n=2^(-6n),  r_n=2^(-7n),  mu_n=2^(-3n),
+v_n(x)=sqrt(mu_n/r_n³) w((x-L_n e_1)/r_n).
+```
+
+Chaque `v_n` est lisse, compact, divergence-free et
+`||v_n||_2²=2mu_n->0`. Après le zoom NS
+`U_n(y)=r_n v_n(r_n y)`, le paquet est centré en
+
+```text
+R_n=L_n/r_n=2^n,
+```
+
+et son moment vaut `mu_n/r_n=R_n^4`. Par convergence uniforme sur le support
+fixe de `w`,
+
+```text
+integral |U_n(y)|² |y|^-4 dy -> 2,
+P_n(e_1)-P_n(0) -> 3/(4 pi).
+```
+
+Le passage multipolaire se lit directement, uniformément pour
+`|z|<=kappa` :
+
+```text
+R^4 [K(e_1-R e_1-z)-K(-R e_1-z)]
+ = R [K(-e_1+(e_1-z)/R)-K(-e_1-z/R)]
+ -> partial_1 K(-e_1).
+```
+
+La contraction de `partial_1 K(-e_1)` avec `diag(1,1,0)` vaut
+`3/(4pi)`. De même,
+`R^4/|R e_1+z|^4->1` uniformément, ce qui donne la limite pondérée `2`.
+
+La pression brute `P_n(0)` diverge comme `R_n/(4 pi)`, mais c'est sa constante
+de jauge; la différence centrée reste finie et non nulle. Ainsi l'énergie
+cinétique physique `mu_n`, et même `||v_n||_2²=2mu_n`, tendent vers zéro sans
+imposer la tension pondérée après un zoom arbitrairement plus fin que le paquet.
+
+### Certificat et limites
+
+- Le script vérifie exactement
+  `R_n=2^n`, `mu_n/r_n=R_n^4`,
+  `mu_n r_n³/L_n^4=1`, la queue ponctuelle pondérée `2`, et
+  `4 pi (P_n(e_1)-P_n(0))->3`.
+- Empreinte du script :
+  `c69d3c45b5383596cb3ccc1b804ad94ef3ccbfa9b5d49c7e7f237c72abbe12fd`.
+- Arithmétique : fractions exactes, aucune discrétisation, résidus nuls, graine
+  sans objet.
+- La limite du paquet lisse repose sur un développement multipolaire uniforme
+  sur un support compact; le script ne formalise pas cette étape.
+- Les `v_n` sont des données initiales admissibles prises séparément, pas des
+  tranches d'une même solution NS ni un scénario de blow-up.
+- Le résultat réfute seulement une déduction depuis l'énergie globale. Une
+  borne critique, une tension pondérée ajoutée ou la dynamique peuvent exclure
+  cette famille.
