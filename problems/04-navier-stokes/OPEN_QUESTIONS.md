@@ -363,3 +363,26 @@ Un pont de persistance relative fixe et calibrée est désormais fermé par
 `NS-PURE-SWIRL-PERSISTENT-BRIDGE-DIAMETER`. Ne pas confondre ce résultat avec
 le diamètre d'une composante au seul niveau bas : les fusions tardives restent
 le premier quantificateur ouvert.
+
+## Priorité active après le cycle 0038
+
+1. **`GAP-OVERLAPPING-CURL-CANCELLATION`.** La fermeture statique vaut pour
+   un curl unique et pour des supports cellulaires disjoints. Si deux curls se
+   recouvrent, la distribution de leur somme peut être plus petite que chaque
+   distribution locale. Construire une annulation lisse critique ou établir
+   une sélection stable sous multiplicité/signature contrôlée.
+2. **Registre après projection de Leray.** Un cutoff spatial introduit
+   `nabla chi cross U`, un défaut de divergence et une correction non locale.
+   Quantifier ces trois termes au même endpoint avant d'utiliser une boule
+   locale dans une solution réelle.
+3. **Échelle dynamique.** Relier la cellule sélectionnée à un rayon
+   `R_j(t)->0` sous une hypothèse Type I précisément sourcée; isoler ensuite le
+   premier passage qui échoue pour Type II.
+4. **Formalisation.** Certifier d'abord l'algèbre finie et la sélection au
+   même niveau; ne formaliser l'interface BV/coaire qu'après stabilisation des
+   représentants et des constantes.
+
+`GAP-BRIDGE-SCALE-CALIBRATION-OR-MERGE-TREE` est fermé dans la classe
+pure-swirl annulaire disjointe par le niveau moyen adaptatif. L'itération le
+long d'un merge tree et la persistance H0 seule sont abandonnées : leurs
+contre-ledgers exacts ne respectent pas le registre coaire d'un curl compact.

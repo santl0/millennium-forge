@@ -562,3 +562,48 @@ pression/projection de Leray : absentes.
 2. Test multi-gouttes hétérogène avec persistance et diamètre intégrés.
 3. Chevauchements de curls, puis raccord Type I/Type II seulement après
    fermeture des deux premières arêtes.
+
+## Cycle 0038 — fermeture adaptative du diamètre dans le modèle disjoint
+
+```text
+NS-SRC-0132 (coaire)
+  + NS-SRC-0148 (isopérimétrie R3)
+  + NS-SRC-0156 (composantes et périmètre additif)
+  + NS-SRC-0163 (2 diam(E^1)<=P_2(E))
+  -- composition axisymétrique interne
+       --> lambda R>=K^2/(432H)
+       --> niveau régulier t avec somme des diamètres O(q^-3 R)
+       --> composante au même t avec endpoint quadratique
+  --> NS-PURE-SWIRL-ADAPTIVE-DIAMETER-SELECTION
+
+NS-PURE-SWIRL-COMMON-LEVEL-CELL-SELECTION
+  + NS-PURE-SWIRL-ADAPTIVE-DIAMETER-SELECTION
+       --> cellule tronquée de taille O(q_global^-6 R_j)
+       --> rapport local >=c q_global^4
+  + NS-PURE-SWIRL-LIPSCHITZ-DIRECTION-GATE
+       --> obstruction directionnelle locale statique.
+
+NS-SRC-0168 + NS-SRC-0169 + NS-SRC-0170
+  -- erreur L-infinity certifiée --> topologie PL stable
+  -/-> labels spatiaux, diamètre, coaire ou PDE
+  -- maximin étiqueté + erreur uniforme --> marge col-cutoff certifiable.
+```
+
+Nature des arêtes :
+
+```text
+coaire/isopérimétrie/périmètre-diamètre/Lorentz : classiques sourcés;
+calibration 432 et sélection 20 736 : dérivation interne auditée;
+certificat rationnel : calcul exact, pas preuve des entrées continues;
+héritage du rapport sous retroncature : réfuté;
+arbre topologique seul -> registre coercif : réfuté;
+supports de curls disjoints -> curls superposés : manquant;
+obstruction statique -> solution pré-singulière : manquant;
+pression/projection/diffusion/stretching : absents.
+```
+
+## Priorité après le cycle 0038
+
+1. Annulations critiques entre curls superposés et registre local survivant.
+2. Cutoff divergence-free et projection de Leray avec constante critique.
+3. Raccord dynamique Type I, puis localisation exacte du trou Type II.

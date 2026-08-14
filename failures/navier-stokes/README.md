@@ -1509,3 +1509,37 @@ claim éventuellement supersédé.
   nouveau pigeonhole ou registre géométrique.
 - Statut : inférence globale-vers-locale `REFUTED`; pivot vers
   `GAP-BRIDGE-SCALE-CALIBRATION-OR-MERGE-TREE`.
+
+## `FAIL-NS-0073` — Rapport endpoint supposé héréditaire sous retroncature
+
+- Date : 2026-08-15.
+- Cible : déduire d'une bonne composante au cutoff bas qu'un descendant choisi
+  à un niveau de scission conserve uniformément `K_u/K_w` et une fraction de
+  la vitesse faible-`L3` du parent.
+- Premier quantificateur faux : le couple niveau–composante sélectionné par
+  coaire ne peut pas être échangé avec un niveau choisi ensuite pour sa
+  géométrie. Les deux quasi-normes décroissent sous restriction, leur quotient
+  n'est pas monotone.
+- Contre-ledger : une récurrence exacte
+  `q_(n+1)=c_H q_n^2`, `K_(n+1)=c_H q_n K_n` sature les minorations
+  disponibles et fait tendre les deux gates vers zéro avec la profondeur.
+- Portée : réfute l'implication logique depuis les seuls claims 0036–0037;
+  aucune réalisation pure-swirl lisse de toute la récurrence n'est revendiquée.
+- Statut : itération avec héritage `REFUTED`; réparée au cycle 0038 par choix
+  du niveau et de la composante dans une même moyenne.
+
+## `FAIL-NS-0074` — Arbre de fusion pris pour registre coercif
+
+- Date : 2026-08-15.
+- Cible : obtenir une constante uniforme depuis la seule topologie de l'arbre,
+  les persistences, diamètres et fonctions de distribution des noeuds.
+- Contre-modèle exact : arbre binaire `N=2^n`, `K_u=1`, `K_w^3<2`, ponts à
+  persistences évanescentes et toutes les retroncatures. Les composantes de
+  diamètre `O(R)` ont un rapport `O(2^(-n/3))`.
+- Certificat indépendant : 9 513 assertions `Fraction`, toutes les branches et
+  retroncatures, résidu exact nul; empreinte
+  `7727fc752cdc01b50762b1720dbd83af081d6b522192b22094b14bb1e63a1496`.
+- Limite décisive : les feuilles abstraites violent
+  `integral|W|>=c|E|^(2/3)`; ce n'est pas un contre-exemple pure-swirl.
+- Statut : preuve merge-tree seulement `REFUTED`; l'arbre doit être enrichi
+  par un registre analytique de fermeture, ou évité par coaire directe.

@@ -267,3 +267,13 @@ conditionnellement. Le niveau global ne fournit toutefois pas ce calibrage
 pour chaque goutte, et une fusion tardive peut ne persister que sur une bande
 évanescente. Le prochain verrou est
 `GAP-BRIDGE-SCALE-CALIBRATION-OR-MERGE-TREE`. Le corpus compte 167 sources.
+
+Le cycle 0038 évite finalement l'arbre de fusion. Le volume des cores et la
+largeur radiale calibrent directement le niveau presque optimal par
+`lambda R>=K^2/(432H)`. Une moyenne de coaire choisit un niveau régulier où la
+somme des diamètres est `O((H/K)^3R)`; au même niveau, isopérimétrie et Lorentz
+sélectionnent une composante avec rapport endpoint quadratique. Composé avec
+la sélection cellulaire 0035, le diamètre statique disjoint est fermé sans
+hypothèse locale. Deux contre-ledgers réfutent l'héritage récursif et l'arbre
+topologique seul. Le corpus compte 171 sources et le verrou devient
+`GAP-OVERLAPPING-CURL-CANCELLATION`.

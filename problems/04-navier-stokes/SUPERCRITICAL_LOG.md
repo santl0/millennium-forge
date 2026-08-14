@@ -826,3 +826,34 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   goutte; un grand diamètre au niveau bas peut résulter d'une fusion sur une
   fenêtre d'amplitude évanescente; pression, temps et Type II absents.
 - Pivot : `GAP-BRIDGE-SCALE-CALIBRATION-OR-MERGE-TREE`.
+
+## 2026-08-15 — Niveau adaptatif et fermeture du diamètre statique disjoint
+
+- Objet : cellule pure-swirl annulaire statique, puis famille de cellules à
+  supports complets disjoints; aucune évolution.
+- Calibration obtenue sans hypothèse locale :
+
+  ```text
+  lambda R >= K^2/(432H).
+  ```
+
+- La moyenne de coaire sur `(lambda/4,3lambda/8)` sélectionne au même niveau
+  une composante vérifiant
+
+  ```text
+  diam_z/R <= 2 239 488 (H/K)^3,
+  K_beta >= (C_I/20 736)K^2/H,
+  q_beta >= (C_I/20 736)q^2.
+  ```
+
+- Composition familiale : `K_beta/K_global>=c q_global^3`,
+  `q_beta>=c q_global^4`, `diam/R_j<=C q_global^-6`.
+- Scaling : `lambda R`, `K^2/H`, `diam/R` et tous les rapports endpoint sont
+  critiques.
+- Test : 12 243 assertions rationnelles principales et 9 513 indépendantes,
+  résidus exacts nuls. Le contre-arbre abstrait réfute le bookkeeping
+  topologique seul, mais échoue au registre coaire de fermeture compacte.
+- Perte restante : la monotonie locale `H_beta<=H_j` n'est plus disponible
+  après annulation entre curls superposés; pression, temps et sélection
+  `R_j(t)->0` restent absents.
+- Pivot : `GAP-OVERLAPPING-CURL-CANCELLATION`.

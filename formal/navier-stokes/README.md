@@ -977,3 +977,24 @@ Les modules 6–8 sont les premières cibles Lean réalistes. Les modules 1–4
 requièrent une bibliothèque BV/coaire suffisamment expressive. Une
 compilation certifierait une obstruction cinématique pure-swirl, pas une
 solution, un blow-up ou un critère de régularité Navier–Stokes.
+
+## Backlog issu du cycle 0038 — sélection adaptative du diamètre
+
+Le noyau nouveau évite toute formalisation d'un merge tree. Il se factorise
+en dix interfaces :
+
+1. choix `1/2`-presque optimal d'un niveau faible-`L3`;
+2. comparaison volume de révolution–aire–diamètre dans l'anneau;
+3. coaire pondérée et borne Lorentz donnant `lambda R>=K^2/(432H)`;
+4. moyenne sur `(lambda/4,3lambda/8)` et sélection d'un niveau régulier;
+5. algèbre rationnelle `12*432^2=2 239 488`;
+6. finitude des composantes actives rencontrant un core compact séparé;
+7. inégalité finie `max x_i sum x_i^2>=sum x_i^3`;
+8. troncature d'une composante à trace nulle et domination pointwise du curl;
+9. algèbre endpoint `20 736=144*18*8`;
+10. composition avec la constante cellulaire `C_I/324`.
+
+Les modules 5, 7, 9 et 10 sont purement algébriques et déjà couverts par un
+certificat rationnel. Les modules 2–4 et 8 requièrent géométrie de la mesure,
+coaire et Sobolev/BV. La formalisation certifierait seulement un lemme statique
+pure-swirl; elle ne certifierait ni pression, ni temps, ni régularité Clay.

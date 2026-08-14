@@ -343,3 +343,21 @@
 - Le prochain verrou est
   `GAP-BRIDGE-SCALE-CALIBRATION-OR-MERGE-TREE`; pression et dynamique restent
   différées.
+
+### 2026-08-15 — niveau et composante sélectionnés simultanément
+
+- La sélection adaptative directe est retenue avec le score `20/20`; le merge
+  tree certifié (`17/20`) reste un outil d'expérience, pas la preuve active.
+- L'itération d'une bonne composante vers un descendant géométrique est
+  abandonnée : le rapport endpoint n'est pas monotone sous retroncature.
+- Le niveau presque optimal vérifie automatiquement
+  `lambda R>=K^2/(432H)` dans une cellule annulaire pure-swirl.
+- La moyenne de coaire puis la sélection endpoint au même niveau donnent
+  `diam/R<=2 239 488q^-3` et un rapport local `>=C_I q^2/20 736`.
+- La composition ferme le diamètre pour les familles pure-swirl à supports
+  complets disjoints; elle ne produit ni pression, ni temps, ni résultat Clay.
+- Un barcode H0 long est abandonné comme substitut à la marge `col-cutoff`;
+  un calcul topologique utile doit porter un maximin spatial et une erreur
+  uniforme certifiée.
+- `GAP-OVERLAPPING-CURL-CANCELLATION` devient actif; la dynamique Type I/II
+  reste le verrou suivant.

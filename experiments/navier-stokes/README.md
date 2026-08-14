@@ -1771,3 +1771,40 @@ cellule reste donc `NOT_PROVIDED`.
 - Limites : périmètre–diamètre et coaire restent des entrées analytiques; le
   squelette est lipschitzien sans lissage intervalle-certifié; pression,
   viscosité, temps et résidu PDE absents.
+
+## `ADAPTIVE-DIAMETER-SELECTION-1` — niveau moyen et composante bornée
+
+- Question falsifiable : dans une cellule pure-swirl annulaire ayant un
+  rapport endpoint `q=K/H>0`, peut-on choisir simultanément un niveau régulier
+  et une composante active qui conserve un endpoint local tout en ayant un
+  diamètre `O_q(R)` ?
+- Équation calculée : aucune évolution; algèbre exacte pour
+  `U=(R/r)F e_theta`, `W=curl U` à un temps fixé.
+- Discrétisation : aucune grille; volumes de cores choisis comme cubes
+  rationnels, toutes les racines supprimées par cubage.
+- Certificat analytique encodé :
+
+  ```text
+  lambda R >= K^2/(432H),
+  diam_z(C_beta)/R <= 2 239 488 (H/K)^3,
+  K_beta >= (C_I/20 736)K^2/H.
+  ```
+
+- Registre : 2 016 familles hétérogènes, jusqu'à 32 composantes, 24 arbres
+  abstraits de profondeur `1..24`, 12 243 assertions rationnelles exactes.
+- Test adverse : le diamètre racine de l'arbre vaut `2^n` sur une fenêtre
+  `1/(n2^n)`, tandis que l'intégrale des sommes de diamètres reste
+  `2-2^-n`; une sélection par moyenne survit, une branche persistante uniforme
+  non.
+- Commande :
+
+  ```text
+  python -B experiments/navier-stokes/adaptive-diameter-selection/adaptive_diameter_audit.py
+  ```
+
+- Environnement : Python 3.13.14, bibliothèque standard, aucune graine.
+- Résidu certifié : zéro échec, résidu algébrique exact nul. Empreinte :
+  `0f607fc228c6c552b323b0b342bfa83356afde2dff61831fe606c0e20a1e235e`.
+- Limites : coaire, isopérimétrie et Lorentz sont des entrées analytiques;
+  l'arbre est un ledger abstrait; pression, viscosité, temps et résidu PDE
+  sont absents.

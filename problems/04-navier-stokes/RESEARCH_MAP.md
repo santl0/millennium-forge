@@ -1473,3 +1473,51 @@ Priorité : `GAP-BRIDGE-SCALE-CALIBRATION-OR-MERGE-TREE`. Prouver une
 dichotomie critique : soit la branche sélectionnée persiste sur une fenêtre
 calibrée et son diamètre est borné, soit un niveau intermédiaire la scinde en
 composantes de diamètre `O(R)` tout en conservant un rapport endpoint local.
+
+## Cycle 0038 — sélection simultanée du niveau, du diamètre et de l'endpoint
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| niveau moyen coaire + endpoint au même niveau | 5 | 5 | 5 | 5 | **20** |
+| merge tree certifié et dynamique finie | 4 | 4 | 5 | 4 | 17 |
+| retroncature récursive avec héritage | 4 | 3 | 4 | 4 | 15 |
+
+```text
+niveau lambda presque optimal dans une cellule
+  -- volume du core + diamètre méridien --> intégrale basse du curl
+  -- bande incluse dans {|U|>lambda/6} + Lorentz
+       --> lambda R>=K^2/(432H)
+  -- moyenne coaire sur (lambda/4,3lambda/8)
+       --> somme diam_z/R<=2 239 488(H/K)^3 à un niveau régulier t
+  -- même t + cores + isopérimétrie R3
+       --> K_beta>=(C_I/20 736)K^2/H
+       --> q_beta>=(C_I/20 736)q^2
+  --> NS-PURE-SWIRL-ADAPTIVE-DIAMETER-SELECTION [COMPUTATION_ONLY]
+
+NS-PURE-SWIRL-COMMON-LEVEL-CELL-SELECTION
+  -- cellule j à rapport quadratique
+  -- sélection adaptative one-cell
+       --> K_beta/K_global>=c q_global^3
+       --> q_beta>=c q_global^4
+       --> diam_z/R_j<=C q_global^-6
+  -- NS-PURE-SWIRL-LIPSCHITZ-DIRECTION-GATE
+       --> oscillation locale positive pour q_global minoré.
+```
+
+Arêtes adverses :
+
+```text
+bon parent -> bon descendant à un autre niveau : réfuté;
+merge tree + persistences + endpoints -> coercivité uniforme : réfuté;
+barcode H0 long -> marge col-cutoff : réfuté;
+coaire moyenne -> niveau et composante au même niveau : dérivation auditée;
+restriction d'un curl unique -> H_beta<=H : valide;
+curls intercellulaires superposés -> même monotonie : manquante;
+bloc statique -> rayon pré-singulier R(t)->0 : manquante.
+```
+
+Priorité : `GAP-OVERLAPPING-CURL-CANCELLATION`. Construire deux cellules
+pure-swirl à supports de vitesse identifiables mais curls superposés avec
+annulation critique, ou prouver un registre de multiplicité/signature qui
+conserve une cellule sélectionnable. La pression et la dynamique restent le
+verrou suivant, pas une conséquence de la fermeture statique.

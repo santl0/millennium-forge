@@ -1055,3 +1055,52 @@ Le corpus atteint 167 sources. Le verrou devient
 `GAP-BRIDGE-SCALE-CALIBRATION-OR-MERGE-TREE` : calibrer localement la branche
 sélectionnée ou trouver un niveau qui la scinde en morceaux de diamètre
 `O(R)` sans perdre le rapport endpoint.
+
+## Cycle 0038 — sélection adaptative d'une composante de diamètre contrôlé
+
+L'héritage du rapport endpoint le long d'une retroncature est faux : deux
+quasi-normes diminuent sous restriction sans que leur quotient soit monotone.
+Un arbre dyadique exact pousse cette perte à profondeur arbitraire. Il réfute
+le bookkeeping merge-tree seul, mais ne se réalise pas comme curl pure-swirl
+compact parce que ses feuilles violent le coût coaire de fermeture.
+
+La réparation ne parcourt aucun arbre. Dans une cellule annulaire
+`U=(R/r)F e_theta`, un niveau faible-`L3` presque optimal `lambda` vérifie
+
+```text
+lambda R >= K^2/(432H),
+K=||U||_(L^(3,infinity)), H=||curl U||_(L^(3/2,infinity)).
+```
+
+La preuve combine le volume des cores `{+/-F>lambda/2}`, la largeur radiale
+`R`, `P_2>=2 diam_z`, la coaire cylindrique exacte et l'inclusion de la bande
+dans `{|U|>lambda/6}`. Une moyenne sur
+`(lambda/4,3lambda/8)` fournit ensuite un niveau régulier où la somme des
+diamètres actifs est bornée. La sélection endpoint refaite parmi les
+composantes de ce même niveau donne
+
+```text
+diam_z(C_beta)/R <= 2 239 488 (H/K)^3,
+K_beta >= (C_I/20 736)K^2/H,
+K_beta/H_beta >= (C_I/20 736)(K/H)^2.
+```
+
+Composé avec le cycle 0035, ce résultat produit dans une famille à supports
+complets disjoints une troncature avec
+`K_beta/K_global>=c q_global^3`, `q_beta>=c q_global^4` et
+`diam/R_j<=C q_global^-6`. Le gate directionnel statique s'applique donc sans
+hypothèse de diamètre additionnelle. Le claim reste `COMPUTATION_ONLY` : trois
+audits IA et 21 756 assertions rationnelles cumulées ne constituent ni une
+preuve publiée, ni une certification du continuum, ni une évolution PDE.
+
+La veille ajoute quatre sources sur stabilité de la persistance, métriques de
+merge trees, graphes de Reeb et une application Navier–Stokes 2D. Elles
+confirment qu'un arbre PL devient robuste seulement avec une erreur uniforme
+certifiée et des labels spatiaux; une longue barre H0 ne minore pas la marge
+`col-cutoff`. Aucune arête nouvelle vers Clay n'en résulte.
+
+Le corpus atteint 171 sources. Le verrou statique suivant est
+`GAP-OVERLAPPING-CURL-CANCELLATION` : lorsque les curls de plusieurs cellules
+se recouvrent, `H_beta<=H_global` peut échouer par annulation avant la valeur
+absolue. Au-delà restent projection de Leray, pression, diffusion, stretching,
+sélection d'un rayon `R(t)->0` et scénarios Type II.
