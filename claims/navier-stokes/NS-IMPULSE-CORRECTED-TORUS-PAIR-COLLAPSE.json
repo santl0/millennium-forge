@@ -1,0 +1,45 @@
+{
+  "id": "NS-IMPULSE-CORRECTED-TORUS-PAIR-COLLAPSE",
+  "problem": "navier-stokes",
+  "statement": "Sur R^3, deux copies translatées transversalement et de signes opposés du tore mince du cycle 0028 annulent exactement leur impulsion hydrodynamique, gardent des normes forte et faible L^(3/2) de vorticité non dégénérées et une extension statique de direction uniformément log-BMO, mais leur vitesse vérifie c(h_n/R_n)<=||u_n||_3^3<=C[h_n/R_n+(h_n/R_n)^2] et tend vers zéro; un multipôle d'ordre suivant reste non nul et la vitesse n'est pas de Schwartz. La périodisation donne la même obstruction critique sur T^3, où l'impulsion n'est pas utilisée comme invariant intrinsèque.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "n>=4, R_n=2^-n, q_n=2^-2n, h_n=2^-n^2, a_n=3R_n et A_n=(R_n h_n^2)^(-2/3)",
+    "les deux vorticités sont des copies lisses d'un même profil toroïdal fixe égal à un sur un demi-coeur, centrées sur deux axes parallèles translatés de plus ou moins a_n e_1 et multipliées par plus ou moins un",
+    "les tubes actifs et les corridors logarithmiques sont disjoints et contenus dans une boule d'injectivité dans le cas périodique",
+    "chaque copie est divergence-free, de moyenne vectorielle nulle et possède une impulsion non nulle parallèle à e_3",
+    "les extensions de plus e_theta et moins e_theta tournent séparément vers le même fond e_3 dans les corridors nuls",
+    "la vitesse est la reconstruction de Biot-Savart décroissante sur R^3 ou la reconstruction périodique de moyenne nulle sur T^3",
+    "les constantes tubulaires, de profil et de réduction all-ball sont uniformes en n"
+  ],
+  "dependencies": [
+    "NS-TOROIDAL-LOG-BMO-VELOCITY-COLLAPSE"
+  ],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0029-moment-corrected-tori.md"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/moment-corrected-tori/moment_corrected_tori_audit.py, 1842 contrôles rationnels exacts",
+      "sha256": "527be8971f4bc5e2d7f22a3fb18a3d626b12cecc7f5dc71e39d40488b4a4a70c"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "l'annulation du premier moment, la séparation des interfaces et la rupture de l'axisymétrie globale ne suffisent pas à empêcher l'effondrement de la vitesse critique"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0029-moment-corrected-tori"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Passes Codex analyse, contre-modèle et littérature; aucune revue externe indépendante",
+    "notes": "La passe analytique confirme la queue t^-4, la réduction all-ball, la rupture d'axisymétrie commune et l'équivalent L3 bilatéral par Stokes. Le résultat est statique. Pour la paire coaxiale signée, la diffusion crée à temps positif une interface directionnelle de moyenne nulle et oscillation un sur le plan de symétrie; cela ne transfère pas automatiquement à la paire transversale. Kato est invoqué seulement sur R3; le raccord périodique de petite donnée reste à sourcer avec constantes."
+  }
+}
