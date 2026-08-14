@@ -1510,3 +1510,37 @@ cellule reste donc `NOT_PROVIDED`.
   `527be8971f4bc5e2d7f22a3fb18a3d626b12cecc7f5dc71e39d40488b4a4a70c`.
 - Limites : l'équivalent `L^3`, la queue multipolaire et le BMO all-ball sont
   analytiques, non interval-certified; aucune dynamique n'est calculée.
+
+## `MANY-TORUS-POROSITY-GATE-1` — cardinal croissant localement packé
+
+- Question falsifiable : un nombre `N_n->infinity` de tubes minces peut-il
+  vaincre l'effondrement `L^3` lorsque les corridors log-BMO restent disjoints
+  et localement packés ?
+- Équation simulée : aucune évolution; reconstruction instantanée de
+  Biot–Savart sur `R^3`, avec reste lisse séparé pour `T^3`.
+- Échelles exactes :
+
+  ```text
+  ell_n=2^(-3n), q_n=2^(-9n), h_n=2^(-12n),
+  N_n=2^(12n-12), A_n^3 S_n^2=1.
+  ```
+
+- Résultat adverse : `N_n h_n/ell_n=2^(3n-12)` diverge, mais la borne
+  collective donne les cubes `2^(-21n+12)` (proche), `2^(-4n)` (lointain) et
+  `2^(-15n-12)` (reste périodique), tous convergents vers zéro.
+- Discrétisation : aucune grille, aucun flottant, aucune graine; arithmétique
+  `fractions.Fraction` et 776 contrôles dyadiques exacts.
+- Commande :
+
+  ```text
+  python -B experiments/navier-stokes/many-torus-porosity/many_torus_porosity_audit.py
+  ```
+
+- Environnement : Python 3.13.14, bibliothèque standard uniquement.
+- Résidu certifié : zéro échec; toutes les identités dyadiques vérifiées sont
+  exactes. Empreinte :
+  `821c0e7e442698397c5d426fefca42ca12e5949f904e3ce243d3277377ecbbae`.
+- Limites : constantes tubulaires et all-ball non interval-certified;
+  paramètres hétérogènes, pression, stretching, temps positif et passage
+  calcul-continuum non traités. La réalisation coaxiale est axisymétrique sans
+  swirl.

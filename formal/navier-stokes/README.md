@@ -796,3 +796,26 @@ Ce module certifierait une obstruction elliptique pour des données initiales,
 pas une solution de Navier–Stokes. Une voie alternative pour le raccord
 Schwartz est de partir d'un `u` compact divergence-free puis de poser
 `W=curl u`, au lieu d'annuler les multipôles un à un.
+
+## Backlog issu du cycle 0030 — potentiel poreux et stacking compact
+
+Le noyau analytique est modulaire mais dépasse encore la bibliothèque locale :
+
+1. formaliser la fonction de distribution d'un profil commun sur des supports
+   disjoints et `K^3=kappa_b^3 A^3 mathcal L^2h^4`;
+2. encoder le packing local des axes et son passage au volume actif
+   `mu(B_r)<=D r^3`, `D=C A(h/q)^2` pour `r>=q`;
+3. formaliser la sommation dyadique tronquée
+   `I_1^far mu<=C D^(2/3)M^(1/3)` avec les cas `r_0>=q` et `r_0<q`;
+4. importer HLS `I_1:L^(6/5)(R^3)->L^2(R^3)` avant de certifier l'exposant
+   `(h/q)^(4/3)`;
+5. isoler le reste périodique lisse `||H*W||_3^3<=CK^3S` et le mode zéro;
+6. formaliser séparément le stacking compact : scaling des normes, supports
+   disjoints, queue super-géométrique de la fonction de distribution et
+   identité de Hodge `BS[curl u]=u`.
+
+La première cible raisonnable est le lemme dyadique de Hedberg tronqué, qui
+ne dépend ni des coordonnées tubulaires ni de Navier–Stokes. La minoration par
+Stokes et la réduction all-ball restent des modules distincts. Aucun de ces
+objets ne certifierait la propagation de la direction, une solution en temps
+ou une résolution Clay.

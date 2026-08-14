@@ -170,3 +170,28 @@ un cardinal croissant doit surmonter simultanément la normalisation
 faible-Lorentz, le packing, les annulations de moments et la cohérence non
 locale des vitesses. Une seconde voie part directement d'une vitesse compacte
 divergence-free pour imposer Schwartz avant d'auditer sa vorticité.
+
+Le cycle 0030 ferme également la branche homogène à cardinal croissant sous
+packing local. La décomposition proche/lointaine donne sur `R^3`
+
+```text
+||BS[omega]||_3^3
+ <= C K^3[h/mathcal L+(h/q)^(4/3)],
+```
+
+et ajoute `CK^3S` sur `T^3`. La famille dyadique à cardinal explosif fait
+diverger la somme triangulaire mais tous ces termes tendent vers zéro. Le
+résultat reste statique, à paramètres communs, et `COMPUTATION_ONLY`.
+
+La voie compacte est immédiatement resserrée. Des copies super-géométriques
+de vitesses compactes divergence-free vérifient exactement
+`BS[curl U_N]=U_N`; elles peuvent garder `L^3` fort non nul tout en devenant
+petites dans faible-`L^3`, ou garder les deux endpoints faibles bornés sans
+contrôler la direction. Toute oscillation active du bloc est amplifiée par le
+poids `|log r_j|` et le temps diffusif tend vers zéro.
+
+Après trois stratégies tubulaires réellement différentes, la branche des
+tores homogènes est abandonnée. Le verrou actif est
+`GAP-COMPACT-VELOCITY-WEAK-CRITICAL-DIRECTION` : construire ou exclure un curl
+compact intérieurement plat, hors petite donnée faible-`L^3`, avec temps
+d'interaction uniforme. Le corpus primaire compte désormais 127 sources.

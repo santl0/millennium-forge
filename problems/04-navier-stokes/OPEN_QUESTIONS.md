@@ -197,3 +197,23 @@ quasi-norme critique ou force encore `||u||_3->0`.
 Abandonner les tores disjoints si packing et faible-Lorentz forcent
 `||sum_j u_j||_3->0`, ou si le seul régime non petit exige des corridors qui
 se chevauchent et recréent une interface directionnelle d'ordre un.
+
+## Priorité active après le cycle 0030
+
+1. **`GAP-COMPACT-VELOCITY-WEAK-CRITICAL-DIRECTION`.** Construire ou exclure
+   une famille `U_n in C_c^infinity(R^3)`, divergence-free, avec
+   `curl U_n` borné dans faible-`L^(3/2)`, `U_n` hors du régime de petite donnée
+   faible-`L^3`, et direction active uniformément log-BMO. Le premier test doit
+   porter sur une boule entièrement active, pas sur le seul domaine parent.
+2. **Ledger hétérogène.** Formuler une condition Morrey–Carleson pondérée pour
+   des `A_j,h_j,q_j` variables. Abandonner si l'optimiseur se concentre sur un
+   nombre borné de blocs ou si le corridor BMO impose une somme Carleson qui
+   force encore `||u||_3->0`.
+3. **Temps commun.** Pour toute famille passant les deux gates statiques,
+   comparer le temps d'interaction à `r_min^2/nu`; une dynamique qui se découple
+   avant un temps uniforme ne raccorde pas un scénario de blow-up.
+
+Trois variantes réellement distinctes du tube homogène sont fermées : tore
+unique, cardinal fixé avec moments, cardinal croissant sous packing local. Ne
+pas rouvrir cette branche sans hétérogénéité quantitative ou chevauchement
+géométrique explicitement compatible avec le log-BMO all-ball.

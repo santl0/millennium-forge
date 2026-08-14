@@ -616,3 +616,25 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   `527be8971f4bc5e2d7f22a3fb18a3d626b12cecc7f5dc71e39d40488b4a4a70c`.
 - Pivot : `GAP-MANY-TORUS-CRITICAL-ACCUMULATION`; auditer d'abord le budget
   combiné faible-Lorentz, packing, cohérence de vitesse et moments.
+
+## 2026-08-14 — Porosité tubulaire et endpoints compacts
+
+- Objet : vorticités lisses statiques sur `R^3` ou `T^3`; aucune évolution.
+- Packing : `length(Gamma intersection B_r)<=C r^3/q^2` pour tout `r>=q`.
+- Partie proche : `||u_loc||_3^3<=CK^3h/mathcal L`.
+- Partie lointaine : `D=A(h/q)^2`, puis Hedberg, HLS et interpolation donnent
+  `||u_far||_3^3<=CK^3(h/q)^(4/3)`.
+- Reste périodique : `CK^3S`; la conclusion exige `S->0` en plus des deux
+  rapports de forme.
+- Test exact : `N_n=2^(12n-12)`, somme triangulaire `2^(3n-12)->infinity`,
+  mais termes cubes `2^(-21n+12)`, `2^(-4n)` et `2^(-15n-12)`.
+- Contre-profil compact : les supports de vitesse disjoints séparent norme
+  forte et quasi-normes faibles; la compacité ne force aucun collapse fort.
+- Perte restante : la remise à l'échelle reproduit toute oscillation interne
+  de direction et la pondère par `|log r_j|`; la diffusion agit au temps
+  `r_j^2/nu`.
+- Artefact : `MANY-TORUS-POROSITY-GATE-1`, 776 contrôles rationnels exacts,
+  zéro échec, empreinte
+  `821c0e7e442698397c5d426fefca42ca12e5949f904e3ce243d3277377ecbbae`.
+- Pivot : branche tubulaire homogène abandonnée;
+  `GAP-COMPACT-VELOCITY-WEAK-CRITICAL-DIRECTION` devient actif.

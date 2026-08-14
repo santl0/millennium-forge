@@ -278,3 +278,41 @@ uniforme en temps, et conserver explicitement `GAP-VORTICITY-TAIL`.
 Une arête ne passe à « classique et sourcée » qu'avec une source primaire et
 des hypothèses identiques. Une expérience finie reste « numérique » ou
 `COMPUTATION_ONLY` jusqu'à un raccord analytique certifié.
+
+## Cycle 0030 — arêtes poreuses et compactes
+
+```text
+NS-POROUS-MANY-TORUS-L3-COLLAPSE
+  -- classique/sourcé --> HLS I_1:L^(6/5)->L^2
+  -- hypothèse géométrique --> packing local length(B_r)<=P r^3/q^2
+  -- dérivation interne --> ||u||_3^3<=CK^3[h/mathcal L+(h/q)^(4/3)]
+  -- périodique conditionnel --> ajouter CK^3S
+  -- réfute --> N->infinity homogène restaure une vitesse critique
+  -- manque --> ledger Morrey–Carleson pour A_j,h_j,q_j variables.
+```
+
+```text
+NS-COMPACT-VELOCITY-ENDPOINT-SEPARATION
+  -- exact --> BS[curl U_N]=U_N pour U_N compact divergence-free
+  -- exact --> L3 fort se somme cubiquement sur supports disjoints
+  -- contre-profil --> faible-L3 et faible-L^(3/2) ne contrôlent pas L3 fort
+  -- petite donnée sourcée --> normalisation N^(-1/3) globalement régulière
+  -- obstacle --> oscillation interne de direction × |log r_N|
+  -- ouvre --> GAP-COMPACT-VELOCITY-WEAK-CRITICAL-DIRECTION.
+```
+
+Le raccord au problème Clay reste **manquant** : il faut simultanément un
+budget faible-`L^3` non perturbatif, une direction de vorticité intérieurement
+plate sur toutes les boules actives et un temps d'interaction uniforme. La
+compacité et les seules normes critiques ne les fournissent pas.
+
+## Priorité après le cycle 0030
+
+1. `GAP-COMPACT-VELOCITY-WEAK-CRITICAL-DIRECTION` — actif; isoler un bloc
+   compact dont l'oscillation active décroît comme `1/|log r|`, ou démontrer
+   que `integral curl U=0` impose une boule d'oscillation uniforme.
+2. Ledger tubulaire hétérogène — conditionnel; chercher une mesure de
+   Carleson pondérée compatible à la fois avec la distribution faible-Lorentz
+   et le packing des corridors.
+3. Propagation/diffusion — manquante; ne l'ouvrir qu'après un gate statique
+   non perturbatif, puis suivre `t_int/(r_min^2/nu)` et la pression non locale.

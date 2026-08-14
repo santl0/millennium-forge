@@ -216,3 +216,26 @@
   fermée, même après un nombre fini d'annulations de moments.
 - `GAP-MANY-TORUS-CRITICAL-ACCUMULATION` devient actif; l'alternative
   « vitesse compacte d'abord » est conservée comme second candidat.
+
+### 2026-08-14 — cardinal croissant homogène fermé, gate compact affiné
+
+- `NS-POROUS-MANY-TORUS-L3-COLLAPSE` est enregistré au statut
+  `COMPUTATION_ONLY` sous amplitude, coeur, corridor et packing local communs.
+- La borne collective est
+  `||u||_3^3<=CK^3[h/mathcal L+(h/q)^(4/3)]`; le cas périodique conserve le
+  terme supplémentaire `CK^3S` et exige `S->0`.
+- L'exposant `4/3`, la troncature à `q/2`, la normalisation faible-Lorentz et
+  le reste périodique ont subi des passes adversariales séparées. Les
+  constantes géométriques ne sont pas interval-certified.
+- `NS-COMPACT-VELOCITY-ENDPOINT-SEPARATION` réfute le gate « vitesse compacte,
+  vorticité faible critique bornée, `L^3` fort non nul » : les endpoints
+  faibles et la norme forte se séparent sur une cascade de supports disjoints.
+- Yamazaki ferme la variante normalisée par petite donnée faible-`L^3`; la
+  variante non normalisée échoue encore à la cohérence directionnelle interne.
+- Trois stratégies tubulaires homogènes sont maintenant fermées : tore unique,
+  moments à cardinal fixé, cardinal croissant localement packé. Cette branche
+  est abandonnée sans ledger hétérogène nouveau.
+- `GAP-COMPACT-VELOCITY-WEAK-CRITICAL-DIRECTION` devient actif. Le prochain
+  gate exige une direction active log-BMO uniforme, une norme faible-`L^3`
+  non perturbative et un temps d'interaction indépendant de la plus petite
+  échelle.

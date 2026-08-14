@@ -720,3 +720,45 @@ la classe sans swirl. Ils n'impliquent ni concentration en temps fini, ni
 uniformité à viscosité fixée. Pour une paire visqueuse coaxiale signée, la
 diffusion crée en outre une interface directionnelle d'oscillation un sur le
 plan de symétrie; ce rejet dynamique ne couvre pas la paire transversale.
+
+## Cycle 0030 — cardinal croissant poreux et séparation des endpoints
+
+Le régime de tores à paramètres communs est maintenant fermé même lorsque le
+cardinal diverge. Pour une amplitude commune `A`, un coeur `h`, un corridor
+`q`, une longueur totale `mathcal L` et un packing local
+`length(B_r)<=C r^3/q^2`, la décomposition de Biot–Savart donne
+
+```text
+||u||_3^3<=C K^3[h/mathcal L+(h/q)^(4/3)],
+K=||omega||_(L^(3/2,infinity))^*.
+```
+
+Le premier terme est le champ tubulaire proche. Le second utilise la densité
+de Morrey effective `D=A(h/q)^2`, Hedberg, HLS
+`I_1:L^(6/5)->L^2`, puis `||v||_3^3<=||v||_2^2||v||_infinity`.
+Sur le tore unité, le reste lisse du noyau ajoute `C K^3 S`, où
+`S~mathcal L h^2`; cette quantité doit tendre vers zéro. La famille exacte à
+`N_n=2^(12n-12)` fait diverger la somme triangulaire mais satisfait
+`||u_n||_3^3<=C[2^(-21n+12)+2^(-4n)+2^(-15n-12)]`.
+
+Le résultat est elliptique et `COMPUTATION_ONLY`. Il exige des paramètres
+communs et un packing local; une cascade hétérogène n'est pas couverte. La
+réalisation coaxiale est en outre axisymétrique sans swirl et aucune
+propagation log-BMO n'est démontrée.
+
+Le pivot naïf « vitesse compacte et norme forte `L^3` non petite » est réfuté
+dans le même cycle. Des copies compactes divergence-free à rayons
+super-géométriques vérifient exactement `BS[curl U_N]=U_N`. Normalisées par
+`N^(-1/3)`, elles gardent `||U_N||_3` constant tandis que leurs normes faibles
+critiques tendent vers zéro; sans normalisation, ces normes faibles restent
+bornées et `||U_N||_3^3` croît comme `N`. La direction interne d'un curl
+compact non nul reste toutefois oscillante et coûte `|log r_j|` après
+concentration.
+
+La veille ajoute Yamazaki pour la petite donnée faible-`L^3`, six sources
+2025–2026 sur anneaux et filaments, et Hedberg–Lieb–Adams pour les potentiels;
+le corpus atteint 127 entrées. Aucun résultat récent ne fournit une constante
+uniforme lorsque le nombre de filaments tend vers l'infini. Le verrou actif
+est `GAP-COMPACT-VELOCITY-WEAK-CRITICAL-DIRECTION` : aplatir la direction
+interne d'un curl compact multi-échelle sans tomber dans le régime faible-`L^3`
+petite donnée ni perdre le temps d'interaction visqueux.

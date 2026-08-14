@@ -1164,3 +1164,38 @@ La perte de `L^3` est locale et ne vient pas de l'impulsion. L'arête manquante
 est désormais une accumulation cohérente de vitesses sous faible-Lorentz et
 packing, avec `N_n->infinity`; annuler plus de moments à cardinal fixé est une
 branche fermée.
+
+## Cycle 0030 : collapse poreux et pivot directionnel compact
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| borne Biot–Savart poreuse pour `N_n->infinity` | 5 | 5 | 5 | 5 | **20** |
+| vitesse compacte divergence-free construite en amont | 5 | 4 | 5 | 5 | 19 |
+| simulation pseudospectrale d'un réseau cohérent | 4 | 2 | 4 | 4 | 14 |
+
+```text
+tubes homogènes localement packés
+  -- classique/sourcé --> HLS I_1:L^(6/5)->L^2
+  -- dérivation interne --> densité D=A(h/q)^2
+  -- Hedberg + interpolation --> ||u_far||_3^3<=CK^3(h/q)^(4/3)
+  -- potentiel tubulaire --> ||u_loc||_3^3<=CK^3 h/mathcal L
+  -- résultat négatif --> cardinal croissant uniforme ne restaure pas L^3
+  -- reste périodique --> +CK^3S, donc S->0 requis.
+```
+
+La voie compacte se décompose désormais exactement comme suit :
+
+```text
+u_j compact divergence-free
+  -- Hodge exact --> BS[curl u_j]=u_j
+  -- supports disjoints --> somme cubique forte L^3
+  -- rayons super-géométriques --> faibles L^3 et L^(3/2) bornés
+  -- réfute --> gate fondé seulement sur les normes critiques
+  -- boule active remise à l'échelle --> coût directionnel |log r_j|
+  -- ouvre --> GAP-COMPACT-VELOCITY-WEAK-CRITICAL-DIRECTION.
+```
+
+L'arête manquante n'est plus la compacité de la vitesse mais l'existence d'un
+bloc dont le curl devient intérieurement plat à chaque échelle, tout en
+conservant un budget faible-`L^3` non perturbatif et un temps d'interaction
+indépendant de la plus petite échelle.

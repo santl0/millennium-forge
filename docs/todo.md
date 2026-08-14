@@ -63,10 +63,17 @@
 - [x] Tester une paire de tores signés à impulsions opposées : impulsion,
   criticité et log-BMO conservés, axisymétrie brisée, mais
   `||u||_3^3~h/R->0` et queue `|x|^-4`; cardinal fixé abandonné.
-- [ ] Auditer `N_n->infinity` : normalisation des amplitudes, packing des
+- [x] Auditer `N_n->infinity` : normalisation des amplitudes, packing des
   corridors, moments signés et termes croisés de la vitesse `L^3`.
-- [ ] Tester en parallèle un ansatz de vitesse compacte divergence-free dont
-  la vorticité satisfait faible-`L^(3/2)` et log-BMO.
+- [x] Tester en parallèle un ansatz de vitesse compacte divergence-free dont
+  la vorticité satisfait faible-`L^(3/2)` et log-BMO : le stacking passe les
+  normes critiques mais échoue au log-BMO interne; gate fonctionnel réfuté.
+- [ ] Construire ou exclure un bloc compact divergence-free dont le curl a une
+  oscillation active `O(1/|log r|)`, sans petitesse faible-`L^3`.
+- [ ] Formuler un ledger Morrey–Carleson pour des tubes hétérogènes
+  `A_j,h_j,q_j`; tester si le budget faible-Lorentz force le collapse.
+- [ ] Si un gate statique survit, obtenir un temps d'interaction uniforme face
+  au temps diffusif `r_min^2/nu` et recalculer la pression de Leray.
 - [ ] Quantifier une formulation pré-singulière cohérente par rayon de cœur
   `r_c(t)` ou convergence de profils remis à l'échelle.
 - [ ] Formaliser le lemme scalaire de séparation de phases

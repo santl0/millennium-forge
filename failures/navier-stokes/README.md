@@ -1222,6 +1222,56 @@ rapport d'aspect reste une constante auxiliaire à suivre.
   le corridor nul peut rester transporté à temps fini.
 - Statut : propagation coaxiale signée `REFUTED`.
 
+## `FAIL-NS-0060` — Somme triangulaire prise pour cohérence critique
+
+- Date : 2026-08-14.
+- Cadre : `N_n=2^(12n-12)` tores coaxiaux de mêmes paramètres, corridors
+  disjoints et packing local uniforme.
+- Cible : utiliser `N_n h_n/ell_n->infinity` comme indice d'une norme `L^3`
+  collective non dégénérée.
+- Attaque : décomposition proche/lointaine collective avec la mesure
+  `|omega|dx`, Hedberg, HLS et interpolation.
+- Résultat : le cube de la norme est au plus
+  `C[2^(-21n+12)+2^(-4n)+2^(-15n-12)]`; la cohérence de signes est déjà
+  couverte par les valeurs absolues.
+- Statut : inférence triangulaire `REFUTED` dans la classe homogène packée.
+
+## `FAIL-NS-0061` — Cardinal croissant homogène supposé restaurer `L^3`
+
+- Date : 2026-08-14.
+- Cadre : amplitude, coeur `h`, corridor `q` communs, longueur totale
+  `mathcal L`, packing local `r^3/q^2`.
+- Cible : dépasser le collapse des cycles 0028–0029 par `N->infinity`.
+- Résultat :
+
+  ```text
+  ||BS[omega]||_3^3<=CK^3[h/mathcal L+(h/q)^(4/3)]
+  ```
+
+  et, sur `T^3`, `+CK^3S`. Sous les limites suivies, tous les termes tendent
+  vers zéro.
+- Portée : amplitudes/rayons hétérogènes et défaut de packing local non
+  couverts.
+- Statut : troisième stratégie tubulaire homogène `REFUTED`; branche
+  abandonnée conformément à la règle de pivot.
+
+## `FAIL-NS-0062` — Vitesse compacte et `L^3` fort non nul pris pour gate
+
+- Date : 2026-08-14.
+- Cadre : copies compactes divergence-free à rayons super-géométriques;
+  `W_N=curl U_N` et `BS[W_N]=U_N` exactement.
+- Cible : considérer « vitesse compacte, vorticité faible critique bornée,
+  norme forte `L^3` non nulle » comme un profil potentiellement non
+  perturbatif.
+- Attaque : coefficient `N^(-1/3)` et calcul exact des distributions.
+- Résultat : `||U_N||_3` reste constant mais les normes faibles de `U_N` et
+  `W_N` tendent comme `N^(-1/3)`; Yamazaki place la donnée dans le régime
+  global de petite donnée. Sans ce coefficient, les normes faibles restent
+  bornées mais l'oscillation directionnelle interne diverge après pondération
+  logarithmique.
+- Statut : gate fonctionnel `REFUTED`; le verrou actif inclut désormais la
+  direction active et le temps d'interaction.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,
