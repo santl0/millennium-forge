@@ -1198,3 +1198,47 @@ cellule reste donc `NOT_PROVIDED`.
   `95bbb128522b9c90437c05903ab86dd4f7cfc42f687218993ee9324ece5a0f85`.
 - Limite : aucune exclusion des directions seulement asymptotiques ou
   rectifiées logarithmiquement, et aucune trajectoire de blow-up Clay.
+
+## `LOG-RECTIFIED-PROFILE-1` — budget du premier harmonique sphérique
+
+- Question falsifiable : un profil `W=r^-2 Omega(log(R*/r),theta)` peut-il
+  rester solénoïdal, conserver une masse critique non dégénérée par coquille
+  et rectifier sa direction vers un axe fixe au taux `O(1/|log r|)` ?
+- Équation : porte cinématique `div W=0` nécessaire à NS incompressible 3D
+  non forcé sur `R³`, `nu>0`; aucune trajectoire PDE n'est simulée.
+- Discrétisation : aucune grille. Les polynômes en `s`, constantes de calottes,
+  budgets de moment et contrôles d'échelle utilisent exclusivement
+  `fractions.Fraction`; aucune graine ni flottant.
+- Résultat : si `0<=Phi<=M`, si chaque bloc logarithmique de longueur `L`
+  porte une masse moyenne `Phi^(3/2)` au moins `kappa`, et si la direction se
+  rectifie vers `e` en moyenne pondérée, le moment de degré un perd au moins
+  `kappa²/(3M²L)` par bloc alors que sa plage totale vaut au plus `M`.
+- Test quantitatif : `M=2`, `kappa=1/2`, `L=3`, `delta*=1/864`; le 289e bloc
+  forcerait une baisse `289/144>2`. Les résidus d'identité sont exactement
+  nuls.
+- Contre-profils : des calottes de mesure `2^(-3n)` et amplitude `2^(2n)`
+  gardent leur masse critique mais détruisent la coercivité si la borne
+  `L∞` angulaire est retirée. Le champ constant est solénoïdal mais perd la
+  masse critique.
+- Construction tranchante :
+
+  ```text
+  W=(s²-s)e+s(e dot theta)theta,
+  u=(s²/2)e cross x
+  ```
+
+  est divergence-free, vérifie `curl u=W` et rectifie sa direction comme
+  `1/s`, mais son facteur critique vaut `e^(-2s)s²` et dégénère. Le calcul
+  certifie aussi `Delta W=r^-2[3e-(1+6s)mu theta]` et une non-linéarité
+  `s³mu e cross theta`, donc pas de profil stationnaire NS.
+- Commande :
+
+  ```text
+  python -B experiments/navier-stokes/log-rectified-profile/log_rectified_profile_audit.py
+  ```
+
+- Résidus : 62 contrôles, `assertion_failure_count=0`. Empreinte :
+  `e5c24374ab40c7d52d12ddbd8c96e7aedee51a3c6b35154b90142c6c12781efe`.
+- Limites : l'hypothèse faible-`L^(3/2)` globale seule ne donne pas la masse
+  par coquille ni la borne de trace. Aucun calcul de pression, coupure
+  corrigée, évolution temporelle ou raccord Clay n'est fourni.

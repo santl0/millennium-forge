@@ -1,0 +1,42 @@
+{
+  "id": "NS-LOG-RECTIFIED-SOLENOIDAL-OBSTRUCTION",
+  "problem": "navier-stokes",
+  "statement": "Un profil W=r^-2 Omega(log(R*/r),theta) divergence-free dans une boule ponctuée ne peut avoir simultanément une amplitude Phi=|Omega| uniformément bornée, une masse L^(3/2) non dégénérée sur chaque bloc logarithmique et une direction qui se rectifie, en moyenne pondérée par Phi, vers un vecteur fixe.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "R³ sans frontière; le profil est spatial et ne constitue pas à lui seul une solution de Navier-Stokes",
+    "Omega appartient localement à W^(1,1) en (s,theta), s=log(R*/r), et W=r^-2 Omega est divergence-free dans la boule ponctuée",
+    "Phi=|Omega| vérifie 0<=Phi<=M pour une constante M finie indépendante de s",
+    "il existe L,kappa>0 tels que l'intégrale de la moyenne sphérique de Phi^(3/2) sur tout bloc [S,S+L] soit au moins kappa",
+    "pour un vecteur unitaire fixe e, l'intégrale sur [S,S+L] de la moyenne sphérique de Phi|xi-e| tend vers zéro, avec xi=Omega/Phi sur {Phi>0}",
+    "la rectification uniforme xi=e+O(1/s) est un cas particulier; la seule appartenance à bmo_(1/|log r|) n'est pas suffisante"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0022-log-rectified-profile.md et docs/reports/navier-stokes/reviews/cycle-0022-analysis.md"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/cycle-0022-log-rectified-profile.md: calottes intermittentes montrant la nécessité de la borne uniforme, et champ constant montrant la nécessité de la masse par coquille"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/log-rectified-profile/log_rectified_profile_audit.py, 62 contrôles rationnels exacts",
+      "sha256": "e5c24374ab40c7d52d12ddbd8c96e7aedee51a3c6b35154b90142c6c12781efe"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0022-log-rectified-profile"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois passes Codex séparées, même famille de modèle; non indépendantes au sens externe",
+    "notes": "La preuve utilise le premier harmonique sphérique, une minoration exacte par calottes et un budget de moment borné. Elle n'est ni publiée, ni formalisée, ni revue extérieurement; les amplitudes angulairement non bornées et la seule hypothèse faible-Lorentz restent hors champ."
+  }
+}

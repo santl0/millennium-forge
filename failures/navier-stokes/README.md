@@ -747,6 +747,69 @@ Décision de pivot : suspendre l'ansatz vectoriel exactement homogène ou
 log-périodique. Le prochain test porte sur une direction rectifiée seulement
 à la vitesse `1/|log r|`, avec masse critique et résidu PDE suivis.
 
+## `FAIL-NS-0033` — Rectification fixe d'une masse critique bornée
+
+- Date : 2026-08-14.
+- Cadre : profil spatial
+  `W=r^-2 Omega(log(R*/r),theta)` dans une boule ponctuée, raccord visé à NS
+  incompressible 3D non forcé.
+- Cible : sauver une magnitude critique bornée et non dégénérée par coquille
+  en choisissant une direction `xi=e+O(1/|log r|)` non récurrente.
+- Obstruction : le signe exact est
+  `div W=r^-3[div_S Omega_T-partial_s Omega_r]`. Le premier harmonique
+  `mu=e dot theta` donne un moment `J` dans `[-M/2,M/2]`, mais la masse de
+  coquille et la rectification le forcent à perdre au moins
+  `kappa²/(3M²L)` par bloc logarithmique.
+- Résidu : 62 contrôles rationnels exacts passent; résidus des identités de
+  divergence, calottes et budget nuls.
+- Portée : exige `Phi<=M`, une minoration critique par bloc et un axe fixe;
+  faible-`L^(3/2)` global ou log-BMO seuls ne donnent pas ces prémisses.
+- Statut : `NS-LOG-RECTIFIED-SOLENOIDAL-OBSTRUCTION`, `COMPUTATION_ONLY`.
+
+## `FAIL-NS-0034` — Masse critique seule vers coercivité angulaire
+
+- Date : 2026-08-14.
+- Cadre : facteurs angulaires scalaires sur `S²`; aucune PDE simulée.
+- Cible : déduire une minoration uniforme du moment transverse
+  `<Phi[1-(e dot theta)²]>` de la seule masse `<Phi^(3/2)>`.
+- Contre-profil exact : sur deux calottes de mesure normalisée
+  `a_n=2^(-3n)`, prendre `Phi_n=2^(2n)`. Alors
+  `<Phi_n^(3/2)>=1`, mais le moment vaut
+  `2^(-4n)-(1/3)2^(-7n)` et tend vers zéro.
+- Réparation : conserver une borne de trace `Phi<=M`, ou contrôler
+  quantitativement l'intermittence et la fraction angulaire.
+- Portée : la suite n'est pas une vorticité solénoïdale; elle réfute
+  l'inégalité coercive sans borne `L∞`, pas l'existence d'un profil PDE.
+
+## `FAIL-NS-0035` — Rectification logarithmique impossible sans
+non-dégénérescence
+
+- Date : 2026-08-14.
+- Cadre : champ spatial dans une boule ponctuée, sans évolution temporelle.
+- Cible : conclure de la seule direction `xi=e+O(1/s)` qu'aucun raccord
+  div–curl n'existe.
+- Contrechamp exact, avec `s=log(1/r)` et `mu=e dot theta` :
+
+  ```text
+  W=(s²-s)e+s mu theta,
+  u=(s²/2)e cross x.
+  ```
+
+  Il vérifie `div u=0`, `curl u=W`, `div W=0` et la rectification `O(1/s)`.
+  Son facteur critique dégénère toutefois comme `Phi~e^-2s s²`.
+- Résidu stationnaire :
+  `Delta W=r^-2[3e-(1+6s)mu theta]`, tandis que le terme non linéaire de
+  vorticité vaut `s³mu e cross theta`; ils sont orthogonaux et ne s'annulent
+  pas.
+- Portée : réfute l'interdiction de la rectification seule, mais ne fournit
+  ni singularité critique, ni solution stationnaire, ni blow-up Clay.
+
+Décision de pivot : la rectification vers un axe fixe est fermée sous les
+hypothèses critiques suivies, et sa version uniforme espace-temps tombe aussi
+dans le double cône de Lei–Ren–Tian v1. Le verrou actif devient
+`GAP-WANDERING-AXIS-PROFILE`, où l'axe ou les cœurs doivent échapper à tout
+cône fixe.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,
