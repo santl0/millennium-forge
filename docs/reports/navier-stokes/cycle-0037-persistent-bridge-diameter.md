@@ -1,7 +1,7 @@
 # Cycle 0037 — Diamètre d'une branche de superniveaux persistante
 
-Date : 2026-08-15  
-Statut : `AI_INTERNAL_DERIVATION`, à conserver `COMPUTATION_ONLY`  
+Date : 2026-08-15
+Statut : `AI_INTERNAL_DERIVATION`, à conserver `COMPUTATION_ONLY`
 Portée : obstruction cinématique statique dans une sous-classe pure-swirl;
 aucune évolution Navier–Stokes n'est construite.
 

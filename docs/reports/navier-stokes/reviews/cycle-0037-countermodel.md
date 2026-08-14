@@ -1,7 +1,7 @@
 # Cycle 0037 — Pont mince persistant entre deux gouttes pure-swirl
 
-Date : 2026-08-15  
-Statut : calcul exact sur squelette lipschitzien, stable par lissage \(C_c^\infty\)  
+Date : 2026-08-15
+Statut : calcul exact sur squelette lipschitzien, stable par lissage \(C_c^\infty\)
 Portée : donnée initiale cinématique sur \(\mathbb R^3\), pas de solution évolutive Navier–Stokes
 
 ## Verdict

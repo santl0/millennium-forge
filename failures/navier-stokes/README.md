@@ -1490,7 +1490,7 @@ claim éventuellement supersédé.
   `K_u/K_w<=C/L`.
 - Certificat : 5 197 contrôles rationnels principaux et 240 contrôles
   indépendants, résidus exacts nuls; empreintes `d4be10a24de48f196a64515b1f1fc9916c51b51332244f50e443cefc326be946`
-  et `377e7ccbe9522686ee42b6b462e6668eb6fc456bfa8cfd2bdf854ab47d872fdd`.
+  et `e569e045f92a5da2841eb235524cf58dd98676ac0bc75afacd7476e77e5048c2`.
 - Statut : `REFUTED` dans cette classe; seul un pont dont l'excès relatif
   tend vers zéro peut échapper au coût du curl **tronqué**, jamais à celui du
   curl original.
