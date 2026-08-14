@@ -146,7 +146,7 @@ Il est incorrect de remplacer la seconde arête par « les profils self-similair
 | [Wang–Yang, arXiv:2608.06040v1](https://arxiv.org/abs/2608.06040) (`0046`) | prépublication, 2026-08-06 | Liouville pour des `D`-solutions stationnaires sous enveloppes cylindriques critiques avec gain logarithmique | stationnarité, Dirichlet fini et décroissance ne sont pas hérités par une limite ancienne générale |
 | [Lei–Ren–Tian, arXiv:2501.08976v1](https://arxiv.org/abs/2501.08976) (`0061`) | prépublication, 2025-01-15 | critère local pour solution faible adaptée : confinement de la forte vorticité dans un double cône fixe implique la régularité intérieure | hypothèse conditionnelle uniforme dans un cylindre; aucune loi générale ne produit le cône et aucun signe ponctuel n'est obtenu |
 | [Yu, arXiv:2606.27560v1](https://arxiv.org/abs/2606.27560) (`0062`) | prépublication, 2026-06-25 | absorption du stretching filtré proche avec perte explicite `(r/ell)^5`, plus budgets de queue, packing, commutateur et localisation | uniforme seulement à rapport `ell/r` fixé; aucun passage uniforme filtre→continuum ni contrôle de la queue lointaine |
-| [Grujić, arXiv:2607.08866v2](https://arxiv.org/abs/2607.08866) (`0059`) | prépublication, révisée le 2026-07-13 | revendique l'exclusion d'une singularité ponctuelle critique sous `omega∈L∞L^{3/2,infinity}` et `xi∈L∞bmo_{1/|log r|}` | profil, modules et concentration critiques supplémentaires; quatre raccords non reproduits, notamment queue BMO et sparseness linéaire uniforme |
+| [Grujić, arXiv:2607.08866v2](https://arxiv.org/abs/2607.08866) (`0059`) | prépublication, révisée le 2026-07-13 | revendique l'exclusion d'une singularité ponctuelle critique sous `omega∈L∞L^{3/2,infinity}` et `xi∈L∞bmo_{1/|log r|}` | profil, modules et concentration critiques supplémentaires; la réduction 3D→1D est fermée au cycle 0014, mais inversion, transfert vorticité–vitesse et queue BMO restent non reproduits |
 | [Binz–Coiculescu, arXiv:2607.12159v1](https://arxiv.org/abs/2607.12159) (`0047`) | prépublication, 2026-07-13 | exclusion de profils homothétiques forward dans certaines classes de Morrey/régularité angulaire | profil forward à donnée homogène singulière; **pas un profil backward de blow-up Clay** |
 | [Seregin, arXiv:2507.08733v2](https://arxiv.org/abs/2507.08733) (`0048`) | prépublication, révisée le 2026-01-03 | autres scénarios Type II conditionnels donnant des anciennes Euler dissipatives non triviales et exclusions de sous-classes | aucune réduction de tout blow-up Clay ni Liouville Euler ancien général |
 | [Escauriaza–Seregin–Šverák 2003](https://doi.org/10.1007/s00205-003-0263-8) (`0049`) | article publié, *Arch. Rational Mech. Anal.* 169(2), 147–157 | unicité rétrograde pour une inégalité parabolique avec termes d'ordre inférieur bornés et croissance gaussienne | outil de vorticité conditionnel; ne crée ni trace nulle ni bornes de coefficients |
@@ -280,3 +280,20 @@ bibliographique pivote vers la stabilité sous désingularisation des données
 homogènes de degré `-1` de Hou–Wang–Yang : dépendance exacte en cutoff des
 constantes spectrales, de l'instabilité et du calcul validé, puis confrontation
 à l'unicité faible–forte pour les données Clay lisses.
+
+## Audit ciblé du cycle 0014 — provenance de la sparseness
+
+La réduction « densité volumique `delta` vers tranche centrale
+`delta^(1/3)` » est vraie et sharp, mais sa provenance devait être corrigée :
+
+| Source primaire | Ce qu'elle porte exactement | Ce qu'elle ne porte pas |
+|---|---|---|
+| Grujić 2013, DOI `10.1088/0951-7715/26/1/289` (`0064`) | définition 1D faible, rayon analytique, mesure harmonique de Solynin et critère de prolongement | aucune définition de sparseness 3D ni réduction même-rayon |
+| Farhat–Grujić–Leitmeyer 2017, DOI `10.1007/s00021-016-0288-z` (`0065`) | sparseness volumique et seuil `delta^(1/3)` à une échelle `rho≤r` | ne fixe pas nécessairement `rho=r`; l'erratum Besov est conservé |
+| Grujić–Xu 2019–2024, DOI `10.1007/s00021-024-00888-x` (`0066`) | formulation même-centre/même-rayon, puis dimension `d` avec `delta^(1/d)` | ne produit pas l'hypothèse géométrique depuis toute donnée Clay |
+| Grujić `arXiv:2607.08866v2` (`0059`) | réutilise le maillon avec `delta=3/4` dans une chaîne logarithmique | estimations (47)–(55) et théorème 7.4 non reproduits |
+
+La v2 datée du 13 juillet 2026 reste la version courante contrôlée le
+2026-08-14; aucune v3 ni publication évaluée n'a été identifiée. La priorité
+bibliographique et analytique passe à l'inversion quantitative (47)–(49), puis
+à la queue dyadique du commutateur si cette arête échoue.

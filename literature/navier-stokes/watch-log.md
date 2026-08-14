@@ -262,3 +262,20 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
 - Décision : abandonner la porte de signe local sans queue non locale. Auditer
   ensuite le premier raccord géométrique quantifié de `2607.08866v2`, en
   commençant par la conversion mesure/sparseness au rayon analytique.
+
+## 2026-08-14 — Cycle 0014
+
+- Veille différentielle : `arXiv:2607.08866` reste en v2 du 2026-07-13;
+  aucune v3 ni publication évaluée identifiée au gel.
+- Attribution corrigée : Grujić 2013 définit le critère 1D et l'endgame
+  harmonique; Farhat–Grujić–Leitmeyer 2017 fournit la réduction volumique à
+  une échelle `rho≤r`; Grujić–Xu 2019–2024 fournit la formulation au même
+  rayon et sa version en dimension `d`.
+- Résultat différentiel : le lemme `delta -> delta^(1/3)` est confirmé avec
+  constante un optimale; la boule concentrique sature la borne.
+- Quantificateur corrigé : un majorant global `B` garantit les rayons
+  `r³≥B/(delta|B_1|)`. Le rayon minimal construit peut ensuite recevoir une
+  borne supérieure logarithmique; les rayons arbitrairement plus petits ne
+  sont pas garantis.
+- Décision : fermer cette arête géométrique au statut `COMPUTATION_ONLY` et
+  remonter vers l'inversion quantitative des réarrangées (47)–(49).
