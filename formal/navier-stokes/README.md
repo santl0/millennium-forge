@@ -514,3 +514,25 @@ Ces cibles certifieraient des inégalités scalaires et la logique de jauge, pas
 l'inégalité d'O'Neil complète sur des espaces de Lorentz, la décomposition de
 Hodge sur `R³`, ni la production dynamique de (40). La formalisation du noyau
 Fourier–Leray reste prioritaire avant ces lemmes exponentiels.
+
+## Backlog issu du cycle 0017 — coercivité de support et ODE amortie
+
+Le bloc stable peut être découpé sans formaliser Navier–Stokes :
+
+1. définir `f_lambda=(f-lambda)_+`, sa mesure de support et l'énergie;
+2. prouver depuis `f∈L^(3/2,infinity)` seulement le majorant
+   `|{f>lambda}|<=(M/lambda)^(3/2)`, sans conclure `f_lambda∈H¹`;
+3. sous l'hypothèse séparée `f_lambda∈Hdot¹`, combiner Hölder sur le support
+   et Sobolev pour obtenir `||nabla f_lambda||²>=lambda||f_lambda||²/(S_6²M)`;
+4. formaliser l'ODE
+   `E'+mu lambda E<=K(lambda)` avec son terme initial, puis le cas ancré
+   `E(t_0)=0`;
+5. prouver Chebyshev sur le niveau `2lambda` et suivre le changement de
+   logarithme dimensionné;
+6. formaliser le contre-lemme `|x|^-2∈L^(3/2,infinity)` mais tronqués non
+   `L²`, et le calcul dyadique `8/3>2`.
+
+Ces cibles certifieraient le chaînage fonctionnel conditionnel et deux
+contre-exemples. Elles ne certifieraient pas la chaîne Kato pour une solution
+faible, le théorème de commutateur (8)–(22) ou une conclusion Clay. La
+formalisation Fourier–Leray reste prioritaire.

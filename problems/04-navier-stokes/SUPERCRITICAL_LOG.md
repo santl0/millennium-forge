@@ -362,3 +362,28 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   le mode constant.
 - Artefact : `ONEIL-TRANSFER-1`, fractions exactes, marge minimale huit,
   aucun flottant, statut `COMPUTATION_ONLY`.
+
+## 2026-08-14 — Énergie tronquée, support et amortissement
+
+- Objet : solution classique pré-singulière de NS incompressible 3D non
+  forcé sur `R³`; vorticité scalaire `omega=|curl u|` et niveau fixe.
+- Entrée : `M=sup_t||omega||_(L^(3/2,infinity))` et
+  `||alpha||_(L^(3/2,infinity)(A_lambda))<=A/log(lambda/Lambda_*)`, avec
+  toutes les constantes et le domaine temporel uniformes.
+- Absorption : le seuil est au moins
+  `Lambda_*exp(2C_H A S_L²/nu)`; il n'est pas absolu.
+- Coercivité : `X_lambda>=lambda E_lambda/(S_6²M)`. Une tente radiale donne
+  `X/E=10R^-2` et confirme l'optimalité de la puissance `lambda/M`.
+- ODE : coefficient `nu lambda/(2S_6²M)`; le terme initial disparaît seulement
+  si `lambda>=||omega(t_0)||_infinity`.
+- Sortie : `U_(2lambda)<=C lambda^-3/2 log(lambda/Lambda_*)^-3/2`, sans
+  itération De Giorgi et sans perte d'échelle.
+- Contre-profil : `|x|^-2 1_(|x|<1)` est faible-`L^(3/2)` mais tous ses
+  tronqués ont énergie infinie; une variante tangentielle est divergence-free.
+  La régularité classique, non la norme faible seule, lance le calcul.
+- Défaut amont : `R=2^-8`, `j=5` donne
+  `phi(2^jR)/phi(R)=8/3`, réfutant le facteur deux de (20)–(21). Le facteur
+  trois répare localement l'ordre, pas le commutateur complet.
+- Artefact : `DEGIORGI-UNIFORMITY-AUDIT-1`, douze contrôles exacts, aucun
+  flottant, empreinte
+  `cbdca92eec11a287c31bb67d48dfeda339768863b2ccfa58b6cd8f66e3682721`.

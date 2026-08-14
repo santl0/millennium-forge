@@ -622,3 +622,42 @@ Le reste vaut asymptotiquement
 `9v^(-1/3)/log²(e/v)` et reste absorbable. Le mode constant est absorbable
 après écriture `u=B[omega]+h`. Le verrou remonte donc à la production dynamique
 uniforme de (40), avant toute nouvelle utilisation des raccords aval.
+
+## Cycle 0017 : énergie tronquée à un niveau
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| auditer `(23) -> (40)`, absorption, support et Grönwall | 3 | 5 | 5 | 5 | **18** |
+| synchroniser l'endgame `(49) -> (58)` | 4 | 3 | 5 | 5 | 17 |
+| auditer toute la queue du commutateur `(8) -> (22)` | 5 | 2 | 4 | 5 | 16 |
+
+Sous la borne dimensionnée uniforme
+
+```text
+||alpha||_(L^(3/2,infinity)(A_lambda))
+ <=A/log(lambda/Lambda_*),
+```
+
+la chaîne à un niveau est valide pour une solution classique. Le seuil
+d'absorption est au moins `Lambda_*exp(2C_H A S_L²/nu)`, la coercivité vaut
+`X_lambda>=lambda E_lambda/(S_6²M)` et l'ODE a le coefficient
+`nu lambda/(2S_6²M)`. Avec une ancre où le tronqué est nul, Chebyshev donne
+`U_(2lambda)<=C lambda^-3/2 log^-3/2`.
+
+Il n'existe aucune récurrence de niveaux : l'étiquette « De Giorgi » masque
+une troncation fixe, une interpolation et un ODE linéaire. Trois portes ont
+été rendues explicites : faible-`L^(3/2)` seul ne fournit pas `H¹` au
+tronqué; l'estimation terminale ne s'étend pas à tout `(0,T*)`; et le facteur
+dyadique `2` avant (21) est réfuté par le ratio exact `8/3`, bien que `3`
+répare cette étape à petite échelle.
+
+Arête confirmée conditionnellement, `COMPUTATION_ONLY` :
+
+```text
+commutateur uniforme (22) + régularité classique + borne critique uniforme
+  -> énergie tronquée amortie
+  -> distribution logarithmique (40).
+```
+
+Le verrou actif remonte à `GAP-COMMUTATOR-UNIFORMITY`, c'est-à-dire à la
+preuve complète et quantitative de (8)–(22), et non à Poincaré ou Grönwall.

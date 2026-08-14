@@ -973,6 +973,42 @@ cellule reste donc `NOT_PROVIDED`.
   script
   `00334a12f7b51cb4f5a397e28f014230d2126cfd1cbbe8b2ffec90aa9c729451`.
 
+## `DEGIORGI-UNIFORMITY-AUDIT-1` — énergie tronquée à un niveau
+
+- Question falsifiable : la chaîne (23)–(40) conserve-t-elle un seuil fixe,
+  un coefficient d'amortissement et les exposants logarithmiques uniformes,
+  une fois la borne restreinte (22) admise ?
+- Équation : NS incompressible 3D non forcé sur `R³`, `nu>0`, solution
+  classique sur l'intervalle terminal; le script ne simule pas cette PDE.
+- Entrées analytiques : borne faible uniforme `M`, déplétion restreinte
+  `A/log(lambda/Lambda_*)`, Hölder–Lorentz, Sobolev–Lorentz, Sobolev et
+  interpolation à constantes nommées.
+- Discrétisation : aucune grille spatiale ou temporelle. Calculs par
+  `Fraction` et registre symbolique d'exposants; aucun flottant.
+- Résultat positif : absorption au seuil
+  `Lambda_*exp(2C_H A S_L²/nu)`, coercivité
+  `X>=lambda E/(S_6²M)`, ODE de coefficient
+  `nu lambda/(2S_6²M)` et sortie
+  `U_(2lambda)<=C lambda^-3/2 log^-3/2`.
+- Tests adverses : seuils non uniformes, terme initial non nul, profil
+  critique faible-`L^(3/2)` à énergie tronquée infinie, tente radiale
+  saturant l'échelle et ratio dyadique `8/3>2`.
+- Résidus : ODE, scaling et exposants exactement nuls; marge d'absorption
+  rationnelle `1/5`, marge de Chebyshev `28/15`; douze contrôles passent.
+- Sensibilité : le test dyadique montre que le facteur trois, pas deux,
+  couvre le bord choisi; il ne certifie pas le commutateur complet.
+- Commande :
+
+  ```text
+  python -B experiments/navier-stokes/degiorgi-uniformity/degiorgi_uniformity_audit.py
+  ```
+
+- Environnement : Python standard library; graine sans objet; aucun artefact
+  binaire. Empreinte du script :
+  `cbdca92eec11a287c31bb67d48dfeda339768863b2ccfa58b6cd8f66e3682721`.
+- Limite : le calcul ne certifie ni Kato, ni les inégalités fonctionnelles,
+  ni (8)–(22), ni la régularité ou le blow-up Clay.
+
 ## `ASYMPTOTIC-TRACE-CAUCHY-GATE-1` — trace asymptotique et état fini
 
 - Question falsifiable : des branches qui ont toutes la trace zéro quand

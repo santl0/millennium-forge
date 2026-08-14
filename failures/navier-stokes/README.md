@@ -474,6 +474,58 @@ d'équivalence entre deux profils, pas un autre renommage de topologie.
 - Statut : claim `NS-BIOT-SAVART-LINF-ZERO-MODE` `REFUTED`.
 - Artefact : `ONEIL-TRANSFER-1`.
 
+## `FAIL-NS-0020` — Faible-`L^(3/2)` ne lance pas l'énergie tronquée
+
+- Date : 2026-08-14.
+- Cadre : fonction scalaire sur `R³`; variante vorticité divergence-free;
+  aucun de ces profils n'est une solution Navier–Stokes.
+- Cible : déduire de `f∈L^(3/2,infinity)` que
+  `(f-lambda)_+∈H¹(R³)` pour tout niveau fini.
+- Contre-profil : `f=|x|^-2 1_(0<|x|<1)`. Sa distribution vaut
+  `(4pi/3)a^-3/2` pour `a>=1`, mais l'énergie tronquée contient
+  `integral_0^R r^-2 dr=infinity` et la dissipation diverge davantage.
+- Compatibilité vectorielle : `(a cross x)/|x|³`, à coupure radiale, est
+  divergence-free et conserve la divergence énergétique sur tout cône où
+  l'angle est non dégénéré.
+- Réparation : pour la v2, invoquer explicitement la solution classique
+  bornée et lissée à chaque temps `t<T*`; la norme faible sert ensuite à la
+  mesure du support, pas à la finitude de l'énergie.
+- Portée : ne réfute ni (23) pour une solution classique, ni la coercivité
+  (33)–(34), ni un scénario Clay.
+- Statut : claim `NS-WEAK-L32-TRUNCATION-H1` `REFUTED`.
+- Artefact : `DEGIORGI-UNIFORMITY-AUDIT-1`.
+
+## `FAIL-NS-0021` — Extension de l'intervalle terminal à tout `(0,T*)`
+
+- Date : 2026-08-14.
+- Cible : la phrase après (25) de `arXiv:2607.08866v2`, qui étend
+  l'absorption à `(0,T*)` alors que le théorème 4.1 porte seulement sur
+  `(T*−epsilon,T*)`.
+- Contre-modèle logique : choisir la norme restreinte conforme à l'enveloppe
+  sur l'intervalle terminal et égale à un avant celui-ci. Les prémisses
+  terminales sont satisfaites et l'absorption antérieure échoue.
+- Réparation : intégrer l'ODE depuis `t_0=T*−epsilon`; c'est exactement
+  l'intervalle utilisé en (36), donc aucun exposant aval n'est perdu.
+- Portée : contre-modèle abstrait, non solution PDE; réfutation du
+  quantificateur littéral seulement.
+- Statut : claim `NS-DEGIORGI-ENTIRE-INTERVAL-ABSORPTION` `REFUTED`.
+
+## `FAIL-NS-0022` — Facteur dyadique deux avant (21)
+
+- Date : 2026-08-14.
+- Cible : avec `phi(r)=1/|log r|`, `N=floor((1/2)log_2(1/R))`, prétendre
+  `phi(2^jR)<=2phi(R)` pour tout `j<=N+1`.
+- Contre-test exact : `R=2^-8`, `N=4`, `j=5` donne
+  `phi(2^jR)/phi(R)=8/3>2`.
+- Réparation : une constante trois convient au bord pour `R` assez petit et
+  préserve l'ordre `R^-2phi(R)`; elle ne valide pas les autres étapes du
+  commutateur.
+- Portée : réfute une constante locale de (20)–(21), pas le théorème 4.1
+  complet ni sa conclusion après révision.
+- Statut : claim `NS-DYADIC-PHI-FACTOR-TWO` `REFUTED`.
+- Empreinte :
+  `cbdca92eec11a287c31bb67d48dfeda339768863b2ccfa58b6cd8f66e3682721`.
+
 ## Obstacle consolidé — désingularisation HWY vers une même donnée Clay
 
 Trois stratégies distinctes ont fermé les inférences actuellement disponibles :

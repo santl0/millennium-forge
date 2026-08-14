@@ -1,0 +1,39 @@
+{
+  "id": "NS-WEAK-L32-TRUNCATION-H1",
+  "problem": "navier-stokes",
+  "statement": "Toute fonction de R³ appartenant à L^(3/2,infinity) possède, à chaque niveau lambda>0, un tronqué (f-lambda)_+ dans H¹(R³).",
+  "status": "REFUTED",
+  "hypotheses": [
+    "R³ avec la mesure de Lebesgue",
+    "aucune régularité locale ou équation PDE n'est ajoutée à la seule appartenance faible critique",
+    "la conclusion vise simultanément la finitude de la norme L² du tronqué et de son gradient L²"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "counterexample",
+      "reference": "f(x)=|x|^-2 sur 0<|x|<1 appartient à L^(3/2,infinity), mais (f-lambda)_+ a énergie et dissipation infinies; variante vectorielle divergence-free (a cross x)/|x|³; docs/reports/navier-stokes/reviews/cycle-0017-countermodel.md"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/degiorgi-uniformity/degiorgi_uniformity_audit.py, intégrales à cutoffs rationnels",
+      "sha256": "cbdca92eec11a287c31bb67d48dfeda339768863b2ccfa58b6cd8f66e3682721"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0017-degiorgi-uniformity.md"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0017-degiorgi-uniformity"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Passe contradictoire Codex de même famille de modèle; non indépendante au sens externe",
+    "notes": "Le contre-exemple ne réfute pas le test énergétique d'une solution classique pré-singulière, dont les tronqués sont finis à chaque temps strictement antérieur à T*."
+  }
+}

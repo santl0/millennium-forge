@@ -1,0 +1,43 @@
+{
+  "id": "NS-DYADIC-PHI-FACTOR-TWO",
+  "problem": "navier-stokes",
+  "statement": "Avec phi(r)=1/|log r|, N=floor((1/2)log₂(1/R)) et tous les indices j<=N+1 de l'équation (20), on a uniformément phi(2^jR)<=2phi(R).",
+  "status": "REFUTED",
+  "hypotheses": [
+    "0<R<1 et logarithmes naturels dans phi",
+    "N et la plage j=1,...,N+1 sont exactement ceux de arXiv:2607.08866v2",
+    "la cible est le facteur numérique deux avant l'équation (21), non l'existence d'une constante universelle plus grande"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0059, arXiv:2607.08866v2, équations (20)-(21)"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "R=2^-8, N=4, j=5 donne phi(2^jR)/phi(R)=8/3>2; le facteur 3 passe ce test et répare l'estimation à petite échelle"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/degiorgi-uniformity/degiorgi_uniformity_audit.py, fractions exactes",
+      "sha256": "cbdca92eec11a287c31bb67d48dfeda339768863b2ccfa58b6cd8f66e3682721"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0017-analysis.md"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0017-degiorgi-uniformity"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois passes Codex séparées, même famille de modèle; non indépendantes au sens externe",
+    "notes": "La réfutation porte sur la constante deux. Une constante trois pour R assez petit conserve l'ordre R^-2 phi(R); le théorème 4.1 complet reste non reproduit."
+  }
+}

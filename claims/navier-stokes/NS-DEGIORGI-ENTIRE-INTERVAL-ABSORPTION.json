@@ -1,0 +1,39 @@
+{
+  "id": "NS-DEGIORGI-ENTIRE-INTERVAL-ABSORPTION",
+  "problem": "navier-stokes",
+  "statement": "Une estimation de déplétion du stretching supposée et démontrée seulement sur (T*−epsilon,T*) implique à elle seule un seuil d'absorption valide sur tout l'intervalle (0,T*).",
+  "status": "REFUTED",
+  "hypotheses": [
+    "la seule information sur le stretching est uniforme sur l'intervalle terminal (T*−epsilon,T*)",
+    "aucune hypothèse supplémentaire n'est imposée sur les temps antérieurs",
+    "la cible est l'assertion littérale suivant l'équation (25) de arXiv:2607.08866v2, non le calcul effectivement intégré depuis t₀=T*−epsilon"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0059, arXiv:2607.08866v2, théorème 4.1 et texte suivant l'équation (25)"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "Fonction abstraite a_lambda(t) égale à A/log(lambda/Lambda_*) sur l'intervalle terminal et à 1 avant celui-ci; docs/reports/navier-stokes/cycle-0017-degiorgi-uniformity.md"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/degiorgi-uniformity/degiorgi_uniformity_audit.py, famille exacte montrant qu'un seuil ponctuel n'est pas uniforme",
+      "sha256": "cbdca92eec11a287c31bb67d48dfeda339768863b2ccfa58b6cd8f66e3682721"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0017-degiorgi-uniformity"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Millennium Forge, passe logique de quantificateurs; pas de revue externe indépendante",
+    "notes": "La correction consiste à restreindre l'absorption à (T*−epsilon,T*), ce qui suffit à l'intégration ultérieure. Le contre-modèle n'est pas une solution de Navier–Stokes."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "NS-DEGIORGI-ONE-LEVEL-TRANSFER",
+  "problem": "navier-stokes",
+  "statement": "Sur R³, pour une solution classique de Navier–Stokes incompressible 3D non forcé sur I=(t₀,T*), une borne uniforme M de la vorticité dans L^(3/2,∞), une déplétion restreinte uniforme ||alpha||_(L^(3/2,∞)(A_lambda))<=A/log(lambda/Lambda_*) et une ancre lambda>=||omega(t₀)||_∞ impliquent, au-dessus d'un seuil explicite, U_(2lambda)(t)<=C_E lambda^(-3/2)log(lambda/Lambda_*)^(-3/2), avec C_E=8(C_H C_I)^(3/2)S_L S_6² A^(3/2)M^(3/2)nu^(-3/2).",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "R³ sans frontière, viscosité nu>0 et force nulle",
+    "solution classique sur I=(t₀,T*) permettant le test de l'inégalité de Kato par (omega-lambda)_+",
+    "M=sup_I ||omega||_(L^(3/2,infinity))<infinity",
+    "la déplétion restreinte est uniforme en temps pour tout lambda>=lambda_d et son logarithme est log(lambda/Lambda_*)",
+    "C_H, S_L, S_6 et C_I sont les constantes de Hölder-Lorentz, des deux Sobolev et de l'interpolation de Lorentz utilisées",
+    "lambda est au moins max(lambda_d,||omega(t₀)||_infinity,Lambda_*exp(2C_H A S_L²/nu))",
+    "le résultat suppose l'estimation de commutateur; il ne la démontre pas et ne conclut pas le théorème 7.4"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0059, arXiv:2607.08866v2, équations (23)-(40), implication conditionnelle auditée"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0017-degiorgi-uniformity.md"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/degiorgi-uniformity/degiorgi_uniformity_audit.py, fractions exactes et registre symbolique des exposants",
+      "sha256": "cbdca92eec11a287c31bb67d48dfeda339768863b2ccfa58b6cd8f66e3682721"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0017-analysis.md; cycle-0017-literature.md; cycle-0017-countermodel.md"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0017-degiorgi-uniformity"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois passes Codex séparées, même famille de modèle; non indépendantes au sens externe",
+    "notes": "Le statut certifie seulement le chaînage conditionnel des constantes et exposants. Les théorèmes fonctionnels et la déplétion par commutateur ne sont pas formalisés."
+  }
+}
