@@ -107,6 +107,25 @@ problème Clay : ESS transmet la trace sans la borne ponctuelle/mildness, tandis
 que KNSS transmet mildness et bornitude avec la normalisation opposée
 `|v(0,0)|=1`.
 
+Le cycle 0009 ferme négativement le raccord maximum-normalisé lui-même. Pour
+les temps records KNSS, les estimations paraboliques uniformes donnent une
+compacité `C^m_local` jusqu'au temps redimensionné zéro : la limite des zooms
+et la limite temporelle commutent déjà, et leur valeur commune conserve la
+normalisation ponctuelle non nulle. Mais `s=0` est le temps-record physique
+`t_k`, non le temps maximal `T`; ce dernier est l'extrémité future mobile
+`B_k=M_k²(T-t_k)`. Une trace physique dans `D'` ne se transfère pas non plus
+aux tests `M_k² phi(M_k(x-x_k))`, mobiles et concentrés. Le trou exact est donc
+le contrôle de l'extrémité mobile, pas le commutateur au temps-record.
+
+Cette analyse reformule quantitativement une obstruction critique connue : un
+blow-up maximum-normalisé force une quantité strictement positive de masse
+`L³` dans une boule de rayon comparable à
+`||u(t_k)||_infinity^-1`. La disparition uniforme de cette masse sur toutes
+les petites boules exclut donc le blow-up, mais ce n'est pas un critère
+nouveau : elle implique la condition uniforme à seuil fixe (23) de Constantin
+2023, déjà suffisante au prolongement. Elle n'est ni une conséquence de
+l'énergie, ni d'une simple borne globale `L³`.
+
 Un scénario Type I conserve une quantité critique de vitesse ou de vorticité à
 l'échelle naturelle; un scénario Type II la laisse croître plus vite. Les
 résultats Type I et plusieurs résultats au bord ne se transfèrent pas à un Type
@@ -229,10 +248,13 @@ pas une régularité globale par elles-mêmes.
 ## Conclusion falsifiable
 
 La bibliographie ferme de nombreuses classes conditionnelles mais ne fournit
-pas l'arête « énergie -> borne critique ». Huit cycles ont déjà éliminé ou
+pas l'arête « énergie -> borne critique ». Neuf cycles ont déjà éliminé ou
 borné plusieurs substituts : transfert inviscide mono-échelle, déplétion
 triadique universelle, tension de pression issue de l'énergie, compacité de
 traces mobiles, module temporel critique et composition naïve ESS–KNSS. Le
-verrou actif est maintenant falsifiable : déterminer si un module terminal
-uniforme, réellement hérité par une extraction maximum-normalisée, permet de
-commuter les deux limites sans réintroduire circulairement une borne critique.
+raccord ESS–KNSS maximum-normalisé est suspendu : les deux profils ne sont pas
+le même objet, le paquet hybride serait rigide, et la suite KNSS conserve
+nécessairement une trace non nulle. Le programme pivote vers un verrou
+indépendant : déterminer si la construction récente à donnée homogène `-1`
+possède une stabilité uniforme sous désingularisation vers une donnée Clay
+lisse, ou si ses constantes doivent diverger avec le cutoff.

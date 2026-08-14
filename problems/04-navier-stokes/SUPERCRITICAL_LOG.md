@@ -157,3 +157,37 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   aucune borne critique depuis l'énergie.
 - Artefact : `ANCIENT-ZERO-TRACE-RIGIDITY-AUDIT-1`, neuf obligations directes,
   cinq contre-profils, résidu d'assertion nul.
+
+## 2026-08-14 — Trace mobile et concentration critique du zoom maximum
+
+- Équation : NS incompressible 3D non forcé sur `R³`, viscosité `1`, zooms
+  mild KNSS centrés sur des temps records d'un temps maximal fini supposé.
+- Horloges : `s=0` représente le temps-record physique `t_k`; le temps
+  singulier `T` représente l'extrémité future mobile
+  `B_k=M_k²(T-t_k)>0`. La commutation ci-dessous ne porte donc pas sur `T`.
+- Pairing exact : pour un test fixe `phi` dans les variables zoomées,
+
+  ```text
+  <v_k(s),phi>
+    =M_k² integral u(x,t_k+s/M_k²) phi(M_k(x-x_k)) dx.
+  ```
+
+  La trace physique agit donc sur des tests mobiles de taille `M_k²`, supportés
+  à l'échelle `M_k^-1`; la convergence contre chaque test physique fixe ne se
+  transfère pas automatiquement.
+- Échelle locale :
+  `integral_(B_R)|v_k|^q=M_k^(3-q)
+  integral_(B_(R/M_k)(x_k))|u|^q`. Le seuil invariant est exactement `q=3`.
+- Dynamique mild : la borne passée `|v_k|<=2` fournit des modules spatiaux et
+  temporels uniformes jusqu'au temps-record `s=0`. Les deux limites y
+  commutent; la normalisation donne une valeur commune non nulle.
+- Concentration : une borne normalisée `||nabla v_k(0)||_infinity<=G` force
+  une masse critique au moins `pi/(48G³)` dans
+  `B_(1/(2GM_k))(x_k)`.
+- Perte localisée : une simple borne globale `L³` n'impose pas
+  l'équi-intégrabilité uniforme de `|u(t_k)|³`. Supposer cette
+  équi-intégrabilité exclut déjà le blow-up maximum-normalisé; ce n'est ni un
+  raccord gratuit vers une trace nulle, ni un nouveau critère, car la condition
+  (23) plus faible de Constantin 2023 donne déjà un prolongement quantitatif.
+- Artefact : `MAXIMUM-ZOOM-TRACE-COMMUTATOR-1`, neuf obligations, résidu
+  d'assertion nul.

@@ -302,3 +302,51 @@ Le verrou dominant devient `GAP-HYBRID-INHERITANCE` : produire — ou réfuter
 quantitativement — une trace terminale nulle pour la **même** limite
 maximum-normalisée KNSS sans perdre la normalisation non triviale ni supposer
 le contrôle critique recherché.
+
+## Cycle 0009 : décision automatisée
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| auditer exactement les deux limites du zoom KNSS et la masse critique qu'elles imposent | 4 | 5 | 5 | 5 | **19** |
+| poser directement une équi-intégrabilité locale `L³` comme critère de régularité | 3 | 5 | 5 | 4 | 17 |
+| construire une autre normalisation censée préserver simultanément trace ESS et borne KNSS | 4 | 2 | 3 | 5 | 14 |
+
+Décision : traiter d'abord la commutation elle-même, car elle peut falsifier
+le raccord sans inventer une nouvelle extraction.
+
+Résultat négatif décisif : les estimations de lissage KNSS sur la bande passée
+commune donnent un module temporel uniforme jusqu'à `s=0`. Les deux ordres de
+limite commutent en `D'_local` et leur valeur commune au temps-record conserve
+`|v(0,0)|=1`; elle n'est donc pas nulle. Attention : `s=0` correspond à
+`t_k`, non à `T`. Le temps physique `T` devient
+`B_k=M_k²(T-t_k)>0`; le défaut de raccord terminal vient de cette extrémité
+mobile et des tests
+
+```text
+Phi_k(x)=M_k² phi(M_k(x-x_k)),
+```
+
+pas d'une ambiguïté du bord dans la suite normalisée.
+
+Corollaire quantitatif : si `G` borne les gradients normalisés au temps zéro,
+tout blow-up maximum-normalisé impose
+
+```text
+integral_(B_(1/(2GM_k))(x_k)) |u(x,t_k)|³ dx
+  >= pi/(48G³).
+```
+
+Une équi-intégrabilité locale uniforme de `|u|³` exclut donc cette
+concentration, mais ce n'est pas un nouveau critère : elle implique la
+condition à seuil fixe de Constantin 2023, déjà suffisante au prolongement.
+Elle n'est pas héritée de l'énergie. Le contre-test à pression affine réalise une
+non-commutation avec résidu PDE nul en perdant exactement la mildness; un
+cisaillement calorique mild sur `T³` la paie par une croissance rétrograde
+exponentielle.
+
+Pivot : les cycles 0007–0009 constituent trois stratégies distinctes sur le
+paquet hybride — audit de transmission, rigidité abstraite, puis audit exact
+des horloges et de la commutation au temps-record. La recherche d'une trace ESS
+dans le zoom maximum KNSS est suspendue. L'axe actif suivant devient le raccord
+des données homogènes `-1` de Hou–Wang–Yang vers des données Clay lisses,
+conformément au score priorisé.

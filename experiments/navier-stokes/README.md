@@ -19,9 +19,10 @@ leur rapport JSON sur la sortie standard.
 | `ANCIENT-PRESSURE-GAUGE-1` | ancienne, à vitesse bornée, adaptée et trace terminale nulle suffisent-elles à la rigidité sans normalisation de pression ? | solution NS exacte, fractions rationnelles | `python -B experiments/navier-stokes/ancient-pressure-gauge/ancient_pressure_gauge.py` | zéro |
 | `BLOWUP-INHERITANCE-AUDIT-1` | une seule chaîne ESS/GKP/KNSS/Seregin transmet-elle toutes les hypothèses du Liouville hybride « ancienne + mild + vitesse bornée + trace locale nulle » ? | matrice sourcée et inclusion finie exacte | `python -B experiments/navier-stokes/blowup-inheritance-audit/inheritance_audit.py` | zéro échec d'assertion |
 | `ANCIENT-ZERO-TRACE-RIGIDITY-AUDIT-1` | les hypothèses exactes « ancienne mild bornée + vraie trace `D'` nulle » franchissent-elles toutes les portes de rigidité, et les contre-profils usuels en violent-ils une explicitement ? | graphe d'obligations, ensembles finis et fractions rationnelles | `python -B experiments/navier-stokes/ancient-zero-trace-rigidity/rigidity_audit.py` | zéro échec d'assertion |
+| `MAXIMUM-ZOOM-TRACE-COMMUTATOR-1` | les limites du zoom KNSS commutent-elles au temps-record `s=0`, et que reste-t-il à contrôler au temps physique `T` ? | graphe d'obligations, exposants et résidus rationnels exacts; `pi` symbolique | `python -B experiments/navier-stokes/maximum-zoom-trace/commutator_audit.py` | zéro échec d'assertion |
 
 Environnement reproduit au checkpoint initial : Windows, Python 3.13.14,
-bibliothèque standard uniquement. Les deux audits de matrice lisent leur JSON
+bibliothèque standard uniquement. Les trois audits structurés lisent leur JSON
 versionné voisin; les autres scripts sont autonomes. Aucun n'a de dépendance
 réseau ni ne produit d'artefact lourd.
 
@@ -99,7 +100,7 @@ réseau ni ne produit d'artefact lourd.
 
 ## Passage au continuum
 
-Aucune des dix expériences ne part d'une discrétisation PDE : il n'y a donc
+Aucune des onze expériences ne part d'une discrétisation PDE : il n'y a donc
 pas de passage grille-vers-continuum. Le raccord analytique restant est
 explicite dans chaque cas. Tout futur solveur doit ajouter divergence mesurée,
 convergence multi-résolution, second schéma, bornes de troncature, contrôle des
@@ -714,3 +715,58 @@ cellule reste donc `NOT_PROVIDED`.
 - Limite Clay : aucune extraction auditée ne transmet simultanément mildness,
   borne ponctuelle, trace nulle et non-trivialité au même objet. Le calcul ne
   change pas ce statut.
+
+## `MAXIMUM-ZOOM-TRACE-COMMUTATOR-1` — trace du zoom par maximum
+
+- Question falsifiable : pour les temps records KNSS, le défaut de raccord
+  vient-il d'une non-commutation de `k->infinity` avec `s->0-` au temps-record,
+  ou du déplacement du vrai temps terminal hors de cette horloge ?
+- Équation : Navier–Stokes incompressible 3D standard sur `R³`, `nu=1`, force
+  nulle, solution mild jusqu'à un temps maximal fini hypothétiquement singulier.
+- Normalisation :
+
+  ```text
+  v_k(y,s)=M_k^-1 u(x_k+M_k^-1 y,t_k+M_k^-2 s),
+  |v_k|<=gamma_k sur s<=0, gamma_k->1, |v_k(0,0)|=1.
+  ```
+
+  Ici `s=0` correspond à `t_k`, non à `T`; le temps physique `T` correspond à
+  l'extrémité future mobile `B_k=M_k²(T-t_k)>0`.
+
+- Discrétisation : aucune. Le script contrôle neuf obligations, le facteur
+  `M_k²` dans les pairings, l'exposant `3-q` de la masse locale `L^q`, le
+  module au temps-record et quatre contre-profils par ensembles finis et
+  `Fraction`.
+- Résultat analytique : les estimations KNSS redémarrées sur un intervalle
+  passé commun donnent des bornes uniformes sur `nabla v_k` et `partial_s v_k`
+  jusqu'à `s=0`. Les deux limites commutent donc dans `D'_local` au temps-record
+  et leur valeur commune est non nulle. Cette conclusion n'est pas une trace
+  au temps physique `T`.
+- Concentration critique : si `||nabla v_k(0)||_infinity<=G`, alors
+
+  ```text
+  integral_(B_(1/(2GM_k))(x_k)) |u(x,t_k)|³ dx
+    >= pi/(48G³).
+  ```
+
+  Par contraposée, la disparition uniforme de la masse `L³` sur les petites
+  boules exclut ce blow-up. Ce n'est pas un nouveau critère : l'hypothèse
+  d'équi-intégrabilité complète est plus forte que la condition uniforme à
+  seuil fixe (23) de Constantin 2023, qui donne déjà le prolongement. Aucune de
+  ces hypothèses n'est déduite de l'énergie.
+- Test adverse exact : `u_k=e^(k²s)e_1`,
+  `p_k=-k²e^(k²s)x_1` réalise une non-commutation avec résidu PDE, divergence,
+  convection, Laplacien et Poisson tous nuls. Il échoue précisément à la
+  mildness et au module temporel uniforme; sa pression affine n'est pas la
+  jauge Leray/Riesz.
+- Second contrôle : un cisaillement calorique mild sur `T³` conserve une
+  oscillation au bord `s=0` seulement au prix d'une croissance rétrograde
+  `e^(k²|s|)`; il perd toute borne uniforme sur un intervalle passé commun et
+  n'est pas une extraction Clay sur `R³`.
+- Résultat machine : `assertion_failure_count=0`; `pi` reste symbolique, aucun
+  flottant. Aucun théorème de compacité ou de lissage n'est certifié par le
+  script : il vérifie seulement la cohérence algébrique du chaînage.
+- Empreintes : obligations
+  `2fa2148a5ebb7b8fcce370655faca1df4b2c4a56990f99704481e54bf060d51e`;
+  script
+  `00334a12f7b51cb4f5a397e28f014230d2126cfd1cbbe8b2ffec90aa9c729451`.

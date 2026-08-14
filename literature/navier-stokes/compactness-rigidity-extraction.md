@@ -698,3 +698,172 @@ l'est pas. Aucune chaîne ESS, GKP ou KNSS ne transmet à un **même objet**
 Le prochain verrou est la possibilité — ou l'impossibilité quantitative — de
 faire hériter cette trace à une extraction maximum-normalisée sans réintroduire
 une borne critique circulaire.
+
+## 11. Trace du zoom maximum et concentration critique — cycle 0009
+
+### Les tests physiques deviennent mobiles
+
+Pour le zoom KNSS
+
+```text
+v_k(y,s)=M_k^-1 u(x_k+M_k^-1 y,t_k+M_k^-2 s),
+```
+
+les deux extrémités temporelles sont
+
+```text
+A_k=-M_k²t_k -> -infinity,
+B_k=M_k²(T-t_k)>0.
+```
+
+Le point essentiel est que `s=0` correspond au temps-record physique `t_k`,
+et non au temps maximal `T`; celui-ci correspond à l'extrémité future mobile
+`s=B_k`. Toute « trace » obtenue ci-dessous à `s=0` est donc une valeur au
+temps-record. Elle ne peut être identifiée à une trace terminale physique.
+
+et `phi in C_c^infinity(R³)`, le changement de variable exact donne
+
+```text
+<v_k(s),phi>
+  =M_k² integral u(x,t_k+s/M_k²) phi(M_k(x-x_k)) dx.          (11.1)
+```
+
+Le test physique est donc
+`Phi_k(x)=M_k² phi(M_k(x-x_k))`. Son support se concentre et se translate,
+tandis que
+
+```text
+||partial^alpha Phi_k||_infinity
+  =M_k^(2+|alpha|)||partial^alpha phi||_infinity,
+||Phi_k||_(3/2)=||phi||_(3/2).                                (11.2)
+```
+
+Une trace de `u(t)` dans `D'` contrôle chaque test **fixe**; elle ne contrôle
+pas automatiquement cette famille critique mobile. Même une borne `L³`
+globale n'apporte pas la compacité manquante : les champs
+`U_k(x)=M_k w(M_kx)`, avec `w` compact divergence-free, convergent vers zéro
+dans `D'` et gardent une norme `L³` constante, tandis que leur zoom est
+exactement `w`. Ces champs ne sont pas les tranches démontrées d'une même
+trajectoire de blow-up; ils réfutent seulement l'inférence fonctionnelle.
+
+### Dans la vraie classe KNSS, les limites commutent au temps-record
+
+**[SOURCE + DÉRIVATION]** La proposition 6.1 fournit, pour les temps records,
+`|v_k|<=gamma_k` sur le passé, `gamma_k->1`, et `|v_k(0,0)|=1`. Pour `k` assez
+grand, `gamma_k<=2`. En redémarrant la proposition 4.1 un temps normalisé fixe
+avant chaque `s in [-delta,0]`, on obtient pour tous les ordres nécessaires
+
+```text
+sup_k sup_(-delta<=s<=0)
+  (||nabla^m v_k(s)||_infinity+||partial_s v_k(s)||_infinity)
+  < infinity.                                                 (11.3)
+```
+
+La convergence du lemme 6.1 se renforce donc, après sous-suite, jusqu'au
+temps-record `s=0` dans `C^m_local`. Pour tout test compact,
+
+```text
+|<v_k(s)-v_k(0),phi>|
+  <= L |s| ||phi||_1,                                        (11.4)
+```
+
+uniformément en `k`. Par conséquent,
+
+```text
+lim_(s->0-) lim_(k->infinity) <v_k(s),phi>
+ =lim_(k->infinity) lim_(s->0-) <v_k(s),phi>
+ =<v(0),phi>.                                                 (11.5)
+```
+
+Comme `|v(0,0)|=1`, une fonction test vectorielle fixe, supportée assez près de
+l'origine et alignée avec `v(0,0)`, a un pairing non nul. La valeur commune au
+temps-record n'est donc pas zéro. Une tentative de raccord ESS à ce temps est
+**incompatible** avec la normalisation maximum; ce n'est pas une liberté
+laissée par l'ordre des limites. Le constat ne porte pas encore sur le temps
+physique `T`.
+
+Pour aligner l'horloge sur `T`, il faut poser
+
+```text
+w_k(y,tau)=v_k(y,tau+B_k),
+```
+
+de sorte que `tau=0` corresponde à `T` et que le témoin
+`|v_k(0,0)|=1` se trouve à `tau=-B_k`. Deux branches restent : si
+`B_k->infinity`, le témoin fuit vers le passé; si `B_k->beta<infinity`, il
+reste à `tau=-beta`, mais la borne maximum `|v_k|<=gamma_k` ne contrôle que
+`tau<=-B_k`, pas l'intervalle `(-B_k,0)`. C'est l'extrémité mobile, et non le
+commutateur en `s=0`, qui constitue le trou exact.
+
+### Masse `L³` nécessaire et critère conditionnel
+
+Soit `G` une borne uniforme de `||nabla v_k(0)||_infinity` donnée par (11.3).
+La normalisation ponctuelle et l'inégalité des accroissements finis donnent
+
+```text
+|v_k(y,0)|>=1/2 pour |y|<=1/(2G).
+```
+
+Puisque la masse locale vérifie exactement
+
+```text
+integral_(B_R)|v_k(y,0)|^q dy
+ =M_k^(3-q) integral_(B_(R/M_k)(x_k))|u(x,t_k)|^q dx,         (11.6)
+```
+
+le cas critique `q=3` donne
+
+```text
+integral_(B_(1/(2GM_k))(x_k)) |u(x,t_k)|³ dx
+  >= pi/(48G³).                                               (11.7)
+```
+
+**[DÉRIVATION DU LABORATOIRE + COMPARAISON DE SOURCE]** Une conséquence par
+contraposée est l'énoncé suivant : si, pour un voisinage terminal de `T`,
+
+```text
+lim_(r->0) sup_(t<T, x in R³)
+  integral_(B_r(x)) |u(x,t)|³ dx =0,                         (11.8)
+```
+
+alors `T` ne peut pas être un temps maximal fini d'une solution mild. Ce n'est
+pas revendiqué comme un nouveau critère. L'équi-intégrabilité uniforme complète
+de (11.8) implique la condition uniforme à seuil fixe (23) de Constantin 2023,
+dont le théorème 2 donne déjà une borne explicite de `Hdot1` et le
+prolongement. La concentration (11.7) est ici une reformulation quantitative
+de l'obstruction connue dans la normalisation KNSS. Elle n'est pas fournie par
+l'énergie et ne découle pas d'une simple borne `L-infinity_tL³_x`, car une
+boule d'absolue continuité valable séparément pour chaque tranche n'est pas
+uniforme en temps.
+
+### Contre-test de la porte mild
+
+La famille exacte sur `R³ x (-infinity,0]`
+
+```text
+u_k(x,s)=exp(k²s)e_1,
+p_k(x,s)=-k²exp(k²s)x_1
+```
+
+est classique, divergence-free, uniformément bornée et localement adaptée.
+Son résidu NS est identiquement nul, mais
+
+```text
+lim_(s->0-)lim_(k->infinity)u_k(s)=0,
+lim_(k->infinity)lim_(s->0-)u_k(s)=e_1.
+```
+
+Elle échoue exactement à la mildness KNSS : la formule d'Oseen imposerait la
+constance temporelle du mode spatial constant. De plus
+`||partial_s u_k(0)||_infinity=k²`. Le test prouve que la PDE locale et
+l'inégalité d'énergie locale ne suffisent pas à (11.4); il ne réfute pas le
+résultat positif dans la classe mild.
+
+### Décision de raccord
+
+Le paquet « ancienne mild bornée + trace nulle au temps-record + normalisation
+non triviale » est contradictoire dans le zoom maximum KNSS. Une vraie trace à
+`T` demanderait au contraire de contrôler la suite décalée `w_k` jusqu'à son
+extrémité mobile. Après trois stratégies sur le raccord hybride, cet axe est
+suspendu : une réouverture exige une extraction différente ou un lemme
+d'équivalence de profils, pas une nouvelle permutation au même temps-record.

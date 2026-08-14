@@ -224,6 +224,53 @@ réellement produite par un premier blow-up.
 - Statut : `REVISE`; anomalie bibliographique conservée, résultat publié non
   réfuté.
 
+## `FAIL-NS-0012` — Trace ESS forcée dans le zoom maximum KNSS par permutation des limites
+
+- Date : 2026-08-14.
+- Équation : NS incompressible 3D non forcé sur `R³`, viscosité `1`; zooms
+  mild de temps records KNSS.
+- Cible : obtenir une ancienne mild bornée, non triviale et de trace nulle en
+  prétendant que les limites `k->infinity` et `s->0-` ne sont pas encore
+  justifiées et pourraient être choisies dans l'ordre favorable.
+- Attaque : recalcul du pairing sous zoom, estimations KNSS redémarrées jusqu'à
+  `s=0`, puis test par couche terminale exacte à pression affine. Le recalcul
+  montre que `s=0` correspond à `t_k`, tandis que le temps physique `T`
+  correspond à `B_k=M_k²(T-t_k)>0`.
+- Résultat : dans la vraie classe KNSS, `nabla v_k` et `partial_s v_k` sont
+  uniformément bornés près de zéro. Les deux limites commutent localement et
+  leur valeur commune au temps-record conserve `|v(0,0)|=1`; elle ne peut être
+  nulle dans `D'`. Cela ne construit aucune trace à `T`. Une couche
+  `e^(k²s)e_1` fait bien non-commuter les limites avec résidu
+  PDE nul, mais elle n'est pas mild et son module temporel explose.
+- Concentration : le zoom force au moins `pi/(48G³)` de masse `L³` dans une
+  boule physique de rayon `1/(2GM_k)`. Une hypothèse de non-concentration
+  critique exclut donc le blow-up au lieu de fournir un profil hybride non
+  trivial.
+- Résidu : zéro pour les identités d'échelle, la PDE affine et les neuf
+  obligations encodées; aucun flottant ni discrétisation.
+- Portée : réfute la permutation favorable au temps-record pour la
+  normalisation maximum KNSS. Ne contrôle pas l'extrémité mobile `B_k`, ne
+  réfute pas une autre extraction, une équivalence démontrée entre limites ESS
+  et KNSS, ni tout argument de compacité–rigidité.
+- Statut : `REFUTED` pour l'arête de permutation favorable; critère local `L³`
+  conservé `COMPUTATION_ONLY`.
+
+## Obstacle consolidé — paquet hybride ESS–KNSS
+
+Trois stratégies distinctes ont maintenant traité le même verrou :
+
+1. la matrice d'héritage montre que les propriétés ESS et KNSS appartiennent à
+   deux objets (`FAIL-NS-0010`);
+2. la rigidité du paquet abstrait est fermée conditionnellement : s'il était
+   produit sur un même objet, celui-ci serait nul;
+3. la permutation des limites au temps-record du zoom KNSS est impossible :
+   la classe mild transmet au contraire une valeur non nulle, et expose que le
+   vrai temps terminal est une extrémité mobile (`FAIL-NS-0012`).
+
+Décision de pivot : suspendre la recherche d'une trace ESS à l'intérieur du
+zoom maximum KNSS. Toute réouverture exige une nouvelle extraction ou un lemme
+d'équivalence entre deux profils, pas un autre renommage de topologie.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,

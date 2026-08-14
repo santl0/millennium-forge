@@ -292,6 +292,21 @@ noyau Fourier :
 Aucun de ces sous-lemmes n'est créé ni compilé dans ce cycle. Le statut du
 claim reste donc `COMPUTATION_ONLY`, et non `FORMALIZED`.
 
+Le cycle 0009 isole deux autres noyaux finis, plus proches d'une formalisation
+immédiate que le théorème de compacité :
+
+1. le changement de variable
+   `<v_k,phi>=M_k² integral u(x)phi(M_k(x-x_k))dx` et la loi
+   `integral|v_k|^q=M_k^(3-q)integral|u|^q` sur les boules correspondantes;
+2. le lemme métrique
+   `|v(0)|=1` et `||nabla v||_infinity<=G` impliquent
+   `integral_(B_(1/(2G)))|v|³>=pi/(48G³)`.
+
+Ces identités n'exigent ni distributions vectorielles générales, ni
+projection de Leray, ni Carleman. Elles sont ajoutées au backlog après
+`NS-FORMAL-0001`, mais aucun fichier Lean n'est encore créé : les constantes de
+lissage qui fournissent `G` restent un théorème source externe.
+
 Le premier développement propre à Millennium Forge ne doit pas tenter Leray–Hopf
 ou un critère critique complet. Le noyau proposé est une **identité d'énergie
 Fourier finie sur le tore**, suffisamment petite pour être revue et suffisamment

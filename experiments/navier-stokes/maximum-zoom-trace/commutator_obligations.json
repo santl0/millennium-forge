@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-08-14",
+  "experiment": "MAXIMUM-ZOOM-TRACE-COMMUTATOR-1",
+  "equation": "partial_t u - Delta u + (u dot nabla)u + nabla p = 0, div u = 0 on R^3, viscosity 1 and zero force",
+  "lemma": "For a KNSS maximum-normalized record zoom, the subsequential limit extends smoothly through record-centered scaled time zero, the limits k->infinity and s->0- commute locally there, their common record-time trace is nonzero, and the original solution carries a scale-invariant positive local L3 mass on balls of radius comparable to M_k^-1. This says nothing by itself about the physical terminal time T, which is the mobile scaled endpoint B_k.",
+  "status_vocabulary": {
+    "SOURCE": "stated in the cited primary source",
+    "SOURCE_PLUS_SCALING": "source estimate restarted on a uniform parabolic interval and rescaled algebraically",
+    "DERIVATION": "laboratory implication, not attributed verbatim to a paper",
+    "COUNTERPROFILE": "exact adverse family used only to test necessity of a gate"
+  },
+  "normalization": {
+    "record_size": "M_k=|u(x_k,t_k)| tends to infinity",
+    "zoom": "v_k(y,s)=M_k^-1 u(x_k+M_k^-1 y,t_k+M_k^-2 s)",
+    "past_bound": "|v_k(y,s)|<=gamma_k for s<=0, with gamma_k->1 and gamma_k<=2 eventually",
+    "point_value": "|v_k(0,0)|=1",
+    "past_endpoint": "A_k=-M_k^2 t_k tends to minus infinity",
+    "record_time": "scaled s=0 corresponds to physical t=t_k, not to T",
+    "future_endpoint": "physical T corresponds to B_k=M_k^2(T-t_k)>0"
+  },
+  "properties": {
+    "unforced_viscous_ns": "standard incompressible Navier-Stokes with viscosity one",
+    "maximum_record_zoom": "the scale and center are selected by the KNSS running maximum construction",
+    "uniform_past_velocity_bound": "the normalized fields satisfy |v_k|<=2 on every fixed past strip for all large k",
+    "point_normalization": "|v_k(0,0)|=1",
+    "mild_restart": "the normalized solution satisfies the Oseen/Leray formula between finite scaled times",
+    "uniform_record_time_spatial_derivative": "the gradients at and immediately before record-centered s=0 have a k-independent bound",
+    "uniform_record_time_derivative": "partial_s v_k has a k-independent bound near record-centered s=0",
+    "same_centered_sequence": "all limits refer to the same subsequence and the same record-centered time"
+  },
+  "required_properties": [
+    "unforced_viscous_ns",
+    "maximum_record_zoom",
+    "uniform_past_velocity_bound",
+    "point_normalization",
+    "mild_restart",
+    "uniform_record_time_spatial_derivative",
+    "uniform_record_time_derivative",
+    "same_centered_sequence"
+  ],
+  "obligations": {
+    "O1_RECORD_NORMALIZATION": {
+      "status": "SOURCE",
+      "source": "KNSS 2009, Proposition 6.1",
+      "conclusion": "M_k tends to infinity, |v_k|<=gamma_k on the past, and |v_k(0,0)|=1"
+    },
+    "O2_UNIFORM_RECORD_SPATIAL_DERIVATIVES": {
+      "status": "SOURCE_PLUS_SCALING",
+      "source": "KNSS 2009, Proposition 4.1 restarted a fixed scaled time before zero",
+      "conclusion": "for every spatial order m, sup_k sup_(-delta<=s<=0)||nabla^m v_k(s)||_infinity is finite"
+    },
+    "O3_UNIFORM_RECORD_TIME_DERIVATIVE": {
+      "status": "SOURCE_PLUS_SCALING",
+      "source": "KNSS 2009, Proposition 4.1 with one time derivative",
+      "conclusion": "sup_k sup_(-delta<=s<=0)||partial_s v_k(s)||_infinity<=L"
+    },
+    "O4_RECORD_TIME_COMPACTNESS": {
+      "status": "DERIVATION",
+      "source": "Arzela-Ascoli using O2 and O3, consistent with KNSS Lemma 6.1",
+      "conclusion": "after a subsequence v_k converges in C^m_local through s=0 to a bounded ancient mild v"
+    },
+    "O5_PAIRING_RESCALING": {
+      "status": "DERIVATION",
+      "source": "change of variables y=M_k(x-x_k)",
+      "conclusion": "<v_k(s),phi>=M_k^2 integral u(x,t_k+s/M_k^2) phi(M_k(x-x_k)) dx"
+    },
+    "O6_LIMITS_COMMUTE": {
+      "status": "DERIVATION",
+      "source": "uniform record-time modulus from O3 plus local convergence from O4",
+      "conclusion": "at record-centered s=0, lim_(s->0-)lim_(k->infinity)<v_k(s),phi>=lim_(k->infinity)lim_(s->0-)<v_k(s),phi>=<v(0),phi>; this is not a physical terminal trace at T"
+    },
+    "O7_COMMON_RECORD_VALUE_NONZERO": {
+      "status": "DERIVATION",
+      "source": "point normalization and record-time C^0_local convergence",
+      "conclusion": "|v(0,0)|=1, so one compactly supported vector test has <v(0),phi> nonzero at the record-centered time"
+    },
+    "O8_CRITICAL_L3_CONCENTRATION": {
+      "status": "DERIVATION",
+      "source": "uniform gradient bound, point normalization and the scale-invariance of local L3 mass",
+      "conclusion": "if ||nabla v_k(0)||_infinity<=G then integral_(B_(1/(2G M_k))(x_k)) |u(x,t_k)|^3 dx >= pi/(48 G^3)"
+    },
+    "O9_UNIFORM_LOCAL_L3_REGULARITY_CRITERION": {
+      "status": "DERIVATION",
+      "source": "contrapositive of O8 and the L-infinity blow-up alternative; compare Constantin 2023, condition (23) and Theorem 2",
+      "conclusion": "if sup_(t near T,x) integral_(B_r(x))|u(t)|^3 tends to zero as r tends to zero, then T is not a finite maximal time; this full equi-integrability hypothesis is stronger than Constantin's already known fixed-threshold continuation condition and is not claimed as a new criterion"
+    }
+  },
+  "direct_route": [
+    "O1_RECORD_NORMALIZATION",
+    "O2_UNIFORM_RECORD_SPATIAL_DERIVATIVES",
+    "O3_UNIFORM_RECORD_TIME_DERIVATIVE",
+    "O4_RECORD_TIME_COMPACTNESS",
+    "O5_PAIRING_RESCALING",
+    "O6_LIMITS_COMMUTE",
+    "O7_COMMON_RECORD_VALUE_NONZERO",
+    "O8_CRITICAL_L3_CONCENTRATION",
+    "O9_UNIFORM_LOCAL_L3_REGULARITY_CRITERION"
+  ],
+  "counterprofiles": {
+    "AFFINE_PRESSURE_TERMINAL_LAYER": {
+      "description": "u_k(x,s)=exp(k^2 s)e_1 and p_k(x,s)=-k^2 exp(k^2 s)x_1 on s<=0 solve the classical unforced PDE, but are not mild; the two endpoint limits are 0 and e_1",
+      "satisfies": [
+        "unforced_viscous_ns",
+        "uniform_past_velocity_bound",
+        "point_normalization",
+        "uniform_record_time_spatial_derivative",
+        "same_centered_sequence"
+      ],
+      "expected_failed_properties": [
+        "maximum_record_zoom",
+        "mild_restart",
+        "uniform_record_time_derivative"
+      ]
+    },
+    "TRANSLATED_PACKET": {
+      "description": "a fixed compact divergence-free packet translated to infinity converges to zero in distributions but loses the centered point normalization and is not one record-zoom trajectory",
+      "satisfies": [
+        "uniform_past_velocity_bound",
+        "uniform_record_time_spatial_derivative",
+        "uniform_record_time_derivative"
+      ],
+      "expected_failed_properties": [
+        "unforced_viscous_ns",
+        "maximum_record_zoom",
+        "point_normalization",
+        "mild_restart",
+        "same_centered_sequence"
+      ]
+    },
+    "HIGH_FREQUENCY_SLICES": {
+      "description": "bounded divergence-free slices sin(k x_1)e_2 have no uniform gradient bound and are not a single mild record-zoom trajectory",
+      "satisfies": [
+        "uniform_past_velocity_bound",
+        "point_normalization",
+        "uniform_record_time_derivative"
+      ],
+      "expected_failed_properties": [
+        "unforced_viscous_ns",
+        "maximum_record_zoom",
+        "mild_restart",
+        "uniform_record_time_spatial_derivative",
+        "same_centered_sequence"
+      ]
+    },
+    "SPATIALLY_CONSTANT_MILD_SOLUTION": {
+      "description": "u=e_1 is an exact bounded ancient mild solution; all record-time limits commute and the common trace is nonzero, but it is not produced here by a finite-time maximum-record blow-up",
+      "satisfies": [
+        "unforced_viscous_ns",
+        "uniform_past_velocity_bound",
+        "point_normalization",
+        "mild_restart",
+        "uniform_record_time_spatial_derivative",
+        "uniform_record_time_derivative",
+        "same_centered_sequence"
+      ],
+      "expected_failed_properties": [
+        "maximum_record_zoom"
+      ]
+    }
+  }
+}

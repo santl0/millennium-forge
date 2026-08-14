@@ -58,6 +58,8 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | solution ancienne spatialement constante + mildness | constance temporelle | classique et sourcée | KNSS remarque 6.1 | ne traite aucun mode spatial non nul |
 | pression ancienne `BMO_x` modulo constantes | exclusion du mode affine parasite | dérivation locale, `COMPUTATION_ONLY` | oscillation moyenne `R/2` | ne donne pas la rigidité des modes non constants |
 | zoom de blow-up KNSS borné | solution ancienne mild non nulle | classique et sourcée sous hypothèses KNSS | compacité mild + normalisation ponctuelle | pas disponible pour tout blow-up Clay général |
+| zoom KNSS par temps records | valeur locale non nulle au temps-record redimensionné `s=0` + concentration `L³` critique | dérivation laboratoire, `COMPUTATION_ONLY` | lissage KNSS uniforme : limites `k/s` commutables à `t_k`, `|v(0,0)|=1`, masse `>=pi/(48G³)` | le temps physique `T` est l'extrémité mobile `B_k`; aucune non-concentration issue de l'énergie |
+| non-concentration uniforme `lim_(r->0)sup_(t,x) integral_(B_r(x))|u|³=0` | absence de temps maximal fini dans la classe mild KNSS | dérivation conditionnelle, déjà couverte par le critère plus faible de Constantin 2023 | contraposée de la concentration du zoom maximum + condition (23) publiée | prémisse critique non démontrée pour toute donnée Clay |
 | zoom ESS sous `L∞_tL³_x` | solution NS éternelle, adaptée, non triviale, trace `L²_loc` nulle | classique et sourcée | ESS, convergence forte locale et pression scindée | aucune borne ponctuelle globale; la borne `L³` est déjà critique |
 | élément critique GKP sous `A_c<infinity` | solution mild forward, trace terminale nulle dans `S'` | classique et sourcée | GKP théorèmes 5–7 | ni objet ancien ni borne ponctuelle globale |
 | ancienne mild bornée + vraie trace terminale nulle dans `D'` | trivialité par unicité rétrograde | dérivation laboratoire, `COMPUTATION_ONLY`, passe adverse | lissage KNSS + vorticité + ESS sur bandes finies + Liouville harmonique + jauge mild; Lei–Yang–Yuan publié en contrôle | aucune chaîne auditée ne transmet toutes les prémisses au même objet |
@@ -80,25 +82,25 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | `GAP-COMPACT-Q` | compacité | passage `u_n tensor u_n` | trois échecs sous énergie seule: queue, défaut de trace, module supercritique; pivot requis |
 | `GAP-PRESSURE-TAIL` | pression/localisation | défaut de tension de `integral |U_n|²|y|^-4` après zoom | paquets multi-échelles; extraction ESS/GKP |
 | `GAP-PRESSURE-HARMONIC` | jauge de pression | équation de Poisson sur `R³` ne fixe pas les composantes affines | solution ancienne parasite exacte |
-| `GAP-HYBRID-INHERITANCE` | stabilité des hypothèses | mildness/bornitude KNSS et trace nulle ESS appartiennent à deux limites distinctes; la rigidité du paquet hybride est désormais fermée conditionnellement | matrice d'héritage à treize propriétés + audit de rigidité à neuf obligations |
+| `GAP-HYBRID-INHERITANCE` | stabilité des hypothèses | mildness/bornitude KNSS et trace nulle ESS appartiennent à deux limites distinctes; dans la normalisation maximum, les limites commutent au temps-record `t_k`, tandis que `T` devient l'extrémité mobile `B_k` | matrice d'héritage + rigidité à trace nulle + audit des horloges/commutateur; axe suspendu après trois stratégies |
 | `GAP-SIGN-FLUX` | positivité | flux d'énergie inter-échelles | contre-triades exactes |
 | `GAP-LIMIT-ADMISSIBLE` | stabilité/admissibilité | profil singulier vers donnée de Schwartz | troncature `epsilon` et temps local |
 | `GAP-NUM-CONTINUUM` | calcul vers continuum | discrétisation finie | résidu d'intervalle + queue analytique |
 
 ## Arêtes prioritaires
 
-1. `GAP-HYBRID-INHERITANCE` : déterminer si une extraction maximum-normalisée
-   peut hériter d'une vraie trace terminale nulle dans une topologie critique,
-   ou prouver qu'une normalisation non triviale rend cette transmission
-   impossible sans hypothèse circulaire. Le lemme de rigidité lui-même est
-   fermé conditionnellement.
-2. `GAP-LIMIT-ADMISSIBLE` : déterminer si la construction non unique récente
+1. `GAP-LIMIT-ADMISSIBLE` : déterminer si la construction non unique récente
    a un premier maillon uniforme vers des données Clay.
-3. `GAP-SIGN-FLUX` : élimination rapide de fonctionnelles candidates.
+2. `GAP-SIGN-FLUX` : élimination rapide de fonctionnelles candidates.
+3. `GAP-NUM-CONTINUUM` : isoler un opérateur compact à queues certifiables.
 
 `GAP-COMPACT-Q` est suspendu sous énergie seule après trois stratégies
 distinctes réfutées. Il ne sera rouvert qu'avec une hypothèse structurelle
 explicitement héritée d'un premier blow-up.
+
+`GAP-HYBRID-INHERITANCE` est également suspendu dans la normalisation maximum
+KNSS : une réouverture exige une extraction différente ou un lemme
+d'équivalence de profils, et non une nouvelle permutation des mêmes limites.
 
 Une arête ne passe à « classique et sourcée » qu'avec une source primaire et
 des hypothèses identiques. Une expérience finie reste « numérique » ou
