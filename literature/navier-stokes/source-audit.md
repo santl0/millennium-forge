@@ -812,3 +812,31 @@ publication ou version nouvelle n'était indiquée pour `0059` et `0061`.
 La veille ajoute `NS-SRC-0132`–`0135` et porte le corpus à 135 sources. Ces
 quatre entrées sont des outils publiés d'analyse géométrique ou harmonique,
 pas des résultats nouveaux sur l'équation de Navier–Stokes.
+
+## Audit ciblé du cycle 0033 — degré, VMO et gate directionnel
+
+- Hopf (`0136`) et Whitney (`0139`) sourcent la rotation de la tangente et le
+  nombre de rotation des courbes planes régulières. Ces invariants ne
+  minorent ni le reach, ni l'arc où tourne la tangente, ni la magnitude du
+  gradient.
+- Amann (`0137`) donne l'indice local `+1` du gradient à un minimum isolé. En
+  dimension deux, le même indice vaut pour un maximum après changement de
+  signe. L'isolement du zéro critique reste une hypothèse indispensable.
+- Brezis–Nirenberg Part II (`0138`) fournit degré, trace et image essentielle
+  pour les applications VMO sur un domaine à bord. Le cycle en déduit, comme
+  dérivation interne, qu'une direction de gradient de degré non nul n'est pas
+  VMO et échoue donc au log-BMO aux petites échelles.
+- Ce résultat topologique reste qualitatif : il ne fournit ni rayon relié au
+  coeur, ni masse locale de vorticité, ni constante dépendant seulement de
+  `K_u/K_w`. Il ne source donc pas le claim quantitatif du cycle.
+- La borne
+  `MO_B>=c_Lambda(K_u/K_w)^6` vient indépendamment de la troncature signée,
+  du weak HLS, de la coaire et de la compensation conique. Elle reste une
+  dérivation IA `COMPUTATION_ONLY`, même après les passes contradictoires.
+- Lei–Ren–Tian `2501.08976v1`, Grujić `2607.08866v2` et Grujić
+  `2511.00725v3` sont inchangés à la date de gel; aucune source récente
+  inspectée ne couple degré et masse faible-`L^(3/2)` localisée.
+
+La veille ajoute `NS-SRC-0136`–`0139` et porte le corpus à 139 sources. Les
+textes sont des outils topologiques publiés, sans implication directe vers
+une solution globale ou un blow-up admissible de Navier–Stokes.

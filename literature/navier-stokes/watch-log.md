@@ -612,3 +612,22 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
   faible-`L^(3/2)` du curl, indépendamment des couches et des signes.
 - Décision : abandonner la branche « superposition mince » et activer
   `GAP-THICK-CROSS-SECTION-GRADIENT-DIRECTION`.
+
+## 2026-08-14 — Cycle 0033
+
+- Veille différentielle primaire : Hopf et Whitney sur le nombre de rotation,
+  Amann sur l'indice local d'un gradient, Brezis–Nirenberg Part II sur le
+  degré VMO avec bord.
+- Sources ajoutées : `NS-SRC-0136`–`0139`; corpus porté à 139 entrées. Les
+  textes et métadonnées primaires ont été audités le 2026-08-14.
+- Résultat négatif de veille : l'obstruction de degré donne non-VMO, mais ne
+  donne aucune masse locale de vorticité ni constante reliée aux endpoints
+  faibles. Elle ne prouve pas la borne quantitative du cycle.
+- Statuts récents recontrôlés : Lei–Ren–Tian `2501.08976v1`, Grujić
+  `2607.08866v2` et `2511.00725v3`; aucune nouvelle publication ou version ne
+  ferme le raccord au problème Clay.
+- Résultat interne : sous diamètre axial `O(R)`, la troncature/coaire et la
+  compensation conique donnent une vraie boule avec
+  `MO_B>=c_Lambda(K_u/K_w)^6`.
+- Décision : abaisser le degré seul et activer
+  `GAP-AXIALLY-DISPERSED-PURE-SWIRL-SELECTION`.
