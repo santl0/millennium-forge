@@ -21,11 +21,17 @@ Le projet complète les formulations Lean existantes et les corpus de conjecture
 
 Une ressemblance, un calcul numérique ou une preuve générée par IA ne change jamais seul le statut d'une affirmation. Les conclusions canoniques doivent rester proportionnées à la meilleure preuve effectivement disponible.
 
-## État Navier–Stokes au cycle 0018
+## État Navier–Stokes au cycle 0020
 
-Le programme actif a reproduit conditionnellement les blocs fonctionnels
-`(8)->(49)` de `arXiv:2607.08866v2`, en conservant leurs hypothèses globales
-et en corrigeant plusieurs constantes et quantificateurs. Le dernier bloc
-fermé est le commutateur localisé logarithmique; il reste
-`COMPUTATION_ONLY`. Le verrou actif est la synchronisation de l'endgame
-`(49)->(58)`, non une prétendue résolution Clay.
+Le programme actif a reproduit conditionnellement la chaîne fonctionnelle et
+l'endgame `(8)->(58)` de `arXiv:2607.08866v2`, avec corrections des temps,
+seuils, constantes, semi-normes et queues. Cette synthèse reste
+`COMPUTATION_ONLY` et suppose une vorticité critique ainsi qu'une direction
+globale `bmo_phi`; elle n'est pas une résolution Clay.
+
+Le cycle 0020 réfute le raccord universel depuis une cohérence seulement
+composante par composante : deux cœurs antipodaux imposent le coût optimal
+`4ab/(a+b)` et une divergence logarithmique lorsque leurs fractions restent
+fixes à petite échelle. La solution nulle montre aussi que la direction n'est
+pas intrinsèque sans convention aux zéros. Le verrou actif est désormais
+l'admissibilité PDE complète du profil critique ponctuel supposé en amont.

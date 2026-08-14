@@ -743,3 +743,46 @@ queue uniforme (49) + analyticité mild locale + dichotomie temporelle
 l'extension depuis le cœur actif : des directions constantes sur des cœurs
 séparés peuvent encore imposer une oscillation macroscopique à l'échelle de
 leur distance, malgré une cohérence parfaite sur chaque composante.
+
+## Cycle 0020 : obstruction inter-cœurs `bmo_phi`
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| quantifier l'extension depuis plusieurs cœurs actifs | 5 | 5 | 5 | 5 | **20** |
+| tester l'admissibilité PDE du profil critique ponctuel | 4 | 3 | 4 | 5 | 16 |
+| construire une dynamique annulaire de déplétion | 4 | 3 | 4 | 5 | 16 |
+
+Pour deux phases antipodales de fractions `a,b` dans un même domaine test,
+toute extension vérifie la borne optimale
+
+```text
+MO_D(xi)>=4ab/(a+b).
+```
+
+La valeur de corridor `(a-b)e/(a+b)` atteint l'égalité, même sous `|xi|<=1`.
+Ainsi le contraste angulaire ne suffit pas : le volume relatif de la phase
+minoritaire intervient nécessairement.
+
+Deux boules de rayon `epsilon` dans une boule de rayon `3epsilon` ont
+`a=b=1/27`, donc `MO>=2/27`. Aux échelles
+`3epsilon_n=exp(-n)`, toute extension coûte au moins `2n/27` dans la norme
+logarithmique. Un potentiel compact lisse réalise exactement des vorticités
+opposées dans les cœurs, avec divergence nulle et scaling critique
+faible-`L^(3/2)`; il ne réalise pas une trajectoire singulière.
+
+La solution nulle montre séparément que l'hypothèse n'est pas intrinsèque
+sans convention aux zéros : une extension constante a semi-norme zéro, une
+extension par saut a semi-norme infinie, pour la même vorticité nulle.
+
+Arête réfutée :
+
+```text
+cohérence sur chaque composante active
+  -> extension globale bmo_phi uniforme.
+```
+
+`GAP-ACTIVE-CORE-BMO` est fermé négativement sous ces seules prémisses. Une
+réouverture exige un packing de phases de taille `O(phi(r))`. Le verrou actif
+devient `GAP-CRITICAL-PROFILE-ADMISSIBILITY` : compatibilité simultanée du
+profil critique ponctuel avec `div omega=0`, Biot–Savart, énergie finie,
+direction globale log-BMO, coupures et constantes uniformes.

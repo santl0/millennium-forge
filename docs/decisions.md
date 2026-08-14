@@ -32,3 +32,17 @@
 - Les corrections de semi-norme BMO, interpolation faible, réarrangée exacte
   et dernier anneau sont enregistrées; aucun statut `PAPER_PROOF` n'est créé.
 - `GAP-ENDGAME-SYNCHRONIZATION` devient le verrou actif.
+
+### 2026-08-14 — endgame conditionnel et extension active réfutée
+
+- `GAP-ENDGAME-SYNCHRONIZATION` est fermé conditionnellement au cycle 0019,
+  après remplacement du temps maximal par un temps garanti et séparation des
+  branches prolongement direct / temps intérieur.
+- L'implication « cohérence sur chaque cœur actif vers `bmo_phi` global
+  uniforme » est réfutée au cycle 0020 par deux phases antipodales; la borne
+  optimale d'oscillation est `4ab/(a+b)`.
+- La direction de vorticité doit comporter une convention ou un quantificateur
+  d'extension sur `{omega=0}`; sinon son appartenance à `bmo_phi` n'est pas
+  intrinsèque.
+- `GAP-ACTIVE-CORE-BMO` est fermé négativement sans packing inter-composantes.
+  `GAP-CRITICAL-PROFILE-ADMISSIBILITY` devient le verrou actif.

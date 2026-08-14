@@ -24,8 +24,12 @@
 ## Navier–Stokes — prochaine reprise
 
 - [x] Auditer à constantes suivies le commutateur localisé `(8)->(22)`.
-- [ ] Synchroniser `(49)->(58)` au même temps d'échappement et vérifier les
+- [x] Synchroniser `(49)->(58)` au même temps d'échappement et vérifier les
   deux branches du critère harmonique.
-- [ ] Tester l'extension d'une direction connue seulement sur le cœur actif
+- [x] Tester l'extension d'une direction connue seulement sur le cœur actif
   vers la prémisse globale `bmo_phi`, zéros et multicœurs inclus.
+- [ ] Auditer l'admissibilité du profil critique ponctuel sous
+  `div omega=0`, Biot–Savart, énergie finie, coupures et `bmo_phi` global.
+- [ ] Formaliser le lemme scalaire de séparation de phases
+  `MO>=4ab/(a+b)` dans un environnement épinglé.
 - [ ] Obtenir une revue externe indépendante du lemme du cycle 0018.

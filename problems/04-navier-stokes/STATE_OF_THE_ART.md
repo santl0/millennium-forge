@@ -418,3 +418,28 @@ faible-`L^(3/2)` et la direction globale `bmo_phi`. La prochaine question est
 donc structurelle : une direction cohérente seulement sur chaque cœur actif
 peut-elle être étendue à travers les zéros et entre plusieurs cœurs avec le
 taux logarithmique uniforme exigé ?
+
+Le cycle 0020 répond négativement à cette question sous ses seules prémisses.
+Si une direction vaut `+e` et `-e` sur deux parties de fractions `a,b` d'un
+même domaine test, toute extension a une oscillation moyenne au moins
+`4ab/(a+b)`; la constante est optimale. Deux cœurs de fractions fixes à des
+échelles tendant vers zéro imposent donc un coût logarithmique divergent,
+malgré une cohérence parfaite dans chaque cœur. La réalisation par potentiel
+compact lisse respecte exactement l'incompressibilité et le scaling critique
+faible-`L^(3/2)`, mais reste une famille de données initiales distinctes, non
+une trajectoire de blow-up.
+
+Le même audit distingue les espaces utilisés : la v2 de Grujić suppose une
+norme globale ancrée par `L∞`, tandis que Bradshaw–Grujić 2015 contrôlent
+`psi xi` dans un `tilde-bmo_phi` ancré par `L¹`. Ni Goldberg, ni Janson, ni
+Nakai–Yabuta n'autorisent à identifier littéralement ces normalisations. La
+solution nulle révèle en outre une ambiguïté de définition : deux extensions
+unitaires sur `{omega=0}` peuvent avoir respectivement une semi-norme nulle et
+infinie.
+
+Le théorème conditionnel 2026 n'est pas réfuté puisqu'il suppose déjà la
+borne globale. Le raccord depuis une géométrie seulement active l'est. Toute
+réparation doit imposer un packing inter-composantes de taille
+`4ab/(a+b)=O(phi(r))` et fixer une extension mesurable en espace-temps. Le
+verrou actif se déplace vers l'admissibilité complète du profil critique
+ponctuel sous `div omega=0`, Biot–Savart, énergie et coupures uniformes.

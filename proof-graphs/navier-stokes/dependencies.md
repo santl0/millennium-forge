@@ -82,7 +82,9 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | identité terminale `lambda=f*(mu_f(lambda))` pour toute fonction mesurable | égalité de l'équation (48) sur tous les niveaux | réfutée | profil exact à deux plateaux, `FAIL-NS-0017` | remplacer par `v<mu_f(lambda) -> f*(v)>lambda` |
 | queue uniforme (49) + analyticité mild locale + mesure harmonique | exclusion d'un premier temps singulier dans ce scénario | conditionnelle, dérivation exacte après corrections, `COMPUTATION_ONLY` | `NS-CONDITIONAL-ENDGAME-SYNCHRONIZATION`, Grujić 2013, Guberović, Solynin et Ransford, cycle 0019 | temps garanti et dichotomie requis; ne produit pas (49) depuis une donnée Clay générale |
 | `s=t+T_t` avec `T_t` durée maximale | temps intérieur `s∈(t,T*)` | réfutée | `NS-ENDGAME-MAXIMAL-TIME-SELECTION`, résidu exact `T*−s=0` | remplacer par `tau_t` garanti et séparer prolongement direct / branche intérieure |
-| cohérence de direction seulement sur chaque cœur `{omega>lambda}` | direction globale uniforme `bmo_phi` | manquante | prochain test : deux cœurs opposés séparés par des zéros | coût d'extension et oscillation entre composantes non contrôlés |
+| cohérence de direction seulement sur chaque cœur `{omega>lambda}` | direction globale uniforme `bmo_phi` | réfutée sans contrôle inter-composantes | `NS-ACTIVE-CORE-BMO-EXTENSION`, cycle 0020 : deux cœurs antipodaux de fractions fixes imposent un coût logarithmique divergent | ajouter un packing de phases `4ab/(a+b)=O(phi(r))`, une convention aux zéros et une sélection mesurable en temps |
+| phases directionnelles `+e/-e` de fractions `a,b` dans un domaine test | `MO_D(xi)>=4ab/(a+b)` | dérivation exacte optimale, `COMPUTATION_ONLY` | `NS-BMO-PHASE-SEPARATION-BOUND`, cycle 0020 | lemme géométrique seulement; la dynamique NS ne fournit pas `a,b` |
+| identité `omega=|omega|xi` sans convention sur `{omega=0}` | appartenance intrinsèque de `xi` à `bmo_phi` | réfutée | `NS-VORTICITY-DIRECTION-ZERO-CANONICITY`, solution nulle et deux extensions unitaires | formuler une convention ou l'existence d'une extension espace-temps mesurable |
 | hélicité globale nulle | petit flux instantané universel | réfutée | contre-triade exacte | pas de positivité modale |
 | profil Euler IA | profil NS perturbatif | réfutée pour l'ansatz mono-échelle `lambda>-1/2` | rapport visqueux exact | viscosité dominante |
 | donnée homogène `-1` non unique | donnée compacte énergétique singulière non unique | source vérifiée, CAP non reproduite | Hou–Wang–Yang v2; cutoff extérieur, gain `R^-1/8` pour `p=4` | le coeur `1/r` est conservé |
@@ -116,16 +118,18 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | `GAP-DEGIORGI-UNIFORMITY` | constante/troncature | production de (40) depuis (22) par énergie tronquée | fermé conditionnellement au cycle 0017 : pas d'itération, coefficient `nu lambda/(2S_6²M)`, seuil fixe et Chebyshev suivis; la finitude des tronqués vient de la solution classique, pas du faible-`L^(3/2)` |
 | `GAP-COMMUTATOR-UNIFORMITY` | non-localité/constante | production de (22) depuis la cohérence `bmo_phi`, extension locale et queues dyadiques | fermé conditionnellement au cycle 0018 : semi-norme de Jones, interpolation CRW, réarrangée exacte, facteur trois et poids `4^-k`; l'hypothèse géométrique globale reste une prémisse |
 | `GAP-ENDGAME-SYNCHRONIZATION` | quantificateur/constante | passage de la queue de vitesse (49) au rayon de sparseness puis au critère analytique (58) | fermé conditionnellement au cycle 0019 : temps garanti, dichotomie, seuil uniforme, rayon témoin et même `M`; le choix maximal littéral est réfuté |
-| `GAP-ACTIVE-CORE-BMO` | géométrie/extension | direction cohérente seulement sur `{omega>lambda}` vers prémisse globale `bmo_phi` | actif : zéros, composantes opposées et coût à l'échelle de séparation doivent être contrôlés ou réfutés |
+| `GAP-ACTIVE-CORE-BMO` | géométrie/extension | direction cohérente seulement sur `{omega>lambda}` vers prémisse globale `bmo_phi` | fermé négativement au cycle 0020 pour l'implication universelle : optimum `4ab/(a+b)`, famille divergence-free à deux cœurs et ambiguïté aux zéros; une réouverture exige un packing inter-composantes quantitatif |
+| `GAP-CRITICAL-PROFILE-ADMISSIBILITY` | admissibilité/pression | profil critique ponctuel de vorticité vers champ divergence-free énergétique et direction globale `bmo_phi` | actif : imposer simultanément `div omega=0`, Biot–Savart, énergie finie, coupures, pression et constantes uniformes |
 | `GAP-LIMIT-ADMISSIBLE` | stabilité/admissibilité | profil singulier vers donnée de Schwartz | trois portes distinctes fermées : `FAIL-NS-0013` réfute la compacité `L³`, `0014` annule le mode impair sous lissage symétrique, `0015` réfute l'identification trace asymptotique/donnée finie; axe suspendu |
 | `GAP-NUM-CONTINUUM` | calcul vers continuum | discrétisation finie | résidu d'intervalle + queue analytique |
 
 ## Arêtes prioritaires
 
-1. `GAP-ACTIVE-CORE-BMO` : relier une direction définie sur
-   `{omega>lambda}` à la prémisse globale `bmo_phi`, zéros et multicœurs inclus.
-2. Admissibilité du profil critique : quantifier simultanément confinement,
-   faible-`L^(3/2)` et régularité classique pré-singulière.
+1. `GAP-CRITICAL-PROFILE-ADMISSIBILITY` : quantifier simultanément
+   `div omega=0`, confinement, Biot–Savart, énergie, direction globale
+   `bmo_phi`, faible-`L^(3/2)` et régularité classique pré-singulière.
+2. `GAP-ACTIVE-CORE-BMO` : fermé négativement sans packing de phases; ne le
+   rouvrir qu'avec une condition inter-composantes stable sous la dynamique.
 3. `GAP-VORTICITY-TAIL` : confronter la queue de strain annulaire réparée à
    un contre-profil multi-échelle divergence-free issu d'une dynamique.
 4. `GAP-NUM-CONTINUUM` : isoler un opérateur compact à queues certifiables.

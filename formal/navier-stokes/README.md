@@ -585,3 +585,23 @@ pas la queue de distribution (H49), l'existence d'un temps d'échappement pour
 une solution NS, ni les théorèmes de théorie du potentiel eux-mêmes. Ils
 restent derrière le noyau Fourier–Leray prioritaire mais constituent un bon
 module fini sans dépendance PDE lourde.
+
+## Backlog issu du cycle 0020 — séparation de phases et zéros
+
+Le lemme géométrique est assez stable pour une formalisation finie :
+
+1. définir l'oscillation moyenne vectorielle sur un espace de probabilité;
+2. encoder deux ensembles disjoints de masses `a,b` où `xi=+e,-e`;
+3. réduire par Jensen le corridor à sa moyenne et par projection au problème
+   scalaire;
+4. prouver l'optimum `4ab/(a+b)` et le minimiseur
+   `(a-b)e/(a+b)`, y compris `a=0` ou `b=0`;
+5. déduire la borne pondérée après division par `phi(r)>0`;
+6. formaliser le cas `a=b=1/27`, puis la divergence de `2n/27`;
+7. séparer explicitement `omega=0` de toute opération de normalisation et
+   formaliser les deux extensions du contre-test nul.
+
+Ce module ne certifierait ni que la direction provient d'une vorticité NS,
+ni l'existence d'un packing de phases le long d'une trajectoire, ni le
+théorème de commutateur. Il peut néanmoins certifier entièrement l'obstruction
+d'extension qui ferme `GAP-ACTIVE-CORE-BMO` sous ses prémisses actuelles.

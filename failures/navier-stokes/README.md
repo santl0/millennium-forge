@@ -641,6 +641,45 @@ de stabilité non perturbatif qui ne suppose aucune de ces trois arêtes. Le
 prochain verrou actif devient la géométrie locale de la vorticité confrontée
 aux triades de Fourier signées.
 
+## `FAIL-NS-0028` — Cohérence composante par composante vers `bmo_phi` global
+
+- Date : 2026-08-14.
+- Cadre : données `C_c^infinity(R³)` divergence-free pour NS incompressible
+  3D non forcé, viscosité `nu>0`; calcul instantané, pas une trajectoire.
+- Cible : déduire une borne globale uniforme `bmo_phi` d'une direction
+  constante, donc parfaitement cohérente, sur chaque composante active.
+- Contre-test : deux boules de rayon `epsilon`, centrées en
+  `+/-2epsilon e_1`, portent `+e_3` et `-e_3` dans une boule commune de rayon
+  `3epsilon`. Toute extension dans le corridor a
+  `MO>=2/27`. Pour `3epsilon_n=exp(-n)`, le coût log-pondéré est au moins
+  `2n/27`.
+- Lemme optimal : avec fractions `a,b`, le coût minimal exact est
+  `4ab/(a+b)`, atteint par la valeur de corridor `(a-b)e/(a+b)`. Une phase
+  minoritaire suffisamment diluée peut donc éviter la divergence.
+- Réalisation : potentiel compact lisse, divergence exactement nulle,
+  vorticités internes antipodales et scaling critique faible-`L^(3/2)`.
+- Résidu : douze contrôles exacts passent; aucune pression globale ni
+  persistance dynamique des cœurs n'est revendiquée.
+- Réparation : imposer un packing inter-composantes
+  `4ab/(a+b)=O(phi(r))`, avec convention aux zéros et uniformité temporelle.
+- Statut : claim `NS-ACTIVE-CORE-BMO-EXTENSION` `REFUTED`.
+
+## `FAIL-NS-0029` — Canonicité de la direction sur les zéros de vorticité
+
+- Date : 2026-08-14.
+- Cadre : solution classique nulle de NS incompressible non forcé sur `R³`,
+  toute viscosité `nu>0`.
+- Cible : considérer l'appartenance globale de `xi=omega/|omega|` à
+  `bmo_phi` comme une propriété intrinsèque sans définir `xi` aux zéros.
+- Contre-test exact : `u=p=omega=0`. Les extensions unitaires `xi=e_1` et
+  `xi=sign(x_1)e_1` satisfont la même identité `omega=|omega|xi`; la première
+  a semi-norme zéro et la seconde une semi-norme log-pondérée infinie.
+- Résidu : PDE, divergence et relation rotationnel–vorticité exactement nuls.
+- Réparation : fixer une convention canonique, ou quantifier explicitement
+  l'existence d'une extension espace-temps mesurable avec borne uniforme.
+- Portée : ne réfute pas un théorème déjà formulé avec une telle existence.
+- Statut : claim `NS-VORTICITY-DIRECTION-ZERO-CANONICITY` `REFUTED`.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,
