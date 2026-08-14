@@ -92,6 +92,30 @@ ou une nouvelle affirmation, jamais à supprimer l'échec.
 - Statut : l'implication universelle depuis l'énergie seule est `REFUTED`;
   le critère positif de tension pondérée reste `COMPUTATION_ONLY`.
 
+## `FAIL-NS-0007` — Convergence faible d'une trace assimilée à la compacité quadratique
+
+- Date : 2026-08-14.
+- Équation : Navier–Stokes incompressible 3D sur `T³`, viscosité `nu=1`, force
+  nulle, solutions globales lisses et pression de moyenne nulle.
+- Cible : déduire de bornes uniformes d'énergie et de dissipation, et de
+  `u_N(t_N) weakly -> u` dans `L²` à des temps `t_N->0`, que
+  `u_N tensor u_N -> u tensor u` et `p_N->p[u]` dans les distributions.
+- Attaque : solution exacte issue de
+  `psi_N=N^-1 sin(x_1)cos(Nx_2)` avec
+  `t_N=log(2)/(N²+1)`.
+- Résultat : `u_N(t_N) weakly ->0`, mais
+  `u_N tensor u_N weakly ->diag((1/8)sin²(x_1),0,0)` et
+  `p_N(t_N) weakly ->(1/16)cos(2x_1)`.
+- Résidus : divergence, momentum, pression de Poisson, Laplacien et identité
+  d'énergie sont exactement nuls pour `N=1,2,4,...,128`; les identités
+  symboliques valent pour tout entier `N>=1`.
+- Portée : le défaut vit dans une couche initiale `t_N~N^-2`. Pour tout temps
+  fixe positif, la convergence est forte; la famille ne réfute ni la compacité
+  d'Aubin–Lions intérieure, ni un passage à la limite espace-temps, ni une
+  affirmation sur une donnée initiale fixée.
+- Statut : implication universelle sur les traces mobiles `REFUTED`; la
+  convergence forte `L³` reste un critère suffisant `COMPUTATION_ONLY`.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,

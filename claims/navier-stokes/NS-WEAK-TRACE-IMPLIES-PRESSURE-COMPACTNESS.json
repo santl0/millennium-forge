@@ -1,0 +1,40 @@
+{
+  "id": "NS-WEAK-TRACE-IMPLIES-PRESSURE-COMPACTNESS",
+  "problem": "navier-stokes",
+  "statement": "Pour toute suite de solutions globales lisses périodiques de Navier–Stokes 3D non forcé ayant énergie et dissipation uniformément bornées, si t_n tend vers zéro et u_n(t_n) converge faiblement vers u dans L^2, alors u_n(t_n) tensor u_n(t_n) converge vers u tensor u et la pression moyenne nulle converge vers la pression de u dans les distributions.",
+  "status": "REFUTED",
+  "hypotheses": [
+    "domaine T^3=(R/2piZ)^3 sans frontière, conditions périodiques",
+    "viscosité nu=1, force extérieure nulle et solutions globales lisses",
+    "sup_n sup_t ||u_n(t)||_2^2 et sup_n integral_0^infinity ||nabla u_n||_2^2 dt finis",
+    "suite de temps t_n>0 avec t_n tendant vers zéro",
+    "convergence faible de u_n(t_n) dans L^2(T^3)",
+    "pression normalisée par moyenne spatiale nulle"
+  ],
+  "dependencies": [
+    "NS-OSCILLATORY-TRACE-DEFECT-FAMILY"
+  ],
+  "evidence": [
+    {
+      "kind": "counterexample",
+      "reference": "experiments/navier-stokes/quadratic-pressure-defect/quadratic_pressure_defect.py",
+      "sha256": "9c85df21a8e847f17568c5e54e2bbd57fccc45775b0994383af2d93da89756f7"
+    },
+    {
+      "kind": "derivation",
+      "reference": "experiments/navier-stokes/README.md, section QUADRATIC-PRESSURE-DEFECT-1"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-state-of-art/cycle-0004"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Sous-agent Codex distinct, même famille de modèle; non indépendant au sens externe",
+    "notes": "Quantificateurs et polarité REFUTED vérifiés. La portée est strictement celle de solutions distinctes observées à des temps mobiles t_n vers zéro; aucun défaut à temps positif fixe, dans l'intérieur espace-temps ou pour une trajectoire unique."
+  }
+}

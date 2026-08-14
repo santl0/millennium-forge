@@ -63,3 +63,19 @@ solution ou précise qu'il s'agit seulement d'un champ test.
 - Perte localisée : l'énergie globale ne donne aucune tension uniforme après
   des zooms plus fins que l'échelle porteuse de l'énergie.
 - Artefact : `PRESSURE-MULTISCALE-1`, résidus rationnels zéro.
+
+## 2026-08-14 — Couche initiale oscillatoire et défaut de trace
+
+- Équation : NS incompressible 3D périodique, `nu=1`, sans force, solutions
+  globales analytiques explicites.
+- Fréquence et temps : fréquence principale `N`, dissipation `N²+1`, temps
+  d'observation `t_N=log(2)/(N²+1)`.
+- Énergie : `||u_N^0||_2²=(1/4)(1+N^-2)` avec moyenne normalisée; elle est
+  uniforme et reste d'ordre un au temps `t_N`.
+- Défaut : la vitesse converge faiblement vers zéro, mais son carré conserve
+  le mode lent `(1/8)sin²(x_1)`; la projection de Leray produit la pression
+  lente `(1/16)cos(2x_1)`.
+- Perte localisée : aucune compacité forte uniforme des traces aux temps
+  paraboliques mobiles ne suit de la seule énergie. À temps fixé positif, la
+  chaleur élimine le défaut.
+- Artefact : `QUADRATIC-PRESSURE-DEFECT-1`, résidus rationnels zéro.

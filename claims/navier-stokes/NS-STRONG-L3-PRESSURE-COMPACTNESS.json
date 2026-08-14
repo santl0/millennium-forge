@@ -1,0 +1,32 @@
+{
+  "id": "NS-STRONG-L3-PRESSURE-COMPACTNESS",
+  "problem": "navier-stokes",
+  "statement": "Sur le tore tridimensionnel, la convergence forte u_n vers u dans L^3 implique la convergence forte de u_n tensor u_n vers u tensor u dans L^(3/2) et celle des pressions moyennes nulles R_i R_j(u_{n,i}u_{n,j}) vers R_i R_j(u_i u_j) dans L^(3/2).",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "u_n et u appartiennent à L^3(T^3;R^3)",
+    "u_n converge fortement vers u dans L^3(T^3)",
+    "les pressions sont définies avec moyenne nulle par p=R_i R_j(u_i u_j)",
+    "bornitude classique des transformées de Riesz périodiques sur L^(3/2)",
+    "aucune conclusion sur la manière d'obtenir la convergence forte L^3 depuis l'énergie sur une trace"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "experiments/navier-stokes/README.md, section Hypothèse suffisante qui élimine le défaut local"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-state-of-art/cycle-0004"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Sous-agent Codex distinct, même famille de modèle; non indépendant au sens externe",
+    "notes": "Hölder et la bornitude des Riesz donnent le résultat. L3 fort est seulement suffisant, non minimal: L2 local fort suffit déjà pour une convergence distributionnelle du produit. La constante périodique C_(3/2) n'est pas évaluée mais ne dépend pas de n."
+  }
+}

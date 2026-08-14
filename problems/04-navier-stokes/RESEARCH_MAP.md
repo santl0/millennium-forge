@@ -78,11 +78,13 @@ Le graphe annoté et les arêtes manquantes sont détaillés dans
   sommable.
 - Échec actuel révisé : la queue distante centrée est petite sous la tension
   pondérée `L²(|y|^-4dy)`, et une borne globale `L³` donne cette tension en
-  `A^-3`. L'énergie seule ne la donne pas après zoom; la pression proche et la
-  compacité forte du produit restent ouvertes.
-- Test discriminant : construire des suites divergence-free qui convergent
-  faiblement mais gardent un défaut non nul de `u_n tensor u_n` et de pression
-  proche sous les bornes exactes disponibles.
+  `A^-3`. L'énergie seule ne la donne pas après zoom. Même parmi des solutions
+  NS globales lisses, la convergence faible de traces mobiles ne suffit pas à
+  la compacité quadratique; l'intérieur espace-temps reste compact sous les
+  hypothèses usuelles d'approximation.
+- Test discriminant : isoler une équicontinuité temporelle de trace, stable sous
+  zoom de premier blow-up, qui promeut la convergence faible en convergence
+  forte locale sans réintroduire une borne critique déjà décisive.
 - Circularité : absorber la queue par une norme globale critique non disponible.
 - Coût : moyen.
 - Abandon local : famille éloignée à énergie bornée dont le commutateur ne tend
@@ -173,3 +175,22 @@ isolé. L'extraction ESS/GKP montre qu'une borne globale uniforme `L³` implique
 ce critère avec taux `A^-3`. La queue distante n'est donc pas un verrou nouveau
 dans leurs chaînes conditionnelles; le programme pivote vers le défaut
 quadratique et la pression proche.
+
+## Cycle 0004 : décision automatisée
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| défaut de trace par une solution NS oscillatoire exacte | 4 | 5 | 5 | 5 | **19** |
+| défaut quadratique d'un champ statique divergence-free | 3 | 5 | 5 | 3 | 16 |
+| extraction abstraite par Aubin–Lions sur cylindre fixé | 3 | 4 | 3 | 5 | 15 |
+
+Décision : tester l'implication « énergie uniforme + convergence faible d'une
+trace mobile -> compacité du produit et de la pression » dans l'équation NS
+elle-même, sur `T³`, sans discrétisation.
+
+Résultat : l'implication est réfutée par une famille de solutions globales
+lisses exacte. Le défaut est cependant limité aux temps `t_N->0`; les mêmes
+solutions convergent fortement à tout temps fixé positif et en volume
+espace-temps. Le verrou se resserre donc sur une équicontinuité de trace
+compatible avec les zooms de blow-up, et non sur la compacité d'approximation
+bulk standard.

@@ -14,6 +14,7 @@ leur rapport JSON sur la sortie standard.
 | `DESINGULARIZATION-GATE-1` | les normes d'une troncature de `r^-1` restent-elles uniformes quand `epsilon -> 0` ? | intégrales radiales exactes; logarithme symbolique | `python -B experiments/navier-stokes/desingularization-gate/desingularization_gate.py` | zéro pour les identités rationnelles |
 | `PRESSURE-TAIL-1` | centrer la pression d'un paquet distant gagne-t-il une puissance de distance ? | noyau multipolaire exact, tenseur ponctuel | `python -B experiments/navier-stokes/pressure-tail/pressure_tail.py` | zéro |
 | `PRESSURE-MULTISCALE-1` | une borne physique `L²` seule impose-t-elle la tension uniforme de la pression après zoom ? | lois d'échelle et moments exacts | `python -B experiments/navier-stokes/pressure-multiscale/pressure_multiscale.py` | zéro |
+| `QUADRATIC-PRESSURE-DEFECT-1` | énergie uniforme et convergence faible d'une trace imposent-elles la convergence du produit et de la pression ? | solution NS de Fourier exacte, fractions rationnelles | `python -B experiments/navier-stokes/quadratic-pressure-defect/quadratic_pressure_defect.py` | zéro |
 
 Environnement reproduit au checkpoint initial : Windows, Python 3.13.14,
 bibliothèque standard uniquement. Les scripts ne lisent aucun fichier, n'ont
@@ -93,7 +94,7 @@ aucune dépendance réseau et ne produisent pas d'artefact lourd.
 
 ## Passage au continuum
 
-Aucune des cinq expériences ne part d'une discrétisation PDE : il n'y a donc
+Aucune des six expériences ne part d'une discrétisation PDE : il n'y a donc
 pas de passage grille-vers-continuum. Le raccord analytique restant est
 explicite dans chaque cas. Tout futur solveur doit ajouter divergence mesurée,
 convergence multi-résolution, second schéma, bornes de troncature, contrôle des
@@ -256,3 +257,103 @@ imposer la tension pondérée après un zoom arbitrairement plus fin que le paqu
 - Le résultat réfute seulement une déduction depuis l'énergie globale. Une
   borne critique, une tension pondérée ajoutée ou la dynamique peuvent exclure
   cette famille.
+
+## `QUADRATIC-PRESSURE-DEFECT-1` — défaut exact sur une trace parabolique
+
+### Solution réellement testée
+
+Sur `T³=(R/2piZ)³`, avec viscosité `nu=1`, force nulle et conditions
+périodiques, posons pour tout entier `N>=1`
+
+```text
+psi_N(x_1,x_2)=N^-1 sin(x_1)cos(Nx_2),
+u_N^0=curl(psi_N e_3)
+     =(-sin(x_1)sin(Nx_2),-N^-1 cos(x_1)cos(Nx_2),0).
+```
+
+Le champ est analytique et divergence-free. Un calcul direct donne
+
+```text
+(u_N^0 dot nabla)u_N^0
+  =((1/2)sin(2x_1),-(1/(2N))sin(2Nx_2),0)=nabla q_N,
+q_N=(1/2)sin²(x_1)+(1/(4N²))cos(2Nx_2),
+Delta u_N^0=-(N²+1)u_N^0.
+```
+
+La pression moyenne nulle associée est
+
+```text
+p_N^0=(1/4)cos(2x_1)-(1/(4N²))cos(2Nx_2)=-q_N+1/4.
+```
+
+Par conséquent
+
+```text
+u_N(t)=a_N(t)u_N^0,
+p_N(t)=a_N(t)²p_N^0,
+a_N(t)=exp(-(N²+1)t)
+```
+
+est une solution globale lisse exacte des équations de Navier–Stokes non
+forcées. Le calcul recalcule donc la pression de Leray; il ne la prescrit pas
+indépendamment.
+
+### Test falsifiable et résultat
+
+Au temps `t_N=log(2)/(N²+1)`, `a_N(t_N)=1/2`. Lorsque `N->infinity`,
+l'orthogonalité de Fourier implique
+
+```text
+u_N(t_N) converge faiblement vers 0 dans L²(T³),
+u_N(t_N) tensor u_N(t_N)
+  converge faiblement vers diag((1/8)sin²(x_1),0,0),
+p_N(t_N) converge fortement vers (1/16)cos(2x_1) dans tout L^q fini.
+```
+
+La pression moyenne nulle du champ limite `u=0` vaut pourtant zéro. Ainsi,
+une borne uniforme d'énergie et de dissipation, combinée à la seule convergence
+faible d'une trace, ne suffit pas au passage à la limite quadratique ni à la
+continuité de l'opérateur pression sur cette topologie.
+
+Avec la moyenne normalisée du tore,
+
+```text
+||u_N^0||_2²=(1/4)(1+N^-2),
+||u_N(t_N)||_2²=(1/16)(1+N^-2).
+```
+
+L'identité d'énergie est vérifiée exactement : l'énergie cinétique à `t_N`
+plus la dissipation intégrée vaut l'énergie cinétique initiale.
+
+### Résidu, sensibilité et portée
+
+- Résolutions fréquentielles : `N=1,2,4,...,128`; aucun maillage ni pas de
+  temps. La formule est symbolique pour tout entier positif.
+- Précision : fractions rationnelles exactes; `log(2)` est conservé comme
+  symbole. Résidus de divergence, équation de quantité de mouvement, Poisson
+  pour la pression, valeur propre du Laplacien et énergie : `0/1`.
+- Graine : sans objet. Environnement : Python standard épinglé par le dépôt.
+- Sensibilité : à tout temps fixe `t>0`, l'amortissement tend exponentiellement
+  vers zéro et la convergence devient forte. Le défaut est confiné à une couche
+  initiale parabolique `t_N~N^-2`.
+- Limite : cette famille ne produit ni singularité, ni défaut dans l'intérieur
+  espace-temps, ni contre-exemple à la compacité d'Aubin–Lions sur un cylindre
+  fixé. Elle falsifie seulement une implication portant sur des traces mobiles
+  sans équicontinuité temporelle forte.
+
+### Hypothèse suffisante qui élimine le défaut local
+
+Sur un compact `K`, si `u_n->u` fortement dans `L³(K)`, alors
+
+```text
+||u_n tensor u_n-u tensor u||_(L^(3/2)(K))
+ <= (||u_n||_3+||u||_3)||u_n-u||_3 -> 0.
+```
+
+Après localisation, les transformées de Riesz donnent la même convergence
+`L^(3/2)` pour la pression proche. L'énergie seule ne fournit pas cette
+convergence sur une trace; dans un cylindre espace-temps, les bornes d'énergie
+et la compacité forte `L²` permettent en revanche, par interpolation avec la
+borne `L^(10/3)`, d'obtenir `L^q` fort pour chaque `q<10/3`, donc `q=3`.
+Ce critère n'est pas minimal pour la seule convergence distributionnelle du
+produit : une convergence locale forte `L²` y suffit déjà.
