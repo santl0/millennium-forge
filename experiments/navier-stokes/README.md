@@ -1394,3 +1394,45 @@ cellule reste donc `NOT_PROVIDED`.
   oscillation locale égale à un; un corridor de zéros peut abaisser ce coût à
   l'ordre `1/log(R/h)`. Un lift collinéaire compact divergence-free est
   nécessairement nul, d'où le prochain test axisymétrique.
+
+## `AXISYMMETRIC-RETURN-FLOW-BMO-GATE-1` — lift compact à aspect fixé
+
+- Question falsifiable : un potentiel compact
+  `U=chi(z)A_n(r)e_theta` peut-il spatialiser le compensateur rare du cycle
+  0026 tout en gardant une direction log-BMO uniforme après concentration ?
+- Équation simulée : aucune évolution. Les identités statiques exactes sont
+  `W=curl U`, `div W=0`, `integral W=0`.
+- Profil : phase axiale positive d'amplitude `n^-1`, retour de largeur `n^-3`
+  et amplitude `3n^5/(8n^3+1)~(3/8)n²`; flux radial pondéré exactement nul.
+- Contrôles critiques : quasi-norme faible-`L^(3/2)` uniformément minorée et
+  majorée, masse forte critique négative non dégénérée, énergie normalisée
+  `<=1/(3528n²)`.
+- Porte BMO : dans une boule entièrement active de la calotte, la direction
+  vaut `e_r` et
+
+  ```text
+  MO_B>=3/26624.
+  ```
+
+  Une concentration isotrope à aspect fixé échoue donc au log-BMO global.
+- Résidu : la composante azimutale visqueuse porte cinq coefficients
+  polynomiaux non nuls; aucune pression ne rend le champ stationnaire.
+- Commande :
+
+  ```text
+  python -B experiments/navier-stokes/axisymmetric-return-flow/axisymmetric_return_flow_audit.py
+  ```
+
+- Environnement : Python 3.13.14, bibliothèque standard uniquement.
+- Discrétisation : aucune grille, aucun flottant, aucune graine; 1251 contrôles
+  rationnels exacts, zéro échec.
+- Empreinte :
+  `cec8bd74aa0b5b1b9943fbd149fe06c4ca5b045b9a337bdfef2821a18c5d29a9`.
+- Variante équilibrée : avec calotte de largeur `delta=n^-3`, la quasi-norme
+  critique normalisée est `<=1/6` et la moyenne parentale vérifie
+  `4delta/27<=MO_D<=delta`. Une réalisation `C_c^infinity` séparée montre que
+  cette loi cubique persiste dans la classe div–curl compacte, sans conclure
+  au BMO sur toutes les boules.
+- Limites : cutoff calculé seulement `C^4`, quasi-norme complète encadrée mais
+  non calculée exactement, `||U||_3->0` pour la variante lisse, masquage
+  non séparable et évolution temporelle ouverts.

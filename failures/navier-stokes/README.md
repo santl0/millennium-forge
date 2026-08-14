@@ -1069,6 +1069,63 @@ reste à construire ou exclure.
   en auditant les composantes transverses créées par les cutoffs.
 - Statut : lift direct `REFUTED`; ansatz axisymétrique actif.
 
+## `FAIL-NS-0050` — Petite amplitude transverse assimilée à une petite rotation
+
+- Date : 2026-08-14.
+- Cadre : lift axisymétrique séparable
+  `U=chi(z)A(r)e_theta`, corridor où `A'+A/r=0` mais `A!=0`.
+- Cible : rendre la direction presque axiale parce que la composante de
+  fermeture `W_r=-chi'A` est seulement `O(1/n)`.
+- Attaque : dans le corridor, `W_z=0`; partout où `chi'!=0`, la direction
+  normalisée est exactement `+e_r` ou `-e_r`, indépendamment de l'amplitude.
+- Résultat : la petitesse en norme de `W_r` ne constitue aucune petitesse de
+  phase près d'une zone où la composante principale s'annule.
+- Statut : extrapolation `REFUTED`.
+
+## `FAIL-NS-0051` — Retour axisymétrique à aspect fixé supposé log-BMO
+
+- Date : 2026-08-14.
+- Cadre : même lift, avec une boule de rayon `w` dans une calotte radiale à
+  distance `R` de l'axe.
+- Cible : satisfaire uniformément `bmo_(1/|log r|)` après remise à l'échelle
+  isotrope du blob.
+- Attaque : deux sous-boules de fraction `1/512` voient des projections de
+  `e_r` séparées de `3w/[4(R+w)]`.
+- Résultat :
+
+  ```text
+  MO_B>=3w/[2048(R+w)].
+  ```
+
+  Pour `R=3`, `w=1/4`, la borne vaut `3/26624` et survit à toute
+  concentration; le poids logarithmique diverge.
+- Portée : ne couvre pas `R_n/w_n->infinity`, une géométrie non séparable ou
+  une fermeture sans boule radiale épaisse.
+- Statut : ansatz à aspect fixé `REFUTED`; l'aspect croissant reste une
+  condition auxiliaire insuffisante et le verrou actif est
+  `GAP-NONSEPARABLE-RETURN-FLOW-MASKING`.
+
+## `FAIL-NS-0052` — Swirl compact supposé stationnaire modulo pression
+
+- Date : 2026-08-14.
+- Cadre : champ compact axisymétrique `U=psi(r,z)e_theta`.
+- Cible : traiter la construction statique comme solution stationnaire après
+  recalcul d'une pression.
+- Attaque : `(U·nabla)U` est radial, tandis que la composante azimutale de
+  `-Delta U` vaut `-Lpsi`. Dans le corridor, `Lpsi=Achi''` est non nul.
+- Résultat : une pression monovaluée ne peut porter une dérivée azimutale
+  axisymétrique non nulle; le résidu n'est pas un gradient. Sa norme `L¹` est
+  invariante sous le scaling Navier–Stokes.
+- Statut : raccord stationnaire `REFUTED`; une évolution corrigée reste hors
+  champ.
+
+Décision de pivot : le lift axisymétrique séparable ferme la porte div–curl et
+les normes critiques, mais échoue sur une unique boule de calotte et sur le
+résidu. Faire seulement croître l'aspect ne supprime pas les transitions
+verticales–radiales du produit. Le prochain profil doit supprimer chaque
+région radialement dominante par un masquage non séparable en couches; le
+rapport d'aspect reste une constante auxiliaire à suivre.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,

@@ -490,3 +490,27 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
 - Décision : activer `GAP-NESTED-RETURN-FLOW-CASCADE` avec un potentiel
   axisymétrique explicite; les Mikado flows et tubes de Beltrami servent de
   comparateurs, pas de transferts vers Clay.
+
+## 2026-08-14 — Cycle 0027
+
+- Veille différentielle : l'ansatz `U=psi e_theta` et ses conditions au pôle
+  sont classiques (Liu–Wang 2009). Les opérateurs de Costabel–McIntosh
+  corrigent div–curl, mais Guzmán–Salgado confirme que les constantes portent
+  une dépendance géométrique à suivre sous dégénérescence d'aspect.
+- Sources ajoutées : Liu–Wang (`0102`), Costabel–McIntosh (`0103`), Norbury
+  (`0104`), Cao–Zhan (`0105`), Guo–Jeong–Zhao (`0106`), Gavrilov (`0107`),
+  Constantin–La–Vicol (`0108`), Peralta-Salas–Slobodeanu (`0109`),
+  Chen–Fang–Zhang (`0110`) et Guzmán–Salgado (`0111`). Le corpus atteint 111
+  sources.
+- Contrôle 2026 : Cao–Zhan est publié; Guo–Jeong–Zhao et
+  Peralta-Salas–Slobodeanu restent des prépublications v1. Les revendications
+  de Shahmurov sur le swirl axisymétrique et le système complet restent sans
+  publication liée et ne sont pas admises comme lemmes.
+- Résultat de transfert négatif : les anneaux Euler, les champs Euler compacts
+  et les correcteurs abstraits ne fournissent ni trajectoire NS visqueuse, ni
+  BMO all-ball uniforme, ni singularité Clay.
+- Résultat interne : un curl axisymétrique compact réalise exactement la loi
+  cubique de l'oscillation parentale, mais `||U||_3 -> 0`; la famille est un
+  falsificateur cinématique, pas un candidat de blow-up.
+- Décision : abandonner le lift séparable à aspect fixé et activer
+  `GAP-NONSEPARABLE-RETURN-FLOW-MASKING`.

@@ -650,3 +650,26 @@ double cône contenant simultanément `+e` et `-e`. Les antécédents constructi
 ferment les lignes de flux, mais dans Euler, sur le tore ou hors énergie. Le
 premier test transférable reste donc un curl compact explicite avec contrôle
 de toutes les boules.
+
+## Audit ciblé du cycle 0027 — potentiel axisymétrique et retour compact
+
+| Source primaire | Statut et passage contrôlé | Verdict transférable |
+|---|---|---|
+| Liu–Wang 2009 (`0102`) | publié; représentation par swirl et fonction de courant, conditions au pôle | justifie `U=psi e_theta`, `W=curl U` et l'admissibilité lisse loin de l'axe; aucune borne Lorentz/BMO ni dynamique |
+| Costabel–McIntosh 2010 (`0103`) et Guzmán–Salgado 2021 (`0111`) | publiés; homotopies de de Rham, support et dépendance géométrique des constantes | un correcteur div–curl compact existe dans les classes indiquées, mais son coût n'est pas uniforme sous aspect dégénérant et sa direction n'est pas préservée |
+| Norbury 1972 (`0104`), Cao–Zhan 2026 (`0105`) et Guo–Jeong–Zhao 2026 (`0106`) | deux articles publiés et un arXiv v1; anneaux Euler axisymétriques | géométrie torique utile, mais vorticité toroïdale sans swirl ou système Euler avec swirl; aucun `W` poloïdal NS transféré |
+| Gavrilov 2019 (`0107`) et Constantin–La–Vicol 2019 (`0108`) | publiés; champs Euler stationnaires lisses compacts | la compacité simultanée vitesse–vorticité est possible, mais `-nu Delta u` interdit le raccord stationnaire à NS non forcé |
+| Peralta-Salas–Slobodeanu 2026 (`0109`) | arXiv v1; symétrie des écoulements Euler analytiques localisables | renforce la pertinence de l'axisymétrie sous hypothèses fortes; prépublication Euler, aucun transfert Clay |
+| Chen–Fang–Zhang 2017 (`0110`) | publié; critères sur le swirl et petite donnée `L3` | contrôle publié du cas axisymétrique avec swirl, conditionnel; ne valide aucune revendication 2026 de grandes données |
+
+La veille différentielle ajoute dix sources et porte le corpus à 111 entrées.
+Elle confirme que l'ansatz du cycle est classique. Le seul contenu nouveau du
+laboratoire reste quantitatif et porte sur les constantes Lorentz, oscillation
+et résidu. Le profil lisse compact de la passe analytique réalise le scaling
+cubique de l'oscillation **sur le domaine parent**, mais sa vitesse vérifie
+`||U_epsilon||_3 -> 0`; il ne s'agit ni d'un profil ancien, ni d'un blow-up.
+
+Les quatre prépublications 2026 de Shahmurov restent en quarantaine : leurs
+fiches arXiv ne donnent pas de référence de revue à la date de coupure, et
+aucune de leurs premières interpolations critiques, constantes ou compacités
+n'a été auditée ligne à ligne. Aucun claim du laboratoire ne les utilise.

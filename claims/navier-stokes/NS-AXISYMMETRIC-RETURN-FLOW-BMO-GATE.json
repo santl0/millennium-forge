@@ -1,0 +1,42 @@
+{
+  "id": "NS-AXISYMMETRIC-RETURN-FLOW-BMO-GATE",
+  "problem": "navier-stokes",
+  "statement": "Pour un champ axisymétrique séparable U=chi(z)A(r)e_theta, toute boule B_w((R,0,z0)) contenue dans un corridor où A'+A/r=0, A est non nul et chi' a un signe strict porte la direction de vorticité plus ou moins e_r et vérifie MO_B au moins 3w/[2048(R+w)]; des copies isotropiquement concentrées à aspect fixé ne peuvent donc avoir une borne log-BMO uniforme.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "R>w>0 et la boule B_w((R,0,z0)) reste éloignée de l'axe r=0",
+    "U=chi(z)A(r)e_theta avec régularité suffisante pour calculer W=curl U",
+    "sur le corridor contenant la boule, f=A'+A/r=0 et A ne s'annule pas",
+    "chi' est non nul et de signe fixe sur l'intervalle axial de la boule",
+    "MO_B est l'oscillation moyenne L1 de la direction W/|W|",
+    "la conclusion log-BMO concerne des remises à l'échelle isotropes s_n vers zéro avec rapport R/w fixé"
+  ],
+  "dependencies": ["NS-LORENTZ-CONE-COMPENSATION"],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0027-axisymmetric-return-flow.md et docs/reports/navier-stokes/reviews/cycle-0027-analysis.md"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "famille f_n à largeur négative n^-3 et amplitude 3n^5/(8n^3+1), dont la calotte radiale impose MO>=3/26624 malgré l'amplitude radiale O(1/n)"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/axisymmetric-return-flow/axisymmetric_return_flow_audit.py, 1251 contrôles rationnels exacts",
+      "sha256": "cec8bd74aa0b5b1b9943fbd149fe06c4ca5b045b9a337bdfef2821a18c5d29a9"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0027-axisymmetric-return-flow"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois passes Codex séparées, même famille de modèle; non indépendantes au sens externe",
+    "notes": "La boule test est entièrement active et la constante vient de deux sous-boules explicites. La construction certifiée est seulement C4, le rapport d'aspect croissant reste ouvert, et aucune évolution Navier-Stokes n'est produite."
+  }
+}
