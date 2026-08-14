@@ -1,0 +1,38 @@
+{
+  "id": "NS-FIXED-CORE-HALO-LOCALIZATION",
+  "problem": "navier-stokes",
+  "statement": "Si une cellule pure-swirl lisse compacte possède un ensemble témoin E de volume au moins c_0v et d'amplitude comparable à A, une borne globale |U|<=C_2A, la relation W=curl U et un registre total integral_Q|W|>=c_1Av^(2/3), alors il existe, avec constantes universelles Gamma,gamma>0, un ensemble H subset Q tel que |H|<=Gamma v et integral_H|W|>=gamma Av^(2/3).",
+  "status": "REFUTED",
+  "hypotheses": [
+    "le champ est U=(R/r)F(r,z)e_theta sur R^3, avec F lisse compact et supporté loin de l'axe",
+    "le volume v minore seulement un ensemble témoin du plateau et n'est pas supposé comparable au volume du superniveau complet",
+    "la constante de registre porte sur l'intégrale de |W| dans le support complet Q",
+    "Gamma et gamma sont indépendants de la dilatation critique de la cellule"
+  ],
+  "dependencies": [
+    "NS-BV-REGISTERED-HETEROGENEOUS-CELL-SELECTION"
+  ],
+  "evidence": [
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/cycle-0035-common-level-halo-selection.md; dilatation R_L=L, A_L=L^-1, F_L=A_L Phi(r/L,z/L) avec v_L=1"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0035-analysis.md; contre-exemple lisse curl-compatible et audit du premier quantificateur faux",
+      "sha256": "c0ba565ecca14e107cfb88a0a92da4124c1c2b7d9e89088d9e92c74956d7d769"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0035-common-level-halo-selection"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Audit analytique IA séparé et recalcul principal; aucune revue humaine externe",
+    "notes": "Le scaling conserve les deux endpoints, le curl est exact, le registre total est sur-satisfait et toute masse de curl sur un ensemble de volume Gamma v est O(L^-2), contre un registre demandé O(L^-1). La réfutation vise le volume témoin non calibré, pas une bande choisie par niveau global."
+  }
+}

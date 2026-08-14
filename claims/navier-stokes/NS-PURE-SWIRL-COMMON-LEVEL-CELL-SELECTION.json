@@ -1,0 +1,58 @@
+{
+  "id": "NS-PURE-SWIRL-COMMON-LEVEL-CELL-SELECTION",
+  "problem": "navier-stokes",
+  "statement": "Pour toute famille finie de cellules pure-swirl U_j=(R_j/r)F_j e_theta sur R^3, avec F_j lisses compacts, supportés dans R_j/2<r<3R_j/2 et supports tridimensionnels complets deux à deux disjoints, si K_u=||sum U_j||_(L^(3,infinity))>0 et K_w=||sum curl U_j||_(L^(3/2,infinity))<infinity, alors une cellule vérifie K_(u,j)>=(C_I/324)K_u^2/K_w et K_(u,j)/K_(w,j)>=(C_I/324)(K_u/K_w)^2, où Per(E)>=C_I|E|^(2/3) sur R^3. Aucune borne axiale, de volume de support ou de plateau n'est requise.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "la famille est finie",
+    "F_j appartient à C_c^infinity((0,infinity) x R) et son support est inclus dans R_j/2<r<3R_j/2",
+    "les supports tridimensionnels complets des cellules sont deux à deux disjoints, donc les curls ne se chevauchent pas",
+    "U_j=(R_j/r)F_j e_theta et W_j=curl U_j=(R_j/r)(-partial_z F_j e_r+partial_r F_j e_z)",
+    "les quasi-normes utilisent sup_lambda lambda |{|f|>lambda}|^(1/p)",
+    "C_I est une constante admissible de l'isopérimétrie euclidienne tridimensionnelle",
+    "la conclusion ne localise pas la cellule ou sa bande active dans une boule de diamètre O(R_j)"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0132 pour coaire, NS-SRC-0148 pour l'isopérimétrie R3 et NS-SRC-0067/0069 pour les bornes Lorentz; leur composition pure-swirl est interne"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0035-common-level-halo-selection.md"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/common-level-halo-selection/common_level_halo_audit.py; 10837 assertions rationnelles exactes sur 1536 familles et 12288 superniveaux signés",
+      "sha256": "b197d3b45af0f034c09c91d4b7bb6d3be55293ab1f458ec769c250c8998490f8"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0035-analysis.md; audit ligne par ligne, constante 324 et cas K_w=0",
+      "sha256": "c0ba565ecca14e107cfb88a0a92da4124c1c2b7d9e89088d9e92c74956d7d769"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0035-countermodel.md; queue axiale dyadique et distributions complètes",
+      "sha256": "a178fbf713eb79bfc0622e329bb2b4c057918658aa61e06e2a06ec40ebc8a1ec"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0035-literature.md; audit des briques publiées et non-transferts dynamiques",
+      "sha256": "f4a6798185a91808b6fb950425bb3b0055e7fa2c64d04acbd09554e584658642"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0035-common-level-halo-selection"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois passes IA séparées: audit analytique, contre-modèle géométrique et audit bibliographique; aucune revue humaine externe",
+    "notes": "Les inclusions lambda/lambda-3/lambda-6, les deux signes, le jacobien tridimensionnel, coaire, isopérimétrie, la constante Lorentz trois, le supremum non atteint, la disjonction et K_w=0 ont été audités. Structure pure-swirl exacte, anneau radial uniforme, finitude et disjonction restent indispensables."
+  }
+}

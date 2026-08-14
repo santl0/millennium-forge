@@ -1669,3 +1669,37 @@ cellule reste donc `NOT_PROVIDED`.
   `d918ff7ec5e200d388cde1d3ed5230ebdd4535bc65fc3b94a2c7ac21c0962763`.
 - Limites : le contre-exemple n'est pas curl-compatible; le calcul encode mais
   ne prouve pas coaire/BV; chevauchement, pression, diffusion et temps absents.
+
+## `COMMON-LEVEL-HALO-SELECTION-1` — bande commune et queues longues
+
+- Question falsifiable : une queue pure-swirl de volume support arbitraire
+  peut-elle détruire la sélection d'une même cellule aux deux endpoints ?
+- Équation calculée : aucune évolution; ledger exact pour
+  `U_j=(R_j/r)F_j e_theta` et
+  `W_j=(R_j/r)(-partial_zF_j e_r+partial_rF_j e_z)`.
+- Discrétisation : aucune grille; volumes de superniveaux finis et toutes les
+  racines supprimées par cubage en arithmétique `fractions.Fraction`.
+- Ledger : 1 536 familles, 12 288 superniveaux signés et constante
+  isopérimétrique normalisée `C_I=1`. Il vérifie exactement
+
+  ```text
+  epsilon^3 324^3 K_w^3>=K_u^6.
+  ```
+
+- Contre-profil cœur–queue : amplitudes `2^-k`, volumes `8^k`, profondeur
+  `4..24`; volume support/coeur maximal
+  `5396990266136737387081`, mais `1<=K_u^3<8/7` et budget de curl forcé non
+  nul au niveau commun.
+- Commande :
+
+  ```text
+  python -B experiments/navier-stokes/common-level-halo-selection/common_level_halo_audit.py
+  ```
+
+- Environnement : Python 3.13.14, bibliothèque standard, aucune graine.
+- Résidu certifié : 10 837 assertions rationnelles exactes, zéro échec,
+  résidu algébrique maximal zéro.
+- Empreinte :
+  `b197d3b45af0f034c09c91d4b7bb6d3be55293ab1f458ec769c250c8998490f8`.
+- Limites : coaire et isopérimétrie sont des entrées analytiques; le calcul ne
+  certifie ni diamètre de la bande, ni chevauchement, pression, temps ou PDE.
