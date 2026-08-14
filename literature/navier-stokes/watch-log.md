@@ -571,3 +571,24 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
 - Décision : après trois stratégies tubulaires distinctes, abandonner la
   branche homogène et activer
   `GAP-COMPACT-VELOCITY-WEAK-CRITICAL-DIRECTION`.
+
+## 2026-08-14 — Cycle 0031
+
+- Veille différentielle primaire : la fiche arXiv de Grujić
+  `2607.08866` reste en v2 du 13 juillet 2026; celle de Lei–Ren–Tian
+  `2501.08976` reste en v1 du 15 janvier 2025.
+- Statut : les deux textes restent des prépublications. Le premier annonce un
+  critère conditionnel combinant concentration faible-`L^(3/2)` et direction
+  en `bmo_(1/|log r|)`; le second traite une solution faible adaptée locale et
+  un double cône dans la région de forte vorticité.
+- Résultat négatif de veille : aucune source primaire repérée ne construit une
+  vitesse compacte dont le curl satisfait simultanément faible-`L^(3/2)`, un
+  gate vitesse faible-`L^3` non perturbatif et une direction log-BMO all-ball.
+- Sources ajoutées : `NS-SRC-0128`–`0131` pour les grandes données
+  anisotropes, les deux critères axisymétriques publiés et le nouveau filament
+  hélicoïdal Euler anisotrope. Corpus porté à 131 entrées.
+- Résultat interne : le swirl compact séparable paie un coût de dérivée dans
+  ses deux largeurs. Ce no-go n'est attribué à aucune source et reste
+  `COMPUTATION_ONLY`.
+- Décision : fermer le grand aspect pour le produit simple et activer
+  `GAP-NONSEPARABLE-COMPACT-CURL-FLATNESS`.

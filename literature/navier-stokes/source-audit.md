@@ -749,3 +749,38 @@ fondée sur des outils sourcés, pas un théorème cité. Le contre-profil compa
 sépare exactement `L^3` fort et les endpoints faibles, mais il reproduit
 l'oscillation directionnelle du bloc de base. Aucun transfert vers le problème
 Clay ne suit sans propagation temporelle et contrôle de la pression.
+
+## Audit ciblé du cycle 0031 — swirl compact et rapport d'aspect
+
+- `NS-SRC-0059` est toujours la v2 de Grujić, soumise le 9 juillet et révisée
+  le 13 juillet 2026. Son énoncé est conditionnel à une concentration critique
+  et à une hypothèse directionnelle; il ne produit pas cette géométrie depuis
+  les données Clay.
+- `NS-SRC-0061` est toujours la v1 de Lei–Ren–Tian. Le domaine est un cylindre
+  parabolique local, la notion une solution faible adaptée, et la conclusion
+  un critère de régularité sous double cône. Ce n'est pas une construction de
+  curl compact ni un théorème sur des profils séparables.
+- Les articles de direction de vorticité et de log-BMO déjà indexés
+  (`0080`, `0082`, `0098`) fournissent des critères conditionnels ou des outils
+  de localisation. Ils ne donnent aucune constante uniforme pour une famille
+  dont les rapports `a/R` et `b/R` dégénèrent.
+- Liu–Wang (`0102`) justifie la régularité cylindrique de l'ansatz loin de
+  l'axe; Guzmán–Salgado (`0111`) rappelle que les opérateurs div–curl portent
+  des constantes géométriques. Aucun des deux n'énonce le budget Lorentz du
+  cycle.
+- Chemin–Gallagher–Paicu (`0128`) montre que des grandes données lentement
+  variables sur `T^2×R` peuvent être globalement régulières. Cette anisotropie
+  structurée est un comparateur adverse, pas un raccord au profil compact.
+- Lei–Zhang (`0129`) contrôle la magnitude de `ru^theta` par une condition
+  critique, et Liu (`0130`) suppose une petite composante swirl dans des
+  espaces critiques. Aucun ne contrôle le log-BMO de la direction de `curl U`.
+- Peralta-Salas–Wan (`0131`) construit une section hélicoïdale anisotrope pour
+  Euler stationnaire piècewise lisse. La viscosité nulle et le support non
+  compact dans `R^3` empêchent tout transfert Clay.
+- Le résultat `NS-COMPACT-SWIRL-ASPECT-ENDPOINT-GATE` est donc une dérivation
+  interne auditée, jamais `PAPER_PROOF`. Il exclut seulement un profil produit
+  séparable et ne se transfère pas à une solution de Navier–Stokes en temps.
+
+La veille ajoute `NS-SRC-0128`–`0131` et porte le corpus à 131 sources. Les
+pages primaires arXiv et éditeur ont été vérifiées le 2026-08-14; aucune
+publication ou version nouvelle n'était indiquée pour `0059` et `0061`.
