@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: Millennium Forge
+message: If you use this repository, cite the repository and the primary mathematical sources attached to each claim.
+type: software
+authors:
+  - family-names: Contributors
+    given-names: Millennium Forge
+license: MIT
+repository-code: https://github.com/santl0/millennium-forge
+date-released: 2026-08-14

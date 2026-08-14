@@ -1,0 +1,47 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python and tools
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Lean
+.lake/
+lake-packages/
+
+# Temporary research material
+**/tmp/
+**/scratch/
+**/.git/
+outputs/
+artifacts/
+*.log
+*.trace
+
+# Heavy or externally licensed artifacts
+*.zip
+*.7z
+*.tar
+*.gz
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.pptx
+*.docx
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+!.vscode/extensions.json

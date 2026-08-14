@@ -1,0 +1,6 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Discussion ouverte
+    url: https://github.com/santl0/millennium-forge/discussions
+    about: Utiliser les discussions pour les idées qui ne sont pas encore des tâches falsifiables.
+

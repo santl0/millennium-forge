@@ -1,0 +1,43 @@
+name: Tâche scientifique bornée
+description: Proposer un audit, un lemme, une expérience ou une formalisation.
+title: "[problem] "
+labels: ["codex"]
+body:
+  - type: dropdown
+    id: problem
+    attributes:
+      label: Problème
+      options:
+        - P versus NP
+        - Hypothèse de Riemann
+        - Yang-Mills et gap de masse
+        - Navier-Stokes
+        - Conjecture de Hodge
+        - Birch et Swinnerton-Dyer
+        - Infrastructure transverse
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objectif falsifiable
+      description: Décrire un résultat vérifiable, pas seulement une activité.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources primaires
+      description: URL, DOI, version, théorème ou page.
+  - type: textarea
+    id: done
+    attributes:
+      label: Définition de terminé
+      description: Tests, preuves ou critères de revue attendus.
+    validations:
+      required: true
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risques et contre-attaques
+      description: Circularité, passage à la limite, calcul non certifié ou autre faille probable.

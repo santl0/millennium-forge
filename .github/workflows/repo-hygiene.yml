@@ -1,0 +1,30 @@
+name: Repo Hygiene
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  repository-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check repository contract
+        run: python .github/scripts/check_repo_contract.py .
+      - name: Validate structured claims
+        run: python scripts/validate_claims.py
+      - name: Reject tracked heavy artifacts
+        shell: bash
+        run: |
+          if git ls-files | grep -E '\.(pdf|png|jpe?g|zip|7z|tar|gz|pyc)$'; then
+            echo "Heavy or generated artifacts must not be committed."
+            exit 1
+          fi
