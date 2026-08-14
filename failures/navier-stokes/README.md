@@ -300,6 +300,40 @@ d'équivalence entre deux profils, pas un autre renommage de topologie.
   l'unicité faible–forte.
 - Artefact : `HWY-INNER-CUTOFF-GATE-1`.
 
+## `FAIL-NS-0014` — Excitation générique du mode HWY impair par lissage symétrique
+
+- Date : 2026-08-14.
+- Équation : NS incompressible 3D non forcé sur `R³`, viscosité `1`; solution
+  forte locale issue d'une donnée `C_c^infinity` divergence-free pour la
+  transmission de symétrie, puis opérateur HWY linéarisé autour du profil
+  auto-similaire singulier.
+- Cible : déduire qu'un cutoff intérieur ou une convolution radiale du coeur
+  `r^-1` excite génériquement le mode instable certifié par HWY.
+- Hypothèse silencieuse trouvée : le profil et le lissage radial sont pairs
+  pour `(Ju)(x)=S u(Sx)`, `S=diag(1,1,-1)`, alors que le mode certifié est
+  impair.
+- Attaque : recalcul de la projection de Leray
+  `P(Sxi)=S P(xi)S`, commutation de la chaleur et de la linéarisation avec `J`,
+  puis projecteurs exacts `Q_+=(I+J)/2`, `Q_-=(I-J)/2`.
+- Résultat : `Q_-g_epsilon=0` et tout pairing avec un fonctionnel adjoint
+  impair vaut zéro. Par unicité, la solution forte reste paire tant qu'elle
+  existe. Le facteur instable n'amplifie donc que zéro.
+- Horloge : à `t=kappa epsilon²`, une composante impaire
+  `epsilon^beta` aurait au niveau linéaire le facteur
+  `kappa^-a epsilon^(beta-2a)`; la borne source `a>=217/2000` rend
+  `beta>=217/1000` nécessaire, non suffisante.
+- Résidus : dix obligations rationnelles nulles, aucun flottant. Un opérateur
+  adverse qui ne commute pas avec `J` a un commutateur maximal `2` et produit
+  une composante impaire `3`, confirmant que la parité est le mécanisme exact.
+- Portée : réfute seulement l'excitation du **mode impair certifié** par un
+  lissage symétrique. N'exclut ni mode instable pair, ni lissage asymétrique,
+  ni brisure faible après perte de l'unicité forte. Des perturbations impaires
+  différentes sont des données Clay différentes et ne donnent pas une
+  non-unicité pour une donnée lisse fixée.
+- Statut : `REFUTED` pour l'arête d'excitation générique; claim de porte
+  `COMPUTATION_ONLY`, sans revue indépendante externe.
+- Artefact : `HWY-PARITY-PROJECTION-GATE-1`.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,

@@ -6,7 +6,7 @@ des décisions reste dans les checkpoints.
 
 | Priorité | Question falsifiable | Pourquoi maintenant | Critère de sortie |
 |---:|---|---|---|
-| 1 | la projection de la couche de régularisation intérieure, à `t~epsilon²`, sur le mode adjoint instable HWY peut-elle être bornée puis propagée jusqu'à un temps fixe ? | le cycle 0010 réfute le raccord statique `L² + L^{3,infinity} -> L³`; seul un shadowing dynamique non perturbatif peut encore préserver l'instabilité | borne sourcée/certifiée avec séparation de branches, ou divergence d'une constante de projection/semigroupe |
+| 1 | pour une couche intérieure volontairement impaire d'amplitude `epsilon^beta`, peut-on certifier le fonctionnel adjoint HWY, son conditionnement et la balance non linéaire complète ? | le cycle 0011 montre que le lissage radial pair projette exactement zéro sur le mode certifié impair; le seuil linéaire nécessaire est `beta>=2a>=0.217`, mais les données CAP adjointes manquent | enclosure du couple adjoint et de la résolvante, résidu de balance contenant zéro et contrôle du cutoff/pression, ou constat reproductible que les artefacts publics sont insuffisants |
 | 2 | une contrainte géométrique locale de vorticité, strictement plus forte que l'hélicité globale mais déductible de NS, impose-t-elle une déplétion triadique ? | le contre-profil exact ferme la version globale naïve | inégalité signée prouvée ou nouveau contre-profil |
 | 3 | un problème renormalisé NS peut-il être réduit à un opérateur compact avec bornes de queue certifiables ? | préalable à toute preuve assistée par ordinateur | rayon de contraction validable sous raffinement |
 | 4 | le noyau Fourier fini énergie–Leray peut-il être formalisé sans axiome ni `sorry` en Lean ? | petite brique stable, indépendante des scénarios spéculatifs | build épinglé + `#print axioms` vide hors logique standard |
@@ -48,6 +48,18 @@ un écart `L³` strict entre les échelles `epsilon` et `2epsilon`. Toute preuve
 de transfert reposant uniquement sur ce module statique est abandonnée. Une
 stabilité à temps strictement positif, avec projection instable et couche
 parabolique explicites, n'est pas réfutée.
+
+## Résultat négatif du cycle 0011
+
+Le profil HWY est pair sous la réflexion axiale vectorielle, tandis que le mode
+instable certifié est impair. La chaleur, les cutoffs/convolutions radiaux, la
+projection de Leray et l'opérateur linéarisé autour du profil pair commutent
+avec cette réflexion. Ainsi la couche de régularisation symétrique a une
+projection impaire exactement nulle et la solution forte locale reste paire
+par unicité. La route « lissage radial puis excitation générique du mode
+certifié » est abandonnée. Une asymétrie contrôlée reste testable, mais ses
+signes différents sont des données Clay différentes et sa balance terminale
+exige un adjoint certifié ainsi que les termes non linéaires et non locaux.
 
 ## Règle de pivot
 

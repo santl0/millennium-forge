@@ -393,3 +393,21 @@ Ces énoncés certifieraient seulement le contre-profil fonctionnel
 solution Navier–Stokes, ni un raccord Clay. Aucun fichier Lean n'est ajouté au
 cycle 0010; le noyau Fourier fini reste prioritaire parce que son environnement
 est déjà spécifié et que la non-localité de la projection y est explicite.
+
+## Backlog issu du cycle 0011 — involution et projecteurs de parité
+
+Après le noyau Fourier énergie–Leray, le certificat fini suivant peut être
+formalisé sans dépendre du profil CAP :
+
+1. définir une involution linéaire isométrique `J` et
+   `Q_plus=(I+J)/2`, `Q_minus=(I-J)/2`;
+2. prouver `Q_plus²=Q_plus`, `Q_minus²=Q_minus`,
+   `Q_plus Q_minus=0` et `Q_plus+Q_minus=I`;
+3. si `LJ=JL`, prouver l'invariance des deux secteurs et
+   `Q_minus (exp(tL)x)=0` pour `Jx=x` dans un cadre fini;
+4. pour la réflexion orthogonale `S=diag(1,1,-1)`, formaliser l'identité du
+   symbole de Leray `P(Sxi)=S P(xi)S` lorsque `xi` est non nul.
+
+Cette brique certifierait la logique de `FAIL-NS-0014`, pas la commutation d'un
+opérateur PDE non borné ni le mode HWY. Le fichier Python exact reste
+`COMPUTATION_ONLY`; aucune preuve formelle n'est revendiquée au cycle 0011.

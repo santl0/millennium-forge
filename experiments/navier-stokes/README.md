@@ -13,6 +13,7 @@ leur rapport JSON sur la sortie standard.
 | `TRI-PHASE-1` | divergence nulle et hélicité nulle imposent-elles un flux sous-linéaire universel ? | modes Fourier finis, rationnels gaussiens exacts | `python -B experiments/navier-stokes/triad-phase/test_triad_phase.py` | zéro |
 | `DESINGULARIZATION-GATE-1` | les normes d'une troncature de `r^-1` restent-elles uniformes quand `epsilon -> 0` ? | intégrales radiales exactes; logarithme symbolique | `python -B experiments/navier-stokes/desingularization-gate/desingularization_gate.py` | zéro pour les identités rationnelles |
 | `HWY-INNER-CUTOFF-GATE-1` | une régularisation intérieure divergence-free petite en `L²` et bornée en `L^{3,infinity}` est-elle compacte dans `L³` ? | matrices et intégrales exactes; transcendantes symboliques | `python -B experiments/navier-stokes/hwy-inner-cutoff/inner_cutoff_audit.py` | zéro pour les identités rationnelles et l'arrondi |
+| `HWY-PARITY-PROJECTION-GATE-1` | un lissage intérieur respectant la réflexion HWY peut-il exciter le mode certifié impair ? | projecteurs de parité et exposants rationnels exacts; aucune grille | `python -B experiments/navier-stokes/hwy-parity-projection/parity_projection_audit.py` | zéro pour dix obligations; aucun arrondi |
 | `PRESSURE-TAIL-1` | centrer la pression d'un paquet distant gagne-t-il une puissance de distance ? | noyau multipolaire exact, tenseur ponctuel | `python -B experiments/navier-stokes/pressure-tail/pressure_tail.py` | zéro |
 | `PRESSURE-MULTISCALE-1` | une borne physique `L²` seule impose-t-elle la tension uniforme de la pression après zoom ? | lois d'échelle et moments exacts | `python -B experiments/navier-stokes/pressure-multiscale/pressure_multiscale.py` | zéro |
 | `QUADRATIC-PRESSURE-DEFECT-1` | énergie uniforme et convergence faible d'une trace imposent-elles la convergence du produit et de la pression ? | solution NS de Fourier exacte, fractions rationnelles | `python -B experiments/navier-stokes/quadratic-pressure-defect/quadratic_pressure_defect.py` | zéro |
@@ -131,12 +132,39 @@ réseau ni ne produit d'artefact lourd.
 
 ## Passage au continuum
 
-Aucune des douze expériences ne part d'une discrétisation PDE : il n'y a donc
+Aucune des treize expériences ne part d'une discrétisation PDE : il n'y a donc
 pas de passage grille-vers-continuum. Le raccord analytique restant est
 explicite dans chaque cas. Tout futur solveur doit ajouter divergence mesurée,
 convergence multi-résolution, second schéma, bornes de troncature, contrôle des
 frontières, énergie/enstrophie/normes critiques, versions logicielles et
 empreintes des sorties.
+
+## `HWY-PARITY-PROJECTION-GATE-1` — sélection exacte par réflexion
+
+- Question : une convolution ou un cutoff radial du coeur HWY, donc pair pour
+  l'involution `(Ju)(x)=S u(Sx)`, peut-il projeter une composante sur le mode
+  d'instabilité certifié impair ?
+- Équation : NS incompressible 3D non forcé sur `R³`, viscosité `1`; seule
+  l'équivariance de la solution forte locale, de la chaleur, de la projection
+  de Leray et de la linéarisation est utilisée. Aucune trajectoire PDE n'est
+  discrétisée.
+- Échelle : pour `g_epsilon=epsilon^-1 g(x/epsilon)` et
+  `t=kappa epsilon²`, le profil de similarité
+  `sqrt(t)e^(tDelta)g_epsilon(sqrt(t)xi)` est indépendant d'`epsilon`.
+- Résultat : `Q_-g_epsilon=0` exactement dans le cas symétrique. Si une
+  composante impaire `epsilon^beta` a un pairing adjoint non nul, le facteur
+  linéaire est `kappa^-a epsilon^-2a`; la borne source
+  `a>=217/2000` impose nécessairement `beta>=217/1000`, sans suffire au
+  contrôle non linéaire.
+- Test adverse : un couplage pair vers impair donne un commutateur maximal `2`
+  et une excitation impaire `3`; la commutation est donc testée et essentielle.
+- Résidu et précision : dix obligations rationnelles exactement nulles,
+  aucune conversion flottante, aucune graine, aucune discrétisation.
+- Limite : le modèle matriciel encode la logique des secteurs, pas l'opérateur
+  HWY. Il n'exclut ni mode instable pair, ni asymétrie, ni brisure faible après
+  perte de l'unicité forte; il ne certifie aucun adjoint dynamique.
+- Empreinte : SHA-256
+  `432f9eda20dbb7ee3ea70562f83359be9c0ad7877a8f9a76efadbb70d0ccb06e`.
 
 ## `PRESSURE-TAIL-1` — pression distante et jauge
 

@@ -388,3 +388,34 @@ un breakdown Clay. Le prochain lemme borné doit être dynamique et
 non perturbatif : mesurer, à l'échelle `t~epsilon²`, la projection de la couche
 intérieure sur l'eigenmode adjoint instable certifié, puis suivre sa séparation
 jusqu'à un temps fixe avec les constantes de semigroupe et de projection.
+
+## Cycle 0011 : décision automatisée
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| tester la sélection exacte par parité et l'horloge de couche | 5 | 5 | 5 | 5 | **20** |
+| reconstruire un adjoint quantitatif depuis les artefacts publics | 4 | 3 | 5 | 4 | 16 |
+| établir un shadowing non linéaire jusqu'à un temps fixe | 5 | 1 | 3 | 5 | 14 |
+
+Décision : tester d'abord l'hypothèse de couplage. Avec
+`(Ju)(x)=S u(Sx)`, `S=diag(1,1,-1)`, le profil HWY et toute régularisation
+radiale sont pairs, tandis que le mode instable certifié est impair. La
+projection de Leray satisfait `P(Sxi)=S P(xi)S`; l'opérateur linéarisé commute
+donc avec `J`. Il en résulte `Q_-g_epsilon=0` exactement, et la solution forte
+locale conserve cette parité par unicité.
+
+La couche au temps `t=kappa epsilon²` reste pourtant d'ordre un dans les
+variables de similarité. Une composante impaire artificielle
+`epsilon^beta` porterait le facteur linéaire
+`kappa^-a epsilon^(beta-2a)`; `a>=217/2000` rend
+`beta>=217/1000` nécessaire. Cette balance n'est pas un shadowing : une couche
+`O(1)` sort du régime perturbatif à temps `O(epsilon²)`, et la condition de tir
+doit intégrer cutoff extérieur, non-linéarité et pression projetée.
+
+Résultat négatif décisif : le lissage symétrique naturel n'excite pas le mode
+impair certifié (`FAIL-NS-0014`). Les artefacts publics audités ne livrent pas
+non plus un adjoint dynamique normalisé et certifié, ni une borne de résolvante
+permettant le calcul asymétrique. Le verrou est révisé vers le certificat
+minimal résolvante–simplicité–adjoint–pairing. Une perturbation asymétrique
+servira seulement de test de sensibilité vers la donnée singulière : ses
+variantes sont des données Clay différentes.

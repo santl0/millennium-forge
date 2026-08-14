@@ -71,6 +71,9 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | donnée homogène `-1` non unique | donnée compacte énergétique singulière non unique | source vérifiée, CAP non reproduite | Hou–Wang–Yang v2; cutoff extérieur, gain `R^-1/8` pour `p=4` | le coeur `1/r` est conservé |
 | donnée compacte singulière `1/r` | famille de données Clay lisses divergence-free convergeant en `L²` | classique et dérivé | convolution par mollificateur radial | aucune convergence forte critique |
 | convergence `L²` + borne uniforme `L^{3,infinity}` de cutoffs intérieurs | compacité forte `L³` | réfutée | `HWY-INNER-CUTOFF-GATE-1`, gap positif entre `epsilon` et `2epsilon` | l'empilement logarithmique des échelles persiste |
+| lissage intérieur radial du profil HWY pair | excitation du mode instable certifié impair | réfutée | `[L_U,J]=0`, `Q_-g_epsilon=0`, `HWY-PARITY-PROJECTION-GATE-1` | un mode pair ou une perturbation impaire ne sont pas exclus |
+| couche impaire `epsilon^beta` à `t=kappa epsilon²` | coordonnée instable bornée à `tau=0` | conditionnelle | facteur linéaire exact `kappa^-a epsilon^(beta-2a)`; nécessaire `beta>=2a>=217/1000` | adjoint, conditionnement, cutoff extérieur, non-linéarité et pression projetée non certifiés |
+| profil/couche pairs + solution forte unique | préservation de la parité avant le temps maximal | classique et dérivé par équivariance | unicité forte locale et commutation de NS avec la réflexion | n'interdit pas une brisure de symétrie faible après perte d'unicité forte |
 | branche HWY singulière | deux solutions Leray–Hopf pour une même donnée Clay lisse | manquante | unicité faible–forte sur la durée classique | il faut d'abord une perte de régularité forte, déjà un breakdown Clay |
 | calcul flottant convergé | solution PDE exacte | manquante | — | compact analytique, bornes de queue, intervalles |
 | non-unicité faible forcée | breakdown (A)/(B) | non transférable | Albritton–Brué–Colombo | force et notion de conclusion |
@@ -87,14 +90,15 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | `GAP-PRESSURE-HARMONIC` | jauge de pression | équation de Poisson sur `R³` ne fixe pas les composantes affines | solution ancienne parasite exacte |
 | `GAP-HYBRID-INHERITANCE` | stabilité des hypothèses | mildness/bornitude KNSS et trace nulle ESS appartiennent à deux limites distinctes; dans la normalisation maximum, les limites commutent au temps-record `t_k`, tandis que `T` devient l'extrémité mobile `B_k` | matrice d'héritage + rigidité à trace nulle + audit des horloges/commutateur; axe suspendu après trois stratégies |
 | `GAP-SIGN-FLUX` | positivité | flux d'énergie inter-échelles | contre-triades exactes |
-| `GAP-LIMIT-ADMISSIBLE` | stabilité/admissibilité | profil singulier vers donnée de Schwartz | la convolution donne l'admissibilité `L²`, mais `FAIL-NS-0013` réfute `L²` + borne `L^{3,infinity}` vers compacité `L³`; reste le shadowing dynamique après la couche `t~epsilon²` |
+| `GAP-LIMIT-ADMISSIBLE` | stabilité/admissibilité | profil singulier vers donnée de Schwartz | la convolution donne l'admissibilité `L²`, `FAIL-NS-0013` réfute la compacité `L³`, puis `FAIL-NS-0014` annule exactement la projection sur le mode impair pour tout lissage symétrique; restent asymétrie, adjoint certifié et shadowing non linéaire |
 | `GAP-NUM-CONTINUUM` | calcul vers continuum | discrétisation finie | résidu d'intervalle + queue analytique |
 
 ## Arêtes prioritaires
 
-1. `GAP-LIMIT-ADMISSIBLE` : mesurer la projection de la couche intérieure sur
-   le mode instable HWY et sa propagation au-delà de `t~epsilon²`; le raccord
-   perturbatif par compacité initiale critique est fermé négativement.
+1. `GAP-LIMIT-ADMISSIBLE` : certifier l'adjoint et la balance d'une couche
+   intérieure impaire ajustée à l'ordre `epsilon^(2a)`; le raccord critique
+   statique et l'excitation du mode impair par lissage symétrique sont fermés
+   négativement.
 2. `GAP-SIGN-FLUX` : élimination rapide de fonctionnelles candidates.
 3. `GAP-NUM-CONTINUUM` : isoler un opérateur compact à queues certifiables.
 

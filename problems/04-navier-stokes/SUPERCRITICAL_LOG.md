@@ -215,3 +215,28 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   critique forte. La chaleur peut encore lisser à `t>0`, ce qui laisse ouvert
   un shadowing dynamique non perturbatif après `t~epsilon²`.
 - Artefact : `HWY-INNER-CUTOFF-GATE-1`, résidus rationnels et arrondi zéro.
+
+## 2026-08-14 — Couche parabolique et sélection de parité HWY
+
+- Équation : NS incompressible 3D non forcé sur `R³`, viscosité `1`; solution
+  forte locale pour la symétrie et linéarisation en variables de similarité
+  autour du profil HWY.
+- Involution : `(Ju)(x)=S u(Sx)`, `S=diag(1,1,-1)`. Le profil et le lissage
+  radial sont pairs; le mode instable certifié est impair.
+- Non-localité : le symbole de Leray vérifie `P(Sxi)=S P(xi)S`. La pression
+  projetée ne mélange donc pas les secteurs dans le cadre exact symétrique.
+- Échelle : si `g_epsilon=epsilon^-1g(x/epsilon)` et
+  `t=kappa epsilon²`, alors le profil chauffé redimensionné est indépendant
+  d'`epsilon`. La petitesse énergétique physique ne devient pas une petitesse
+  dans l'espace de profil.
+- Amplification conditionnelle : une coordonnée impaire
+  `epsilon^beta` porte `kappa^-a epsilon^(beta-2a)`; la borne
+  `a>=217/2000` impose `beta>=217/1000`, mais une couche `O(1)` quitte le
+  régime perturbatif à `O(epsilon²)` et la balance non linéaire reste entière.
+- Annulation exacte : `Q_-g_epsilon=0`; le mode certifié ne peut pas être
+  excité par la régularisation symétrique avant perte de l'unicité forte.
+- Perte localisée : pour l'asymétrie, il manque un adjoint certifié, son
+  conditionnement, la simplicité/isolation spectrale et les contributions de
+  cutoff/pression. Un mode instable pair n'est pas exclu.
+- Artefact : `HWY-PARITY-PROJECTION-GATE-1`, dix résidus rationnels nuls,
+  opérateur adverse non équivariant explicitement détecté.

@@ -1,0 +1,46 @@
+{
+  "id": "NS-HWY-SYMMETRIC-CUTOFF-ODD-MODE-GATE",
+  "problem": "navier-stokes",
+  "statement": "Si le profil de base et la régularisation intérieure commutent avec la réflexion vectorielle z vers -z utilisée par Hou–Wang–Yang, la couche parabolique reste dans le secteur pair et sa projection sur le secteur instable impair certifié est exactement nulle; sur la durée d'existence forte unique, cette symétrie est préservée, de sorte que le mode impair certifié ne peut pas être le mécanisme linéaire de transfert d'un lissage symétrique vers une donnée Clay.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "Navier–Stokes incompressible 3D non forcé sur R3, viscosité 1, aucune frontière",
+    "J est l'involution (Ju)(x)=S u(Sx), S=diag(1,1,-1); le profil HWY U satisfait JU=U",
+    "la couche de régularisation est obtenue par un cutoff radial ou une convolution radiale et satisfait Jg_epsilon=g_epsilon",
+    "la chaleur, la projection de Leray et la non-linéarité sont prises sur R3 et commutent avec J",
+    "le mode d'instabilité HWY considéré appartient au secteur impair Jv=-v; aucune exclusion d'un autre mode instable pair",
+    "la préservation non linéaire de la parité est affirmée seulement tant que la solution forte locale est unique",
+    "au temps t=kappa epsilon^2, la couche modèle est g_epsilon(x)=epsilon^-1 g(x/epsilon); aucun shadowing non linéaire jusqu'à un temps fixe n'est supposé"
+  ],
+  "dependencies": [
+    "NS-HWY-UNFORCED-NONUNIQUENESS-V2",
+    "NS-HWY-INNER-CUTOFF-CRITICAL-GATE"
+  ],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "Hou–Wang–Yang, arXiv:2509.25116v2, sections 2.1, 2.3 et 5.2: profil U pair, fonction propre v impaire et branche dans la direction v brisant la symétrie; https://arxiv.org/abs/2509.25116"
+    },
+    {
+      "kind": "derivation",
+      "reference": "experiments/navier-stokes/hwy-parity-projection/parity_projection_audit.py",
+      "sha256": "432f9eda20dbb7ee3ea70562f83359be9c0ad7877a8f9a76efadbb70d0ccb06e"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "HWY-PARITY-PROJECTION-GATE-1: l'opérateur adverse qui couple le secteur pair au secteur impair a un commutateur de norme max 2 et produit une excitation impaire 3, tandis que toutes les identités du cas équivariant ont un résidu rationnel nul"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-state-of-art/cycle-0011"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "OpenAI Codex et sous-agents Codex, même famille de modèle; non indépendant au sens externe",
+    "notes": "Le certificat porte sur le secteur de parité, pas sur la valeur d'un projecteur de Riesz complet ni sur tous les modes instables. Une asymétrie, un mode pair ou une brisure de symétrie faible après perte de l'unicité forte restent ouverts."
+  }
+}
