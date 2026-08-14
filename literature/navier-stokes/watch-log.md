@@ -279,3 +279,21 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
   sont pas garantis.
 - Décision : fermer cette arête géométrique au statut `COMPUTATION_ONLY` et
   remonter vers l'inversion quantitative des réarrangées (47)–(49).
+
+## 2026-08-14 — Cycle 0015
+
+- Veille différentielle : `arXiv:2607.08866` reste en v2 du 2026-07-13;
+  aucune v3 ni publication évaluée n'a été identifiée au gel.
+- Source primaire ajoutée : O'Neil, *Duke Mathematical Journal* 30 (1963),
+  129–142, DOI `10.1215/S0012-7094-63-03015-1`, pour la structure de
+  convolution coeur–queue de l'équation (41).
+- Résultat différentiel : `(47) -> (49)` est valide avec seuils suivis et un
+  logarithme dimensionnellement normalisé. L'égalité de pseudo-inverse écrite
+  informellement en (48) est fausse sur les plateaux et a été remplacée par
+  l'implication exacte `v<mu_f(lambda) -> f*(v)>lambda`.
+- Contre-test : deux profils en escalier réfutent l'égalité terminale; une
+  famille à cutoff `v_0(t)->0` réfute toute prétention d'uniformité temporelle
+  fondée sur la seule constante de l'enveloppe.
+- Décision : conserver le lemme réparé au statut `COMPUTATION_ONLY` et auditer
+  ensuite `(40) -> (41) -> (47)`, notamment le reste positif de (46), la
+  normalisation Biot–Savart et l'uniformité des deux intégrales d'O'Neil.

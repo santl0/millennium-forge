@@ -297,3 +297,28 @@ La v2 datée du 13 juillet 2026 reste la version courante contrôlée le
 2026-08-14; aucune v3 ni publication évaluée n'a été identifiée. La priorité
 bibliographique et analytique passe à l'inversion quantitative (47)–(49), puis
 à la queue dyadique du commutateur si cette arête échoue.
+
+## Audit ciblé du cycle 0015 — inversion des réarrangées
+
+| Source primaire | Passage contrôlé | Verdict exact |
+|---|---|---|
+| Grujić `arXiv:2607.08866v2` (`0059`) | équations (40)–(49), en particulier (47)–(49) | l'enveloppe de réarrangée (47) implique bien une queue `lambda^-3 log^-3` après normalisation et seuil explicites; l'égalité informelle de (48) est fausse sur les plateaux |
+| O'Neil 1963, DOI `10.1215/S0012-7094-63-03015-1` (`0067`) | inégalité de convolution utilisée en (41) | la structure coeur–queue est classique; l'application exige une représentation Biot–Savart sans composante harmonique incontrôlée et ne borne pas à elle seule le reste positif de (46) |
+
+Le lemme réparé est purement mesurable. Si
+`f*(v)≤A v^(-1/3)/log(eV_*/v)` uniformément pour `0<v≤v_0`, alors, au-dessus
+d'un seuil explicite dépendant de `A,V_*,v_0`,
+
+```text
+mu_f(lambda) ≤ A^3 /
+  [lambda^3 (1+3 log(lambda/Lambda_*))^3],
+Lambda_*=A V_*^(-1/3).
+```
+
+La preuve utilise `f*(v)>lambda` pour tout `v<mu_f(lambda)`, puis fait tendre
+`v` vers la mesure du superniveau; elle n'utilise jamais l'identité fausse
+`lambda=f*(mu_f(lambda))`. Un profil à deux plateaux la réfute exactement.
+Une famille dont le cutoff `v_0(t)` tend vers zéro montre en outre que la
+constante temporelle n'est uniforme que si le domaine de validité de (47)
+l'est. Le statut reste `COMPUTATION_ONLY`: le transfert vorticité–vitesse
+`(40) -> (41) -> (47)` n'est pas encore reproduit.

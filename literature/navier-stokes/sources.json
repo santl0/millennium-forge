@@ -1200,9 +1200,9 @@
       "hypotheses": ["donnée u₀∈L∞(R³) et solution unique analytique avant T*", "scénario de singularité ponctuelle critique", "borne uniforme ω∈L∞_t L^{3/2,∞}_x", "factorisation locale de type |x|^-2 avec facteur de forme borné scale-invariant ou log-périodique et gradient critique contrôlé", "ξ∈L∞_t bmo_{1/|log r|} uniformément près de T*", "chaîne géométrique et analytique du théorème 7.4"],
       "constants_uniformity": "La revendication exige des modules et rayons uniformes le long de l'approche du temps critique; leur propagation depuis les données Clay générales n'est pas établie.",
       "clay_relevance": "Cible directement un sous-scénario critique de blow-up NS non forcé sur R³. Même correcte, elle reste conditionnelle aux deux hypothèses critiques et ne ferme pas le problème Clay général.",
-      "limitations": ["prépublication récente non évaluée", "preuve complète non reproduite", "hypothèses critiques supplémentaires", "inversion des réarrangées, transfert vorticité-vitesse et constantes du commutateur restent à auditer; seule la réduction 3D vers 1D a été fermée au cycle 0014"],
-      "reproduction": {"status": "geometric_sparseness_edge_rederived_other_PDE_edges_not_reproduced"},
-      "verification": {"level": "primary_full_text_targeted", "checked_on": "2026-08-14", "notes": "Métadonnées v2, résumé, hypothèses annoncées et théorème 7.4 inspectés. Le cycle 0014 valide seulement Definition 7.1 et le choix explicite du rayon conditionnellement à (55); aucune validité du reste de la preuve n'est admise."},
+      "limitations": ["prépublication récente non évaluée", "preuve complète non reproduite", "hypothèses critiques supplémentaires", "le cycle 0015 répare seulement l'inversion (47) vers (49); le transfert (40) vers (47), la normalisation Biot–Savart, le reste de (46) et les constantes du commutateur restent à auditer"],
+      "reproduction": {"status": "geometric_sparseness_and_rearrangement_inversion_edges_rederived_other_PDE_edges_not_reproduced"},
+      "verification": {"level": "primary_full_text_targeted", "checked_on": "2026-08-14", "notes": "Métadonnées v2, résumé, hypothèses annoncées et théorème 7.4 inspectés. Le cycle 0014 valide Definition 7.1 et le choix explicite du rayon conditionnellement à (55). Le cycle 0015 remplace l'égalité fausse de (48) sur les plateaux par un lemme exact de pseudo-inverse et rend (47) vers (49) quantitatif à seuils suivis; aucune validité de (40) vers (47), du commutateur ou du reste de la preuve n'est admise."},
       "tags": ["recent", "vorticity", "alignment", "BMO", "Lorentz", "critical_point", "conditional_regularity", "unreviewed"]
     },
     {
@@ -1344,6 +1344,26 @@
       "reproduction": {"status": "geometric_lemma_rederived_with_exact_constants_cycle_0014"},
       "verification": {"level": "primary_full_text_targeted", "checked_on": "2026-08-14", "notes": "Prépublication primaire 1911.00974 et version publiée 2024 ciblées; la chaîne historique inclut aussi arXiv:1903.03833 pour la première formulation 3D même-rayon retrouvée."},
       "tags": ["volumetric_sparseness", "one_dimensional_sparseness", "dimension_d", "conditional_regularity"]
+    },
+    {
+      "id": "NS-SRC-0067",
+      "title": "Convolution operators and L(p,q) spaces",
+      "authors": ["Richard O'Neil"],
+      "year": 1963,
+      "source_type": "journal_article",
+      "publication_status": "published",
+      "venue": "Duke Mathematical Journal 30(1), 129–142",
+      "identifiers": {"doi": "10.1215/S0012-7094-63-03015-1", "url": "https://projecteuclid.org/journals/duke-mathematical-journal/volume-30/issue-1/Convolution-operators-and-Lpq-spaces/10.1215/S0012-7094-63-03015-1.full"},
+      "equation": {"model": "théorie de la convolution et des réarrangées, sans équation PDE spécifique", "dimension": "générale; application ciblée sur R³", "domain": "espaces mesurés/groupes puis R³ dans l'application", "boundary": "sans objet", "forcing": "sans objet", "viscosity": "sans objet"},
+      "solution_notions": ["fonctions mesurables et espaces de Lorentz L(p,q)"],
+      "result": "Établit les inégalités de convolution et de réarrangement de type O'Neil. Pour le noyau |x|^-2 sur R³, la forme pertinente majore (f*g)** par un terme de moyenne de coeur et une intégrale de queue, ce qui fournit la structure de l'équation (41) de la prépublication 2026.",
+      "hypotheses": ["fonctions et convolution dans les classes de Lorentz admissibles", "réarrangées décroissantes et moyennes maximales correctement définies", "dans l'application PDE, représentation Biot–Savart sans composante harmonique incontrôlée"],
+      "constants_uniformity": "La constante analytique dépend des exposants et de la dimension, pas du temps. L'application à une famille temporelle exige des normes et une normalisation Biot–Savart uniformes.",
+      "clay_relevance": "Outil classique pour transférer une enveloppe de réarrangée de la vorticité vers la vitesse; ne produit pas cette enveloppe et ne contrôle pas seul la jauge harmonique ou la régularité globale.",
+      "limitations": ["outil fonctionnel, pas critère de régularité", "l'application exacte (41)–(47) reste à auditer avec constantes et queues", "aucun contrôle d'une composante de vitesse à curl nul sans hypothèse globale"],
+      "reproduction": {"status": "primary_statement_targeted_application_not_fully_reproduced"},
+      "verification": {"level": "primary_full_text_targeted", "checked_on": "2026-08-14", "notes": "DOI, pagination et forme de l'inégalité de réarrangement contrôlés via la source primaire Project Euclid pendant le cycle 0015."},
+      "tags": ["rearrangement", "convolution", "Lorentz", "O_Neil", "harmonic_analysis"]
     }
   ],
   "watchlist": [
@@ -1416,6 +1436,7 @@
     "vorticity_axisymmetry": ["NS-SRC-0021", "NS-SRC-0022", "NS-SRC-0023", "NS-SRC-0038", "NS-SRC-0045", "NS-SRC-0046", "NS-SRC-0054"],
     "vorticity_geometry": ["NS-SRC-0021", "NS-SRC-0059", "NS-SRC-0060", "NS-SRC-0061", "NS-SRC-0062", "NS-SRC-0063", "NS-SRC-0064", "NS-SRC-0065", "NS-SRC-0066"],
     "geometric_sparseness": ["NS-SRC-0059", "NS-SRC-0064", "NS-SRC-0065", "NS-SRC-0066"],
+    "rearrangements_and_convolution": ["NS-SRC-0059", "NS-SRC-0067"],
     "cascade_intermittency_supercriticality": ["NS-SRC-0024", "NS-SRC-0025", "NS-SRC-0026", "NS-SRC-0027", "NS-SRC-0028", "NS-SRC-0052"],
     "weak_nonuniqueness": ["NS-SRC-0029", "NS-SRC-0030", "NS-SRC-0031", "NS-SRC-0032", "NS-SRC-0033", "NS-SRC-0044", "NS-SRC-0047", "NS-SRC-0054", "NS-SRC-0055"],
     "numerics_and_CAP": ["NS-SRC-0033", "NS-SRC-0037", "NS-SRC-0038", "NS-SRC-0039", "NS-SRC-0040", "NS-SRC-0041", "NS-SRC-0054", "NS-SRC-0057"],
