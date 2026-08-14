@@ -519,3 +519,46 @@ pont au-dessus du cutoff -> sous-composante bornée : manquante;
 chevauchement des curls -> monotonicité locale : manquante;
 gate statique -> rayon pré-singulier : manquante.
 ```
+
+## Cycle 0037 — coût critique d'une branche persistante
+
+```text
+NS-SRC-0156 (composantes M-indécomposables)
+  + NS-SRC-0163 (2 diam(E^1)<=P_2(E))
+  + NS-SRC-0132 (coaire)
+  -- composition interne --> integral_H|W|>=4pi RD(b-a)
+
+H={a<sigma F<b}
+  -- facteur annulaire --> H subset {|U|>2a/3}
+  -- faible-L3 --> |H|^(1/3)<=3K_u/(2a)
+  -- intégration faible-L^(3/2) --> integral_H|W|<=9K_uK_w/(2a)
+  --> NS-PURE-SWIRL-PERSISTENT-BRIDGE-DIAMETER
+
+composante au-dessus du cutoff A
+  -- persiste sur (A/2,A) --> A^2RD<=9K_uK_w/(2pi)
+  -- AR>=kappa K_u --> diamètre D/R contrôlé
+  -- NS-PURE-SWIRL-COMPONENTWISE-DROPLET-SELECTION
+  -- NS-PURE-SWIRL-LIPSCHITZ-DIRECTION-GATE
+  --> oscillation directionnelle locale conditionnelle de type q^15.
+```
+
+Nature des arêtes :
+
+```text
+périmètre-diamètre planaire : classique, publié et source-vérifié;
+coaire/composantes/Lorentz : classiques sourcés;
+constante axisymétrique 9/(8pi) : dérivation interne COMPUTATION_ONLY;
+pont explicite : calcul rationnel exact, pas preuve du continuum;
+niveau global -> calibrage AR/K_u local : réfuté;
+composante basse -> branche persistante : faux lors d'une fusion tardive;
+merge tree discret -> arbre continuum certifié : manquant;
+diamètre statique -> solution pré-singulière : manquant;
+pression/projection de Leray : absentes.
+```
+
+## Priorité après le cycle 0037
+
+1. Calibrage critique local ou retroncature sur arbre de fusion.
+2. Test multi-gouttes hétérogène avec persistance et diamètre intégrés.
+3. Chevauchements de curls, puis raccord Type I/Type II seulement après
+   fermeture des deux premières arêtes.

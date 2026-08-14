@@ -325,3 +325,21 @@
   diamètre d'une composante.
 - `GAP-ABOVE-THRESHOLD-THIN-BRIDGE` devient actif; chevauchement des supports
   et dynamique restent différés.
+
+### 2026-08-15 — pont persistant fermé par périmètre–diamètre planaire
+
+- Le lemme de branche persistante est retenu avec le score `20/20`; le ledger
+  direct du pont est conservé comme test adverse et l'arbre de fusion complet
+  est différé.
+- L'annulation exacte du jacobien cylindrique par `R/r` fixe la constante
+  `9/(8pi)`, plus forte que la première borne annulaire grossière.
+- Un pont de persistance relative fixe et calibré par `AR>=kappa K_u` est
+  abandonné comme échappement : son diamètre normalisé est borné par le rapport
+  endpoint inverse.
+- L'excès évanescent réduit le curl de la troncature, pas le curl original;
+  la famille `eta=L^-3/2`, `delta=L^-1` est conservée comme test de frontière.
+- L'inférence `niveau global -> AR>=kappa K_u pour chaque goutte` est
+  abandonnée; des gouttes multiples la réfutent par le facteur `m^-1/3`.
+- Le prochain verrou est
+  `GAP-BRIDGE-SCALE-CALIBRATION-OR-MERGE-TREE`; pression et dynamique restent
+  différées.

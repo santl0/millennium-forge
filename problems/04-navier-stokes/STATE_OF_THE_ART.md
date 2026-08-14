@@ -1002,3 +1002,56 @@ comme `m^-1/3`; un filament strictement sous `lambda/4` est supprimé. Le
 corpus atteint 162 sources. Le verrou actif devient
 `GAP-ABOVE-THRESHOLD-THIN-BRIDGE` : un pont de petite section mais d'amplitude
 au-dessus du cutoff peut fusionner deux gouttes éloignées.
+
+## Cycle 0037 — coût d'un pont persistant dans la section méridienne
+
+La dimension méridienne deux corrige une généralisation trop pessimiste du
+cycle 0036. Pour toute composante M-indécomposable planaire, Dayrens–Masnou–
+Novaga–Pozzetta (`NS-SRC-0163`) prouvent
+
+```text
+2 diam(E^1)<=P_2(E).
+```
+
+Combinée à la coaire et au curl exact de
+`U=(R/r)F e_theta`, cette borne donne la nouvelle obstruction critique
+
+```text
+a(b-a)RD<=9 K_u K_w/(8 pi).
+```
+
+Si une composante reste au-dessus d'un cutoff `A`, elle persiste sur la bande
+`(A/2,A)` et vérifie
+
+```text
+A^2RD<=9 K_u K_w/(2 pi)<=(3/2)K_uK_w.
+```
+
+L'excès du pont au-dessus du cutoff peut donc tendre vers zéro sans réduire le
+coût du curl original : les niveaux inférieurs doivent encore fermer. Sous le
+calibrage `AR>=kappa K_u`, le diamètre normalisé est borné par
+`9(K_w/K_u)/(2 pi kappa^2)`, ce qui raccorde conditionnellement la composante
+au gate directionnel.
+
+Le claim `NS-PURE-SWIRL-PERSISTENT-BRIDGE-DIAMETER` reste
+`COMPUTATION_ONLY` : l'inégalité primaire périmètre–diamètre est publiée, mais
+sa composition axisymétrique, ses constantes et son raccord endpoint sont une
+dérivation IA auditée. Un ledger rationnel sur 1 035 familles et 5 197
+assertions confirme la loi d'échelle. Le contre-profil à deux gouttes montre
+qu'un curl tronqué borné exige `eta<~sqrt(delta)/L`, donc au mieux
+`eta<~L^-3/2` sous `delta L<~1`, alors que le curl original diverge.
+
+Deux limites sont exactes. D'une part, `AR>=kappa K_u` ne suit pas d'un niveau
+global presque optimal lorsqu'il existe beaucoup de gouttes. D'autre part,
+une composante basse peut devenir longue par une fusion sur une fenêtre de
+niveaux évanescente; un grand diamètre à un niveau unique n'a aucun coût
+coaire uniforme. Les merge trees (`NS-SRC-0164`–`0165`) offrent un registre
+discret de cette persistance, pas un théorème continuum. La prépublication
+BV récente `NS-SRC-0166` clarifie les représentants 1-fins; la prépublication
+axisymétrique à petite donnée sur cylindre avec bord `NS-SRC-0167` ne se
+transfère pas à `R3` ou `T3`.
+
+Le corpus atteint 167 sources. Le verrou devient
+`GAP-BRIDGE-SCALE-CALIBRATION-OR-MERGE-TREE` : calibrer localement la branche
+sélectionnée ou trouver un niveau qui la scinde en morceaux de diamètre
+`O(R)` sans perdre le rapport endpoint.

@@ -797,3 +797,32 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   composante de diamètre arbitraire; chevauchements, pression et temps restent
   ouverts.
 - Pivot : `GAP-ABOVE-THRESHOLD-THIN-BRIDGE`.
+
+## 2026-08-15 — Diamètre d'une branche persistante
+
+- Objet : swirl pur statique
+  `U=(R/r)F e_theta`, `W=curl U`, support méridien dans
+  `R/2<r<3R/2`; aucune évolution.
+- Brique planaire : toute composante M-indécomposable vérifie
+  `P_2(E)>=2 diam(E^1)` (`NS-SRC-0163`).
+- Coaire pondérée exacte : si un diamètre axial `D` persiste presque partout
+  sur `(a,b)`, alors
+
+  ```text
+  integral_(a<sigma F<b)|W| >= 4 pi R D (b-a),
+  a(b-a) R D <= 9 K_u K_w/(8 pi).
+  ```
+
+- Corollaire cutoff : un pont restant au-dessus de `A` vérifie
+  `A^2RD<=9K_uK_w/(2pi)<=(3/2)K_uK_w`, indépendamment de son faible excès
+  au-dessus de `A`.
+- Scaling : `A^2RD`, `K_uK_w`, `AR/K_u`, `D/R` et `K_u/K_w` sont critiques.
+- Test adverse : pour `delta=L^-1`, le curl tronqué reste borné seulement si
+  `eta<~L^-3/2`; le cube du curl original croît comme `L^3`.
+- Certificat : 1 035 familles, 5 197 assertions rationnelles exactes, zéro
+  échec; empreinte
+  `d4be10a24de48f196a64515b1f1fc9916c51b51332244f50e443cefc326be946`.
+- Pertes restantes : `AR>=kappa K_u` n'est pas automatique pour chaque
+  goutte; un grand diamètre au niveau bas peut résulter d'une fusion sur une
+  fenêtre d'amplitude évanescente; pression, temps et Type II absents.
+- Pivot : `GAP-BRIDGE-SCALE-CALIBRATION-OR-MERGE-TREE`.

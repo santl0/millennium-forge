@@ -1429,3 +1429,47 @@ supports originaux chevauchants -?-> survie après annulation.
 Priorité : `GAP-ABOVE-THRESHOLD-THIN-BRIDGE`. Tester deux gouttes distantes
 reliées par un tube d'amplitude juste supérieure au cutoff et suivre
 simultanément longueur, section, couches de transition et endpoints faibles.
+
+## Cycle 0037 — persistance en amplitude et diamètre méridien
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| ledger direct du pont linéaire | 4 | 5 | 5 | 4 | 18 |
+| périmètre–diamètre d'une branche persistante | 5 | 5 | 5 | 5 | **20** |
+| arbre de fusion et retroncature récursive | 5 | 2 | 4 | 5 | 16 |
+
+```text
+composante M-indécomposable méridienne E_t
+  -- Dayrens et al. --> P_2(E_t)>=2 diam_z(E_t^1)
+  -- persistance sur (a,b) --> P_2({sigma F>t})>=2D presque partout
+  -- coaire pondérée et curl exact --> integral_H|W|>=4pi RD(b-a)
+  -- H subset {|U|>2a/3} + faible-L^(3/2)
+       --> a(b-a)RD<=9K_uK_w/(8pi)
+  --> NS-PURE-SWIRL-PERSISTENT-BRIDGE-DIAMETER [COMPUTATION_ONLY]
+
+pont au-dessus du cutoff A
+  -- coaire sous le cutoff --> A^2RD<=9K_uK_w/(2pi)
+  -- AR>=kappa K_u --> D/R<=9(K_w/K_u)/(2pi kappa^2)
+  -- raccord conditionnel C36/C33 --> boule directionnelle
+  -- ferme --> pont de persistance relative fixe et calibrée
+  -/-> calibrage local automatique depuis le niveau global
+  -/-> composante basse créée par fusions sur une fenêtre évanescente.
+```
+
+Arêtes adverses :
+
+```text
+diamètre topologique d'un représentant BV : faux; employer E^1;
+périmètre 3D -> diamètre : faux par tube mince;
+périmètre 2D -> diamètre essentiel : classique sourcé;
+merge tree discret -> arbre BV continuum : manquant sans certification;
+niveau global presque optimal -> AR>=kappa K_u local : réfuté;
+excès du pont eta->0 -> petit curl tronqué : possible;
+excès eta->0 -> petit curl original : réfuté;
+gate statique -> dynamique Clay : manquant.
+```
+
+Priorité : `GAP-BRIDGE-SCALE-CALIBRATION-OR-MERGE-TREE`. Prouver une
+dichotomie critique : soit la branche sélectionnée persiste sur une fenêtre
+calibrée et son diamètre est borné, soit un niveau intermédiaire la scinde en
+composantes de diamètre `O(R)` tout en conservant un rapport endpoint local.

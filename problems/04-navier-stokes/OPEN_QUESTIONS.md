@@ -337,3 +337,29 @@ niveau global est admissible dans la branche pure-swirl.
 Les gouttes reliées strictement sous `lambda/4` sont fermées. Ne pas rouvrir
 la branche par un covering volume-seul : Frank–Lieb est optimal en échelle et
 ne donne qu'une fraction `cV^2/P^3` potentiellement nulle.
+
+## Priorité active après le cycle 0037
+
+1. **`GAP-BRIDGE-SCALE-CALIBRATION-OR-MERGE-TREE`.** Pour la composante
+   sélectionnée au cycle 0036, obtenir soit `AR>=kappa K_u` sur une branche
+   persistante, soit un niveau de retroncature qui la scinde en morceaux de
+   diamètre `O(R)` sans perdre le rapport endpoint quadratique.
+2. **Arbre de fusion enrichi.** Définir pour chaque branche son intervalle de
+   niveaux, son diamètre essentiel minimal et son budget coaire. Le merge tree
+   discret n'est admissible qu'avec bornes d'interpolation et certification
+   des cols plus fins que la maille.
+3. **Multi-gouttes à amplitudes hétérogènes.** Tester si une distribution
+   dyadique peut faire échouer simultanément le calibrage local et toutes les
+   retroncatures, malgré la somme de coûts
+   `integral diam(E_t^1) dt`.
+4. **Chevauchements signés.** Une fois la dichotomie mono-cellule stabilisée,
+   autoriser les supports de curl superposés et recalculer les annulations
+   avant toute fonction de distribution locale.
+5. **Raccord dynamique.** Toujours différé : relier la branche statique à un
+   rayon `R(t)->0`, contrôler pression et projection de Leray, puis séparer
+   Type I et Type II.
+
+Un pont de persistance relative fixe et calibrée est désormais fermé par
+`NS-PURE-SWIRL-PERSISTENT-BRIDGE-DIAMETER`. Ne pas confondre ce résultat avec
+le diamètre d'une composante au seul niveau bas : les fusions tardives restent
+le premier quantificateur ouvert.

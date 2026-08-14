@@ -89,8 +89,13 @@
 - [x] Décomposer une bande commune en gouttelettes axialement dispersées et
   sélectionner une troncature de bon rapport : constante `C_I/648` au cycle
   0036; les filaments strictement sous `lambda/4` sont coupés sans défaut.
-- [ ] Construire ou exclure un pont pure-swirl mince qui reste au-dessus de
-  `lambda/4`, fusionne deux gouttes distantes et conserve les deux endpoints.
+- [x] Construire ou exclure un pont pure-swirl mince qui reste au-dessus de
+  `lambda/4`, fusionne deux gouttes distantes et conserve les deux endpoints :
+  persistance fixe calibrée exclue par périmètre–diamètre au cycle 0037;
+  fenêtre de fusion évanescente isolée comme seul échappement statique.
+- [ ] Calibrer `AR/K_u` sur la composante sélectionnée ou construire une
+  retroncature certifiée sur son arbre de fusion qui conserve le rapport
+  endpoint et produit des morceaux de diamètre `O(R)`.
 - [ ] Étendre ou réfuter le registre lorsque les supports de curl se
   chevauchent et peuvent s'annuler.
 - [ ] Relier la cellule de bon rapport à une échelle `R_j(t)->0`; auditer

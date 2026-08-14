@@ -256,3 +256,14 @@ douze. Les filaments strictement sous le seuil et les copies identiques sont
 fermés. Un pont mince restant au-dessus du seuil peut encore fusionner deux
 gouttes éloignées; `GAP-ABOVE-THRESHOLD-THIN-BRIDGE` devient actif. Le corpus
 compte 162 sources.
+
+Le cycle 0037 montre qu'un pont au-dessus du cutoff n'est pas gratuit dans la
+section méridienne. Le périmètre d'une composante M-indécomposable contrôle
+deux fois son diamètre essentiel; coaire et le poids exact du curl donnent
+`a(b-a)RD<=9K_uK_w/(8pi)`. Un pont au-dessus de `A` vérifie donc
+`A^2RD<=9K_uK_w/(2pi)`, même si son excès tend vers zéro. Sous
+`AR>=kappa K_u`, son diamètre est uniforme et le gate directionnel se raccorde
+conditionnellement. Le niveau global ne fournit toutefois pas ce calibrage
+pour chaque goutte, et une fusion tardive peut ne persister que sur une bande
+évanescente. Le prochain verrou est
+`GAP-BRIDGE-SCALE-CALIBRATION-OR-MERGE-TREE`. Le corpus compte 167 sources.
