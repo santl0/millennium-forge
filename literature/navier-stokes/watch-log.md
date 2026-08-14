@@ -209,3 +209,31 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
   léger minimal résolvante–simplicité–adjoint–pairing et tester la sensibilité
   d'une couche impaire ajustée, sans confondre données lisses différentes et
   non-unicité pour une donnée fixée.
+
+## 2026-08-14 — Cycle 0012
+
+- Fenêtre recherchée : versions courantes et résultats 2025–2026 susceptibles
+  de confondre trace asymptotique, donnée de Cauchy, dissipation, sensibilité
+  ou forçage avec une alternative Clay.
+- Correction bibliographique : Coiculescu–Palasek est publié dans
+  *Inventiones Mathematicae* 244 (2026), 165–219, sur `T³`, avec une donnée
+  `BMO⁻¹(T³)` hors `L²`; version of record en ligne le 2025-12-12, arXiv v2
+  du 2025-07-21.
+- Sources ajoutées : Cheskidov–Zeng–Zhang `2503.05692v1` (énergie continue et
+  décroissante, mais solutions explicitement non Leray–Hopf), Palasek
+  `2509.18595v1` (croissance arbitraire entre données lisses distinctes et
+  solutions fortes globales), Liao–Qin `2602.12666v1` (calcul 2D forcé depuis
+  des données différentes) et Galdi–Gazzola `2606.15189v3`, révisé le
+  2026-07-21 (blow-ups d'une unique solution de Leray–Hopf, mais sous force
+  extérieure seulement intégrable et non admissible comme force `C∞` de
+  l'alternative Clay (C)).
+- Statut HWY inchangé : `2509.25116v2`, aucune nouvelle version ou publication
+  évaluée identifiée; Ionescu–Jia–Palasek reste `2606.07501v1`.
+- Résultat différentiel : aucune source ne transforme une trace commune en
+  `tau→-∞` en une même donnée de Cauchy à temps fini. Au contraire,
+  l'unicité faible–forte rend la branche forte injective tant que son critère
+  de prolongement reste fini.
+- Décision : après trois échecs réellement distincts du raccord HWY vers une
+  même donnée Clay lisse (compacité critique, parité, puis porte de Cauchy),
+  suspendre `GAP-LIMIT-ADMISSIBLE` et pivoter vers la géométrie locale de la
+  vorticité et les triades signées.
