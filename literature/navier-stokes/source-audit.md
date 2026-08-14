@@ -379,3 +379,27 @@ L'audit de (20)–(21) fournit déjà un test adverse du prochain verrou : avec
 `R=2^-8` et le dernier indice, le ratio de poids vaut `8/3`, non `2`. Le
 facteur `3` répare cet échelon à petite échelle, mais les extensions BMO et
 toutes les queues de (8)–(22) restent non reproduites.
+
+## Audit ciblé du cycle 0018 — extension BMO et commutateur localisé
+
+| Source primaire | Passage contrôlé | Verdict exact |
+|---|---|---|
+| Grujić `arXiv:2607.08866v2` (`0059`) | théorème 4.1, équations (8)–(22) | le gain logarithmique survit après correction de la semi-norme, de la réarrangée et du dernier anneau; statut conditionnel seulement |
+| Coifman–Rochberg–Weiss 1976 (`0073`) et Hunt 1966 (`0069`) | commutateur BMO sur `L^p`, puis cible faible-`L^(3/2)` | la cible est obtenue par interpolation réelle de deux exposants forts; `L^(3/2,infinity)` n'est pas réflexif |
+| Jones 1980 (`0074`) | extension de `B_(2R)` vers `R³` | constante uniforme par dilatation pour la semi-norme BMO; aucune préservation de `L∞` ou de `|xi|=1` |
+| John–Nirenberg 1961 (`0075`) | moments locaux d'ordre deux et quatre | fournit les facteurs `R²phi(R)` et `(2^kR)phi(2^(k+1)R)` à constantes dimensionnelles |
+
+Pour `h_a(y)=|y|^-3 1_(|y|>a)`, la réarrangée exacte est
+`1/(a³+s/|B_1|)`, non une fonction `min` exacte; sa norme `L^(3,1)` reste
+proportionnelle à `a^-2`. Pour la somme intermédiaire, les moyennes peuvent
+dériver d'ordre un jusqu'à `sqrt(RR_*)`, mais le poids de noyau `4^-k`
+fournit `sum_(k>=1)(k+1)4^-k=7/9`. Le facteur trois remplace uniformément le
+facteur deux fautif lorsque `log_2(R_*/R)>=6`.
+
+Le lemme dimensionné résultant est enregistré comme
+`NS-LOCALIZED-LOG-COMMUTATOR`, statut `COMPUTATION_ONLY`. Il ferme
+conditionnellement l'arête fonctionnelle `(8)->(22)`; il ne produit pas la
+borne globale `bmo_phi` de la direction, ne règle pas sa définition aux zéros
+de vorticité et n'implique aucune alternative Clay. La prochaine priorité
+bibliographique et analytique est la synchronisation de l'endgame
+`(49)->(58)` au même temps d'échappement.

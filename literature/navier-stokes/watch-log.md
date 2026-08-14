@@ -333,3 +333,24 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
   dyadique deux avant (21) est réfuté par `8/3`.
 - Décision : fermer `GAP-DEGIORGI-UNIFORMITY` conditionnellement à (22) et
   activer `GAP-COMMUTATOR-UNIFORMITY` sur la chaîne complète (8)–(22).
+
+## 2026-08-14 — Cycle 0018
+
+- Veille différentielle : `arXiv:2607.08866` reste en v2 du 2026-07-13;
+  aucune v3, correction ou publication évaluée n'est indiquée dans la notice
+  primaire courante.
+- Sources ajoutées : Coifman–Rochberg–Weiss 1976, DOI `10.2307/1970954`;
+  Jones 1980, DOI `10.1512/iumj.1980.29.29005`; John–Nirenberg 1961, DOI
+  `10.1002/cpa.3160140317`.
+- Résultat positif borné : sous la borne uniforme faible-`L^(3/2)`, la
+  semi-norme pondérée de direction, l'extension de Jones et le raccord
+  tensoriel, les quatre morceaux du commutateur donnent uniformément
+  `C M(B_xi+1)/[1+log(R_*/R)]`.
+- Corrections : le Lorentz faible n'est pas réflexif; la réarrangée du noyau
+  tronqué n'est pas un `min` exact; le facteur deux du dernier anneau devient
+  trois; le logarithme et la coupure sont dimensionnés par `R_*`.
+- Test adverse : la dérive brute des moyennes croît comme le nombre
+  d'échelles, tandis que le poids `4^-k` maintient la somme exacte sous
+  `(7/3)phi(R)`; aucun contre-exemple au taux réparé n'est trouvé.
+- Décision : fermer `GAP-COMMUTATOR-UNIFORMITY` conditionnellement et activer
+  `GAP-ENDGAME-SYNCHRONIZATION` sur `(49)->(58)`.
