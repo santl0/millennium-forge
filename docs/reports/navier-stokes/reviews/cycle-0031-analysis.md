@@ -1,7 +1,7 @@
 # Cycle 0031 — localisation quantitative de la compensation directionnelle
 
-Date : 2026-08-14  
-Statut : dérivation analytique interne, non revue par les pairs, **pas** `PAPER_PROOF`  
+Date : 2026-08-14
+Statut : dérivation analytique interne, non revue par les pairs, **pas** `PAPER_PROOF`
 Verrou : `GAP-COMPACT-VELOCITY-WEAK-CRITICAL-DIRECTION`
 
 ## Décision du cycle
