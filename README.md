@@ -46,9 +46,14 @@ docs/           contexte, décisions et feuille de route
 ```powershell
 python .github/scripts/check_repo_contract.py .
 python scripts/validate_claims.py
+python scripts/render_prompts.py --check
 ```
 
 Voir [CONTRIBUTING.md](CONTRIBUTING.md) avant de proposer une affirmation ou une expérience.
+
+Les décisions scientifiques sont décrites dans [docs/governance.md](docs/governance.md), l'architecture dans [docs/architecture.md](docs/architecture.md) et les étapes de développement dans [docs/roadmap.md](docs/roadmap.md).
+
+Les six prompts autonomes directement copiables se trouvent dans [`agents/prompts/`](agents/prompts/). Ils sont générés depuis une mission spécialisée et le protocole commun avec `python scripts/render_prompts.py`.
 
 ## Projets apparentés
 

@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/santl0/millennium-forge/schemas/claim.schema.json",
+  "title": "Millennium Forge claim",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "problem",
+    "statement",
+    "status",
+    "hypotheses",
+    "dependencies",
+    "evidence",
+    "provenance",
+    "review"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9-]{4,79}$"
+    },
+    "problem": {
+      "enum": ["p-vs-np", "riemann", "yang-mills", "navier-stokes", "hodge", "bsd", "cross-cutting"]
+    },
+    "statement": {
+      "type": "string",
+      "minLength": 20
+    },
+    "status": {
+      "enum": ["SPECULATION", "COMPUTATION_ONLY", "SOURCE_VERIFIED", "PAPER_PROOF", "FORMALIZED", "REFUTED", "SUPERSEDED"]
+    },
+    "hypotheses": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^[A-Z][A-Z0-9-]{4,79}$"},
+      "uniqueItems": true
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "reference"],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {"enum": ["primary_source", "derivation", "computation", "formal_proof", "counterexample"]},
+          "reference": {"type": "string", "minLength": 1},
+          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["created_at", "producer_type"],
+      "additionalProperties": false,
+      "properties": {
+        "created_at": {"type": "string", "format": "date"},
+        "producer_type": {"enum": ["human", "ai", "human_ai"]},
+        "producer": {"type": "string"},
+        "model": {"type": "string"},
+        "prompt_or_run": {"type": "string"}
+      }
+    },
+    "review": {
+      "type": "object",
+      "required": ["status"],
+      "additionalProperties": false,
+      "properties": {
+        "status": {"enum": ["unreviewed", "adversarial_pass", "replicated", "independently_reviewed"]},
+        "reviewer": {"type": "string"},
+        "notes": {"type": "string"}
+      }
+    },
+    "supersedes": {"type": "string"}
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "problems": [
+    {"slug": "p-vs-np", "path": "01-p-vs-np", "official": "https://www.claymath.org/millennium/p-vs-np/"},
+    {"slug": "riemann", "path": "02-riemann", "official": "https://www.claymath.org/millennium/riemann-hypothesis/"},
+    {"slug": "yang-mills", "path": "03-yang-mills", "official": "https://www.claymath.org/millennium/yang-mills-the-maths-gap/"},
+    {"slug": "navier-stokes", "path": "04-navier-stokes", "official": "https://www.claymath.org/millennium/navier-stokes-equation/"},
+    {"slug": "hodge", "path": "05-hodge", "official": "https://www.claymath.org/millennium/hodge-conjecture/"},
+    {"slug": "bsd", "path": "06-bsd", "official": "https://www.claymath.org/millennium/birch-and-swinnerton-dyer-conjecture/"}
+  ]
+}

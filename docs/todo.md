@@ -3,9 +3,9 @@
 ## Priorité 1 — bootstrap
 
 - [ ] Publier le dépôt GitHub public.
-- [ ] Installer le schéma des affirmations et sa validation CI.
-- [ ] Créer les six espaces de problèmes.
-- [ ] Ajouter les prompts autonomes versionnés.
+- [x] Installer le schéma des affirmations et sa validation CI.
+- [x] Créer les six espaces de problèmes.
+- [x] Ajouter les protocoles et missions autonomes versionnés.
 - [ ] Importer uniquement les documents stables du laboratoire local.
 
 ## Priorité 2 — pilotes

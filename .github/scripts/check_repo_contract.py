@@ -8,6 +8,10 @@ REQUIRED_FILES = [
     "docs/contexte.md",
     "docs/decisions.md",
     "docs/todo.md",
+    "docs/governance.md",
+    "problems/index.json",
+    "schemas/claim.schema.json",
+    "agents/PROTOCOL_AUTONOME.md",
 ]
 
 GITHUB_FILES = [

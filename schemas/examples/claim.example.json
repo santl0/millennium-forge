@@ -1,0 +1,23 @@
+{
+  "id": "MF-DEMO-0001",
+  "problem": "cross-cutting",
+  "statement": "Exemple de structure uniquement ; ce fichier ne constitue pas une affirmation scientifique canonique.",
+  "status": "SPECULATION",
+  "hypotheses": [],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/governance.md"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "human_ai",
+    "producer": "Millennium Forge bootstrap"
+  },
+  "review": {
+    "status": "unreviewed",
+    "notes": "Template de démonstration."
+  }
+}

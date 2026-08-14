@@ -35,5 +35,6 @@ Une expérience doit documenter environnement, versions, paramètres, précision
 ```powershell
 python .github/scripts/check_repo_contract.py .
 python scripts/validate_claims.py
+python scripts/render_prompts.py --check
 git diff --check
 ```
