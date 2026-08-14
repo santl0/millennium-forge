@@ -136,3 +136,25 @@
 - Correction de portée : pour une solution forte non triviale à temps positif,
   les choix sur le lieu nodal analytique, nul en mesure, ne changent pas BMO;
   les prochains tests portent sur la phase près des zéros.
+
+### 2026-08-14 — compensation conique quantifiée, cascade emboîtée activée
+
+- `NS-LORENTZ-CONE-COMPENSATION` donne au statut `COMPUTATION_ONLY` la borne
+  critique `MO_D>=2alpha^3m^3/(27K^3|D|)` sous moyenne vectorielle nulle;
+  une passe adverse a amélioré la première constante `alpha^4/27`.
+- La convention de quasi-norme faible-`L^(3/2)` est fixée explicitement; la
+  constante trois de l'intégration pondérée et la constante `2/27` sont
+  suivies sans discrétisation.
+- La famille rationnelle à deux amplitudes montre que l'exposant cubique est
+  sharp dans la classe mesurable et que la masse forte critique ne minore pas
+  la masse conique `L¹`.
+- Ce modèle n'est ni spatial, ni solénoïdal, ni un curl compact. Une interface
+  régulière possède une oscillation locale égale à un malgré sa petite
+  oscillation sur le domaine parent.
+- Un corridor de zéros autorise une extension unitaire de coût
+  `Theta(1/log(R/h))`; une minoration BMO d'ordre un sans hypothèse d'épaisseur
+  est abandonnée.
+- Le lift collinéaire compact est impossible par `partial_e f=0`. Le premier
+  relèvement testé sera axisymétrique et conservera ses termes transverses.
+- Le programme active `GAP-NESTED-RETURN-FLOW-CASCADE` : construction div–curl
+  axisymétrique, contrôle de toutes les sous-boules, puis Biot–Savart et résidu.

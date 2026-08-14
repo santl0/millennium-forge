@@ -703,3 +703,25 @@ reconstruction analytique complète de Biot–Savart, une pression, une solution
 de Leray–Hopf ou un blow-up Clay. Le certificat Python reste
 `COMPUTATION_ONLY` tant qu'aucun assistant de preuve épinglé ne compile ces
 objets.
+
+## Backlog issu du cycle 0026 — compensation conique Lorentz
+
+Le nouveau noyau est presque entièrement mesurable et convient à une première
+formalisation finie :
+
+1. fixer la quasi-norme faible `K=sup lambda*measure(level)^(2/3)`;
+2. prouver par réarrangement puis représentation en couches
+   `(integral_E f)^3<=27K^3 measure(E)` et
+   `(integral fq)^3<=27K^3 integral q` pour `0<=q<=1`;
+3. encoder l'annulation vectorielle, `G={xi·e>=alpha}` et le poids négatif
+   `q=(-xi·e)_+`;
+4. formaliser l'égalité des intégrales des parties positive et négative d'une
+   fonction intégrable de moyenne nulle;
+5. combiner les modules en
+   `MO>=2alpha^3m^3/(27K^3|D|)` avec cas `m=0` et `K=0` séparés;
+6. certifier la famille rationnelle à deux amplitudes et son rapport
+   `MO/m³=4(1-n^-3)`.
+
+Le raccord `integral curl U=0` peut être formalisé séparément pour des champs
+compacts lisses. Aucun de ces modules ne certifierait une réalisation spatiale
+du compensateur, sa semi-norme BMO globale ou Navier–Stokes.

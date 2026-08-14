@@ -527,3 +527,33 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   `129921806266636a46a5202bd0f2912491aaf557a02cda229c17ef80a529cb15`.
 - Pivot : le blob de forme fixe est fermé;
   `GAP-DIRECTIONALLY-FLAT-INTERMITTENCY` devient actif.
+
+## 2026-08-14 — Compensation conique critique et exposant cubique
+
+- Objet : champ mesurable `W` sur un domaine fini, moyenne vectorielle nulle;
+  porte statique de tout curl compact, aucune évolution.
+- Quasi-norme : `K=sup lambda |{|W|>lambda}|^(2/3)` et
+  `integral_E|W|<=3K|E|^(1/3)`.
+- Cône : si `m=integral_{xi·e>=alpha}|W|`, l'annulation force une masse au
+  moins `alpha m` dans l'hémisphère opposé.
+- Coercivité : toute extension `L¹` de la direction satisfait
+  `MO_D>=2alpha³m³/(27K³|D|)` sous moyenne nulle; sans elle, le minimum
+  canonique fait intervenir `nu_e=integral(-W·e)_+`. Le quotient est invariant
+  d'échelle.
+- Sharpness : fractions `1-n^-3,n^-3`, amplitudes `n²/(n³-1),-n²`, donnent
+  `K=1`, `m=1/n`, masse forte critique entre un et deux, et
+  `MO=4n^-3(1-n^-3)`.
+- Perte exacte : la masse `L^(3/2)` ne minore pas la masse conique `L¹`; le
+  compensateur rare peut porter toute la criticité.
+- Test spatial : une interface régulière `+e/-e` a une oscillation locale un;
+  la petite moyenne parentale n'est pas un BMO global.
+- Test annulaire : une zone de zéros permet une extension unitaire de coût
+  `Theta(1/log(R/h))`; au placement `ell_n~2^-n/n`, le poids log-BMO croît
+  néanmoins comme `n/log n` pour une phase de rayon relatif `1/n`.
+- Porte div–curl : `W=f e` compact et divergence-free implique `W=0`; le lift
+  spatial doit introduire des composantes transverses ou fermer les tubes.
+- Artefact : `LORENTZ-CONE-COMPENSATION-1`, 670 contrôles rationnels exacts,
+  zéro échec, empreinte
+  `12eadf58f6bf5fdec9855527f58d9a7e6ba98650c3fd8fca78adbbbcfc1e1727`.
+- Pivot : la masse conique uniforme est fermée;
+  `GAP-NESTED-RETURN-FLOW-CASCADE` devient actif.

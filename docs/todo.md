@@ -45,9 +45,12 @@
   bornée : le train sparse de forme fixe passe divergence, curl, énergie,
   faible-Lorentz, masse par bloc et Biot–Savart; le BMO global et le résidu
   stationnaire échouent au cycle 0025.
-- [ ] Construire ou exclure un blob directionnellement plat : cœur principal
-  presque unidirectionnel, compensateur imposé par `integral curl U=0`, mesure
-  et amplitude à deux niveaux, oscillation `O(1/n)` et résidu suivi.
+- [x] Quantifier le coût d'un blob directionnellement plat sous annulation et
+  faible-`L^(3/2)` : borne conique cubique et famille mesurable sharp au cycle
+  0026; l'exposant est optimal mais le modèle n'est pas un curl spatial.
+- [ ] Lever le compensateur rare via `U=psi(r,z)e_theta`; certifier le curl,
+  les composantes transverses de cutoff et le supremum BMO sur toutes les
+  sous-boules, puis Biot–Savart et le curl du résidu stationnaire.
 - [ ] Quantifier une formulation pré-singulière cohérente par rayon de cœur
   `r_c(t)` ou convergence de profils remis à l'échelle.
 - [ ] Formaliser le lemme scalaire de séparation de phases

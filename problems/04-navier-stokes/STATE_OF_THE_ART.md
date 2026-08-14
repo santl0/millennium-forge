@@ -587,3 +587,37 @@ forme `curl U` a intégrale vectorielle nulle, une direction presque constante
 doit être compensée par une région opposée de faible volume et forte
 amplitude. Ce second niveau d'intermittence, sa divergence, son coût BMO et son
 résidu dynamique sont désormais les quantités prioritaires.
+
+Le cycle 0026 quantifie ce coût sans borne ponctuelle. Sur un domaine `D`, si
+`W` a moyenne vectorielle nulle et quasi-norme faible-`L^(3/2)` égale à `K`,
+toute masse `m` portée par le cône `xi·e>=alpha` force une masse opposée. La
+borne de réarrangement critique donne
+
+```text
+MO_D(xi)>=2alpha³m³/[27K³|D|].
+```
+
+La passe analytique conserve le poids de projection négative et renforce la
+borne provisoire `alpha^4/27`. Sans moyenne nulle, la version canonique
+remplace ce raccord par la masse `nu_e=integral(-W·e)_+`.
+
+Le quotient `m/[K|D|^(1/3)]` est invariant d'échelle. Une famille de blobs
+log-BMO doit donc faire disparaître sa masse conique normalisée au moins comme
+la racine cubique du module d'oscillation.
+
+Cette condition ne découle pas de la masse critique. Le modèle à deux
+amplitudes, de fractions `1-n^-3` et `n^-3`, garde moyenne nulle, quasi-norme
+faible égale à un et masse forte `L^(3/2)` entre un et deux, tandis que sa
+masse conique vaut `1/n` et son oscillation de domaine est
+`4n^-3(1-n^-3)`. L'exposant cubique est donc optimal au niveau mesurable.
+
+Une interface spatiale régulière entre les deux phases conserve toutefois une
+oscillation locale égale à un. Si un corridor de zéros sépare les phases, une
+extension unitaire logarithmique atteint plutôt un coût
+`Theta(1/log(R/h))`; le volume seul ne contrôle pas le rapport géométrique.
+Enfin, un champ exactement collinéaire, compact et divergence-free est nul,
+donc le modèle atomique ne se relève pas directement en curl. Le verrou actif
+devient `GAP-NESTED-RETURN-FLOW-CASCADE` : tester un potentiel axisymétrique
+qui conserve ses composantes transverses, répartir son retournement sur une
+cascade interne non-Dini qui passe toutes les boules, puis recalculer vitesse,
+pression et résidu.

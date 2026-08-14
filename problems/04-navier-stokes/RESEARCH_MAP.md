@@ -1020,3 +1020,43 @@ actif : construire une famille de blobs dont la direction interne devient
 constante en oscillation, tout en compensant l'identité
 `integral curl U_n=0` par une sous-région opposée et en suivant son amplitude,
 sa mesure, le faible-Lorentz et le résidu.
+
+## Cycle 0026 : compensation conique sous faible-Lorentz
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| inégalité masse conique–Lorentz–oscillation | 5 | 5 | 5 | 5 | **20** |
+| retour compact explicite à deux amplitudes | 5 | 2 | 4 | 5 | 16 |
+| évolution validée d'un train tronqué | 4 | 2 | 4 | 3 | 13 |
+
+Pour `K=||W||_(L^(3/2,infinity))` selon la quasi-norme de distribution fixée,
+
+```text
+integral_E|W|<=3K|E|^(1/3).
+```
+
+Si `integral_D W=0` et la masse `m` est dans `xi·e>=alpha`, la projection
+négative pondérée porte au moins `alpha m`. Une intégration de Lorentz
+pondérée et l'équilibre des parties positive/négative donnent
+
+```text
+MO_D(zeta)>=2alpha³m³/(27K³|D|).
+```
+
+Cette constante renforcée remplace le premier jet `alpha^4/27` après passe
+contradictoire; elle n'est pas annoncée optimale.
+
+La famille rationnelle `epsilon=n^-3`, amplitudes `n²/(n³-1)` et `-n²`
+montre `K=1`, masse conique `1/n`, masse critique non dégénérée et
+`MO=4n^-3(1-n^-3)`. L'exposant trois est sharp; une masse critique seule ne
+ferme pas le compensateur.
+
+`GAP-DIRECTIONALLY-FLAT-INTERMITTENCY` est réduit à une perte quantitative de
+masse conique. `GAP-NESTED-RETURN-FLOW-CASCADE` devient actif : construire une
+réalisation div–curl où le retournement est distribué sur assez de sous-échelles
+pour éviter toute interface à oscillation d'ordre un. La passe adverse montre
+qu'un corridor de zéros autorise un coût BMO annulaire de taille
+`Theta(1/log(R/h))`, mais qu'un champ collinéaire compact divergence-free est
+nécessairement nul. L'expérience suivante utilise donc un potentiel
+axisymétrique `U=psi(r,z)e_theta` et teste explicitement les composantes
+transverses créées par les cutoffs.

@@ -104,3 +104,23 @@ aux zéros : à temps positif régulier non trivial, l'analyticité spatiale ren
 le lieu nodal de la vorticité nul en mesure. Les conventions ponctuelles y
 sont équivalentes en BMO; la phase au voisinage des zéros et les superniveaux
 de mesure intermédiaire restent les objets pertinents.
+
+Le cycle 0026 ferme le premier maillon du blob directionnellement plat sous
+une forme quantitative. Si `K` est la quasi-norme faible-`L^(3/2)`, si le
+champ a moyenne vectorielle nulle et si une masse `m` se trouve dans un cône
+d'ouverture `alpha`, toute extension de la direction vérifie
+`MO_D>=2alpha^3m^3/(27K^3|D|)`. Cette borne, renforcée par la passe adverse
+qui conserve la projection négative pondérée, est critique par changement
+d'échelle et son exposant cubique est optimal dans la classe mesurable.
+
+La passe adverse empêche cependant d'en faire une exclusion générale : un
+compensateur de fraction `n^-3` et d'amplitude `n²` garde une masse critique
+forte d'ordre un tout en faisant décroître la masse conique comme `1/n`.
+Une séparation par interface conserve en revanche une oscillation locale
+égale à un, tandis qu'un corridor de zéros peut réduire ce coût à l'ordre
+`1/log(R/h)`. Un lift exactement collinéaire ne peut pas être à la fois non
+nul, compact et divergence-free. Le verrou actif est donc
+`GAP-NESTED-RETURN-FLOW-CASCADE` : lever ce modèle par un potentiel
+axisymétrique, quantifier les composantes transverses et distribuer la rotation
+sur une cascade interne compatible avec toutes les boules BMO, avant tout
+calcul de pression ou d'évolution.
