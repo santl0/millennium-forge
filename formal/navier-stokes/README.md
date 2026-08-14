@@ -725,3 +725,33 @@ formalisation finie :
 Le raccord `integral curl U=0` peut être formalisé séparément pour des champs
 compacts lisses. Aucun de ces modules ne certifierait une réalisation spatiale
 du compensateur, sa semi-norme BMO globale ou Navier–Stokes.
+
+## Backlog issu du cycle 0027 — calotte axisymétrique
+
+Le noyau géométrique est assez stable pour une formalisation finie :
+
+1. définir les coordonnées cylindriques seulement sur `r>0` et le champ
+   `e_r=(x/r,y/r,0)`;
+2. certifier les formules de `curl(chi A e_theta)` et de sa divergence;
+3. formaliser la conservation de flux
+   `A(r)=r^-1 integral_0^r s f(s)ds` et le support compact sous flux total nul;
+4. montrer qu'une boule cartésienne centrée à rayon cylindrique `R` reste dans
+   `R-w<r<R+w`;
+5. construire les deux sous-boules de fraction `1/512` et leurs bornes de
+   projection sur `e_y`;
+6. réutiliser le lemme scalaire de séparation de phases pour obtenir
+   `MO>=3w/[2048(R+w)]`;
+7. isoler le corollaire de divergence log-BMO sous scaling isotrope;
+8. certifier que la composante azimutale `-Lpsi` du résidu ne peut être un
+   gradient périodique en `theta` lorsqu'elle est non nulle.
+
+La première cible formelle doit être le lemme des deux sous-boules, indépendant
+des polynômes du certificat. Elle certifierait une obstruction à aspect fixé,
+pas une solution Navier–Stokes ni l'optimalité du taux `w/R`.
+
+Une seconde cible, séparée, est la réalisation compacte du scaling cubique :
+formaliser `div(curl U)=0`, l'annulation de l'intégrale d'un curl compact et
+les bornes d'échelle `K~1`, `m~epsilon^(1/3)`, `MO_D~epsilon`. L'objet formel
+doit encoder explicitement que `MO_D` porte sur un domaine parent fixé et non
+sur le supremum BMO de toutes les boules. Le calcul `||U||_3->0` doit apparaître
+comme garde-fou empêchant tout étiquetage de profil de blow-up.

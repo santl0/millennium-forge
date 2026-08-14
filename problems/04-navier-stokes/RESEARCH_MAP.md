@@ -1060,3 +1060,51 @@ qu'un corridor de zéros autorise un coût BMO annulaire de taille
 nécessairement nul. L'expérience suivante utilise donc un potentiel
 axisymétrique `U=psi(r,z)e_theta` et teste explicitement les composantes
 transverses créées par les cutoffs.
+
+## Cycle 0027 : lift axisymétrique et porte de calotte
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| porte BMO du lift axisymétrique à aspect fixé | 5 | 5 | 5 | 5 | **20** |
+| construction torique à aspect croissant | 5 | 2 | 5 | 5 | 17 |
+| évolution validée du retour compact | 4 | 1 | 3 | 4 | 12 |
+
+Le profil `U=chi(z)A_n(r)e_theta` ferme exactement les portes statiques :
+
+```text
+curl U=(-chi'A_n)e_r+chi f_n e_z,
+div curl U=0,
+integral r f_n dr=0,
+B_n=3n^5/(8n^3+1)~(3/8)n².
+```
+
+Le faible-`L^(3/2)` est uniformément encadré, la masse forte critique du
+retour ne dégénère pas et l'énergie vaut `O(n^-2)`. Mais dans une calotte où
+`f_n=0`, la direction active est exactement `e_r`. Deux sous-boules donnent
+
+```text
+MO_B>=3w/[2048(R+w)],
+```
+
+soit `3/26624` dans le certificat. Cette valeur est indépendante de `n` et de
+l'échelle isotrope. Le log-BMO échoue à aspect fixé et le résidu toroidal
+interdit aussi une fermeture stationnaire.
+
+La calotte équilibrée de largeur `n^-3` conserve la borne faible-Lorentz et
+donne sur le domaine parent
+
+```text
+4n^-3/27<=MO_D<=n^-3.
+```
+
+La variante lisse de la passe analytique confirme `K~1`,
+`m~epsilon^(1/3)`, `MO_D~epsilon` et Biot–Savart exact. Elle ferme négativement
+toute amélioration du cube par les seules contraintes compactes div–curl,
+mais sa norme de vitesse `L³` tend vers zéro et elle ne contrôle pas le
+supremum BMO local.
+
+`GAP-NESTED-RETURN-FLOW-CASCADE` est donc fermé pour le lift séparable à aspect
+fixé. L'aspect croissant ne contrôle pas à lui seul les transitions
+verticale–radiale. `GAP-NONSEPARABLE-RETURN-FLOW-MASKING` devient actif :
+construire `psi_n=sum_j A_(n,j)chi_(n,j)`, puis abandonner si un niveau garde
+une capacité polynomiale où `|W_r|>=|W|/4`.

@@ -158,3 +158,22 @@
   relèvement testé sera axisymétrique et conservera ses termes transverses.
 - Le programme active `GAP-NESTED-RETURN-FLOW-CASCADE` : construction div–curl
   axisymétrique, contrôle de toutes les sous-boules, puis Biot–Savart et résidu.
+
+### 2026-08-14 — lift axisymétrique réalisé, produit séparable abandonné
+
+- `NS-AXISYMMETRIC-RETURN-FLOW-BMO-GATE` certifie au statut
+  `COMPUTATION_ONLY` la minoration
+  `MO_B>=3w/[2048(R+w)]` sur une boule entièrement active de calotte.
+- Le profil polynomial ferme exactement flux, curl, divergence, moyenne,
+  faible-Lorentz et énergie; son cutoff est `C^4`, sans promotion Clay.
+- La variante équilibrée et la construction `C_c^infinity` de la passe
+  analytique donnent `K~1`, `m~epsilon^(1/3)`, `MO_D~epsilon`. Le cube du
+  cycle 0026 reste sharp dans la classe compacte div–curl.
+- Cette sharpness porte seulement sur un domaine parent. Les interfaces et
+  transitions locales ne fournissent aucune borne log-BMO all-ball.
+- `||U_epsilon||_3->0`; la famille lisse est éliminée comme candidate au
+  blow-up par le régime perturbatif critique.
+- La composante azimutale du résidu stationnaire est non nulle. Une pression
+  ne ferme pas la construction.
+- L'aspect croissant est enregistré comme coût auxiliaire, non comme solution.
+  Le programme active `GAP-NONSEPARABLE-RETURN-FLOW-MASKING`.

@@ -621,3 +621,46 @@ devient `GAP-NESTED-RETURN-FLOW-CASCADE` : tester un potentiel axisymétrique
 qui conserve ses composantes transverses, répartir son retournement sur une
 cascade interne non-Dini qui passe toutes les boules, puis recalculer vitesse,
 pression et résidu.
+
+Le cycle 0027 exécute ce test pour
+`U=chi(z)A_n(r)e_theta`. Le profil axial positif d'amplitude `n^-1` est
+compensé par un anneau de largeur `n^-3` et d'amplitude
+`3n^5/(8n^3+1)~(3/8)n²`. Le flux `integral r f_n(r)dr` s'annule exactement;
+le champ est un curl compact divergence-free, sa quasi-norme faible-
+`L^(3/2)` reste entre deux constantes et son énergie normalisée est
+`O(n^-2)`.
+
+La fermeture axiale révèle cependant une perte indépendante des amplitudes.
+Dans le corridor où `A'+A/r=0` mais `A!=0`, la calotte impose
+`W=-chi'Ae_r`. Une boule de rayon `w` à distance `R` de l'axe vérifie
+
+```text
+MO_B(W/|W|)>=3w/[2048(R+w)].
+```
+
+Pour un aspect fixé, cette borne survit à la concentration et fait diverger
+le poids log-BMO. Le résidu stationnaire garde en outre une composante
+azimutale `-Lpsi` non nulle qu'aucune pression monovaluée ne peut compenser.
+
+Une seconde mise à l'échelle, où la largeur des calottes vaut aussi `n^-3`,
+réalise `MO_D~n^-3` sur un domaine parent fixe tout en gardant la quasi-norme
+faible critique uniforme. La passe analytique construit même une variante
+`C_c^infinity` avec `m~epsilon^(1/3)` et `MO_D~epsilon`. La contrainte
+div–curl compacte n'améliore donc pas l'exposant cubique du cycle 0026. Cette
+petite moyenne parentale ne donne toutefois pas le BMO all-ball; de plus
+`||U_epsilon||_3->0`, ce qui place la famille dans le régime régulier de
+petites données.
+
+La veille primaire confirme que la représentation axisymétrique est
+classique (`NS-SRC-0102`); les correcteurs de de Rham (`0103`, `0111`) ne
+fournissent pas d'uniformité directionnelle. Dix sources sont ajoutées et le
+corpus atteint 111 entrées. La nouveauté revendiquée reste seulement la porte
+quantitative interne, au statut `COMPUTATION_ONLY`. Les vortex rings usuels
+portent une vorticité toroïdale et ne fournissent pas ce lift poloidal. Le
+verrou actif
+devient `GAP-NONSEPARABLE-RETURN-FLOW-MASKING` : tester une somme de couches
+où la composante verticale suivante masque le retour radial précédent. Un
+aspect croissant peut être nécessaire mais ne suffit pas à supprimer les
+transitions locales. Il faut suivre les capacités des régions radialement
+dominantes, le BMO all-ball, les normes critiques, l'énergie, le diamètre
+physique et le résidu.

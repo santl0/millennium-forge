@@ -124,3 +124,18 @@ nul, compact et divergence-free. Le verrou actif est donc
 axisymétrique, quantifier les composantes transverses et distribuer la rotation
 sur une cascade interne compatible avec toutes les boules BMO, avant tout
 calcul de pression ou d'évolution.
+
+Le cycle 0027 réalise ce lift. Un swirl compact séparable conserve exactement
+divergence, moyenne nulle, faible-`L^(3/2)`, masse critique et énergie finie.
+Une calotte d'aspect fixé contient toutefois une boule active de direction
+`e_r` avec `MO>=3w/[2048(R+w)]`; la concentration isotrope ne réduit pas ce
+coût. Le résidu stationnaire possède aussi une composante azimutale non
+gradient.
+
+Une variante aux calottes de largeur `n^-3` montre en parallèle que
+`MO_D~n^-3` sur un domaine parent et que l'exposant cubique reste optimal même
+pour des curls compacts lisses. Cette moyenne parentale n'est pas le BMO
+all-ball, et la vitesse de la variante `C_c^infinity` satisfait
+`||U||_3->0`. Le verrou devient `GAP-NONSEPARABLE-RETURN-FLOW-MASKING` : une
+somme de couches doit masquer successivement les retours radiaux sans créer
+une région de capacité polynomiale où la direction transverse domine.

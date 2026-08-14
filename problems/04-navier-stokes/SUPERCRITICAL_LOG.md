@@ -557,3 +557,27 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   `12eadf58f6bf5fdec9855527f58d9a7e6ba98650c3fd8fca78adbbbcfc1e1727`.
 - Pivot : la masse conique uniforme est fermée;
   `GAP-NESTED-RETURN-FLOW-CASCADE` devient actif.
+
+## 2026-08-14 — Retour axisymétrique compact à aspect fixé
+
+- Objet : `U_n=chi(z)A_n(r)e_theta`, champ statique compact; aucune évolution.
+- Flux : phase `n^-1` sur `1<r<2`, retour de largeur `n^-3` et amplitude
+  `3n^5/(8n^3+1)`; `integral r f_n dr=0` exactement.
+- Criticité : faible-`L^(3/2)` uniformément encadré, masse forte critique
+  négative non dégénérée, énergie normalisée `<=1/(3528n²)`.
+- Perte directionnelle : dans le corridor de calotte, `W/|W|=e_r` malgré
+  `|W_r|=O(1/n)`; normaliser détruit toute petitesse d'amplitude.
+- Porte BMO : `MO_B>=3w/[2048(R+w)]`, soit `3/26624` pour le certificat. À
+  aspect fixé, le poids logarithmique diverge sous concentration.
+- Sharpness div–curl : une calotte `n^-3` donne
+  `4n^-3/27<=MO_D<=n^-3` sur le parent et une variante `C_c^infinity` réalise
+  `K~1`, `m~epsilon^(1/3)`, `MO_D~epsilon`; ceci ne borne pas le BMO all-ball.
+- Porte dynamique : `||U_epsilon||_3->0`; la famille lisse est dans le régime
+  de petites données et n'est pas une singularité candidate.
+- Résidu : cinq coefficients non nuls dans `chi''`; la composante azimutale
+  de `-Delta U` ne peut être un gradient. `||R_s||_1` est invariant d'échelle.
+- Artefact : `AXISYMMETRIC-RETURN-FLOW-BMO-GATE-1`, 1251 contrôles rationnels
+  exacts, zéro échec, empreinte
+  `cec8bd74aa0b5b1b9943fbd149fe06c4ca5b045b9a337bdfef2821a18c5d29a9`.
+- Pivot : produit séparable abandonné pour le BMO all-ball;
+  `GAP-NONSEPARABLE-RETURN-FLOW-MASKING` actif.

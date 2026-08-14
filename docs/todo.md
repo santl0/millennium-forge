@@ -48,9 +48,16 @@
 - [x] Quantifier le coût d'un blob directionnellement plat sous annulation et
   faible-`L^(3/2)` : borne conique cubique et famille mesurable sharp au cycle
   0026; l'exposant est optimal mais le modèle n'est pas un curl spatial.
-- [ ] Lever le compensateur rare via `U=psi(r,z)e_theta`; certifier le curl,
-  les composantes transverses de cutoff et le supremum BMO sur toutes les
-  sous-boules, puis Biot–Savart et le curl du résidu stationnaire.
+- [x] Lever le compensateur rare via un premier
+  `U=psi(r,z)e_theta` séparable; curl, composantes transverses, Biot–Savart et
+  résidu certifiés, mais le supremum BMO all-ball est réfuté à aspect fixé.
+- [x] Réaliser le lift axisymétrique séparable et suivre flux, faible-Lorentz,
+  énergie, boule de calotte et résidu; aspect fixé réfuté au cycle 0027.
+- [x] Tester la sharpness compacte div–curl du cube sur le domaine parent;
+  variante `C_c^infinity` obtenue, mais BMO all-ball non certifié.
+- [ ] Construire une somme non séparable
+  `psi_n=sum_j A_(n,j)(r)chi_(n,j)(z)`; mesurer à chaque niveau la capacité de
+  `{|W_r|>=|W|/4}`, le BMO all-ball, l'énergie et le résidu.
 - [ ] Quantifier une formulation pré-singulière cohérente par rayon de cœur
   `r_c(t)` ou convergence de profils remis à l'échelle.
 - [ ] Formaliser le lemme scalaire de séparation de phases

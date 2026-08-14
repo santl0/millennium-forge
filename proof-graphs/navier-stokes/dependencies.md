@@ -93,6 +93,8 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | amplitude critique bornée + masse par bloc + même extension à oscillation centrée `O(1/k)` | axe mobile à variation et erreur `O(log N)`, puis exclusion du profil | dérivation exacte, `COMPUTATION_ONLY` | `NS-BMO-ACTIVE-AXIS-EXTRACTION`, cycle 0024 | aucune de ces prémisses n'est héritée d'un blow-up général; amplitude non bornée hors champ |
 | train de blobs critiques de forme fixe + énergie + faible-`L^(3/2)` + masse par bloc | direction globale `bmo_phi` | réfutée | `NS-CRITICAL-BLOB-TRAIN-BMO-GATE`, cycle 0025 : tests centrés `O(n^-3)` mais oscillation interne uniforme sur des boules de rayon `ell_n/2` | une forme interne dépendant de l'échelle et asymptotiquement plate reste ouverte |
 | moyenne vectorielle nulle + faible-`L^(3/2)` + masse `L¹` dans un cône | oscillation directionnelle `MO_D>=2alpha^3m^3/(27K^3|D|)` | dérivation exacte renforcée par passe adverse, `COMPUTATION_ONLY` | `NS-LORENTZ-CONE-COMPENSATION`, cycle 0026 | la masse critique totale ne minore pas la masse conique; modèle sharp non spatial |
+| lift séparable `U=chi(z)A(r)e_theta` + corridor de flux non nul | boule active de direction `e_r` avec `MO>=3w/[2048(R+w)]` | dérivation exacte, `COMPUTATION_ONLY` | `NS-AXISYMMETRIC-RETURN-FLOW-BMO-GATE`, cycle 0027 | la borne décroît comme l'inverse de l'aspect; elle ne traite pas `R_n/w_n->infinity` |
+| moyenne nulle + support compact + div–curl axisymétrique | amélioration de l'exposant cubique de l'oscillation parentale | réfutée | `NS-AXISYMMETRIC-DIVCURL-CUBIC-SHARPNESS`, cycle 0027 : `K~1`, `m~epsilon^(1/3)`, `MO_D~epsilon` | ne calcule pas le supremum BMO sur toutes les boules; `||U||_3->0` |
 | solution forte non triviale à temps positif | conventions BMO distinctes par valeurs sur `{omega=0}` | réfutée dans cette classe | analyticité `NS-SRC-0092`–`0093`; lieu nodal commun nul en mesure | ne contrôle ni phase près des zéros, ni solution faible terminale, ni superniveau actif |
 | rotation radiale uniforme en profondeur logarithmique | direction globale `bmo_(1/|log r|)` | réfutée déjà sur les boules centrées | variance exacte `alpha²/(9+alpha²)`, `WANDERING-AXIS-1` | ne traite pas des chemins irréguliers ou multivalués |
 | toute forte vorticité confinée uniformément dans un double cône fixe | régularité intérieure d'une solution faible adaptée | `SOURCE_VERIFIED`, prépublication v1 | `NS-LRT-DOUBLE-CONE-REGULARITY`, Lei–Ren–Tian `2501.08976v1` | preuve non reproduite; le cône n'est pas produit depuis Clay |
@@ -138,37 +140,43 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | `GAP-MULTICORE-ANGULAR-CASCADE` | géométrie/multi-échelle | phases multiples sans axe global vers profil critique solénoïdal | fermé négativement au cycle 0024 sous `Phi<=M`, masse critique par bloc et même extension bornée log-BMO : la fraction active extrait un axe à variation et erreur `O(log N)` |
 | `GAP-UNBOUNDED-ANGULAR-INTERMITTENCY` | géométrie/multi-échelle | faible-`L^(3/2)` et log-BMO vers contrôle d'une amplitude critique concentrée | cycle 0025 : divergence, énergie, masse et Biot–Savart sont compatibles avec le train sparse, mais une forme interne fixe échoue au BMO global et le résidu stationnaire reste critique |
 | `GAP-DIRECTIONALLY-FLAT-INTERMITTENCY` | géométrie/div–curl | direction interne asymptotiquement constante + compensation de `integral curl U=0` vers blob critique localisé | quantifié au cycle 0026 : `MO_D>=2alpha^3m^3/(27K^3|D|)` pour la masse conique `m`; le faible-Lorentz n'empêche pas `m->0` et une interface simple garde une oscillation locale d'ordre un |
-| `GAP-NESTED-RETURN-FLOW-CASCADE` | géométrie/div–curl/multi-échelle | compensateur rare à deux amplitudes vers curl compact dont la direction est log-BMO sur toutes les sous-boules | actif : le lift collinéaire compact est impossible; tester un potentiel axisymétrique, ses composantes transverses et le coût annulaire `Theta(1/log(R/h))`, puis Biot–Savart et résidu |
+| `GAP-NESTED-RETURN-FLOW-CASCADE` | géométrie/div–curl/multi-échelle | compensateur rare à deux amplitudes vers curl compact dont la direction est log-BMO sur toutes les sous-boules | cycle 0027 : lift axisymétrique compact et bornes critiques réalisés, mais l'aspect fixé échoue sur une boule radiale et le résidu toroidal est non nul |
+| `GAP-GROWING-ASPECT-RETURN-FLOW` | géométrie/multi-échelle/constante | aspect torique croissant vers disparition du coût `w/R` sans perte faible-Lorentz, énergie ou compacité | condition nécessaire possible mais insuffisante : les transitions verticale–radiale d'un produit séparable et les interfaces directes restent visibles localement |
+| `GAP-NONSEPARABLE-RETURN-FLOW-MASKING` | géométrie/capacité/dynamique | somme de couches où `W_z` masque successivement chaque retour `W_r` vers log-BMO all-ball | actif : construire un streamfunction non séparable fini, mesurer les ensembles `|W_r|>=|W|/4`, leurs capacités, les normes critiques, l'énergie et le résidu |
 | `GAP-LIMIT-ADMISSIBLE` | stabilité/admissibilité | profil singulier vers donnée de Schwartz | trois portes distinctes fermées : `FAIL-NS-0013` réfute la compacité `L³`, `0014` annule le mode impair sous lissage symétrique, `0015` réfute l'identification trace asymptotique/donnée finie; axe suspendu |
 | `GAP-NUM-CONTINUUM` | calcul vers continuum | discrétisation finie | résidu d'intervalle + queue analytique |
 
 ## Arêtes prioritaires
 
-1. `GAP-NESTED-RETURN-FLOW-CASCADE` : réaliser le compensateur rare sharp
-   via un potentiel axisymétrique compact, répartir la rotation sur une
-   cascade interne et calculer le supremum BMO sur toutes les sous-boules.
-2. `GAP-DIRECTIONALLY-FLAT-INTERMITTENCY` : le coût conique est maintenant
+1. `GAP-NONSEPARABLE-RETURN-FLOW-MASKING` : construire une somme finie
+   `psi_n=sum_j A_(n,j)(r)chi_(n,j)(z)` et abandonner si une couche garde une
+   capacité polynomiale où `|W_r|>=|W|/4`.
+2. `GAP-GROWING-ASPECT-RETURN-FLOW` : suivre l'aspect comme coût auxiliaire;
+   ne pas le confondre avec un contrôle des transitions locales all-ball.
+3. `GAP-NESTED-RETURN-FLOW-CASCADE` : l'aspect fixé est fermé par la boule de
+   calotte; ne le rouvrir qu'avec aspect croissant ou géométrie non séparable.
+4. `GAP-DIRECTIONALLY-FLAT-INTERMITTENCY` : le coût conique est maintenant
    explicite; ne rouvrir la version à masse conique uniforme qu'en cassant
    l'annulation, la borne faible-Lorentz ou le taux log-BMO.
-3. `GAP-UNBOUNDED-ANGULAR-INTERMITTENCY` : le train de forme fixe est fermé
+5. `GAP-UNBOUNDED-ANGULAR-INTERMITTENCY` : le train de forme fixe est fermé
    par BMO global; ne le rouvrir qu'avec une forme interne dépendant de
    l'échelle ou une formulation intrinsèque pondérée sur l'ensemble actif.
-4. `GAP-MULTICORE-ANGULAR-CASCADE` : fermé négativement sous amplitude bornée,
+6. `GAP-MULTICORE-ANGULAR-CASCADE` : fermé négativement sous amplitude bornée,
    masse par bloc et extension log-BMO commune; ne le rouvrir qu'en cassant
    explicitement une de ces prémisses.
-5. `GAP-WANDERING-AXIS-PROFILE` : fermé négativement pour variation et erreur
+7. `GAP-WANDERING-AXIS-PROFILE` : fermé négativement pour variation et erreur
    sublinéaires; ne le rouvrir qu'avec une sélection non `BV`, un centre mobile
    ou un terme de recharge effectif non contrôlé par la variation.
-6. `GAP-LOG-RECTIFIED-PROFILE` : fermé négativement pour l'axe fixe sous
+8. `GAP-LOG-RECTIFIED-PROFILE` : fermé négativement pour l'axe fixe sous
    amplitude bornée et masse par bloc; ne le rouvrir qu'en quantifiant une
    intermittence angulaire non bornée ou une perte de masse.
-7. `GAP-CRITICAL-PROFILE-ADMISSIBILITY` : fermé négativement pour la
+9. `GAP-CRITICAL-PROFILE-ADMISSIBILITY` : fermé négativement pour la
    récurrence vectorielle exacte; ne le rouvrir qu'avec un profil non
    récurrent ou une limite espace-temps quantifiée.
-8. `GAP-VORTICITY-TAIL` : confronter la queue de strain annulaire réparée à
+10. `GAP-VORTICITY-TAIL` : confronter la queue de strain annulaire réparée à
    un contre-profil multi-échelle divergence-free issu d'une dynamique.
-9. `GAP-NUM-CONTINUUM` : isoler un opérateur compact à queues certifiables.
-10. Noyau Fourier–Leray formel : certifier les identités d'énergie finies avant
+11. `GAP-NUM-CONTINUUM` : isoler un opérateur compact à queues certifiables.
+12. Noyau Fourier–Leray formel : certifier les identités d'énergie finies avant
    toute formalisation de scénario PDE.
 
 `GAP-COMPACT-Q` est suspendu sous énergie seule après trois stratégies
@@ -205,7 +213,16 @@ compensateur rare comme curl compact et étaler sa transition sur des
 sous-échelles emboîtées sans perdre la borne critique. Une extension annulaire
 peut réduire le coût à `Theta(1/log(R/h))`, mais le lift exactement collinéaire
 est nul; le premier test spatial doit donc conserver les composantes
-transverses d'un curl axisymétrique.
+transverses d'un curl axisymétrique. Le cycle 0027 réalise ce lift avec flux
+pondéré nul, retour d'amplitude `~n²`, faible-Lorentz uniforme et énergie
+`O(n^-2)`. Sur la calotte, la composante axiale s'annule et la direction vaut
+exactement `e_r`; une boule impose `MO>=3w/[2048(R+w)]`. L'aspect fixé et la
+stationnarité sont donc fermés. Une variante à calotte `n^-3` réalise en plus
+`MO_D~n^-3` sur le domaine parent et montre que div–curl compact n'améliore
+pas l'exposant cubique; elle ne contrôle pas le supremum all-ball et sa vitesse
+`L³` tend vers zéro. Le pivot `GAP-NONSEPARABLE-RETURN-FLOW-MASKING` doit
+masquer chaque transition radiale par une couche verticale suivante, sans
+cacher une capacité polynomiale, un aspect divergent ou un résidu critique.
 
 `GAP-SIGN-FLUX` est borné par deux résultats négatifs : l'hélicité globale ne
 fixe pas le flux triadique et la cohérence d'un seul patch ne fixe pas le
