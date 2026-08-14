@@ -1,0 +1,59 @@
+{
+  "id": "NS-PURE-SWIRL-PERSISTENT-BRIDGE-DIAMETER",
+  "problem": "navier-stokes",
+  "statement": "Soit F lisse compact dans l'anneau méridien R/2<r<3R/2, U=(R/r)F e_theta et W=curl U. Si, pour presque tout t dans (a,b), un superniveau signé {sigma F>t} possède une composante ouverte de diamètre axial au moins D, alors a(b-a)RD<=(9/(8pi))||U||_(L^(3,infinity))||W||_(L^(3/2,infinity)). En particulier, une composante qui reste au-dessus d'un cutoff A vérifie A^2RD<=(9/(2pi))K_uK_w<=(3/2)K_uK_w; si AR>=kappa K_u, alors D/R<=(9/(2pi kappa^2))(K_w/K_u).",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "R>0, sigma appartient à {-1,+1}, 0<a<b et F appartient à C_c^infinity((0,infinity) x R)",
+    "supp F est inclus dans {R/2<r<3R/2}",
+    "U=(R/r)F e_theta et W=curl U=(R/r)(-partial_z F e_r+partial_r F e_z)",
+    "K_u et K_w utilisent la convention sup_s s |{|f|>s}|^(1/p)",
+    "pour presque tout t dans (a,b), {sigma F>t} possède une composante ouverte de diamètre axial au moins D",
+    "pour des représentants BV généraux, le diamètre est celui du représentant de densité un d'une composante M-indécomposable",
+    "le corollaire au cutoff suppose une composante de {sigma F>b}, ou un continuum dans {sigma F>=b}, de diamètre axial D avec b>A",
+    "la borne normalisée du diamètre suppose en plus AR>=kappa K_u"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0163, lemme 2.13 pour 2 diam(E^1)<=P(E); NS-SRC-0132 pour coaire; NS-SRC-0156 pour composantes M-indécomposables; la composition axisymétrique et Lorentz est interne"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0037-persistent-bridge-diameter.md"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/persistent-bridge-diameter/persistent_bridge_audit.py; 5197 assertions rationnelles exactes sur 1035 familles, constante rationnelle 3/2 et résidu nul",
+      "sha256": "d4be10a24de48f196a64515b1f1fc9916c51b51332244f50e443cefc326be946"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0037-analysis.md; coaire pondérée exacte, constante 9/(8pi), représentants BV et premier quantificateur faux",
+      "sha256": "ca95768eaab81f1321190e7811c83bacdcec1975b112b6e0b8e482136d3bebd1"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0037-countermodel.md; pont linéaire, curl original, échappement eta<=sqrt(delta)/L et 240 contrôles rationnels exacts",
+      "sha256": "377e7ccbe9522686ee42b6b462e6668eb6fc456bfa8cfd2bdf854ab47d872fdd"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0037-literature.md; audit primaire indépendant du périmètre connecté et des merge trees",
+      "sha256": "6a514717f2edb9579abad82e3b0f4255f05281b31803d4ca904ad5e6009b5c78"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0037-persistent-bridge-diameter"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois passes IA séparées: audit analytique, contre-modèle géométrique et audit bibliographique; aucune revue humaine externe",
+    "notes": "Ont été audités: constante 9/(8pi), coaire cylindrique, signes, niveaux critiques, représentants BV, persistance variable, pont à excès évanescent, scaling et raccord conditionnel. Restent ouverts le calibrage AR>=kappa K_u pour la composante sélectionnée, les fusions multi-niveaux, les chevauchements de curl, la pression et la dynamique."
+  }
+}

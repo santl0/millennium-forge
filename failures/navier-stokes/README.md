@@ -1469,3 +1469,43 @@ claim éventuellement supersédé.
   `f0550313e21e05a7cda46fd8d1264b982d3ab3b809b5c5b05ec1f77c5c56892a`.
 - Statut : contre-profil naïf `REFUTED`; la sélection composante par
   composante ferme les filaments strictement sous `lambda/4`.
+
+## `FAIL-NS-0071` — Pont de persistance relative fixe pris pour fuite de diamètre
+
+- Date : 2026-08-15.
+- Cadre : donnée pure-swirl lisse compacte sur `R3`, statique, supportée loin
+  de l'axe; aucune évolution Navier–Stokes.
+- Cible : relier deux gouttes distantes de `LR` par un pont de largeur
+  `delta R`, hauteur `A(1+eta)` et `eta>=gamma>0`, tout en gardant
+  `AR~K_u` et `K_u/K_w` non dégénéré.
+- Obstruction analytique : le périmètre–diamètre planaire et la coaire
+  pondérée donnent
+
+  ```text
+  A^2 R D <= (9/(2 pi)) K_u K_w.
+  ```
+
+- Contre-test explicite : le volume impose `delta L<=C`; les parois radiales
+  imposent `K_w/(AR)>=c L^(2/3)delta^(-1/3)`, donc au mieux
+  `K_u/K_w<=C/L`.
+- Certificat : 5 197 contrôles rationnels principaux et 240 contrôles
+  indépendants, résidus exacts nuls; empreintes `d4be10a24de48f196a64515b1f1fc9916c51b51332244f50e443cefc326be946`
+  et `377e7ccbe9522686ee42b6b462e6668eb6fc456bfa8cfd2bdf854ab47d872fdd`.
+- Statut : `REFUTED` dans cette classe; seul un pont dont l'excès relatif
+  tend vers zéro peut échapper au coût du curl **tronqué**, jamais à celui du
+  curl original.
+
+## `FAIL-NS-0072` — Niveau global pris pour calibrage local de chaque branche
+
+- Date : 2026-08-15.
+- Cible : déduire automatiquement `AR>=kappa K_u` du fait que `A` est un
+  niveau presque optimal de la quasi-norme faible-`L3` globale.
+- Contre-profil : pour `m` gouttes comparables au même niveau,
+  `K_u~AR m^(1/3)`, donc `AR/K_u~m^(-1/3)`.
+- Premier quantificateur faux : le niveau global mesure le volume cumulé, pas
+  l'amplitude normalisée de chaque composante sélectionnée.
+- Portée : ne réfute ni le lemme diamètre–persistance ni une sélection locale
+  pondérée; il interdit seulement de supprimer l'hypothèse de calibrage sans
+  nouveau pigeonhole ou registre géométrique.
+- Statut : inférence globale-vers-locale `REFUTED`; pivot vers
+  `GAP-BRIDGE-SCALE-CALIBRATION-OR-MERGE-TREE`.

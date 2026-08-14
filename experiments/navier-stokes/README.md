@@ -1738,3 +1738,36 @@ cellule reste donc `NOT_PROVIDED`.
 - Limites : coaire/BV et isopérimétrie restent analytiques; aucun pont
   au-dessus du seuil, chevauchement, temps, pression ou résidu PDE n'est
   calculé.
+
+## `PERSISTENT-BRIDGE-DIAMETER-1` — pont mince et diamètre persistant
+
+- Question falsifiable : deux gouttes pure-swirl séparées de `LR` peuvent-elles
+  rester connectées au-dessus d'un cutoff `A` tout en gardant les endpoints
+  critiques non dégénérés lorsque `L->infinity` ?
+- Équation calculée : aucune évolution; champ annulaire statique
+  `U=(R/r)F e_theta`, curl exact et rampes radiales d'un pont linéaire.
+- Discrétisation : aucune grille; `fractions.Fraction`, cubes des quasi-normes
+  et bornes rationnelles `3<pi<22/7`.
+- Certificat analytique encodé :
+
+  ```text
+  A^2 R D <= (9/(2 pi)) K_u K_w <= (3/2) K_u K_w.
+  ```
+
+- Famille adverse : `L=m^2`, `delta=L^-1`,
+  `eta=(b-A)/A=L^-3/2`. Le coût du curl tronqué reste borné, tandis que le
+  cube du coût du curl original croît exactement comme
+  `(256/3)(1+eta)^3 L^3`.
+- Commande :
+
+  ```text
+  python -B experiments/navier-stokes/persistent-bridge-diameter/persistent_bridge_audit.py
+  ```
+
+- Environnement : Python 3.13.14, bibliothèque standard, aucune graine.
+- Résidu certifié : 1 035 familles, 5 197 assertions rationnelles exactes,
+  zéro échec. Empreinte :
+  `d4be10a24de48f196a64515b1f1fc9916c51b51332244f50e443cefc326be946`.
+- Limites : périmètre–diamètre et coaire restent des entrées analytiques; le
+  squelette est lipschitzien sans lissage intervalle-certifié; pression,
+  viscosité, temps et résidu PDE absents.

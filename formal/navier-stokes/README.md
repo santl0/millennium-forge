@@ -952,3 +952,28 @@ Les modules 1, 3 et 5 sont les premières cibles formelles. Les modules 2 et 4
 requièrent une bibliothèque Sobolev/BV; le module 6 dépend encore de la
 compensation conique non formalisée. Même compilé, ce bloc certifierait une
 sélection cinématique conditionnelle, pas une solution Navier–Stokes.
+
+## Backlog issu du cycle 0037 — diamètre d'une branche persistante
+
+Le noyau se factorise en étapes courtes dont plusieurs sont formalisables sans
+géométrie cylindrique lourde :
+
+1. définir diamètre axial essentiel et composante M-indécomposable plane;
+2. importer ou prouver `2 diam_z(E^1)<=Per(E)`;
+3. établir l'additivité du périmètre sur les composantes d'un superniveau;
+4. formaliser la coaire restreinte à `a<f<b`;
+5. calculer exactement le curl de `U=(R/r)F e_theta` et l'annulation du
+   jacobien `2 pi r` par `R/r`;
+6. prouver l'intégration faible-Lorentz
+   `integral_H |W|<=3 K_w |H|^(1/3)`;
+7. vérifier l'inclusion annulaire
+   `H subset {|U|>2a/3}`;
+8. certifier l'algèbre finale `a(b-a)RD<=9 K_uK_w/(8 pi)` et le corollaire
+   rationnel `A^2RD<=(3/2)K_uK_w`;
+9. distinguer formellement une branche haute persistante d'une composante
+   basse créée par fusion.
+
+Les modules 6–8 sont les premières cibles Lean réalistes. Les modules 1–4
+requièrent une bibliothèque BV/coaire suffisamment expressive. Une
+compilation certifierait une obstruction cinématique pure-swirl, pas une
+solution, un blow-up ou un critère de régularité Navier–Stokes.
