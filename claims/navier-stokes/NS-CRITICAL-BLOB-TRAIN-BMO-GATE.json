@@ -1,0 +1,41 @@
+{
+  "id": "NS-CRITICAL-BLOB-TRAIN-BMO-GATE",
+  "problem": "navier-stokes",
+  "statement": "Il existe un train statique explicite de blobs de vorticité divergence-free, avec vitesse d'énergie finie, vorticité globalement faible-L^(3/2), masse critique par bloc et amplitude angulaire non bornée, dont la direction étendue par zéro passe les tests centrés mais dont toute extension échoue au log-BMO global à cause d'un motif directionnel interne récurrent.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "R³ sans frontière, viscosité normalisée à un pour le test de résidu, aucune force et aucune trajectoire Navier-Stokes construite",
+    "P(t)=(1-t²)^4 sur |t|<1 et zéro ailleurs, psi=P(x)P(y)P(z), U_0=(partial_y psi,-partial_x psi,0), W_0=curl U_0",
+    "r_n=2^-n, ell_n=r_n/(8n), x_n=r_n e_3, U_n=ell_n^-1 U_0((x-x_n)/ell_n), W_n=ell_n^-2 W_0((x-x_n)/ell_n)",
+    "u et W sont les sommes sur les supports disjoints; les identités div u=0, curl u=W et div W=0 sont distributionnelles",
+    "une extension de direction signifie une fonction localement intégrable égale à W/|W| presque partout sur {W!=0}"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0025-critical-blob-train.md et docs/reports/navier-stokes/reviews/cycle-0025-analysis.md"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/cycle-0025-critical-blob-train.md: oscillation centrée O(n^-3) mais minoration positive uniforme sur des boules internes de rayon ell_n/2"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/critical-blob-train/critical_blob_train_audit.py, 104 contrôles polynomiaux et rationnels exacts",
+      "sha256": "129921806266636a46a5202bd0f2912491aaf557a02cda229c17ef80a529cb15"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0025-critical-blob-train"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois passes Codex séparées, même famille de modèle; non indépendantes au sens externe",
+    "notes": "Les identités div-curl, le scaling, l'énergie, le faible-L^(3/2), les boules centrées, la minoration BMO interne et le résidu stationnaire modulo pression sont séparés. Le champ est irrégulier dès t=0, n'est pas une donnée Clay lisse et ne construit aucune dynamique."
+  }
+}

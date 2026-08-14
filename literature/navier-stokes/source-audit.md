@@ -587,3 +587,35 @@ diverge; aucun axe limite ni cône fixe n'en résulte. Aucune source primaire
 inspectée ne ferme le raccord depuis la direction définie seulement sur
 `{omega!=0}` vers une même extension globale unitaire log-BMO uniforme en
 temps. Aucun nouvel identifiant de source n'est ajouté au cycle 0024.
+
+## Audit ciblé du cycle 0025 — idempotents VMO, analyticité et blobs
+
+| Source primaire | Passage contrôlé | Verdict exact |
+|---|---|---|
+| Brezis–Nirenberg 1995 (`0090`) | §I.5 et lemme A.7 | l'image essentielle VMO sur un connexe est connexe; la composition uniformément continue préserve VMO |
+| Bourgain–Brezis–Mironescu 2015 (`0091`) | introduction, formules (0.2)–(0.4) | une fonction entière VMO est constante; les indicatrices ont une oscillation pairwise explicite |
+| Grujić–Kukavica 1998 (`0092`) | analyticité spatiale à temps positif | pendant l'intervalle classique, une vorticité non triviale est analytique; son lieu nodal commun est nul en mesure par le fait analytique standard |
+| Herbst–Skibsted 2009 (`0093`) | estimations d'analyticité | corroboration en classes fortes de Sobolev; prépublication v1, aucune portée au temps singulier |
+| Feng–Šverák 2015 (`0094`) | problème de Cauchy des vortex rings | donnée mesure circulaire et solution axisymétrique sans swirl; ce n'est pas un blob isotrope critique |
+| Gallay–Šverák 2019 et 2024 (`0095`–`0096`) | unicité filamentaire et limite de viscosité | anneaux visqueux rigoureux, mais un cœur mince à rayon majeur fixe n'a pas de borne uniforme faible-`L^(3/2)` |
+
+Pour `zeta=xi 1_A`, `|xi|=1` sur `A`, et
+`theta_B=|A intersection B|/|B|`, la dérivation élémentaire donne
+
+```text
+theta_B(1-theta_B)<=average_B|zeta-zeta_B|.
+```
+
+Elle interdit des densités intermédiaires uniformes sous un module VMO, mais
+ne crée pas ce module. Correction des cycles 0020–0024 : pour une solution
+forte non triviale à temps positif sur `R³`, les choix qui diffèrent seulement
+sur `{omega=0}` sont égaux presque partout; l'obstacle pertinent devient le
+comportement de phase **près** des zéros. Cette correction ne s'applique pas
+automatiquement à une solution faible au temps terminal ni à une donnée
+initiale compacte.
+
+Le train du cycle 0025 montre séparément que divergence, énergie finie,
+faible-`L^(3/2)`, masse critique et petite oscillation centrée ne produisent
+pas le BMO global. Une forme directionnelle interne récurrente conserve une
+oscillation positive sur des boules décentrées. Aucune source primaire trouvée
+ne transforme un tel train en scénario dynamique de blow-up.

@@ -1322,3 +1322,38 @@ cellule reste donc `NOT_PROVIDED`.
 - Limites : ni la borne de tranche, ni la masse de bloc, ni l'ansatz ne sont
   extraits d'une solution Clay. Aucune vitesse, pression, coupure, viscosité
   ou évolution n'est calculée.
+
+## `CRITICAL-SOLENOIDAL-BLOB-TRAIN-1` — intermittence critique exacte
+
+- Question falsifiable : l'échappatoire sparse d'amplitude non bornée peut-elle
+  satisfaire divergence, curl, énergie finie et faible-`L^(3/2)` tout en
+  conservant seulement une petite oscillation centrée ?
+- Construction : `P=(1-t²)^4_+`,
+  `U_0=(partial_y psi,-partial_x psi,0)`, `W_0=curl U_0`, puis blobs aux rayons
+  `r_n=2^-n` et échelles `ell_n=r_n/(8n)`.
+- Équation réellement contrôlée : identités statiques
+  `div u=0`, `curl u=W`, `div W=0`; aucune discrétisation temporelle.
+- Résultat positif : `u∈L²`, `W∈L¹∩L^(3/2,infinity)`, Biot–Savart sans mode
+  harmonique `L²`, masse critique par bloc et amplitude angulaire `1024n²`.
+- Test centré : pour l'extension par zéro,
+  `MO_(B_(3r_n/2)(0))<1/(378n³)`.
+- Test global : toute extension de la direction garde une oscillation au moins
+  `2384963/22109421704515245593067520000` sur des boules internes de rayon
+  `ell_n/2`; le log-BMO global échoue.
+- Résidu : `curl[-Delta U_0+(U_0 dot nabla)U_0]` contient 1804 monômes non
+  nuls. Une pression ne rend donc pas le profil stationnaire; le coût `L¹` du
+  résidu non projeté est invariant par blob.
+- Commande :
+
+  ```text
+  python -B experiments/navier-stokes/critical-blob-train/critical_blob_train_audit.py
+  ```
+
+- Environnement : Python 3.13.14, bibliothèque standard uniquement.
+- Discrétisation et erreur : aucune grille, aucun flottant, aucune graine;
+  arithmétique polynomiale rationnelle exacte, 104 contrôles, zéro échec.
+- Empreinte :
+  `129921806266636a46a5202bd0f2912491aaf557a02cda229c17ef80a529cb15`.
+- Limites : le champ infini est irrégulier dès `t=0`, les normes fortes
+  critiques divergent, la pression dynamique et l'évolution ne sont pas
+  construites.

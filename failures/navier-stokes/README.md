@@ -926,6 +926,78 @@ Décision de pivot : sous amplitude bornée, masse par bloc et une même extensi
 log-BMO, le scénario multicoeur est fermé cinématiquement. Le verrou actif
 devient `GAP-UNBOUNDED-ANGULAR-INTERMITTENCY`.
 
+## `FAIL-NS-0042` — Petites boules centrées assimilées au log-BMO global
+
+- Date : 2026-08-14.
+- Cadre : train critique de blobs aux rayons `r_n=2^-n` et largeurs
+  `ell_n=r_n/(8n)`.
+- Cible : déduire la prémisse globale depuis les seules boules centrées au
+  point d'accumulation.
+- Attaque : l'extension par zéro a une oscillation centrée
+  `<1/(378n³)`, mais une boule interne de rayon `ell_n/2` voit le même motif
+  directionnel non constant à chaque échelle.
+- Résultat : toute extension conservant la direction active a une oscillation
+  au moins `c_dir>0` sur cette suite; le quotient par tout poids
+  `phi(r)->0` diverge.
+- Statut : implication `REFUTED`; le global et le centré ne sont pas
+  interchangeables.
+
+## `FAIL-NS-0043` — Admissibilité statique assimilée à une solution
+
+- Date : 2026-08-14.
+- Cadre : `u∈L²`, `W=curl u∈L¹∩L^(3/2,infinity)`, avec identités div–curl et
+  reconstruction Biot–Savart.
+- Cible : traiter ces portes cinématiques comme un profil stationnaire ou un
+  blow-up admissible.
+- Attaque : calculer exactement
+  `curl[-Delta U_0+(U_0 dot nabla)U_0]`.
+- Résultat : 1804 monômes sont non nuls; aucune pression ne peut annuler le
+  résidu. Son amplitude est `ell_n^-3` et son coût `L¹` ne décroît pas.
+- Portée : ne réfute pas une correction temporelle ou un autre champ de base;
+  réfute le raccord stationnaire silencieux pour ce train.
+- Statut : raccord `REFUTED`.
+
+## `FAIL-NS-0044` — Sparsité supposée effacer un motif directionnel récurrent
+
+- Date : 2026-08-14.
+- Cadre : blobs de fraction centrée `O(n^-3)` et amplitude angulaire
+  `O(n²)`.
+- Cible : sauver log-BMO en réduisant uniquement le volume actif ou en
+  modifiant la direction sur les zéros.
+- Attaque : choisir deux sous-cubes actifs où les directions normalisées sont
+  quantitativement séparées, puis les reproduire par scaling dans chaque
+  blob.
+- Résultat : la minoration d'oscillation utilise seulement les valeurs sur
+  l'ensemble actif; aucune convention aux zéros ne la change.
+- Réparation : la géométrie directionnelle **interne** doit s'aplatir avec
+  l'échelle, ou le motif compensateur doit être relégué sur une sous-région
+  d'amplitude encore plus intermittente.
+- Statut : stratégie `REFUTED`; active
+  `GAP-DIRECTIONALLY-FLAT-INTERMITTENCY`.
+
+Décision de pivot : le train critique ferme le blob de forme fixe. Le prochain
+profil doit rendre sa direction interne asymptotiquement constante tout en
+respectant l'annulation du curl compact, la divergence et la masse critique.
+
+## `FAIL-NS-0045` — Convention aux zéros traitée comme obstacle positif régulier
+
+- Date : 2026-08-14.
+- Cadre : solution forte non triviale de Navier–Stokes sur `R³` à un temps
+  strictement positif de son intervalle classique.
+- Cible : faire dépendre la classe BMO uniquement des valeurs assignées
+  exactement sur `{omega=0}`.
+- Attaque : utiliser l'analyticité spatiale publiée de la solution et de sa
+  vorticité.
+- Résultat : une composante analytique non identiquement nulle a un ensemble
+  de zéros de mesure nulle; le lieu nodal commun est donc nul en mesure. BMO
+  identifie toutes les conventions qui ne diffèrent que sur ce lieu.
+- Portée : la solution nulle, les données initiales compactes, les solutions
+  faibles au temps terminal et surtout la phase **près** des zéros ne sont pas
+  couverts. Le claim universel de non-canonicité reste réfuté, mais cette
+  utilisation particulière est abandonnée.
+- Sources : `NS-SRC-0092`, `NS-SRC-0093` et revue littérature du cycle 0025.
+- Statut : stratégie `REFUTED` dans la classe forte positive.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,

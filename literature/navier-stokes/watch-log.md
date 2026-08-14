@@ -446,3 +446,26 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
   indispensable à ce raccord.
 - Décision : fermer `GAP-MULTICORE-ANGULAR-CASCADE` sous les prémisses suivies
   et activer `GAP-UNBOUNDED-ANGULAR-INTERMITTENCY`.
+
+## 2026-08-14 — Cycle 0025
+
+- Veille différentielle : Grujić reste en v2 et Lei–Ren–Tian en v1. Aucun
+  article primaire ne relie un train de blobs critiques multi-échelles à un
+  blow-up admissible.
+- Sources ajoutées : Brezis–Nirenberg (`0090`),
+  Bourgain–Brezis–Mironescu (`0091`), Grujić–Kukavica (`0092`),
+  Herbst–Skibsted (`0093`), Feng–Šverák (`0094`) et deux travaux
+  Gallay–Šverák (`0095`–`0096`). Le corpus atteint 96 sources.
+- Résultat bibliographique : la rigidité des fonctions entières ou
+  caractéristiques dans VMO est standard; elle ne constitue pas un nouveau
+  théorème Navier–Stokes.
+- Correction : à temps positif régulier non trivial, l'analyticité spatiale
+  rend `{omega=0}` nul en mesure. Une convention ponctuelle aux zéros est alors
+  inoffensive en BMO; la phase près du lieu nodal reste ouverte.
+- Résultat interne : un train exact passe divergence, énergie,
+  faible-`L^(3/2)`, masse par bloc et Biot–Savart, mais toute extension de sa
+  direction échoue sur le motif interne reproduit à l'échelle des blobs.
+- Test adverse : le résidu stationnaire a un curl non nul et un coût critique;
+  aucune pression ne ferme la construction.
+- Décision : abandonner le blob de forme fixe et activer
+  `GAP-DIRECTIONALLY-FLAT-INTERMITTENCY`.

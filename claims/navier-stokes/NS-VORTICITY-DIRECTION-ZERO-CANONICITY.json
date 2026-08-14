@@ -18,6 +18,10 @@
     {
       "kind": "counterexample",
       "reference": "docs/reports/navier-stokes/reviews/cycle-0020-literature.md: pour la solution nulle, xi=e_1 a semi-norme zéro tandis que xi=sign(x_1)e_1 a oscillation moyenne un à toutes les petites échelles"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0092 et NS-SRC-0093: l'analyticité spatiale à temps positif régulier implique que le lieu nodal commun d'une vorticité non triviale est nul en mesure; la non-canonicité exacte aux zéros n'affecte alors pas l'élément BMO"
     }
   ],
   "provenance": {
@@ -30,7 +34,6 @@
   "review": {
     "status": "adversarial_pass",
     "reviewer": "Passe bibliographique Codex séparée, même famille de modèle; non indépendante au sens externe",
-    "notes": "Le résidu de l'équation, de la divergence et de la relation vorticité–vitesse est exactement nul. La réfutation disparaît si l'énoncé fixe une convention canonique ou quantifie explicitement l'existence d'une extension."
+    "notes": "Le résidu de l'équation, de la divergence et de la relation vorticité–vitesse est exactement nul. La réfutation universelle demeure via la solution nulle, mais sa portée est corrigée au cycle 0025 : pour une solution forte non triviale à temps positif, le lieu nodal analytique est nul en mesure et les conventions qui diffèrent seulement sur ce lieu donnent le même élément BMO. Le comportement de phase près des zéros reste distinct."
   }
 }
-
