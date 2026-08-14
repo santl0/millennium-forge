@@ -317,3 +317,23 @@ géométrique ou dynamique.
 
 Le halo fixé par un volume témoin est abandonné; seule une bande construite au
 niveau global est admissible dans la branche pure-swirl.
+
+## Priorité active après le cycle 0036
+
+1. **`GAP-ABOVE-THRESHOLD-THIN-BRIDGE`.** Deux gouttes de taille `R`, séparées
+   par `LR`, peuvent-elles rester dans la même composante de
+   `{sigma F>lambda/4}` grâce à un tube de rayon `delta R` sans faire diverger
+   `||curl U||_(L^(3/2,infinity))` ni dégrader le gate vitesse ?
+2. **Seconde troncature adaptative.** Si le pont coûte trop cher, formuler le
+   niveau `lambda/4+tau` ou le cutoff capacitaire qui isole une goutte sans
+   réintroduire de mesure de bord et avec constante uniforme en `L`.
+3. **Chevauchements signés.** Après le pont mono-cellule, permettre une
+   multiplicité bornée de supports originaux et mesurer la perte exacte de
+   `K_(w,alpha)<=K_w` sous annulation.
+4. **Raccord dynamique.** Barker `NS-SRC-0162` borne des centres sous faible
+   `L3`; déterminer quelle hypothèse supplémentaire transformerait la boule
+   statique sélectionnée en échelle `R(t)->0`, en séparant Type I et Type II.
+
+Les gouttes reliées strictement sous `lambda/4` sont fermées. Ne pas rouvrir
+la branche par un covering volume-seul : Frank–Lieb est optimal en échelle et
+ne donne qu'une fraction `cV^2/P^3` potentiellement nulle.

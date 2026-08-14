@@ -771,3 +771,29 @@ solution ou précise qu'il s'agit seulement d'un champ test.
 - Limite : un contrôle de volume ne donne ni diamètre, ni boule, ni
   composition automatique avec le gate directionnel du cycle 0033.
 - Pivot : `GAP-ACTIVE-HALO-DIAMETER-OR-OVERLAP`.
+
+## 2026-08-14 — Troncature composante et pont au-dessus du seuil
+
+- Objet : composantes connexes actives d'un swirl pur statique, aucune
+  évolution Navier–Stokes.
+- Troncature : `G_alpha=(sigma F-lambda/4)_+1_(C_alpha)` est lipschitzienne et
+  n'ajoute aucune mesure de curl au bord.
+- Sélection critique :
+
+  ```text
+  K_(u,alpha)>=(C_I/648)K_u^2/K_w,
+  K_(u,alpha)/K_(w,alpha)>=(C_I/648)(K_u/K_w)^2.
+  ```
+
+- Composition conditionnelle : si `diam C_alpha=O(R_j)`, le gate
+  lipschitzien donne `MO_B>=c(K_u/K_w)^12`.
+- Contre-profils éliminés : un filament sous le cutoff est supprimé; `m`
+  copies identiques font décroître le rapport global comme `m^-1/3`.
+- Frontière géométrique sourcée : une boule Frank–Lieb à rayon `V/P` ne capte
+  que la fraction `cV^2/P^3`; volume+périmètre ne bornent pas le diamètre.
+- Certificat : 5 773 assertions rationnelles exactes, zéro échec, empreinte
+  `f0550313e21e05a7cda46fd8d1264b982d3ab3b809b5c5b05ec1f77c5c56892a`.
+- Limite : un pont d'amplitude au-dessus de `lambda/4` peut garder une
+  composante de diamètre arbitraire; chevauchements, pression et temps restent
+  ouverts.
+- Pivot : `GAP-ABOVE-THRESHOLD-THIN-BRIDGE`.

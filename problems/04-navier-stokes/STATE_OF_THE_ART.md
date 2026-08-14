@@ -963,3 +963,42 @@ diamètre axial, ni volume support, ni plateau uniforme. Il contrôle toutefois
 seulement le volume total de la bande; une bande dispersée n'est pas localisée
 dans une boule. Le corpus atteint 155 sources et le verrou actif devient
 `GAP-ACTIVE-HALO-DIAMETER-OR-OVERLAP`.
+
+## Cycle 0036 — sélection d'une composante active
+
+La bande commune peut être décomposée aux composantes connexes de
+`{sigma F_j>lambda/4}` rencontrant le coeur `lambda/2`. Pour chaque composante,
+
+```text
+G_alpha=(sigma F_j-lambda/4)_+ 1_(C_alpha)
+```
+
+est lipschitzienne compacte et s'annule sur son bord. Son curl est exactement
+`sigma W_j` dans la composante et zéro ailleurs, sans mesure surfacique. Coaire
+et isopérimétrie peuvent donc être sommées avant le pigeonhole. Une troncature
+vérifie
+
+```text
+K_(u,alpha)>=(C_I/648)K_u^2/K_w,
+K_(u,alpha)/K_(w,alpha)>=(C_I/648)(K_u/K_w)^2.
+```
+
+Si chaque composante tient dans une tranche axiale `O(R_j)`, l'extension
+lipschitzienne explicite du gate 0033 donne
+`MO_B>=c(K_u/K_w)^12`. Le claim principal et le claim d'interface restent
+`COMPUTATION_ONLY`.
+
+La géométrie générale est maintenant mieux bornée. Frank–Lieb garantit depuis
+volume et périmètre une boule de rayon `V/P` captant `>=c(V/P)^3`, mais une
+fragmentation en gouttes rend la fraction `cV^2/P^3` dégénérée. Même une
+composante de périmètre fini peut avoir un diamètre arbitraire via un tube
+mince. Seregin et Barker contrôlent plusieurs centres singuliers de vraies
+solutions sous budgets critiques/d'epsilon-régularité supplémentaires; ils ne
+fournissent pas le raccord Clay général.
+
+Le certificat exact compte 1 920 familles, 10 560 composantes et 5 773
+assertions sans échec. Des copies identiques ont un rapport global qui décroît
+comme `m^-1/3`; un filament strictement sous `lambda/4` est supprimé. Le
+corpus atteint 162 sources. Le verrou actif devient
+`GAP-ABOVE-THRESHOLD-THIN-BRIDGE` : un pont de petite section mais d'amplitude
+au-dessus du cutoff peut fusionner deux gouttes éloignées.

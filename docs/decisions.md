@@ -308,3 +308,20 @@
   contrôlé. Le volume de la bande ne suffit pas.
 - `GAP-ACTIVE-HALO-DIAMETER-OR-OVERLAP` devient actif. Le test mono-cellule à
   gouttelettes dispersées précède tout recouvrement intercellulaire.
+
+### 2026-08-14 — gouttelettes sous le seuil fermées par troncature
+
+- La troncature composante par composante est retenue avec le score `20/20`;
+  elle évite le faux passage volume vers diamètre.
+- La fonction tronquée est lipschitzienne à trace nulle et son curl est
+  exactement la restriction signée du curl original, sans mesure de bord.
+- Une goutte porte un rapport endpoint
+  `>=(C_I/648)(K_u/K_w)^2`; si chaque goutte a diamètre `O(R_j)`, le gate
+  directionnel fournit la puissance globale douze.
+- L'extension explicite du gate 0033 à `W_c^{1,infinity}` est enregistrée
+  comme claim interne distinct, et non cachée dans la composition.
+- Les copies identiques et les filaments strictement sous `lambda/4` sont
+  abandonnés comme échappements. Volume+périmètre seuls ne contrôlent pas le
+  diamètre d'une composante.
+- `GAP-ABOVE-THRESHOLD-THIN-BRIDGE` devient actif; chevauchement des supports
+  et dynamique restent différés.

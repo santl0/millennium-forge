@@ -489,3 +489,33 @@ composante active -> boule directionnelle : manquante;
 supports disjoints -> recouvrement/annulation : manquante;
 boule statique -> échelle pré-singulière : manquante.
 ```
+
+## Cycle 0036 — arête par composante
+
+```text
+NS-PURE-SWIRL-COMMON-LEVEL-CELL-SELECTION
+  -- raffinement connexe --> composantes de {sigma F_j>lambda/4}
+  -- zéro sur le bord --> troncature W_c^(1,infinity), curl sans mesure
+  -- coaire/isopérimétrie composante --> registre additif
+  -- fonctions de distribution --> constante C_I/648
+  --> NS-PURE-SWIRL-COMPONENTWISE-DROPLET-SELECTION
+
+NS-BOUNDED-CROSS-SECTION-DIRECTION-GATE
+  -- chaîne Sobolev + coaire BV + curl compact
+  --> NS-PURE-SWIRL-LIPSCHITZ-DIRECTION-GATE
+  -- boîte O_Lambda(R_j) de chaque composante
+  --> MO_B>=c_Lambda(K_u/K_w)^12.
+```
+
+Nature des arêtes :
+
+```text
+coaire/isopérimétrie/Lorentz : classiques et sourcées;
+troncature par composante : dérivation interne auditée;
+interface C-infinity vers W^(1,infinity) : dérivation interne explicite;
+Frank–Lieb volume+périmètre -> boule locale : classique sourcée;
+volume+périmètre -> diamètre de composante : réfutée;
+pont au-dessus du cutoff -> sous-composante bornée : manquante;
+chevauchement des curls -> monotonicité locale : manquante;
+gate statique -> rayon pré-singulier : manquante.
+```

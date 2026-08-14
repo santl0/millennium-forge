@@ -246,3 +246,13 @@ faible-Lorentz donnent une cellule avec rapport local
 uniforme. Le volume actif est contrôlé mais son diamètre ne l'est pas. Le
 verrou devient `GAP-ACTIVE-HALO-DIAMETER-OR-OVERLAP`, d'abord sur une cellule
 à gouttelettes dispersées.
+
+Le cycle 0036 décompose ce superniveau inférieur en composantes connexes et
+tronque séparément à `lambda/4`. La trace nulle supprime tout curl de bord;
+coaire par composante et faible-Lorentz sélectionnent une goutte avec
+constante `C_I/648`. Si son diamètre axial est `O(R_j)`, l'interface
+lipschitzienne du gate 0033 donne une oscillation directionnelle de puissance
+douze. Les filaments strictement sous le seuil et les copies identiques sont
+fermés. Un pont mince restant au-dessus du seuil peut encore fusionner deux
+gouttes éloignées; `GAP-ABOVE-THRESHOLD-THIN-BRIDGE` devient actif. Le corpus
+compte 162 sources.

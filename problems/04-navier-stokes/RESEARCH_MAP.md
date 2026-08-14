@@ -1392,3 +1392,40 @@ boule statique sélectionnée
 Priorité : `GAP-ACTIVE-HALO-DIAMETER-OR-OVERLAP`. Le premier test porte sur
 une seule cellule à gouttelettes dispersées; les chevauchements intercellules
 sont différés au cycle suivant.
+
+## Cycle 0036 — composantes actives et pont mince
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| boule Vitali depuis le volume total | 2 | 4 | 5 | 4 | 15 |
+| troncature signée par composante | 5 | 5 | 5 | 5 | **20** |
+| contre-profil multi-gouttes exact | 4 | 4 | 5 | 5 | 18 |
+
+```text
+niveau global lambda
+  -- composantes C_alpha de {sigma F_j>lambda/4}
+  -- trace nulle --> G_alpha lipschitzien, aucun curl de bord
+  -- coaire R3 par composante --> sum V_alpha^(2/3)
+  -- faible-Lorentz --> K_(u,alpha)>=C_I K_u^2/(648K_w)
+  -- disjonction --> rapport local >=C_I(K_u/K_w)^2/648
+  -- interface W_c^(1,infinity) du gate 0033
+  -- diamètre de C_alpha=O(R_j) --> MO local >=c(K_u/K_w)^12
+  --> NS-PURE-SWIRL-COMPONENTWISE-DROPLET-SELECTION
+  -- ferme --> gouttes reliées strictement sous lambda/4
+  -/-> pont restant au-dessus de lambda/4.
+```
+
+Arêtes adverses :
+
+```text
+volume+périmètre -- Frank–Lieb --> boule locale de masse c(V/P)^3
+volume+périmètre -/-> fraction universelle ou diamètre de composante
+m copies identiques --> rapport global m^(-1/3)
+pont sous lambda/4 --> supprimé sans mesure de bord
+pont au-dessus de lambda/4 -?-> coût curl critique ou grand diamètre
+supports originaux chevauchants -?-> survie après annulation.
+```
+
+Priorité : `GAP-ABOVE-THRESHOLD-THIN-BRIDGE`. Tester deux gouttes distantes
+reliées par un tube d'amplitude juste supérieure au cutoff et suivre
+simultanément longueur, section, couches de transition et endpoints faibles.
