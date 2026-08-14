@@ -2,7 +2,7 @@
 
 Les expériences de ce répertoire sont des tests analytiques finis. Elles ne
 simulent pas une solution Navier–Stokes et ne constituent ni une preuve de
-régularité ni un blow-up. Les dix-sept expériences utilisent la graine « sans
+régularité ni un blow-up. Les dix-huit expériences utilisent la graine « sans
 objet » et écrivent
 leur rapport JSON sur la sortie standard.
 
@@ -15,6 +15,7 @@ leur rapport JSON sur la sortie standard.
 | `VORTICITY-LOCAL-COHERENCE-SIGN-GATE-1` | une cohérence locale arbitrairement fine de la direction fixe-t-elle le signe ou déplète-t-elle sans échelle le stretching central ? | six modes Fourier, fractions rationnelles gaussiennes exactes; aucune grille | `python -B experiments/navier-stokes/vorticity-local-coherence/local_coherence_audit.py` | zéro pour les identités, la pression et les lois d'échelle |
 | `SPARSENESS-RESTRICTION-1` | une densité volumique `delta` impose-t-elle une tranche linéaire `delta^(1/3)` au même point et rayon ? | preuve polaire + fractions exactes, profils radiaux et colonnes angulaires | `python -B experiments/navier-stokes/sparseness-restriction/sparseness_restriction_audit.py` | zéro pour toutes les identités algébriques |
 | `REARRANGEMENT-INVERSION-1` | une enveloppe `v^-1/3 log^-1` de la réarrangée impose-t-elle une queue `lambda^-3 log^-3` malgré les plateaux ? | pseudo-inverses sur fonctions simples, fractions exactes et encadrements rationnels de logarithmes | `python -B experiments/navier-stokes/rearrangement-inversion/rearrangement_inversion_audit.py` | zéro pour toutes les identités et aucun flottant |
+| `ONEIL-TRANSFER-1` | la queue logarithmique de vorticité se transfère-t-elle à la vitesse avec seuils, queue macroscopique et jauge harmonique suivis ? | fractions exactes, supersolutions analytiques et contre-profils en escalier; aucune grille | `python -B experiments/navier-stokes/oneil-transfer/oneil_transfer_audit.py` | zéro arrondi; marge rationnelle minimale huit |
 | `DESINGULARIZATION-GATE-1` | les normes d'une troncature de `r^-1` restent-elles uniformes quand `epsilon -> 0` ? | intégrales radiales exactes; logarithme symbolique | `python -B experiments/navier-stokes/desingularization-gate/desingularization_gate.py` | zéro pour les identités rationnelles |
 | `HWY-INNER-CUTOFF-GATE-1` | une régularisation intérieure divergence-free petite en `L²` et bornée en `L^{3,infinity}` est-elle compacte dans `L³` ? | matrices et intégrales exactes; transcendantes symboliques | `python -B experiments/navier-stokes/hwy-inner-cutoff/inner_cutoff_audit.py` | zéro pour les identités rationnelles et l'arrondi |
 | `HWY-PARITY-PROJECTION-GATE-1` | un lissage intérieur respectant la réflexion HWY peut-il exciter le mode certifié impair ? | projecteurs de parité et exposants rationnels exacts; aucune grille | `python -B experiments/navier-stokes/hwy-parity-projection/parity_projection_audit.py` | zéro pour dix obligations; aucun arrondi |
@@ -178,6 +179,44 @@ réseau ni ne produit d'artefact lourd.
 - Limite : suppose (47) avec constante et cutoff uniformes; ne valide ni sa
   dérivation par O'Neil, ni la représentation Biot–Savart, ni le théorème 7.4.
 
+## `ONEIL-TRANSFER-1` — queue de vorticité vers vitesse
+
+- Question falsifiable : une queue uniforme
+  `mu_omega(lambda)<=V[(Omega/lambda)/log(lambda/Omega)]^(3/2)`, complétée
+  par le contrôle global faible `L^(3/2)` et une jauge Biot–Savart explicite,
+  implique-t-elle (47) ?
+- Inversion : pour `0<s<=Vexp(-3)`,
+  `omega*(s)<=4Omega(V/s)^(2/3)/log(eV/s)`.
+- Intégrales : sur `0<v<=Vexp(-6)`, le coeur a la constante `3`, une
+  supersolution donne `20` pour la queue logarithmique et la queue globale
+  coûte `9M`.
+- Conclusion : si `u=B[omega]+h`, `||h||_infinity<=H`, alors
+
+  ```text
+  u*(v)<=Qv^(-1/3)/log(eV/v),
+  Q=C_K(23C_0+9M)+HV^(1/3),  C_0=4Omega V^(2/3).
+  ```
+
+- Résultat négatif : le reste positif de (46) n'est pas `O(1)`;
+  `R(exp(-3n))>=3n/256` et
+  `R(v)~9v^(-1/3)/log²(e/v)`. Il reste absorbable.
+- Jauge adverse : `u=(2,-3,6)` a divergence et rotationnel nuls, mais une
+  réarrangée égale à sept; (41) est faux pour la vitesse entière sans
+  normalisation harmonique.
+- Queue adverse : un plateau de masse `R³` produit exactement
+  `3(R-1)` dans l'intégrale macroscopique; le petit-volume seul ne suffit pas.
+- Échelle : `C_0`, `M` et `HV^(1/3)` sont invariants sous le scaling NS;
+  le membre droit porte `kappa` comme la vitesse.
+- Discrétisation : aucune PDE, aucun maillage ni pas de temps. Toutes les
+  obligations sont rationnelles ou réduites à des inégalités de séries à
+  coefficients positifs.
+- Résidus : algèbre, divergence et rotationnel exactement nuls; marge minimale
+  du supersolution `8`; aucun flottant ni graine.
+- Empreinte :
+  `cab6da2b536cfd5a72fd669887fe7dc444a283eba081bbfb9b02b9889897c06f`.
+- Limite : suppose (40), O'Neil et la décomposition de Hodge; ne valide ni
+  l'étape De Giorgi qui produit (40), ni le commutateur, ni le théorème 7.4.
+
 ## `DESINGULARIZATION-GATE-1` — premier cycle autonome
 
 - Question : la contribution de coquille d'un champ homogène
@@ -236,7 +275,7 @@ réseau ni ne produit d'artefact lourd.
 
 ## Passage au continuum
 
-Aucune des dix-sept expériences ne part d'une discrétisation PDE : il n'y a donc
+Aucune des dix-huit expériences ne part d'une discrétisation PDE : il n'y a donc
 pas de passage grille-vers-continuum. Le raccord analytique restant est
 explicite dans chaque cas. Tout futur solveur doit ajouter divergence mesurée,
 convergence multi-résolution, second schéma, bornes de troncature, contrôle des

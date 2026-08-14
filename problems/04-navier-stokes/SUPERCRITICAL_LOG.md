@@ -337,3 +337,28 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   harmonique de Biot–Savart restent ouvertes.
 - Artefact : `REARRANGEMENT-INVERSION-1`, fractions et encadrements rationnels
   de logarithmes, aucun flottant, statut `COMPUTATION_ONLY`.
+
+## 2026-08-14 — Transfert O'Neil et reste sous-dominant
+
+- Équation : NS incompressible 3D non forcé sur `R³`, viscosité positive;
+  application conditionnelle à une solution analytique avant `T*`.
+- Entrée : queue uniforme de vorticité
+  `mu_omega(lambda)<=V[(Omega/lambda)/log(lambda/Omega)]^(3/2)` au-dessus de
+  `eOmega`, plus `M=sup_s s^(2/3)omega*(s)<infinity`.
+- Inversion : pour `s<=Vexp(-3)`,
+  `omega*(s)<=4Omega(V/s)^(2/3)/log(eV/s)`.
+- O'Neil : le coeur coûte `3C_0`, la queue logarithmique `20C_0` et la queue
+  globale `9M`, avec `C_0=4Omega V^(2/3)`.
+- Jauge : si `u=B[omega]+h`, `||h||_infinity<=H`, alors le coefficient final
+  est `Q=C_K(23C_0+9M)+HV^(1/3)`.
+- Reste de (46) : il n'est pas borné;
+  `R(v)~9v^(-1/3)/log²(e/v)`. Le ratio au terme principal est
+  `O(1/log(e/v))`, donc l'absorption conserve un logarithme entier.
+- Échelle : `C_0`, `M` et `HV^(1/3)` sont invariants; `v^(-1/3)` porte
+  `kappa`, exactement comme la vitesse.
+- Pertes localisées : une queue à grande amplitude sans seuil uniforme ne
+  fournit aucun cutoff commun; une enveloppe aux petits volumes sans contrôle
+  global laisse diverger le second opérateur d'O'Neil; `L∞` seule ne fixe pas
+  le mode constant.
+- Artefact : `ONEIL-TRANSFER-1`, fractions exactes, marge minimale huit,
+  aucun flottant, statut `COMPUTATION_ONLY`.

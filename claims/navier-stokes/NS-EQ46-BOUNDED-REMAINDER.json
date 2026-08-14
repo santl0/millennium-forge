@@ -1,0 +1,43 @@
+{
+  "id": "NS-EQ46-BOUNDED-REMAINDER",
+  "problem": "navier-stokes",
+  "statement": "Le reste positif R(v)=3 integral_v^1 s^(-4/3)/log^2(e/s) ds qui apparaît dans l'équation (46) reste O(1) lorsque v tend vers zéro.",
+  "status": "REFUTED",
+  "hypotheses": [
+    "0<v<1",
+    "logarithme naturel",
+    "reste positif issu de l'intégration par parties de integral_v^1 s^(-4/3)/log(e/s) ds"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0059, arXiv:2607.08866v2, équation (46) et phrase d'absorption qui la suit"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "Avec v=exp(-3n), l'intégration sur les trois dernières unités logarithmiques donne R(v)>=3n/256, donc R(v) tend vers l'infini"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0016-oneil-transfer.md; le vrai ordre est R(v)~9v^(-1/3)/log^2(e/v)"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/oneil-transfer/oneil_transfer_audit.py, minorants rationnels exacts",
+      "sha256": "cab6da2b536cfd5a72fd669887fe7dc444a283eba081bbfb9b02b9889897c06f"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0016-oneil-transfer"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois passes Codex séparées, même famille de modèle; non indépendantes au sens externe",
+    "notes": "Le défaut est localement réparable car le reste est inférieur d'un logarithme au terme principal; la réfutation ne porte pas sur l'exposant final de (47)."
+  }
+}

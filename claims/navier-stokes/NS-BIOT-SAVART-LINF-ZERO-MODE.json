@@ -1,0 +1,44 @@
+{
+  "id": "NS-BIOT-SAVART-LINF-ZERO-MODE",
+  "problem": "navier-stokes",
+  "statement": "Tout champ borné u sur R³, divergence-free et de vorticité omega=curl u, est déterminé sans ambiguïté par la formule u=B[omega] de Biot-Savart.",
+  "status": "REFUTED",
+  "hypotheses": [
+    "domaine R³ sans frontière",
+    "u est lisse et borné",
+    "div u=0",
+    "aucune décroissance, intégrabilité L^p finie ou normalisation à l'infini n'est imposée"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "counterexample",
+      "reference": "Le champ constant u=(2,-3,6) est analytique, divergence-free, vérifie curl u=0 et |u|=7; B[0]=0 ne le reconstruit pas"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0059 suppose u_0 dans L∞(R³) au théorème 7.4 mais applique (41) à la vitesse entière sans fixer le mode harmonique"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0016-oneil-transfer.md"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/oneil-transfer/oneil_transfer_audit.py, divergence et rotationnel exactement nuls",
+      "sha256": "cab6da2b536cfd5a72fd669887fe7dc444a283eba081bbfb9b02b9889897c06f"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0016-oneil-transfer"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois passes Codex séparées, même famille de modèle; non indépendantes au sens externe",
+    "notes": "Une condition u dans L^p fini, une décroissance à l'infini, une moyenne nulle périodique ou une composante harmonique h explicitement contrôlée répare la représentation. Le contre-exemple ne réfute aucune régularité Navier–Stokes."
+  }
+}

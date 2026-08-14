@@ -71,7 +71,10 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | cohérence locale sur cylindre | absorption du stretching localisé | conditionnelle, sourcée | Grujić 2009 | commutateurs de cutoff et queue extérieure à conserver |
 | majorant global `|V|≤B` | 3D `delta`-sparseness au rayon construit `r=[B/(delta|B_1|)]^(1/3)` | dérivation exacte, `COMPUTATION_ONLY` | mesure globale et volume de la boule; rayon uniforme en centre | les rayons plus petits ne sont pas garantis; majorant PDE amont requis |
 | 3D `delta`-sparseness dans `B_r(x_0)` | 1D `delta^(1/3)`-sparseness sur une droite centrale au même rayon | dérivation exacte sharp, sources publiées `0065`–`0066`, passe adverse | formule polaire signée + réarrangement radial; boule centrale extrémale | aucun trou géométrique; direction dépendante de `x_0` |
-| distribution de vorticité (40) + Biot–Savart/O'Neil (41) | enveloppe de réarrangée de vitesse (47) | conditionnelle, prépublication v2, non reproduite | `NS-SRC-0059`, O'Neil `NS-SRC-0067` | composante harmonique, deux intégrales, reste positif de (46), seuils et uniformité temporelle |
+| estimations de commutateur + énergie tronquée/De Giorgi | distribution de vorticité (40) à seuil uniforme | conditionnelle, prépublication v2, non reproduite | `NS-SRC-0059`, équations en amont de (40) | premier seuil, coefficient de Grönwall, constante de Poincaré sur le superniveau et uniformité de l'itération |
+| distribution de vorticité (40) + contrôle global faible + Biot–Savart/O'Neil normalisé | enveloppe de réarrangée de vitesse (47) | dérivation exacte après correction, `COMPUTATION_ONLY` | `NS-SRC-0059`, `0067`, `0068`, `ONEIL-TRANSFER-1` | exige seuil uniforme, queue globale et mode harmonique fixé ou borné |
+| reste positif de (46) | terme `O(1)` quand `v->0` | réfutée | `R(exp(-3n))>=3n/256`, `FAIL-NS-0018` | vrai ordre `9v^-1/3log^-2(e/v)`, absorbable mais divergent |
+| `u∈L∞`, `div u=0`, `omega=curl u` | `u=B[omega]` sans mode harmonique | réfutée | champ constant exact, `FAIL-NS-0019` | imposer décroissance/intégrabilité ou écrire `u=B[omega]+h` |
 | enveloppe uniforme de réarrangée de vitesse (47) | majorant quantitatif de distribution de vitesse (49) | dérivation exacte après correction, `COMPUTATION_ONLY` | pseudo-inverse strict, bootstrap logarithmique, plateaux adverses, `REARRANGEMENT-INVERSION-1` | exige un cutoff `v_0` uniforme; ne donne aucun profil ponctuel radial |
 | identité terminale `lambda=f*(mu_f(lambda))` pour toute fonction mesurable | égalité de l'équation (48) sur tous les niveaux | réfutée | profil exact à deux plateaux, `FAIL-NS-0017` | remplacer par `v<mu_f(lambda) -> f*(v)>lambda` |
 | hélicité globale nulle | petit flux instantané universel | réfutée | contre-triade exacte | pas de positivité modale |
@@ -104,15 +107,15 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | `GAP-HYBRID-INHERITANCE` | stabilité des hypothèses | mildness/bornitude KNSS et trace nulle ESS appartiennent à deux limites distinctes; dans la normalisation maximum, les limites commutent au temps-record `t_k`, tandis que `T` devient l'extrémité mobile `B_k` | matrice d'héritage + rigidité à trace nulle + audit des horloges/commutateur; axe suspendu après trois stratégies |
 | `GAP-SIGN-FLUX` | positivité | flux d'énergie inter-échelles | contre-triades exactes |
 | `GAP-VORTICITY-TAIL` | non-localité/quantificateurs | direction locale vers strain total et stretching positif | `FAIL-NS-0016`; exiger une queue Biot–Savart annulaire explicite |
-| `GAP-REARRANGEMENT-TRANSFER` | non-localité/uniformité | équations (40)–(47) de `arXiv:2607.08866v2`, distribution de vorticité vers réarrangée de vitesse | auditer Biot–Savart/O'Neil, les intégrales (43) et (46), la composante harmonique et les constantes uniformes; l'inversion (47)–(49) est fermée au cycle 0015 |
+| `GAP-DEGIORGI-UNIFORMITY` | constante/troncature | production de (40) depuis l'énergie tronquée : seuil initial, amortissement `mu lambda`, source `K(lambda)` et Poincaré sur le superniveau | suivre chaque constante et vérifier qu'aucune ne dépend de l'itération, du niveau ou de `T*-t`; les transferts (40)–(49) sont fermés conditionnellement aux cycles 0015–0016 |
 | `GAP-LIMIT-ADMISSIBLE` | stabilité/admissibilité | profil singulier vers donnée de Schwartz | trois portes distinctes fermées : `FAIL-NS-0013` réfute la compacité `L³`, `0014` annule le mode impair sous lissage symétrique, `0015` réfute l'identification trace asymptotique/donnée finie; axe suspendu |
 | `GAP-NUM-CONTINUUM` | calcul vers continuum | discrétisation finie | résidu d'intervalle + queue analytique |
 
 ## Arêtes prioritaires
 
-1. `GAP-REARRANGEMENT-TRANSFER` : auditer quantitativement les équations
-   (40)–(47) de `arXiv:2607.08866v2`; l'inversion (47)–(49) et la conversion
-   mesure/sparseness aval sont désormais fermées, avec leurs seuils.
+1. `GAP-DEGIORGI-UNIFORMITY` : auditer quantitativement la production de (40),
+   du premier seuil de troncature jusqu'à l'inégalité de distribution; les
+   raccords fonctionnels (40)–(49) sont désormais fermés conditionnellement.
 2. `GAP-VORTICITY-TAIL` : auditer la queue dyadique du commutateur, puis
    formuler une queue de strain sommable.
 3. `GAP-NUM-CONTINUUM` : isoler un opérateur compact à queues certifiables.

@@ -584,3 +584,41 @@ enveloppe uniforme de réarrangée de vitesse (47)
 
 Le verrou actif remonte à `(40) -> (41) -> (47)`: représentation Biot–Savart,
 deux intégrales d'O'Neil, reste positif de (46) et uniformité temporelle.
+
+## Cycle 0016 : transfert O'Neil et noyau harmonique
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| rendre exact `(40) -> (41) -> (47)`, jauge et reste inclus | 3 | 5 | 5 | 5 | **18** |
+| synchroniser (49) avec les constantes d'analyticité | 4 | 3 | 5 | 5 | 17 |
+| queue dyadique du commutateur du théorème 4.1 | 5 | 2 | 4 | 5 | 16 |
+
+Sous une queue (40) à seuil uniforme, un contrôle global faible
+`L^{3/2}` et `u=B[omega]+h`, l'inversion de distribution donne
+
+```text
+omega*(s)<=4Omega(V/s)^(2/3)/log(eV/s),
+0<s<=Vexp(-3).
+```
+
+Le coeur d'O'Neil coûte exactement `3`, une supersolution explicite coûte
+`20` pour la queue intermédiaire et le contrôle global coûte `9M`. Pour
+`0<v<=Vexp(-6)`,
+
+```text
+u*(v)<=Qv^(-1/3)/log(eV/v),
+Q=C_K(23C_0+9M)+HV^(1/3).
+```
+
+Le maillon fonctionnel est confirmé, `COMPUTATION_ONLY`, mais deux arêtes
+littérales sont réfutées :
+
+```text
+reste positif de (46) -> O(1)                    [faux]
+u bornée, div u=0, omega=curl u -> u=B[omega]    [faux sans jauge].
+```
+
+Le reste vaut asymptotiquement
+`9v^(-1/3)/log²(e/v)` et reste absorbable. Le mode constant est absorbable
+après écriture `u=B[omega]+h`. Le verrou remonte donc à la production dynamique
+uniforme de (40), avant toute nouvelle utilisation des raccords aval.

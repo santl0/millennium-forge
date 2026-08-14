@@ -431,6 +431,49 @@ d'équivalence entre deux profils, pas un autre renommage de topologie.
   `COMPUTATION_ONLY`.
 - Artefact : `REARRANGEMENT-INVERSION-1`.
 
+## `FAIL-NS-0018` — Reste positif de (46) déclaré `O(1)`
+
+- Date : 2026-08-14.
+- Cadre : transfert fonctionnel de la vorticité vers la vitesse dans
+  `arXiv:2607.08866v2`, équations (41)–(47), sur `R³`.
+- Cible : traiter comme uniformément borné, lorsque `v->0`, le reste
+  `R(v)=3 integral_v^1 s^(-4/3)/log²(e/s) ds` de (46).
+- Réfutation : avec `v=exp(-3n)`, l'intégration sur les trois dernières unités
+  logarithmiques et `exp(n-1)>=(n-1)^3/6` donnent
+  `R(v)>=3n/256`; le reste diverge.
+- Ordre correct :
+  `R(v)~9v^(-1/3)/log²(e/v)`. Il est inférieur d'un logarithme au terme
+  principal et s'absorbe avec un cutoff uniforme, mais il n'est pas `O(1)`.
+- Test : fractions exactes pour `n=2,...,64`, aucune approximation flottante;
+  résidu rationnel non négatif. Empreinte :
+  `cab6da2b536cfd5a72fd669887fe7dc444a283eba081bbfb9b02b9889897c06f`.
+- Portée : réfute la justification additive de (46), pas l'exposant final de
+  (47), réparé séparément sous des hypothèses uniformes.
+- Statut : claim `NS-EQ46-BOUNDED-REMAINDER` `REFUTED`.
+- Artefact : `ONEIL-TRANSFER-1`.
+
+## `FAIL-NS-0019` — Reconstruction Biot–Savart sans fixation du mode harmonique
+
+- Date : 2026-08-14.
+- Équation : Navier–Stokes incompressible 3D non forcé sur `R³`; test sur une
+  solution stationnaire analytique bornée.
+- Cible : déduire `u=B[curl u]` de la seule bornitude, de la divergence nulle
+  et de la connaissance de la vorticité.
+- Contre-profil : `u=(2,-3,6)`, `p=0`. Le champ résout exactement NS,
+  `div u=0`, `curl u=0` et `|u|=7`; pourtant `B[0]=0`.
+- Conséquence : le membre droit littéral de (41) est zéro, tandis que la
+  réarrangée de la vitesse vaut sept à tout volume fini.
+- Réparation : imposer une décroissance à l'infini, `u∈L^p` pour un `p` fini,
+  une moyenne nulle dans le cadre périodique, ou écrire
+  `u=B[omega]+h` et contrôler `h` séparément.
+- Scaling : `HV^(1/3)` est invariant sous la remise à l'échelle NS; la
+  correction ne perd aucune puissance critique.
+- Portée : ne réfute ni la régularité de la solution constante, ni une
+  formulation Clay à données de Schwartz. Elle réfute l'inférence sous la
+  seule hypothèse `L∞` affichée dans le raccord audité.
+- Statut : claim `NS-BIOT-SAVART-LINF-ZERO-MODE` `REFUTED`.
+- Artefact : `ONEIL-TRANSFER-1`.
+
 ## Obstacle consolidé — désingularisation HWY vers une même donnée Clay
 
 Trois stratégies distinctes ont fermé les inférences actuellement disponibles :

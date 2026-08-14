@@ -494,3 +494,23 @@ formalisé indépendamment de Navier–Stokes :
 Cette cible certifierait l'inversion `(47) -> (49)` et l'échec de l'égalité
 sur les plateaux. Elle ne certifierait ni l'inégalité d'O'Neil appliquée à
 Biot–Savart, ni l'enveloppe (47), ni une conclusion de régularité Clay.
+
+## Backlog issu du cycle 0016 — opérateurs de Hardy logarithmiques
+
+Le transfert fonctionnel offre trois noyaux formalisables après les priorités
+finies existantes :
+
+1. formaliser l'inversion de
+   `mu(lambda)≤V[(Omega/lambda)/log(lambda/Omega)]^(3/2)` par le candidat
+   `lambda_s=3Omega(V/s)^(2/3)/log(V/s)`;
+2. prouver le coeur de Hardy avec constante trois et le supersolution
+   `G(T)=20exp(T/3)/(1+T)` pour la queue intermédiaire;
+3. formaliser le contre-lemme
+   `R(exp(-3n))≥3n/256`, qui réfute le statut `O(1)` du reste de (46);
+4. séparer abstraitement un opérateur `B` d'un noyau harmonique `h` et prouver
+   l'absorption de `||h||_infinity` dans l'enveloppe aux petits volumes.
+
+Ces cibles certifieraient des inégalités scalaires et la logique de jauge, pas
+l'inégalité d'O'Neil complète sur des espaces de Lorentz, la décomposition de
+Hodge sur `R³`, ni la production dynamique de (40). La formalisation du noyau
+Fourier–Leray reste prioritaire avant ces lemmes exponentiels.

@@ -6,8 +6,8 @@ des décisions reste dans les checkpoints.
 
 | Priorité | Question falsifiable | Pourquoi maintenant | Critère de sortie |
 |---:|---|---|---|
-| 1 | les équations (40)–(41) impliquent-elles quantitativement (47), avec les deux intégrales d'O'Neil, le reste positif de (46), la jauge Biot–Savart et des constantes uniformes en temps ? | le cycle 0015 ferme l'inversion aval `(47) -> (49)`; c'est maintenant le premier raccord PDE non reproduit de la chaîne | dérivation à seuils et constantes suivis, ou profil décroissant/admissible réfutant une intégrale ou l'uniformité |
-| 2 | une inégalité locale de stretching positif peut-elle être fermée avec une queue de strain lointain explicite et sommable, sans supposer la norme critique recherchée ? | le cycle 0013 prouve que toute suppression de cette queue est fausse; le commutateur dyadique de la prépublication reste le test primaire suivant | borne annulaire/Carleson uniforme, ou contre-profil multi-échelle à énergie suivie |
+| 1 | la dérivation dynamique menant à (40) conserve-t-elle un seuil de troncature, un coefficient de Grönwall et une constante de Poincaré uniformes jusqu'à `T*`, indépendants de l'itération De Giorgi ? | le cycle 0016 ferme conditionnellement tout le transfert fonctionnel aval `(40) -> (49)`; (40) devient la première prémisse PDE non reproduite | récurrence De Giorgi à constantes suivies et seuil fixe, ou dépendance explicite réfutant l'uniformité |
+| 2 | l'estimation locale du commutateur du théorème 4.1 contrôle-t-elle toutes les queues dyadiques avec une constante sommable et uniforme en temps ? | c'est l'entrée géométrique de la production de (40); le cycle 0013 interdit de supprimer la queue non locale | borne annulaire/Carleson uniforme, ou contre-profil multi-échelle à énergie suivie |
 | 3 | un problème renormalisé NS peut-il être réduit à un opérateur compact avec bornes de queue certifiables ? | préalable à toute preuve assistée par ordinateur | rayon de contraction validable sous raffinement |
 | 4 | le noyau Fourier fini énergie–Leray peut-il être formalisé sans axiome ni `sorry` en Lean ? | petite brique stable, indépendante des scénarios spéculatifs | build épinglé + `#print axioms` vide hors logique standard |
 
@@ -116,6 +116,25 @@ logarithmique trois est asymptotiquement optimale. En revanche, l'identité
 temporelle est aussi fausse si le cutoff `v_0` dégénère. Le passage
 `(47) -> (49)` est donc fermé après réparation au statut `COMPUTATION_ONLY`,
 sans valider l'obtention de (47) ni un profil ponctuel radial de la vitesse.
+
+## Résultat positif borné et réfutations du cycle 0016
+
+Une queue (40) adimensionnée et uniforme, complétée par
+`omega∈L^{3/2,infinity}` et une décomposition
+`u=B[omega]+h` à mode harmonique borné, implique quantitativement
+
+```text
+u*(v)<=Qv^(-1/3)/log(eV/v),  0<v<=Vexp(-6),
+```
+
+avec `Q` explicite et invariant d'échelle. Le transfert fonctionnel
+`(40) -> (47)` est donc fermé après révision au statut `COMPUTATION_ONLY`.
+
+Deux lectures littérales sont réfutées. Le reste positif de (46) diverge
+comme `9v^(-1/3)/log²(e/v)` et n'est pas `O(1)`, même s'il reste absorbable.
+Par ailleurs, un champ constant borné a vorticité nulle mais vitesse non nulle;
+(41) doit fixer ou retrancher la composante harmonique. Ces corrections ne
+produisent pas (40) depuis la dynamique et ne valident pas le théorème 7.4.
 
 ## Règle de pivot
 

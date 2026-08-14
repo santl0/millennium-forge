@@ -301,7 +301,7 @@ pas une régularité globale par elles-mêmes.
 ## Conclusion falsifiable
 
 La bibliographie ferme de nombreuses classes conditionnelles mais ne fournit
-pas l'arête « énergie -> borne critique ». Treize cycles ont déjà éliminé ou
+pas l'arête « énergie -> borne critique ». Seize cycles ont déjà éliminé ou
 borné plusieurs substituts : transfert inviscide mono-échelle, déplétion
 triadique universelle, tension de pression issue de l'énergie, compacité de
 traces mobiles, module temporel critique et composition naïve ESS–KNSS. Le
@@ -341,3 +341,21 @@ la vorticité, ni une représentation ponctuelle radiale de la vitesse. L'arête
 active est désormais `(40) -> (41) -> (47)`, où subsistent la jauge
 Biot–Savart, les deux intégrales d'O'Neil, le reste positif de (46) et leur
 uniformité temporelle.
+
+Le cycle 0016 ferme conditionnellement le raccord fonctionnel restant
+`(40) -> (47)`. Une queue de vorticité
+`lambda^(-3/2)log^(-3/2)`, avec seuil uniforme, contrôle global
+`L^{3/2,infinity}` et jauge de Hodge fixée, entraîne une enveloppe de vitesse
+`v^(-1/3)log^(-1)` à constante explicite et sans perte d'échelle. La source
+primaire d'O'Neil confirme les deux opérateurs de (41).
+
+L'audit découvre néanmoins deux défauts locaux dans la v2. Le reste positif de
+(46) n'est pas `O(1)` : il diverge comme
+`9v^(-1/3)log^(-2)(e/v)`, tout en restant inférieur au terme principal. Sous
+la seule hypothèse `u_0∈L∞(R³)`, Biot–Savart détermine aussi la vitesse
+seulement modulo une composante harmonique constante; le champ constant non
+nul réfute (41) appliquée littéralement à la vitesse entière. Les deux défauts
+sont réparables et ne valident pas pour autant la production dynamique de
+(40). Celle-ci devient le verrou actif : uniformité des seuils de troncature,
+du coefficient de Grönwall et de la constante de Poincaré dans l'étape
+De Giorgi.
