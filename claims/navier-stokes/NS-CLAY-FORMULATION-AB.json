@@ -1,0 +1,32 @@
+{
+  "id": "NS-CLAY-FORMULATION-AB",
+  "problem": "navier-stokes",
+  "statement": "Les alternatives positives Clay (A) et (B) demandent, pour toute donnée initiale lisse divergence-free admissible et toute viscosité positive, une solution globale lisse non forcée respectivement sur R^3 avec énergie uniformément bornée, ou sur le tore tridimensionnel avec vitesse et pression périodiques.",
+  "status": "SOURCE_VERIFIED",
+  "hypotheses": [
+    "dimension spatiale n=3",
+    "viscosité nu>0",
+    "force extérieure nulle",
+    "donnée de Schwartz sur R^3 ou donnée C-infinity périodique",
+    "divergence initiale nulle"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "Charles L. Fefferman, Existence and Smoothness of the Navier-Stokes Equation, Clay Mathematics Institute, alternatives (A)-(B) et erratum: https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-state-of-art/checkpoint-initial"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "OpenAI Codex, seconde lecture non indépendante",
+    "notes": "Quantificateurs, force, domaine, énergie et erratum sur la périodicité de p comparés au PDF officiel."
+  }
+}

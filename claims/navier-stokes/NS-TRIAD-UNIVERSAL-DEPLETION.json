@@ -1,0 +1,39 @@
+{
+  "id": "NS-TRIAD-UNIVERSAL-DEPLETION",
+  "problem": "navier-stokes",
+  "statement": "Il existe une suite epsilon_N tendant vers zéro telle que |Pi_N(u)| soit au plus epsilon_N N E(u)^(3/2) pour tout polynôme trigonométrique réel divergence-free d'hélicité nulle.",
+  "status": "REFUTED",
+  "hypotheses": [
+    "tore tridimensionnel normalisé",
+    "convention de Fourier u(x)=somme_k u_hat(k) exp(i k.x)",
+    "N est un entier au moins égal à 1 et la coupure basse est 0<|k|<=N en norme euclidienne",
+    "E=(1/2) somme_k |u_hat(k)|^2",
+    "Q_k=-i P_k somme_(p+q=k) (q point u_hat(p)) u_hat(q)",
+    "Pi_N=-somme_(0<|k|<=N) Re(conj(u_hat(k)) point Q_k)",
+    "polynômes trigonométriques réels divergence-free"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "counterexample",
+      "reference": "experiments/navier-stokes/triad-phase/test_triad_phase.py",
+      "sha256": "c469d9a9984753c95fa0f21cd8fbeb723bd6ed1f8c6a500376af02d13ce5da33"
+    },
+    {
+      "kind": "computation",
+      "reference": "TRI-PHASE-1: pour tout entier N>=1, E=6, helicite=0, |Pi_N|=2N et (|Pi_N|/(N E^(3/2)))^2=1/54, tous résidus rationnels nuls"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "human_ai",
+    "producer": "travail historique importé et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-state-of-art/import-and-reproduction"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Sous-agent Codex distinct, même famille de modèle; non indépendant au sens externe",
+    "notes": "Polarité du claim corrigée après attaque; dérivation arbitraire en N et cas adverses N=3,5,127,10^20 contrôlés. La vérification FFT historique n'est pas importée faute d'environnement NumPy épinglé."
+  }
+}

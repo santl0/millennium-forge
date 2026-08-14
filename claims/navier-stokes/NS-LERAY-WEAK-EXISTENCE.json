@@ -1,0 +1,31 @@
+{
+  "id": "NS-LERAY-WEAK-EXISTENCE",
+  "problem": "navier-stokes",
+  "statement": "Pour des données divergence-free d'énergie finie, la théorie de Leray construit sur R^3 des solutions faibles globales satisfaisant une borne d'énergie; cette existence ne démontre ni leur unicité ni leur régularité globale.",
+  "status": "SOURCE_VERIFIED",
+  "hypotheses": [
+    "Navier-Stokes incompressible visqueux en dimension trois",
+    "domaine R^3",
+    "donnée initiale divergence-free dans la classe d'énergie",
+    "solution faible au sens de Leray"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "Jean Leray, Sur le mouvement d'un liquide visqueux emplissant l'espace, Acta Mathematica 63 (1934), 193-248: https://doi.org/10.1007/BF02547354"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-state-of-art/checkpoint-initial"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "OpenAI Codex, seconde lecture non indépendante",
+    "notes": "La conclusion a été volontairement limitée à l'existence faible et à l'énergie."
+  }
+}

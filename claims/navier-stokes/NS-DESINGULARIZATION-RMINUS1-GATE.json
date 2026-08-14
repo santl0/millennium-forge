@@ -1,0 +1,37 @@
+{
+  "id": "NS-DESINGULARIZATION-RMINUS1-GATE",
+  "problem": "navier-stokes",
+  "statement": "Pour un profil angulaire fixe tridimensionnel non nul homogène de degré -1 conservé sur epsilon<=r<=1, la contribution de coquille à la norme L^3 au cube diverge comme log(1/epsilon), la norme L^q croît comme epsilon^(3/q-1) pour q>3, et la norme L^2 du gradient croît comme epsilon^(-1/2).",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "0<epsilon<1 et u_0(r,theta)=r^-1 A(theta) sur la coquille epsilon<=r<=1",
+    "A est fixe, indépendant de epsilon, et 0<integrale_S2 |A|^q<infini",
+    "A appartient à H^1(S2) pour la conclusion sur le gradient",
+    "la coquille donne seulement une borne inférieure pour une troncature globale",
+    "aucune affirmation sur l'évolution Navier-Stokes"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "experiments/navier-stokes/desingularization-gate/desingularization_gate.py",
+      "sha256": "70a7b82de2f93117e525e4ceb4e85d2282e28dd508047cc2f81fbbce18482b49"
+    },
+    {
+      "kind": "computation",
+      "reference": "DESINGULARIZATION-GATE-1, intégrales radiales rationnelles exactes et logarithme symbolique, résidu zéro"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-state-of-art/cycle-0001"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Sous-agent Codex distinct, même famille de modèle; non indépendant au sens externe",
+    "notes": "Révisé après attaque: hypothèses angulaires et epsilon ajoutées, normes distinguées de leurs puissances, portée limitée à une borne de coquille sans implication dynamique."
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "NS-HWY-UNFORCED-NONUNIQUENESS-V2",
+  "problem": "navier-stokes",
+  "statement": "La prépublication Hou-Wang-Yang arXiv:2509.25116v2 revendique sur R^3 une infinité de solutions adaptées de Leray-Hopf non forcées issues d'une même donnée compacte, lisse hors de l'origine et dans L^q pour q<3; la donnée est singulière à l'origine et n'est pas une donnée Clay.",
+  "status": "SOURCE_VERIFIED",
+  "hypotheses": [
+    "Navier-Stokes incompressible 3D non forcé avec viscosité normalisée",
+    "domaine R^3",
+    "donnée initiale compacte mais singulière à l'origine",
+    "version arXiv v2 du 19 mars 2026",
+    "SOURCE_VERIFIED qualifie la lecture de la source, pas l'acceptation de la preuve"
+  ],
+  "dependencies": [
+    "NS-LERAY-WEAK-EXISTENCE"
+  ],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "T. Hou, Y. Wang, C. Yang, Nonuniqueness of Leray-Hopf solutions to the unforced incompressible 3D Navier-Stokes Equation, arXiv:2509.25116v2: https://arxiv.org/abs/2509.25116"
+    },
+    {
+      "kind": "computation",
+      "reference": "Code des auteurs annoncé pour la preuve assistée, non reproduit localement: https://github.com/HouGroup2026/3d-navier-stokes-nonuniqueness"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-state-of-art/checkpoint-initial"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "OpenAI Codex, seconde lecture non indépendante",
+    "notes": "Théorème 1 et avertissement des auteurs sur donnée singulière versus blow-up rétrograde lus dans v2; CAP non reproduit, environ 800 Go annoncés."
+  }
+}

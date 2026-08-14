@@ -1,0 +1,40 @@
+{
+  "id": "NS-VISCOSITY-GATE-MONOSCALE",
+  "problem": "navier-stokes",
+  "statement": "Dans l'ansatz u=tau^lambda U(x/tau^(1+lambda)), le rapport d'échelle viscosité sur inertie est proportionnel à nu tau^(-1-2lambda); il diverge lorsque lambda>-1/2 et rend invalide un transfert perturbatif mono-échelle direct d'un tel profil Euler vers Navier-Stokes.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "viscosité nu>0 sur R^3 ou dans une formulation locale sans effet de frontière",
+    "ansatz mono-échelle u=tau^lambda U(y), p=tau^(2lambda) P(y), y=x/tau^(1+lambda), avec div U=0",
+    "comparaison dans une même norme homogène où le coefficient inertiel et Delta U sont finis et non nuls",
+    "comparaison dimensionnelle des termes, sans affirmation d'existence du profil"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "experiments/navier-stokes/viscosity-gate/test_viscosity_gate.py",
+      "sha256": "201cc2e97cb6ec35618019512fc6e9225459034e1bd6c65ac67165e5be08fb0a"
+    },
+    {
+      "kind": "computation",
+      "reference": "VAS-1, fractions rationnelles exactes, résidu zéro"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "Diagnostics CCF/IPM non utilisés dans le claim: arXiv:2509.14185 et arXiv:2511.22819"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "human_ai",
+    "producer": "travail historique importé et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-state-of-art/import-and-reproduction"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Sous-agent Codex distinct, même famille de modèle; non indépendant au sens externe",
+    "notes": "Script byte-identique et sortie reproduite sous Python 3.13.14; hypothèses de pression, divergence, norme et coefficients ajoutées après attaque. La portée reste strictement mono-échelle."
+  }
+}
