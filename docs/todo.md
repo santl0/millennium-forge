@@ -75,6 +75,11 @@
 - [ ] Sur la branche restante `|supp F|~R^2`, construire ou minorer une boule
   d'oscillation de `nabla_perp F/|nabla F|`; attaquer d'abord par plateaux et
   compensateurs rares.
+- [x] Fermer les sections épaisses de diamètre axial `O(R)` par troncature,
+  coaire et compensation conique; puissance directionnelle six au cycle 0033.
+- [ ] Pour des cellules axialement dispersées et hétérogènes, sélectionner un
+  bloc dont le rapport endpoint local reste non dégénéré, ou construire une
+  distribution exacte sans bloc dominant.
 - [ ] Formuler un ledger Morrey–Carleson pour des tubes hétérogènes
   `A_j,h_j,q_j`; tester si le budget faible-Lorentz force le collapse.
 - [ ] Si un gate statique survit, obtenir un temps d'interaction uniforme face

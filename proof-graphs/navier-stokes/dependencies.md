@@ -382,3 +382,39 @@ masquage local exact -/-> survie globale du gate de support.
 2. De cette boule à une minoration log-BMO all-ball — conditionnel.
 3. Des trois gates statiques à un temps d'interaction et au profil limite —
    manquant.
+
+## Cycle 0033 — arête directionnelle de diamètre borné
+
+```text
+NS-BOUNDED-CROSS-SECTION-DIRECTION-GATE
+  -- niveau presque optimal --> lambda^3|{|F|>lambda}|>=K_f^3/2
+  -- scission signée --> G=(sigma F-lambda/2)_+
+  -- weak HLS --> aire active >=c(K_f/K_g)^6
+  -- NS-SRC-0132 --> TV(G)>=cK_f^2/K_g
+  -- identité cylindrique --> ||curl U_G||_1=2pi R TV(G)
+  -- curl compact --> moyenne vectorielle nulle
+  -- couverture de S^2 --> masse conique >=c||curl U_G||_1
+  -- NS-LORENTZ-CONE-COMPENSATION --> MO_B>=c m^3/(K_w^3|B|)
+  -- diamètre axial O(R) --> |B|<=C_Lambda R^3
+  -- comparaisons cylindriques --> MO_B>=c_Lambda(K_u/K_w)^6
+  -- concentration --> log-BMO non uniforme
+  -- réfute --> profil pure-swirl borné passant les trois gates
+  -- ouvre --> GAP-AXIALLY-DISPERSED-PURE-SWIRL-SELECTION.
+```
+
+Arêtes non fermées :
+
+```text
+endpoints globaux de cellules hétérogènes
+  -- ? --> sélection d'un rapport local non dégénéré
+diamètre axial >>R
+  -- perte --> volume de la boule globale
+degré de la Gauss map
+  -- insuffisant seul --> aucune masse/épaisseur quantitative.
+```
+
+## Priorité après le cycle 0033
+
+1. Sélection Lorentz d'une cellule dominante — manquante.
+2. Packing axial hétérogène sans dominance — expérience décisive.
+3. Temps, pression et profil limite — toujours différés.

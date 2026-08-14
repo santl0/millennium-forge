@@ -835,3 +835,46 @@ ce no-go statique en régularité générale. Les sections d'aire comparable à
 `R^2`, les vitesses poloïdales et non axisymétriques, la pression et le temps
 restent ouverts. Le verrou actif devient
 `GAP-THICK-CROSS-SECTION-GRADIENT-DIRECTION`.
+
+## Cycle 0033 — coercivité directionnelle sur une section de diamètre borné
+
+Le support topologique épais n'est pas utilisé directement. À partir d'un
+superniveau presque optimal de la vitesse, une troncature signée
+`G=(sigma F-lambda/2)_+` vérifie simultanément :
+
+```text
+|{sigma F>lambda}|^(1/6)>=c K_f/K_g,
+TV(G)>=c K_f^2/K_g,
+integral |curl[(R/r)G e_theta]|>=c R K_f^2/K_g.
+```
+
+Le curl tronqué a moyenne vectorielle nulle. Une partition finie des directions
+sélectionne une masse conique, puis `NS-LORENTZ-CONE-COMPENSATION` donne, sur
+une vraie boule contenant la tranche axiale `|z-z_0|<Lambda R`,
+
+```text
+MO_B(zeta)>=c_Lambda
+  (||U||_(L^(3,infinity))/||curl U||_(L^(3/2,infinity)))^6.
+```
+
+Cette borne vaut pour toute extension `L1` de la direction, même non unitaire
+sur les zéros, et pour tout potentiel `F` non séparable. Sous les deux gates
+endpoint et `R_n->0`, le poids `|log r_B|` diverge donc. Les plateaux épais et
+les compensateurs rares restent exclus tant que le diamètre axial est `O(R)`.
+
+Le certificat exact exécute 2 884 assertions sans échec. Il vérifie notamment
+la réciprocité entre faible fraction directionnelle et coût endpoint, ainsi
+que le coût `N` de `N` cellules identiques. Des amplitudes dyadiques gardent les
+endpoints bornés mais laissent la première cellule dominante.
+
+Le résultat est `COMPUTATION_ONLY`, statique et pure-swirl. Le verrou actif
+devient `GAP-AXIALLY-DISPERSED-PURE-SWIRL-SELECTION` : sélectionner un bloc
+local non dégénéré parmi des cellules hétérogènes séparées, ou construire une
+distribution sans bloc dominant qui réfute cette sélection.
+
+La veille topologique ajoute Hopf, Amann, Brezis–Nirenberg Part II et Whitney
+(`NS-SRC-0136`–`0139`). Ils donnent qualitativement
+`extremum isolé -> direction non-VMO -> log-BMO infini`, mais aucune masse de
+vorticité ni constante endpoint. Le facteur de la vraie boule dans le résultat
+quantitatif est `c(9/4+Lambda^2)^(-3/2)`; le meilleur facteur `Lambda^-1`
+concerne seulement le domaine annulaire axial, qui n'est pas une boule.

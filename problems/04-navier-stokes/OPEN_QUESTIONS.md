@@ -259,3 +259,21 @@ moins comparable.
 La branche « deux couches minces » est fermée plus fortement que le critère
 d'abandon prévu : le weak HLS du champ total donne directement
 `K_U<=C(S_2/R^2)^(1/6)K_W`, sans isoler aucune transition.
+
+## Priorité active après le cycle 0033
+
+1. **`GAP-AXIALLY-DISPERSED-PURE-SWIRL-SELECTION`.** Pour une union de cellules
+   éloignées, les quasi-normes globales impliquent-elles l'existence d'une
+   cellule ou troncature locale avec rapport endpoint non dégénéré ? Le lemme
+   doit couvrir amplitudes, tailles et supports hétérogènes.
+2. **Distribution sans bloc dominant.** Chercher une suite où les fonctions de
+   distribution globales satisfont les deux gates, alors que chaque cellule
+   a un rapport local tendant vers zéro. Une telle suite réfuterait le pivot de
+   sélection et imposerait un ledger collectif non local.
+3. **Corridors entre cellules.** Même si un bloc local est sélectionné, auditer
+   si une extension globale peut réduire son oscillation sur la boule locale;
+   le théorème 0033 affirme que non lorsque la direction active du bloc est
+   conservée.
+
+Le degré topologique seul est abaissé : il ne quantifie ni la masse active ni
+le volume de la boule. La troncature/coaire est désormais le mécanisme retenu.

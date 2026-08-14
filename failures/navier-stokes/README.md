@@ -1328,6 +1328,34 @@ rapport d'aspect reste une constante auxiliaire à suivre.
 - Statut : échappement par couches minces `REFUTED`; branche abandonnée et
   pivot vers `GAP-THICK-CROSS-SECTION-GRADIENT-DIRECTION`.
 
+## `FAIL-NS-0065` — Plateau épais à retour rare pris pour un profil directionnel
+
+- Date : 2026-08-14.
+- Cadre : swirl pur statique `U=(R/r)F e_theta` sur `R3`, supporté dans
+  `R/2<r<3R/2` et une tranche `|z-z_0|<Lambda R`.
+- Cible : conserver un plateau de vitesse faible-`L3` non petit, repousser le
+  retour du gradient dans une phase rare et obtenir une direction log-BMO
+  uniforme sous concentration.
+- Attaque : troncature d'un superniveau presque optimal, weak HLS, coaire,
+  annulation vectorielle du curl et compensation conique sur une boule de
+  volume `O_Lambda(R^3)`.
+- Résultat : toute extension de la direction vérifie
+
+  ```text
+  MO_B>=c_Lambda
+    (||U||_(L^(3,infinity))/||curl U||_(L^(3/2,infinity)))^6.
+  ```
+
+- Test adverse : pour une fraction de retour `epsilon`, le modèle antipodal
+  exact a `K_w^3=(1-epsilon)^3/epsilon` et
+  `MO=4epsilon(1-epsilon)`; cacher la direction fait diverger l'endpoint.
+- Résidu certifié : zéro échec sur 2 884 identités rationnelles; empreinte
+  `4759238f59a46f64f0a547881f8aeb86ca6755ceea06c4a1728648db57847f8f`.
+- Portée : une dispersion axiale de diamètre `>>R`, des cellules hétérogènes,
+  une composante poloïdale ou une trajectoire ne sont pas exclues.
+- Statut : plateau/compensateur dans une cellule bornée `REFUTED`; pivot vers
+  `GAP-AXIALLY-DISPERSED-PURE-SWIRL-SELECTION`.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,

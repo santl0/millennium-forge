@@ -262,3 +262,16 @@
   de promouvoir une dérivation IA nouvelle en preuve papier.
 - Le prochain verrou est `GAP-THICK-CROSS-SECTION-GRADIENT-DIRECTION`; aucune
   pression ou évolution n'est calculée avant survie du gate statique.
+
+### 2026-08-14 — diamètre borné fermé par troncature conique
+
+- La troncature d'un superniveau presque optimal est retenue avec le score
+  `20/20`; le degré topologique sans contrôle de volume est abaissé.
+- Coaire porte sur la somme tronquée réelle, ce qui conserve les annulations
+  internes sans réintroduire un ledger par couche.
+- Le support axial `O(R)` fournit une vraie boule de volume `O(R^3)`; sur cette
+  boule, la compensation conique donne la puissance endpoint six.
+- Les plateaux, retours rares et superpositions non séparables dans une cellule
+  bornée sont abandonnés comme échappements aux trois gates.
+- `GAP-AXIALLY-DISPERSED-PURE-SWIRL-SELECTION` devient actif. Aucune inférence
+  vers la pression ou le temps n'est autorisée avant sélection d'un bloc local.

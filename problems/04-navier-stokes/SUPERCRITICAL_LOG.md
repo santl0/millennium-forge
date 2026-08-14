@@ -685,3 +685,28 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   restent non contrôlés.
 - Pivot : branche mince non séparable abandonnée;
   `GAP-THICK-CROSS-SECTION-GRADIENT-DIRECTION` devient actif.
+
+## 2026-08-14 — Coercivité directionnelle d'une tranche axiale bornée
+
+- Objet : tout `U=(R/r)F e_theta` avec
+  `supp F subset {R/2<r<3R/2, |z-z_0|<Lambda R}`.
+- Troncature : un niveau presque optimal fournit
+  `TV(G)>=cK_f^2/K_g`, sans hypothèse de profil, signe ou séparabilité.
+- Compensation : le curl tronqué est de moyenne nulle et porte une masse
+  conique `>=cR K_f^2/K_g`.
+- Gate : toute extension de direction satisfait
+
+  ```text
+  MO_B>=c_Lambda(K_u/K_w)^6
+  ```
+
+  sur une boule de rayon `C_Lambda R`.
+- Conséquence : sous `K_u>=kappa`, `K_w<=K` et `R->0`, le coût log-BMO diverge
+  comme `(kappa/K)^6|log R|`.
+- Test adverse exact : coques de plateau, retours antipodaux rares et jusqu'à
+  256 cellules séparées; 2 884 contrôles, zéro échec.
+- Empreinte :
+  `4759238f59a46f64f0a547881f8aeb86ca6755ceea06c4a1728648db57847f8f`.
+- Limite : diamètre axial non borné, cellules hétérogènes, composantes
+  poloïdales et dynamique non couverts.
+- Pivot : `GAP-AXIALLY-DISPERSED-PURE-SWIRL-SELECTION`.

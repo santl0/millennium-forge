@@ -217,3 +217,12 @@ premier push autorisé de
 branche par défaut distante. La branche `main` reste uniquement locale et
 intacte; aucune pull request ne peut être ouverte tant qu'une base distante
 distincte n'est pas publiée par le socle. Aucun historique n'a été réécrit.
+
+Le cycle 0033 remplace le test topologique brut par une troncature quantitative.
+Pour tout swirl pur dont le support axial tient dans `O(R)`, weak HLS et coaire
+produisent une masse `L1` du curl tronqué; son annulation vectorielle et le
+lemme conique du cycle 0026 forcent
+`MO_B>=c(K_u/K_w)^6` sur une boule de rayon `O(R)`. Les deux endpoints rendent
+donc le log-BMO non uniforme sous concentration, y compris pour les plateaux
+épais et les compensateurs rares. Le prochain verrou porte sur des cellules
+axialement dispersées et hétérogènes, avant toute sortie du swirl pur.

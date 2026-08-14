@@ -862,3 +862,25 @@ La première cible raisonnable est le module 3, qui dépend seulement de la
 définition de faible-`Lp`. Les modules HLS/Lorentz exigent une bibliothèque
 d'interpolation épinglée. Même compilé, cet objet certifierait un lemme
 elliptique statique pour swirls purs séparés de l'axe, pas la dynamique Clay.
+
+## Backlog issu du cycle 0033 — troncature et masse conique
+
+Le théorème directionnel se factorise en modules formels réutilisables :
+
+1. sélection d'un niveau `lambda` à facteur deux dans une quasi-norme faible;
+2. scission positive/négative et règle de chaîne pour
+   `G=(sigma F-lambda/2)_+`;
+3. déduction
+   `|A|^(1/6)>=c||F||_(3,infinity)/||nabla F||_(3/2,infinity)` par weak HLS;
+4. coaire plus isopérimétrie plane donnant
+   `TV(G)>=c||F||_(3,infinity)^2/||nabla F||_(3/2,infinity)`;
+5. identité `||curl[(R/r)G e_theta]||_1=2pi R TV(G)` et moyenne vectorielle
+   nulle du curl lipschitzien compact;
+6. couverture finie de `S^2` par cônes orientés;
+7. réutilisation de `NS-LORENTZ-CONE-COMPENSATION` sur la boule axiale;
+8. algèbre finale du sixième exposant endpoint.
+
+Les modules 1, 2 et 8 sont les premières cibles raisonnables. Le module 4
+exige BV/coaire, tandis que 7 dépend du noyau non encore formalisé du cycle
+0026. La compilation éventuelle certifierait une obstruction statique à
+diamètre borné, jamais une solution de Navier–Stokes.

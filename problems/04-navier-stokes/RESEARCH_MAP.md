@@ -1266,3 +1266,42 @@ directionnelle.
    sans rendre `K_U` petit ni `K_W` grand.
 3. Propagation/diffusion — encore différée jusqu'à survie simultanée des trois
    gates statiques.
+
+## Cycle 0033 : troncature critique et compensation conique
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| troncature presque optimale puis compensation conique sur diamètre `O(R)` | 5 | 5 | 5 | 5 | **20** |
+| obstruction universelle par degré sans diamètre | 5 | 2 | 4 | 5 | 16 |
+| optimisation numérique directe du BMO des plateaux | 4 | 3 | 4 | 3 | 14 |
+
+```text
+superniveau presque optimal de |F|
+  -- scission signée --> A={sigma F>lambda}
+  -- weak HLS --> |A|^(1/6)>=c K_f/K_g
+  -- coaire + isopérimétrie --> TV(G)>=c K_f^2/K_g
+  -- lift cylindrique --> ||W_G||_1>=c R K_f^2/K_g
+  -- curl compact --> integral W_G=0
+  -- couverture finie de S^2 --> masse dans un cône orienté
+  -- NS-LORENTZ-CONE-COMPENSATION --> MO_B>=c(K_u/K_w)^6
+  -- diamètre axial O(R) --> |B|<=C R^3
+  -- concentration --> divergence du log-BMO directionnel
+  -- réfute --> plateau/retour rare dans une cellule bornée
+  -- ouvre --> GAP-AXIALLY-DISPERSED-PURE-SWIRL-SELECTION.
+```
+
+La nouvelle perte est localisée : sans borne sur le diamètre axial, la boule
+globale peut avoir un volume arbitrairement grand. L'expérience montre que des
+cellules égales paient leur cardinal et que des amplitudes dyadiques conservent
+une cellule dominante; le cas hétérogène sans dominance reste manquant.
+
+## Priorité après le cycle 0033
+
+1. `GAP-AXIALLY-DISPERSED-PURE-SWIRL-SELECTION` — actif; prouver une sélection
+   Lorentz d'une cellule dont `K_(u,j)/K_(w,j)` reste non petit, sans supposer
+   des volumes ou profils identiques.
+2. Construire une matrice exacte de cellules hétérogènes `(V_j,R_j,S_j)` et
+   chercher une distribution où aucun bloc ne domine mais les deux endpoints
+   globaux restent non dégénérés.
+3. Sortir du swirl pur seulement si cette sélection est réfutée; recalculer
+   alors la projection de Leray et les composantes poloïdales.
