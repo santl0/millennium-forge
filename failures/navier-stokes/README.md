@@ -1165,6 +1165,63 @@ rapport d'aspect reste une constante auxiliaire à suivre.
   automatiquement pour la périodisation cubique ni pour une donnée signée.
 - Statut : propagation globale `REFUTED` dans la sous-classe indiquée.
 
+## `FAIL-NS-0056` — Impulsion nulle assimilée à une vitesse de Schwartz
+
+- Date : 2026-08-14.
+- Cadre : paire de tores compacts congruents, translatés et de signes opposés
+  sur `R^3`.
+- Cible : satisfaire la décroissance rapide Clay A en annulant le premier
+  moment hydrodynamique.
+- Attaque : développement multipolaire et calcul du second moment traduit.
+- Résultat : `I(W_++W_-)=0`, mais `Q_(11,2)=4aI_ring!=0`; le champ lointain
+  contient un terme homogène de degré `-4`.
+- Statut : raccord Schwartz par impulsion seule `REFUTED`; une vitesse compacte
+  doit être construite en amont ou tous les multipôles doivent être annulés.
+
+## `FAIL-NS-0057` — Nombre fini de correcteurs supposé restaurer `L^3`
+
+- Date : 2026-08-14.
+- Cadre : nombre uniformément borné de tubes toroïdaux disjoints, rapports
+  `eta_j=h_j/R_j->0`, faible-`L^(3/2)` global uniforme.
+- Cible : utiliser signes, translations ou annulations de moments pour obtenir
+  `liminf ||u||_3>0`.
+- Attaque : chaque quasi-norme individuelle est au plus la globale et
+
+  ```text
+  ||sum_j u_j||_3<=CK sum_j(eta_j+eta_j^2)^(1/3).
+  ```
+
+- Résultat : pour cardinal fixé, la vitesse critique tend vers zéro. Stokes
+  confirme localement la puissance `||u||_3^3~eta` pour la paire à plateau.
+- Statut : toute correction finie du profil mince `REFUTED`; cardinal croissant
+  ou géométrie non tubulaire requis.
+
+## `FAIL-NS-0058` — Rupture d'axisymétrie prise pour non-dégénérescence
+
+- Date : 2026-08-14.
+- Cadre : deux axes parallèles déplacés transversalement, impulsions opposées.
+- Cible : quitter la classe sans swirl pour rouvrir un scénario de blow-up.
+- Attaque : l'impulsion et le BMO restent contrôlés, mais l'équivalent critique
+  est inchangé.
+- Résultat : la donnée n'est plus axisymétrique, néanmoins `||u||_3->0` et la
+  théorie perturbative s'applique lorsque le profil est assez mince.
+- Statut : inférence `REFUTED`; briser une symétrie ne remplace pas un seuil
+  critique non petit.
+
+## `FAIL-NS-0059` — Corridors signés supposés propagés à travers un plan nodal
+
+- Date : 2026-08-14.
+- Cadre : paire coaxiale NS sans swirl, impaire en `z`, unisignée dans chaque
+  demi-espace.
+- Cible : conserver à `t>0` les deux rotations statiques séparées vers `e_z`.
+- Attaque : diffusion, principe du maximum fort et réflexion `z->-z`.
+- Résultat : dans toute boule centrée sur `z=0` loin de l'axe, les deux
+  demi-boules portent des directions opposées, la moyenne vectorielle est
+  nulle et `MO=1`. Le log-BMO global diverge.
+- Portée : ne couvre ni la paire transversale sans cette symétrie, ni Euler où
+  le corridor nul peut rester transporté à temps fini.
+- Statut : propagation coaxiale signée `REFUTED`.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,

@@ -691,3 +691,32 @@ Le sous-problème poloidal reçoit parallèlement un lemme quantitatif : un exc�
 devient `GAP-MOMENT-CORRECTED-TOROIDAL-CASCADE` : annuler d'abord l'impulsion
 par une paire de tores signés, conserver faible-`L^(3/2)` et log-BMO, quitter
 la classe sans swirl et empêcher `||u||_3` de tendre vers zéro.
+
+Le cycle 0029 exécute cette première correction. Deux tores congruents, de
+signes opposés et d'axes parallèles déplacés transversalement, annulent
+exactement l'impulsion, conservent la criticité de vorticité et les corridors
+log-BMO, et brisent l'axisymétrie globale. Ce succès cinématique ne répare
+aucun des deux raccords Clay.
+
+D'une part, le second moment translaté reste non nul et produit une queue
+`|x|^-4` sur `R^3`; annuler l'impulsion n'équivaut pas à une vitesse de
+Schwartz. D'autre part, Stokes sur les sections du cœur et le potentiel
+tubulaire donnent l'équivalent critique
+
+```text
+cK^3 h/R<=||u||_3^3<=CK^3[(h/R)+(h/R)^2].
+```
+
+Il tend vers zéro dans le régime mince exigé par le corridor. Tout cardinal
+uniformément borné de tubes disjoints subit la même obstruction, quels que
+soient les signes et un nombre fini de moments annulés. Le verrou devient
+`GAP-MANY-TORUS-CRITICAL-ACCUMULATION` : seul un cardinal croissant avec
+addition cohérente des vitesses, ou une vitesse compacte construite en amont,
+reste informatif.
+
+La veille `NS-SRC-0113`–`0117` montre que les progrès 2025–2026 sur les
+paires anti-parallèles établissent des croissances Euler à temps infini dans
+la classe sans swirl. Ils n'impliquent ni concentration en temps fini, ni
+uniformité à viscosité fixée. Pour une paire visqueuse coaxiale signée, la
+diffusion crée en outre une interface directionnelle d'oscillation un sur le
+plan de symétrie; ce rejet dynamique ne couvre pas la paire transversale.

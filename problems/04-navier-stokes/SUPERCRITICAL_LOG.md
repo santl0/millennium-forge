@@ -600,3 +600,19 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   `0e1ea53d24e3c241c67e24a35bedbd81a16043cea580581ddc6c4f1f5729d274`.
 - Pivot : `GAP-MOMENT-CORRECTED-TOROIDAL-CASCADE` actif; annulation de
   l'impulsion, non-dégénérescence de `L^3` et sortie de la classe sans swirl.
+
+## 2026-08-14 — Paire à impulsion corrigée
+
+- Géométrie : deux tores signés congruents, axes parallèles déplacés de
+  `+/-3R e_1`; les corridors tournent séparément vers le même fond `e_z`.
+- Moment : moyenne vectorielle nulle pour chaque composante et impulsion totale
+  exactement nulle; le second moment traduit `Q_(11,2)=4aI_ring` survit.
+- Criticité : les normes forte et faible `L^(3/2)` restent d'ordre un.
+- Équivalent de vitesse : Stokes et Biot–Savart donnent
+  `cK^3h/R<=||u||_3^3<=CK^3(h/R+(h/R)^2)`.
+- Cardinal fixé : toute somme disjointe avec `max h_j/R_j->0` garde
+  `||u||_3->0`, même après correction d'un nombre fini de moments.
+- Artefact : 1842 contrôles rationnels exacts, zéro échec, empreinte
+  `527be8971f4bc5e2d7f22a3fb18a3d626b12cecc7f5dc71e39d40488b4a4a70c`.
+- Pivot : `GAP-MANY-TORUS-CRITICAL-ACCUMULATION`; auditer d'abord le budget
+  combiné faible-Lorentz, packing, cohérence de vitesse et moments.

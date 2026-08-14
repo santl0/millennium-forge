@@ -695,3 +695,23 @@ n'a été auditée ligne à ligne. Aucun claim du laboratoire ne les utilise.
   admissible ni validation publiée du mécanisme log-BMO récent. Les préprints
   cités restent classés `PREPRINT_CLAIM`. `NS-SRC-0112` indexe en particulier
   la v3 de Grujić sur le scénario Moffatt–Kimura, sans importer sa conclusion.
+
+## Audit ciblé du cycle 0029 — paires signées et moments
+
+- L'identité d'impulsion et l'expansion multipolaire utilisées par le cycle
+  sont recalculées dans les rapports; `NS-SRC-0068` fixe le cadre Biot–Savart,
+  sans promouvoir la dérivation interne en `PAPER_PROOF`.
+- Cinq sources récentes sont ajoutées : Choi–Jeong (`0113`), Lim–Jeong
+  (`0114`) et Gustafson–Miller–Tsai (`0115`) sont publiées; Egamberganov–Yao
+  (`0116`) et Cao–Fan–Qin v4 (`0117`) restent des prépublications. Toutes
+  concernent Euler axisymétrique sans swirl et la croissance à temps infini.
+- Aucun de ces résultats ne fournit un blow-up Navier–Stokes à viscosité
+  positive. L'ordre des limites dans la comparaison visqueuse de Choi–Jeong
+  est `sup_t` avant `nu->0`, pas une explosion à viscosité fixée.
+- Pour une paire NS coaxiale, impaire et signée, le principe du maximum donne
+  à temps positif deux demi-boules de directions opposées; l'oscillation sur
+  une boule coupant le plan nodal vaut exactement un. La paire transversale du
+  claim n'est pas couverte par cette symétrie.
+- Kato (`0010`) porte sur `R3`. Le seuil de petite donnée `L3(T3)` est standard
+  par semi-groupe, mais son énoncé primaire exact et ses constantes restent
+  une dette; Giga–Miyakawa n'est pas ajouté sans audit du domaine.

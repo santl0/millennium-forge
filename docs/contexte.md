@@ -154,3 +154,19 @@ n'est pas une propriété propagée. Le verrou actif est maintenant
 `GAP-MOMENT-CORRECTED-TOROIDAL-CASCADE` : annuler les moments, conserver une
 vitesse `L^3` non dégénérée, quitter la classe régulière connue et réauditer
 toutes les boules.
+
+Le cycle 0029 annule exactement l'impulsion par une paire de tores signés et
+transversalement déplacés. Les corridors restent disjoints et l'axisymétrie
+globale est brisée, mais un second multipôle produit une queue `|x|^-4` sur
+`R^3`. Plus décisif, Stokes et le potentiel tubulaire ferment l'échelle
+
+```text
+||u||_3^3~K^3h/R ->0.
+```
+
+La correction d'un nombre fini de moments et tout cardinal fixé sont donc
+abandonnés. Le verrou actif devient `GAP-MANY-TORUS-CRITICAL-ACCUMULATION` :
+un cardinal croissant doit surmonter simultanément la normalisation
+faible-Lorentz, le packing, les annulations de moments et la cohérence non
+locale des vitesses. Une seconde voie part directement d'une vitesse compacte
+divergence-free pour imposer Schwartz avant d'auditer sa vorticité.

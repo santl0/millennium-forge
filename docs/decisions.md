@@ -196,3 +196,23 @@
 - `GAP-NONSEPARABLE-RETURN-FLOW-MASKING` est abaissé. Le programme active
   `GAP-MOMENT-CORRECTED-TOROIDAL-CASCADE` avec première porte limitée à
   l'annulation de l'impulsion.
+
+### 2026-08-14 — impulsion annulée, cardinal fini abandonné
+
+- `NS-IMPULSE-CORRECTED-TORUS-PAIR-COLLAPSE` est enregistré au statut
+  `COMPUTATION_ONLY`.
+- Une paire transversale `+/-` annule exactement l'impulsion, conserve les
+  normes critiques de vorticité et le log-BMO statique, et sort de la classe
+  axisymétrique globale.
+- Le second multipôle reste non nul : la vitesse entière décroît comme une
+  puissance, pas comme une fonction de Schwartz.
+- Stokes fournit la minoration qui manquait et confirme
+  `||u||_3^3~K^3h/R`; la petite vitesse n'est pas due à une estimation lâche.
+- La paire coaxiale signée échoue dynamiquement au log-BMO sur son plan nodal;
+  ce test ne couvre pas automatiquement la paire transversale.
+- Kato n'est raccordé qu'à `R3`; le seuil périodique `L3` reste à sourcer ou
+  dériver avec constantes.
+- Toute famille de cardinal fixé et de rapports d'aspect tendant vers zéro est
+  fermée, même après un nombre fini d'annulations de moments.
+- `GAP-MANY-TORUS-CRITICAL-ACCUMULATION` devient actif; l'alternative
+  « vitesse compacte d'abord » est conservée comme second candidat.

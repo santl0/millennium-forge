@@ -251,6 +251,25 @@ boule de densité BMO. La propagation statique vers une direction globale
 échoue pour l'anneau unisigné sans swirl à temps positif; cette arête est
 « réfutée dans la sous-classe », non dans le cas périodique signé.
 
+Le cycle 0029 ajoute
+
+```text
+NS-IMPULSE-CORRECTED-TORUS-PAIR-COLLAPSE
+  -- exact --> I(W)=0
+  -- réfute --> I(W)=0 implique vitesse de Schwartz
+  -- exact --> cK^3h/R <= ||u||_3^3 <= CK^3(h/R+(h/R)^2)
+  -- réfute --> correction finie des moments préserve une vitesse critique
+  -- ouvre --> GAP-MANY-TORUS-CRITICAL-ACCUMULATION.
+```
+
+L'impulsion est translation-invariante parce que chaque tore a moyenne
+vectorielle nulle. La queue `|x|^-4` provient du second moment translaté; le
+minorant `L^3` vient de Stokes sur une section active et reste vrai pour le
+champ total. Pour tout cardinal fixé et rapports d'aspect tendant vers zéro,
+Minkowski ferme la branche indépendamment des signes. Le trou suivant porte
+donc sur cardinal croissant, packing et cohérence des termes croisés, non sur
+un multipôle supplémentaire isolé.
+
 `GAP-SIGN-FLUX` est borné par deux résultats négatifs : l'hélicité globale ne
 fixe pas le flux triadique et la cohérence d'un seul patch ne fixe pas le
 stretching ponctuel. Une réouverture doit porter une hypothèse globale,

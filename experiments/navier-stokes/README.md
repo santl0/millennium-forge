@@ -1472,3 +1472,41 @@ cellule reste donc `NOT_PROVIDED`.
   `0e1ea53d24e3c241c67e24a35bedbd81a16043cea580581ddc6c4f1f5729d274`.
 - Limites : constantes tubulaires non optimisées; ni trajectoire, ni pression,
   ni passage calcul-continuum ne sont certifiés.
+
+## `MOMENT-CORRECTED-TORI-GATE-1` — paire signée translatée
+
+- Question falsifiable : annuler exactement l'impulsion d'une paire de tores
+  peut-il préserver une vitesse critique non dégénérée ?
+- Objet : deux copies `+/-` du tore 0028, de centres axiaux parallèles
+  translatés de `+/-3R_n e_1`; aucune évolution.
+- Échelles : `R_n=2^-n`, `q_n=2^-2n`, `h_n=2^-n^2`,
+  `A_n=(R_n h_n^2)^(-2/3)`.
+- Résultat positif : divergence et moyenne nulles, impulsion totale exactement
+  nulle, faible-`L^(3/2)` uniforme, corridors log-BMO disjoints et rupture de
+  l'axisymétrie globale.
+- Résultat négatif : Stokes et la borne tubulaire donnent
+
+  ```text
+  c h_n/R_n<=||u_n||_3^3
+            <=C[(h_n/R_n)+(h_n/R_n)^2] -> 0.
+  ```
+
+  Un moment quadrupolaire translaté reste non nul; la vitesse `R^3` a une queue
+  d'ordre `|x|^-4` et n'est pas de Schwartz.
+- Cardinal fixé : si chaque rapport `eta_(n,j)->0`, faible-Lorentz et
+  Minkowski imposent encore `||sum_j u_(n,j)||_3->0`.
+- Dynamique adverse : la variante coaxiale impaire a `MO=1` à temps positif
+  sur les boules coupant le plan nodal; la variante transversale reste ouverte.
+- Commande :
+
+  ```text
+  python -B experiments/navier-stokes/moment-corrected-tori/moment_corrected_tori_audit.py
+  ```
+
+- Environnement : Python 3.13.14, bibliothèque standard uniquement.
+- Discrétisation : aucune grille, aucun flottant, aucune graine; 1842
+  contrôles rationnels exacts, zéro échec.
+- Empreinte :
+  `527be8971f4bc5e2d7f22a3fb18a3d626b12cecc7f5dc71e39d40488b4a4a70c`.
+- Limites : l'équivalent `L^3`, la queue multipolaire et le BMO all-ball sont
+  analytiques, non interval-certified; aucune dynamique n'est calculée.

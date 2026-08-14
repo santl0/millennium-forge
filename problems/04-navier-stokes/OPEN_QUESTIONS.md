@@ -181,3 +181,19 @@ de profil ne compte pas comme stratégie distincte.
 Abandonner la première voie si l'annulation du seul moment d'impulsion crée
 une interface antipodale de capacité comparable au cœur, fait diverger la
 quasi-norme critique ou force encore `||u||_3->0`.
+
+## Priorité active après le cycle 0029
+
+1. **`GAP-MANY-TORUS-CRITICAL-ACCUMULATION`.** Pour `N_n->infinity`, combiner
+   la normalisation faible-`L^(3/2)`, le packing des corridors et les termes
+   croisés de `||sum_j u_j||_3^3`; décider si une cohérence non locale peut
+   donner un minorant positif.
+2. **Vitesse compacte d'abord.** Construire un `u_n` compact divergence-free,
+   poser `omega_n=curl u_n`, puis tester faible-Lorentz et log-BMO. Cette voie
+   impose Schwartz sans cascade infinie de moments.
+3. **Propagation.** Seulement si une famille passe les deux gates précédents,
+   calculer résidu visqueux, pression et stabilité temporelle.
+
+Abandonner les tores disjoints si packing et faible-Lorentz forcent
+`||sum_j u_j||_3->0`, ou si le seul régime non petit exige des corridors qui
+se chevauchent et recréent une interface directionnelle d'ordre un.

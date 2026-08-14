@@ -775,3 +775,24 @@ Deux noyaux finis sont prêts à être isolés, sans formaliser Navier–Stokes 
 
 La réduction all-ball log-BMO et le potentiel tubulaire restent des lemmes
 analytiques à importer. Le certificat Python ne remplace pas une évolution.
+
+## Backlog issu du cycle 0029 — impulsion, multipôle et Stokes
+
+Le noyau conseillé est maintenant bilatéral :
+
+1. formaliser l'invariance par translation de
+   `I(W)=1/2 integral x cross W` lorsque `integral W=0`;
+2. calculer `M_12=I_3`, `M_21=-I_3` pour un tore azimutal et
+   `Q_(11,2)=4aI_3` pour la paire translatée signée;
+3. séparer soigneusement « second moment non nul » de « coefficient extérieur
+   non nul », puis certifier une composante explicite de la dérivée du dipôle;
+4. encoder Stokes sur les disques méridiens actifs et Hölder sur leurs cercles;
+5. intégrer le jacobien tubulaire pour obtenir
+   `cK^3h/R<=||u||_3^3`;
+6. combiner avec la borne supérieure du cycle 0028 et déduire l'équivalent;
+7. formaliser le corollaire de cardinal fixé sous disjonction des supports.
+
+Ce module certifierait une obstruction elliptique pour des données initiales,
+pas une solution de Navier–Stokes. Une voie alternative pour le raccord
+Schwartz est de partir d'un `u` compact divergence-free puis de poser
+`W=curl u`, au lieu d'annuler les multipôles un à un.

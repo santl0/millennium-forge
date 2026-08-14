@@ -1140,3 +1140,27 @@ Aucun rang fini ne produit `Delta_Omega>0`.
 `GAP-MOMENT-CORRECTED-TOROIDAL-CASCADE` devient actif : tester une paire de
 tores d'impulsions opposées avec corridors disjoints, `liminf ||u||_3>0` et
 sortie explicite de la classe sans swirl.
+
+## Cycle 0029 : correction du premier moment
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| paire signée à impulsion annulée | 5 | 5 | 5 | 5 | **20** |
+| paire non parallèle à vitesse critique | 5 | 2 | 5 | 5 | 17 |
+| correcteur de Hodge compact quantifié | 4 | 3 | 4 | 4 | 15 |
+
+```text
+deux tores minces +/-
+  -- exact --> impulsion totale nulle
+  -- exact --> axes transverses, hors axisymétrie globale
+  -- conditionnel/all-ball --> log-BMO statique uniforme
+  -- exact + multipolaire --> queue R3 d'ordre |x|^-4, non-Schwartz
+  -- Stokes + Biot-Savart --> ||u||_3^3 ~ K^3 h/R ->0
+  -- cardinal fixé --> même effondrement après moments finis
+  -- ouvre --> GAP-MANY-TORUS-CRITICAL-ACCUMULATION.
+```
+
+La perte de `L^3` est locale et ne vient pas de l'impulsion. L'arête manquante
+est désormais une accumulation cohérente de vitesses sous faible-Lorentz et
+packing, avec `N_n->infinity`; annuler plus de moments à cardinal fixé est une
+branche fermée.

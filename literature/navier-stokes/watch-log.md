@@ -531,3 +531,20 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
   transfert automatique au cas périodique signé.
 - Décision : abaisser la somme non séparable et activer une paire torique à
   moments compensés, avec non-dégénérescence explicite de la vitesse critique.
+
+## 2026-08-14 — Cycle 0029
+
+- Veille différentielle : publication 2025 de Choi–Jeong et Lim–Jeong,
+  publication 2026 de Gustafson–Miller–Tsai, plus deux préprints 2025–2026
+  sur la croissance des paires anti-parallèles Euler (`0113`–`0117`).
+- Séparation Clay : tous ces résultats sont inviscides, sans swirl et portent
+  sur `t->infinity`; aucun ne construit une singularité NS admissible.
+- Résultat interne : annulation exacte de l'impulsion, queue suivante
+  `|x|^-4` et équivalent `||u||_3^3~K^3h/R` pour la paire mince.
+- Test dynamique : la paire coaxiale signée visqueuse échoue au log-BMO global
+  à temps positif sur son plan nodal; pas de transfert automatique à la paire
+  transversale.
+- Dette : ne pas citer Kato `R3` comme théorème périodique; sourcer ou dériver
+  le seuil `L3(T3)` avec dépendance en viscosité et période.
+- Décision : fermer cardinal fixé et activer le budget de cardinal croissant,
+  avec une voie parallèle partant d'une vitesse compacte divergence-free.

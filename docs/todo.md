@@ -60,9 +60,13 @@
   `{|W_r|>=|W|/4}` : le rang seul est insuffisant; le lemme d'excès radial
   conditionnel est isolé et l'échappatoire torique ferme la nécessité de cette
   architecture.
-- [ ] Tester une paire de tores signés à impulsions opposées : conserver
-  faible-`L^(3/2)`, log-BMO all-ball et `liminf ||u||_3>0`, puis vérifier la
-  sortie de la classe axisymétrique sans swirl.
+- [x] Tester une paire de tores signés à impulsions opposées : impulsion,
+  criticité et log-BMO conservés, axisymétrie brisée, mais
+  `||u||_3^3~h/R->0` et queue `|x|^-4`; cardinal fixé abandonné.
+- [ ] Auditer `N_n->infinity` : normalisation des amplitudes, packing des
+  corridors, moments signés et termes croisés de la vitesse `L^3`.
+- [ ] Tester en parallèle un ansatz de vitesse compacte divergence-free dont
+  la vorticité satisfait faible-`L^(3/2)` et log-BMO.
 - [ ] Quantifier une formulation pré-singulière cohérente par rayon de cœur
   `r_c(t)` ou convergence de profils remis à l'échelle.
 - [ ] Formaliser le lemme scalaire de séparation de phases
