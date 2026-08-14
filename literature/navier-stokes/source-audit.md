@@ -673,3 +673,25 @@ Les quatre prépublications 2026 de Shahmurov restent en quarantaine : leurs
 fiches arXiv ne donnent pas de référence de revue à la date de coupure, et
 aucune de leurs premières interpolations critiques, constantes ou compacités
 n'a été auditée ligne à ligne. Aucun claim du laboratoire ne les utilise.
+
+## Audit ciblé du cycle 0028 — fermeture toroïdale et propagation
+
+- Les résultats sur les anneaux axisymétriques sans swirl (`NS-SRC-0022`,
+  `0094`–`0096`, `0106`) confirment la géométrie et la régularité de la
+  sous-classe; ils ne fournissent pas le lemme log-BMO du laboratoire.
+- Les conventions de log-BMO de Bradshaw–Grujić et Grujić (`0059`, `0080`,
+  `0082`, `0083`) ne sont pas identiques : cubes avec ancre `L1` et boules
+  avec ancre `L-infinity` ne partagent pas leurs constantes sans raccord.
+- Aucune source primaire ciblée n'assemble tore mince, rotation
+  `e_theta -> e_z`, contrôle all-ball et normalisation critique. Le résultat
+  reste `AI_DERIVATION`, antériorité non trouvée, jamais nouveauté
+  bibliométrique affirmée.
+- Le corridor protège l'axe seulement à l'instant statique. Pour un anneau
+  unisigné exactement axisymétrique sans swirl sur `R^3`, le principe du
+  maximum réactive `e_theta` pour `r>0` à `t>0`; le calcul axial donne une
+  oscillation exactement un. Pas de transfert automatique à la périodisation
+  cubique ni aux vorticités signées.
+- La veille 2025–2026 ne révèle aucune singularité NS incompressible 3D
+  admissible ni validation publiée du mécanisme log-BMO récent. Les préprints
+  cités restent classés `PREPRINT_CLAIM`. `NS-SRC-0112` indexe en particulier
+  la v3 de Grujić sur le scénario Moffatt–Kimura, sans importer sa conclusion.

@@ -514,3 +514,20 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
   falsificateur cinématique, pas un candidat de blow-up.
 - Décision : abandonner le lift séparable à aspect fixé et activer
   `GAP-NONSEPARABLE-RETURN-FLOW-MASKING`.
+
+## 2026-08-14 — Cycle 0028
+
+- Veille différentielle : aucun article primaire trouvé n'assemble une
+  fermeture toroïdale critique, une extension directionnelle log-BMO all-ball
+  et une vitesse `L3` non dégénérée.
+- Source ajoutée : Grujić, scénario Moffatt–Kimura, arXiv v3 (`0112`), pour
+  indexer la veille récente. Les entrées `0022`, `0059`, `0080`–`0083`,
+  `0094`–`0096` et `0106` couvrent déjà le noyau du lemme.
+- Résultat interne : l'échappatoire torique statique existe, mais Biot–Savart
+  impose `||u||_3->0` et l'impulsion empêche la décroissance Schwartz sur
+  `R3`.
+- Correction dynamique : l'anneau unisigné sans swirl réactive la direction
+  azimutale près de l'axe à temps positif; le log-BMO global diverge. Pas de
+  transfert automatique au cas périodique signé.
+- Décision : abaisser la somme non séparable et activer une paire torique à
+  moments compensés, avec non-dégénérescence explicite de la vitesse critique.

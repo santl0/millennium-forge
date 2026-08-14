@@ -165,3 +165,19 @@ Après trois stratégies mathématiquement différentes bloquées sur la même
 question, ajouter leurs échecs au registre, abaisser la question et sélectionner
 la meilleure valeur informationnelle suivante. Un simple renommage de norme ou
 de profil ne compte pas comme stratégie distincte.
+
+## Priorité active après le cycle 0028
+
+1. **`GAP-MOMENT-CORRECTED-TOROIDAL-CASCADE`.** Construire ou réfuter une
+   paire de tores signés dont l'impulsion hydrodynamique s'annule, avec
+   faible-`L^(3/2)` uniforme, extension log-BMO all-ball et
+   `liminf ||u||_3>0`.
+2. **Propagation localisée.** Quantifier `bmo_log(psi xi(t))` pour une coupure
+   restant à distance de l'axe et suivre `sqrt(nu t)/R`; la version globale
+   unisignée est déjà réfutée par l'oscillation axiale un.
+3. **Excès radial.** Pour une somme non séparable, produire un minorant
+   uniforme `Delta_Omega>0`; sans lui, la borne de capacité est vide.
+
+Abandonner la première voie si l'annulation du seul moment d'impulsion crée
+une interface antipodale de capacité comparable au cœur, fait diverger la
+quasi-norme critique ou force encore `||u||_3->0`.

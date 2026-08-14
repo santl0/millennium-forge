@@ -224,6 +224,33 @@ pas l'exposant cubique; elle ne contrôle pas le supremum all-ball et sa vitesse
 masquer chaque transition radiale par une couche verticale suivante, sans
 cacher une capacité polynomiale, un aspect divergent ou un résidu critique.
 
+Le cycle 0028 ferme négativement cette nécessité topologique : un tore
+azimutal mince réalise `div omega=0`, moyenne nulle et extension statique
+log-BMO sans composante radiale. L'arête
+
+```text
+NS-TOROIDAL-LOG-BMO-VELOCITY-COLLAPSE
+  -- réfute --> fermeture implique retour radial
+  -- réfute --> vorticité critique + log-BMO implique liminf ||u||_3>0
+  -- ouvre --> GAP-MOMENT-CORRECTED-TOROIDAL-CASCADE
+```
+
+est `COMPUTATION_ONLY` avec dérivation analytique auditée. La perte exacte est
+Biot–Savart : `||u||_3^3<=CK^3(h/R+(h/R)^2)`. Sur `R^3`, s'ajoutent l'impulsion
+non nulle, la queue non-Schwartz et la régularité de la classe sans swirl.
+
+Le claim `NS-AXISYMMETRIC-RADIAL-EXCESS-CAPACITY` ajoute l'arête conditionnelle
+
+```text
+Delta_Omega>0 --> mesure radiale >0 --> capacité newtonienne >0.
+```
+
+Le trou est explicite : ni rang fini, ni criticité Lorentz ne force
+`Delta_Omega>0`, et la capacité newtonienne ne donne pas automatiquement une
+boule de densité BMO. La propagation statique vers une direction globale
+échoue pour l'anneau unisigné sans swirl à temps positif; cette arête est
+« réfutée dans la sous-classe », non dans le cas périodique signé.
+
 `GAP-SIGN-FLUX` est borné par deux résultats négatifs : l'hélicité globale ne
 fixe pas le flux triadique et la cohérence d'un seul patch ne fixe pas le
 stretching ponctuel. Une réouverture doit porter une hypothèse globale,

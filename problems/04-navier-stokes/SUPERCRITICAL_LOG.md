@@ -581,3 +581,22 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   `cec8bd74aa0b5b1b9943fbd149fe06c4ca5b045b9a337bdfef2821a18c5d29a9`.
 - Pivot : produit séparable abandonné pour le BMO all-ball;
   `GAP-NONSEPARABLE-RETURN-FLOW-MASKING` actif.
+
+## 2026-08-14 — Fermeture toroïdale logarithmique
+
+- Objet : sur `T^3`, tore de rayon majeur `R_n=2^-n`, cœur
+  `h_n=2^-n^2`, corridor `q_n=2^-2n`, vorticité azimutale lisse.
+- Criticité : `A_n=(R_n h_n^2)^(-2/3)` conserve les normes forte et faible
+  `L^(3/2)` à constantes de profil.
+- Échappement : la rotation logarithmique `e_theta -> e_z` donne une enveloppe
+  all-ball uniforme; le crochet adimensionné du certificat est `<4`.
+- Porte Biot–Savart :
+  `||u_n||_3^3<=C[h_n/R_n+(h_n/R_n)^2]`, donc la vitesse critique s'annule.
+- Porte poloidale : l'excès radial `Delta_Omega` minore mesure et capacité,
+  mais le rang d'une somme ne force pas sa positivité.
+- Porte dynamique : le corridor statique disparaît pour un anneau unisigné
+  sans swirl sur `R^3`; les boules axiales ont alors oscillation un.
+- Artefact : 2207 contrôles rationnels exacts, zéro échec, empreinte
+  `0e1ea53d24e3c241c67e24a35bedbd81a16043cea580581ddc6c4f1f5729d274`.
+- Pivot : `GAP-MOMENT-CORRECTED-TOROIDAL-CASCADE` actif; annulation de
+  l'impulsion, non-dégénérescence de `L^3` et sortie de la classe sans swirl.

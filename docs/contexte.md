@@ -139,3 +139,18 @@ all-ball, et la vitesse de la variante `C_c^infinity` satisfait
 `||U||_3->0`. Le verrou devient `GAP-NONSEPARABLE-RETURN-FLOW-MASKING` : une
 somme de couches doit masquer successivement les retours radiaux sans créer
 une région de capacité polynomiale où la direction transverse domine.
+
+Le cycle 0028 montre qu'un tore azimutal mince contourne ce retour radial :
+il est divergence-free, de moyenne nulle, critique en `L^(3/2,infinity)` et
+sa direction admet une extension statique log-BMO uniforme. La passe
+indépendante confirme `||u||_3^3<=C[(h/R)+(h/R)^2]`; la vitesse critique
+s'annule. Sur `R^3`, le profil porte une impulsion non nulle, une queue
+non-Schwartz et appartient à la classe sans swirl globalement régulière.
+
+La diffusion fournit un second rejet : pour un anneau unisigné sans swirl,
+la direction `e_theta` devient active arbitrairement près de l'axe à temps
+positif et son oscillation sur une boule axiale vaut un. Le corridor statique
+n'est pas une propriété propagée. Le verrou actif est maintenant
+`GAP-MOMENT-CORRECTED-TOROIDAL-CASCADE` : annuler les moments, conserver une
+vitesse `L^3` non dégénérée, quitter la classe régulière connue et réauditer
+toutes les boules.

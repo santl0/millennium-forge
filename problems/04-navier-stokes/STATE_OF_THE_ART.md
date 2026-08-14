@@ -664,3 +664,30 @@ aspect croissant peut être nécessaire mais ne suffit pas à supprimer les
 transitions locales. Il faut suivre les capacités des régions radialement
 dominantes, le BMO all-ball, les normes critiques, l'énergie, le diamètre
 physique et le résidu.
+
+Le cycle 0028 réfute la nécessité de ce dernier mécanisme. Une vorticité
+toroïdale pure `omega=A beta(d^2/h^2)e_theta` est divergence-free et de
+moyenne nulle sans calotte radiale. Pour `h<<q<<R`, sa direction sur le cœur
+s'étend vers `e_z` à travers un corridor logarithmique et satisfait une borne
+log-BMO uniforme sur toutes les boules. Ce résultat est une dérivation interne
+statique, non un théorème de propagation.
+
+La passe Biot–Savart ferme toutefois le candidat comme profil critique de
+vitesse : après normalisation faible-`L^(3/2)`,
+
+```text
+||u||_3^3<=C[(h/R)+(h/R)^2] -> 0.
+```
+
+Sur `R^3`, l'impulsion positive produit en plus une queue non-Schwartz et la
+sous-classe axisymétrique sans swirl est globalement régulière. À temps
+positif, pour un anneau unisigné, la diffusion réactive `e_theta` près de
+l'axe et fait échouer le log-BMO global. La périodisation sur `T^3` fournit
+seulement une donnée lisse admissible, sans symétrie continue propagée.
+
+Le sous-problème poloidal reçoit parallèlement un lemme quantitatif : un excès
+`Delta_Omega>0` minore la mesure puis la capacité newtonienne de
+`{|W_r|>=|W|/4}`. Le rang fini seul ne force pas cet excès. Le verrou actif
+devient `GAP-MOMENT-CORRECTED-TOROIDAL-CASCADE` : annuler d'abord l'impulsion
+par une paire de tores signés, conserver faible-`L^(3/2)` et log-BMO, quitter
+la classe sans swirl et empêcher `||u||_3` de tendre vers zéro.

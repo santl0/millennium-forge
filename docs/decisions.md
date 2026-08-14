@@ -177,3 +177,22 @@
   ne ferme pas la construction.
 - L'aspect croissant est enregistré comme coût auxiliaire, non comme solution.
   Le programme active `GAP-NONSEPARABLE-RETURN-FLOW-MASKING`.
+
+### 2026-08-14 — échappatoire torique admise, candidat dynamique abandonné
+
+- `NS-TOROIDAL-LOG-BMO-VELOCITY-COLLAPSE` est enregistré au statut
+  `COMPUTATION_ONLY` : le tore mince passe divergence, moyenne, criticité de
+  vorticité et log-BMO statique all-ball.
+- La borne directe auditée
+  `||u||_3^3<=CK^3(h/R+(h/R)^2)` élimine la famille comme profil critique de
+  vitesse; la borne interpolée `O((h/R)^(1/9))` n'est pas utilisée.
+- Le corridor à zéros n'est pas propagé par la diffusion d'un anneau unisigné
+  sans swirl sur `R^3`; l'obstruction axiale vaut exactement un à temps
+  positif. Cette conclusion n'est pas transférée silencieusement au tore
+  périodique ou aux données signées.
+- `NS-AXISYMMETRIC-RADIAL-EXCESS-CAPACITY` conserve le seul noyau positif de
+  la voie poloidale. Sans `Delta_Omega>0`, le rang fini ne donne aucune
+  capacité uniforme.
+- `GAP-NONSEPARABLE-RETURN-FLOW-MASKING` est abaissé. Le programme active
+  `GAP-MOMENT-CORRECTED-TOROIDAL-CASCADE` avec première porte limitée à
+  l'annulation de l'impulsion.

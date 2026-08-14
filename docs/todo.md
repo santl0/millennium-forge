@@ -55,9 +55,14 @@
   énergie, boule de calotte et résidu; aspect fixé réfuté au cycle 0027.
 - [x] Tester la sharpness compacte div–curl du cube sur le domaine parent;
   variante `C_c^infinity` obtenue, mais BMO all-ball non certifié.
-- [ ] Construire une somme non séparable
+- [x] Construire ou borner une somme non séparable
   `psi_n=sum_j A_(n,j)(r)chi_(n,j)(z)`; mesurer à chaque niveau la capacité de
-  `{|W_r|>=|W|/4}`, le BMO all-ball, l'énergie et le résidu.
+  `{|W_r|>=|W|/4}` : le rang seul est insuffisant; le lemme d'excès radial
+  conditionnel est isolé et l'échappatoire torique ferme la nécessité de cette
+  architecture.
+- [ ] Tester une paire de tores signés à impulsions opposées : conserver
+  faible-`L^(3/2)`, log-BMO all-ball et `liminf ||u||_3>0`, puis vérifier la
+  sortie de la classe axisymétrique sans swirl.
 - [ ] Quantifier une formulation pré-singulière cohérente par rayon de cœur
   `r_c(t)` ou convergence de profils remis à l'échelle.
 - [ ] Formaliser le lemme scalaire de séparation de phases

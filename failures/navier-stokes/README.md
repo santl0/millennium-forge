@@ -1126,6 +1126,45 @@ verticales–radiales du produit. Le prochain profil doit supprimer chaque
 région radialement dominante par un masquage non séparable en couches; le
 rapport d'aspect reste une constante auxiliaire à suivre.
 
+## `FAIL-NS-0053` — Fermeture compacte supposée imposer un retour radial
+
+- Date : 2026-08-14.
+- Cadre : vorticité lisse toroïdale sur `T^3`, dans un tube mince loin de
+  l'axe, de direction `e_theta`.
+- Cible : déduire de `div omega=0` qu'une fermeture compacte crée
+  nécessairement une région où une composante radiale domine.
+- Attaque : les lignes azimutales sont déjà fermées;
+  `div(f(r,z)e_theta)=0` et la moyenne s'annule par intégration en `theta`.
+- Résultat : une rotation logarithmique vers `e_z` dans le corridor nul donne
+  un log-BMO all-ball uniforme. Le no-go topologique est réfuté.
+- Statut : `REFUTED`; aucune conclusion dynamique.
+
+## `FAIL-NS-0054` — Criticité de vorticité supposée préserver la vitesse
+
+- Date : 2026-08-14.
+- Cadre : même famille, `K_n~||omega_n||_(L^(3/2,infinity))~1`.
+- Cible : conserver `liminf ||u_n||_3>0` sous amincissement torique.
+- Attaque : potentiel de Biot–Savart périodique en trois zones et
+  cancellation du noyau lointain.
+- Résultat :
+
+  ```text
+  ||u_n||_3^3<=C K_n^3[h_n/R_n+(h_n/R_n)^2] -> 0.
+  ```
+
+- Statut : candidat de blow-up `REFUTED`; contre-profil conservé.
+
+## `FAIL-NS-0055` — Corridor statique supposé propagé par diffusion
+
+- Date : 2026-08-14.
+- Cadre : anneau unisigné exactement axisymétrique sans swirl sur `R^3`.
+- Cible : conserver à temps positif la zone axiale où l'extension vaut `e_z`.
+- Attaque : le principe du maximum active `omega_theta(r,z,t)>0` pour `r>0`.
+  Sur une boule axiale, `e_theta` a moyenne nulle et oscillation moyenne un.
+- Résultat : le log-BMO global diverge immédiatement. Cela ne vaut pas
+  automatiquement pour la périodisation cubique ni pour une donnée signée.
+- Statut : propagation globale `REFUTED` dans la sous-classe indiquée.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,

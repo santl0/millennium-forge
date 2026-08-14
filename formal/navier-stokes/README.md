@@ -755,3 +755,23 @@ les bornes d'échelle `K~1`, `m~epsilon^(1/3)`, `MO_D~epsilon`. L'objet formel
 doit encoder explicitement que `MO_D` porte sur un domaine parent fixé et non
 sur le supremum BMO de toutes les boules. Le calcul `||U||_3->0` doit apparaître
 comme garde-fou empêchant tout étiquetage de profil de blow-up.
+
+## Backlog issu du cycle 0028 — excès radial et tore mince
+
+Deux noyaux finis sont prêts à être isolés, sans formaliser Navier–Stokes :
+
+1. pour `E={|W_r|>=|W|/4}`, encoder
+   `|W_r|<|W_z|/sqrt(15)` hors de `E`;
+2. combiner avec `integral_E|W|<=3K|E|^(1/3)` pour obtenir
+   `|E|>=((Delta_+)/(3K))^3`;
+3. ajouter Sobolev pour
+   `Cap_2(E)>=Delta_+/(3S_3^2K)`, sans confondre capacité newtonienne et
+   boule de densité BMO;
+4. formaliser `div(f(r,z)e_theta)=0` et la moyenne azimutale nulle;
+5. certifier `A=(Rh^2)^(-2/3)` et
+   `||u||_3^3<=CK^3(h/R+(h/R)^2)` sous hypothèses tubulaires explicites;
+6. isoler le calcul : la moyenne de `e_theta` sur une boule axiale est nulle
+   et son oscillation moyenne vaut un.
+
+La réduction all-ball log-BMO et le potentiel tubulaire restent des lemmes
+analytiques à importer. Le certificat Python ne remplace pas une évolution.

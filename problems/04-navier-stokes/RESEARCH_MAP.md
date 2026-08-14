@@ -1108,3 +1108,35 @@ fixé. L'aspect croissant ne contrôle pas à lui seul les transitions
 verticale–radiale. `GAP-NONSEPARABLE-RETURN-FLOW-MASKING` devient actif :
 construire `psi_n=sum_j A_(n,j)chi_(n,j)`, puis abandonner si un niveau garde
 une capacité polynomiale où `|W_r|>=|W|/4`.
+
+## Cycle 0028 : échappatoire torique et porte de vitesse critique
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| fermeture torique mince et audit all-ball | 5 | 5 | 5 | 4 | **19** |
+| no-go de rang tensoriel fini | 4 | 4 | 5 | 3 | 16 |
+| évolution pseudospectrale du retour | 4 | 2 | 3 | 3 | 12 |
+
+```text
+vorticité toroïdale critique
+  -- classique/géométrique --> div omega=0 et moyenne nulle
+  -- dérivation interne ----> extension statique log-BMO uniforme
+  -- dérivation interne ----> ||u||_3^3<=C[(h/R)+(h/R)^2]
+  -- résultat négatif ------> petite donnée critique, aucun profil de blow-up
+  -- obstacle R3 -----------> impulsion non nulle, queue non-Schwartz
+  -- obstacle dynamique ----> diffusion unisignée, MO axiale=1 à t>0.
+```
+
+Le maillon poloidal auxiliaire est
+
+```text
+Delta_Omega>0
+  --> |{|W_r|>=|W|/4}|>=((Delta_Omega)/(3K))^3
+  --> Cap_2>=Delta_Omega/(3S_3^2K).
+```
+
+Aucun rang fini ne produit `Delta_Omega>0`.
+`GAP-NONSEPARABLE-RETURN-FLOW-MASKING` est abaissé et
+`GAP-MOMENT-CORRECTED-TOROIDAL-CASCADE` devient actif : tester une paire de
+tores d'impulsions opposées avec corridors disjoints, `liminf ||u||_3>0` et
+sortie explicite de la classe sans swirl.

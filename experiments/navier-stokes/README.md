@@ -1436,3 +1436,39 @@ cellule reste donc `NOT_PROVIDED`.
 - Limites : cutoff calculé seulement `C^4`, quasi-norme complète encadrée mais
   non calculée exactement, `||U||_3->0` pour la variante lisse, masquage
   non séparable et évolution temporelle ouverts.
+
+## `TOROIDAL-LOG-BMO-VELOCITY-COLLAPSE-1` — fermeture azimutale mince
+
+- Question falsifiable : `div omega=0` force-t-elle une zone de retour
+  transverse de capacité polynomiale, même si la vorticité se ferme sur un
+  tore mince ?
+- Équation simulée : aucune évolution. Sur `T^3`,
+  `omega_n=A_n beta(d_n^2/h_n^2)e_theta` et
+  `u_hat_n(k)=i k cross omega_hat_n(k)/|k|^2` pour `k!=0`.
+- Échelles : `R_n=2^-n`, `q_n=2^-2n`, `h_n=2^-n^2`,
+  `A_n=(R_n h_n^2)^(-2/3)`.
+- Résultat : divergence et moyenne nulles, normes faible et forte
+  `L^(3/2)` d'ordre un, extension unitaire à log-BMO uniforme, mais
+
+  ```text
+  ||u_n||_3^3<=C[h_n/R_n+(h_n/R_n)^2] -> 0.
+  ```
+
+- Passe adverse : trois zones tubulaires et cancellation du noyau lointain;
+  une dérivation indépendante confirme la puissance forte.
+- Dynamique : pour un anneau unisigné sans swirl sur `R^3`, la diffusion
+  active `omega_theta>0` près de l'axe à `t>0`, où l'oscillation moyenne de
+  `e_theta` sur une boule axiale vaut un.
+- Commande :
+
+  ```text
+  python -B experiments/navier-stokes/toroidal-log-bmo/toroidal_log_bmo_audit.py
+  ```
+
+- Environnement : Python 3.13.14, bibliothèque standard uniquement.
+- Discrétisation : aucune grille, aucun flottant, aucune graine; 2207
+  contrôles rationnels exacts, zéro échec.
+- Empreinte :
+  `0e1ea53d24e3c241c67e24a35bedbd81a16043cea580581ddc6c4f1f5729d274`.
+- Limites : constantes tubulaires non optimisées; ni trajectoire, ni pression,
+  ni passage calcul-continuum ne sont certifiés.
