@@ -25,6 +25,8 @@ Recherche de profils, analyse spectrale, PINN comme outil de découverte, calcul
 - [Audit d'import historique](IMPORT_AUDIT.md)
 - [Graphe de dépendances](../../proof-graphs/navier-stokes/dependencies.md)
 - [Sources primaires](../../literature/navier-stokes/source-audit.md)
+- [Journal de veille différentielle](../../literature/navier-stokes/watch-log.md)
+- [Extraction compacité–rigidité](../../literature/navier-stokes/compactness-rigidity-extraction.md)
 - [Expériences](../../experiments/navier-stokes/README.md)
 - [Échecs utiles](../../failures/navier-stokes/README.md)
 - [Formalisation](../../formal/navier-stokes/README.md)

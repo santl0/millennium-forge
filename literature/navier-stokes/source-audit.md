@@ -1,6 +1,8 @@
 # Audit des sources — Navier–Stokes incompressible 3D
 
 Date de gel : **2026-08-14**. Registre machine : [`sources.json`](sources.json).
+Les deltas postérieurs sont consignés sans réécrire ce gel dans
+[`watch-log.md`](watch-log.md).
 
 ## Verdict exécutif
 

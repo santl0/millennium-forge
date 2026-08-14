@@ -78,6 +78,12 @@ terme quadratique, contrôle non local de la pression, puis théorème de
 Liouville dans la classe limite. L'exclusion des profils exactement
 auto-similaires ne ferme que cette sous-classe.
 
+L'extraction détaillée ESS/GKP précise toutefois que la pression **lointaine
+centrée** n'est pas un verrou supplémentaire lorsque la suite est globalement
+bornée dans `L³` : Hölder donne une queue pondérée `O(A^-3)`. En revanche,
+l'énergie seule n'assure pas cette tension après zoom, et cette estimation ne
+donne aucune compacité forte pour la pression proche.
+
 Un scénario Type I conserve une quantité critique de vitesse ou de vorticité à
 l'échelle naturelle; un scénario Type II la laisse croître plus vite. Les
 résultats Type I et plusieurs résultats au bord ne se transfèrent pas à un Type
