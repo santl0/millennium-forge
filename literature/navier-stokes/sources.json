@@ -1784,6 +1784,26 @@
       "reproduction": {"status": "primary_statement_and_liouville_corollary_audited_cycle_0022"},
       "verification": {"level": "primary_published_metadata_and_arxiv_v3_full_text_targeted", "checked_on": "2026-08-14", "notes": "Notice arXiv v3, DOI Annals of PDE, théorème quantitatif et corollaire ancien ciblés."},
       "tags": ["axisymmetric", "weak_L3", "quantitative_regularization", "ancient_solution", "Ozanski_Palasek"]
+    },
+    {
+      "id": "NS-SRC-0089",
+      "title": "A Locally Anisotropic Regularity Criterion for the Navier-Stokes Equation in Terms of Vorticity",
+      "authors": ["Evan Miller"],
+      "year": 2021,
+      "source_type": "journal_article",
+      "publication_status": "published",
+      "venue": "Proceedings of the American Mathematical Society, Series B 8, 60–74",
+      "identifiers": {"doi": "10.1090/bproc/74", "arxiv": "2002.02152v1", "url": "https://arxiv.org/abs/2002.02152"},
+      "equation": {"model": "Navier–Stokes incompressible standard", "dimension": "3", "domain": "R³", "boundary": "sans frontière", "forcing": "non forcé", "viscosity": "positive normalisée"},
+      "solution_notions": ["solution mild u dans C([0,T_max);H¹(R³))"],
+      "result": "Un champ unitaire v variable en espace-temps, de gradient spatial localement borné, fournit notamment un critère de prolongement critique si v×omega appartient à L⁴_tL²_x jusqu'au temps maximal.",
+      "hypotheses": ["solution mild H¹ sur R³", "v à valeurs dans S²", "gradient spatial de v borné sur les intervalles de temps compacts", "v×omega dans L⁴_tL²_x"],
+      "constants_uniformity": "L'estimation H¹ dépend explicitement de la borne du gradient spatial de v; aucune dérivée temporelle de v n'est requise.",
+      "clay_relevance": "Critère publié tolérant un axe ou plan mobile, mais ses contrôles anisotrope et de gradient ne sont pas déduits de l'énergie Clay; un axe radial logarithmique a typiquement un gradient spatial singulier.",
+      "limitations": ["critère conditionnel", "gradient spatial borné supposé", "contrôle critique transverse supposé", "aucune production depuis les données générales"],
+      "reproduction": {"status": "primary_statement_and_scope_audited_cycle_0023"},
+      "verification": {"level": "primary_published_metadata_and_arxiv_v1_full_text_targeted", "checked_on": "2026-08-14", "notes": "Théorème 1.6, absence de dérivée temporelle de v, DOI et pagination ciblés."},
+      "tags": ["vorticity_direction", "anisotropic_regularity", "moving_plane", "critical_criterion", "Miller"]
     }
   ],
   "watchlist": [
@@ -1854,7 +1874,7 @@
     "ancient_compactness_rigidity": ["NS-SRC-0012", "NS-SRC-0014", "NS-SRC-0015", "NS-SRC-0034", "NS-SRC-0045", "NS-SRC-0046", "NS-SRC-0048", "NS-SRC-0049", "NS-SRC-0050", "NS-SRC-0053", "NS-SRC-0088"],
     "selfsimilar_TypeI_TypeII": ["NS-SRC-0016", "NS-SRC-0017", "NS-SRC-0018", "NS-SRC-0019", "NS-SRC-0020", "NS-SRC-0032", "NS-SRC-0034", "NS-SRC-0045", "NS-SRC-0047", "NS-SRC-0048", "NS-SRC-0051", "NS-SRC-0054", "NS-SRC-0085", "NS-SRC-0086", "NS-SRC-0087"],
     "vorticity_axisymmetry": ["NS-SRC-0021", "NS-SRC-0022", "NS-SRC-0023", "NS-SRC-0038", "NS-SRC-0045", "NS-SRC-0046", "NS-SRC-0054", "NS-SRC-0088"],
-    "vorticity_geometry": ["NS-SRC-0021", "NS-SRC-0059", "NS-SRC-0060", "NS-SRC-0061", "NS-SRC-0062", "NS-SRC-0063", "NS-SRC-0064", "NS-SRC-0065", "NS-SRC-0066", "NS-SRC-0087"],
+    "vorticity_geometry": ["NS-SRC-0021", "NS-SRC-0059", "NS-SRC-0060", "NS-SRC-0061", "NS-SRC-0062", "NS-SRC-0063", "NS-SRC-0064", "NS-SRC-0065", "NS-SRC-0066", "NS-SRC-0087", "NS-SRC-0089"],
     "geometric_sparseness": ["NS-SRC-0059", "NS-SRC-0064", "NS-SRC-0065", "NS-SRC-0066"],
     "rearrangements_and_convolution": ["NS-SRC-0059", "NS-SRC-0067", "NS-SRC-0069", "NS-SRC-0070"],
     "truncated_energy_and_sobolev": ["NS-SRC-0059", "NS-SRC-0069", "NS-SRC-0070", "NS-SRC-0071", "NS-SRC-0072"],

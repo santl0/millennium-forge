@@ -1,0 +1,44 @@
+{
+  "id": "NS-WANDERING-AXIS-MOMENT-BUDGET",
+  "problem": "navier-stokes",
+  "statement": "Pour un profil de vorticité W=r^-2 Omega(log(R*/r),theta) divergence-free, à amplitude angulaire uniformément bornée et masse L^(3/2) non dégénérée par bloc logarithmique, tout axe mobile qui approxime la direction en moyenne pondérée doit accumuler une variation totale au moins linéaire, sauf si l'erreur directionnelle a elle-même une densité positive.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "R³ sans frontière; le profil est spatial et ne constitue pas à lui seul une solution de Navier-Stokes",
+    "Omega appartient localement à W^(1,1) en (s,theta), W=r^-2 Omega est divergence-free dans la boule ponctuée et Phi=|Omega| vérifie 0<=Phi<=M",
+    "il existe L,kappa>0 tels que l'intégrale de la moyenne sphérique de Phi^(3/2) sur chaque bloc [S,S+L] soit au moins kappa",
+    "e(s) est à valeurs dans S² et absolument continu sur tout compact",
+    "D(S,T) est l'intégrale de la moyenne sphérique de Phi|xi-e(s)|, avec xi=Omega/Phi sur {Phi>0}",
+    "la conclusion quantitative est N*2kappa²/(3M²L) <= M+(M/2) Var(e;[S,S+NL])+D(S,S+NL)"
+  ],
+  "dependencies": [
+    "NS-LOG-RECTIFIED-SOLENOIDAL-OBSTRUCTION"
+  ],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0023-wandering-axis.md et docs/reports/navier-stokes/reviews/cycle-0023-analysis.md"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/cycle-0023-wandering-axis.md: rotation uniforme et dérive logarithmique sur les boules centrées"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/wandering-axis/wandering_axis_audit.py, 44 contrôles rationnels exacts",
+      "sha256": "23802f4b094aaccd020ab6d5d0ae9b136cc8cf70738b069c712fa6cddc432ba4"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0023-wandering-axis"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois passes Codex séparées, même famille de modèle; non indépendantes au sens externe",
+    "notes": "L'identité mobile et les constantes ont été recalculées. La variation totale n'est qu'un budget nécessaire, l'axe n'est pas canonique, les tests BMO sont centrés et aucun champ Navier-Stokes ni passage au continuum n'est construit."
+  }
+}
