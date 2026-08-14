@@ -80,5 +80,5 @@ Construire des cellules lisses à coeur–queue avec
 `|Q_j|/v_j->infinity`, calculer leurs fonctions de distribution complètes et
 le curl de tout raccord, puis déterminer si une queue de faible amplitude peut
 reproduire les niveaux dyadiques sans payer un nouveau plateau effectif. En
-parallèle, tester deux curls chevauchants signés avant toute projection de
-Leray.
+cas de réfutation, le test des curls chevauchants signés sera le cycle suivant,
+avant toute projection de Leray.
