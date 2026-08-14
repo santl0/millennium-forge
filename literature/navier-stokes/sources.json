@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "problem": "Navier–Stokes incompressible tridimensionnel : existence et régularité globale",
-  "as_of": "2026-08-14",
+  "as_of": "2026-08-15",
   "curation_policy": {
     "preferred_evidence": [
       "énoncé officiel",
@@ -3503,6 +3503,143 @@
         "notes": "Auteurs, DOI, volume, date, domaine 2D périodique et portée COT contrôlés sur la page éditeur primaire et la prépublication."
       },
       "tags": ["Navier_Stokes", "two_dimensional", "periodic", "Reeb_graph", "turbulence", "numerics"]
+    },
+    {
+      "id": "NS-SRC-0172",
+      "title": "Wavelet Bases in Banach Function Spaces",
+      "authors": ["Alexei Yu. Karlovich"],
+      "year": 2021,
+      "source_type": "journal_article",
+      "publication_status": "published",
+      "venue": "Bulletin of the Malaysian Mathematical Sciences Society 44, 1669–1689",
+      "identifiers": {
+        "doi": "10.1007/s40840-020-01024-4",
+        "url": "https://doi.org/10.1007/s40840-020-01024-4"
+      },
+      "equation": {
+        "model": "analyse fonctionnelle, pas Navier–Stokes",
+        "dimension": "droite réelle dans le théorème publié",
+        "domain": "R",
+        "boundary": "sans objet",
+        "forcing": "sans objet",
+        "viscosity": "sans objet"
+      },
+      "solution_notions": ["espace de fonctions de Banach séparable", "base ondelette inconditionnelle"],
+      "result": "Établit des bases ondelettes inconditionnelles sous bornitude de l'opérateur maximal sur un espace de fonctions de Banach séparable et son associé; l'application aux Lorentz pondérés impose 1<p<infini et 1<=q<infini.",
+      "hypotheses": ["séparabilité de l'espace", "opérateur maximal borné sur l'espace et l'espace associé", "indice Lorentz secondaire fini dans l'application"],
+      "constants_uniformity": "Constantes dépendantes de l'espace et de l'ondelette; aucune constante pour le plein L^(p,infinity).",
+      "clay_relevance": "Matérialise la frontière q<infini; ne fournit pas de base norm-convergente ni de sélection cellulaire dans L^(3,infinity).",
+      "limitations": ["q=infinity exclu", "cadre publié unidimensionnel", "pas de curl", "pas de PDE"],
+      "reproduction": {"status": "primary_published_full_text_and_metadata_audited_cycle_0039"},
+      "verification": {
+        "level": "primary_full_text",
+        "checked_on": "2026-08-15",
+        "notes": "Hypothèses de séparabilité, plage Lorentz q<infini, DOI, pagination et statut publié contrôlés dans le texte primaire et les métadonnées éditeur."
+      },
+      "tags": ["wavelets", "Banach_function_spaces", "Lorentz", "separability", "endpoint"]
+    },
+    {
+      "id": "NS-SRC-0173",
+      "title": "On the Functions of Littlewood-Paley, Lusin, and Marcinkiewicz",
+      "authors": ["Elias M. Stein"],
+      "year": 1958,
+      "source_type": "journal_article",
+      "publication_status": "published",
+      "venue": "Transactions of the American Mathematical Society 88, 430–466",
+      "identifiers": {
+        "doi": "10.1090/S0002-9947-1958-0112932-2",
+        "url": "https://doi.org/10.1090/S0002-9947-1958-0112932-2"
+      },
+      "equation": {
+        "model": "analyse harmonique, pas Navier–Stokes",
+        "dimension": "cadre euclidien du texte",
+        "domain": "espace euclidien",
+        "boundary": "sans objet",
+        "forcing": "sans objet",
+        "viscosity": "sans objet"
+      },
+      "solution_notions": ["fonctions de Littlewood–Paley et de Lusin", "estimations Lp fortes"],
+      "result": "Établit les estimations classiques des fonctions de Littlewood–Paley/Lusin servant, avec interpolation de Hunt, au contrôle faible-Lp des carrés-fonctions.",
+      "hypotheses": ["plage forte 1<p<infini dans les estimations utilisées"],
+      "constants_uniformity": "Constantes dépendantes de p; le passage faible-Lorentz du cycle est une dérivation par interpolation, pas un énoncé littéral attribué à cet article.",
+      "clay_relevance": "Contrôle fréquentiel du champ total, sans sélection spatiale ni récupération des composantes annulées avant sommation.",
+      "limitations": ["pas de sélection de cellule", "pas de positivité entre labels", "pas de PDE Navier–Stokes"],
+      "reproduction": {"status": "primary_published_metadata_and_theorem_scope_audited_cycle_0039"},
+      "verification": {
+        "level": "primary_full_text",
+        "checked_on": "2026-08-15",
+        "notes": "Titre, auteur, volume, pages, identifiant AMS et portée Littlewood–Paley contrôlés sur la source primaire."
+      },
+      "tags": ["Littlewood_Paley", "square_function", "harmonic_analysis", "Lorentz_interpolation"]
+    },
+    {
+      "id": "NS-SRC-0174",
+      "title": "Divergence-free and curl-free wavelets in two dimensions and three dimensions: application to turbulent flows",
+      "authors": ["Erwan Deriaz", "Valérie Perrier"],
+      "year": 2006,
+      "source_type": "journal_article",
+      "publication_status": "published",
+      "venue": "Journal of Turbulence 7, article N3, 1–37",
+      "identifiers": {
+        "doi": "10.1080/14685240500260547",
+        "arxiv": "cs/0502092",
+        "url": "https://arxiv.org/abs/cs/0502092"
+      },
+      "equation": {
+        "model": "décomposition de Hodge et applications numériques aux écoulements incompressibles",
+        "dimension": "2 et 3",
+        "domain": "cadres périodiques/numériques du texte",
+        "boundary": "selon l'expérience",
+        "forcing": "selon l'application numérique",
+        "viscosity": "selon l'application numérique"
+      },
+      "solution_notions": ["ondelettes divergence-free et curl-free", "algorithme numérique de décomposition de Hodge"],
+      "result": "Construit et implémente des ondelettes compactement supportées divergence-free/curl-free en dimensions deux et trois et les applique à des champs turbulents.",
+      "hypotheses": ["familles d'ondelettes construites dans le cadre du texte", "discrétisation numérique pour les applications"],
+      "constants_uniformity": "Aucune borne inconditionnelle du plein L^(3,infinity), minoration de Gram ou erreur PDE continuum certifiée.",
+      "clay_relevance": "Dictionnaire cinématique curl-compatible, mais aucune sélection endpoint, dynamique de blow-up ou certification Clay.",
+      "limitations": ["pas de base du plein faible-Lorentz", "numérique non certifié", "pas de minoration anti-annulation"],
+      "reproduction": {"status": "primary_published_and_arxiv_full_text_audited_cycle_0039"},
+      "verification": {
+        "level": "primary_full_text",
+        "checked_on": "2026-08-15",
+        "notes": "Version arXiv, publication, DOI, dimensions et portée algorithmique contrôlés sur les textes primaires."
+      },
+      "tags": ["divergence_free_wavelets", "curl_free_wavelets", "Hodge", "turbulence", "numerics"]
+    },
+    {
+      "id": "NS-SRC-0175",
+      "title": "Pure-swirl loss of boundedness under L1_t L2_x forcing: exact mixed-norm ranges",
+      "authors": ["Hugo Beirão da Veiga", "Jiaqi Yang"],
+      "year": 2026,
+      "source_type": "preprint",
+      "publication_status": "preprint_not_peer_reviewed",
+      "venue": "arXiv",
+      "identifiers": {
+        "arxiv": "2608.11553v1",
+        "url": "https://arxiv.org/abs/2608.11553"
+      },
+      "equation": {
+        "model": "Navier–Stokes incompressible 3D forcé, solution pure-swirl",
+        "dimension": "3",
+        "domain": "cylindre B2(0,1) x (0,1)",
+        "boundary": "no-slip sur la paroi verticale, free-slip sur les bases",
+        "forcing": "f appartient à L1_t L2_x et devient singulière au temps terminal",
+        "viscosity": "nu=1"
+      },
+      "solution_notions": ["solution classique sur [0,T)", "trace forte L2 au temps T", "prolongement Leray–Hopf unique avec égalité d'énergie"],
+      "result": "Construit une solution forcée pure-swirl dont la norme L-infinity diverge lorsque t tend vers T, tout en gardant une trace forte L2 et un prolongement Leray–Hopf; le terme convectif est absorbé dans la pression.",
+      "hypotheses": ["force terminalement singulière dans L1_tL2_x", "cylindre borné à conditions mixtes", "symétrie pure-swirl indépendante de z"],
+      "constants_uniformity": "Les plages de normes sont annoncées exactes dans la prépublication; aucune reproduction indépendante ni audit ligne à ligne dans ce cycle.",
+      "clay_relevance": "Aucun transfert au problème Clay non forcé sur R3 ou T3: force singulière, frontière, symétrie et absence d'amplification convective essentielle.",
+      "limitations": ["prépublication non évaluée", "forcé", "domaine borné avec frontière", "pas de blow-up non forcé", "preuve non reproduite"],
+      "reproduction": {"status": "primary_arxiv_metadata_abstract_and_scope_audited_cycle_0039"},
+      "verification": {
+        "level": "primary_abstract",
+        "checked_on": "2026-08-15",
+        "notes": "Version v1, date, équation, domaine, frontière, force, notions de solution et non-transfert Clay contrôlés sur la prépublication primaire; preuve non auditée."
+      },
+      "tags": ["Navier_Stokes", "forced", "pure_swirl", "loss_of_boundedness", "Leray_Hopf", "boundary"]
     }
   ],
   "watchlist": [
@@ -3589,11 +3726,12 @@
     "weak_nonuniqueness": ["NS-SRC-0029", "NS-SRC-0030", "NS-SRC-0031", "NS-SRC-0032", "NS-SRC-0033", "NS-SRC-0044", "NS-SRC-0047", "NS-SRC-0054", "NS-SRC-0055"],
     "numerics_and_CAP": ["NS-SRC-0033", "NS-SRC-0037", "NS-SRC-0038", "NS-SRC-0039", "NS-SRC-0040", "NS-SRC-0041", "NS-SRC-0054", "NS-SRC-0057"],
     "formalization": ["NS-SRC-0042"],
-    "recent_false_transfers": ["NS-SRC-0031", "NS-SRC-0032", "NS-SRC-0044", "NS-SRC-0055", "NS-SRC-0056", "NS-SRC-0057", "NS-SRC-0058"],
+    "recent_false_transfers": ["NS-SRC-0031", "NS-SRC-0032", "NS-SRC-0044", "NS-SRC-0055", "NS-SRC-0056", "NS-SRC-0057", "NS-SRC-0058", "NS-SRC-0175"],
     "recent_quantitative_singularity": ["NS-SRC-0084", "NS-SRC-0112", "NS-SRC-0146", "NS-SRC-0147", "NS-SRC-0153", "NS-SRC-0154", "NS-SRC-0155", "NS-SRC-0160", "NS-SRC-0161", "NS-SRC-0162"],
     "recent_axisymmetric_euler_growth": ["NS-SRC-0113", "NS-SRC-0114", "NS-SRC-0115", "NS-SRC-0116", "NS-SRC-0117"],
     "recent_vortex_filaments_and_rings": ["NS-SRC-0119", "NS-SRC-0120", "NS-SRC-0121", "NS-SRC-0122", "NS-SRC-0123", "NS-SRC-0124", "NS-SRC-0131"],
-    "merge_trees_and_persistence": ["NS-SRC-0163", "NS-SRC-0164", "NS-SRC-0165", "NS-SRC-0166", "NS-SRC-0168", "NS-SRC-0169", "NS-SRC-0170", "NS-SRC-0171"]
+    "merge_trees_and_persistence": ["NS-SRC-0163", "NS-SRC-0164", "NS-SRC-0165", "NS-SRC-0166", "NS-SRC-0168", "NS-SRC-0169", "NS-SRC-0170", "NS-SRC-0171"],
+    "wavelets_square_functions_and_weak_endpoint": ["NS-SRC-0069", "NS-SRC-0145", "NS-SRC-0172", "NS-SRC-0173", "NS-SRC-0174"]
   },
   "unverified_zones": [
     "Le domaine et la plage d'exposants exacts des articles historiques Prodi et Ladyzhenskaya doivent être réextraits des originaux avant création d'un claim formel.",

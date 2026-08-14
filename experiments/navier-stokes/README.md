@@ -1808,3 +1808,41 @@ cellule reste donc `NOT_PROVIDED`.
 - Limites : coaire, isopérimétrie et Lorentz sont des entrées analytiques;
   l'arbre est un ledger abstrait; pression, viscosité, temps et résidu PDE
   sont absents.
+
+## `OVERLAPPING-CURL-CANCELLATION-1` — jauge de décomposition à multiplicité deux
+
+- Question falsifiable : la seule multiplicité bornée des supports peut-elle
+  imposer qu'un sommant étiqueté conserve une fraction positive du rapport
+  critique du champ total ?
+- Équation calculée : aucune évolution; modèle exact à quatre atomes pour
+  `(U1,W1)+(U2,W2)=(V,B)` avec paire oscillante opposée.
+- Discrétisation : aucune grille; fonctions de distribution complètes et
+  arithmétique `fractions.Fraction`.
+- Identités certifiées pour `M>=8` :
+
+  ```text
+  q_global^3=1,
+  q_1^3=4/(M-1)^3,
+  q_2^3=1/M^3.
+  ```
+
+- Registre : fréquences `8..4096`, cinq rescalings critiques et suite
+  dyadique jusqu'à `2^40`; 20 445 modèles, 344 121 assertions exactes,
+  zéro échec.
+- Commande :
+
+  ```text
+  python -B experiments/navier-stokes/overlapping-curl-cancellation/cancellation_gauge_audit.py
+  ```
+
+- Environnement : Python 3.13.14, bibliothèque standard, aucune graine.
+- Résidu certifié : zéro point par point et dans chaque supremum discret.
+  Empreinte :
+  `1ee45f22210ad7fd5ff11c20d2e09a31b0b081a4b8dbac62d7ac10214bbfbecb`.
+- Raccord analytique séparé : la paire lisse
+  `Z_n,-Z_n`, `Z_n=(chi eta sin(nz)/r)e_theta`, possède un témoin de volume
+  `4pi^2/3` et des curls individuels d'ordre `n`, tandis que le total reste
+  fixe.
+- Limites : le ledger atomique n'est pas un curl spatial; ni lui ni le raccord
+  lisse ne calculent pression, viscosité, temps ou résidu PDE. La réfutation
+  concerne les sommants étiquetés, pas la sélection depuis le champ total.

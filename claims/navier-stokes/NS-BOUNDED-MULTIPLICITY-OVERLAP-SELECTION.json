@@ -1,0 +1,53 @@
+{
+  "id": "NS-BOUNDED-MULTIPLICITY-OVERLAP-SELECTION",
+  "problem": "navier-stokes",
+  "statement": "Pour toute décomposition finie U=sum_j U_j en champs pure-swirl lisses compacts, divergence-free, supportés dans un même anneau et dont les supports ont multiplicité au plus deux, un rapport global q(U)=||U||_(L^(3,infinity))/||curl U||_(L^(3/2,infinity)) strictement positif impose qu'un terme U_j vérifie q(U_j)>=Phi(q(U),2) pour une fonction Phi strictement positive indépendante de la décomposition.",
+  "status": "REFUTED",
+  "hypotheses": [
+    "les champs sont définis sur R3, lisses, compacts, axisymétriques pure-swirl et nuls près de l'axe",
+    "tous les termes sont supportés dans un même anneau 1/2<r<3/2 et la multiplicité des supports est au plus deux",
+    "les quasi-normes utilisent sup_lambda lambda |{|f|>lambda}|^(1/p)",
+    "Phi dépend seulement du rapport du champ total et de la multiplicité, jamais de la décomposition ni de la fréquence"
+  ],
+  "dependencies": [
+    "NS-PURE-SWIRL-ADAPTIVE-DIAMETER-SELECTION"
+  ],
+  "evidence": [
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/cycle-0039-overlapping-curl-cancellation.md; U_(1,n)=B+Z_n et U_(2,n)=-Z_n, avec Z_n=(chi(r)eta(z)sin(nz)/r)e_theta, ont un total fixe B mais q(U_(1,n)),q(U_(2,n))=O(n^-1)"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/overlapping-curl-cancellation/cancellation_gauge_audit.py; 20445 modèles et 344121 assertions rationnelles exactes, résidu nul",
+      "sha256": "1ee45f22210ad7fd5ff11c20d2e09a31b0b081a4b8dbac62d7ac10214bbfbecb"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0039-analysis.md; recalcul indépendant du volume témoin et des deux bornes O(n^-1)",
+      "sha256": "f5c5cb7063e05337df24d22f0d122b0fceeddc3e6419c8ebe6c54e60c1b39322"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0039-countermodel.md; modèle atomique Fraction indépendant, 1216 assertions jusqu'à M=2^40",
+      "sha256": "90f25bb65f13db51e8350065bbbbaf4085ad49d07020b303a5cc3a96f53353a8"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0039-literature.md; audit endpoint des bases, carrés-fonctions, ondelettes divergence-free et localisation de Leray",
+      "sha256": "b8341f39c1dbd556059802dbff939dc433f768abcb0d53792215fd938c3dbc8a"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0039-overlapping-curl-cancellation"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Deux passes IA séparées et deux calculs exacts; aucune revue humaine externe",
+    "notes": "La réfutation vise uniquement la sélection parmi des sommants arbitrairement étiquetés. Elle ne réfute pas une sélection intrinsèque depuis le champ total; lorsque l'axe, le rayon et l'anneau sont communs, l'agrégation des potentiels avant sélection rétablit exactement le cadre du cycle 0038."
+  }
+}

@@ -989,3 +989,37 @@ La veille ajoute `NS-SRC-0168`–`0171` et porte le corpus à 171 sources. Les
 textes primaires LIPIcs/arXiv, page éditeur et DOI ont été contrôlés le
 2026-08-15. Aucun théorème source ne contient la composition axisymétrique du
 cycle; elle reste `COMPUTATION_ONLY`.
+
+## Audit ciblé du cycle 0039 — endpoint ondelettes, annulation et veille forcée
+
+- Le plein `L^(p,infinity)` est non séparable : une famille non dénombrable
+  de fonctions à supports disjoints reste uniformément séparée dans la boule.
+  Il ne peut donc posséder de base de Schauder dénombrable norm-convergente.
+- Karlovich (`0172`) suppose explicitement un espace de fonctions de Banach
+  séparable; son application Lorentz impose `q<infinity`. Elle ne couvre pas
+  les endpoints actifs `L^(3,infinity)` et `L^(3/2,infinity)`.
+- Stein (`0173`) et l'interpolation de Hunt (`0069`) contrôlent un
+  carré-fonction faible-Lorentz du **champ total**. Une paire `+Z_n,-Z_n`
+  s'annule avant la projection fréquentielle : cet outil ne sélectionne pas
+  une composante spatiale étiquetée.
+- Deriaz–Perrier (`0174`) fournit des ondelettes divergence-free/curl-free et
+  un algorithme de Hodge 2D/3D. Le texte ne démontre ni base inconditionnelle
+  du plein endpoint, ni minoration de Gram, ni erreur continuum certifiée.
+- Sous cutoff, l'identité exacte
+  `curl P(chi U)=chi curl U+nabla chi cross U` conserve un terme de col
+  critique, tandis que la correction de Leray reste non locale. La projection
+  ne crée pas de positivité entre cellules.
+- Beirão da Veiga–Yang (`0175`, arXiv v1) annonce une perte de bornitude pour
+  Navier–Stokes incompressible **forcé** dans un cylindre avec conditions
+  mixtes. La force `L1_tL2_x` devient singulière au temps terminal et la
+  convection est absorbée par la pression : aucun blow-up non forcé sur
+  `R3`/`T3`, donc aucun transfert Clay.
+- Une prépublication compressible Navier–Stokes–Korteweg du 2026-08-11 a été
+  filtrée sans promotion : densité, capillarité et viscosités variables la
+  placent hors du système Clay.
+
+La veille ajoute `NS-SRC-0172`–`0175` et porte le corpus à 175 sources. Les
+pages et textes primaires ont été contrôlés le 2026-08-15. Le résultat du
+cycle reste un contre-théorème cinématique interne; aucune base, simulation ou
+prépublication récente ne ferme la pression, le temps ou le passage au
+continuum.
