@@ -931,3 +931,24 @@ bibliothèque de coaire/BV/isopérimétrie sur `R3`; le module 6 exige seulement
 le calcul cylindrique loin de l'axe. Formaliser ce noyau certifierait une
 sélection statique pure-swirl à supports disjoints, pas la localisation dans
 une boule, la direction BMO ou Navier–Stokes en temps.
+
+## Backlog issu du cycle 0036 — troncature par composante
+
+Le noyau nouveau se factorise en six interfaces bornées :
+
+1. prouver que, pour une fonction lipschitzienne `h>=0`, le morceau
+   `h 1_C` d'une composante de `{h>0}`, prolongé par zéro, reste lipschitzien;
+2. établir la règle de chaîne presque partout sans mesure de bord;
+3. formaliser la finitude des composantes de `{sigma F>lambda/4}` rencontrant
+   le compact `{sigma F>=lambda/2}`;
+4. sommer coaire et isopérimétrie par composante;
+5. certifier l'algèbre finie
+   `q_max sum q_i^2>=sum q_i^3` et `648=36*18`;
+6. étendre explicitement le gate directionnel 0033 de `C_c^infinity` à
+   `W_c^{1,infinity}` par ses étapes BV, sans mollification qui changerait la
+   direction active.
+
+Les modules 1, 3 et 5 sont les premières cibles formelles. Les modules 2 et 4
+requièrent une bibliothèque Sobolev/BV; le module 6 dépend encore de la
+compensation conique non formalisée. Même compilé, ce bloc certifierait une
+sélection cinématique conditionnelle, pas une solution Navier–Stokes.

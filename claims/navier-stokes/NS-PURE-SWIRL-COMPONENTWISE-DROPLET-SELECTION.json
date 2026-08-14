@@ -1,0 +1,62 @@
+{
+  "id": "NS-PURE-SWIRL-COMPONENTWISE-DROPLET-SELECTION",
+  "problem": "navier-stokes",
+  "statement": "Pour une famille finie de cellules pure-swirl annulaires lisses à supports tridimensionnels complets disjoints, au niveau lambda presque optimal de la quasi-norme faible-L3 globale, les composantes connexes de {sigma F_j>lambda/4} qui rencontrent {sigma F_j>lambda/2} définissent par G_alpha=(sigma F_j-lambda/4)_+1_(C_alpha) des champs tronqués sans mesure de curl au bord. Une composante vérifie K_(u,alpha)>=(C_I/648)K_u^2/K_w et K_(u,alpha)/K_(w,alpha)>=(C_I/648)(K_u/K_w)^2. Si le support de chaque troncature active est contenu dans une boîte axiale de diamètre O_Lambda(R_j), la composition avec le gate directionnel borné donne MO_(B_alpha)(zeta)>=c_Lambda(K_u/K_w)^12 pour toute extension de la direction du curl global.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "la famille originale de cellules est finie",
+    "F_j appartient à C_c^infinity((0,infinity) x R) et son support est inclus dans R_j/2<r<3R_j/2",
+    "les supports tridimensionnels complets des cellules originales sont deux à deux disjoints",
+    "U_j=(R_j/r)F_j e_theta et W_j=curl U_j=(R_j/r)(-partial_z F_j e_r+partial_r F_j e_z)",
+    "K_u=||sum U_j||_(L^(3,infinity))>0, K_w=||sum W_j||_(L^(3/2,infinity))<infinity et les quasi-normes utilisent sup_lambda lambda |{|f|>lambda}|^(1/p)",
+    "C_I satisfait Per(E)>=C_I|E|^(2/3) dans R3",
+    "le corollaire directionnel exige en plus que le support de chaque troncature active soit contenu dans {R_j/2<r<3R_j/2, |z-z_alpha|<Lambda R_j}",
+    "les ponts au-dessus de lambda/4, les supports originaux chevauchants et toute dynamique restent exclus"
+  ],
+  "dependencies": [
+    "NS-PURE-SWIRL-COMMON-LEVEL-CELL-SELECTION",
+    "NS-PURE-SWIRL-LIPSCHITZ-DIRECTION-GATE"
+  ],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0132 pour coaire, NS-SRC-0148 pour l'isopérimétrie R3 et NS-SRC-0067 pour l'intégration faible-Lorentz; la décomposition par composantes et leur composition sont internes"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0036-componentwise-droplet-selection.md"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/componentwise-droplet-selection/componentwise_droplet_audit.py; 5773 assertions rationnelles exactes sur 1920 familles et 10560 composantes",
+      "sha256": "f0550313e21e05a7cda46fd8d1264b982d3ab3b809b5c5b05ec1f77c5c56892a"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0036-analysis.md; audit de la troncature lipschitzienne, de la constante 648 et de l'interface directionnelle",
+      "sha256": "e73b332414050d2412ffa9a3cb732363f14b49c84e47d08a02ed773440ca2e65"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0036-countermodel.md; multi-gouttes, filament complet et 465 contrôles exacts embarqués",
+      "sha256": "03e8153aef4fe599f8a118fc97177c6ce5d9e090b7d26ad99175ce398603f28c"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0036-literature.md; audit BV, isopérimétrie quantitative et centres multiples",
+      "sha256": "43821be24db518da47e0ef427dd87ae335211fa98f1a0ffe43faeef6b3d02dc6"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0036-componentwise-droplet-selection"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois passes IA séparées: audit analytique, contre-modèle géométrique et audit bibliographique; aucune revue humaine externe",
+    "notes": "Ont été audités: finitude des composantes actives, troncature lipschitzienne sans mesure de bord, signes, constante 648, scaling, packing de gouttes identiques, filament sous le seuil et raccord au gate directionnel. Les ponts au-dessus du seuil, les chevauchements, la pression et le temps restent ouverts."
+  }
+}

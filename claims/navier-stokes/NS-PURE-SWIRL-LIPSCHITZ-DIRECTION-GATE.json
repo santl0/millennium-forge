@@ -1,0 +1,45 @@
+{
+  "id": "NS-PURE-SWIRL-LIPSCHITZ-DIRECTION-GATE",
+  "problem": "navier-stokes",
+  "statement": "Le gate directionnel borné du cycle 0033 reste valable lorsque le profil méridien lisse F est remplacé par un profil réel G dans W_c^{1,infinity}, supporté dans R/2<r<3R/2 et |z-z_0|<Lambda R. Pour U=(R/r)G e_theta et W=curl U, une boule B de rayon C_Lambda R contenant le support vérifie MO_B(zeta)>=c_Lambda(||U||_(L^(3,infinity))/||W||_(L^(3/2,infinity)))^6 pour toute extension L1 de W/|W|.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "G est réelle et appartient à W_c^{1,infinity}((0,infinity) x R)",
+    "supp G est inclus dans {R/2<r<3R/2, |z-z_0|<Lambda R}",
+    "U=(R/r)G e_theta, W=curl U et ||U||_(L^(3,infinity))>0",
+    "les quasi-normes utilisent sup_lambda lambda |{|f|>lambda}|^(1/p)",
+    "zeta appartient à L1(B;R3) et coïncide presque partout avec W/|W| sur {W!=0}",
+    "la conclusion est statique et ne porte sur aucune solution en temps"
+  ],
+  "dependencies": [
+    "NS-BOUNDED-CROSS-SECTION-DIRECTION-GATE",
+    "NS-LORENTZ-CONE-COMPENSATION"
+  ],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0067, NS-SRC-0070 et NS-SRC-0132 pour Lorentz, weak HLS et coaire/BV; l'extension de la composition directionnelle est interne"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0036-componentwise-droplet-selection.md, interface lipschitzienne du gate 0033"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0036-analysis.md, audit de la règle de chaîne, de l'annulation du curl compact et de la compensation conique",
+      "sha256": "e73b332414050d2412ffa9a3cb732363f14b49c84e47d08a02ed773440ca2e65"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0036-lipschitz-direction-gate-interface"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Audit analytique séparé du cycle 0036; aucune revue humaine externe",
+    "notes": "La preuve de 0033 utilise déjà une troncature lipschitzienne. Weak HLS pour le gradient faible, coaire BV, annulation distributionnelle du curl compact et compensation mesurable passent directement. Une mollification naïve n'est pas utilisée car elle ne préserverait pas la direction exacte sur la composante."
+  }
+}

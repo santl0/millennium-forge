@@ -1432,3 +1432,40 @@ rapport d'aspect reste une constante auxiliaire à suivre.
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,
 hypothèses attaquées, test reproductible, résidu, portée négative exacte et
 claim éventuellement supersédé.
+
+## `FAIL-NS-0069` — Volume et périmètre pris pour diamètre contrôlé
+
+- Date : 2026-08-14.
+- Cible : déduire de `V=|E|` et `P=Per(E)` une composante entière de diamètre
+  `O(V/P)` ou une boule de ce rayon captant une fraction universelle de `V`.
+- Attaque : `N` boules égales séparées, puis une boule reliée à un satellite
+  distant par un tube lisse de longueur `L` et de rayon `L^-2`.
+- Résultat : Frank–Lieb donne seulement une boule de rayon `V/P` captant
+  `>=c(V/P)^3`, soit la fraction `cV^2/P^3`. Les `N` gouttes saturent cette
+  dépendance; le tube a coût de surface `O(L^-1)` et volume `O(L^-3)` mais
+  diamètre `L`.
+- Source : `NS-SRC-0156`, `NS-SRC-0158`, `NS-SRC-0159`.
+- Statut : renforcement géométrique `REFUTED`; une structure pure-swirl ou
+  dynamique additionnelle est indispensable.
+
+## `FAIL-NS-0070` — Copies identiques prises pour dispersion endpoint
+
+- Date : 2026-08-14.
+- Cadre : `m` copies translatées et disjointes du même champ pure-swirl
+  compact, aucune évolution.
+- Cible : garder un rapport global `K_u/K_w` non dégénéré tout en envoyant le
+  nombre de gouttes et leur séparation vers l'infini.
+- Résultat exact des fonctions de distribution :
+
+  ```text
+  K_u=m^(1/3)k_u,
+  K_w=m^(2/3)k_w,
+  K_u/K_w=m^(-1/3)k_u/k_w.
+  ```
+
+- Test : le certificat 0036 vérifie le cube normalisé `1/m` jusqu'à
+  `m=1024`, en arithmétique rationnelle exacte.
+- Empreinte :
+  `f0550313e21e05a7cda46fd8d1264b982d3ab3b809b5c5b05ec1f77c5c56892a`.
+- Statut : contre-profil naïf `REFUTED`; la sélection composante par
+  composante ferme les filaments strictement sous `lambda/4`.

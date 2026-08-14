@@ -1703,3 +1703,38 @@ cellule reste donc `NOT_PROVIDED`.
   `b197d3b45af0f034c09c91d4b7bb6d3be55293ab1f458ec769c250c8998490f8`.
 - Limites : coaire et isopérimétrie sont des entrées analytiques; le calcul ne
   certifie ni diamètre de la bande, ni chevauchement, pression, temps ou PDE.
+
+## `COMPONENTWISE-DROPLET-SELECTION-1` — troncatures de gouttelettes
+
+- Question falsifiable : une bande pure-swirl dispersée en composantes
+  reliées seulement sous `lambda/4` peut-elle éviter tout bloc local portant
+  le rapport endpoint global ?
+- Équation calculée : aucune évolution; ledger exact des volumes actifs
+  `V_alpha=q_alpha^3`, du registre coaire par composante et de la borne
+  d'intégration faible-`L^(3/2)`.
+- Discrétisation : aucune grille; toutes les racines sont supprimées par
+  cubage et les coefficients sont des `fractions.Fraction`.
+- Certificat : 1 920 familles, 10 560 composantes et 5 773 assertions
+  rationnelles exactes vérifient
+
+  ```text
+  q_max sum q_alpha^2>=sum q_alpha^3,
+  epsilon^3 648^3 K_w^3>=K_u^6.
+  ```
+
+- Packing adverse : pour `m<=1024` copies identiques, le cube du rapport
+  global normalisé vaut exactement `1/m`; multiplier les gouttes ne conserve
+  pas un gate global uniforme. Un filament d'amplitude `lambda/8` disparaît
+  exactement des niveaux `lambda/4` et `lambda/6`.
+- Commande :
+
+  ```text
+  python -B experiments/navier-stokes/componentwise-droplet-selection/componentwise_droplet_audit.py
+  ```
+
+- Environnement : Python 3.13.14, bibliothèque standard, aucune graine.
+- Résidu certifié : zéro échec; résidus minimaux exacts nuls. Empreinte :
+  `f0550313e21e05a7cda46fd8d1264b982d3ab3b809b5c5b05ec1f77c5c56892a`.
+- Limites : coaire/BV et isopérimétrie restent analytiques; aucun pont
+  au-dessus du seuil, chevauchement, temps, pression ou résidu PDE n'est
+  calculé.
