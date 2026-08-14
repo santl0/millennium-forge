@@ -375,3 +375,27 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
 - Décision : fermer `GAP-ENDGAME-SYNCHRONIZATION` conditionnellement et
   activer l'extension de la direction depuis le cœur `{omega>lambda}` vers la
   prémisse globale `bmo_phi`, zéros et multicœurs compris.
+
+## 2026-08-14 — Cycle 0022
+
+- Veille différentielle : `arXiv:2607.08866` reste en v2 du 2026-07-13,
+  `arXiv:2510.20757` en v3 du 2026-08-11 et Lei–Ren–Tian
+  `arXiv:2501.08976` en v1 non publiée. Aucune source primaire nouvelle ne
+  ferme les profils non récurrents, Type II ou multi-échelles.
+- Raffinement de portée : une convergence uniforme espace-temps de toutes les
+  directions de forte vorticité vers un axe fixe tombe déjà dans le double
+  cône de Lei–Ren–Tian; Giga–Miura 2011 fournit une porte publiée apparentée
+  sous Type I.
+- Sources ajoutées : Chae 2015 (`0085`), Chae–Wolf 2017 (`0086`),
+  Giga–Miura 2011 (`0087`) et Ożański–Palasek 2023 (`0088`). Elles couvrent
+  respectivement des classes asymptotiquement DSS, la géométrie Type I et la
+  rigidité axisymétrique faible-`L³`, sans réduction générale depuis Clay.
+- Résultat analytique interne : le premier harmonique sphérique exclut un
+  profil `r^-2` solénoïdal à amplitude uniformément bornée, masse critique
+  non dégénérée par coquille et direction rectifiée vers un axe fixe.
+- Contre-test : une construction solénoïdale rectifiée existe avec
+  `Phi~e^-2s s²`; elle annule précisément la singularité critique. Sans borne
+  angulaire uniforme, des calottes intermittentes gardent la masse critique
+  tout en annulant le moment transverse.
+- Décision : fermer négativement la classe log-rectifiée à axe fixe sous les
+  hypothèses suivies et activer `GAP-WANDERING-AXIS-PROFILE`.

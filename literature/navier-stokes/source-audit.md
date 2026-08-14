@@ -500,3 +500,41 @@ Cette exclusion ne porte que sur la récurrence spatiale vectorielle exacte.
 La v2 ne suppose explicitement la récurrence que du facteur scalaire `Phi`;
 les directions non récurrentes ou seulement asymptotiques restent hors du
 lemme.
+
+## Audit ciblé du cycle 0022 — rectification fixe et dérive non récurrente
+
+| Source primaire | Passage contrôlé | Verdict exact |
+|---|---|---|
+| Lei–Ren–Tian `arXiv:2501.08976v1` (`0061`) | théorème 1.1, double cône | une rectification uniforme espace-temps de toute forte vorticité vers `+/-e` implique le cône fixe et donc, conditionnellement à la prépublication, la régularité intérieure; la preuve n'est pas reproduite |
+| Chae 2015 (`0085`) | profil périodique en temps similaire | exclusion publiée d'un blow-up localement asymptotiquement DSS sous profil `C¹_t(L³ intersect C²_x)`; pas de dérive apériodique |
+| Chae–Wolf 2017 (`0086`) | DSS et facteur proche de un | exclusion publiée d'une sous-classe DSS structurée; ni facteur général, ni Type II |
+| Giga–Miura 2011 (`0087`) | critère directionnel avec énergie infinie | sous borne Type I, la continuité uniforme de la direction sur la région active exclut le blow-up; aucune production du module depuis l'énergie |
+| Ożański–Palasek 2023 (`0088`) | faible-`L³` axisymétrique | bornes quantitatives et corollaire de Liouville ancien dans la classe axisymétrique; aucun transfert à une géométrie seulement proche d'un axe |
+| Grujić `arXiv:2607.08866v2` (`0059`) | magnitude récurrente et direction log-BMO | ne construit pas une direction rectifiée, ne fixe pas un axe et ne transforme pas la norme moyenne en cône uniforme |
+
+Pour `s=log(R_*/r)` et `W=r^-2 Omega(s,theta)`, le signe exact est
+
+```text
+div W=r^-3[div_(S²)Omega_T-partial_s Omega_r].
+```
+
+Le cycle 0022 teste cette contrainte contre le premier harmonique
+`mu=e dot theta`. Si `Phi=|Omega|` est uniformément bornée, si chaque bloc
+logarithmique garde une masse critique moyenne `Phi^(3/2)` strictement
+positive et si `xi` converge vers un axe fixe en moyenne pondérée par `Phi`,
+le moment borné `<mu Omega_r>` doit décroître d'une quantité fixe par bloc.
+La contradiction exclut ce profil avant même Biot–Savart ou la pression.
+
+Une construction adverse exacte montre la frontière :
+
+```text
+W=(s²-s)e+s(e dot theta)theta,
+u=(s²/2)e cross x.
+```
+
+Elle est solénoïdale et sa direction se rectifie comme `1/s`, mais son facteur
+critique `Phi` vaut seulement `e^-2s s²` à constante près. La singularité
+`r^-2` et la masse critique par coquille disparaissent. La prochaine classe
+non couverte doit donc faire errer son axe, multiplier les cœurs ou concentrer
+les amplitudes de manière à échapper à tout double cône fixe; faible-
+`L^(3/2)` seul ne contrôle pas ces traces angulaires.
