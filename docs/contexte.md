@@ -87,3 +87,20 @@ et son erreur pondérée sont `O(log N)`, en contradiction avec le budget
 linéaire du cycle 0023. Le contre-profil sparse `a_n=n^-3`, `Phi_n=n²` montre
 que faible-`L^(3/2)` seul ne remplace pas `Phi<=M`. Le verrou actif est
 `GAP-UNBOUNDED-ANGULAR-INTERMITTENCY`.
+
+Le cycle 0025 construit cette intermittence sous forme d'un train de blobs
+critiques. Le champ satisfait exactement divergence, curl, énergie finie,
+`L¹ intersection L^(3/2,infinity)`, masse par bloc et Biot–Savart; son
+amplitude angulaire croît comme `n²`. L'oscillation de la direction par zéro
+est `O(n^-3)` sur les boules centrées en l'origine, mais toute extension voit
+une oscillation fixe sur des boules internes de rayon `ell_n/2`. Le motif
+répété échoue donc au log-BMO global. Son résidu stationnaire n'est pas un
+gradient et garde un coût critique. Le verrou actif devient
+`GAP-DIRECTIONALLY-FLAT-INTERMITTENCY` : aplatir la direction interne tout en
+compensant l'intégrale nulle d'un curl compact.
+
+La veille corrige simultanément l'ancien accent sur les valeurs exactement
+aux zéros : à temps positif régulier non trivial, l'analyticité spatiale rend
+le lieu nodal de la vorticité nul en mesure. Les conventions ponctuelles y
+sont équivalentes en BMO; la phase au voisinage des zéros et les superniveaux
+de mesure intermédiaire restent les objets pertinents.

@@ -680,3 +680,26 @@ Ce module certifierait les constantes de
 critique par bloc, ni l'existence d'une extension directionnelle globale à
 partir d'une solution. Le noyau Fourier–Leray reste la première cible
 compilable.
+
+## Backlog issu du cycle 0025 — train de blobs critiques
+
+Le noyau polynomial peut être formalisé sans théorie complète des solutions :
+
+1. définir `P(t)=(1-t²)^4` sur `[-1,1]` et son prolongement nul `C³`;
+2. certifier par dérivation symbolique
+   `div U_0=0`, `curl U_0=W_0`, `div W_0=0`;
+3. formaliser le scaling translation–dilatation et la disjonction des cubes
+   pour `r_n=2^-n`, `ell_n=r_n/(8n)`;
+4. sommer l'énergie `sum ell_n` et les volumes `sum ell_n³`;
+5. formaliser la borne de distribution faible-`L^(3/2)` sans construire toute
+   la bibliothèque de Lorentz;
+6. isoler le lemme fini : deux sous-ensembles actifs de mesure positive et de
+   composantes directionnelles séparées imposent une oscillation moyenne
+   positive pour toute extension;
+7. certifier que le curl du résidu stationnaire polynomial n'est pas nul.
+
+Ces modules certifieraient la construction statique et la porte BMO, pas la
+reconstruction analytique complète de Biot–Savart, une pression, une solution
+de Leray–Hopf ou un blow-up Clay. Le certificat Python reste
+`COMPUTATION_ONLY` tant qu'aucun assistant de preuve épinglé ne compile ces
+objets.

@@ -90,6 +90,9 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | champ vectoriel critique exactement récurrent par dilatation + direction `bmo_phi` | profil solénoïdal non nul faible-`L^p` | exclu, `COMPUTATION_ONLY` | `NS-DILATION-RECURRENT-BMO-RIGIDITY` | ne couvre ni récurrence de la seule magnitude, ni profil asymptotique, ni rectification logarithmique |
 | amplitude critique bornée + masse `L^(3/2)` non dégénérée par bloc + direction rectifiée vers un axe fixe | profil log-radial solénoïdal jusqu'au centre | exclu, `COMPUTATION_ONLY` | `NS-LOG-RECTIFIED-SOLENOIDAL-OBSTRUCTION`, budget du premier harmonique, cycle 0022 | faible-Lorentz seul ne donne ni borne de tranche ni masse par bloc; axe errant hors champ |
 | mêmes bornes + axe mobile absolument continu + erreur directionnelle pondérée sublinéaire | profil solénoïdal avec variation d'axe sublinéaire | exclu, `COMPUTATION_ONLY` | `NS-WANDERING-AXIS-MOMENT-BUDGET`, cycle 0023 : recharge au plus `(M/2)Var(e)` | axe non canonique, multicœurs, intermittence angulaire et centre mobile hors champ |
+| amplitude critique bornée + masse par bloc + même extension à oscillation centrée `O(1/k)` | axe mobile à variation et erreur `O(log N)`, puis exclusion du profil | dérivation exacte, `COMPUTATION_ONLY` | `NS-BMO-ACTIVE-AXIS-EXTRACTION`, cycle 0024 | aucune de ces prémisses n'est héritée d'un blow-up général; amplitude non bornée hors champ |
+| train de blobs critiques de forme fixe + énergie + faible-`L^(3/2)` + masse par bloc | direction globale `bmo_phi` | réfutée | `NS-CRITICAL-BLOB-TRAIN-BMO-GATE`, cycle 0025 : tests centrés `O(n^-3)` mais oscillation interne uniforme sur des boules de rayon `ell_n/2` | une forme interne dépendant de l'échelle et asymptotiquement plate reste ouverte |
+| solution forte non triviale à temps positif | conventions BMO distinctes par valeurs sur `{omega=0}` | réfutée dans cette classe | analyticité `NS-SRC-0092`–`0093`; lieu nodal commun nul en mesure | ne contrôle ni phase près des zéros, ni solution faible terminale, ni superniveau actif |
 | rotation radiale uniforme en profondeur logarithmique | direction globale `bmo_(1/|log r|)` | réfutée déjà sur les boules centrées | variance exacte `alpha²/(9+alpha²)`, `WANDERING-AXIS-1` | ne traite pas des chemins irréguliers ou multivalués |
 | toute forte vorticité confinée uniformément dans un double cône fixe | régularité intérieure d'une solution faible adaptée | `SOURCE_VERIFIED`, prépublication v1 | `NS-LRT-DOUBLE-CONE-REGULARITY`, Lei–Ren–Tian `2501.08976v1` | preuve non reproduite; le cône n'est pas produit depuis Clay |
 | direction dans `bmo_(1/|log r|)` | axe fixe ou double cône uniforme sur tous les grands niveaux | manquante | séparation multicœur et moyenne contre contrôle ponctuel | un axe errant ou des phases multiples peuvent échapper à tout cône fixe |
@@ -132,31 +135,35 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | `GAP-LOG-RECTIFIED-PROFILE` | géométrie/admissibilité | direction vers un axe fixe, amplitude critique bornée et masse non dégénérée vers profil solénoïdal | fermé négativement au cycle 0022 sous masse par bloc : signe radial corrigé, budget de degré un et construction dégénérée tranchante; le faible-Lorentz seul reste insuffisant |
 | `GAP-WANDERING-AXIS-PROFILE` | géométrie/multi-échelle | axe `e=e(s)` échappant à tout double cône fixe vers profil critique solénoïdal | fermé négativement au cycle 0023 pour variation et erreur pondérée sublinéaires; une rotation uniforme assez rapide échoue au test log-BMO centré |
 | `GAP-MULTICORE-ANGULAR-CASCADE` | géométrie/multi-échelle | phases multiples sans axe global vers profil critique solénoïdal | fermé négativement au cycle 0024 sous `Phi<=M`, masse critique par bloc et même extension bornée log-BMO : la fraction active extrait un axe à variation et erreur `O(log N)` |
-| `GAP-UNBOUNDED-ANGULAR-INTERMITTENCY` | géométrie/multi-échelle | faible-`L^(3/2)` et log-BMO vers contrôle d'une amplitude critique concentrée | actif : le contre-profil `a_n=n^-3`, `Phi_n=n²` conserve la masse et annule la moyenne; imposer `div omega=0`, Biot–Savart, pression et résidu NS ou démontrer une coercivité critique plus faible |
+| `GAP-UNBOUNDED-ANGULAR-INTERMITTENCY` | géométrie/multi-échelle | faible-`L^(3/2)` et log-BMO vers contrôle d'une amplitude critique concentrée | cycle 0025 : divergence, énergie, masse et Biot–Savart sont compatibles avec le train sparse, mais une forme interne fixe échoue au BMO global et le résidu stationnaire reste critique |
+| `GAP-DIRECTIONALLY-FLAT-INTERMITTENCY` | géométrie/div–curl | direction interne asymptotiquement constante + compensation de `integral curl U=0` vers blob critique localisé | actif : construire deux niveaux d'amplitude et suivre oscillation, annulation vectorielle, faible-Lorentz, pression et résidu, ou démontrer une minoration coercive |
 | `GAP-LIMIT-ADMISSIBLE` | stabilité/admissibilité | profil singulier vers donnée de Schwartz | trois portes distinctes fermées : `FAIL-NS-0013` réfute la compacité `L³`, `0014` annule le mode impair sous lissage symétrique, `0015` réfute l'identification trace asymptotique/donnée finie; axe suspendu |
 | `GAP-NUM-CONTINUUM` | calcul vers continuum | discrétisation finie | résidu d'intervalle + queue analytique |
 
 ## Arêtes prioritaires
 
-1. `GAP-UNBOUNDED-ANGULAR-INTERMITTENCY` : construire un profil sparse
-   solénoïdal à amplitude critique croissante ou remplacer `Phi<=M` par une
-   borne critique héritée; suivre Biot–Savart et le résidu d'évolution.
-2. `GAP-MULTICORE-ANGULAR-CASCADE` : fermé négativement sous amplitude bornée,
+1. `GAP-DIRECTIONALLY-FLAT-INTERMITTENCY` : construire un blob principal
+   presque unidirectionnel et une région compensatrice de mesure décroissante
+   imposée par `integral curl U=0`; tester le coût critique et le résidu.
+2. `GAP-UNBOUNDED-ANGULAR-INTERMITTENCY` : le train de forme fixe est fermé
+   par BMO global; ne le rouvrir qu'avec une forme interne dépendant de
+   l'échelle ou une formulation intrinsèque pondérée sur l'ensemble actif.
+3. `GAP-MULTICORE-ANGULAR-CASCADE` : fermé négativement sous amplitude bornée,
    masse par bloc et extension log-BMO commune; ne le rouvrir qu'en cassant
    explicitement une de ces prémisses.
-3. `GAP-WANDERING-AXIS-PROFILE` : fermé négativement pour variation et erreur
+4. `GAP-WANDERING-AXIS-PROFILE` : fermé négativement pour variation et erreur
    sublinéaires; ne le rouvrir qu'avec une sélection non `BV`, un centre mobile
    ou un terme de recharge effectif non contrôlé par la variation.
-4. `GAP-LOG-RECTIFIED-PROFILE` : fermé négativement pour l'axe fixe sous
+5. `GAP-LOG-RECTIFIED-PROFILE` : fermé négativement pour l'axe fixe sous
    amplitude bornée et masse par bloc; ne le rouvrir qu'en quantifiant une
    intermittence angulaire non bornée ou une perte de masse.
-5. `GAP-CRITICAL-PROFILE-ADMISSIBILITY` : fermé négativement pour la
+6. `GAP-CRITICAL-PROFILE-ADMISSIBILITY` : fermé négativement pour la
    récurrence vectorielle exacte; ne le rouvrir qu'avec un profil non
    récurrent ou une limite espace-temps quantifiée.
-6. `GAP-VORTICITY-TAIL` : confronter la queue de strain annulaire réparée à
+7. `GAP-VORTICITY-TAIL` : confronter la queue de strain annulaire réparée à
    un contre-profil multi-échelle divergence-free issu d'une dynamique.
-7. `GAP-NUM-CONTINUUM` : isoler un opérateur compact à queues certifiables.
-8. Noyau Fourier–Leray formel : certifier les identités d'énergie finies avant
+8. `GAP-NUM-CONTINUUM` : isoler un opérateur compact à queues certifiables.
+9. Noyau Fourier–Leray formel : certifier les identités d'énergie finies avant
    toute formalisation de scénario PDE.
 
 `GAP-COMPACT-Q` est suspendu sous énergie seule après trois stratégies
@@ -180,10 +187,12 @@ pivot `GAP-LOG-RECTIFIED-PROFILE` a rompu la récurrence exacte mais échoue à
 axe fixe sous masse critique par bloc. `GAP-WANDERING-AXIS-PROFILE` échoue à
 son tour pour tout axe à variation et erreur pondérée sublinéaires. Le cycle
 0024 montre que les multicœurs ne suppriment pas cet axe lorsque amplitude,
-masse et extension log-BMO sont uniformes. Le pivot actif
-`GAP-UNBOUNDED-ANGULAR-INTERMITTENCY` doit donc concentrer l'amplitude ou
-casser explicitement l'extension commune, sans perdre les contraintes PDE
-suivies.
+masse et extension log-BMO sont uniformes. Le cycle 0025 concentre bien
+l'amplitude sans perdre divergence, énergie, faible-Lorentz ni Biot–Savart,
+mais la répétition d'un motif interne non constant échoue sur les boules
+décentrées et son résidu stationnaire est critique. Le pivot actif
+`GAP-DIRECTIONALLY-FLAT-INTERMITTENCY` doit faire s'aplatir ce motif tout en
+compensant l'intégrale vectorielle nulle d'un curl compact.
 
 `GAP-SIGN-FLUX` est borné par deux résultats négatifs : l'hélicité globale ne
 fixe pas le flux triadique et la cohérence d'un seul patch ne fixe pas le

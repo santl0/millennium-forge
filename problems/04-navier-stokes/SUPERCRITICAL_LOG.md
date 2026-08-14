@@ -504,3 +504,26 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   `e2603081b46d4aab9599e9681eaf50cbc460df46e3b6d1c3d2383b0a71005e0e`.
 - Pivot : `GAP-MULTICORE-ANGULAR-CASCADE` est fermé sous amplitude bornée;
   `GAP-UNBOUNDED-ANGULAR-INTERMITTENCY` devient actif.
+
+## 2026-08-14 — Train de blobs et défaut BMO décentré
+
+- Objet : champ statique sur `R³`, somme de copies critiques compactes aux
+  rayons `r_n=2^-n` et largeurs `ell_n=r_n/(8n)`.
+- Identités : `div u=0`, `curl u=W`, `div W=0`; les supports sont disjoints et
+  Biot–Savart reconstruit l'unique vitesse `L²`.
+- Énergie : `||U_n||²_2=ell_n||U_0||²_2`, donc la somme est finie.
+- Criticité : chaque blob garde la même masse `L^(3/2)`; la somme est dans
+  `L¹ intersection L^(3/2,infinity)` mais pas dans `L^(3/2)` fort.
+- Intermittence : occupation centrée `O(n^-3)`, amplitude angulaire exacte
+  `1024n²` et produit critique invariant.
+- Séparation des tests : l'extension par zéro a `MO_centree<O(n^-3)`, tandis
+  que toute extension garde `MO>=c_dir>0` sur des boules internes de rayon
+  `ell_n/2`. Une forme directionnelle fixe est incompatible avec tout poids
+  BMO qui tend vers zéro.
+- Résidu : `curl[-Delta U_0+(U_0 dot nabla)U_0]` a 1804 monômes non nuls;
+  aucune pression stationnaire ne ferme le profil et le coût `L¹` est critique.
+- Artefact : `CRITICAL-SOLENOIDAL-BLOB-TRAIN-1`, 104 contrôles exacts, zéro
+  échec, empreinte
+  `129921806266636a46a5202bd0f2912491aaf557a02cda229c17ef80a529cb15`.
+- Pivot : le blob de forme fixe est fermé;
+  `GAP-DIRECTIONALLY-FLAT-INTERMITTENCY` devient actif.

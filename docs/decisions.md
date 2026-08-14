@@ -116,3 +116,23 @@
   borne de tranche par le seul faible-Lorentz.
 - `GAP-MULTICORE-ANGULAR-CASCADE` est fermé sous les prémisses suivies et
   `GAP-UNBOUNDED-ANGULAR-INTERMITTENCY` devient actif.
+
+### 2026-08-14 — train critique réalisé, forme fixe abandonnée
+
+- `NS-CRITICAL-BLOB-TRAIN-BMO-GATE` construit au statut `COMPUTATION_ONLY` un
+  champ statique d'énergie finie dont la vorticité est divergence-free,
+  faible-`L^(3/2)`, de masse critique par bloc et d'amplitude angulaire `n²`.
+- Le raccord Biot–Savart `L²` est valide; la pression et l'évolution ne sont
+  pas produites.
+- Les boules centrées diluent l'occupation comme `n^-3`, mais le motif
+  directionnel interne récurrent impose une oscillation positive sur des
+  boules décentrées de rayon tendant vers zéro, indépendamment de l'extension
+  aux zéros.
+- Le curl du résidu stationnaire est non nul; aucune pression ne transforme
+  le train en solution stationnaire.
+- Le blob de forme fixe est abandonné. Le programme active
+  `GAP-DIRECTIONALLY-FLAT-INTERMITTENCY`, où une région de compensation forte
+  doit satisfaire `integral curl U=0` sans réintroduire une oscillation BMO.
+- Correction de portée : pour une solution forte non triviale à temps positif,
+  les choix sur le lieu nodal analytique, nul en mesure, ne changent pas BMO;
+  les prochains tests portent sur la phase près des zéros.

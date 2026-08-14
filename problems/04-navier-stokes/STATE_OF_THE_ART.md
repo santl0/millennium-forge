@@ -563,3 +563,27 @@ global `S²`-valué log-BMO depuis la direction définie seulement sur
 `GAP-UNBOUNDED-ANGULAR-INTERMITTENCY` : quantifier ou réaliser une concentration
 angulaire d'amplitude non bornée qui satisfasse aussi divergence, Biot–Savart,
 pression, évolution et admissibilité Clay.
+
+Le cycle 0025 réalise quatre de ces portes par un train explicite de blobs.
+Une vitesse de base polynomiale compacte est translatée aux rayons `2^-n` et
+remise à l'échelle aux largeurs `2^-n/(8n)`. La somme a une énergie finie, sa
+vorticité est dans `L¹ intersect L^(3/2,infinity)`, chaque bloc logarithmique
+porte une masse critique constante et le raccord Biot–Savart est unique dans
+`L²`. L'amplitude du facteur angulaire croît comme `n²`, tandis que
+l'oscillation de la direction étendue par zéro sur les seules boules centrées
+en l'origine décroît comme `n^-3`.
+
+Ce contre-profil ne passe pas la prémisse globale : la forme directionnelle
+interne non constante est reproduite sur des boules décentrées de rayon
+`ell_n/2`. Leur oscillation garde une minoration positive uniforme pour
+**toute** extension coïncidant avec la direction sur l'ensemble actif. La
+sparsité ne peut donc masquer un motif récurrent à sa propre échelle. Le
+résidu stationnaire a par ailleurs un curl polynomial non nul et une masse
+`L¹` invariante par blob; aucune pression ne le transforme en solution.
+
+Le nouveau verrou `GAP-DIRECTIONALLY-FLAT-INTERMITTENCY` exige une géométrie
+interne qui s'aplatit avec l'échelle. Comme toute vorticité compacte de la
+forme `curl U` a intégrale vectorielle nulle, une direction presque constante
+doit être compensée par une région opposée de faible volume et forte
+amplitude. Ce second niveau d'intermittence, sa divergence, son coût BMO et son
+résidu dynamique sont désormais les quantités prioritaires.

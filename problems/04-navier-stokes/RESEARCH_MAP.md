@@ -983,3 +983,40 @@ peut donc être supprimée par la seule criticité faible. Le verrou actif est
 `GAP-UNBOUNDED-ANGULAR-INTERMITTENCY` : produire soit une inégalité coercive
 avec contrôle critique faible, soit un profil intermittent solénoïdal dont le
 résidu Navier–Stokes et les queues non locales sont quantifiés.
+
+## Cycle 0025 : train critique de blobs solénoïdaux
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| train explicite de blobs critiques + test BMO global | 5 | 5 | 5 | 5 | **20** |
+| remplacer la borne d'amplitude par un moment angulaire | 5 | 3 | 5 | 5 | 18 |
+| évolution Galerkin validée d'un train tronqué | 4 | 2 | 4 | 3 | 13 |
+
+La construction canonique utilise
+
+```text
+U_n=ell_n^-1 U_0((x-x_n)/ell_n),
+W_n=ell_n^-2 curl U_0((x-x_n)/ell_n),
+r_n=2^-n,                         ell_n=r_n/(8n).
+```
+
+Les supports disjoints donnent exactement
+
+```text
+u∈L²,       W=curl u∈L¹ intersection L^(3/2,infinity),
+div u=div W=0,
+integral_blob |W|^(3/2)=constant,
+r_n²|W_n(x_n)|=1024n².
+```
+
+La direction par zéro a une oscillation `O(n^-3)` sur
+`B_(3r_n/2)(0)`, mais toute extension a une oscillation au moins `c_dir>0`
+sur des boules internes de rayon `ell_n/2`. Le test centré est donc strictement
+insuffisant pour le `bmo_phi` global. Le curl du résidu stationnaire est non
+nul; le champ n'est pas une solution.
+
+Le motif fixe est abandonné. `GAP-DIRECTIONALLY-FLAT-INTERMITTENCY` devient
+actif : construire une famille de blobs dont la direction interne devient
+constante en oscillation, tout en compensant l'identité
+`integral curl U_n=0` par une sous-région opposée et en suivant son amplitude,
+sa mesure, le faible-Lorentz et le résidu.

@@ -41,9 +41,13 @@
 - [x] Exclure une cascade multicoeur sans axe global sous amplitude critique
   bornée, masse par bloc et même extension log-BMO : la fraction active
   produit un axe à variation et erreur `O(log N)` au cycle 0024.
-- [ ] Construire ou exclure une intermittence angulaire à amplitude non
-  bornée : imposer d'abord `div omega=0`, puis suivre faible-`L^(3/2)`,
-  Biot–Savart, énergie locale et résidu Navier–Stokes avec constantes.
+- [x] Construire et auditer une intermittence angulaire à amplitude non
+  bornée : le train sparse de forme fixe passe divergence, curl, énergie,
+  faible-Lorentz, masse par bloc et Biot–Savart; le BMO global et le résidu
+  stationnaire échouent au cycle 0025.
+- [ ] Construire ou exclure un blob directionnellement plat : cœur principal
+  presque unidirectionnel, compensateur imposé par `integral curl U=0`, mesure
+  et amplitude à deux niveaux, oscillation `O(1/n)` et résidu suivi.
 - [ ] Quantifier une formulation pré-singulière cohérente par rayon de cœur
   `r_c(t)` ou convergence de profils remis à l'échelle.
 - [ ] Formaliser le lemme scalaire de séparation de phases
