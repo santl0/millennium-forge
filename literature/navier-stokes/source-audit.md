@@ -715,3 +715,37 @@ n'a été auditée ligne à ligne. Aucun claim du laboratoire ne les utilise.
 - Kato (`0010`) porte sur `R3`. Le seuil de petite donnée `L3(T3)` est standard
   par semi-groupe, mais son énoncé primaire exact et ses constantes restent
   une dette; Giga–Miyakawa n'est pas ajouté sans audit du domaine.
+
+## Audit ciblé du cycle 0030 — cardinal croissant et potentiel poreux
+
+- Yamazaki (`0118`) est ajouté comme source publiée pour l'existence globale
+  et l'unicité de petites solutions dans faible-`L^n`. Il justifie seulement
+  le rejet perturbatif du stacking normalisé; le seuil dépend du domaine, de
+  la viscosité et de la norme et n'est pas évalué dans ce cycle.
+- Buttà–Cavallaro–Marchioro (`0119`) traite `N` anneaux Euler axisymétriques
+  sans swirl dans une limite d'épaisseur, avec `N` fixé. Le résultat ne fournit
+  aucune constante uniforme lorsque `N->infinity`.
+- Gancedo–Hidalgo-Torné (`0120`) donne une dynamique Navier–Stokes globale
+  pour un filament hélicoïdal mesure, sous symétrie forte. Guerra–Musso
+  (`0121`) et Averkiou–Musso (`0122`) sont publiés pour Euler hélicoïdal;
+  Averkiou–Musso–Yu (`0123`) reste une v1. « Support transverse compact » ne
+  signifie jamais support compact dans `R^3`.
+- Fontelos–Ispizua–Vega (`0124`) est une v1 visqueuse récente : `nu t<<1`,
+  petite circulation relative et contrôle Morrey. Elle construit un régime
+  régulier de filament/soliton, pas un blow-up.
+- Hedberg (`0125`) et Lieb (`0126`) sourcent les deux outils de potentiel.
+  La constante 9 du découpage dyadique tronqué et la combinaison donnant
+  `(h/q)^(4/3)` restent des dérivations internes. Adams–Hedberg (`0127`) est
+  une monographie de contexte, non une source primaire pour ce nouveau lemme.
+
+La veille ajoute dix entrées et porte le corpus à 127 sources. Aucun article
+primaire 2025–2026 inspecté ne propage un packing de variation totale uniforme
+pour un cardinal croissant de tubes Navier–Stokes. La mesure filamentaire a
+une croissance locale de dimension un; l'hypothèse cubique n'est utilisable
+qu'après troncature au rayon du coeur et contrôle séparé de la partie proche.
+
+Le résultat `NS-POROUS-MANY-TORUS-L3-COLLAPSE` est donc une dérivation interne
+fondée sur des outils sourcés, pas un théorème cité. Le contre-profil compact
+sépare exactement `L^3` fort et les endpoints faibles, mais il reproduit
+l'oscillation directionnelle du bloc de base. Aucun transfert vers le problème
+Clay ne suit sans propagation temporelle et contrôle de la pression.

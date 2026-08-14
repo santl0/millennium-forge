@@ -1,0 +1,54 @@
+{
+  "id": "NS-POROUS-MANY-TORUS-L3-COLLAPSE",
+  "problem": "navier-stokes",
+  "statement": "Pour une famille de tubes lisses de R^3 à amplitude, rayon de coeur h et rayon de corridor q communs, de longueur totale L, de packing local uniforme et de quasi-norme K en L^(3/2,infinity), la vitesse de Biot-Savart vérifie ||u||_3^3<=C K^3[h/L+(h/q)^(4/3)]. Sur T^3, dans une cellule unité et sous moyenne nulle, le membre droit reçoit le terme supplémentaire C K^3 S, où S est le volume actif. Par conséquent K borné, h/L->0, h/q->0 et, dans le cas périodique, S->0 forcent ||u||_3->0, indépendamment du nombre de tubes et de leurs signes.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "les courbes fermées ont reach au moins 8q, leurs tubes de rayon 4q sont disjoints et 0<h<q/8",
+    "le profil transverse est fixe, lisse et de module comparable à un sur une fraction fixe du coeur; toutes les amplitudes ont le même module A",
+    "pour toute boule B_r et r>=q, la longueur totale des axes dans B_r est au plus P r^3/q^2 avec P uniforme",
+    "K est la quasi-norme sup_t t |{|W|>t}|^(2/3), de sorte que K^3 est comparable à A^3 L^2 h^4",
+    "pour interpréter W comme une vorticité, div W=0; cette propriété est exacte pour la réalisation par cercles coaxiaux et doit être imposée ou corrigée pour des courbes gauches",
+    "sur T^3, le cluster reste dans une boule d'injectivité fixe, W est de moyenne nulle et S est mesuré dans une cellule de volume un",
+    "les constantes dépendent seulement du profil, du reach normalisé et de la constante de packing, jamais du cardinal ou des signes"
+  ],
+  "dependencies": [
+    "NS-TOROIDAL-LOG-BMO-VELOCITY-COLLAPSE",
+    "NS-IMPULSE-CORRECTED-TORUS-PAIR-COLLAPSE"
+  ],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0125 (Hedberg 1972) et NS-SRC-0126 (Lieb 1983) pour les outils de potentiel; la combinaison tronquée et ses constantes sont dérivées dans le dépôt"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0030-many-torus-porosity.md"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0030-analysis.md"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/many-torus-porosity/many_torus_porosity_audit.py, 776 contrôles dyadiques rationnels exacts",
+      "sha256": "821c0e7e442698397c5d426fefca42ca12e5949f904e3ce243d3277377ecbbae"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "la famille coaxiale N_n=2^(12n-12) fait diverger la somme triangulaire N_n h_n/ell_n tout en donnant les cubes poreux 2^(-21n+12)+2^(-4n)+2^(-15n-12)->0"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0030-many-torus-porosity"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Passes Codex analytique, contre-modèle et littérature; aucune revue externe indépendante",
+    "notes": "L'exposant 4/3, la coquille de troncature, la normalisation faible-Lorentz et le reste périodique ont été recalculés séparément. Le résultat ne couvre ni amplitudes/rayons hétérogènes, ni défaut de packing local, ni propagation dynamique du corridor log-BMO."
+  }
+}

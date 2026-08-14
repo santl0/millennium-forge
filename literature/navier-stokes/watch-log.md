@@ -548,3 +548,26 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
   le seuil `L3(T3)` avec dépendance en viscosité et période.
 - Décision : fermer cardinal fixé et activer le budget de cardinal croissant,
   avec une voie parallèle partant d'une vitesse compacte divergence-free.
+
+## 2026-08-14 — Cycle 0030
+
+- Veille différentielle primaire : petite donnée faible-`L^n` de Yamazaki;
+  anneaux Euler publiés 2025; filament hélicoïdal Navier–Stokes publié 2025;
+  trois résultats Euler hélicoïdaux 2026 dont deux publiés; filament visqueux
+  `2607.21439v1`; Hedberg, Lieb et Adams–Hedberg pour les potentiels.
+- Sources ajoutées : `NS-SRC-0118`–`0127`; corpus à 127 entrées. Les statuts
+  publié/prépublication et les versions arXiv ont été vérifiés sur les pages
+  primaires ou éditeur.
+- Résultat négatif de veille : aucun théorème trouvé n'est uniforme sous
+  `N->infinity` pour les constantes Lorentz, packing de variation totale ou
+  log-BMO directionnel. Les constructions multi-filaments gardent `N` fixé ou
+  une symétrie hélicoïdale forte.
+- Résultat interne : la borne poreuse ferme les tubes homogènes localement
+  packés, mais pas les cascades hétérogènes. Le reste périodique `CK^3S` est
+  conservé explicitement.
+- Test adverse : un stacking de vitesses compactes garde `L^3` fort tout en
+  séparant les endpoints faibles; la normalisation petite tombe sous Yamazaki
+  et la normalisation non petite échoue au log-BMO interne.
+- Décision : après trois stratégies tubulaires distinctes, abandonner la
+  branche homogène et activer
+  `GAP-COMPACT-VELOCITY-WEAK-CRITICAL-DIRECTION`.
