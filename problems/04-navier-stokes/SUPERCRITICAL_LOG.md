@@ -293,3 +293,23 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   sont pas attaqués.
 - Artefact : `VORTICITY-LOCAL-COHERENCE-SIGN-GATE-1`, tous résidus exacts
   nuls; `FAIL-NS-0016`.
+
+## 2026-08-14 — Restriction de sparseness et seuil de rayon
+
+- Objet : ensemble borélien dans `R³`; application conditionnelle à un
+  superniveau d'une solution mild analytique de NS incompressible 3D non forcé.
+- Échelle : sous `u_kappa(x,t)=kappa u(kappa x,kappa²t)`, l'amplitude porte
+  `kappa`, le volume du superniveau relatif `kappa^-3` et le rayon construit
+  `kappa^-1`. Les densités volumique et linéaire sont invariantes.
+- Lemme sharp : densité 3D `≤delta` dans `B_r(x_0)` implique une direction de
+  densité linéaire `≤delta^(1/3)` au même rayon. La boule concentrique sature.
+- Rayon : depuis `|V|≤B`, le seul volume garantit
+  `r³≥B/(delta|B_1|)`. Pour `delta=3/4`, le seuil est `r³≥B/pi`.
+- Correction de quantificateur : le rayon minimal réel est majoré par le rayon
+  calculé depuis le majorant global; cela n'autorise pas un rayon arbitraire
+  plus petit. Une boule centrale donne une densité un à petite échelle.
+- Gain/perte : le maillon géométrique est critique et sans perte de constante.
+  Le gain logarithmique éventuel vient entièrement du majorant PDE amont, non
+  de la restriction géométrique.
+- Artefact : `SPARSENESS-RESTRICTION-1`, fractions rationnelles exactes,
+  résidus algébriques nuls, statut `COMPUTATION_ONLY`.

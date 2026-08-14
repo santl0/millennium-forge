@@ -69,6 +69,9 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | cohérence locale dans un patch + énergie/enstrophie/palinstrophie/hélicité | signe ou petite déplétion ponctuelle de `omega·S omega` | réfutée | paire Fourier exacte `a=+-1`, `FAIL-NS-0016` | strain lointain et quantificateurs globaux absents |
 | cohérence high–high uniforme en temps sur `R³` | régularité | conditionnelle, sourcée | Constantin–Fefferman; Beirão da Veiga–Berselli | module non déduit de la dynamique générale |
 | cohérence locale sur cylindre | absorption du stretching localisé | conditionnelle, sourcée | Grujić 2009 | commutateurs de cutoff et queue extérieure à conserver |
+| majorant global `|V|≤B` | 3D `delta`-sparseness au rayon construit `r=[B/(delta|B_1|)]^(1/3)` | dérivation exacte, `COMPUTATION_ONLY` | mesure globale et volume de la boule; rayon uniforme en centre | les rayons plus petits ne sont pas garantis; majorant PDE amont requis |
+| 3D `delta`-sparseness dans `B_r(x_0)` | 1D `delta^(1/3)`-sparseness sur une droite centrale au même rayon | dérivation exacte sharp, sources publiées `0065`–`0066`, passe adverse | formule polaire signée + réarrangement radial; boule centrale extrémale | aucun trou géométrique; direction dépendante de `x_0` |
+| borne de réarrangée de vorticité (47)–(48) | majorant quantitatif de distribution de vitesse (49) puis volume (55) | conditionnelle, prépublication v2 | `NS-SRC-0059`; équivalences asymptotiques non encore rendues uniformes | seuils, sens des inverses et constantes du transfert vorticité–vitesse |
 | hélicité globale nulle | petit flux instantané universel | réfutée | contre-triade exacte | pas de positivité modale |
 | profil Euler IA | profil NS perturbatif | réfutée pour l'ansatz mono-échelle `lambda>-1/2` | rapport visqueux exact | viscosité dominante |
 | donnée homogène `-1` non unique | donnée compacte énergétique singulière non unique | source vérifiée, CAP non reproduite | Hou–Wang–Yang v2; cutoff extérieur, gain `R^-1/8` pour `p=4` | le coeur `1/r` est conservé |
@@ -99,15 +102,19 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | `GAP-HYBRID-INHERITANCE` | stabilité des hypothèses | mildness/bornitude KNSS et trace nulle ESS appartiennent à deux limites distinctes; dans la normalisation maximum, les limites commutent au temps-record `t_k`, tandis que `T` devient l'extrémité mobile `B_k` | matrice d'héritage + rigidité à trace nulle + audit des horloges/commutateur; axe suspendu après trois stratégies |
 | `GAP-SIGN-FLUX` | positivité | flux d'énergie inter-échelles | contre-triades exactes |
 | `GAP-VORTICITY-TAIL` | non-localité/quantificateurs | direction locale vers strain total et stretching positif | `FAIL-NS-0016`; exiger une queue Biot–Savart annulaire explicite |
+| `GAP-DISTRIBUTION-INVERSION` | uniformité/asymptotique | équations (47)–(49) de `arXiv:2607.08866v2`, réarrangée de vorticité vers distribution de vitesse | remplacer chaque équivalence par des inégalités à seuils et constantes suivis; tester plateaux et oscillations lentes |
 | `GAP-LIMIT-ADMISSIBLE` | stabilité/admissibilité | profil singulier vers donnée de Schwartz | trois portes distinctes fermées : `FAIL-NS-0013` réfute la compacité `L³`, `0014` annule le mode impair sous lissage symétrique, `0015` réfute l'identification trace asymptotique/donnée finie; axe suspendu |
 | `GAP-NUM-CONTINUUM` | calcul vers continuum | discrétisation finie | résidu d'intervalle + queue analytique |
 
 ## Arêtes prioritaires
 
-1. `GAP-VORTICITY-TAIL` : auditer la conversion mesure/sparseness de
-   `arXiv:2607.08866v2`, puis formuler une queue de strain sommable.
-2. `GAP-NUM-CONTINUUM` : isoler un opérateur compact à queues certifiables.
-3. Noyau Fourier–Leray formel : certifier les identités d'énergie finies avant
+1. `GAP-DISTRIBUTION-INVERSION` : auditer quantitativement les équations
+   (47)–(49) de `arXiv:2607.08866v2`; la conversion mesure/sparseness aval est
+   désormais fermée et sharp.
+2. `GAP-VORTICITY-TAIL` : auditer la queue dyadique du commutateur, puis
+   formuler une queue de strain sommable.
+3. `GAP-NUM-CONTINUUM` : isoler un opérateur compact à queues certifiables.
+4. Noyau Fourier–Leray formel : certifier les identités d'énergie finies avant
    toute formalisation de scénario PDE.
 
 `GAP-COMPACT-Q` est suspendu sous énergie seule après trois stratégies

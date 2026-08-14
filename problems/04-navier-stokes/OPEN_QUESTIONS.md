@@ -6,8 +6,8 @@ des décisions reste dans les checkpoints.
 
 | Priorité | Question falsifiable | Pourquoi maintenant | Critère de sortie |
 |---:|---|---|---|
-| 1 | la conversion « petit volume de superniveau 3D -> sparseness linéaire uniforme par le point critique, à la même échelle » utilisée dans `arXiv:2607.08866v2` est-elle valide avec les quantificateurs annoncés ? | meilleure valeur informationnelle après `FAIL-NS-0016`; maillon purement géométrique testable avant les estimations PDE | preuve élémentaire à constantes suivies ou ensemble mesurable adverse explicite |
-| 2 | une inégalité locale de stretching positif peut-elle être fermée avec une queue de strain lointain explicite et sommable, sans supposer la norme critique recherchée ? | le cycle 0013 prouve que toute suppression de cette queue est fausse | borne annulaire/Carleson uniforme, ou contre-profil multi-échelle à énergie suivie |
+| 1 | l'inversion quantitative des réarrangées aux équations (47)–(49) de `arXiv:2607.08866v2` conserve-t-elle des inégalités uniformes, plutôt que de simples équivalences asymptotiques ? | le cycle 0014 ferme le maillon géométrique immédiatement aval; c'est désormais la première arête amont bornée et falsifiable | dérivation avec seuils et constantes uniformes, ou fonction monotone adverse explicite |
+| 2 | une inégalité locale de stretching positif peut-elle être fermée avec une queue de strain lointain explicite et sommable, sans supposer la norme critique recherchée ? | le cycle 0013 prouve que toute suppression de cette queue est fausse; le commutateur dyadique de la prépublication est un test primaire | borne annulaire/Carleson uniforme, ou contre-profil multi-échelle à énergie suivie |
 | 3 | un problème renormalisé NS peut-il être réduit à un opérateur compact avec bornes de queue certifiables ? | préalable à toute preuve assistée par ordinateur | rayon de contraction validable sous raffinement |
 | 4 | le noyau Fourier fini énergie–Leray peut-il être formalisé sans axiome ni `sorry` en Lean ? | petite brique stable, indépendante des scénarios spéculatifs | build épinglé + `#print axioms` vide hors logique standard |
 
@@ -88,6 +88,16 @@ signé reste `-a` sur un patch à l'échelle `|omega|^-1/2`, au prix d'une éner
 croissant comme `N²`. Toute règle de signe ponctuel fondée seulement sur un
 patch local est donc abandonnée. Une réouverture doit inclure tout l'ensemble
 de forte vorticité, l'uniformité temporelle et une queue Biot–Savart explicite.
+
+## Résultat positif borné du cycle 0014
+
+Pour tout borélien `S⊂R³`, une densité au plus `delta` dans `B_r(x_0)` impose
+une tranche centrale de densité au plus `delta^(1/3)` au même rayon; la boule
+concentrique prouve l'optimalité. Si `|S|≤B`, le rayon uniforme construit est
+`[B/(delta|B_1|)]^(1/3)`. Le sens adverse est essentiel : le seul volume
+garantit les rayons au-dessus de ce seuil, pas tout rayon inférieur. Le maillon
+est fermé avec le statut `COMPUTATION_ONLY`; les estimations PDE qui produisent
+le majorant de volume restent ouvertes.
 
 ## Règle de pivot
 

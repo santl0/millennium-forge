@@ -509,3 +509,37 @@ géométrie sur tout le high-vorticity set
 Le prochain test fige les quantificateurs de la conversion géométrique de
 `arXiv:2607.08866v2` et cherche un ensemble mesurable adverse avant d'auditer
 les estimations PDE plus longues.
+
+## Cycle 0014 : volume 3D vers tranche 1D
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| restriction sharp `delta -> delta^(1/3)` au même point et rayon | 3 | 5 | 5 | 5 | **18** |
+| inversion logarithmique quantitative des équations (47)–(49) | 4 | 4 | 5 | 5 | **18** |
+| queue dyadique du commutateur du théorème 4.1 | 5 | 2 | 4 | 5 | 16 |
+
+Le premier candidat gagne le départage parce qu'il isole une proposition de
+théorie de la mesure indépendante des estimations PDE. La formule polaire
+signée et le réarrangement croissant donnent
+
+```text
+|S∩B_r|/|B_r| >= average_(nu∈S²) L(nu)^3,
+```
+
+où `L(nu)` est la densité sur la droite centrale. Il existe donc une direction
+avec `L≤delta^(1/3)`. La boule concentrique sature toute la chaîne. Depuis un
+majorant global `B`, le rayon sûr vérifie
+`r³=B/(delta|B_1|)` et la propriété persiste pour les rayons plus grands; une
+boule centrale réfute la lecture inverse.
+
+Arête confirmée, `COMPUTATION_ONLY` :
+
+```text
+majorant global de volume du superniveau
+  -> sparseness 3D au rayon construit
+  -> sparseness 1D sharp au même rayon.
+```
+
+Le verrou se déplace d'une arête vers l'amont : rendre quantitatives et
+uniformes les équations (47)–(49). En cas d'échec, la queue dyadique du
+commutateur devient l'expérience suivante.

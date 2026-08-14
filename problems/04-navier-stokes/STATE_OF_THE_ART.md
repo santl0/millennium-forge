@@ -317,3 +317,14 @@ partie lointaine du strain et ne réfute aucun critère géométrique intégré.
 verrou actif devient une inégalité avec queue non locale explicite et l'audit
 des raccords de `arXiv:2607.08866v2` entre mesure de superniveau, sparseness
 linéaire et rayon d'analyticité.
+
+Le cycle 0014 ferme exactement le dernier de ces trois raccords géométriques :
+la densité volumique `delta` implique une tranche linéaire
+`delta^(1/3)` au même centre et rayon, avec constante un optimale. Pour
+`delta=3/4`, une borne globale `|V_s|≤B_s` fournit le rayon sûr
+`(B_s/pi)^(1/3)`; ce rayon doit être construit avant d'en démontrer la borne
+supérieure logarithmique. La provenance est corrigée : Grujić 2013 porte le
+critère 1D et la mesure harmonique, Farhat–Grujić–Leitmeyer 2017 la réduction
+volumique à une échelle `rho≤r`, et Grujić–Xu 2019–2024 la formulation au même
+rayon. `arXiv:2607.08866` reste une v2 non évaluée; ses estimations (47)–(55),
+la queue du commutateur et l'uniformité des constantes ne sont pas validées.

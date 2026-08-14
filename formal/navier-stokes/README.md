@@ -455,3 +455,22 @@ signe locale. Elle ne formaliserait ni une trajectoire Navier–Stokes, ni les
 critères de Constantin–Fefferman, ni une implication Clay. Le script exact
 reste `COMPUTATION_ONLY` et les trois passes Codex ne sont pas une revue
 indépendante externe.
+
+## Backlog issu du cycle 0014 — formule polaire et réarrangement radial
+
+Après le noyau Fourier–Leray, le lemme géométrique stable peut être isolé sans
+formaliser Navier–Stokes :
+
+1. définir la densité d'un borélien dans une boule et la densité de sa section
+   sur une droite centrale;
+2. formaliser la formule polaire signée avec son facteur de double comptage
+   `1/2`;
+3. prouver que, parmi les ensembles de longueur `m` dans `(-r,r)`, le moment
+   de `|t|^(d-1)` est minimal sur l'intervalle centré;
+4. en déduire le seuil `delta^(1/d)` et l'optimalité par la boule concentrique;
+5. formaliser séparément le corollaire global
+   `r^d≥B/(delta omega_d)` afin de figer le sens du quantificateur.
+
+Cette cible certifierait un lemme de théorie de la mesure et ses constantes,
+pas le majorant de superniveau, l'analyticité ou le théorème 7.4 de la
+prépublication 2026.

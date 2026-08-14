@@ -2,7 +2,7 @@
 
 Les expériences de ce répertoire sont des tests analytiques finis. Elles ne
 simulent pas une solution Navier–Stokes et ne constituent ni une preuve de
-régularité ni un blow-up. Les quinze expériences utilisent la graine « sans
+régularité ni un blow-up. Les seize expériences utilisent la graine « sans
 objet » et écrivent
 leur rapport JSON sur la sortie standard.
 
@@ -13,6 +13,7 @@ leur rapport JSON sur la sortie standard.
 | `VAS-1` | quand la viscosité est-elle perturbative dans un ansatz mono-échelle ? | rationnels exacts; aucune grille | `python -B experiments/navier-stokes/viscosity-gate/test_viscosity_gate.py` | zéro pour les identités testées |
 | `TRI-PHASE-1` | divergence nulle et hélicité nulle imposent-elles un flux sous-linéaire universel ? | modes Fourier finis, rationnels gaussiens exacts | `python -B experiments/navier-stokes/triad-phase/test_triad_phase.py` | zéro |
 | `VORTICITY-LOCAL-COHERENCE-SIGN-GATE-1` | une cohérence locale arbitrairement fine de la direction fixe-t-elle le signe ou déplète-t-elle sans échelle le stretching central ? | six modes Fourier, fractions rationnelles gaussiennes exactes; aucune grille | `python -B experiments/navier-stokes/vorticity-local-coherence/local_coherence_audit.py` | zéro pour les identités, la pression et les lois d'échelle |
+| `SPARSENESS-RESTRICTION-1` | une densité volumique `delta` impose-t-elle une tranche linéaire `delta^(1/3)` au même point et rayon ? | preuve polaire + fractions exactes, profils radiaux et colonnes angulaires | `python -B experiments/navier-stokes/sparseness-restriction/sparseness_restriction_audit.py` | zéro pour toutes les identités algébriques |
 | `DESINGULARIZATION-GATE-1` | les normes d'une troncature de `r^-1` restent-elles uniformes quand `epsilon -> 0` ? | intégrales radiales exactes; logarithme symbolique | `python -B experiments/navier-stokes/desingularization-gate/desingularization_gate.py` | zéro pour les identités rationnelles |
 | `HWY-INNER-CUTOFF-GATE-1` | une régularisation intérieure divergence-free petite en `L²` et bornée en `L^{3,infinity}` est-elle compacte dans `L³` ? | matrices et intégrales exactes; transcendantes symboliques | `python -B experiments/navier-stokes/hwy-inner-cutoff/inner_cutoff_audit.py` | zéro pour les identités rationnelles et l'arrondi |
 | `HWY-PARITY-PROJECTION-GATE-1` | un lissage intérieur respectant la réflexion HWY peut-il exciter le mode certifié impair ? | projecteurs de parité et exposants rationnels exacts; aucune grille | `python -B experiments/navier-stokes/hwy-parity-projection/parity_projection_audit.py` | zéro pour dix obligations; aucun arrondi |
@@ -115,6 +116,33 @@ réseau ni ne produit d'artefact lourd.
 - Empreinte :
   `04112a48e77a5286fd3e98a73471577a7f30a9b0acbd027699177b6204649708`.
 
+## `SPARSENESS-RESTRICTION-1` — volume 3D vers tranche linéaire
+
+- Question falsifiable : pour un borélien `S⊂R³`, une densité au plus `delta`
+  dans `B_r(x_0)` impose-t-elle une direction centrale dont la densité sur
+  `(-r,r)` est au plus `delta^(1/3)`, avec le même point et le même rayon ?
+- Dérivation : la formule polaire signée porte un facteur `1/2`; parmi les
+  ensembles `A⊂(-r,r)` de longueur `m`, le moment
+  `integral_A t² dt` est minimal sur l'intervalle centré et vaut `m³/12`.
+  Après normalisation par `|B_r|`, une direction vérifie le seuil annoncé.
+- Optimalité : `S=B_(r delta^(1/3))(x_0)` sature la borne dans toutes les
+  directions. En dimension `d`, la même preuve donne `delta^(1/d)`.
+- Application : si `|V|≤B`, le rayon construit
+  `r_B=[B/(delta |B_1|)]^(1/3)` fonctionne pour tout centre, avec une direction
+  pouvant dépendre du centre. Les rayons garantis par la seule mesure vérifient
+  `r³≥B/(delta|B_1|)`; les rayons arbitrairement plus petits ne sont pas
+  certifiés. Pour `delta=3/4`, `delta|B_1|=pi`.
+- Test adverse : la boule centrale est extrémale; coquilles, colonnes
+  angulaires et dimensions `1,...,6` testent les constantes. Le certificat
+  emploie `Fraction`, aucune grille, aucun flottant et aucune graine.
+- Résidus : toutes les identités algébriques valent `0/1`; le seuil
+  `(3/4)^(1/3)` est encadré strictement par `90856/100000` et
+  `90857/100000`.
+- Empreinte du script :
+  `efe3ccaa41bd97988a7bd7c58c728af35f8dc6665d53d3f9df7052a1f34fe19b`.
+- Limite : le test ne valide ni la borne de distribution, ni le commutateur,
+  ni l'analyticité, ni le maximum harmonique de `arXiv:2607.08866v2`.
+
 ## `DESINGULARIZATION-GATE-1` — premier cycle autonome
 
 - Question : la contribution de coquille d'un champ homogène
@@ -173,7 +201,7 @@ réseau ni ne produit d'artefact lourd.
 
 ## Passage au continuum
 
-Aucune des quinze expériences ne part d'une discrétisation PDE : il n'y a donc
+Aucune des seize expériences ne part d'une discrétisation PDE : il n'y a donc
 pas de passage grille-vers-continuum. Le raccord analytique restant est
 explicite dans chaque cas. Tout futur solveur doit ajouter divergence mesurée,
 convergence multi-résolution, second schéma, bornes de troncature, contrôle des

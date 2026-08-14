@@ -1,6 +1,6 @@
 # Revue bibliographique contradictoire — cycle 0014
 
-Date de vérification : 2026-08-14  
+Date de vérification : 2026-08-14
 Objet : passage « 3D \(\delta\)-sparse \(\Rightarrow\) 1D \(\delta^{1/3}\)-sparse » et chaîne de mesure harmonique dans [arXiv:2607.08866v2](https://arxiv.org/abs/2607.08866).
 
 ## Verdict exécutif
