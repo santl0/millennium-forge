@@ -202,6 +202,17 @@ l'intervalle classique et détruit l'invariance auto-similaire exacte. Le cycle
 0010 montre en outre que convergence `L²` et borne `L^{3,infinity}` ne donnent
 pas la compacité `L³` requise par un raccord perturbatif naïf.
 
+Le cycle 0011 ferme une seconde inférence naïve. Le profil HWY est pair sous
+la réflexion axiale vectorielle et le mode instable certifié est impair. Les
+cutoffs/convolutions radiaux, la chaleur et la projection de Leray respectent
+cette parité : le lissage intérieur symétrique a donc une projection exactement
+nulle sur ce mode, et la solution forte locale reste paire. Les artefacts CAP
+publics audités exposent le mode droit et des bases de coercivité, mais pas une
+fonction propre adjointe dynamique avec normalisation, borne de résolvante et
+conditionnement suffisants pour mesurer un lissage asymétrique. Aucun mode
+instable pair n'est exclu, et la brisure de symétrie faible après perte de
+l'unicité forte reste possible.
+
 ## Calculs, IA et preuve assistée par ordinateur
 
 Quatre niveaux sont conservés séparément :

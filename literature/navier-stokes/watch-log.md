@@ -182,3 +182,30 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
 - Décision : poursuivre sur un shadowing dynamique de la couche
   `t~epsilon²` et sa projection instable; ne pas lancer la CAP de 800 Go avant
   extraction d'un sous-certificat léger et épinglé.
+
+## 2026-08-14 — Cycle 0011
+
+- Fenêtre recherchée : nouvelles versions/publications liées à
+  `arXiv:2509.25116v2`, projecteurs de Riesz/adjoints certifiés, stabilité de
+  profils forward sous désingularisation intérieure, jusqu'aux annonces
+  disponibles le 2026-08-14.
+- Statut HWY inchangé : prépublication `v2` du 2026-03-19; aucune version
+  ultérieure ni publication évaluée identifiée.
+- Delta primaire : les sections de symétrie ont été isolées. Le profil `U` est
+  pair sous la réflexion axiale vectorielle, le mode `v` certifié est impair et
+  la branche dans cette direction brise la symétrie.
+- Delta bibliographique : aucun travail postérieur contrôlé ne fournit un
+  théorème de stabilité du mode HWY sous lissage intérieur. Ionescu–Jia–Palasek
+  `arXiv:2606.07501v1` reste un théorème conditionnel adossé à un calcul non
+  certifié et à une donnée homogène singulière.
+- Delta artefacts : le dépôt public expose une fonction propre droite et des
+  bases de coercivité de rang fini, mais aucun adjoint dynamique normalisé avec
+  enclosure, borne de résolvante et constante de conditionnement utilisable
+  pour la projection d'une couche asymétrique.
+- Résultat différentiel : la parité annule exactement le pairing pour le
+  lissage radial. Aucun maillon primaire nouveau ne transfère la multiplicité
+  vers une même donnée Clay lisse.
+- Décision : ne pas exécuter la CAP lourde. Spécifier d'abord le certificat
+  léger minimal résolvante–simplicité–adjoint–pairing et tester la sensibilité
+  d'une couche impaire ajustée, sans confondre données lisses différentes et
+  non-unicité pour une donnée fixée.
