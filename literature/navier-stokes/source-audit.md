@@ -141,6 +141,9 @@ Il est incorrect de remplacer la seconde arête par « les profils self-similair
 | [Wang–Yang, arXiv:2608.06040v1](https://arxiv.org/abs/2608.06040) (`0046`) | prépublication, 2026-08-06 | Liouville pour des `D`-solutions stationnaires sous enveloppes cylindriques critiques avec gain logarithmique | stationnarité, Dirichlet fini et décroissance ne sont pas hérités par une limite ancienne générale |
 | [Binz–Coiculescu, arXiv:2607.12159v1](https://arxiv.org/abs/2607.12159) (`0047`) | prépublication, 2026-07-13 | exclusion de profils homothétiques forward dans certaines classes de Morrey/régularité angulaire | profil forward à donnée homogène singulière; **pas un profil backward de blow-up Clay** |
 | [Seregin, arXiv:2507.08733v2](https://arxiv.org/abs/2507.08733) (`0048`) | prépublication, révisée le 2026-01-03 | autres scénarios Type II conditionnels donnant des anciennes Euler dissipatives non triviales et exclusions de sous-classes | aucune réduction de tout blow-up Clay ni Liouville Euler ancien général |
+| [Escauriaza–Seregin–Šverák 2003](https://doi.org/10.1007/s00205-003-0263-8) (`0049`) | article publié, *Arch. Rational Mech. Anal.* 169(2), 147–157 | unicité rétrograde pour une inégalité parabolique avec termes d'ordre inférieur bornés et croissance gaussienne | outil de vorticité conditionnel; ne crée ni trace nulle ni bornes de coefficients |
+| [Lei–Yang–Yuan 2024](https://academic.oup.com/imrn/article/2024/20/13417/7769704) (`0050`) | article publié le 2024-09-24, DOI `10.1093/imrn/rnae208`; arXiv resté `2311.02429v1` | unicité à donnée finale pour deux solutions mild bornées 3D de vorticités bornées | ferme le Liouville conditionnel après construction d'une vraie trace finale sur le même objet; ne fournit pas cette construction |
+| [Pineau–Vicol, arXiv:2607.09619v2](https://arxiv.org/abs/2607.09619) (`0051`) | prépublication, révisée le 2026-08-06 | exclusions quantitatives RSS/DSS/RDSS backward sous borne Type I et critère local de quasi-auto-similarité | sous-classes Type I structurées; rotation intermédiaire et scénarios Type II non couverts |
 
 Deux confusions doivent être activement empêchées :
 
@@ -148,6 +151,11 @@ Deux confusions doivent être activement empêchées :
 2. « donnée critique donnant des solutions lisses pour `t>0` » n'implique pas « donnée initiale lisse au sens Clay » ;
 3. « mild » dans une classe de distributions à produit renormalisé n'implique ni
    la mildness bornée de KNSS, ni l'admissibilité énergétique, ni la lissité.
+
+Le cycle 0008 corrige aussi un statut bibliographique : Lei–Yang–Yuan n'est
+pas une simple prépublication. L'article est publié dans l'IMRN 2024. La date
+2026 affichée par certains rendus HTML expérimentaux d'arXiv ne correspond pas
+à une nouvelle version; l'historique primaire demeure `v1`, soumis en 2023.
 
 ### Programme 2025 de découverte de singularités instables assistée par IA
 
@@ -167,6 +175,17 @@ Test adverse reproductible minimal pour toute future tentative de transfert : é
 Des dépôts Zenodo/SSRN/Preprints.org de 2025–2026 revendiquant une résolution ont été découverts. Ils figurent seulement dans `watchlist` du JSON. Ils ne fondent aucune affirmation : ni publication évaluée, ni audit de quantificateurs, ni reproduction de constantes, ni validation du passage au continuum n'ont été établis. Leur présence dans la veille ne modifie pas le statut ouvert du problème.
 
 Deux revendications arXiv de Rishad Shahmurov sont également isolées dans cette watchlist : [arXiv:2606.07869v1](https://arxiv.org/abs/2606.07869), soumis le 2026-06-05, revendique la régularité globale axisymétrique avec swirl; [arXiv:2605.09797v2](https://arxiv.org/abs/2605.09797), révisé le 2026-05-15, revendique une réduction du système 3D complet et la régularité globale. Seuls leurs métadonnées et résumés primaires ont été contrôlés. Les preuves, constantes, arguments de compacité et réductions n'ont pas été audités; leur statut est **unreviewed claim, aucune implication admise**.
+
+Une critique non publiée de 2015, [Lam, arXiv:1509.04940](https://arxiv.org/abs/1509.04940),
+allègue des erreurs techniques dans l'unicité rétrograde ESS. Elle est
+consignée dans la watchlist (`NS-WATCH-0006`) sans adjudication : ce cycle n'a
+identifié ni correction publiée ni évaluation experte qui autoriserait à
+renverser les résultats publiés. La route principale du lemme 0008 passe par
+le lissage KNSS puis le théorème parabolique ESS appliqué à la vorticité.
+Lei–Yang–Yuan sert de contrôle analytique séparé : son arXiv v1 contient trois
+anomalies de rédaction ou d'algèbre consignées dans `FAIL-NS-0011`, qui
+n'autorisent ni à réfuter l'article publié, ni à en faire l'unique support sans
+comparaison avec la version éditeur.
 
 ## Calcul numérique et preuve assistée
 
@@ -229,6 +248,15 @@ commande de compilation.
 
 ## Priorité bibliographique résultante
 
-Le meilleur verrou informationnel n'est pas un nouvel ansatz self-similaire. C'est la classe exacte des limites anciennes produites par une concentration critique non auto-similaire : quelles bornes locales survivent à la remise à l'échelle, comment la pression lointaine est normalisée, et quelle hypothèse minimale de rigidité reste compatible avec les contre-profils multi-échelles. Le triplet de sources de départ est `NS-SRC-0012` + `NS-SRC-0014` + `NS-SRC-0015`, avec `NS-SRC-0034` pour le régime Type II.
+L'extraction théorème-par-théorème ESS/GKP/KNSS/Seregin a été réalisée. Elle
+ferme conditionnellement la rigidité d'une ancienne mild bornée à trace nulle,
+mais prouve aussi que cette classe n'est produite par aucune chaîne auditée.
+La priorité n'est donc plus un Liouville supplémentaire : c'est la topologie
+terminale d'une extraction maximum-normalisée, et le quantificateur uniforme
+qui permettrait — ou empêcherait — de commuter la limite des zooms avec
+`t->0-` sans supposer déjà `L-infinity_tL³_x` ou un critère équivalent.
 
-L'action bibliographique décisive suivante est une extraction théorème-par-théorème de ces quatre textes : hypothèses exactes, normalisations, topologies de convergence, non-trivialité du profil, contrôle de pression et point précis où la rigidité échoue. Cette extraction doit précéder toute nouvelle revendication de lemme.
+La prochaine veille doit chercher des théorèmes primaires d'équi-intégrabilité,
+de non-concentration de trace ou de stabilité terminale sous zoom critique. Un
+résultat stationnaire, auto-similaire ou portant sur une autre limite ne sera
+pertinent que s'il fournit explicitement ce raccord sur le même objet.

@@ -99,3 +99,32 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
   ESS/GKP/KNSS/Seregin.
 - Limite : l'audit de `0045`–`0048` porte sur les définitions et théorèmes
   ciblés, pas sur la reproduction intégrale des preuves.
+
+## 2026-08-14 — Cycle 0008
+
+- Fenêtre recherchée : unicité rétrograde, donnée finale, solutions anciennes
+  mild bornées, Liouville et profils backward Type I, jusqu'aux identifiants
+  arXiv `2608.*`.
+- Correction de statut : Lei–Yang–Yuan, `arXiv:2311.02429v1`, a été publié
+  dans *International Mathematics Research Notices* 2024(20), 13417–13431,
+  DOI `10.1093/imrn/rnae208`. Le théorème 1.1 donne l'unicité à donnée finale
+  dans la classe mild bornée avec vorticité bornée.
+- Delta primaire : Pineau–Vicol `arXiv:2607.09619v2`, révisé le 2026-08-06,
+  exclut certaines solutions backward RSS/DSS/RDSS sous borne Type I et ajoute
+  un critère local de quasi-auto-similarité. Le régime RSS de rotation
+  intermédiaire et les scénarios Type II restent ouverts.
+- Outil primaire ajouté : Escauriaza–Seregin–Šverák, *Backward uniqueness for
+  parabolic equations*, DOI `10.1007/s00205-003-0263-8`, pour distinguer le
+  théorème parabolique de son application `L^infinity_t L^3_x`.
+- Controverse consignée : `arXiv:1509.04940` allègue des erreurs ESS, mais
+  aucune adjudication publiée n'a été établie dans ce cycle; la critique ne
+  porte aucun claim. La route principale KNSS–ESS reste soumise à ce risque
+  bibliographique explicite; Lei–Yang–Yuan publié fournit un contrôle séparé,
+  lui-même rétrogradé de support unique à cause de trois anomalies de `v1`.
+- Résultat différentiel : aucune source ne transmet depuis une même extraction
+  Clay les trois portes `mild + borne ponctuelle globale + trace terminale
+  nulle`. La rigidité conditionnelle est fermée; le verrou se déplace vers
+  l'héritage simultané.
+- Limite : les preuves complètes de Pineau–Vicol et Lei–Yang–Yuan n'ont pas été
+  reproduites; seuls les énoncés ciblés, définitions et métadonnées primaires
+  ont été audités.

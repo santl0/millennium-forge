@@ -201,6 +201,29 @@ réellement produite par un premier blow-up.
   abandonnée jusqu'à production d'une même limite satisfaisant toutes les
   prémisses.
 
+## `FAIL-NS-0011` — Lei–Yang–Yuan employé comme support unique sans comparaison éditoriale
+
+- Date : 2026-08-14.
+- Cible : fermer seul le lemme ancien mild borné à trace nulle par le théorème
+  1.1 publié de Lei–Yang–Yuan après extension mild au temps terminal.
+- Attaque : lecture ligne à ligne de l'unique texte intégral accessible,
+  `arXiv:2311.02429v1`, puis comparaison de ses métadonnées avec la notice
+  éditeur IMRN.
+- Résultat : trois anomalies ont été isolées dans `v1` : renvoi interne vers
+  le mauvais numéro de corollaire, facteur `1/2` absent dans l'identité
+  reliant `|nabla u_2|²`, `Delta|u_2|²` et `u_2 dot Delta u_2`, et discordance
+  entre les poids `-k` et `-2k` dans l'énoncé et le début d'une preuve.
+- Passe adverse : ces défauts paraissent localement réparables et ne
+  constituent pas une réfutation de l'article publié. La version éditeur
+  intégrale est sous contrôle d'accès et n'a pas pu être comparée ligne à
+  ligne.
+- Portée : seule la décision de faire de cette route le support **unique** est
+  abandonnée. Le théorème publié reste un contrôle corroborant. La route
+  principale du laboratoire passe par le lissage KNSS, la vorticité et
+  l'unicité rétrograde ESS.
+- Statut : `REVISE`; anomalie bibliographique conservée, résultat publié non
+  réfuté.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,
