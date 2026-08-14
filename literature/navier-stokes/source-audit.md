@@ -784,3 +784,31 @@ Clay ne suit sans propagation temporelle et contrôle de la pression.
 La veille ajoute `NS-SRC-0128`–`0131` et porte le corpus à 131 sources. Les
 pages primaires arXiv et éditeur ont été vérifiées le 2026-08-14; aucune
 publication ou version nouvelle n'était indiquée pour `0059` et `0061`.
+
+## Audit ciblé du cycle 0032 — superposition et support méridien
+
+- Fleming–Rishel (`0132`) fournit la formule de coaire. Pour
+  `U=(q/r)e_theta`, le jacobien cylindrique donne exactement
+  `||curl U||_1=2pi TV(q)`. La variation pertinente est celle de la somme
+  réelle; elle ne se décompose pas coercivement en variations de couches.
+- Bourgain–Brezis (`0133`) et Van Schaftingen (`0134`) sourcent les gains
+  limites des systèmes div–curl/Hodge et des opérateurs canceling. Leur sens
+  contrôle un potentiel par la donnée différentielle totale; il n'interdit
+  pas l'annulation algébrique de couches opposées.
+- Spector–Van Schaftingen (`0135`) atteint `L^(n/(n-1),1)` pour certaines
+  classes du premier ordre. Le quantificateur « certaines » interdit toute
+  promotion en ledger universel de curls superposés.
+- Le lemme `NS-THIN-PURE-SWIRL-LORENTZ-COLLAPSE` utilise plutôt le potentiel
+  bidimensionnel du gradient total, le weak HLS et l'inclusion de support
+  fini. Une passe indépendante valide aussi le weak HLS par interpolation de
+  deux estimations HLS fortes.
+- Le résultat couvre tout swirl pur compact séparé de l'axe dont l'aire
+  méridienne est `o(R^2)`. Il ne couvre ni une section épaisse, ni une vitesse
+  poloïdale, ni une évolution ou une pression Navier–Stokes.
+- Grujić `2511.00725v3`, Lei–Ren–Tian `2501.08976v1`, Grujić
+  `2607.08866v2` et les annonces Shahmurov restent aux versions et quarantaines
+  consignées; aucun statut publié nouveau n'a été trouvé.
+
+La veille ajoute `NS-SRC-0132`–`0135` et porte le corpus à 135 sources. Ces
+quatre entrées sont des outils publiés d'analyse géométrique ou harmonique,
+pas des résultats nouveaux sur l'équation de Navier–Stokes.

@@ -592,3 +592,23 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
   `COMPUTATION_ONLY`.
 - Décision : fermer le grand aspect pour le produit simple et activer
   `GAP-NONSEPARABLE-COMPACT-CURL-FLATNESS`.
+
+## 2026-08-14 — Cycle 0032
+
+- Veille différentielle primaire : ajout de Fleming–Rishel pour coaire/TV,
+  Bourgain–Brezis pour div–curl/Hodge à données `L1`, Van Schaftingen pour les
+  opérateurs canceling et Spector–Van Schaftingen pour certains endpoints
+  Lorentz forts.
+- Sources ajoutées : `NS-SRC-0132`–`0135`; corpus porté à 135 entrées. Les
+  métadonnées DOI et la portée des énoncés ont été contrôlées sur les pages ou
+  textes primaires des éditeurs.
+- Statuts récents recontrôlés : Grujić `2511.00725v3`, Lei–Ren–Tian
+  `2501.08976v1`, Grujić `2607.08866v2`; aucune publication nouvelle ne ferme
+  leur raccord à Clay. Les annonces Shahmurov restent en quarantaine.
+- Résultat négatif de veille : cancellation différentielle n'implique pas
+  anti-annulation couche par couche, et la coaire porte sur la somme totale.
+- Résultat interne : tout swirl pur compact, séparé de l'axe et d'aire
+  méridienne `o(R^2)`, tombe dans la petite vitesse faible-`L3` sous borne
+  faible-`L^(3/2)` du curl, indépendamment des couches et des signes.
+- Décision : abandonner la branche « superposition mince » et activer
+  `GAP-THICK-CROSS-SECTION-GRADIENT-DIRECTION`.
