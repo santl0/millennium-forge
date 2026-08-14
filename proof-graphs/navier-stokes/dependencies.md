@@ -58,6 +58,11 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | solution ancienne spatialement constante + mildness | constance temporelle | classique et sourcée | KNSS remarque 6.1 | ne traite aucun mode spatial non nul |
 | pression ancienne `BMO_x` modulo constantes | exclusion du mode affine parasite | dérivation locale, `COMPUTATION_ONLY` | oscillation moyenne `R/2` | ne donne pas la rigidité des modes non constants |
 | zoom de blow-up KNSS borné | solution ancienne mild non nulle | classique et sourcée sous hypothèses KNSS | compacité mild + normalisation ponctuelle | pas disponible pour tout blow-up Clay général |
+| zoom ESS sous `L∞_tL³_x` | solution NS éternelle, adaptée, non triviale, trace `L²_loc` nulle | classique et sourcée | ESS, convergence forte locale et pression scindée | aucune borne ponctuelle globale; la borne `L³` est déjà critique |
+| élément critique GKP sous `A_c<infinity` | solution mild forward, trace terminale nulle dans `S'` | classique et sourcée | GKP théorèmes 5–7 | ni objet ancien ni borne ponctuelle globale |
+| ancienne mild bornée + vraie trace terminale nulle dans `D'` | trivialité par unicité rétrograde | candidat conditionnel, non promu | dérivation à auditer contre les hypothèses exactes de backward uniqueness | aucune chaîne auditée ne transmet toutes les prémisses |
+| réunion des sorties ESS et KNSS | ancienne mild bornée + trace nulle | non transférable | `BLOWUP-INHERITANCE-AUDIT-1` : propriétés portées par deux objets différents | lemme de raccord absent |
+| zoom Type II d'échelle Euler | ancienne dissipative Euler non triviale | conditionnel et sourcé | Seregin `2507.08733v2`, `2606.29468v1`, `2402.13229v3` | un Liouville Navier–Stokes ne s'applique pas à l'équation limite |
 | alignement critique de vorticité | régularité | conditionnelle, sourcée | Constantin–Fefferman | alignement non déduit de NS |
 | hélicité globale nulle | petit flux instantané universel | réfutée | contre-triade exacte | pas de positivité modale |
 | profil Euler IA | profil NS perturbatif | réfutée pour l'ansatz mono-échelle `lambda>-1/2` | rapport visqueux exact | viscosité dominante |
@@ -75,17 +80,18 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | `GAP-COMPACT-Q` | compacité | passage `u_n tensor u_n` | trois échecs sous énergie seule: queue, défaut de trace, module supercritique; pivot requis |
 | `GAP-PRESSURE-TAIL` | pression/localisation | défaut de tension de `integral |U_n|²|y|^-4` après zoom | paquets multi-échelles; extraction ESS/GKP |
 | `GAP-PRESSURE-HARMONIC` | jauge de pression | équation de Poisson sur `R³` ne fixe pas les composantes affines | solution ancienne parasite exacte |
+| `GAP-HYBRID-INHERITANCE` | stabilité des hypothèses | mildness/bornitude KNSS et trace nulle ESS appartiennent à deux limites distinctes | matrice d'héritage à treize propriétés |
 | `GAP-SIGN-FLUX` | positivité | flux d'énergie inter-échelles | contre-triades exactes |
 | `GAP-LIMIT-ADMISSIBLE` | stabilité/admissibilité | profil singulier vers donnée de Schwartz | troncature `epsilon` et temps local |
 | `GAP-NUM-CONTINUUM` | calcul vers continuum | discrétisation finie | résidu d'intervalle + queue analytique |
 
 ## Arêtes prioritaires
 
-1. `GAP-LIMIT-ADMISSIBLE` : faible coût pour déterminer si la nouvelle
-   construction non unique a un premier maillon vers Clay.
-2. rigidité des solutions anciennes mild : la jauge parasite est maintenant
-   isolée; comparer ensuite la trace terminale et la non-trivialité réellement
-   transmises par ESS, GKP et KNSS avant tout Liouville 3D.
+1. rigidité des solutions anciennes mild : auditer le lemme borné
+   « trace `D'` nulle implique trivialité » et conserver séparément le trou
+   `GAP-HYBRID-INHERITANCE` vers les zooms.
+2. `GAP-LIMIT-ADMISSIBLE` : déterminer si la construction non unique récente
+   a un premier maillon uniforme vers des données Clay.
 3. `GAP-SIGN-FLUX` : élimination rapide de fonctionnelles candidates.
 
 `GAP-COMPACT-Q` est suspendu sous énergie seule après trois stratégies

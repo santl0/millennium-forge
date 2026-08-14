@@ -65,3 +65,37 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
   normalisation de pression ou la propriété mild qui l'exclut.
 - Limite : cette veille ne réaudite pas encore tous les Liouville postérieurs
   à KNSS; ils seront comparés seulement après fermeture du test de jauge.
+
+## 2026-08-14 — Cycle 0007
+
+- Fenêtre recherchée : solutions anciennes/Liouville/backward uniqueness,
+  profils Type II et auto-similaires, identifiants arXiv jusqu'à `2608.*`.
+- Delta primaire vérifié :
+  - Seregin `arXiv:2402.13229v3`, révisé le 2026-08-08 : réduction d'un
+    scénario Type II **axisymétrique** vers une ancienne Euler sans swirl,
+    sous bornes additionnelles; la formule HTML de `C(v,r)` répète
+    `|nabla v|²` avec le facteur de la quantité cubique, incohérence consignée
+    sans correction silencieuse;
+  - Wang–Yang `arXiv:2608.06040v1`, soumis le 2026-08-06 : critères de
+    Liouville pour des `D`-solutions **stationnaires** sous décroissance
+    cylindrique; pas de raccord aux limites anciennes non stationnaires;
+  - Binz–Coiculescu `arXiv:2607.12159v1`, soumis le 2026-07-13 : exclusion de
+    profils homothétiques **forward** dans certaines classes angulaires; pas
+    un profil backward de blow-up Clay;
+  - Seregin `arXiv:2507.08733v2`, révisé le 2026-01-03 : scénarios Type II
+    conditionnels conduisant à des anciennes Euler dissipatives;
+  - Cheskidov–Hou `arXiv:2603.03666v2`, révisé le 2026-06-11 : non-unicité de
+    solutions mild **singulières** dans des Besov d'indice négatif, avec
+    produit renormalisé et sans exigence générale `L²_loc`.
+- Rectification de veille : les auteurs des deux nouveautés `2608.06040` et
+  `2607.12159` sont respectivement Wendong Wang–Guoxu Yang et Tim
+  Binz–Matei P. Coiculescu, d'après les pages primaires. Les métadonnées du
+  signal initial n'ont pas été reprises sans contrôle.
+- Résultat différentiel : aucun de ces textes ne ferme le Liouville 3D pour
+  toute ancienne mild bornée, ni ne transmet simultanément mildness,
+  bornitude ponctuelle et trace terminale nulle depuis un blow-up Clay.
+- Décision : ajouter cinq sources au registre, sans créer de claim théorématique
+  pour leurs preuves non reproduites; poursuivre le test de non-composition
+  ESS/GKP/KNSS/Seregin.
+- Limite : l'audit de `0045`–`0048` porte sur les définitions et théorèmes
+  ciblés, pas sur la reproduction intégrale des preuves.

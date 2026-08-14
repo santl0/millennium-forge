@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-08-14",
+  "status_vocabulary": {
+    "SOURCE": "explicitly transmitted or stated in the cited primary source",
+    "INFERENCE": "elementary consequence recorded by the laboratory",
+    "NOT_PROVIDED": "not supplied by this chain; no claim of impossibility",
+    "CONTRADICTED": "incompatible with an explicit property of this chain",
+    "NOT_APPLICABLE": "the property concerns a different limiting equation or object"
+  },
+  "properties": {
+    "limit_equation_obtained_is_viscous_ns": "the passage to the limit yields standard incompressible Navier-Stokes with positive viscosity",
+    "limit_equation_obtained_is_euler": "the passage to the limit yields incompressible Euler after viscosity vanishes",
+    "ancient_interval": "the limiting object is defined on R^3 x (-infinity,0)",
+    "mild_integral_formula": "the object satisfies a Stokes/Leray mild formula on every sufficiently long past interval",
+    "local_energy_inequality": "a suitable/local energy inequality is transmitted",
+    "global_velocity_Linf": "one scale-independent global pointwise velocity bound is transmitted",
+    "global_Linf_t_L3_x": "one scale-independent global L-infinity in time, L3 in space bound is transmitted",
+    "terminal_zero_L2loc": "the terminal trace is zero strongly in local L2",
+    "terminal_zero_Sprime": "the terminal trace tends to zero in tempered distributions",
+    "terminal_point_nonzero": "a pointwise terminal normalization |u(0,0)|=1 is transmitted",
+    "nontrivial_limit": "a quantitative or dynamical witness excludes the zero object",
+    "explicit_pressure_control": "an explicit pressure decomposition or convergence topology sufficient for the cited rigidity step is transmitted",
+    "weighted_euler_energy": "the weighted local energy and pressure bounds used in the Type II Euler limit are transmitted"
+  },
+  "chains": {
+    "ESS_LOCAL_L3_ZOOM": {
+      "source": "Escauriaza-Seregin-Sverak 2003, proof of the local L3-infinity criterion",
+      "equation": "3D incompressible Navier-Stokes, viscosity 1, unforced, R^3; the limiting pair is eternal on R^3 x R and is restricted to past times for the ancient formulation",
+      "topology": "velocity weak-star L-infinity_t L3_x, strong L3_loc and C_t L2_loc; pressure split p1 weak-star L-infinity_t L3/2_x and harmonic p2 vanishing locally",
+      "values": {
+        "limit_equation_obtained_is_viscous_ns": "SOURCE",
+        "limit_equation_obtained_is_euler": "CONTRADICTED",
+        "ancient_interval": "SOURCE",
+        "mild_integral_formula": "NOT_PROVIDED",
+        "local_energy_inequality": "SOURCE",
+        "global_velocity_Linf": "NOT_PROVIDED",
+        "global_Linf_t_L3_x": "SOURCE",
+        "terminal_zero_L2loc": "SOURCE",
+        "terminal_zero_Sprime": "INFERENCE",
+        "terminal_point_nonzero": "CONTRADICTED",
+        "nontrivial_limit": "SOURCE",
+        "explicit_pressure_control": "SOURCE",
+        "weighted_euler_energy": "NOT_APPLICABLE"
+      }
+    },
+    "GKP_CRITICAL_ELEMENT": {
+      "source": "Gallagher-Koch-Planchon arXiv:1012.0145v3, Theorems 5-7",
+      "equation": "3D incompressible Navier-Stokes, viscosity 1, unforced, R^3",
+      "topology": "critical element mild in L3; u(t) tends to zero in S' as t approaches its finite maximal time",
+      "values": {
+        "limit_equation_obtained_is_viscous_ns": "SOURCE",
+        "limit_equation_obtained_is_euler": "CONTRADICTED",
+        "ancient_interval": "NOT_PROVIDED",
+        "mild_integral_formula": "SOURCE",
+        "local_energy_inequality": "INFERENCE",
+        "global_velocity_Linf": "NOT_PROVIDED",
+        "global_Linf_t_L3_x": "SOURCE",
+        "terminal_zero_L2loc": "NOT_PROVIDED",
+        "terminal_zero_Sprime": "SOURCE",
+        "terminal_point_nonzero": "NOT_PROVIDED",
+        "nontrivial_limit": "SOURCE",
+        "explicit_pressure_control": "NOT_PROVIDED",
+        "weighted_euler_energy": "NOT_APPLICABLE"
+      }
+    },
+    "KNSS_MAXIMUM_ZOOM": {
+      "source": "Koch-Nadirashvili-Seregin-Sverak arXiv:0709.3599v1, Lemma 6.1 and Proposition 6.1",
+      "equation": "incompressible Navier-Stokes, viscosity 1, unforced, R^n; application n=3",
+      "topology": "local uniform convergence to a bounded ancient mild solution",
+      "values": {
+        "limit_equation_obtained_is_viscous_ns": "SOURCE",
+        "limit_equation_obtained_is_euler": "CONTRADICTED",
+        "ancient_interval": "SOURCE",
+        "mild_integral_formula": "SOURCE",
+        "local_energy_inequality": "INFERENCE",
+        "global_velocity_Linf": "SOURCE",
+        "global_Linf_t_L3_x": "NOT_PROVIDED",
+        "terminal_zero_L2loc": "CONTRADICTED",
+        "terminal_zero_Sprime": "CONTRADICTED",
+        "terminal_point_nonzero": "SOURCE",
+        "nontrivial_limit": "SOURCE",
+        "explicit_pressure_control": "NOT_PROVIDED",
+        "weighted_euler_energy": "NOT_APPLICABLE"
+      }
+    },
+    "SEREGIN_TYPEII_EULER_ZOOM": {
+      "source": "Seregin arXiv:2606.29468v1, Theorem 3.1",
+      "equation": "3D incompressible Euler limit of a conditional Navier-Stokes Type II rescaling",
+      "topology": "velocity strong L^(3 nu)_loc, weak-star local energy; limiting pressure asserted with weighted bound but no separate displayed convergence topology",
+      "values": {
+        "limit_equation_obtained_is_viscous_ns": "CONTRADICTED",
+        "limit_equation_obtained_is_euler": "SOURCE",
+        "ancient_interval": "SOURCE",
+        "mild_integral_formula": "NOT_APPLICABLE",
+        "local_energy_inequality": "SOURCE",
+        "global_velocity_Linf": "NOT_PROVIDED",
+        "global_Linf_t_L3_x": "NOT_PROVIDED",
+        "terminal_zero_L2loc": "NOT_PROVIDED",
+        "terminal_zero_Sprime": "NOT_PROVIDED",
+        "terminal_point_nonzero": "NOT_PROVIDED",
+        "nontrivial_limit": "SOURCE",
+        "explicit_pressure_control": "NOT_PROVIDED",
+        "weighted_euler_energy": "SOURCE"
+      }
+    }
+  },
+  "gates": {
+    "ESS_RIGIDITY_INPUT": [
+      "limit_equation_obtained_is_viscous_ns",
+      "ancient_interval",
+      "global_Linf_t_L3_x",
+      "terminal_zero_L2loc",
+      "nontrivial_limit",
+      "explicit_pressure_control"
+    ],
+    "KNSS_MAXIMUM_ZOOM_OUTPUT": [
+      "limit_equation_obtained_is_viscous_ns",
+      "ancient_interval",
+      "mild_integral_formula",
+      "global_velocity_Linf",
+      "terminal_point_nonzero",
+      "nontrivial_limit"
+    ],
+    "HYBRID_BOUNDED_MILD_ZERO_TRACE": [
+      "limit_equation_obtained_is_viscous_ns",
+      "ancient_interval",
+      "mild_integral_formula",
+      "global_velocity_Linf",
+      "terminal_zero_L2loc",
+      "nontrivial_limit"
+    ],
+    "SEREGIN_TYPEII_EULER_OUTPUT": [
+      "limit_equation_obtained_is_euler",
+      "ancient_interval",
+      "local_energy_inequality",
+      "nontrivial_limit",
+      "weighted_euler_energy"
+    ]
+  },
+  "expected_single_chain_matches": {
+    "ESS_RIGIDITY_INPUT": ["ESS_LOCAL_L3_ZOOM"],
+    "KNSS_MAXIMUM_ZOOM_OUTPUT": ["KNSS_MAXIMUM_ZOOM"],
+    "HYBRID_BOUNDED_MILD_ZERO_TRACE": [],
+    "SEREGIN_TYPEII_EULER_OUTPUT": ["SEREGIN_TYPEII_EULER_ZOOM"]
+  },
+  "expected_hybrid_minimal_union_covers": [
+    ["ESS_LOCAL_L3_ZOOM", "KNSS_MAXIMUM_ZOOM"]
+  ]
+}

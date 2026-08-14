@@ -1,0 +1,58 @@
+{
+  "id": "NS-HYBRID-ANCIENT-GATE-NOT-INHERITED",
+  "problem": "navier-stokes",
+  "statement": "Dans les quatre chaînes ESS 2003, GKP arXiv:1012.0145v3, KNSS arXiv:0709.3599v1 et Seregin arXiv:2606.29468v1 auditées, aucune chaîne unique ne transmet simultanément une limite Navier–Stokes visqueuse ancienne, mild, globalement bornée en vitesse, non triviale et de trace terminale nulle dans L^2_local; cette combinaison n'apparaît que par réunion illégitime des sorties ESS et KNSS.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "corpus fermé aux quatre versions primaires explicitement nommées",
+    "une propriété compte comme transmise seulement si sa cellule vaut SOURCE ou INFERENCE dans la matrice auditée",
+    "la trace terminale nulle demandée est forte dans L^2_local, et non une simple valeur assignée au bord",
+    "la borne de vitesse est globale et ponctuelle sur l'intervalle ancien",
+    "NOT_PROVIDED signifie absence d'arête sourcée dans la chaîne, pas impossibilité mathématique",
+    "aucun lemme de raccord entre les objets limites ESS et KNSS n'est supposé"
+  ],
+  "dependencies": [
+    "NS-ENDPOINT-L3-REGULARITY",
+    "NS-KNSS-SPATIALLY-CONSTANT-MILD-RIGIDITY"
+  ],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "Escauriaza–Seregin–Šverák, Russian Math. Surveys 58:2 (2003), doi:10.1070/RM2003v058n02ABEH000609"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "Gallagher–Koch–Planchon, arXiv:1012.0145v3, Theorems 5–7"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "Koch–Nadirashvili–Seregin–Šverák, arXiv:0709.3599v1, Lemma 6.1 and Proposition 6.1"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "Seregin, arXiv:2606.29468v1, Theorem 3.1"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/blowup-inheritance-audit/inheritance_matrix.json",
+      "sha256": "798d661f73056b12c5502af6c0548241c23a0e11adb3b7ba3cb73beddb2a3657"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/blowup-inheritance-audit/inheritance_audit.py",
+      "sha256": "4c2f6711491d062191276093c180f8f155942a2d8f75d254ede70a181593791a"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-state-of-art/cycle-0007"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois sous-agents Codex distincts, même famille de modèle; non indépendants au sens externe",
+    "notes": "Les trois textes ESS/GKP/KNSS ont été réextraits séparément. La revue a imposé la distinction ESS éternelle/ancienne, corrigé le témoin ESS en >=epsilon_*, séparé la formule mild KNSS de toute convergence de pression et renommé les propriétés d'équation comme sorties du passage à la limite. Le résultat reste borné au corpus."
+  }
+}

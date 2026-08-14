@@ -100,6 +100,16 @@ II intérieur sans une nouvelle borne ou une nouvelle rigidité. La
 prépublication de Seregin `arXiv:2606.29468` exclut certaines limites Type II
 sous hypothèses supplémentaires; elle ne résout pas l'alternative Clay.
 
+La veille d'août 2026 ajoute deux réductions Seregin (`arXiv:2402.13229v3` et
+`arXiv:2507.08733v2`) : leurs zooms Type II conditionnels font disparaître la
+viscosité et produisent des anciennes **Euler**, parfois axisymétriques sans
+swirl. Elles ne renforcent donc pas le Liouville Navier–Stokes mild de KNSS.
+Wang–Yang (`arXiv:2608.06040v1`) obtient de nouveaux Liouville pour des
+`D`-solutions stationnaires sous décroissance cylindrique; cette classe n'est
+pas connue pour contenir les limites ESS/KNSS. Binz–Coiculescu
+(`arXiv:2607.12159v1`) traite des profils homothétiques forward à donnée
+homogène singulière, pas des profils backward généraux.
+
 ### Vorticité, pression, cascade et intermittence
 
 La vorticité vérifie
@@ -136,6 +146,7 @@ critiques doivent faire l'objet d'une revue indépendante avant tout emploi.
 | Buckmaster–Vicol 2019 | NS 3D, solutions faibles de faible régularité | non-unicité faible; pas un blow-up classique ni une non-unicité Leray–Hopf standard |
 | Albritton–Brué–Colombo 2022 | NS 3D forcé, deux solutions de Leray, donnée initiale nulle | non-unicité dans un cadre forcé borderline; ne réfute pas (A) ou (B) |
 | Hou–Wang–Yang, `arXiv:2509.25116v2` | NS 3D non forcé sur `R^3`, solutions adaptées de Leray–Hopf | la prépublication revendique une infinité de solutions issues d'une même donnée compacte, lisse hors de `0`, dans tout `L^q`, `q<3`, mais singulière à `0`; cette donnée n'est pas admissible par Clay |
+| Cheskidov–Hou, `arXiv:2603.03666v2` | NS standard sur `T^d`, solutions mild singulières dans des Besov d'indice négatif | non-unicité pour données distributionnelles avec `u tensor u` renormalisé et sans `L²_loc` général; le mot « mild » ne raccorde pas cette classe à KNSS ni aux solutions classiques Clay |
 
 Le résultat Hou–Wang–Yang est accompagné d'un calcul par intervalles pour un
 profil auto-similaire et un mode instable. Le code public annonce Julia 1.11 et

@@ -49,6 +49,9 @@ v^{(k)}(x,t)=R_kv(x_0+R_kx,t_0+R_k^2t),\qquad
 p^{(k)}(x,t)=R_k^2p(x_0+R_kx,t_0+R_k^2t).
 \]
 
+- **[SOURCE] Domaine limite.** La paire limite est construite sur
+  `(R³ x R)`; elle est donc éternelle. Sa restriction à `t<0` est une solution
+  ancienne, mais ce vocabulaire ne doit pas masquer l'information plus forte.
 - **[SOURCE] Convergence de la vitesse.** Après extraction,
   (v^{(k)}\rightharpoonup^*u) dans (L^\infty(\mathbb R;L^3(\mathbb R^3))),
   (v^{(k)}\to u) fortement dans (L^3(Q')) pour tout cylindre compact (Q'\Subset\mathbb R^3\times\mathbb R), et
@@ -58,7 +61,7 @@ p^{(k)}(x,t)=R_k^2p(x_0+R_kx,t_0+R_k^2t).
   (p_2^{(k)}\to0) dans (L^{3/2}(\mathbb R;L^\infty(\Omega))) pour tout (\Omega\Subset\mathbb R^3).
 - **[SOURCE] Non-trivialité.** L'epsilon-régularité et le choix des rayons donnent, pour une constante universelle (\varepsilon_*>0),
   \[
-  \sup_{-1\le t\le0}\int_{B(1)}|u(x,t)|^2\,dx>\varepsilon_*.
+  \sup_{-1\le t\le0}\int_{B(1)}|u(x,t)|^2\,dx\ge\varepsilon_*.
   \]
 - **[SOURCE] Trace terminale.** La continuité forte locale en (L^2), combinée à l'intégrabilité (L^3) de la solution originale, donne (u(\cdot,0)=0) localement, donc partout.
 - **[SOURCE] Rigidité.** La petitesse des queues spatiales de (u\in L^3) et (q\in L^{3/2}) donne la régularité hors d'une grande boule. La vorticité satisfait à l'extérieur une inégalité parabolique permettant l'unicité rétrograde ; elle y est nulle parce que sa trace terminale est nulle. Une continuation unique spatiale propage ensuite (\omega=0) à tout l'espace. Comme (u(\cdot,t)) est alors harmonique et appartient à (L^3(\mathbb R^3)), (u=0), contradiction avec la non-trivialité.
@@ -319,7 +322,7 @@ Les quatre sources remplissent des arêtes différentes :
 
 | Chaîne | Limite | Non-trivialité | Rigidité disponible | Verrou restant |
 |---|---|---|---|---|
-| ESS | Navier–Stokes adapté, ancien/local-global, (L^\infty_tL^3_x) | énergie locale (>\varepsilon_*) | unicité rétrograde + continuation unique | obtenir (L^\infty_tL^3_x) depuis les données/énergie Clay |
+| ESS | Navier–Stokes adapté, éternel puis restreint aux temps anciens, (L^\infty_tL^3_x) | énergie locale (\ge\varepsilon_*) | unicité rétrograde + continuation unique | obtenir (L^\infty_tL^3_x) depuis les données/énergie Clay |
 | GKP | élément critique mild et profils (L^3) | (T^*<\infty), niveau (A_c) | ESS après convergence vers (0) dans (\mathcal S') | même borne critique (L^3), non fournie par l'énergie |
 | KNSS | Navier–Stokes ancien mild borné | ( |v(0,0)|=1) | seulement 2D ou 3D axisymétrique sous hypothèses supplémentaires | Liouville 3D général + exclusion des constantes |
 | Seregin 2026 | Euler ancien dissipatif pondéré | (M^{s,l}_\kappa(u,1)\ge\varepsilon_0/2) | seulement sous certains poids/cas | Liouville Euler dans la classe exacte et raccord de tout blow-up au scénario |
@@ -485,3 +488,82 @@ La porte `BMO`/Riesz et la vérification d'adaptation locale sont des
 préservation de mildness en section 6 vient de la structure mild des
 approximants; elle ne s'étend pas automatiquement à une extraction arbitraire
 de solutions seulement faibles ou adaptées.
+
+## 9. Matrice d'héritage et interdiction de composition — cycle 0007
+
+### Sorties de chaque chaîne
+
+| Propriété | ESS 2003 | GKP v3 | KNSS v1 | Seregin `2606.29468v1` |
+|---|---|---|---|---|
+| objet temporel | **[SOURCE]** paire éternelle sur `R³ x R`, ancienne par restriction | **[SOURCE]** élément critique forward sur `[0,T*)`; pas d'ancienne | **[SOURCE]** ancienne sur `(-infinity,0)` | **[SOURCE]** ancienne sur `(-infinity,0)` |
+| équation obtenue après passage à la limite | NS visqueux, `nu=1` | NS visqueux, `nu=1` | NS visqueux, `nu=1` | Euler, viscosité limite nulle |
+| notion de solution | paire adaptée; égalité locale d'énergie dans la construction | forte/mild `L³` à temps strictement antérieur à `T*` | ancienne mild bornée | paire Euler dissipative pondérée |
+| convergence principale | faible-* `L∞_tL³_x`, forte `L³_loc` et `C_tL²_loc` | profils faibles, restes Besov; pas une convergence ancienne unique | localement uniforme | forte locale `L^(3 nu)` pour `nu<10/9`, plus convergences faibles énergétiques |
+| borne globale transmise | `L∞_tL³_x` | niveau critique `L∞_tL³_x=A_c` | `|v|<=1` | fonctionnelles locales pondérées |
+| trace terminale | **[SOURCE]** zéro fortement dans `L²_loc` | **[SOURCE]** zéro dans `S'` seulement | **[SOURCE]** normalisation opposée `|v(0,0)|=1` | non fournie |
+| non-trivialité | **[SOURCE]** énergie locale `>=epsilon_*` | `T*<infinity`, `A_c>0` | `|v(0,0)|=1` | fonctionnelle locale `>=epsilon_0/2` |
+| pression | scission convergente `p_1+p_2`, avec partie harmonique locale évanescente | aucune topologie séparée transmise par les théorèmes de profils | aucune suite de pressions suivie par le lemme 6.1 | pression limite et borne pondérée, sans topologie séparée affichée dans l'étape auditée |
+| rigidité effectivement fermée | oui, sous `L∞_tL³_x`, par rétro-unicité et continuation unique | oui, théorème 7, toujours sous la borne critique | non en 3D générale; sous-classes seulement | sous-cas pondérés/autosimilaires seulement |
+
+La ligne ESS corrige deux imprécisions d'une version antérieure de l'audit : la
+limite est **éternelle**, et l'équation (3.28) donne `>=epsilon_*`, non une
+inégalité stricte. La ligne KNSS sépare désormais deux faits : la formule mild
+élimine le mode affine parasite, mais aucun champ de pression ni aucune
+convergence de pression n'est transmis par le lemme 6.1.
+
+### Lemme de raccord logique
+
+**[CALCUL]** Soit `H` l'ensemble des prémisses d'un théorème de rigidité et
+`Out(C)` l'ensemble des propriétés transmises par une construction `C`. Une
+application sourcée exige
+
+```text
+H subset Out(C) union Bridge(C),
+```
+
+où chaque élément de `Bridge(C)` est un lemme explicite démontré sur **le même
+objet limite**. La condition
+
+```text
+H subset Out(C_1) union Out(C_2)
+```
+
+ne suffit pas lorsque `C_1` et `C_2` construisent des objets distincts.
+
+Pour le paquet
+
+```text
+H_hybrid = {
+  limite NS visqueuse, ancienne, mild, globalement bornée en vitesse,
+  trace L²_loc nulle, non-trivialité
+},
+```
+
+aucune des quatre chaînes ne vérifie `H_hybrid subset Out(C)`. La couverture
+minimale à deux chaînes est `ESS + KNSS` : ESS apporte la trace nulle; KNSS
+apporte mildness et la borne ponctuelle. Mais KNSS apporte aussi
+`|v(0,0)|=1`, tandis qu'ESS n'apporte aucune borne ponctuelle globale. Il ne
+s'agit donc pas de deux descriptions du même profil.
+
+### Candidat analytique séparé
+
+**[DÉRIVATION À AUDITER, non promue]** Une ancienne mild globalement bornée au
+sens KNSS qui satisfait une vraie limite `u(t)->0` dans `D'` lorsque
+`t->0-` devrait être triviale : les estimations intérieures bornées donnent une
+trace classique locale de la vorticité, l'unicité rétrograde donne
+`curl u=0`, puis `div u=0` et la bornitude imposent `u=b(t)`; la remarque 6.1 de
+KNSS et la trace imposent `b=0`.
+
+Trois points restent à contrôler avant tout statut supérieur à spéculatif :
+
+1. les hypothèses exactes de croissance et de régularité du théorème de
+   backward uniqueness sur tout `R³`;
+2. le passage uniforme de la trace distributionnelle de `u` à la trace nulle
+   de `curl u`, sans seulement assigner une valeur en `t=0`;
+3. l'applicabilité à une chaîne existante. La matrice montre déjà que ce
+   troisième point échoue pour ESS, GKP et KNSS pris séparément.
+
+Le fichier machine et son validateur sont dans
+`experiments/navier-stokes/blowup-inheritance-audit/`. Le résultat négatif est
+borné au corpus : une nouvelle construction ou un vrai lemme `Bridge(C)` peut
+le falsifier.

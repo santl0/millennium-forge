@@ -136,11 +136,18 @@ Il est incorrect de remplacer la seconde arête par « les profils self-similair
 | [Feng–He–Wang 2026](https://doi.org/10.3934/dcdsb.2026048) (`0035`) | publié en ligne le 2026-03-06 | estimations quantitatives et taux nécessaires dans des espaces de Lorentz critiques `L^{3,q}`, `q<∞` | critère/taux conditionnels; **aucune borne globale** de la norme critique |
 | [Chen–Galdi–Poggi–Schikorra, arXiv:2606.24733v1](https://arxiv.org/abs/2606.24733) (`0036`) | prépublication, 2026-06-23 | régularité intérieure de solutions distributionnelles sur la ligne Serrin, avec hypothèses relâchées | améliore l'étape « contrôle critique → régularité », mais pas « énergie → contrôle critique » |
 | [Seregin, arXiv:2606.29468v1](https://arxiv.org/abs/2606.29468) (`0034`) | prépublication, 2026-06-28 | scénarios Type II locaux, zoom d'échelle Euler et théorèmes de Liouville conditionnels | réduction utile, mais **ni existence ni exclusion générale** d'un blow-up Type II |
+| [Cheskidov–Hou, arXiv:2603.03666v2](https://arxiv.org/abs/2603.03666) (`0044`) | prépublication, révisée le 2026-06-11 | non-unicité de solutions mild singulières sur le tore dans tout Besov d'indice négatif; produit quadratique défini par paraproduit, sans `L²_loc` général | notion mild distributionnelle et données non lisses; **ni blow-up classique ni ancienne mild bornée KNSS** |
+| [Seregin, arXiv:2402.13229v3](https://arxiv.org/abs/2402.13229) (`0045`) | prépublication, révisée le 2026-08-08 | scénario Type II axisymétrique réduit par échelle Euler à une ancienne non triviale sans swirl, puis exclusions conditionnelles | la limite est Euler et les bornes supplémentaires ne sont pas universelles; **pas d'exclusion Type II générale** |
+| [Wang–Yang, arXiv:2608.06040v1](https://arxiv.org/abs/2608.06040) (`0046`) | prépublication, 2026-08-06 | Liouville pour des `D`-solutions stationnaires sous enveloppes cylindriques critiques avec gain logarithmique | stationnarité, Dirichlet fini et décroissance ne sont pas hérités par une limite ancienne générale |
+| [Binz–Coiculescu, arXiv:2607.12159v1](https://arxiv.org/abs/2607.12159) (`0047`) | prépublication, 2026-07-13 | exclusion de profils homothétiques forward dans certaines classes de Morrey/régularité angulaire | profil forward à donnée homogène singulière; **pas un profil backward de blow-up Clay** |
+| [Seregin, arXiv:2507.08733v2](https://arxiv.org/abs/2507.08733) (`0048`) | prépublication, révisée le 2026-01-03 | autres scénarios Type II conditionnels donnant des anciennes Euler dissipatives non triviales et exclusions de sous-classes | aucune réduction de tout blow-up Clay ni Liouville Euler ancien général |
 
 Deux confusions doivent être activement empêchées :
 
 1. « non-unicité de solutions faibles » n'implique pas « singularité de la solution classique maximale » ;
-2. « donnée critique donnant des solutions lisses pour `t>0` » n'implique pas « donnée initiale lisse au sens Clay ».
+2. « donnée critique donnant des solutions lisses pour `t>0` » n'implique pas « donnée initiale lisse au sens Clay » ;
+3. « mild » dans une classe de distributions à produit renormalisé n'implique ni
+   la mildness bornée de KNSS, ni l'admissibilité énergétique, ni la lissité.
 
 ### Programme 2025 de découverte de singularités instables assistée par IA
 

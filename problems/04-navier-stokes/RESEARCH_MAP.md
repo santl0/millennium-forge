@@ -243,3 +243,28 @@ lemme minimal positif est exact : dans la sous-classe `u=b(t)`, mildness ou une
 pression BMO modulo constantes force `b` à être constante. Le premier trou du
 Liouville n'est donc pas seulement la vorticité; c'est déjà la jauge globale de
 pression.
+
+## Cycle 0007 : décision automatisée
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| matrice exacte d'héritage ESS/GKP/KNSS/Seregin et test de non-composition | 4 | 5 | 5 | 5 | **19** |
+| démonstration directe « ancienne mild bornée + trace `D'` nulle implique zéro » par unicité rétrograde | 4 | 3 | 3 | 5 | 15 |
+| transfert direct des nouveaux Liouville stationnaires/auto-similaires 2026 | 3 | 3 | 4 | 3 | 13 |
+
+Décision : construire la matrice machine et tester si le Liouville hybride
+réunit des propriétés réellement transmises par une seule extraction.
+
+Résultat : aucune des quatre chaînes n'envoie simultanément vers une ancienne
+Navier–Stokes mild, globalement bornée en vitesse, non triviale et de trace
+terminale nulle dans `L²_loc`. ESS fournit la trace nulle et `L∞_tL³_x`, KNSS
+fournit mildness, bornitude ponctuelle et `|v(0,0)|=1`, GKP reste forward avec
+une trace seulement `S'`, et le zoom Type II de Seregin devient Euler. La
+couverture minimale du paquet hybride est la réunion ESS+KNSS, donc deux objets
+différents : cette réunion ne constitue aucune arête de preuve.
+
+Le lemme analytique suivant est désormais borné : auditer complètement si une
+ancienne mild bornée au sens KNSS qui tend réellement vers zéro dans `D'`
+quand `t` monte vers `0` est nulle par unicité rétrograde de la vorticité. Même
+s'il est confirmé, il ne s'appliquera à Clay qu'après un nouveau raccord
+transmettant simultanément bornitude, mildness et trace depuis une même suite.

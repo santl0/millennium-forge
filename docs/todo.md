@@ -11,7 +11,7 @@
 ## Priorité 2 — pilotes
 
 - [ ] Brancher l'hypothèse de Riemann sur un premier graphe d'audit sourcé.
-- [ ] Brancher Navier–Stokes sur une première expérience reproductible.
+- [x] Brancher Navier–Stokes sur une première expérience reproductible.
 - [ ] Relier les formulations de `LeanMillenniumPrizeProblems` sans les dupliquer silencieusement.
 
 ## Questions ouvertes

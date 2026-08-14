@@ -177,6 +177,30 @@ réellement produite par un premier blow-up.
 - Statut : Liouville faible/adapté sans jauge `REFUTED`; porte mild conservée
   `SOURCE_VERIFIED` dans la sous-classe spatialement constante.
 
+## `FAIL-NS-0010` — Composition des propriétés ESS et KNSS
+
+- Date : 2026-08-14.
+- Cible : appliquer un Liouville « ancienne mild, globalement bornée en
+  vitesse, non triviale et de trace terminale nulle » en prétendant que les
+  ingrédients sont déjà transmis par les réductions classiques.
+- Attaque : matrice exacte de treize propriétés pour ESS 2003, GKP v3, KNSS v1
+  et Seregin `2606.29468v1`, avec inclusion de prémisses calculée sans flottant.
+- Résultat : aucune chaîne unique ne vérifie le paquet. ESS porte la trace
+  `L²_loc` nulle et `L∞_tL³_x`; KNSS porte mildness, borne ponctuelle et la
+  normalisation opposée `|v(0,0)|=1`. Leur union à deux objets est l'unique
+  couverture minimale du paquet hybride.
+- Passe adverse : la limite ESS est en réalité éternelle et son témoin limite
+  vaut `>=epsilon_*`; KNSS ne transmet aucune pression. Ces corrections ont été
+  intégrées avant validation.
+- Résidu : `assertion_failure_count=0`; aucune discrétisation PDE ni erreur
+  flottante.
+- Portée : ne réfute pas le Liouville hybride comme théorème abstrait. Réfute
+  seulement son application sans lemme de raccord à l'une des quatre chaînes
+  auditées.
+- Statut : inférence de transfert `COMPUTATION_ONLY`, approche hybride
+  abandonnée jusqu'à production d'une même limite satisfaisant toutes les
+  prémisses.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,

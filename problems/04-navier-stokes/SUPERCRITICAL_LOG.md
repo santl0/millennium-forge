@@ -113,3 +113,25 @@ solution ou précise qu'il s'agit seulement d'un champ test.
 - Porte positive : mildness, pression BMO modulo constantes, ou jauge
   Leray/Riesz force `b'=0` dans la classe spatialement constante.
 - Artefact : `ANCIENT-PRESSURE-GAUGE-1`, résidus rationnels zéro.
+
+## 2026-08-14 — Héritage non composable des zooms de blow-up
+
+- Équations : ESS, GKP et KNSS conservent Navier–Stokes de viscosité `1`;
+  le zoom Type II Seregin encodé fait tendre la viscosité effective vers zéro
+  et produit Euler.
+- Échelles : `L³_x` est invariant sous `u_lambda=lambda u(lambda x,lambda²t)`;
+  la borne ponctuelle est normalisée par le maximum dans KNSS mais n'est pas
+  une borne `L³` globale. Une trace terminale est une propriété topologique,
+  pas une norme interchangeable avec ces deux contrôles.
+- ESS : limite éternelle, `L∞_tL³_x`, trace forte `L²_loc` nulle, pression
+  proche/lointaine suivie, non-trivialité énergétique `>=epsilon_*`.
+- GKP : élément critique mild forward, niveau `A_c`, trace seulement `S'` au
+  temps maximal; aucune ancienne extraite par ce théorème.
+- KNSS : ancienne mild, vitesse globalement bornée, normalisation
+  `|v(0,0)|=1`; aucune convergence de pression ni trace nulle.
+- Perte localisée : la réunion ESS+KNSS couvre formellement le paquet
+  « ancienne + mild + bornée + trace nulle », mais les propriétés appartiennent
+  à deux objets et deux normalisations. Aucun passage à la limite ne réalise
+  leur intersection.
+- Artefact : `BLOWUP-INHERITANCE-AUDIT-1`, treize propriétés, quatre chaînes,
+  zéro échec d'assertion exacte.

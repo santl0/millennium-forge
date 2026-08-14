@@ -17,6 +17,7 @@ leur rapport JSON sur la sortie standard.
 | `QUADRATIC-PRESSURE-DEFECT-1` | énergie uniforme et convergence faible d'une trace imposent-elles la convergence du produit et de la pression ? | solution NS de Fourier exacte, fractions rationnelles | `python -B experiments/navier-stokes/quadratic-pressure-defect/quadratic_pressure_defect.py` | zéro |
 | `TRACE-MODULUS-1` | le module temporel déduit de l'énergie atteint-il le seuil critique nécessaire à une trace forte ? | lois d'échelle et solution NS exacte, fractions rationnelles | `python -B experiments/navier-stokes/trace-modulus/trace_modulus.py` | zéro |
 | `ANCIENT-PRESSURE-GAUGE-1` | ancienne, à vitesse bornée, adaptée et trace terminale nulle suffisent-elles à la rigidité sans normalisation de pression ? | solution NS exacte, fractions rationnelles | `python -B experiments/navier-stokes/ancient-pressure-gauge/ancient_pressure_gauge.py` | zéro |
+| `BLOWUP-INHERITANCE-AUDIT-1` | une seule chaîne ESS/GKP/KNSS/Seregin transmet-elle toutes les hypothèses du Liouville hybride « ancienne + mild + vitesse bornée + trace locale nulle » ? | matrice sourcée et inclusion finie exacte | `python -B experiments/navier-stokes/blowup-inheritance-audit/inheritance_audit.py` | zéro échec d'assertion |
 
 Environnement reproduit au checkpoint initial : Windows, Python 3.13.14,
 bibliothèque standard uniquement. Les scripts ne lisent aucun fichier, n'ont
@@ -96,7 +97,7 @@ aucune dépendance réseau et ne produisent pas d'artefact lourd.
 
 ## Passage au continuum
 
-Aucune des huit expériences ne part d'une discrétisation PDE : il n'y a donc
+Aucune des neuf expériences ne part d'une discrétisation PDE : il n'y a donc
 pas de passage grille-vers-continuum. Le raccord analytique restant est
 explicite dans chaque cas. Tout futur solveur doit ajouter divergence mesurée,
 convergence multi-résolution, second schéma, bornes de troncature, contrôle des
@@ -583,3 +584,83 @@ que l'équation de Poisson et l'inégalité locale d'énergie laissent ouverte.
   vitesse bornée sans jauge de pression. Elle ne réfute aucun théorème KNSS, qui
   emploie précisément la notion mild, ni un profil de blow-up déjà obtenu comme
   limite de solutions mild avec normalisation héritée.
+
+## `BLOWUP-INHERITANCE-AUDIT-1` — non-composition des chaînes de zoom
+
+### Question falsifiable et données
+
+Le test demande si une **même** chaîne primaire auditée transmet simultanément
+
+```text
+équation NS visqueuse
++ intervalle ancien
++ formule mild
++ borne globale ponctuelle de vitesse
++ trace terminale nulle dans L²_loc
++ non-trivialité.
+```
+
+La matrice machine couvre quatre constructions, dans leurs versions figées :
+
+- ESS 2003, zoom local sous borne globale `L-infinity_t L³_x` ;
+- GKP `arXiv:1012.0145v3`, élément critique forward dans `L³` ;
+- KNSS `arXiv:0709.3599v1`, zoom normalisé par le maximum ;
+- Seregin `arXiv:2606.29468v1`, zoom Type II conditionnel de limite Euler.
+
+Chaque cellule vaut `SOURCE`, `INFERENCE`, `NOT_PROVIDED`, `CONTRADICTED` ou
+`NOT_APPLICABLE`. `NOT_PROVIDED` ne signifie jamais que la propriété est
+impossible; seulement que cette arête ne peut pas être invoquée depuis la
+source encodée.
+
+### Lemme de raccord testé
+
+Pour appliquer un théorème de rigidité de prémisses `H` à une chaîne de zoom
+`C`, chaque propriété de `H` doit être une sortie de `C`, ou être ajoutée par un
+lemme de raccord explicite. La réunion ensembliste de sorties provenant de
+deux constructions différentes n'est pas une preuve de transmission.
+
+Le garde-fou est élémentaire, mais son application est discriminante :
+
+```text
+ESS  fournit : trace L²_loc nulle + borne L-infinity_t L³_x + pression scindée;
+KNSS fournit : ancienne mild + borne ponctuelle + |v(0,0)|=1;
+GKP  fournit : mild L³ forward + trace S' au temps maximal;
+Type II Seregin fournit : ancienne Euler dissipative pondérée.
+```
+
+La classe hybride « ancienne mild ponctuellement bornée, non triviale et de
+trace `L²_loc` nulle » n'est donc la sortie d'aucune des quatre chaînes. Elle
+n'apparaît qu'en réunissant artificiellement ESS et KNSS.
+
+### Passe adverse intégrée
+
+Le script vérifie exactement :
+
+1. que chaque chaîne renseigne les mêmes treize propriétés ;
+2. que chaque statut appartient au vocabulaire fermé ;
+3. qu'une chaîne n'est pas simultanément visqueuse et inviscide ;
+4. qu'elle ne porte pas simultanément une trace nulle et une normalisation
+   terminale ponctuelle non nulle ;
+5. les sorties uniques attendues des portes ESS, KNSS et Euler Type II ;
+6. l'absence de chaîne unique et l'unique couverture minimale à deux chaînes
+   pour la porte hybride.
+
+`explicit_pressure_control` signifie une convergence ou décomposition de
+pression effectivement suivie. La formule mild de KNSS élimine bien le mode
+affine parasite, mais le lemme 6.1 ne transmet aucune suite de pressions : sa
+cellule reste donc `NOT_PROVIDED`.
+
+### Reproduction, précision et limites
+
+- Commande :
+  `python -B experiments/navier-stokes/blowup-inheritance-audit/inheritance_audit.py`.
+- Arithmétique : inclusions d'ensembles finis exactes, aucun flottant.
+- Discrétisation, pas de temps, graine, divergence numérique : sans objet.
+- Critère de succès : `assertion_failure_count=0`.
+- Résultat : aucune chaîne unique pour la porte hybride; couverture minimale
+  artificielle `ESS_LOCAL_L3_ZOOM + KNSS_MAXIMUM_ZOOM`.
+- Empreintes SHA-256 : enregistrées dans le claim et le checkpoint du cycle.
+- Limite : la matrice certifie la cohérence du corpus encodé, pas l'exhaustivité
+  de toute la littérature ni la fausseté intrinsèque du Liouville hybride. Une
+  nouvelle source ou un lemme de raccord peut falsifier le résultat borné au
+  corpus et doit alors modifier la matrice.
