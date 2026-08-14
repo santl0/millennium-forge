@@ -1299,6 +1299,35 @@ rapport d'aspect reste une constante auxiliaire à suivre.
 - Statut : échappement par aspect seul `REFUTED` dans cette classe; pivot vers
   `GAP-NONSEPARABLE-COMPACT-CURL-FLATNESS`.
 
+## `FAIL-NS-0064` — Superposition mince supposée contourner le gate vitesse
+
+- Date : 2026-08-14.
+- Cadre : tout swirl pur statique
+  `U=(R/r)F(r,z)e_theta` sur `R3`, `F` lisse compacte et supportée dans
+  `R/2<r<3R/2`; aucune évolution.
+- Cible : utiliser un nombre arbitraire de couches signées, décalées et non
+  séparables pour annuler les grandes transitions, garder
+  `||curl U||_(L^(3/2,infinity))` bornée et une vitesse faible-`L3` non petite
+  alors que l'aire méridienne est `o(R^2)`.
+- Attaque : potentiel bidimensionnel du gradient total, weak HLS, inclusion
+  sur support fini et comparaison exacte des fonctions de distribution
+  cylindriques.
+- Résultat :
+
+  ```text
+  ||U||_(L^(3,infinity))
+   <=C(|supp F|/R^2)^(1/6)||curl U||_(L^(3/2,infinity)).
+  ```
+
+- Test adverse : 384 sommes P1 à signes, centres et largeurs variables sur
+  quatre maillages; 272 726 contrôles rationnels exacts, zéro échec.
+- Résidu certifié : nul pour les identités finies; empreinte
+  `597dc2e2828df34d836556c5419904d39e6ee240aa93b353a49683699ae40443`.
+- Portée : la section épaisse `|supp F|~R^2`, les composantes poloïdales,
+  l'axe, le BMO directionnel et la dynamique ne sont pas couverts.
+- Statut : échappement par couches minces `REFUTED`; branche abandonnée et
+  pivot vers `GAP-THICK-CROSS-SECTION-GRADIENT-DIRECTION`.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,

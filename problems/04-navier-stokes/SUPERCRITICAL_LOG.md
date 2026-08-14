@@ -659,3 +659,29 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   `e392e3570e4de6f85bcb5f91a7eef6b36a1ed22c55bf8c483a918319b9a848e4`.
 - Pivot : le produit séparable est fermé à tout rapport d'aspect;
   `GAP-NONSEPARABLE-COMPACT-CURL-FLATNESS` devient actif.
+
+## 2026-08-14 — Collapse Lorentz de support pour tout swirl pur mince
+
+- Objet : `U=(R/r)F(r,z)e_theta`, `F` lisse compacte, support dans
+  `R/2<r<3R/2`; aucune évolution.
+- Quantité géométrique critique : `sigma=S_2/R^2`, où `S_2` est l'aire
+  méridienne du support réel de la somme `F`.
+- Lemme :
+
+  ```text
+  ||U||_(L^(3,infinity))
+   <=C sigma^(1/6)||curl U||_(L^(3/2,infinity)).
+  ```
+
+- Perte irréductible : les gates `K_U>=kappa`, `K_W<=K` forcent
+  `sigma>=C^-6(kappa/K)^6`; aucune annulation interne ne change cette puissance.
+- Test adverse : 384 masques P1 signés et décalés, quatre maillages rationnels,
+  272 726 contrôles exacts, zéro échec; le pire quotient carré vaut
+  `4212353969604/482173039025` et le facteur d'échelle est divisé par quatre à
+  chaque pas dyadique.
+- Empreinte :
+  `597dc2e2828df34d836556c5419904d39e6ee240aa93b353a49683699ae40443`.
+- Limite : `sigma~1`, composantes poloïdales, direction BMO, pression et temps
+  restent non contrôlés.
+- Pivot : branche mince non séparable abandonnée;
+  `GAP-THICK-CROSS-SECTION-GRADIENT-DIRECTION` devient actif.

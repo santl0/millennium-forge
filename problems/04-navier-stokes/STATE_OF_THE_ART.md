@@ -797,3 +797,41 @@ construction Euler hélicoïdale récente; le corpus atteint 131 sources. Le
 verrou actif devient
 `GAP-NONSEPARABLE-COMPACT-CURL-FLATNESS`, où des couches décalées pourraient
 masquer les transitions du produit simple.
+
+## Cycle 0032 — collapse universel des swirls purs à section mince
+
+Le masquage par couches est fermé sans séparer les transitions. Pour tout
+`F in C_c^infinity` supporté dans `R/2<r<3R/2`, posons
+
+```text
+U=(R/r)F(r,z)e_theta,  W=curl U,
+S_2=|supp F|_(dr dz).
+```
+
+Le potentiel bidimensionnel du gradient, le weak HLS
+`I_1:L^(3/2,infinity)->L^(6,infinity)`, l'inclusion faible sur support fini et
+les poids cylindriques donnent
+
+```text
+||U||_(L^(3,infinity)(R3))
+ <=C(S_2/R^2)^(1/6)||W||_(L^(3/2,infinity)(R3)).
+```
+
+Le quotient `S_2/R^2` est invariant par scaling Navier–Stokes. Sous un gate
+vitesse `>=kappa` et un gate vorticité `<=K`, il faut donc
+`S_2/R^2>=C^-6(kappa/K)^6`. Ce théorème cinématique interne est indépendant
+du nombre, des signes, des décalages et des annulations des couches parce
+qu'il agit sur leur somme finale.
+
+Le certificat P1 rationnel teste 384 masques non séparables sur quatre
+maillages : 272 726 assertions exactes, zéro échec. Il ne certifie pas la
+constante du continuum. Trois passes contradictoires distinctes vérifient les
+sens weak-to-weak, les comparaisons cylindriques, les annulations locales et
+la portée des outils canceling.
+
+La veille ajoute coaire/TV et trois sources div–curl/Lorentz
+(`NS-SRC-0132`–`0135`), portant le corpus à 135 sources. Aucune ne transforme
+ce no-go statique en régularité générale. Les sections d'aire comparable à
+`R^2`, les vitesses poloïdales et non axisymétriques, la pression et le temps
+restent ouverts. Le verrou actif devient
+`GAP-THICK-CROSS-SECTION-GRADIENT-DIRECTION`.

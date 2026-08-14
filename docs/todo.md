@@ -70,6 +70,11 @@
   normes critiques mais échoue au log-BMO interne; gate fonctionnel réfuté.
 - [ ] Construire ou exclure un bloc compact divergence-free dont le curl a une
   oscillation active `O(1/|log r|)`, sans petitesse faible-`L^3`.
+- [x] Exclure toute superposition pure-swirl séparée de l'axe dont l'aire
+  méridienne est `o(R^2)` : weak HLS et support fini au cycle 0032.
+- [ ] Sur la branche restante `|supp F|~R^2`, construire ou minorer une boule
+  d'oscillation de `nabla_perp F/|nabla F|`; attaquer d'abord par plateaux et
+  compensateurs rares.
 - [ ] Formuler un ledger Morrey–Carleson pour des tubes hétérogènes
   `A_j,h_j,q_j`; tester si le budget faible-Lorentz force le collapse.
 - [ ] Si un gate statique survit, obtenir un temps d'interaction uniforme face

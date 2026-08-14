@@ -1572,3 +1572,33 @@ cellule reste donc `NOT_PROVIDED`.
 - Limites : constantes des profils et lemme all-ball analytiques, non
   interval-certified; superpositions non séparables, pression et évolution
   Navier–Stokes non traitées.
+
+## `TWO-LAYER-PURE-SWIRL-SUPPORT-GATE-1` — collapse de support non séparable
+
+- Question falsifiable : deux couches compactes signées et décalées peuvent-elles
+  vaincre le facteur critique d'aire méridienne par annulation pointwise ?
+- Équation simulée : aucune; cinématique statique
+  `U=(R/r)F(r,z)e_theta`, `curl U=(R/r)nabla_perp F` sur `R3`.
+- Discrétisation : fonctions continues P1 sur triangulations rationnelles du
+  carré `[-2,2]^2`, maillages `8,12,16,20`; 384 masques à deux couches.
+- Données : six coefficients signés, quatre centres et quatre couples de
+  largeurs; aucune graine aléatoire.
+- Précision : `fractions.Fraction`; les modules de gradient sont comparés par
+  leurs carrés, sans racine ni flottant.
+- Quantités certifiées : aire des triangles actifs, maximum nodal, fonction de
+  distribution exacte du gradient P1 et loi dyadique du quotient.
+- Famille : `R_n=2^-n`, `h_n=2^-2n`, `2<=n<=30`; le pire quotient carré est
+  divisé exactement par quatre lorsque `n` augmente de un.
+- Commande :
+
+  ```text
+  python -B experiments/navier-stokes/two-layer-pure-swirl/two_layer_pure_swirl_audit.py
+  ```
+
+- Environnement : Python 3.13.14, bibliothèque standard uniquement.
+- Résidu certifié : 272 726 contrôles exacts, zéro échec; pire quotient de
+  forme carré `4212353969604/482173039025<9`.
+- Empreinte :
+  `597dc2e2828df34d836556c5419904d39e6ee240aa93b353a49683699ae40443`.
+- Limites : énumération finie, majorant `L-infinity` pour la vitesse, aucune
+  certification de HLS continuum, de BMO, de pression ou d'évolution.

@@ -239,3 +239,23 @@ Abandonner la construction à deux couches si chaque zone de transition porte
 un sous-ensemble dont le coût Lorentz se minore indépendamment des autres
 couches, ou si tout masquage exige une nouvelle transition de capacité au
 moins comparable.
+
+## Priorité active après le cycle 0032
+
+1. **`GAP-THICK-CROSS-SECTION-GRADIENT-DIRECTION`.** Pour
+   `U=(R/r)F e_theta` avec `|supp F|/R^2>=c>0`, déterminer si la compacité de
+   `F` force une boule active où la direction
+   `nabla_perp F/|nabla F|` a une oscillation quantitative. Le lemme minimal
+   doit être invariant d'échelle et localisé, pas une simple variation totale.
+2. **Plateaux dégénérés et compensateurs rares.** Construire le test adverse
+   le plus agressif : extrema en plateau, cols multiples et transitions de
+   faible capacité. Abandonner l'argument de degré si ces profils gardent les
+   deux endpoints tout en repoussant toute rotation directionnelle hors des
+   boules critiques.
+3. **Sortie du swirl pur.** Si la topologie plane ne donne aucune coercivité,
+   introduire une composante poloïdale compacte avec projection de Leray
+   recalculée; ne pas réutiliser silencieusement le lemme scalaire.
+
+La branche « deux couches minces » est fermée plus fortement que le critère
+d'abandon prévu : le weak HLS du champ total donne directement
+`K_U<=C(S_2/R^2)^(1/6)K_W`, sans isoler aucune transition.

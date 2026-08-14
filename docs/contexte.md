@@ -195,3 +195,18 @@ tores homogènes est abandonnée. Le verrou actif est
 `GAP-COMPACT-VELOCITY-WEAK-CRITICAL-DIRECTION` : construire ou exclure un curl
 compact intérieurement plat, hors petite donnée faible-`L^3`, avec temps
 d'interaction uniforme. Le corpus primaire compte désormais 127 sources.
+
+Le cycle 0031 construit ensuite un swirl compact séparable et suit exactement
+les deux dérivées méridiennes. Les gates critiques forcent ses deux largeurs à
+rester comparables au grand rayon; le grand rapport d'aspect ne fournit donc
+aucun bloc directionnellement plat non perturbatif. Le verrou est déplacé vers
+les superpositions non séparables.
+
+Le cycle 0032 ferme plus largement toute superposition pure-swirl dont l'aire
+méridienne est `o(R^2)`. Le weak HLS bidimensionnel et l'inclusion de support
+fini donnent
+`K_U<=C(S_2/R^2)^(1/6)K_W`, indépendamment des couches. Un certificat exact à
+384 masques exécute 272 726 assertions sans échec; trois passes séparées
+attaquent l'analyse fonctionnelle, les contre-profils et la littérature. Le
+corpus compte 135 sources. Le verrou actif est désormais la direction du
+gradient sur une section épaisse, avant toute dynamique.

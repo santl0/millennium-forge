@@ -239,3 +239,26 @@
   gate exige une direction active log-BMO uniforme, une norme faible-`L^3`
   non perturbative et un temps d'interaction indépendant de la plus petite
   échelle.
+
+### 2026-08-14 — rapport d'aspect séparable fermé
+
+- Le facteur `R/r` est retenu pour le swirl compact car il annule exactement
+  la courbure dans le curl et rend visibles les deux coûts de dérivée.
+- Sous gates vitesse/vorticité, les deux largeurs sont minorées par une
+  fraction du grand rayon; l'échappement par aspect est abandonné.
+- Une boule de calotte reste directionnellement active, mais l'extension à
+  des couches non séparables est laissée ouverte plutôt que supposée.
+
+### 2026-08-14 — superpositions minces fermées par weak HLS
+
+- La meilleure action du cycle est le lemme universel de support, score
+  `20/20`, devant le ledger transitionnel (`18/20`) et l'optimisation BMO
+  numérique (`15/20`).
+- Le champ total `F`, après toutes les annulations, remplace définitivement
+  les budgets additifs par couche.
+- La branche à aire méridienne `o(R^2)` est abandonnée :
+  `K_U<=C(S_2/R^2)^(1/6)K_W` force la petite donnée faible-`L3`.
+- Le statut reste `COMPUTATION_ONLY`, conformément à la politique qui interdit
+  de promouvoir une dérivation IA nouvelle en preuve papier.
+- Le prochain verrou est `GAP-THICK-CROSS-SECTION-GRADIENT-DIRECTION`; aucune
+  pression ou évolution n'est calculée avant survie du gate statique.

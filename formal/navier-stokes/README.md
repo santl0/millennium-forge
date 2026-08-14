@@ -838,3 +838,27 @@ Le noyau formel recommandé ne requiert pas Navier–Stokes en temps :
 Le futur objet doit conserver les constantes des profils dans les hypothèses.
 Il certifierait seulement un no-go cinématique pour un ansatz séparable, jamais
 un critère de régularité ni une solution de Navier–Stokes.
+
+## Backlog issu du cycle 0032 — plongement de support méridien
+
+Le noyau à formaliser est désormais indépendant des profils et se décompose en
+petits modules stables :
+
+1. représentation ponctuelle plane
+   `|F|<=C I_1(|nabla F|)` pour `F` lisse compacte;
+2. interpolation réelle de
+   `I_1:L^(4/3)->L4` et `I_1:L^(12/7)->L12` vers
+   `L^(3/2,infinity)->L^(6,infinity)`;
+3. inclusion exacte sur support fini
+   `||F||_(3,infinity)<=S_2^(1/6)||F||_(6,infinity)`;
+4. comparaison de fonctions de distribution entre `dr dz` et
+   `r dr dtheta dz` sur `R/2<r<3R/2`;
+5. identité cylindrique
+   `curl[(R/r)F e_theta]=(R/r)nabla_perp F`;
+6. composition et vérification d'échelle de
+   `K_U<=C(S_2/R^2)^(1/6)K_W`.
+
+La première cible raisonnable est le module 3, qui dépend seulement de la
+définition de faible-`Lp`. Les modules HLS/Lorentz exigent une bibliothèque
+d'interpolation épinglée. Même compilé, cet objet certifierait un lemme
+elliptique statique pour swirls purs séparés de l'axe, pas la dynamique Clay.

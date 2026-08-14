@@ -1,7 +1,7 @@
 # Cycle 0032 — deux couches décalées : variation totale, fonctions de distribution et masquage directionnel
 
-Date : 2026-08-14  
-Statut : dérivation analytique interne et calcul flottant adverse, non revus par les pairs, **pas** `PAPER_PROOF`  
+Date : 2026-08-14
+Statut : dérivation analytique interne et calcul flottant adverse, non revus par les pairs, **pas** `PAPER_PROOF`
 Verrou : `GAP-NONSEPARABLE-COMPACT-CURL-FLATNESS`
 
 ## Décision du cycle

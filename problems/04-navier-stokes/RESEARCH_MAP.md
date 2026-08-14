@@ -1228,3 +1228,41 @@ flux local de la passe contradictoire montre parallèlement que
 `integral curl U=0` ne produit pas une boule oscillante arbitraire sans terme
 de bord. Une extension universelle exigera donc un ledger non séparable des
 zones de transition, et non la seule compensation globale.
+
+## Cycle 0032 : arête universelle de support méridien
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| collapse universel par aire de section | 5 | 5 | 5 | 5 | **20** |
+| ledger transition par transition à deux couches | 4 | 4 | 5 | 5 | 18 |
+| optimisation numérique du BMO all-ball | 5 | 2 | 4 | 4 | 15 |
+
+```text
+F compact arbitraire, supp F subset {R/2<r<3R/2}
+  -- exact --> U=(R/r)F e_theta est compact et divergence-free
+  -- exact --> curl U=(R/r)nabla_perp F
+  -- HLS/Lorentz sourcé --> ||F||_(6,infinity)<=C||nabla F||_(3/2,infinity)
+  -- support fini --> ||F||_(3,infinity)<=S_2^(1/6)||F||_(6,infinity)
+  -- poids cylindriques --> K_U<=C(S_2/R^2)^(1/6)K_W
+  -- gates critiques --> S_2/R^2>=C^-6(kappa/K)^6
+  -- réfute --> couches minces, signées ou décalées sauvent le gate vitesse
+  -- manque --> oscillation de nabla_perp F quand S_2 comparable à R^2
+  -- ouvre --> GAP-THICK-CROSS-SECTION-GRADIENT-DIRECTION.
+```
+
+La perte restante n'est plus une annulation de transitions mais la possibilité
+qu'un potentiel compact sur une section épaisse possède une direction de
+gradient suffisamment plate sur toutes les boules actives. Coaire et
+opérateurs canceling contrôlent le champ total sans fournir cette localisation
+directionnelle.
+
+## Priorité après le cycle 0032
+
+1. `GAP-THICK-CROSS-SECTION-GRADIENT-DIRECTION` — actif; tester si degré,
+   lignes de niveau ou extrema compacts forcent une boule d'oscillation de
+   `nabla_perp F/|nabla F|` lorsque `S_2/R^2>=c>0`.
+2. Plateaux et compensateurs rares — passe adverse; chercher une suite qui
+   concentre tout changement de direction sur un ensemble de faible capacité
+   sans rendre `K_U` petit ni `K_W` grand.
+3. Propagation/diffusion — encore différée jusqu'à survie simultanée des trois
+   gates statiques.

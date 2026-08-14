@@ -349,3 +349,36 @@ integral_B curl U = integral_(partial B) n cross U
 2. Flux de bord local — conditionnel; relier une masse conique non dégénérée à
    une bonne sphère sans imposer une petitesse perturbative de la vitesse.
 3. Propagation/diffusion — toujours différée jusqu'à un gate statique complet.
+
+## Cycle 0032 — arête de support mince non séparable
+
+```text
+NS-THIN-PURE-SWIRL-LORENTZ-COLLAPSE
+  -- hypothèse exacte --> F in C_c^infinity, supp F subset {R/2<r<3R/2}
+  -- identité cylindrique --> curl[(R/r)F e_theta]=(R/r)nabla_perp F
+  -- NS-SRC-0067/0070/0126 --> potentiel et weak HLS bidimensionnel
+  -- exact --> L^(6,infinity)(supp F) vers L^(3,infinity), facteur S_2^(1/6)
+  -- exact --> comparaisons cylindriques R^(1/3) et R^(2/3)
+  -- conclut --> K_U<=C(S_2/R^2)^(1/6)K_W
+  -- Yamazaki NS-SRC-0118 --> petite donnée globale lorsque K_U devient petit
+  -- réfute --> superposition mince non séparable comme candidat de blow-up
+  -- ne transfère pas --> section épaisse, vitesse poloïdale, pression, temps
+  -- ouvre --> GAP-THICK-CROSS-SECTION-GRADIENT-DIRECTION.
+```
+
+Arêtes adverses complémentaires :
+
+```text
+coaire NS-SRC-0132 --> ||curl U||_1=2pi TV(rU_theta)
+TV(sum F_j) -/-> sum TV(F_j)        [arête réfutée par annulation]
+canceling NS-SRC-0133--0135 -/-> anti-annulation couche par couche
+deux couches décalées --> masquage local exact
+masquage local exact -/-> survie globale du gate de support.
+```
+
+## Priorité après le cycle 0032
+
+1. De `S_2/R^2>=c` à une boule de rotation du gradient — manquant.
+2. De cette boule à une minoration log-BMO all-ball — conditionnel.
+3. Des trois gates statiques à un temps d'interaction et au profil limite —
+   manquant.
