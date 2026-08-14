@@ -2,7 +2,7 @@
 
 Les expériences de ce répertoire sont des tests analytiques finis. Elles ne
 simulent pas une solution Navier–Stokes et ne constituent ni une preuve de
-régularité ni un blow-up. Les seize expériences utilisent la graine « sans
+régularité ni un blow-up. Les dix-sept expériences utilisent la graine « sans
 objet » et écrivent
 leur rapport JSON sur la sortie standard.
 
@@ -14,6 +14,7 @@ leur rapport JSON sur la sortie standard.
 | `TRI-PHASE-1` | divergence nulle et hélicité nulle imposent-elles un flux sous-linéaire universel ? | modes Fourier finis, rationnels gaussiens exacts | `python -B experiments/navier-stokes/triad-phase/test_triad_phase.py` | zéro |
 | `VORTICITY-LOCAL-COHERENCE-SIGN-GATE-1` | une cohérence locale arbitrairement fine de la direction fixe-t-elle le signe ou déplète-t-elle sans échelle le stretching central ? | six modes Fourier, fractions rationnelles gaussiennes exactes; aucune grille | `python -B experiments/navier-stokes/vorticity-local-coherence/local_coherence_audit.py` | zéro pour les identités, la pression et les lois d'échelle |
 | `SPARSENESS-RESTRICTION-1` | une densité volumique `delta` impose-t-elle une tranche linéaire `delta^(1/3)` au même point et rayon ? | preuve polaire + fractions exactes, profils radiaux et colonnes angulaires | `python -B experiments/navier-stokes/sparseness-restriction/sparseness_restriction_audit.py` | zéro pour toutes les identités algébriques |
+| `REARRANGEMENT-INVERSION-1` | une enveloppe `v^-1/3 log^-1` de la réarrangée impose-t-elle une queue `lambda^-3 log^-3` malgré les plateaux ? | pseudo-inverses sur fonctions simples, fractions exactes et encadrements rationnels de logarithmes | `python -B experiments/navier-stokes/rearrangement-inversion/rearrangement_inversion_audit.py` | zéro pour toutes les identités et aucun flottant |
 | `DESINGULARIZATION-GATE-1` | les normes d'une troncature de `r^-1` restent-elles uniformes quand `epsilon -> 0` ? | intégrales radiales exactes; logarithme symbolique | `python -B experiments/navier-stokes/desingularization-gate/desingularization_gate.py` | zéro pour les identités rationnelles |
 | `HWY-INNER-CUTOFF-GATE-1` | une régularisation intérieure divergence-free petite en `L²` et bornée en `L^{3,infinity}` est-elle compacte dans `L³` ? | matrices et intégrales exactes; transcendantes symboliques | `python -B experiments/navier-stokes/hwy-inner-cutoff/inner_cutoff_audit.py` | zéro pour les identités rationnelles et l'arrondi |
 | `HWY-PARITY-PROJECTION-GATE-1` | un lissage intérieur respectant la réflexion HWY peut-il exciter le mode certifié impair ? | projecteurs de parité et exposants rationnels exacts; aucune grille | `python -B experiments/navier-stokes/hwy-parity-projection/parity_projection_audit.py` | zéro pour dix obligations; aucun arrondi |
@@ -143,6 +144,40 @@ réseau ni ne produit d'artefact lourd.
 - Limite : le test ne valide ni la borne de distribution, ni le commutateur,
   ni l'analyticité, ni le maximum harmonique de `arXiv:2607.08866v2`.
 
+## `REARRANGEMENT-INVERSION-1` — quantile logarithmique exact
+
+- Question falsifiable : une borne uniforme
+  `f*(v)<=A_0(V_0/v)^(1/3)/log(eV_0/v)` sur un même intervalle
+  `0<v<=theta_0V_0` implique-t-elle une queue uniforme
+  `lambda^-3 log^-3` ?
+- Lemme : pour
+  `lambda>=A_0 max(1,theta_0^(-1/3)/log(e/theta_0))`,
+
+  ```text
+  mu_f(lambda)
+    <=V_0(A_0/lambda)^3/[1+3log(lambda/A_0)]^3.
+  ```
+
+- Réparation : l'égalité `lambda=f*(mu_f(lambda))` est fausse sur les
+  plateaux. La preuve utilise l'équivalence
+  `mu_f(lambda)>v <=> f*(v)>lambda` pour tout `v<mu_f(lambda)`, puis la limite
+  croissante vers la masse du superniveau.
+- Contre-profil : pour les valeurs `4,2,0` sur les masses
+  `1/8,3/8,1/2`, `mu_f(3)=1/8`, mais `f*(1/8)=2`; en revanche
+  `f*(1/16)=4>3`, exactement comme l'exige la preuve réparée.
+- Optimalité : l'enveloppe saturante donne asymptotiquement le coefficient
+  principal `A^3/27` devant `lambda^-3log^-3`.
+- Échelle : sous NS, `V_0` porte `kappa^-3`, `A_0` et le niveau portent
+  `kappa`, leur rapport est invariant et la distribution porte `kappa^-3`.
+- Discrétisation : aucune PDE, aucun maillage ni pas de temps. Les logarithmes
+  sont encadrés par une série de `atanh` et un reste géométrique rationnel.
+- Résidus : pseudo-inverse, puissances, constantes et scaling exactement
+  nuls; graine sans objet; aucun arrondi.
+- Empreinte :
+  `0b306177085e584f1a658b4b9534ea74d7ca0ce07c599c7bf9295a95fdc804f7`.
+- Limite : suppose (47) avec constante et cutoff uniformes; ne valide ni sa
+  dérivation par O'Neil, ni la représentation Biot–Savart, ni le théorème 7.4.
+
 ## `DESINGULARIZATION-GATE-1` — premier cycle autonome
 
 - Question : la contribution de coquille d'un champ homogène
@@ -201,7 +236,7 @@ réseau ni ne produit d'artefact lourd.
 
 ## Passage au continuum
 
-Aucune des seize expériences ne part d'une discrétisation PDE : il n'y a donc
+Aucune des dix-sept expériences ne part d'une discrétisation PDE : il n'y a donc
 pas de passage grille-vers-continuum. Le raccord analytique restant est
 explicite dans chaque cas. Tout futur solveur doit ajouter divergence mesurée,
 convergence multi-résolution, second schéma, bornes de troncature, contrôle des

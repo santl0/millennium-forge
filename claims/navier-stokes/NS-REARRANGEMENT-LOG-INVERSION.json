@@ -1,0 +1,49 @@
+{
+  "id": "NS-REARRANGEMENT-LOG-INVERSION",
+  "problem": "navier-stokes",
+  "statement": "Si une famille mesurable satisfait uniformément f*(v)<=A_0(V_0/v)^(1/3)/log(eV_0/v) pour 0<v<=theta_0 V_0, alors, au-dessus du seuil explicite A_0 max(1,theta_0^(-1/3)/log(e/theta_0)), sa fonction de distribution vérifie mu_f(lambda)<=V_0(A_0/lambda)^3/[1+3log(lambda/A_0)]^3; la puissance logarithmique trois est asymptotiquement optimale.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "mu_f(lambda)=mesure de {|f|>lambda} et f*(v)=inf{lambda>=0:mu_f(lambda)<=v}",
+    "V_0>0, A_0>0 et 0<theta_0<=1 sont indépendants du temps dans l'application paramétrée",
+    "l'enveloppe de réarrangée vaut pour tout 0<v<=theta_0 V_0, pas seulement avec un cutoff dépendant du temps",
+    "les logarithmes portent sur les rapports sans dimension eV_0/v et lambda/A_0",
+    "dans l'application à arXiv:2607.08866v2, l'équation (47) est supposée et non démontrée par ce claim"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0059, arXiv:2607.08866v2, équations (47)-(49), passage conditionnel audité"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0067, O'Neil 1963, contexte primaire de la convolution de réarrangées en amont"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0015-rearrangement-inversion.md"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/rearrangement-inversion/rearrangement_inversion_audit.py, fractions rationnelles, plateaux et encadrements certifiés de logarithmes",
+      "sha256": "0b306177085e584f1a658b4b9534ea74d7ca0ce07c599c7bf9295a95fdc804f7"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "Une famille avec cutoffs small-volume tendant vers zéro puis plateaux de masse fixe montre que l'uniformité de la constante sans uniformité du cutoff ne suffit pas"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0015-rearrangement-inversion"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois passes Codex séparées, même famille de modèle; non indépendantes au sens externe",
+    "notes": "Les passes formelle, bibliographique et contre-modèle convergent sur le lemme réparé, le seuil uniforme, le scaling et l'optimalité asymptotique. L'obtention PDE de l'équation (47) reste hors claim."
+  }
+}

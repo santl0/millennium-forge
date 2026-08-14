@@ -6,8 +6,8 @@ des décisions reste dans les checkpoints.
 
 | Priorité | Question falsifiable | Pourquoi maintenant | Critère de sortie |
 |---:|---|---|---|
-| 1 | l'inversion quantitative des réarrangées aux équations (47)–(49) de `arXiv:2607.08866v2` conserve-t-elle des inégalités uniformes, plutôt que de simples équivalences asymptotiques ? | le cycle 0014 ferme le maillon géométrique immédiatement aval; c'est désormais la première arête amont bornée et falsifiable | dérivation avec seuils et constantes uniformes, ou fonction monotone adverse explicite |
-| 2 | une inégalité locale de stretching positif peut-elle être fermée avec une queue de strain lointain explicite et sommable, sans supposer la norme critique recherchée ? | le cycle 0013 prouve que toute suppression de cette queue est fausse; le commutateur dyadique de la prépublication est un test primaire | borne annulaire/Carleson uniforme, ou contre-profil multi-échelle à énergie suivie |
+| 1 | les équations (40)–(41) impliquent-elles quantitativement (47), avec les deux intégrales d'O'Neil, le reste positif de (46), la jauge Biot–Savart et des constantes uniformes en temps ? | le cycle 0015 ferme l'inversion aval `(47) -> (49)`; c'est maintenant le premier raccord PDE non reproduit de la chaîne | dérivation à seuils et constantes suivis, ou profil décroissant/admissible réfutant une intégrale ou l'uniformité |
+| 2 | une inégalité locale de stretching positif peut-elle être fermée avec une queue de strain lointain explicite et sommable, sans supposer la norme critique recherchée ? | le cycle 0013 prouve que toute suppression de cette queue est fausse; le commutateur dyadique de la prépublication reste le test primaire suivant | borne annulaire/Carleson uniforme, ou contre-profil multi-échelle à énergie suivie |
 | 3 | un problème renormalisé NS peut-il être réduit à un opérateur compact avec bornes de queue certifiables ? | préalable à toute preuve assistée par ordinateur | rayon de contraction validable sous raffinement |
 | 4 | le noyau Fourier fini énergie–Leray peut-il être formalisé sans axiome ni `sorry` en Lean ? | petite brique stable, indépendante des scénarios spéculatifs | build épinglé + `#print axioms` vide hors logique standard |
 
@@ -98,6 +98,24 @@ concentrique prouve l'optimalité. Si `|S|≤B`, le rayon uniforme construit est
 garantit les rayons au-dessus de ce seuil, pas tout rayon inférieur. Le maillon
 est fermé avec le statut `COMPUTATION_ONLY`; les estimations PDE qui produisent
 le majorant de volume restent ouvertes.
+
+## Résultat positif borné et correction du cycle 0015
+
+Une enveloppe uniforme
+`f*(v)≤A v^(-1/3)/log(eV_*/v)` sur `0<v≤v_0` implique, pour les niveaux assez
+grands,
+
+```text
+mu_f(lambda) ≤ A^3 /
+  [lambda^3 (1+3 log(lambda/(A V_*^(-1/3))))^3].
+```
+
+Le lemme est invariant sous le scaling Navier–Stokes et la puissance
+logarithmique trois est asymptotiquement optimale. En revanche, l'identité
+`lambda=f*(mu_f(lambda))` est réfutée par un profil à plateaux; l'uniformité
+temporelle est aussi fausse si le cutoff `v_0` dégénère. Le passage
+`(47) -> (49)` est donc fermé après réparation au statut `COMPUTATION_ONLY`,
+sans valider l'obtention de (47) ni un profil ponctuel radial de la vitesse.
 
 ## Règle de pivot
 

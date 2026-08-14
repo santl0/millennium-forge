@@ -313,3 +313,27 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   de la restriction géométrique.
 - Artefact : `SPARSENESS-RESTRICTION-1`, fractions rationnelles exactes,
   résidus algébriques nuls, statut `COMPUTATION_ONLY`.
+
+## 2026-08-14 — Inversion logarithmique des réarrangées
+
+- Objet : fonction mesurable sur un espace non atomique de dimension de volume
+  trois; application conditionnelle à la vitesse d'une solution mild
+  analytique de NS incompressible 3D non forcé sur `R³`.
+- Hypothèse : `f*(v)≤A v^(-1/3)/log(eV_*/v)` pour `0<v≤v_0`, avec
+  `A,V_*,v_0` uniformes dans le paramètre temporel.
+- Pseudo-inverse exact : `mu_f(lambda)>v` si et seulement si
+  `f*(v)>lambda`. L'identité au point terminal est fausse sur les plateaux.
+- Conclusion : au-dessus du seuil imposé par `v_0` et
+  `Lambda_*=A V_*^(-1/3)`,
+  `mu_f(lambda)≤A³/[lambda³(1+3log(lambda/Lambda_*))³]`.
+- Échelle : sous `u_kappa(x,t)=kappa u(kappa x,kappa²t)`, `A` est invariant,
+  `V_*` et `mu` portent `kappa^-3`, `Lambda_*` et `lambda` portent `kappa`;
+  le rapport logarithmique est invariant.
+- Optimalité : l'enveloppe saturante a une inverse asymptotique
+  `A³/[27lambda³log³(lambda/Lambda_*)]`; ni la puissance trois ni le facteur
+  principal `1/27` ne s'améliorent sans nouvelle structure.
+- Perte localisée : un cutoff `v_0(t)` qui tend vers zéro détruit le seuil
+  uniforme même si `A` reste fixe. L'obtention PDE de l'enveloppe et la jauge
+  harmonique de Biot–Savart restent ouvertes.
+- Artefact : `REARRANGEMENT-INVERSION-1`, fractions et encadrements rationnels
+  de logarithmes, aucun flottant, statut `COMPUTATION_ONLY`.

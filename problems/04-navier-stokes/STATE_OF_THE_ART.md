@@ -328,3 +328,16 @@ critère 1D et la mesure harmonique, Farhat–Grujić–Leitmeyer 2017 la réduc
 volumique à une échelle `rho≤r`, et Grujić–Xu 2019–2024 la formulation au même
 rayon. `arXiv:2607.08866` reste une v2 non évaluée; ses estimations (47)–(55),
 la queue du commutateur et l'uniformité des constantes ne sont pas validées.
+
+Le cycle 0015 ferme ensuite, après correction, le sous-passage `(47) -> (49)`.
+La relation exacte entre distribution et réarrangée est une implication de
+pseudo-inverse; l'égalité utilisée informellement au niveau terminal est
+fausse sur les plateaux. Avec un cutoff de petit volume uniforme, l'enveloppe
+`v^(-1/3) log^(-1)` entraîne une queue
+`lambda^(-3) log^(-3)` à seuils et constantes explicites, covariante sous le
+scaling Navier–Stokes; la puissance logarithmique est optimale sous cette
+seule hypothèse. Ce résultat mesurable ne valide ni l'obtention de (47) depuis
+la vorticité, ni une représentation ponctuelle radiale de la vitesse. L'arête
+active est désormais `(40) -> (41) -> (47)`, où subsistent la jauge
+Biot–Savart, les deux intégrales d'O'Neil, le reste positif de (46) et leur
+uniformité temporelle.

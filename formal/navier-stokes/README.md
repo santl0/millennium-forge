@@ -474,3 +474,23 @@ formaliser Navier–Stokes :
 Cette cible certifierait un lemme de théorie de la mesure et ses constantes,
 pas le majorant de superniveau, l'analyticité ou le théorème 7.4 de la
 prépublication 2026.
+
+## Backlog issu du cycle 0015 — pseudo-inverse et bootstrap logarithmique
+
+Après les noyaux finis prioritaires, le lemme scalaire stable peut être
+formalisé indépendamment de Navier–Stokes :
+
+1. définir la fonction de distribution avec superniveau strict et sa
+   réarrangée décroissante généralisée;
+2. prouver `mu_f(lambda)>v <-> f*(v)>lambda`, sans postuler d'égalité au
+   quantile terminal;
+3. encoder l'enveloppe
+   `f*(v)≤A v^(-1/3)/log(eV_*/v)` sur un intervalle `0<v≤v_0`;
+4. formaliser le bootstrap en deux étapes qui donne d'abord
+   `mu≤(A/lambda)^3`, puis réinjecte ce majorant dans le logarithme;
+5. vérifier la covariance sous le changement
+   `(v,V_*,lambda)->(kappa^-3v,kappa^-3V_*,kappa lambda)`.
+
+Cette cible certifierait l'inversion `(47) -> (49)` et l'échec de l'égalité
+sur les plateaux. Elle ne certifierait ni l'inégalité d'O'Neil appliquée à
+Biot–Savart, ni l'enveloppe (47), ni une conclusion de régularité Clay.

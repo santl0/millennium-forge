@@ -543,3 +543,44 @@ majorant global de volume du superniveau
 Le verrou se déplace d'une arête vers l'amont : rendre quantitatives et
 uniformes les équations (47)–(49). En cas d'échec, la queue dyadique du
 commutateur devient l'expérience suivante.
+
+## Cycle 0015 : pseudo-inverse logarithmique
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| audit exact de `(47) -> (49)`, plateaux inclus | 3 | 5 | 5 | 5 | **18** |
+| audit des intégrales d'O'Neil `(41) -> (47)` | 4 | 4 | 5 | 5 | **18** |
+| queue dyadique du commutateur du théorème 4.1 | 5 | 2 | 4 | 5 | 16 |
+
+Le premier candidat gagne le départage parce qu'il sépare une inversion de
+fonction monotone d'une estimation PDE. Pour
+`mu_f(lambda)=|{|f|>lambda}|` et
+`f*(v)=inf{a≥0:mu_f(a)≤v}`, l'équivalence exacte est
+
+```text
+mu_f(lambda)>v  <=>  f*(v)>lambda.
+```
+
+L'égalité terminale `lambda=f*(mu_f(lambda))` est fausse sur les plateaux.
+En utilisant tous les `v<mu_f(lambda)`, l'enveloppe (47) fournit néanmoins
+
+```text
+mu_f(lambda) ≤ A^3 /
+  [lambda^3 (1+3 log(lambda/Lambda_*))^3],
+Lambda_*=A V_*^(-1/3),
+```
+
+au-dessus d'un seuil explicite fixé par le cutoff uniforme `v_0`. La famille
+saturante montre que la puissance trois et la constante asymptotique `1/27`
+ne peuvent être améliorées avec cette seule prémisse.
+
+Arête confirmée après correction, `COMPUTATION_ONLY` :
+
+```text
+enveloppe uniforme de réarrangée de vitesse (47)
+  -> queue de distribution logarithmique quantitative (49)
+  -> majorant de volume utilisable par le maillon de sparseness.
+```
+
+Le verrou actif remonte à `(40) -> (41) -> (47)`: représentation Biot–Savart,
+deux intégrales d'O'Neil, reste positif de (46) et uniformité temporelle.

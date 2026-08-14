@@ -1,0 +1,44 @@
+{
+  "id": "NS-REARRANGEMENT-ENDPOINT-EQUALITY",
+  "problem": "navier-stokes",
+  "statement": "Pour toute fonction mesurable f et tout niveau lambda, l'identité lambda=f*(mu_f(lambda)), avec mu_f(lambda)=mesure de {|f|>lambda} et f* l'inverse généralisé décroissant, serait vraie par définition.",
+  "status": "REFUTED",
+  "hypotheses": [
+    "espace de Lebesgue non atomique",
+    "superniveaux stricts {|f|>lambda}",
+    "f*(v)=inf{a>=0:mu_f(a)<=v}",
+    "fonction bornée à support de mesure finie"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0059, équation (48), où l'identification est utilisée informellement"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "Pour f=5 sur une masse 3, f=2 sur une masse 4 et lambda=4, mu_f(4)=3 mais f*(3)=2; le crochet correct est f*(3)<=4<=f*(3-)"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/rearrangement-inversion/rearrangement_inversion_audit.py, contre-profil rationnel équivalent",
+      "sha256": "0b306177085e584f1a658b4b9534ea74d7ca0ce07c599c7bf9295a95fdc804f7"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0015-countermodel.md"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0015-rearrangement-inversion"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois passes Codex séparées, même famille de modèle; non indépendantes au sens externe",
+    "notes": "La réfutation porte uniquement sur l'égalité terminale. Elle ne réfute pas l'implication (47)->(49), réparée par le quantificateur v<mu_f(lambda) ou par une pseudo-inversion de l'enveloppe."
+  }
+}

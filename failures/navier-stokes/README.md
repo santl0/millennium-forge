@@ -403,6 +403,34 @@ d'équivalence entre deux profils, pas un autre renommage de topologie.
   adversariales de même famille de modèle; aucune revue externe indépendante.
 - Artefact : `VORTICITY-LOCAL-COHERENCE-SIGN-GATE-1`.
 
+## `FAIL-NS-0017` — Égalité terminale entre niveau et réarrangée
+
+- Date : 2026-08-14.
+- Cadre : théorie de la mesure sur `R³`; application conditionnelle à la
+  solution mild analytique de NS incompressible 3D non forcé utilisée dans
+  `arXiv:2607.08866v2`.
+- Cible : l'identité présentée autour de (48),
+  `lambda=f*(mu_f(lambda))`, supposée vraie « par définition ».
+- Convention : `mu_f(lambda)=|{|f|>lambda}|` et
+  `f*(v)=inf{a>=0:mu_f(a)<=v}`.
+- Contre-profil : `f=5` sur une masse `3`, `f=2` sur une masse `4`, zéro
+  ailleurs. Au niveau `lambda=4`, `mu_f(4)=3` mais `f*(3)=2`; le crochet exact
+  est `f*(3)<=4<=f*(3-)`.
+- Résultat : l'égalité terminale est réfutée sur un espace non atomique par un
+  simple plateau de valeurs. Changer silencieusement `>` en `>=` ne la répare
+  pas universellement.
+- Réparation : pour tout `v<mu_f(lambda)`, on a `f*(v)>lambda`; faire croître
+  `v` jusqu'à la masse du superniveau fournit l'implication quantitative
+  corrigée. Le passage (47)→(49) n'est donc pas réfuté.
+- Test : fractions rationnelles exactes, équivalence de pseudo-inverse sur une
+  grille finie complète; zéro échec et aucun flottant. Empreinte :
+  `0b306177085e584f1a658b4b9534ea74d7ca0ce07c599c7bf9295a95fdc804f7`.
+- Portée : ne valide pas l'obtention de (47), O'Neil dans l'application PDE,
+  les constantes uniformes, le commutateur ou le théorème 7.4.
+- Statut : claim `REFUTED` pour l'égalité; lemme réparé séparé au statut
+  `COMPUTATION_ONLY`.
+- Artefact : `REARRANGEMENT-INVERSION-1`.
+
 ## Obstacle consolidé — désingularisation HWY vers une même donnée Clay
 
 Trois stratégies distinctes ont fermé les inférences actuellement disponibles :
