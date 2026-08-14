@@ -607,3 +607,51 @@ pression/projection/diffusion/stretching : absents.
 1. Annulations critiques entre curls superposés et registre local survivant.
 2. Cutoff divergence-free et projection de Leray avec constante critique.
 3. Raccord dynamique Type I, puis localisation exacte du trou Type II.
+
+## Cycle 0039 — fermeture négative de la sélection étiquetée
+
+```text
+NS-PURE-SWIRL-ADAPTIVE-DIAMETER-SELECTION
+  -- requiert un curl unique ou des curls disjoints
+  -/-> sélection parmi sommants recouvrants
+
+Z_n,-Z_n lisses, divergence-free, même axe–anneau
+  -- multiplicité deux
+  -- curls individuels ~n sur volume fixe
+  -- somme exacte fixe
+  --> NS-BOUNDED-MULTIPLICITY-OVERLAP-SELECTION [REFUTED]
+
+NS-SRC-0172 (ondelettes, q<infinity)
+  + NS-SRC-0173/0069 (carré-fonction)
+  + NS-SRC-0174 (ondelettes divergence-free)
+  -/-> base norm-convergente du plein endpoint
+  -/-> récupération des labels annulés avant sommation
+
+même axe + même rayon + même anneau
+  -- agrégation F_total=sum F_j
+  --> NS-PURE-SWIRL-ADAPTIVE-DIAMETER-SELECTION sur le total
+
+axes multiples ou géométries Hodge distinctes
+  -- cutoff --> curl de col critique
+  -- Leray --> correction non locale
+  -?-> GAP-MULTIAXIS-TOTAL-FIELD-LOCALIZATION.
+```
+
+Nature des arêtes :
+
+```text
+identités de somme/curl et volume témoin : dérivation exacte auditée;
+certificats atomiques : calculs rationnels exacts, pas continuum;
+sélection universelle sous multiplicité deux : réfutée;
+agrégation commune axe–anneau : identité algébrique exacte;
+non-séparabilité du plein L^(p,infinity) : dérivation fonctionnelle standard;
+ondelettes q<infinity et Littlewood–Paley : classiques sourcés;
+localisation intrinsèque multi-axe : manquante;
+pression, dynamique et passage au temps maximal : manquants.
+```
+
+## Priorité après le cycle 0039
+
+1. Localisation divergence-free intrinsèque du champ total sous axes multiples.
+2. Coût critique du curl de col, de Leray et de la pression dans une même boule.
+3. Hypothèse anti-annulation canonique falsifiable, puis raccord Type I/Type II.

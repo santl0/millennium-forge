@@ -1104,3 +1104,59 @@ Le corpus atteint 171 sources. Le verrou statique suivant est
 se recouvrent, `H_beta<=H_global` peut échouer par annulation avant la valeur
 absolue. Au-delà restent projection de Leray, pression, diffusion, stretching,
 sélection d'un rayon `R(t)->0` et scénarios Type II.
+
+## Cycle 0039 — multiplicité insuffisante et endpoint spectral
+
+Le recouvrement borné ne remplace pas la disjonction. Pour un fond pure-swirl
+lisse compact non nul `B` et
+
+```text
+Z_n=(chi(r)eta(z)sin(nz)/r)e_theta,
+U_(1,n)=B+Z_n, U_(2,n)=-Z_n,
+```
+
+les deux supports ont multiplicité au plus deux et les sommes des vitesses et
+des curls valent exactement `B` et `curl B`. Sur un ensemble de volume fixe
+`4pi^2/3`, le curl de `Z_n` est d'ordre `n`, tandis que les vitesses restent
+uniformément bornées. Il en résulte
+
+```text
+q(U_(1,n)),q(U_(2,n))=O(n^-1),
+q(U_(1,n)+U_(2,n))=q(B)>0.
+```
+
+Le claim universel de sélection parmi les sommants est donc `REFUTED`, même
+pour des champs lisses, divergence-free, curl-compatibles, de même axe et de
+même anneau. Le défaut est une jauge de décomposition : ajouter `+Z_n,-Z_n`
+ne change pas le champ total. Un certificat à quatre atomes vérifie exactement
+344 121 assertions; un second calcul indépendant en vérifie 1 216.
+
+La réparation positive consiste à agréger d'abord les potentiels lorsque la
+géométrie commune le permet :
+
+```text
+sum_j (R/r)F_j e_theta=(R/r)(sum_jF_j)e_theta.
+```
+
+Le cycle 0038 s'applique alors au champ total, sans sélectionner un label.
+Cette identité ne survit pas sous axes multiples ou localisations Hodge
+différentes.
+
+La veille fonctionnelle précise aussi la frontière spectrale. Le plein
+`L^(p,infinity)` est non séparable et n'admet aucune base de Schauder
+dénombrable norm-convergente. Karlovich (`NS-SRC-0172`) s'arrête à l'indice
+Lorentz secondaire fini. Les carrés-fonctions de Stein/Hunt (`0173`, `0069`)
+contrôlent le champ **après** sommation et ne récupèrent pas `+Z_n,-Z_n`.
+Les ondelettes divergence-free de Deriaz–Perrier (`0174`) ne fournissent ni
+minoration anti-annulation ni certification PDE.
+
+La veille récente ajoute enfin Beirão da Veiga–Yang (`0175`, arXiv v1), perte
+de bornitude pure-swirl pour le système incompressible forcé dans un cylindre.
+Force terminalement singulière, frontière mixte et absorption de la convection
+par la pression empêchent tout transfert au système Clay non forcé sur
+`R3`/`T3`.
+
+Le corpus atteint 175 sources. Le verrou devient
+`GAP-MULTIAXIS-TOTAL-FIELD-LOCALIZATION` : localiser intrinsèquement le champ
+total avec constantes critiques suivies, sans dépendre d'une décomposition
+modifiable par jauge, puis seulement traiter pression et temps.

@@ -1521,3 +1521,48 @@ pure-swirl à supports de vitesse identifiables mais curls superposés avec
 annulation critique, ou prouver un registre de multiplicité/signature qui
 conserve une cellule sélectionnable. La pression et la dynamique restent le
 verrou suivant, pas une conséquence de la fermeture statique.
+
+## Cycle 0039 — obstruction de jauge et agrégation avant sélection
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| paire lisse `Z_n,-Z_n` dans deux cellules étiquetées | 5 | 5 | 5 | 5 | **20** |
+| agréger d'abord les cellules de même axe et même anneau | 3 | 5 | 5 | 4 | 17 |
+| décomposition canonique par ondelettes/carré-fonction | 4 | 2 | 4 | 5 | 15 |
+
+```text
+U_(1,n)=B+Z_n, U_(2,n)=-Z_n
+  -- multiplicité deux et curl-compatible
+  -- volume témoin fixe 4pi^2/3
+  -- ||curl Z_n||_(L^(3/2,infinity)) >= c n
+  -- vitesses uniformément bornées
+       --> q(U_(1,n)),q(U_(2,n))=O(n^-1)
+  -- somme exacte --> q(U_(1,n)+U_(2,n))=q(B)>0
+  --> NS-BOUNDED-MULTIPLICITY-OVERLAP-SELECTION [REFUTED]
+
+même axe + même R + même anneau
+  -- agréger avant valeurs absolues --> F_total=sum_j F_j
+  -- NS-PURE-SWIRL-ADAPTIVE-DIAMETER-SELECTION
+       --> sélection intrinsèque du champ total
+  -- ferme --> overlap commun axe–anneau
+  -/-> axes ou géométries locales différents.
+```
+
+Arêtes adverses :
+
+```text
+multiplicité bornée -> anti-annulation : réfuté;
+divergence-free et curl-compatible -> anti-annulation : réfuté;
+base ondelette du plein L^(p,infinity) : impossible par non-séparabilité;
+carré-fonction du total -> récupération des labels annulés : faux;
+cutoff + Leray -> localisation sans coût : faux, curl de col critique;
+agrégation même axe–anneau -> cycle 0038 : identité exacte;
+champ total multi-axe -> potentiel scalaire méridien unique : manquant;
+localisation statique -> dynamique Clay : manquant.
+```
+
+Priorité : `GAP-MULTIAXIS-TOTAL-FIELD-LOCALIZATION`. Partir uniquement du
+champ total, construire une localisation divergence-free canonique et suivre
+au même endpoint le curl de col, la correction non locale, la pression et le
+packing des axes. Abandonner toute sélection universelle parmi des sommants
+dont l'étiquetage peut être modifié par ajout de `+Z,-Z`.

@@ -361,3 +361,21 @@
   uniforme certifiée.
 - `GAP-OVERLAPPING-CURL-CANCELLATION` devient actif; la dynamique Type I/II
   reste le verrou suivant.
+
+### 2026-08-15 — abandon des cellules étiquetées sous recouvrement
+
+- La paire lisse `Z_n,-Z_n` est retenue avec le score `20/20`; elle réfute la
+  sélection universelle sous multiplicité deux sans quitter la classe
+  pure-swirl lisse, compacte et divergence-free.
+- La multiplicité de supports et la compatibilité curl sont abandonnées comme
+  substituts à une coercivité anti-annulation.
+- Une décomposition peut être modifiée par ajout de `+Z,-Z` sans changer le
+  champ total; toute règle admissible doit donc être intrinsèque ou imposer
+  une jauge canonique quantitativement testable.
+- Pour un axe, un rayon et un anneau communs, les potentiels sont agrégés avant
+  toute valeur absolue; le claim 0038 s'applique alors au champ total.
+- La réparation par base ondelette du plein `L^(p,infinity)` est abandonnée :
+  non-séparabilité et indice secondaire infini bloquent la convergence en
+  norme. Les carrés-fonctions restent des outils du champ total, pas des labels.
+- `GAP-MULTIAXIS-TOTAL-FIELD-LOCALIZATION` devient actif. Projection de Leray,
+  curl de col, pression et dynamique doivent désormais être estimés ensemble.

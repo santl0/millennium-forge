@@ -998,3 +998,26 @@ Les modules 5, 7, 9 et 10 sont purement algébriques et déjà couverts par un
 certificat rationnel. Les modules 2–4 et 8 requièrent géométrie de la mesure,
 coaire et Sobolev/BV. La formalisation certifierait seulement un lemme statique
 pure-swirl; elle ne certifierait ni pression, ni temps, ni régularité Clay.
+
+## Backlog issu du cycle 0039 — annulation sous recouvrement
+
+Le contre-théorème se sépare en un noyau fini et un raccord lisse :
+
+1. définir la quasi-norme faible sur une mesure finie atomique;
+2. calculer exactement les distributions des quatre valeurs de
+   `(1+p,1+Mz)` et `(-p,-Mz)`;
+3. prouver `q_global^3=1`, `q_1^3=4/(M-1)^3` et `q_2^3=M^-3`;
+4. conclure qu'aucune minoration positive ne dépend seulement de
+   `(q_global,2)`;
+5. formaliser l'identité cylindrique du curl de
+   `(F/r)e_theta` loin de l'axe;
+6. calculer la mesure exacte de
+   `{3/4<=r<=5/4, 0<=z<=2pi, |cos(nz)|>=1/2}`;
+7. dériver les deux bornes `q(U_(j,n))=O(n^-1)`;
+8. formaliser la réparation positive
+   `sum_j (R/r)F_j e_theta=(R/r)(sum_jF_j)e_theta` avant sélection.
+
+Les modules 1–4 et 8 sont élémentaires et prioritaires. Les modules 5–7
+requièrent intégration cylindrique et quasi-normes de Lorentz. Une compilation
+certifierait l'échec d'une règle de sélection étiquetée, pas Navier–Stokes en
+temps ni une implication vers Clay.

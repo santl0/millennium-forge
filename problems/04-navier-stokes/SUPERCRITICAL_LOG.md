@@ -857,3 +857,25 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   après annulation entre curls superposés; pression, temps et sélection
   `R_j(t)->0` restent absents.
 - Pivot : `GAP-OVERLAPPING-CURL-CANCELLATION`.
+
+## 2026-08-15 — Annulation de curl à multiplicité deux
+
+- Objet : deux champs pure-swirl lisses compacts statiques de même axe et
+  même anneau; aucune évolution Navier–Stokes.
+- Famille : `U_(1,n)=B+Z_n`, `U_(2,n)=-Z_n`, avec oscillation axiale de
+  fréquence `n`; total exactement fixe `B`.
+- Témoin : volume `4pi^2/3`, curl individuel `>=2n/5`, vitesse et support
+  uniformément bornés.
+- Échec critique : les deux rapports locaux tendent vers zéro comme `n^-1`,
+  alors que le rapport global reste `q(B)>0`. Scaling Clay, multiplicité et
+  divergence nulle sont conservés.
+- Certificat : 20 445 modèles, 344 121 assertions rationnelles principales et
+  1 216 indépendantes, résidus exacts nuls.
+- Résultat négatif : multiplicité, support et compatibilité curl ne contrôlent
+  pas l'anti-alignement. Une base dénombrable norm-convergente du plein
+  faible-Lorentz est en outre exclue par non-séparabilité.
+- Réparation : agréger le potentiel total avant sélection lorsque axe, rayon
+  et anneau sont communs.
+- Perte restante : aucune représentation scalaire unique pour plusieurs axes;
+  cutoff de Leray, pression, temps et `R(t)->0` restent ouverts.
+- Pivot : `GAP-MULTIAXIS-TOTAL-FIELD-LOCALIZATION`.

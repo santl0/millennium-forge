@@ -96,8 +96,15 @@
 - [x] Calibrer le niveau et contrôler le diamètre sans héritage le long d'un
   arbre : sélection adaptative au même niveau, constantes `432`, `20 736` et
   `2 239 488` au cycle 0038; l'alternative récursive est réfutée.
-- [ ] Étendre ou réfuter le registre lorsque les supports de curl se
-  chevauchent et peuvent s'annuler.
+- [x] Étendre ou réfuter le registre lorsque les supports de curl se
+  chevauchent et peuvent s'annuler : sélection parmi sommants arbitraires
+  réfutée à multiplicité deux au cycle 0039; agrégation même axe–anneau valide.
+- [ ] Construire ou réfuter une localisation intrinsèque du champ total sous
+  axes multiples; suivre exactement le curl de col, la correction de Leray,
+  la queue de pression et les constantes géométriques.
+- [ ] Tester une hypothèse de coercivité Gram/angle sur une décomposition
+  canonique de phase-espace, en exigeant qu'elle soit calculable depuis le
+  champ total et stable à l'endpoint faible-Lorentz.
 - [ ] Relier la cellule de bon rapport à une échelle `R_j(t)->0`; auditer
   d'abord le raccord Type I de Barker–Prange, puis le trou Type II.
 - [ ] Formuler un ledger Morrey–Carleson pour des tubes hétérogènes

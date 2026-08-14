@@ -1543,3 +1543,25 @@ claim éventuellement supersédé.
   `integral|W|>=c|E|^(2/3)`; ce n'est pas un contre-exemple pure-swirl.
 - Statut : preuve merge-tree seulement `REFUTED`; l'arbre doit être enrichi
   par un registre analytique de fermeture, ou évité par coaire directe.
+
+## `FAIL-NS-0075` — Multiplicité de support prise pour anti-annulation
+
+- Date : 2026-08-15.
+- Cible : remplacer la disjonction des curls du cycle 0038 par une multiplicité
+  de supports au plus deux, puis sélectionner un sommant étiqueté de bon
+  rapport critique.
+- Contre-profil lisse : `U_(1,n)=B+Z_n`, `U_(2,n)=-Z_n`, avec
+  `Z_n=(chi(r)eta(z)sin(nz)/r)e_theta`. Le total et son curl valent exactement
+  `B` et `curl B`, mais chacun des deux rapports locaux est `O(n^-1)`.
+- Premier quantificateur faux : « pour toute décomposition de multiplicité
+  bornée ». La multiplicité compte les termes présents; elle ne contrôle ni
+  leur amplitude ni leur anti-alignement.
+- Certificats : 344 121 assertions rationnelles principales et 1 216
+  indépendantes, résidus exacts nuls; empreintes
+  `1ee45f22210ad7fd5ff11c20d2e09a31b0b081a4b8dbac62d7ac10214bbfbecb`
+  et `90f25bb65f13db51e8350065bbbbaf4085ad49d07020b303a5cc3a96f53353a8`.
+- Portée : n'affecte pas une décomposition canonique ni la sélection directe
+  depuis le champ total. Pour un axe, un rayon et un anneau communs, agréger
+  `F=sum_j F_j` avant toute valeur absolue rétablit le cycle 0038.
+- Statut : sélection par sommants arbitraires `REFUTED`; pivot vers
+  `GAP-MULTIAXIS-TOTAL-FIELD-LOCALIZATION`.

@@ -277,3 +277,15 @@ la sélection cellulaire 0035, le diamètre statique disjoint est fermé sans
 hypothèse locale. Deux contre-ledgers réfutent l'héritage récursif et l'arbre
 topologique seul. Le corpus compte 171 sources et le verrou devient
 `GAP-OVERLAPPING-CURL-CANCELLATION`.
+
+Le cycle 0039 ferme ce verrou négativement pour les sommants étiquetés. Deux
+champs lisses pure-swirl de multiplicité deux, `B+Z_n` et `-Z_n`, ont des
+rapports locaux `O(n^-1)` alors que leur total reste le fond fixe `B`. La
+multiplicité ne contrôle donc pas les annulations de curls; le claim universel
+est `REFUTED`. Un ledger principal vérifie 344 121 assertions rationnelles et
+un second 1 216, tous deux à résidu nul. Dans la sous-classe même axe–même
+anneau, l'agrégation du potentiel total rétablit cependant exactement le cycle
+0038. La veille porte le corpus à 175 sources, exclut une base dénombrable du
+plein faible-Lorentz et classe l'annonce forcée `arXiv:2608.11553v1` hors du
+problème Clay. Le verrou actif est
+`GAP-MULTIAXIS-TOTAL-FIELD-LOCALIZATION`.

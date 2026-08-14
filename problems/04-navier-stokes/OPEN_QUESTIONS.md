@@ -386,3 +386,26 @@ le premier quantificateur ouvert.
 pure-swirl annulaire disjointe par le niveau moyen adaptatif. L'itération le
 long d'un merge tree et la persistance H0 seule sont abandonnées : leurs
 contre-ledgers exacts ne respectent pas le registre coaire d'un curl compact.
+
+## Priorité active après le cycle 0039
+
+1. **`GAP-MULTIAXIS-TOTAL-FIELD-LOCALIZATION`.** Construire une décomposition
+   intrinsèque du champ total, indépendante de tout étiquetage, lorsque les
+   axes et anneaux locaux diffèrent. Quantifier simultanément divergence,
+   curl de col, correction de Leray et queue de pression.
+2. **Coercivité anti-annulation testable.** Déterminer si une hypothèse de
+   Gram/angle ou un packing de phase-espace, formulé sur une décomposition
+   canonique, suffit à transférer le rapport global vers une cellule. Elle
+   doit être vérifiable depuis le champ total et stable sous remise à l'échelle.
+3. **Endpoint secondaire fini.** Tester si une amélioration uniforme
+   `L^(3,q)` et `L^(3/2,q)` avec `q<infinity` apparaît dans une classe
+   pré-singulière sourcée; sans telle amélioration, une base norm-convergente
+   du plein faible-Lorentz est exclue par non-séparabilité.
+4. **Échelle dynamique.** Après seulement une localisation intrinsèque
+   survivante, relier la cellule à `R(t)->0`, d'abord sous Type I puis en
+   localisant le premier échec Type II.
+
+`GAP-OVERLAPPING-CURL-CANCELLATION` est fermé négativement pour les sommants
+arbitrairement étiquetés et positivement, par agrégation, lorsque axe, rayon et
+anneau sont communs. La multiplicité seule et le caractère curl-compatible ne
+sont plus des hypothèses admissibles d'anti-annulation.
