@@ -674,3 +674,22 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
   volume, pas un diamètre ni une boule.
 - Décision : fermer `|Q_j|/v_j->infinity` comme échappement endpoint et
   activer `GAP-ACTIVE-HALO-DIAMETER-OR-OVERLAP`.
+
+## 2026-08-14 — Cycle 0036
+
+- Veille différentielle primaire : Ambrosio–Caselles–Masnou–Morel pour les
+  composantes de périmètre fini, Frank–Lieb pour la concentration locale BV,
+  Fusco–Maggi–Pratelli pour le déficit isopérimétrique, puis Seregin et Barker
+  pour les centres singuliers multiples Navier–Stokes.
+- Sources ajoutées : `NS-SRC-0156`–`0162`; corpus porté à 162 entrées.
+- Résultat négatif : volume+périmètre ne contrôlent ni diamètre global, ni
+  diamètre d'une composante. La boule générale de rayon `V/P` ne capte que
+  `>=c(V/P)^3`, soit la fraction potentiellement dégénérée `cV^2/P^3`.
+- Raccord publié le plus proche : Barker borne par `O(M^20)` le nombre de
+  points singuliers sous une borne faible-`L3` le long d'une suite de temps;
+  la dynamique et l'epsilon-régularité ne se réduisent pas au ledger statique.
+- Résultat interne : la troncature à trace nulle sépare exactement les
+  composantes reliées sous `lambda/4` et sélectionne un rapport endpoint avec
+  constante `C_I/648`; l'interface lipschitzienne du gate est enregistrée.
+- Décision : fermer les gouttes séparées sous le seuil et activer
+  `GAP-ABOVE-THRESHOLD-THIN-BRIDGE`.

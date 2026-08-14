@@ -897,3 +897,32 @@ ne ferme le gap de cellule faible-Lorentz statique.
 La veille ajoute `NS-SRC-0148`–`0155` et porte le corpus à 155 sources. Aucun
 théorème littéral identique n'a été trouvé dans le périmètre primaire ciblé;
 ce résultat négatif de recherche n'est pas une preuve d'absence absolue.
+
+## Audit ciblé du cycle 0036 — composantes BV, boule locale et centres multiples
+
+- Ambrosio–Caselles–Masnou–Morel (`0156`) fournit la décomposition en
+  composantes M-indécomposables et l'additivité du périmètre. Avec
+  isopérimétrie, une dérivation interne sélectionne une composante de volume
+  `>=c(V/P)^3`; aucun diamètre n'en découle.
+- Besicovitch (`0157`) contrôle une multiplicité de recouvrement, sans créer
+  de masse locale. Fusco–Maggi–Pratelli (`0158`) donne presque une boule
+  seulement sous petit déficit isopérimétrique, hypothèse absente du ledger
+  endpoint.
+- L'équation (2.2) de Frank–Lieb (`0159`) implique exactement une boule de
+  rayon `V/P` captant `>=c(V/P)^3`. La fraction `cV^2/P^3` est optimale en
+  échelle pour `N` gouttes égales et peut tendre vers zéro.
+- Seregin (`0160`, `0161`) et Barker (`0162`) traitent plusieurs points
+  singuliers de vraies solutions adaptées ou Leray–Hopf. Barker obtient
+  `O(M^20)` sous borne faible-`L3` le long d'une suite de temps; pression,
+  epsilon-régularité et budget espace-temps sont indispensables.
+- Aucun de ces textes ne donne le lemme pure-swirl du cycle : la troncature
+  signée de chaque composante à `lambda/4`, la constante `C_I/648` et le
+  raccord au gate directionnel lipschitzien restent des dérivations internes.
+- Translation, fragmentation et tube mince réfutent respectivement le
+  confinement global, la capture d'une fraction universelle depuis `V,P`,
+  et le diamètre borné d'une composante indécomposable.
+
+La veille ajoute `NS-SRC-0156`–`0162` et porte le corpus à 162 sources. Les
+pages primaires EMS, Annals, arXiv, MathNet, AMS et les DOI ont été contrôlés
+le 2026-08-14. Aucun résultat récent vérifié ne supprime l'hypothèse critique
+additionnelle des théorèmes multi-centres ou ne ferme le cas Type II général.
