@@ -354,3 +354,24 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
   `(7/3)phi(R)`; aucun contre-exemple au taux réparé n'est trouvé.
 - Décision : fermer `GAP-COMMUTATOR-UNIFORMITY` conditionnellement et activer
   `GAP-ENDGAME-SYNCHRONIZATION` sur `(49)->(58)`.
+
+## 2026-08-14 — Cycle 0019
+
+- Veille différentielle : `arXiv:2607.08866` reste en v2 du 2026-07-13;
+  aucune v3, publication évaluée ni correction publique n'est listée dans la
+  notice primaire.
+- Sources ajoutées : Guberović 2010, DOI `10.3934/dcds.2010.27.231`;
+  Solynin 1997/1999, DOI `10.1007/BF02172470`; Ransford 1995, DOI
+  `10.1017/CBO9780511623776`.
+- Résultat négatif : sous l'interprétation « temps maximal », `s=t+T_t`
+  tombe à `T*` et le résidu d'intériorité vaut zéro. Le critère publié de 2013
+  contient la dichotomie manquante.
+- Résultat positif borné : avec temps garanti, seuil de niveau uniforme,
+  rayon sparse construit et même facteur `M`, les deux branches temporelles
+  et les deux cas harmoniques ferment conditionnellement `(49)->(58)`.
+- Contre-tests : suites temporelles disjointes, seuil de niveau dépendant du
+  temps, rayon arbitrairement réduit et facteur analytique désynchronisé sont
+  tous réfutés par des témoins exacts.
+- Décision : fermer `GAP-ENDGAME-SYNCHRONIZATION` conditionnellement et
+  activer l'extension de la direction depuis le cœur `{omega>lambda}` vers la
+  prémisse globale `bmo_phi`, zéros et multicœurs compris.

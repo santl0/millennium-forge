@@ -2,7 +2,7 @@
 
 Les expériences de ce répertoire sont des tests analytiques finis. Elles ne
 simulent pas une solution Navier–Stokes et ne constituent ni une preuve de
-régularité ni un blow-up. Les vingt expériences utilisent la graine « sans
+régularité ni un blow-up. Les vingt et une expériences utilisent la graine « sans
 objet » et écrivent
 leur rapport JSON sur la sortie standard.
 
@@ -18,6 +18,7 @@ leur rapport JSON sur la sortie standard.
 | `ONEIL-TRANSFER-1` | la queue logarithmique de vorticité se transfère-t-elle à la vitesse avec seuils, queue macroscopique et jauge harmonique suivis ? | fractions exactes, supersolutions analytiques et contre-profils en escalier; aucune grille | `python -B experiments/navier-stokes/oneil-transfer/oneil_transfer_audit.py` | zéro arrondi; marge rationnelle minimale huit |
 | `DEGIORGI-UNIFORMITY-AUDIT-1` | la chaîne à un niveau `(23)->(40)` conserve-t-elle seuil, amortissement et logarithme uniformes sous (22) ? | fractions exactes et ledger symbolique; aucune grille | `python -B experiments/navier-stokes/degiorgi-uniformity/degiorgi_uniformity_audit.py` | douze contrôles; zéro échec |
 | `COMMUTATOR-UNIFORMITY-AUDIT-1` | la dérive multi-échelle des moyennes détruit-elle le taux logarithmique de `(8)->(22)` ? | fractions exactes, sommes dyadiques et ledger de scaling; aucune grille | `python -B experiments/navier-stokes/commutator-uniformity/commutator_uniformity_audit.py` | huit contrôles; zéro échec |
+| `ENDGAME-SYNCHRONIZATION-AUDIT-1` | temps garanti, niveau relatif, rayon sparse et rayon analytique peuvent-ils être choisis simultanément dans `(49)->(58)` ? | fractions exactes, branches temporelles et ledger de scaling; aucune grille | `python -B experiments/navier-stokes/endgame-synchronization/endgame_synchronization_audit.py` | onze contrôles; zéro échec |
 | `DESINGULARIZATION-GATE-1` | les normes d'une troncature de `r^-1` restent-elles uniformes quand `epsilon -> 0` ? | intégrales radiales exactes; logarithme symbolique | `python -B experiments/navier-stokes/desingularization-gate/desingularization_gate.py` | zéro pour les identités rationnelles |
 | `HWY-INNER-CUTOFF-GATE-1` | une régularisation intérieure divergence-free petite en `L²` et bornée en `L^{3,infinity}` est-elle compacte dans `L³` ? | matrices et intégrales exactes; transcendantes symboliques | `python -B experiments/navier-stokes/hwy-inner-cutoff/inner_cutoff_audit.py` | zéro pour les identités rationnelles et l'arrondi |
 | `HWY-PARITY-PROJECTION-GATE-1` | un lissage intérieur respectant la réflexion HWY peut-il exciter le mode certifié impair ? | projecteurs de parité et exposants rationnels exacts; aucune grille | `python -B experiments/navier-stokes/hwy-parity-projection/parity_projection_audit.py` | zéro pour dix obligations; aucun arrondi |
@@ -1080,3 +1081,39 @@ cellule reste donc `NOT_PROVIDED`.
 - Limite : le calcul ne certifie ni Jones, ni CRW, ni John–Nirenberg, ni le
   raccord tensoriel de Biot–Savart, ni l'existence d'une solution portant les
   hypothèses, ni une conclusion Clay.
+
+## `ENDGAME-SYNCHRONIZATION-AUDIT-1` — temps, niveaux et rayons communs
+
+- Question falsifiable : le raccord conditionnel `(49)->(58)` ferme-t-il avec
+  un seul temps intérieur, un seuil uniforme, un rayon sparse construit et le
+  même facteur analytique `M` dans les deux branches harmoniques ?
+- Équation : application à NS incompressible 3D non forcé sur `R³`,
+  `nu>0`, solution classique avant `T*`; aucune PDE n'est simulée.
+- Discrétisation : aucune grille. Toutes les égalités sont calculées avec
+  `fractions.Fraction`; les extensions toutes échelles sont des certificats
+  algébriques affichés.
+- Temps adverse : `T*=1,t=3/4,T_t=1/4` donne `s=T*` et résidu strict nul.
+  La partition corrigée `t+tau_t>=T*` / `<T*` est exclusive et exhaustive.
+- Paramètres harmoniques : cinq valeurs rationnelles de `h` vérifient
+  `M=(2-h)/[2(1-h)]`, `theta=(1-h)/(2-h)`, `theta M=1/2` et coefficient un.
+- Rayons : le témoin normalisé `r=1/600`, `rho=1/480` donne la marge cubée
+  exacte `61/13824000000`; le seuil logarithmique vaut exactement douze dans
+  ce test.
+- Logarithme : le maintien de la même constante est réfuté par l'ordre strict
+  `log(e+beta)>log(beta)`; le facteur huit est certifié sous
+  `beta/Lambda_*>=3`.
+- Scaling : amplitude `+1`, temps `-2`, rayons `-1`, volume `-3`, viscosité et
+  logarithme normalisé invariants.
+- Résidus : onze contrôles passent, `assertion_failure_count=0`; aucun
+  flottant, aucune graine, aucun artefact binaire.
+- Commande :
+
+  ```text
+  python -B experiments/navier-stokes/endgame-synchronization/endgame_synchronization_audit.py
+  ```
+
+- Environnement : bibliothèque standard Python. Empreinte du script :
+  `41b27f8649977c8a2d564c80418678017eb5d409956c8f3c5e3eb9016f916a3b`.
+- Limite : le calcul ne certifie ni le théorème d'analyticité, ni la queue de
+  distribution uniforme, ni Ransford/Solynin, ni l'existence des temps
+  d'échappement, ni une solution ou une conclusion Clay.

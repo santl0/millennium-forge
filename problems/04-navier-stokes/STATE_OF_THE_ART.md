@@ -395,3 +395,26 @@ globale uniforme `bmo_phi` de la direction. Il ne la déduit pas de la
 dynamique, ne gère pas automatiquement les zéros de vorticité ou plusieurs
 cœurs et n'implique donc aucune alternative Clay. Le verrou actif passe à la
 synchronisation quantitative de l'endgame `(49)–(58)`.
+
+Le cycle 0019 ferme à son tour cet endgame **conditionnellement**. La lecture
+littérale de la v2 est incomplète : si `T_t` est réellement le temps maximal
+local à partir de `t`, alors `s=t+T_t=T*` et la propriété d'échappement n'est
+pas applicable. Le critère publié de Grujić 2013 sépare au contraire le cas où
+le temps local franchit `T*`, qui prolonge directement la solution, du cas où
+un temps analytique garanti reste strictement avant `T*`.
+
+Après cette réparation, une queue uniforme et dimensionnée
+`C_mu/[a³log³(e+a/U_*)]` construit un rayon sparse
+`C_4/[U log(e+theta U/U_*)]`. Il devient inférieur au rayon analytique
+`nu/(c_AU)` au-dessus d'un seuil fini, puis Solynin et le principe additif des
+deux constantes imposent `U(s)<=U(t)` au même temps d'échappement. Le facteur
+de croissance analytique `M` doit être exactement celui verrouillé par la
+combinaison harmonique; un facteur différent donne un contre-résidu `6/5>1`
+dans un témoin rationnel.
+
+Ce résultat ne promeut pas le théorème 7.4 de la prépublication au rang de
+preuve Clay. Il suppose la queue uniforme et, plus en amont, la vorticité
+faible-`L^(3/2)` et la direction globale `bmo_phi`. La prochaine question est
+donc structurelle : une direction cohérente seulement sur chaque cœur actif
+peut-elle être étendue à travers les zéros et entre plusieurs cœurs avec le
+taux logarithmique uniforme exigé ?

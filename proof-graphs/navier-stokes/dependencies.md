@@ -80,6 +80,9 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | `u∈L∞`, `div u=0`, `omega=curl u` | `u=B[omega]` sans mode harmonique | réfutée | champ constant exact, `FAIL-NS-0019` | imposer décroissance/intégrabilité ou écrire `u=B[omega]+h` |
 | enveloppe uniforme de réarrangée de vitesse (47) | majorant quantitatif de distribution de vitesse (49) | dérivation exacte après correction, `COMPUTATION_ONLY` | pseudo-inverse strict, bootstrap logarithmique, plateaux adverses, `REARRANGEMENT-INVERSION-1` | exige un cutoff `v_0` uniforme; ne donne aucun profil ponctuel radial |
 | identité terminale `lambda=f*(mu_f(lambda))` pour toute fonction mesurable | égalité de l'équation (48) sur tous les niveaux | réfutée | profil exact à deux plateaux, `FAIL-NS-0017` | remplacer par `v<mu_f(lambda) -> f*(v)>lambda` |
+| queue uniforme (49) + analyticité mild locale + mesure harmonique | exclusion d'un premier temps singulier dans ce scénario | conditionnelle, dérivation exacte après corrections, `COMPUTATION_ONLY` | `NS-CONDITIONAL-ENDGAME-SYNCHRONIZATION`, Grujić 2013, Guberović, Solynin et Ransford, cycle 0019 | temps garanti et dichotomie requis; ne produit pas (49) depuis une donnée Clay générale |
+| `s=t+T_t` avec `T_t` durée maximale | temps intérieur `s∈(t,T*)` | réfutée | `NS-ENDGAME-MAXIMAL-TIME-SELECTION`, résidu exact `T*−s=0` | remplacer par `tau_t` garanti et séparer prolongement direct / branche intérieure |
+| cohérence de direction seulement sur chaque cœur `{omega>lambda}` | direction globale uniforme `bmo_phi` | manquante | prochain test : deux cœurs opposés séparés par des zéros | coût d'extension et oscillation entre composantes non contrôlés |
 | hélicité globale nulle | petit flux instantané universel | réfutée | contre-triade exacte | pas de positivité modale |
 | profil Euler IA | profil NS perturbatif | réfutée pour l'ansatz mono-échelle `lambda>-1/2` | rapport visqueux exact | viscosité dominante |
 | donnée homogène `-1` non unique | donnée compacte énergétique singulière non unique | source vérifiée, CAP non reproduite | Hou–Wang–Yang v2; cutoff extérieur, gain `R^-1/8` pour `p=4` | le coeur `1/r` est conservé |
@@ -112,17 +115,17 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | `GAP-VORTICITY-TAIL` | non-localité/quantificateurs | direction locale vers strain total et stretching positif | `FAIL-NS-0016`; exiger une queue Biot–Savart annulaire explicite |
 | `GAP-DEGIORGI-UNIFORMITY` | constante/troncature | production de (40) depuis (22) par énergie tronquée | fermé conditionnellement au cycle 0017 : pas d'itération, coefficient `nu lambda/(2S_6²M)`, seuil fixe et Chebyshev suivis; la finitude des tronqués vient de la solution classique, pas du faible-`L^(3/2)` |
 | `GAP-COMMUTATOR-UNIFORMITY` | non-localité/constante | production de (22) depuis la cohérence `bmo_phi`, extension locale et queues dyadiques | fermé conditionnellement au cycle 0018 : semi-norme de Jones, interpolation CRW, réarrangée exacte, facteur trois et poids `4^-k`; l'hypothèse géométrique globale reste une prémisse |
-| `GAP-ENDGAME-SYNCHRONIZATION` | quantificateur/constante | passage de la queue de vitesse (49) au rayon de sparseness puis au critère analytique (58) | premier maillon actif : temps d'échappement, seuil de niveau, rayon analytique et deux branches harmoniques doivent être vrais simultanément avec constantes uniformes |
+| `GAP-ENDGAME-SYNCHRONIZATION` | quantificateur/constante | passage de la queue de vitesse (49) au rayon de sparseness puis au critère analytique (58) | fermé conditionnellement au cycle 0019 : temps garanti, dichotomie, seuil uniforme, rayon témoin et même `M`; le choix maximal littéral est réfuté |
+| `GAP-ACTIVE-CORE-BMO` | géométrie/extension | direction cohérente seulement sur `{omega>lambda}` vers prémisse globale `bmo_phi` | actif : zéros, composantes opposées et coût à l'échelle de séparation doivent être contrôlés ou réfutés |
 | `GAP-LIMIT-ADMISSIBLE` | stabilité/admissibilité | profil singulier vers donnée de Schwartz | trois portes distinctes fermées : `FAIL-NS-0013` réfute la compacité `L³`, `0014` annule le mode impair sous lissage symétrique, `0015` réfute l'identification trace asymptotique/donnée finie; axe suspendu |
 | `GAP-NUM-CONTINUUM` | calcul vers continuum | discrétisation finie | résidu d'intervalle + queue analytique |
 
 ## Arêtes prioritaires
 
-1. `GAP-ENDGAME-SYNCHRONIZATION` : auditer quantitativement `(49)->(58)`,
-   avec un seul temps d'échappement, les rayons dans le bon ordre et toutes
-   les constantes analytiques uniformes.
-2. Extension depuis le cœur actif : relier une direction définie sur
+1. `GAP-ACTIVE-CORE-BMO` : relier une direction définie sur
    `{omega>lambda}` à la prémisse globale `bmo_phi`, zéros et multicœurs inclus.
+2. Admissibilité du profil critique : quantifier simultanément confinement,
+   faible-`L^(3/2)` et régularité classique pré-singulière.
 3. `GAP-VORTICITY-TAIL` : confronter la queue de strain annulaire réparée à
    un contre-profil multi-échelle divergence-free issu d'une dynamique.
 4. `GAP-NUM-CONTINUUM` : isoler un opérateur compact à queues certifiables.

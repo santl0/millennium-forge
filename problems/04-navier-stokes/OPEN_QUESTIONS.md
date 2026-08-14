@@ -6,9 +6,9 @@ des décisions reste dans les checkpoints.
 
 | Priorité | Question falsifiable | Pourquoi maintenant | Critère de sortie |
 |---:|---|---|---|
-| 1 | les équations `(49)->(58)` peuvent-elles être synchronisées au même temps d'échappement avec rayon analytique, rayon de sparseness, seuil de superniveau et constantes uniformes dans le bon sens ? | les cycles 0014–0018 ferment conditionnellement chaque bloc amont; une constante dépendant du niveau ou un temps choisi après le rayon suffirait à casser l'endgame | système quantifié d'inégalités avec deux branches du critère harmonique, ou contre-modèle exact d'ordre des quantificateurs |
-| 2 | une hypothèse géométrique définie seulement sur le cœur `{omega>lambda}` s'étend-elle en une direction globale `bmo_phi` avec constante uniforme malgré les zéros et plusieurs cœurs ? | le cycle 0018 valide Jones seulement quand la semi-norme locale de la restriction est déjà contrôlée sur une boule entière | lemme d'extension depuis l'ensemble actif, ou paire de champs avec même cœur mais coûts d'extension divergents |
-| 3 | la définition du « critical point singularity » de la v2 se raccorde-t-elle sans contradiction à une solution classique bornée pour chaque `t<T*` et au confinement uniforme `A_lambda(t)⊂B_(C lambda^-1/2)` ? | faible-`L^(3/2)` seul ne rend pas l'énergie tronquée finie; le cycle 0017 doit invoquer séparément la régularité pré-singulière | formulation espace-temps quantifiée du profil avec seuils uniformes, ou contre-exemple logique à la coexistence des hypothèses |
+| 1 | une hypothèse géométrique définie seulement sur le cœur `{omega>lambda}` s'étend-elle en une direction globale `bmo_phi` avec constante uniforme malgré les zéros et plusieurs cœurs ? | le cycle 0019 ferme l'endgame sous cette prémisse globale, mais Jones ne s'applique que lorsque la semi-norme sur une boule entière est déjà contrôlée | lemme d'extension depuis l'ensemble actif, ou deux cœurs opposés dont tout prolongement coûte une oscillation d'ordre un |
+| 2 | la définition du « critical point singularity » de la v2 se raccorde-t-elle sans contradiction à une solution classique bornée pour chaque `t<T*` et au confinement uniforme `A_lambda(t)⊂B_(C lambda^-1/2)` ? | faible-`L^(3/2)` seul ne rend pas l'énergie tronquée finie; le cycle 0017 doit invoquer séparément la régularité pré-singulière | formulation espace-temps quantifiée du profil avec seuils uniformes, ou contre-exemple logique à la coexistence des hypothèses |
+| 3 | la queue annulaire de strain issue du cœur actif reste-t-elle petite pour un champ divergence-free multi-échelle compatible avec une dynamique NS ? | le commutateur du cycle 0018 conserve la queue, mais aucun mécanisme dynamique ne force les phases ou directions lointaines favorables | champ adverse explicite avec résidu NS suivi, ou borne uniforme de la queue depuis une hypothèse héritée |
 | 4 | un problème renormalisé NS peut-il être réduit à un opérateur compact avec bornes de queue certifiables ? | préalable à toute preuve assistée par ordinateur | rayon de contraction validable sous raffinement |
 | 5 | le noyau Fourier fini énergie–Leray peut-il être formalisé sans axiome ni `sorry` en Lean ? | petite brique stable, indépendante des scénarios spéculatifs | build épinglé + `#print axioms` vide hors logique standard |
 
@@ -54,6 +54,18 @@ Biot–Savart, les quatre morceaux de `(8)->(22)` conservent le taux
 la dérive brute des moyennes n'est pas petite. Le statut est
 `COMPUTATION_ONLY`; l'hypothèse géométrique globale et sa compatibilité avec
 les zéros de vorticité restent ouvertes.
+
+## Question fermée conditionnellement au cycle 0019
+
+Sous une queue de vitesse uniforme
+`C_mu/[a³log³(e+a/U_*)]`, le théorème local d'analyticité et les résultats
+publiés de mesure harmonique, `(49)->(58)` se synchronise au même temps. La
+preuve doit utiliser `tau_t=nu/[c_1(M)U(t)²]` et séparer le prolongement direct
+du temps intérieur; le choix « maximal » donne au contraire `s=T*`. Dans la
+branche intérieure, le rayon témoin sparse est inférieur au sous-rayon
+analytique au-dessus d'un seuil fini et les deux cas harmoniques donnent la
+contradiction. Statut `COMPUTATION_ONLY`; la queue uniforme et la direction
+globale `bmo_phi` ne sont pas produites pour les données Clay générales.
 
 ## Résultat négatif du cycle 0010
 

@@ -560,3 +560,28 @@ cycle. Elles ne formaliseraient ni les théorèmes de Jones, CRW ou
 John–Nirenberg, ni le noyau tensoriel de Biot–Savart, ni le fait qu'une
 direction de vorticité NS satisfasse `bmo_phi`. Le noyau Fourier–Leray reste
 la première cible formelle compilable; le présent bloc vient ensuite.
+
+## Backlog issu du cycle 0019 — dichotomie et fermeture harmonique
+
+Le noyau stable est fini et presque entièrement ordonné :
+
+1. formaliser la partition
+   `t+tau>=T_star` ou `t+tau<T_star`, avec égalité dans la branche de
+   prolongement, et le contre-lemme au choix « maximal »;
+2. définir pour `h∈(0,1)`
+   `M=(2-h)/[2(1-h)]` et `theta=(1-h)/(2-h)`, puis prouver
+   `M>1`, `theta M=1/2` et `h/2+(1-h)M=1`;
+3. prouver que `H/2+(1-H)M` décroît et reste au plus un pour `H>=h`;
+4. formaliser le rayon témoin cubé issu d'un majorant de volume et le
+   contre-lemme montrant que la propriété n'est pas monotone vers les petits
+   rayons;
+5. encoder le ledger de scaling et la condition suffisante
+   `log(e+theta U/U_*)>=c_A C_4/nu`;
+6. séparer dans l'interface les théorèmes externes admis — analyticité,
+   Solynin et principe des deux constantes — de l'algèbre certifiée.
+
+Ces lemmes formaliseraient les portes temporelles et la combinaison affine,
+pas la queue de distribution (H49), l'existence d'un temps d'échappement pour
+une solution NS, ni les théorèmes de théorie du potentiel eux-mêmes. Ils
+restent derrière le noyau Fourier–Leray prioritaire mais constituent un bon
+module fini sans dépendance PDE lourde.

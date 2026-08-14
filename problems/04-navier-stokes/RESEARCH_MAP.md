@@ -701,3 +701,45 @@ anneau. La formule `min` pour la réarrangée du noyau est aussi remplacée par
 sa valeur exacte. `GAP-COMMUTATOR-UNIFORMITY` est fermé conditionnellement;
 `GAP-ENDGAME-SYNCHRONIZATION` devient actif sur les temps, rayons et constantes
 de `(49)->(58)`.
+
+## Cycle 0019 : temps garanti et fermeture harmonique
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| synchroniser temps, niveau, rayons et `M` dans `(49)->(58)` | 4 | 4 | 5 | 5 | **18** |
+| étendre `bmo_phi` depuis le cœur actif | 5 | 3 | 5 | 5 | 18 |
+| tester l'admissibilité espace-temps du profil critique | 4 | 3 | 4 | 5 | 16 |
+
+Le choix `s=t+T_t` de la v2 est faux sous la lecture « temps maximal » : le
+résidu `T*−s` peut être exactement nul. La réparation publiée est
+
+```text
+tau_t=nu/[c_1(M)U(t)²],
+t+tau_t>=T* -> prolongement direct,
+t+tau_t<T*  -> endgame au temps s=t+tau_t.
+```
+
+Dans la branche intérieure, la queue uniforme construit
+
+```text
+r_s=C_4/[U(s)log(e+theta U(s)/U_*)],
+rho_s=nu/[c_AU(s)].
+```
+
+Le seuil `log(e+theta U(s)/U_*)>=c_A C_4/nu` garantit `r_s<=rho_s`.
+La combinaison harmonique ferme les deux cas si et seulement si le même
+facteur `M` vérifie `h*/2+(1-h*)M=1` et `theta M=1/2`.
+
+Arête confirmée conditionnellement, `COMPUTATION_ONLY` :
+
+```text
+queue uniforme (49) + analyticité mild locale + dichotomie temporelle
+  -> rayon sparse au même temps et sous-rayon analytique
+  -> mesure harmonique
+  -> U(s)<=U(t), contradiction au temps d'échappement.
+```
+
+`GAP-ENDGAME-SYNCHRONIZATION` est fermé sous (49). Le prochain verrou est
+l'extension depuis le cœur actif : des directions constantes sur des cœurs
+séparés peuvent encore imposer une oscillation macroscopique à l'échelle de
+leur distance, malgré une cohérence parfaite sur chaque composante.

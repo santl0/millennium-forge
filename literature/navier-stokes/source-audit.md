@@ -403,3 +403,35 @@ borne globale `bmo_phi` de la direction, ne règle pas sa définition aux zéros
 de vorticité et n'implique aucune alternative Clay. La prochaine priorité
 bibliographique et analytique est la synchronisation de l'endgame
 `(49)->(58)` au même temps d'échappement.
+
+## Audit ciblé du cycle 0019 — temps analytique et fermeture harmonique
+
+| Source primaire | Passage contrôlé | Verdict exact |
+|---|---|---|
+| Grujić `arXiv:2607.08866v2` (`0059`) | équations (49)–(58), théorème 7.4 | le raccord spatial est réparable, mais `s=t+T_t` n'est pas intérieur si `T_t` est maximal; temps garanti et dichotomie requis |
+| Grujić 2013 (`0064`) et Grujić–Xu 2024 (`0066`) | critère 1D, fenêtre temporelle et facteur analytique `M` | la version publiée sépare prolongement direct et temps analytique intérieur; le même `M` doit fermer les deux branches |
+| Guberović 2010 (`0076`) | analyticité spatiale mild | fournit durée et rayon garantis, non un « maximal local analyticity time » |
+| Solynin 1997/1999 (`0077`) et Ransford 1995 (`0078`) | mesure harmonique et principe additif des deux constantes | la combinaison `h/2+(1-h)M=1` et son sens monotone sont corrects après projection scalaire |
+
+La formulation réparée part d'une queue uniforme
+
+```text
+|{|u(t)|>a}|<=C_mu/[a³log³(e+a/U_*)],   a>=a_0,
+```
+
+choisit `tau_t=nu/[c_1(M)||u(t)||_infinity²]`, puis sépare
+`t+tau_t>=T*` et `t+tau_t<T*`. Dans la seconde branche, le rayon témoin
+
+```text
+r_s=C_4/[||u(s)||_infinity log(e+theta||u(s)||_infinity/U_*)]
+```
+
+est inférieur au sous-rayon analytique `nu/[c_A||u(s)||_infinity]` au-dessus
+d'un seuil fini, exponentiel en `C_mu^(1/3)/nu`. Le rayon doit être construit
+par égalité depuis le majorant de volume : les rayons plus petits ne sont pas
+automatiquement sparse.
+
+Le claim `NS-CONDITIONAL-ENDGAME-SYNCHRONIZATION` est `COMPUTATION_ONLY`.
+Le choix maximal littéral est enregistré `REFUTED`. Ce cycle ne valide pas la
+production de la queue uniforme depuis une donnée Clay générale; il ferme
+seulement le maillon aval sous ses prémisses.

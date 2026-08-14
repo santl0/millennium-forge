@@ -571,6 +571,59 @@ d'équivalence entre deux profils, pas un autre renommage de topologie.
 - Artefact : `COMMUTATOR-UNIFORMITY-AUDIT-1`, contrôle exact
   `unweighted_mean_drift_not_small`.
 
+## `FAIL-NS-0025` — Temps maximal utilisé comme temps intérieur
+
+- Date : 2026-08-14.
+- Cadre : solution classique maximale de NS incompressible 3D non forcé sur
+  `R³x(0,T*)`, viscosité `nu>0`.
+- Cible : dans la preuve du théorème 7.4 de `arXiv:2607.08866v2`, poser
+  `s=t+T_t` avec `T_t` « maximal local analyticity time », puis appliquer la
+  propriété d'échappement sur `(t,T*)`.
+- Contre-test exact : `T*=1`, `t=3/4`, `T_t=1/4` donne `s=1` et le résidu
+  strict `T*−s=0`. Le point n'est pas dans l'intervalle où la solution est
+  supposée définie.
+- Réparation : employer le temps garanti
+  `tau_t=nu/[c_1(M)||u(t)||_infinity²]` et séparer
+  `t+tau_t>=T*` (prolongement direct) de `t+tau_t<T*` (endgame intérieur),
+  comme dans le critère publié de Grujić 2013.
+- Portée : réfute le choix temporel littéral, pas le lemme conditionnel réparé
+  ni les théorèmes publiés d'analyticité.
+- Statut : claim `NS-ENDGAME-MAXIMAL-TIME-SELECTION` `REFUTED`.
+
+## `FAIL-NS-0026` — Synchronisation de suites asymptotiques séparées
+
+- Date : 2026-08-14.
+- Cadre : contre-système scalaire de temps, niveaux et rayons; aucune solution
+  PDE n'est construite.
+- Cible : conclure qu'une suite de temps portant la queue de distribution et
+  une autre portant l'analyticité fournissent automatiquement un temps commun.
+- Contre-test rationnel : les suites
+  `d_n=1−1/(4n)` et `a_n=1−1/(4n+2)` tendent toutes deux vers un même temps
+  terminal et portent séparément les lois attendues, mais leurs ensembles de
+  temps sont disjoints.
+- Réparation : toutes les estimations doivent être appliquées au temps unique
+  `s=t+tau_t`, avec constantes uniformes sur l'intervalle terminal.
+- Portée : réfute une inférence de quantificateurs, pas l'existence d'une
+  solution possédant réellement les estimations uniformes.
+- Artefact : passe adverse `cycle-0019-countermodel.md`.
+
+## `FAIL-NS-0027` — Seuil de superniveau non uniforme
+
+- Date : 2026-08-14.
+- Cadre : enveloppes scalaires de distribution; aucune PDE simulée.
+- Cible : une amplitude relative croissante `theta A_s` dépasse forcément un
+  seuil de validité qui peut lui-même dépendre du temps ou de la troncature.
+- Contre-test exact : `theta A_n=2^(n−2)` et `Lambda_n=2^(2n)` divergent,
+  mais `theta A_n<Lambda_n` pour tout `n`. Une asymptotique « haut niveau »
+  sans seuil commun ne s'applique jamais au niveau actif.
+- Réparation : fixer `a_0,C_mu,U_*` indépendamment du temps, du niveau et de
+  la troncature avant de choisir le temps d'échappement. Le changement
+  `log a -> log(e+a)` exige en outre une perte de constante; un facteur huit
+  est sûr au-dessus du seuil normalisé trois.
+- Portée : réfute l'automaticité du seuil, pas une borne uniforme explicitement
+  démontrée.
+- Artefact : `ENDGAME-SYNCHRONIZATION-AUDIT-1` et passe contradictoire 0019.
+
 ## Obstacle consolidé — désingularisation HWY vers une même donnée Clay
 
 Trois stratégies distinctes ont fermé les inférences actuellement disponibles :

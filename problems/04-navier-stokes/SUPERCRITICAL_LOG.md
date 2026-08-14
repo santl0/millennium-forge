@@ -415,3 +415,31 @@ solution ou précise qu'il s'agit seulement d'un champ test.
 - Artefact : `COMMUTATOR-UNIFORMITY-AUDIT-1`, huit contrôles exacts, zéro
   échec, empreinte
   `387898492a0dc370d6ca50aadbc18e7e524ebdc0d7326fe2347952cbce57ebbf`.
+
+## 2026-08-14 — Synchronisation logarithmique de l'endgame
+
+- Objet : solution classique maximale de NS incompressible 3D non forcé sur
+  `R³`, viscosité `nu>0`; aucun calcul de solution.
+- Entrée : queue uniforme
+  `|{|u|>a}|<=C_mu/[a³log³(e+a/U_*)]` au-dessus d'un seuil fixe.
+- Temps : remplacer le temps « maximal » par
+  `tau_t=nu/[c_1(M)U(t)²]` et séparer prolongement direct / temps intérieur.
+- Rayons : le volume donne le rayon témoin
+  `r_s=C_4/[U(s)log(e+theta U(s)/U_*)]`; l'analyticité donne le sous-rayon
+  `rho_s=nu/[c_AU(s)]`.
+- Seuil : `r_s<=rho_s` dès que le logarithme dépasse `c_A C_4/nu`. Le seuil
+  est fini mais exponentiel en `C_mu^(1/3)/nu`.
+- Harmonicité : `M=(2-h*)/[2(1-h*)]` et
+  `theta=(1-h*)/(2-h*)` donnent deux résidus nuls; la branche cœur sature la
+  constante un.
+- Pertes localisées : temps maximal non intérieur, seuil de niveau non
+  uniforme, rayon arbitrairement plus petit, changement de logarithme sans
+  facteur et `M` analytique désynchronisé.
+- Échelle : `U,U_*` portent `+1`, temps `-2`, rayons `-1`, volume `-3`; le
+  rapport logarithmique et `C_mu^(1/3)/nu` sont invariants.
+- Perte restante : la queue uniforme n'est pas produite pour toute solution
+  Clay; la prémisse globale `bmo_phi` sur la direction reste à raccorder aux
+  zéros et aux configurations multi-cœurs.
+- Artefact : `ENDGAME-SYNCHRONIZATION-AUDIT-1`, onze contrôles exacts, zéro
+  échec, empreinte
+  `41b27f8649977c8a2d564c80418678017eb5d409956c8f3c5e3eb9016f916a3b`.
