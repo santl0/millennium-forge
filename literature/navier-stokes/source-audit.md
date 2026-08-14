@@ -963,3 +963,29 @@ La veille ajoute `NS-SRC-0163`–`0167` et porte le corpus à 167 sources. Les
 textes primaires, pages éditeurs, DOI et métadonnées arXiv ont été contrôlés le
 2026-08-15. Le résultat du cycle reste une dérivation IA statique
 `COMPUTATION_ONLY`, jamais un résultat Clay.
+
+## Audit ciblé du cycle 0038 — stabilité topologique et sélection adaptative
+
+- Cohen-Steiner–Edelsbrunner–Harer (`0168`) donnent la stabilité bottleneck
+  des diagrammes de persistance sous erreur uniforme. Une longue barre H0
+  contrôle `maximum-col`, pas la marge `col-cutoff` requise par le pont.
+- Cardona–Curry–Lam–Lesnick (`0169`) donnent une métrique stable et universelle
+  sur les merge trees finis. L'entrelacement ne fournit ni labels spatiaux,
+  ni diamètre, ni coaire.
+- Bauer–Landi–Mémoli (`0170`) traitent les graphes de Reeb PL. Ce ne sont pas
+  les join trees de superniveaux, et leur stabilité ne règle pas le passage
+  BV modulo presque-partout.
+- Kimura et al. (`0171`) appliquent une structure Reeb/COT à des simulations
+  Navier–Stokes incompressibles 2D périodiques. Dimension, stretching,
+  pression et certification continuum empêchent tout transfert vers Clay.
+- Le certificat continuum minimal d'un calcul PL est un niveau maximin de
+  deux coeurs spatiaux, accompagné de `||F-F_h||_infinity<=epsilon`; le barcode
+  seul est insuffisant.
+- Le lemme positif du cycle n'utilise finalement aucun arbre discret : coaire,
+  diamètre planaire, isopérimétrie 3D et Lorentz sélectionnent directement un
+  niveau régulier et une composante au même niveau.
+
+La veille ajoute `NS-SRC-0168`–`0171` et porte le corpus à 171 sources. Les
+textes primaires LIPIcs/arXiv, page éditeur et DOI ont été contrôlés le
+2026-08-15. Aucun théorème source ne contient la composition axisymétrique du
+cycle; elle reste `COMPUTATION_ONLY`.
