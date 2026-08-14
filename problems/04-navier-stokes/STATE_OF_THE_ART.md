@@ -359,3 +359,20 @@ sont réparables et ne valident pas pour autant la production dynamique de
 (40). Celle-ci devient le verrou actif : uniformité des seuils de troncature,
 du coefficient de Grönwall et de la constante de Poincaré dans l'étape
 De Giorgi.
+
+Le cycle 0017 isole ensuite le bloc (23)–(40). Sous une estimation uniforme
+et dimensionnée du stretching restreint (22), une solution classique et la
+borne critique uniforme faible-`L^(3/2)`, l'énergie tronquée produit bien la
+queue `lambda^(-3/2)log^(-3/2)` avec seuil d'absorption, coefficient de
+Grönwall et terme initial suivis. Cette étape n'est pas une itération De
+Giorgi : aucun enchaînement de niveaux n'apparaît. La coercivité est
+Hölder-sur-support plus Sobolev, non une Poincaré sur un domaine mobile.
+
+Trois corrections empêchent toujours de promouvoir la v2. Faible-
+`L^(3/2)` seul ne rend pas les tronqués énergétiques (`|x|^-2` les fait
+diverger), donc la régularité classique pré-singulière est essentielle.
+L'estimation terminale ne justifie aucune absorption aux temps antérieurs.
+Enfin, le facteur deux de la sommation dyadique (20)–(21) est faux (`8/3`
+sur un exemple exact), bien qu'une constante trois répare localement l'ordre.
+Le premier maillon non reproduit est désormais le théorème de commutateur
+(8)–(22), pas Grönwall ni Chebyshev.

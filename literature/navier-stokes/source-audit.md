@@ -146,7 +146,7 @@ Il est incorrect de remplacer la seconde arête par « les profils self-similair
 | [Wang–Yang, arXiv:2608.06040v1](https://arxiv.org/abs/2608.06040) (`0046`) | prépublication, 2026-08-06 | Liouville pour des `D`-solutions stationnaires sous enveloppes cylindriques critiques avec gain logarithmique | stationnarité, Dirichlet fini et décroissance ne sont pas hérités par une limite ancienne générale |
 | [Lei–Ren–Tian, arXiv:2501.08976v1](https://arxiv.org/abs/2501.08976) (`0061`) | prépublication, 2025-01-15 | critère local pour solution faible adaptée : confinement de la forte vorticité dans un double cône fixe implique la régularité intérieure | hypothèse conditionnelle uniforme dans un cylindre; aucune loi générale ne produit le cône et aucun signe ponctuel n'est obtenu |
 | [Yu, arXiv:2606.27560v1](https://arxiv.org/abs/2606.27560) (`0062`) | prépublication, 2026-06-25 | absorption du stretching filtré proche avec perte explicite `(r/ell)^5`, plus budgets de queue, packing, commutateur et localisation | uniforme seulement à rapport `ell/r` fixé; aucun passage uniforme filtre→continuum ni contrôle de la queue lointaine |
-| [Grujić, arXiv:2607.08866v2](https://arxiv.org/abs/2607.08866) (`0059`) | prépublication, révisée le 2026-07-13 | revendique l'exclusion d'une singularité ponctuelle critique sous `omega∈L∞L^{3/2,infinity}` et `xi∈L∞bmo_{1/|log r|}` | profil, modules et concentration critiques supplémentaires; la réduction 3D→1D est fermée au cycle 0014, mais inversion, transfert vorticité–vitesse et queue BMO restent non reproduits |
+| [Grujić, arXiv:2607.08866v2](https://arxiv.org/abs/2607.08866) (`0059`) | prépublication, révisée le 2026-07-13 | revendique l'exclusion d'une singularité ponctuelle critique sous `omega∈L∞L^{3/2,infinity}` et `xi∈L∞bmo_{1/|log r|}` | hypothèses critiques supplémentaires; cycles 0014–0017 ferment conditionnellement les raccords aval `(22)->(55)` avec plusieurs corrections, mais le commutateur `(8)->(22)` et l'endgame complet restent non reproduits |
 | [Binz–Coiculescu, arXiv:2607.12159v1](https://arxiv.org/abs/2607.12159) (`0047`) | prépublication, 2026-07-13 | exclusion de profils homothétiques forward dans certaines classes de Morrey/régularité angulaire | profil forward à donnée homogène singulière; **pas un profil backward de blow-up Clay** |
 | [Seregin, arXiv:2507.08733v2](https://arxiv.org/abs/2507.08733) (`0048`) | prépublication, révisée le 2026-01-03 | autres scénarios Type II conditionnels donnant des anciennes Euler dissipatives non triviales et exclusions de sous-classes | aucune réduction de tout blow-up Clay ni Liouville Euler ancien général |
 | [Escauriaza–Seregin–Šverák 2003](https://doi.org/10.1007/s00205-003-0263-8) (`0049`) | article publié, *Arch. Rational Mech. Anal.* 169(2), 147–157 | unicité rétrograde pour une inégalité parabolique avec termes d'ordre inférieur bornés et croissance gaussienne | outil de vorticité conditionnel; ne crée ni trace nulle ni bornes de coefficients |
@@ -350,3 +350,32 @@ Ils empêchent néanmoins de classer la rédaction actuelle comme une preuve à
 constantes et quantificateurs suivis. La priorité remonte à la production
 dynamique de (40), notamment les seuils de troncature et le coefficient de
 Grönwall de l'étape De Giorgi.
+
+## Audit ciblé du cycle 0017 — énergie tronquée et sources fonctionnelles
+
+| Source primaire | Passage contrôlé | Verdict exact |
+|---|---|---|
+| Grujić `arXiv:2607.08866v2` (`0059`) | équations (20)–(40) | `(23)->(40)` est réparable à seuils et constantes suivis sous (22); `2` avant (21), le seuil « absolu » et l'extension à `(0,T*)` sont faux littéralement |
+| Hunt 1966 (`0069`) et Peetre 1966, DOI `10.5802/aif.232` (`0070`) | Hölder/interpolation de Lorentz et Sobolev–Lorentz | les exposants `theta=2/3`, `L^(6,2)` et `L^(3,1)` sont cohérents; les constantes dépendent des conventions de norme |
+| Talenti 1976, DOI `10.1007/BF02418013` (`0071`) | Sobolev homogène dans (33) | combiné à Hölder sur le support, donne (34) sans hypothèse de régularité du bord du superniveau |
+| Vasseur 2007, DOI `10.1007/s00030-007-6001-4` (`0072`) | comparaison avec une vraie méthode De Giorgi pour NS | confirme que la v2 n'exécute pas une itération de niveaux : elle fait une troncation fixe, un ODE et Chebyshev |
+
+Le lemme réparé emploie un logarithme `log(lambda/Lambda_*)`, un seuil au
+moins exponentiel en `C_H A S_L²/nu`, l'amortissement
+`nu lambda/(2S_6²M)` et une ancre où le tronqué est nul. Il produit
+
+```text
+U_(2lambda)(t)
+ <=C lambda^(-3/2)log(lambda/Lambda_*)^(-3/2)
+```
+
+uniformément sur l'intervalle terminal, pas sur tout `(0,T*)`. Faible-
+`L^(3/2)` fournit la mesure du support, mais pas l'appartenance du tronqué à
+`H¹`; le profil `|x|^-2` réfute cette dernière implication. Pour la solution
+classique de la v2, la régularité pré-singulière est donc une prémisse
+essentielle et distincte.
+
+L'audit de (20)–(21) fournit déjà un test adverse du prochain verrou : avec
+`R=2^-8` et le dernier indice, le ratio de poids vaut `8/3`, non `2`. Le
+facteur `3` répare cet échelon à petite échelle, mais les extensions BMO et
+toutes les queues de (8)–(22) restent non reproduites.

@@ -316,3 +316,20 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
 - Décision : fermer conditionnellement le transfert fonctionnel (40)–(47),
   conserver les deux omissions comme claims réfutés et remonter vers
   l'uniformité de la dérivation dynamique de (40).
+
+## 2026-08-14 — Cycle 0017
+
+- Veille différentielle : `arXiv:2607.08866` reste en v2 du 2026-07-13;
+  aucune v3, erratum ou publication évaluée n'est indiqué dans la notice
+  primaire contrôlée.
+- Sources ajoutées : Hunt 1966 pour `L(p,q)`, Peetre 1966 pour
+  interpolation/Sobolev, Talenti 1976 pour la constante de Sobolev et
+  Vasseur 2007 pour distinguer une véritable méthode De Giorgi en NS.
+- Résultat positif borné : admise (22) sous forme dimensionnée et uniforme,
+  la chaîne (23)–(40) transmet le logarithme sans perte; le coefficient de
+  Grönwall et le seuil d'ancrage sont explicites.
+- Résultats négatifs : faible-`L^(3/2)` seul ne fournit pas l'énergie
+  tronquée; l'intervalle terminal ne s'étend pas à `(0,T*)`; le facteur
+  dyadique deux avant (21) est réfuté par `8/3`.
+- Décision : fermer `GAP-DEGIORGI-UNIFORMITY` conditionnellement à (22) et
+  activer `GAP-COMMUTATOR-UNIFORMITY` sur la chaîne complète (8)–(22).
