@@ -12,6 +12,7 @@ leur rapport JSON sur la sortie standard.
 | `VAS-1` | quand la viscosité est-elle perturbative dans un ansatz mono-échelle ? | rationnels exacts; aucune grille | `python -B experiments/navier-stokes/viscosity-gate/test_viscosity_gate.py` | zéro pour les identités testées |
 | `TRI-PHASE-1` | divergence nulle et hélicité nulle imposent-elles un flux sous-linéaire universel ? | modes Fourier finis, rationnels gaussiens exacts | `python -B experiments/navier-stokes/triad-phase/test_triad_phase.py` | zéro |
 | `DESINGULARIZATION-GATE-1` | les normes d'une troncature de `r^-1` restent-elles uniformes quand `epsilon -> 0` ? | intégrales radiales exactes; logarithme symbolique | `python -B experiments/navier-stokes/desingularization-gate/desingularization_gate.py` | zéro pour les identités rationnelles |
+| `PRESSURE-TAIL-1` | centrer la pression d'un paquet distant gagne-t-il une puissance de distance ? | noyau multipolaire exact, tenseur ponctuel | `python -B experiments/navier-stokes/pressure-tail/pressure_tail.py` | zéro |
 
 Environnement reproduit au checkpoint initial : Windows, Python 3.13.14,
 bibliothèque standard uniquement. Les scripts ne lisent aucun fichier, n'ont
@@ -91,9 +92,47 @@ aucune dépendance réseau et ne produisent pas d'artefact lourd.
 
 ## Passage au continuum
 
-Aucun des trois tests ne part d'une discrétisation PDE : il n'y a donc pas de
-passage grille-vers-continuum. Le raccord analytique restant est explicite dans
-chaque cas. Tout futur solveur doit ajouter divergence mesurée, convergence
-multi-résolution, second schéma, bornes de troncature, contrôle des frontières,
-énergie/enstrophie/normes critiques, versions logicielles et empreintes des
-sorties.
+Aucune des quatre expériences ne part d'une discrétisation PDE : il n'y a donc
+pas de passage grille-vers-continuum. Le raccord analytique restant est
+explicite dans chaque cas. Tout futur solveur doit ajouter divergence mesurée,
+convergence multi-résolution, second schéma, bornes de troncature, contrôle des
+frontières, énergie/enstrophie/normes critiques, versions logicielles et
+empreintes des sorties.
+
+## `PRESSURE-TAIL-1` — pression distante et jauge
+
+- Objet : noyau de pression sur `R^3`,
+  `K_ij(z)=(3z_i z_j-|z|² delta_ij)/(4 pi |z|^5)`.
+- Lemme analytique testé : pour un paquet divergence-free `v` supporté dans
+  `B_rho(R e_1)`, `R>a+rho`, et `x in B_a(0)`, le théorème des accroissements
+  finis donne
+
+  ```text
+  |p_v(x)-p_v(0)|
+    <= (21/pi) a (R-a-rho)^(-4) ||v||_2².
+  ```
+
+  En effet, la dérivée directionnelle de chaque `K_ij` est au plus
+  `7/pi |z|^-4`, et
+  `sum_(i,j)|v_i v_j| <= 3|v|²`.
+- Jauge : pour tout champ test compact divergence-free `w` et cutoff `phi`,
+  `integral p_v(0) w dot grad(phi)=0`. La constante distante d'ordre `R^-3`
+  ne travaille donc pas dans l'énergie locale; la variation active gagne une
+  puissance `R^-4`.
+- Expérience : moment principal `M=diag(1,1,0)` à distance `R`; après
+  normalisation par `4 pi`, `p_R(0)=R^-3` et
+  `p_R(e_1)-p_R(0)=(R-1)^-3-R^-3`. Le résidu de l'identité rationnelle est
+  exactement zéro et `R^4` fois la différence tend vers `3`.
+- Réalisabilité : `M` est le moment d'un paquet lisse compact divergence-free
+  `v=(partial_2 psi,-partial_1 psi,0)` avec `psi` radial dans les deux premières
+  variables et pair dans la troisième, après normalisation.
+- Sensibilité : distances `R=2,4,...,128`; aucun flottant, graine ou pas de
+  temps.
+- Limite décisive : la borne contient l'énergie globale du paquet. Sous un zoom
+  de blow-up, cette constante n'est pas automatiquement uniforme, et une somme
+  de paquets proches de l'échelle active relève du terme de pression proche,
+  non de cette queue. Le résultat ne ferme donc pas compacité–rigidité.
+- Covariance : sous `v_lambda(x)=lambda v(lambda x)`, la géométrie devient
+  `(a,rho,R)/lambda`, tandis que
+  `||v_lambda||_2²=lambda^-1||v||_2²`; le membre droit acquiert exactement
+  `lambda²`, comme `p_lambda`. Le lemme ne crée donc aucun gain d'échelle caché.

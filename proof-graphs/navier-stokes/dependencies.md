@@ -41,7 +41,7 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | borne Prodi–Serrin | prolongement | classique et sourcée | Prodi, Serrin | hypothèse conditionnelle |
 | borne critique + minimalité | profil compact modulo symétries | conditionnelle | décomposition de profils | dichotomie et pression |
 | suite de blow-up sous énergie seule | solution ancienne | manquante | — | une puissance d'échelle et compacité forte |
-| limite locale de vitesse | limite de pression | conditionnelle | Calderón–Zygmund + queues | non-localité et constante de jauge |
+| limite locale de vitesse | limite de pression | conditionnelle | Calderón–Zygmund + queues; la pression distante centrée décroît comme `R^-4` à énergie fixe | uniformité de l'énergie après zoom et pression proche |
 | profil rétrograde `L³` | trivialité | classique et sourcée | Nečas–Růžička–Šverák | ne couvre pas Type II/DSS général |
 | solution ancienne bornée générale 3D | trivialité | manquante | Liouville partiel seulement | rigidité |
 | alignement critique de vorticité | régularité | conditionnelle, sourcée | Constantin–Fefferman | alignement non déduit de NS |
@@ -68,7 +68,9 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 
 1. `GAP-LIMIT-ADMISSIBLE` : faible coût pour déterminer si la nouvelle
    construction non unique a un premier maillon vers Clay.
-2. `GAP-PRESSURE-TAIL` : fort levier sur compacité–rigidité.
+2. `GAP-PRESSURE-TAIL` : la queue physique lointaine est contrôlée à énergie
+   fixe après centrage; déplacer la priorité vers l'uniformité après zoom et la
+   pression proche.
 3. `GAP-SIGN-FLUX` : élimination rapide de fonctionnelles candidates.
 
 Une arête ne passe à « classique et sourcée » qu'avec une source primaire et

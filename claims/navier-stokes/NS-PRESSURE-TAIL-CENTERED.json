@@ -1,0 +1,38 @@
+{
+  "id": "NS-PRESSURE-TAIL-CENTERED",
+  "problem": "navier-stokes",
+  "statement": "Dans R^3, la variation sur une boule B_a de la pression créée par un paquet de vitesse divergence-free supporté dans une boule B_rho(R e_1), R>a+rho, est bornée par (21/pi) a (R-a-rho)^(-4) fois la norme L^2 au carré du paquet; sa partie constante s'annule contre un champ test divergence-free dans l'énergie locale.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "v appartient à C_c^infinity(R^3;R^3), div v=0, support de v inclus dans B_rho(R e_1)",
+    "R>a+rho>0 et x appartient à B_a(0)",
+    "p_v(x)=integrale K_ij(x-y) v_i(y)v_j(y)dy avec K_ij=partial_i partial_j(1/(4 pi |z|))",
+    "la borne porte sur |p_v(x)-p_v(0)| et ||v||_2^2",
+    "pour l'annulation de jauge, w est divergence-free et phi*w est compactement supporté",
+    "le statut reste computation-only tant que la dérivation n'a pas de revue externe"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "experiments/navier-stokes/README.md, section PRESSURE-TAIL-1"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/pressure-tail/pressure_tail.py",
+      "sha256": "8e9e10755f9263a16553c069d11332d2303eb3eaf560b7ca2395818df05d9a36"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-state-of-art/cycle-0002"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Sous-agent Codex distinct, même famille de modèle; non indépendant au sens externe",
+    "notes": "Signe du noyau, constante conservatrice 21/pi, annulation de jauge, moment réalisable, asymptotique et covariance d'échelle contrôlés séparément."
+  }
+}
