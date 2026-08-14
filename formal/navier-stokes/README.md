@@ -373,3 +373,23 @@ coqchk -Q . "" discharge
 Le succès de ces commandes certifie l'acceptation des termes par le noyau dans
 leur environnement ; il ne remplace jamais l'audit de la correspondance entre
 le type formel et l'énoncé mathématique revendiqué.
+
+## Backlog issu du cycle 0010 — cutoff homogène tangent
+
+Avant toute formalisation de la dynamique HWY, deux identités finies et une
+intégrale radiale sont candidates après `NS-FORMAL-0001` :
+
+1. pour la matrice antisymétrique
+   `B=[[0,-1,0],[1,0,0],[0,0,0]]`, prouver
+   `div(Bx/|x|²)=0` sur `R³\{0}` et
+   `div(f(|x|)Bx/|x|²)=0` pour tout cutoff radial lisse;
+2. prouver `|nabla(Bx/|x|²)|²=2/|x|⁴`;
+3. évaluer exactement les intégrales sphériques
+   `C₂=8pi/3`, `C₃=3pi²/4`, puis le minorant de séparation `L³` entre deux
+   cutoffs plats successifs.
+
+Ces énoncés certifieraient seulement le contre-profil fonctionnel
+`FAIL-NS-0013`. Ils ne formaliseraient ni le profil CAP Hou–Wang–Yang, ni une
+solution Navier–Stokes, ni un raccord Clay. Aucun fichier Lean n'est ajouté au
+cycle 0010; le noyau Fourier fini reste prioritaire parce que son environnement
+est déjà spécifié et que la non-localité de la projection y est explicite.

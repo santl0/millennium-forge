@@ -120,17 +120,20 @@ Le graphe annoté et les arêtes manquantes sont détaillés dans
 - Lemme minimal : une branche instable autour du profil singulier persiste sous
   une troncature lisse à rayon `epsilon`, avec un contrôle uniforme jusqu'à un
   temps indépendant de `epsilon` et un raccord admissible.
-- Échec actuel : pour un profil `|x|^(-1)`, `||u||_3^3` est logarithmiquement
-  divergent, `L^infinity` et `H^1` divergent en puissances; l'unicité
-  faible–forte interdit une bifurcation pendant la durée classique de chaque
-  donnée lissée.
-- Test discriminant : suivre exactement les normes de la troncature et la durée
-  locale garantie; vérifier si un paramètre uniforme subsiste.
+- Échec actuel : le cutoff HWY est extérieur. Une régularisation intérieure
+  peut converger en `L²`, mais une suite divergence-free bornée dans
+  `L^{3,infinity}` garde un gap `L³` strict; `L^infinity` et `H^1` divergent en
+  puissances. L'unicité faible–forte interdit une bifurcation pendant la durée
+  classique de chaque donnée lissée.
+- Test discriminant : projeter l'erreur à `t~epsilon²` sur l'eigenmode adjoint
+  instable et suivre la constante jusqu'à un temps fixe; reconstruire la
+  pression et séparer explicitement lissage parabolique et amplification.
 - Circularité : supposer une stabilité uniforme dans une norme qui diverge.
 - Coût : faible pour l'obstruction d'échelle, extrême pour reproduire la preuve
   assistée (environ 800 Go annoncés).
-- Abandon local : divergence nécessaire de toute constante de stabilité connue;
-  conserver alors le résultat comme barrière négative de transfert.
+- Abandon local : après trois mécanismes dynamiques distincts, divergence
+  nécessaire de toute constante de shadowing ou perte de séparation des
+  branches; conserver alors le résultat comme barrière négative de transfert.
 
 ### G — Calcul validé conditionnel
 
@@ -350,3 +353,38 @@ des horloges et de la commutation au temps-record. La recherche d'une trace ESS
 dans le zoom maximum KNSS est suspendue. L'axe actif suivant devient le raccord
 des données homogènes `-1` de Hou–Wang–Yang vers des données Clay lisses,
 conformément au score priorisé.
+
+## Cycle 0010 : décision automatisée
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| distinguer le cutoff extérieur HWY d'une régularisation intérieure Clay et tester la topologie critique | 5 | 5 | 5 | 5 | **20** |
+| projeter l'erreur intérieure sur le mode adjoint instable | 5 | 2 | 3 | 5 | 15 |
+| reproduire un sous-calcul CAP léger et auditer l'environnement | 3 | 3 | 5 | 3 | 14 |
+
+Décision : fermer d'abord le faux raccord perturbatif. La source v2 utilise
+`u_in=u_loc+w`, avec `w=0` près de l'origine, puis
+`u_cut=-exp(t Delta)w`; son gain `R^-1/8` pour `p=4` est une petitesse de
+**queue extérieure**. Il ne dépend d'aucun rayon intérieur `epsilon` et laisse
+`u_loc~1/r` en zéro.
+
+Une convolution de `u_loc` fournit bien des données compactes, lisses et
+divergence-free convergeant en `L²`. Mais toute approximation localement
+bornée reste à distance `L³` infinie et à distance `L^{3,infinity}` positive
+du profil singulier. Plus fortement, le contre-profil tangent exact construit
+une suite lisse avec
+
+```text
+||u_epsilon-u_(2epsilon)||_2 -> 0,
+sup_epsilon ||u_epsilon||_{L^{3,infinity}} < infinity,
+inf_epsilon ||u_epsilon-u_(2epsilon)||_3 > 0.
+```
+
+Le module universel « convergence énergétique + borne critique faible donne
+compacité critique forte » est donc réfuté. L'unicité faible–forte ajoute une
+porte logique : pour chaque donnée lisse fixée, les branches ne peuvent se
+séparer avant une perte de la solution forte, événement qui constituerait déjà
+un breakdown Clay. Le prochain lemme borné doit être dynamique et
+non perturbatif : mesurer, à l'échelle `t~epsilon²`, la projection de la couche
+intérieure sur l'eigenmode adjoint instable certifié, puis suivre sa séparation
+jusqu'à un temps fixe avec les constantes de semigroupe et de projection.

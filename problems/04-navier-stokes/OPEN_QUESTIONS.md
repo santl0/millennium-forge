@@ -6,7 +6,7 @@ des décisions reste dans les checkpoints.
 
 | Priorité | Question falsifiable | Pourquoi maintenant | Critère de sortie |
 |---:|---|---|---|
-| 1 | une désingularisation du profil initial homogène `-1` de Hou–Wang–Yang possède-t-elle une estimation de stabilité uniforme dans un espace compatible avec des données Clay ? | après trois stratégies sur le paquet hybride, le protocole impose un pivot; ce résultat récent offre le raccord distinct à plus forte valeur informationnelle | estimation uniforme sourcée/démontrée, ou divergence nécessaire de toutes les constantes de la méthode |
+| 1 | la projection de la couche de régularisation intérieure, à `t~epsilon²`, sur le mode adjoint instable HWY peut-elle être bornée puis propagée jusqu'à un temps fixe ? | le cycle 0010 réfute le raccord statique `L² + L^{3,infinity} -> L³`; seul un shadowing dynamique non perturbatif peut encore préserver l'instabilité | borne sourcée/certifiée avec séparation de branches, ou divergence d'une constante de projection/semigroupe |
 | 2 | une contrainte géométrique locale de vorticité, strictement plus forte que l'hélicité globale mais déductible de NS, impose-t-elle une déplétion triadique ? | le contre-profil exact ferme la version globale naïve | inégalité signée prouvée ou nouveau contre-profil |
 | 3 | un problème renormalisé NS peut-il être réduit à un opérateur compact avec bornes de queue certifiables ? | préalable à toute preuve assistée par ordinateur | rayon de contraction validable sous raffinement |
 | 4 | le noyau Fourier fini énergie–Leray peut-il être formalisé sans axiome ni `sorry` en Lean ? | petite brique stable, indépendante des scénarios spéculatifs | build épinglé + `#print axioms` vide hors logique standard |
@@ -14,7 +14,9 @@ des décisions reste dans les checkpoints.
 ## Questions suspendues
 
 - Reproduire le CAP Hou–Wang–Yang : suspendu faute des quelque 800 Go de RAM
-  annoncés et d'un manifeste Julia effectivement présent dans le dépôt inspecté.
+  annoncés. Au commit primaire `615ee6f`, le `Project.toml` existe mais aucun
+  `Manifest.toml`; le README se contredit sur ce point. Les candidats `.mat`
+  amont ne sont pas tous reliés à une chaîne génératrice et des empreintes.
 - Auditer intégralement les manuscrits Shahmurov 2026 : veille conservée, mais
   une revendication unilatérale non publiée ne dépasse pas les verrous mieux
   bornés ci-dessus sans vérification indépendante.
@@ -35,6 +37,17 @@ laboratoire non revue extérieurement. Le raccord de ces hypothèses à une
 extraction Clay reste ouvert mais est suspendu après le troisième test du
 cycle 0009; la priorité active est désormais la désingularisation
 Hou–Wang–Yang.
+
+## Résultat négatif du cycle 0010
+
+La localisation HWY est extérieure et conserve le coeur `1/r`. Pour une
+régularisation intérieure, la convergence `L²` et une borne uniforme
+`L^{3,infinity}` ne donnent pas de compacité `L³` : une famille
+`C_c^infinity`, divergence-free, satisfait ces deux prémisses tout en gardant
+un écart `L³` strict entre les échelles `epsilon` et `2epsilon`. Toute preuve
+de transfert reposant uniquement sur ce module statique est abandonnée. Une
+stabilité à temps strictement positif, avec projection instable et couche
+parabolique explicites, n'est pas réfutée.
 
 ## Règle de pivot
 

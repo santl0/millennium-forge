@@ -1,0 +1,47 @@
+{
+  "id": "NS-HWY-INNER-CUTOFF-CRITICAL-GATE",
+  "problem": "navier-stokes",
+  "statement": "Pour une donnée tridimensionnelle non nulle homogène de degré -1 au voisinage de l'origine, toute régularisation localement bornée reste à distance L3 infinie et à distance L^{3,infinity} uniformément positive de la donnée singulière; une suite explicite de cutoffs Clay divergence-free converge en L2 et reste bornée dans L^{3,infinity}, mais n'est pas Cauchy dans L3 et son contrôle H1 diverge au moins comme epsilon^(-1/2).",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "domaine R3, aucune frontière, aucune évolution PDE dans le calcul",
+    "u_0(x)=|x|^-1 A(x/|x|) dans une boule fixe, A continue et non nulle",
+    "la donnée régularisée est localement bornée; sur un sous-ensemble angulaire où |A| est minoré, le terme r^-1 domine à rayon assez petit",
+    "pour obtenir une famille Clay exacte, la donnée compacte divergence-free est convoluée par un mollificateur radial C-infinity; la convolution commute avec la divergence et converge en L2",
+    "pour la construction lisse divergence-free et les constantes explicites, A(theta)=e_3 croix theta, avec cutoffs intérieur et extérieur radiaux",
+    "la suite explicite utilise le cutoff plat H(s)=b(s)/(b(s)+b(1-s)), b(s)=exp(-1/s) pour s>0 et zéro sinon",
+    "la norme L^{3,infinity} est définie par sup_lambda lambda mesure{|f|>lambda}^{1/3}",
+    "aucune affirmation sur le temps d'existence fort, le shadowing dynamique ou un blow-up Clay"
+  ],
+  "dependencies": [
+    "NS-HWY-UNFORCED-NONUNIQUENESS-V2",
+    "NS-DESINGULARIZATION-RMINUS1-GATE"
+  ],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "Hou-Wang-Yang, arXiv:2509.25116v2, équations (1.4), (2.7)-(2.20): https://arxiv.org/abs/2509.25116"
+    },
+    {
+      "kind": "derivation",
+      "reference": "experiments/navier-stokes/hwy-inner-cutoff/inner_cutoff_audit.py",
+      "sha256": "58dfe89e7edb80a5abe1fc4087538793582065745da2304c0ddde66215855093"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "HWY-INNER-CUTOFF-GATE-1: champ de swirl tangent, divergence nulle, distance L3 infinie à la limite singulière; entre epsilon et 2epsilon, gap L3 strict indépendant de l'échelle malgré convergence L2 et borne L3-faible; résidus rationnels zéro"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-state-of-art/cycle-0010"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "OpenAI Codex et sous-agent Codex, même famille de modèle; non indépendant au sens externe",
+    "notes": "La portée négative est limitée aux raccords perturbatifs qui exigent une petitesse L3/L3-faible ou une borne H1 uniforme. La convergence L2 subsiste et aucun effondrement de durée forte n'est déduit."
+  }
+}

@@ -271,6 +271,35 @@ Décision de pivot : suspendre la recherche d'une trace ESS à l'intérieur du
 zoom maximum KNSS. Toute réouverture exige une nouvelle extraction ou un lemme
 d'équivalence entre deux profils, pas un autre renommage de topologie.
 
+## `FAIL-NS-0013` — Compacité critique d'une désingularisation depuis `L²` et `L^{3,infinity}`
+
+- Date : 2026-08-14.
+- Équation : aucune évolution; données initiales `C_c^infinity`,
+  divergence-free sur `R³`, destinées à NS incompressible non forcé avec
+  viscosité `1`.
+- Cible : déduire un module uniforme de compacité forte `L³` de la convergence
+  `L²` plus une borne uniforme `L^{3,infinity}` pour des cutoffs intérieurs
+  d'un coeur homogène de degré `-1`.
+- Attaque : champ tangent
+  `a=(-x_2,x_1,0)/|x|²` et cutoffs radiaux plats aux échelles `epsilon` et
+  `2epsilon`.
+- Résultat : les données sont lisses, compactes et exactement
+  divergence-free; leur distance `L²` tend vers zéro et leurs normes
+  `L^{3,infinity}` sont uniformes, mais
+  `||u_epsilon-u_(2epsilon)||_3³` est minorée par la constante positive
+  `[e^(8/3)/(1+e^(8/3))]^3(3pi²/4)log(5/4)`.
+- Résidus : antisymétrie, trace, tangence, constantes angulaires et facteurs
+  radiaux exacts; zéro échec rationnel et zéro arrondi, transcendantes gardées
+  symboliques.
+- Passe adverse : la famille converge bien dans `L²`; le défaut ne réfute ni
+  une stabilité à temps strictement positif, ni une constante dépendant de
+  `L³`/`H¹`, ni un mécanisme dynamique propre au profil HWY. Les grandes normes
+  ne fournissent aucune borne supérieure sur la durée forte.
+- Portée : l'inférence fonctionnelle universelle est `REFUTED`. Le transfert
+  non perturbatif des branches HWY reste ouvert et doit respecter
+  l'unicité faible–forte.
+- Artefact : `HWY-INNER-CUTOFF-GATE-1`.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,

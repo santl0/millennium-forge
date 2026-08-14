@@ -191,3 +191,27 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   (23) plus faible de Constantin 2023 donne déjà un prolongement quantitatif.
 - Artefact : `MAXIMUM-ZOOM-TRACE-COMMUTATOR-1`, neuf obligations, résidu
   d'assertion nul.
+
+## 2026-08-14 — Couche intérieure d'une donnée homogène `-1`
+
+- Équation : données initiales pour NS incompressible 3D non forcé sur `R³`,
+  viscosité `1`; aucune évolution résolue dans le test.
+- Source : la localisation Hou–Wang–Yang est extérieure. Pour `p=4`, son
+  petit paramètre `R^-1/8` enlève la queue, mais laisse intact le coeur `1/r`.
+- Échelles : sous `u_lambda=lambda u(lambda x)`, `L³` et
+  `L^{3,infinity}` sont invariants, `L²` porte `lambda^-1/2`, `Hdot¹` porte
+  `lambda^1/2` et `L-infinity` porte `lambda`.
+- Famille exacte : cutoffs radiaux du swirl
+  `a=(-x_2,x_1,0)/|x|²`; divergence nulle sans projection grâce à
+  `x dot a=0`.
+- Bornes : distance au profil singulier infinie en `L³`, minorant uniforme en
+  `L^{3,infinity}`, mais distance `L²=O(epsilon^1/2)`. La donnée lisse a
+  `||nabla u_epsilon||_2` au moins d'ordre `epsilon^-1/2`.
+- Contre-compacité : `u_epsilon` et `u_(2epsilon)` restent séparés par une
+  constante positive dans `L³`, tout en devenant proches dans `L²` et en
+  restant uniformément bornés dans `L^{3,infinity}`.
+- Perte localisée : une borne critique **faible** ne somme pas les
+  `log(1/epsilon)` échelles actives; elle ne remplace donc pas une compacité
+  critique forte. La chaleur peut encore lisser à `t>0`, ce qui laisse ouvert
+  un shadowing dynamique non perturbatif après `t~epsilon²`.
+- Artefact : `HWY-INNER-CUTOFF-GATE-1`, résidus rationnels et arrondi zéro.

@@ -12,6 +12,7 @@ leur rapport JSON sur la sortie standard.
 | `VAS-1` | quand la viscosité est-elle perturbative dans un ansatz mono-échelle ? | rationnels exacts; aucune grille | `python -B experiments/navier-stokes/viscosity-gate/test_viscosity_gate.py` | zéro pour les identités testées |
 | `TRI-PHASE-1` | divergence nulle et hélicité nulle imposent-elles un flux sous-linéaire universel ? | modes Fourier finis, rationnels gaussiens exacts | `python -B experiments/navier-stokes/triad-phase/test_triad_phase.py` | zéro |
 | `DESINGULARIZATION-GATE-1` | les normes d'une troncature de `r^-1` restent-elles uniformes quand `epsilon -> 0` ? | intégrales radiales exactes; logarithme symbolique | `python -B experiments/navier-stokes/desingularization-gate/desingularization_gate.py` | zéro pour les identités rationnelles |
+| `HWY-INNER-CUTOFF-GATE-1` | une régularisation intérieure divergence-free petite en `L²` et bornée en `L^{3,infinity}` est-elle compacte dans `L³` ? | matrices et intégrales exactes; transcendantes symboliques | `python -B experiments/navier-stokes/hwy-inner-cutoff/inner_cutoff_audit.py` | zéro pour les identités rationnelles et l'arrondi |
 | `PRESSURE-TAIL-1` | centrer la pression d'un paquet distant gagne-t-il une puissance de distance ? | noyau multipolaire exact, tenseur ponctuel | `python -B experiments/navier-stokes/pressure-tail/pressure_tail.py` | zéro |
 | `PRESSURE-MULTISCALE-1` | une borne physique `L²` seule impose-t-elle la tension uniforme de la pression après zoom ? | lois d'échelle et moments exacts | `python -B experiments/navier-stokes/pressure-multiscale/pressure_multiscale.py` | zéro |
 | `QUADRATIC-PRESSURE-DEFECT-1` | énergie uniforme et convergence faible d'une trace imposent-elles la convergence du produit et de la pression ? | solution NS de Fourier exacte, fractions rationnelles | `python -B experiments/navier-stokes/quadratic-pressure-defect/quadratic_pressure_defect.py` | zéro |
@@ -98,9 +99,39 @@ réseau ni ne produit d'artefact lourd.
   avoir ces normes grandes tout en étant globales; les divergences interdisent
   seulement de supposer gratuitement leur uniformité.
 
+## `HWY-INNER-CUTOFF-GATE-1` — régularisation intérieure exacte
+
+- Question : supprimer le coeur `r^-1` d'une donnée singulière par une famille
+  `C_c^infinity`, exactement divergence-free, donne-t-il une compacité dans
+  l'espace critique fort `L³` à partir de la convergence `L²` et d'une borne
+  `L^{3,infinity}` ?
+- Donnée : `a(x)=(-x_2,x_1,0)/|x|²`, cutoff extérieur radial fixe et cutoff
+  intérieur radial plat à l'échelle `epsilon`. La tangence `x dot a=0`
+  préserve exactement la divergence; chaque donnée est Clay-admissible sur
+  `R³`.
+- Échelles : `epsilon=10^-k`, `k=1,2,4,8,16`; aucune grille ni évolution PDE.
+- Résultat : la différence à la limite singulière a une norme `L³` infinie et
+  une quasi-norme `L^{3,infinity}` au moins `(pi²/4)^(1/3)`. La famille lisse
+  converge en `L²`, reste uniformément bornée en `L^{3,infinity}`, mais
+  `||u_epsilon-u_(2epsilon)||_3³` garde le minorant strict
+  `[e^(8/3)/(1+e^(8/3))]^3(3pi²/4)log(5/4)`.
+- Régularité :
+  `||nabla u_epsilon||_2² >= 4pi/epsilon-8pi` et
+  `||u_epsilon||_infinity>=1/(2epsilon)`.
+- Pression : reconstruite analytiquement par
+  `p=R_iR_j(u_i u_j)`; la borne de multiplicateur
+  `||p||_2<=||u||_4²<=[(32pi/15)(epsilon^-1-1/2)]^(1/2)` est globale. Le
+  script l'enregistre symboliquement mais ne résout aucune évolution.
+- Résidu et précision : antisymétrie, trace, tangence, constantes angulaires et
+  coefficients radiaux vérifiés par fractions; transcendantes laissées
+  symboliques positives; zéro arrondi.
+- Limite : réfute un module fonctionnel universel au temps initial, pas une
+  stabilité pour `t>=tau>0`, un temps maximal uniforme, la CAP HWY ou un
+  blow-up Clay.
+
 ## Passage au continuum
 
-Aucune des onze expériences ne part d'une discrétisation PDE : il n'y a donc
+Aucune des douze expériences ne part d'une discrétisation PDE : il n'y a donc
 pas de passage grille-vers-continuum. Le raccord analytique restant est
 explicite dans chaque cas. Tout futur solveur doit ajouter divergence mesurée,
 convergence multi-résolution, second schéma, bornes de troncature, contrôle des
