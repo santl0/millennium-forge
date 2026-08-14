@@ -693,3 +693,26 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
   constante `C_I/648`; l'interface lipschitzienne du gate est enregistrée.
 - Décision : fermer les gouttes séparées sous le seuil et activer
   `GAP-ABOVE-THRESHOLD-THIN-BRIDGE`.
+
+## 2026-08-15 — Cycle 0037
+
+- Veille différentielle primaire : Dayrens–Masnou–Novaga–Pozzetta pour
+  périmètre connecté et diamètre essentiel planaire; Carr–Snoeyink–Axen et
+  Edelsbrunner–Letscher–Zomorodian pour arbres de contours et persistance;
+  Bonicatto–Lahti–Pasqualetto pour la connexité 1-fine des représentants BV.
+- Sources ajoutées : `NS-SRC-0163`–`0166`. La brique transférable exacte est
+  `2 diam(E^1)<=P(E)` en dimension deux; arbres de fusion et barcodes restent
+  des outils discrets sans borne continuum automatique.
+- Actualité Navier–Stokes : ajout de Chan `NS-SRC-0167`, arXiv:2605.18011v1,
+  régularité axisymétrique sous petitesse critique dans un cylindre fini avec
+  conditions NHL. Aucun transfert aux formulations Clay `R3/T3` sans lemme
+  absent; preuve non auditée ligne à ligne.
+- Aucun article primaire repéré ne couple composantes persistantes, diamètre
+  métrique, coaire pondérée, pression et temps maximal pour une solution Clay.
+- Résultat interne :
+  `a(b-a)RD<=9K_uK_w/(8pi)`; un pont au-dessus de `A` paie
+  `A^2RD<=9K_uK_w/(2pi)`, indépendamment de son excès.
+- Résultat adverse : `eta->0` peut rendre petit le curl tronqué mais pas le
+  curl original; le niveau global ne calibre pas chaque goutte.
+- Corpus porté à 167 entrées. Décision : fermer le pont persistant calibré et
+  activer `GAP-BRIDGE-SCALE-CALIBRATION-OR-MERGE-TREE`.

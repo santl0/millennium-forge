@@ -926,3 +926,40 @@ La veille ajoute `NS-SRC-0156`–`0162` et porte le corpus à 162 sources. Les
 pages primaires EMS, Annals, arXiv, MathNet, AMS et les DOI ont été contrôlés
 le 2026-08-14. Aucun résultat récent vérifié ne supprime l'hypothèse critique
 additionnelle des théorèmes multi-centres ou ne ferme le cas Type II général.
+
+## Audit ciblé du cycle 0037 — diamètre planaire et persistance des ponts
+
+- Dayrens–Masnou–Novaga–Pozzetta (`0163`) prouvent au lemme 2.13
+  `2 diam(E^1)<=P(E)` pour tout ensemble planaire M-indécomposable de mesure
+  positive finie. Le représentant de densité un est indispensable; un
+  filament nul ajouté à un représentant arbitraire réfuterait la version
+  topologique naïve.
+- Leur théorème 4.1 représente aussi le périmètre connecté relaxé par
+  `P(E)+2 St(E)` sous ses hypothèses. Une connexion planaire de largeur nulle
+  conserve donc un coût de longueur de Steiner; cela ne donne aucune durée de
+  persistance en amplitude.
+- Fleming–Rishel (`0132`) et Ambrosio–Caselles–Masnou–Morel (`0156`), combinés
+  à `0163`, donnent par dérivation interne la somme des diamètres essentiels
+  intégrée sur les niveaux. La constante axisymétrique `9/(8pi)` du claim
+  n'est énoncée dans aucune de ces sources.
+- Carr–Snoeyink–Axen (`0164`) suivent les fusions de superniveaux PL par
+  join/contour trees; Edelsbrunner–Letscher–Zomorodian (`0165`) mesurent la
+  durée de vie des classes d'une filtration. Aucun des deux ne certifie
+  diamètre, périmètre, erreur continuum ou PDE.
+- Bonicatto–Lahti–Pasqualetto (`0166`, arXiv v1) caractérisent récemment
+  l'indécomposabilité via un représentant connexe en topologie 1-fine. Cette
+  clarification BV n'est pas nécessaire pour les superniveaux lisses du
+  cycle et ne fournit pas de nouvelle constante.
+- Chan (`0167`, arXiv v1) annonce une régularité globale axisymétrique sous
+  petitesse critique dans un cylindre fini avec conditions
+  Navier–Hodge–Lions. Domaine, frontière, symétrie et petitesse empêchent tout
+  transfert aux cas Clay `R3` ou `T3`; seule la page primaire arXiv a été
+  auditée, pas la preuve ligne à ligne.
+- Aucun analogue Navier–Stokes primaire inspecté ne combine merge tree
+  métrique, coaire méridienne, pression et évolution. Les filaments réguliers
+  et théorèmes multi-centres existants restent des comparateurs conditionnels.
+
+La veille ajoute `NS-SRC-0163`–`0167` et porte le corpus à 167 sources. Les
+textes primaires, pages éditeurs, DOI et métadonnées arXiv ont été contrôlés le
+2026-08-15. Le résultat du cycle reste une dérivation IA statique
+`COMPUTATION_ONLY`, jamais un résultat Clay.
