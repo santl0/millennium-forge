@@ -605,3 +605,25 @@ Ce module ne certifierait ni que la direction provient d'une vorticité NS,
 ni l'existence d'un packing de phases le long d'une trajectoire, ni le
 théorème de commutateur. Il peut néanmoins certifier entièrement l'obstruction
 d'extension qui ferme `GAP-ACTIVE-CORE-BMO` sous ses prémisses actuelles.
+
+## Backlog issu du cycle 0021 — rigidité de dilatation et flux sphérique
+
+Deux noyaux sont stables et finis :
+
+1. formaliser l'invariance de la moyenne et de l'oscillation sur
+   `B_(q^n r)` pour une fonction vérifiant `xi(qx)=xi(x)`;
+2. déduire de `MO<=K phi(q^n r)` et `phi(q^n r)->0` que `xi` est constante;
+3. formaliser que `partial_e m=0` rend `m` indépendant de la coordonnée `e`;
+4. montrer qu'un superniveau transverse non vide répété le long de `R` a une
+   mesure infinie, incompatible avec faible-`L^p`;
+5. dans un module sphérique séparé, définir `Omega_r`, `Omega_T` et prouver
+   `div(r^-2 Omega)=r^-3 div_S Omega_T` hors de zéro;
+6. encoder le flux distributionnel à l'origine comme coefficient de
+   `delta_0`;
+7. formaliser les identités algébriques du profil explicite et la minoration
+   `MO>=2/3` par l'inégalité triangulaire inverse.
+
+La partie mesure/dilatation peut être certifiée sans bibliothèque PDE lourde.
+La formule de divergence sphérique et le monopôle nécessitent davantage
+d'analyse distributionnelle. Aucun de ces modules ne formaliserait la
+pression, Biot–Savart singulier ou une trajectoire Navier–Stokes.

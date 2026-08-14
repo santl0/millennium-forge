@@ -443,3 +443,35 @@ réparation doit imposer un packing inter-composantes de taille
 `4ab/(a+b)=O(phi(r))` et fixer une extension mesurable en espace-temps. Le
 verrou actif se déplace vers l'admissibilité complète du profil critique
 ponctuel sous `div omega=0`, Biot–Savart, énergie et coupures uniformes.
+
+Le cycle 0021 audite cette admissibilité. La Definition 2.1 de la v2 reste
+phénoménologique : une lecture purement majorante de `O(r^-2)` inclut des
+profils lisses, tandis qu'une lecture non dégénérée jusqu'au centre est déjà
+singulière avant `T*`. Aucun rayon de cœur ni mode de convergence rescalée
+n'est fixé. La v3 récente de Barker `arXiv:2510.20757`, enregistrée comme
+`NS-SRC-0084`, fournit par contraste des notions explicites de solution faible
+adaptée et de point singulier, mais ne valide pas le profil de la v2.
+
+Le raccord vectoriel produit deux conditions sphériques exactes : la partie
+tangentielle du facteur doit être sans divergence sur `S²` et le flux radial
+moyen doit être nul. Sous ces conditions, Biot–Savart reconstruit une vitesse
+homogène `-1`; sa constante ponctuelle absolue est au plus
+`pi²||Omega||_infinity/(4r)`.
+
+Un profil explicite réalise simultanément divergence nulle, magnitude
+`r^-2`, faible-`L^(3/2)` et énergie locale finie, mais sa direction conserve
+une oscillation au moins `2/3` à toutes les échelles. Le phénomène est rigide :
+toute direction exactement périodique sous une dilatation et appartenant à
+un `bmo_phi` avec `phi(r)->0` est constante; divergence nulle et faible-
+`L^p` global forcent alors la vorticité à être nulle.
+
+Cette exclusion concerne la récurrence **vectorielle spatiale exacte**, non
+les profils de Leray généraux, la périodicité de la seule magnitude, les
+directions asymptotiques ou Type II. Une coupure radiale brute crée en outre
+un défaut de divergence `L¹` indépendant de son échelle; le correcteur exact
+reste critique et le contrôle standard de pression perd un logarithme.
+
+Le prochain axe doit donc rompre l'homogénéité exacte : construire ou exclure
+une direction `e+O(1/|log r|)` satisfaisant la contrainte sphérique, conservant
+une masse faible-`L^(3/2)` non dégénérée et produisant après coupure un résidu
+Navier–Stokes réellement inférieur aux termes principaux.

@@ -46,3 +46,18 @@
   intrinsèque.
 - `GAP-ACTIVE-CORE-BMO` est fermé négativement sans packing inter-composantes.
   `GAP-CRITICAL-PROFILE-ADMISSIBILITY` devient le verrou actif.
+
+### 2026-08-14 — profil vectoriel exactement récurrent exclu
+
+- La Definition 2.1 de `arXiv:2607.08866v2` est conservée comme description
+  conditionnelle à réviser : ses quantificateurs ne définissent ni cœur
+  régularisé avant `T*`, ni limite remise à l'échelle.
+- Un profil `r^-2 Omega(theta)` doit satisfaire une divergence tangentielle
+  sphérique nulle et un flux radial moyen nul avant tout usage de Biot–Savart.
+- `NS-DILATION-RECURRENT-BMO-RIGIDITY` exclut la classe vectorielle exactement
+  récurrente, non nulle et globalement faible-Lorentz sous log-BMO; statut
+  `COMPUTATION_ONLY`, aucune promotion en preuve publiée.
+- Trois portes distinctes ferment l'ansatz exact : définition scalaire,
+  rigidité directionnelle et défaut critique des coupures.
+- Le programme pivote vers `GAP-LOG-RECTIFIED-PROFILE`, sans réétiqueter un
+  profil asymptotique comme homogène exact.

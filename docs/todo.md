@@ -28,8 +28,14 @@
   deux branches du critère harmonique.
 - [x] Tester l'extension d'une direction connue seulement sur le cœur actif
   vers la prémisse globale `bmo_phi`, zéros et multicœurs inclus.
-- [ ] Auditer l'admissibilité du profil critique ponctuel sous
+- [x] Auditer l'admissibilité du profil critique ponctuel sous
   `div omega=0`, Biot–Savart, énergie finie, coupures et `bmo_phi` global.
+- [ ] Construire ou exclure un profil à direction
+  `e+O(1/|log r|)` avec masse faible-`L^(3/2)` non dégénérée et résidu PDE
+  sous-critique après coupure.
+- [ ] Quantifier une formulation pré-singulière cohérente par rayon de cœur
+  `r_c(t)` ou convergence de profils remis à l'échelle.
 - [ ] Formaliser le lemme scalaire de séparation de phases
   `MO>=4ab/(a+b)` dans un environnement épinglé.
+- [ ] Formaliser la rigidité sous récurrence de dilatation du cycle 0021.
 - [ ] Obtenir une revue externe indépendante du lemme du cycle 0018.

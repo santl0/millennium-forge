@@ -786,3 +786,54 @@ réouverture exige un packing de phases de taille `O(phi(r))`. Le verrou actif
 devient `GAP-CRITICAL-PROFILE-ADMISSIBILITY` : compatibilité simultanée du
 profil critique ponctuel avec `div omega=0`, Biot–Savart, énergie finie,
 direction globale log-BMO, coupures et constantes uniformes.
+
+## Cycle 0021 : admissibilité et rigidité du profil critique
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| rigidité sous récurrence spatiale exacte et log-BMO | 5 | 5 | 5 | 5 | **20** |
+| filtre solénoïdal et défaut exact des coupures | 4 | 5 | 5 | 4 | 18 |
+| profil presque homogène rectifié logarithmiquement | 5 | 2 | 4 | 5 | 16 |
+
+La Definition 2.1 de `arXiv:2607.08866v2` décrit une magnitude scalaire
+`omega=Phi r^-2`; elle ne quantifie ni échelle de cœur pré-singulière, ni
+limite rescalée, ni raccord vectoriel. Pour
+`W=r^-2 Omega(theta)`, ce raccord exige exactement
+
+```text
+div_(S²)Omega_T=0,
+integral_(S²)Omega_r dS=0.
+```
+
+Le champ explicite
+
+```text
+W=r^-2[a cross theta+(a dot theta)theta]
+```
+
+est un curl divergence-free, vérifie `|W|=r^-2` et appartient au faible-
+`L^(3/2)`. Sa direction unitaire a pourtant une oscillation au moins `2/3`
+sur toute boule centrée et échoue dans log-BMO.
+
+Plus généralement, si `W(qx)=q^-2W(x)`, la direction est récurrente. La
+condition `MO<=K phi(r)` avec `phi(r)->0` la force à être constante. Une
+vorticité de direction constante, divergence-free et globalement faible-
+`L^p`, `p<infinity`, est nécessairement nulle. La classe vectorielle
+exactement récurrente et non dégénérée est donc exclue.
+
+Les coupures ne réparent pas gratuitement ce résultat :
+
+```text
+||div(chi W)||_1=Var(chi)||Omega_r||_L1
+```
+
+est invariant d'échelle, et le correcteur sphérique conserve une taille
+critique. Les doubles coupures par potentiel produisent bien des données Clay
+lisses divergence-free, mais leur `L³` et la borne standard de pression
+perdent un logarithme; elles ne forment pas une trajectoire de blow-up.
+
+Après les trois portes distinctes — définition scalaire, rigidité de la
+direction, défaut de coupure — `GAP-CRITICAL-PROFILE-ADMISSIBILITY` est
+suspendu pour l'homogénéité exacte. Le verrou actif devient
+`GAP-LOG-RECTIFIED-PROFILE`, où la direction doit rompre la récurrence avec un
+taux précisément compatible avec `1/|log r|`.

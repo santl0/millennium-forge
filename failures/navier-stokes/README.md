@@ -680,6 +680,73 @@ aux triades de Fourier signées.
 - Portée : ne réfute pas un théorème déjà formulé avec une telle existence.
 - Statut : claim `NS-VORTICITY-DIRECTION-ZERO-CANONICITY` `REFUTED`.
 
+## `FAIL-NS-0030` — Magnitude critique vers vorticité admissible
+
+- Date : 2026-08-14.
+- Cadre : profils statiques `W=r^-2 Omega(theta)` sur `R³`; raccord visé à
+  NS incompressible non forcé.
+- Cible : considérer la factorisation scalaire `|W|=Phi r^-2` comme une
+  spécification suffisante du champ de vorticité.
+- Contre-tests : `W=e/r²` a une direction constante mais
+  `div W=-2(e dot theta)r^-3`; `W=theta/r²` est solénoïdal hors de zéro mais
+  vérifie `div W=4pi delta_0`.
+- Porte exacte : il faut simultanément
+  `div_(S²)Omega_T=0` et `integral_(S²)Omega_r=0`.
+- Réparation : imposer ces contraintes au facteur vectoriel, puis seulement
+  reconstruire la vitesse par Biot–Savart.
+- Portée : critique la suffisance du gabarit scalaire, pas l'existence de
+  profils vectoriels satisfaisant la porte.
+
+## `FAIL-NS-0031` — Profil vectoriel critique exactement récurrent et log-BMO
+
+- Date : 2026-08-14.
+- Cadre : `W in L1_loc intersection L^(p,infinity)(R³)`, `p<infinity`, non
+  nul presque partout, divergence-free et `W(qx)=q^-2W(x)` pour `0<q<1`.
+- Cible : construire dans cette classe une direction globale
+  `bmo_phi`, `phi(r)->0`.
+- Obstruction : la récurrence rend `MO_(B_(q^n r))` indépendante de `n`,
+  tandis que `bmo_phi` la force vers zéro. La direction devient constante.
+  Alors `div(m e)=0` rend `m` invariant le long de `e`; tout superniveau non
+  vide a une mesure infinie, contrairement au faible-`L^p` global.
+- Contrechamp décisif : un curl explicite satisfait `|W|=r^-2`, divergence
+  nulle et faible-`L^(3/2)`, mais conserve `MO>=2/3` à tout rayon.
+- Portée : n'exclut ni une direction non récurrente, ni un profil seulement
+  asymptotique, ni la récurrence de la seule magnitude.
+- Statut : `NS-DILATION-RECURRENT-BMO-RIGIDITY`, `COMPUTATION_ONLY`.
+
+## `FAIL-NS-0032` — Coupure radiale à erreur critique évanescente
+
+- Date : 2026-08-14.
+- Cadre : profil solénoïdal `W=r^-2 Omega(theta)` et coupure radiale `chi`.
+- Cible : rendre le profil globalement énergétique en le multipliant par une
+  coupure dont le défaut de divergence disparaît avec l'échelle.
+- Résidu exact :
+  `||div(chi W)||_1=Var(chi)||Omega_r||_(L¹(S²))`; une double coupure monotone
+  coûte deux fois cette constante, indépendamment des rayons.
+- Réparation : résoudre `Delta_(S²)psi=Omega_r` et ajouter
+  `-[chi'(r)/r]nabla_(S²)psi`. La constante optimale est `1/sqrt(2)` en `L²`,
+  mais le correcteur reste de taille critique.
+- Défaut PDE restant : `[Delta,chi]W` a le même ordre `nu r^-4` que le terme
+  visqueux principal; transport, étirement et pression doivent être recalculés
+  globalement.
+- Portée : réfute une coupure gratuite, pas l'existence d'une correction
+  solénoïdale ni d'un profil dynamique.
+
+## Obstacle consolidé — profil ponctuel exactement récurrent
+
+Trois stratégies réellement différentes ferment la classe actuelle :
+
+1. `FAIL-NS-0030` : la magnitude scalaire ne garantit pas l'admissibilité
+   vectorielle;
+2. `FAIL-NS-0031` : une direction exactement récurrente est rigidifiée par
+   log-BMO puis annulée par divergence plus faible-Lorentz;
+3. `FAIL-NS-0032` : une coupure spatiale ne rend pas l'erreur petite à
+   l'échelle critique.
+
+Décision de pivot : suspendre l'ansatz vectoriel exactement homogène ou
+log-périodique. Le prochain test porte sur une direction rectifiée seulement
+à la vitesse `1/|log r|`, avec masse critique et résidu PDE suivis.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,

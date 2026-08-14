@@ -21,7 +21,7 @@ Le projet complète les formulations Lean existantes et les corpus de conjecture
 
 Une ressemblance, un calcul numérique ou une preuve générée par IA ne change jamais seul le statut d'une affirmation. Les conclusions canoniques doivent rester proportionnées à la meilleure preuve effectivement disponible.
 
-## État Navier–Stokes au cycle 0020
+## État Navier–Stokes au cycle 0021
 
 Le programme actif a reproduit conditionnellement la chaîne fonctionnelle et
 l'endgame `(8)->(58)` de `arXiv:2607.08866v2`, avec corrections des temps,
@@ -35,3 +35,16 @@ composante par composante : deux cœurs antipodaux imposent le coût optimal
 fixes à petite échelle. La solution nulle montre aussi que la direction n'est
 pas intrinsèque sans convention aux zéros. Le verrou actif est désormais
 l'admissibilité PDE complète du profil critique ponctuel supposé en amont.
+
+Le cycle 0021 ferme négativement la sous-classe vectorielle exactement
+récurrente. Un profil critique homogène doit satisfaire une porte sphérique de
+divergence et de flux; un exemple explicite montre que magnitude `r^-2`,
+faible-`L^(3/2)`, divergence et Biot–Savart peuvent coexister tandis que la
+direction échoue dans log-BMO. Plus généralement, log-BMO rigidifie toute
+direction récurrente par dilatation en une constante, ensuite incompatible
+avec une vorticité solénoïdale globale faible-Lorentz non nulle.
+
+La coupure ne fournit pas d'échappatoire perturbative : son défaut de
+divergence est invariant d'échelle et son correcteur reste critique. Le verrou
+actif devient un profil non récurrent dont la direction se rectifie seulement
+comme `1/|log r|`, avec pression et résidu PDE suivis.

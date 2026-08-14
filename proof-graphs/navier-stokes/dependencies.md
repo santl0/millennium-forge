@@ -85,6 +85,10 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | cohérence de direction seulement sur chaque cœur `{omega>lambda}` | direction globale uniforme `bmo_phi` | réfutée sans contrôle inter-composantes | `NS-ACTIVE-CORE-BMO-EXTENSION`, cycle 0020 : deux cœurs antipodaux de fractions fixes imposent un coût logarithmique divergent | ajouter un packing de phases `4ab/(a+b)=O(phi(r))`, une convention aux zéros et une sélection mesurable en temps |
 | phases directionnelles `+e/-e` de fractions `a,b` dans un domaine test | `MO_D(xi)>=4ab/(a+b)` | dérivation exacte optimale, `COMPUTATION_ONLY` | `NS-BMO-PHASE-SEPARATION-BOUND`, cycle 0020 | lemme géométrique seulement; la dynamique NS ne fournit pas `a,b` |
 | identité `omega=|omega|xi` sans convention sur `{omega=0}` | appartenance intrinsèque de `xi` à `bmo_phi` | réfutée | `NS-VORTICITY-DIRECTION-ZERO-CANONICITY`, solution nulle et deux extensions unitaires | formuler une convention ou l'existence d'une extension espace-temps mesurable |
+| magnitude scalaire `|W|=r^-2 Phi` | vorticité vectorielle globale admissible | manquante et fausse sans contraintes angulaires | cycle 0021 : `div_(S²)Omega_T=0` et flux radial nul sont nécessaires; `e/r²` et `theta/r²` séparent les deux défauts | coupler explicitement magnitude et direction avant Biot–Savart |
+| magnitude `r^-2` + `div W=0` + faible-`L^(3/2)` | direction globale `bmo_phi` | réfutée | `NS-CRITICAL-MAGNITUDE-IMPLIES-BMO`, profil exact du cycle 0021 | l'hypothèse directionnelle reste indépendante |
+| champ vectoriel critique exactement récurrent par dilatation + direction `bmo_phi` | profil solénoïdal non nul faible-`L^p` | exclu, `COMPUTATION_ONLY` | `NS-DILATION-RECURRENT-BMO-RIGIDITY` | ne couvre ni récurrence de la seule magnitude, ni profil asymptotique, ni rectification logarithmique |
+| profil solénoïdal homogène + coupure radiale scalaire | profil tronqué solénoïdal avec erreur critique petite | réfutée | défaut exact `Var(chi)||Omega_r||_L1`, cycle 0021 | correcteur sphérique explicite requis; sa taille critique ne décroît pas |
 | hélicité globale nulle | petit flux instantané universel | réfutée | contre-triade exacte | pas de positivité modale |
 | profil Euler IA | profil NS perturbatif | réfutée pour l'ansatz mono-échelle `lambda>-1/2` | rapport visqueux exact | viscosité dominante |
 | donnée homogène `-1` non unique | donnée compacte énergétique singulière non unique | source vérifiée, CAP non reproduite | Hou–Wang–Yang v2; cutoff extérieur, gain `R^-1/8` pour `p=4` | le coeur `1/r` est conservé |
@@ -119,17 +123,19 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | `GAP-COMMUTATOR-UNIFORMITY` | non-localité/constante | production de (22) depuis la cohérence `bmo_phi`, extension locale et queues dyadiques | fermé conditionnellement au cycle 0018 : semi-norme de Jones, interpolation CRW, réarrangée exacte, facteur trois et poids `4^-k`; l'hypothèse géométrique globale reste une prémisse |
 | `GAP-ENDGAME-SYNCHRONIZATION` | quantificateur/constante | passage de la queue de vitesse (49) au rayon de sparseness puis au critère analytique (58) | fermé conditionnellement au cycle 0019 : temps garanti, dichotomie, seuil uniforme, rayon témoin et même `M`; le choix maximal littéral est réfuté |
 | `GAP-ACTIVE-CORE-BMO` | géométrie/extension | direction cohérente seulement sur `{omega>lambda}` vers prémisse globale `bmo_phi` | fermé négativement au cycle 0020 pour l'implication universelle : optimum `4ab/(a+b)`, famille divergence-free à deux cœurs et ambiguïté aux zéros; une réouverture exige un packing inter-composantes quantitatif |
-| `GAP-CRITICAL-PROFILE-ADMISSIBILITY` | admissibilité/pression | profil critique ponctuel de vorticité vers champ divergence-free énergétique et direction globale `bmo_phi` | actif : imposer simultanément `div omega=0`, Biot–Savart, énergie finie, coupures, pression et constantes uniformes |
+| `GAP-CRITICAL-PROFILE-ADMISSIBILITY` | admissibilité/pression | profil critique ponctuel de vorticité vers champ divergence-free énergétique et direction globale `bmo_phi` | fermé négativement au cycle 0021 pour la classe vectorielle exactement récurrente : porte sphérique, rigidité log-BMO et défaut de coupure; la Definition 2.1 scalaire reste sous-quantifiée |
+| `GAP-LOG-RECTIFIED-PROFILE` | géométrie/admissibilité | direction `e+O(1/|log r|)` vers profil solénoïdal critique non dégénéré et résidu NS sous-critique | actif : coupler équation sphérique, masse faible-`L^(3/2)`, Biot–Savart, coupures et pression |
 | `GAP-LIMIT-ADMISSIBLE` | stabilité/admissibilité | profil singulier vers donnée de Schwartz | trois portes distinctes fermées : `FAIL-NS-0013` réfute la compacité `L³`, `0014` annule le mode impair sous lissage symétrique, `0015` réfute l'identification trace asymptotique/donnée finie; axe suspendu |
 | `GAP-NUM-CONTINUUM` | calcul vers continuum | discrétisation finie | résidu d'intervalle + queue analytique |
 
 ## Arêtes prioritaires
 
-1. `GAP-CRITICAL-PROFILE-ADMISSIBILITY` : quantifier simultanément
-   `div omega=0`, confinement, Biot–Savart, énergie, direction globale
-   `bmo_phi`, faible-`L^(3/2)` et régularité classique pré-singulière.
-2. `GAP-ACTIVE-CORE-BMO` : fermé négativement sans packing de phases; ne le
-   rouvrir qu'avec une condition inter-composantes stable sous la dynamique.
+1. `GAP-LOG-RECTIFIED-PROFILE` : construire ou exclure une direction
+   `e+O(1/|log r|)` compatible avec divergence sphérique, masse critique,
+   Biot–Savart, coupures et un résidu NS réellement plus petit.
+2. `GAP-CRITICAL-PROFILE-ADMISSIBILITY` : fermé négativement pour la
+   récurrence vectorielle exacte; ne le rouvrir qu'avec un profil non
+   récurrent ou une limite espace-temps quantifiée.
 3. `GAP-VORTICITY-TAIL` : confronter la queue de strain annulaire réparée à
    un contre-profil multi-échelle divergence-free issu d'une dynamique.
 4. `GAP-NUM-CONTINUUM` : isoler un opérateur compact à queues certifiables.
@@ -148,6 +154,12 @@ d'équivalence de profils, et non une nouvelle permutation des mêmes limites.
 `FAIL-NS-0013`–`0015`. Une réouverture exige un mécanisme de perte forte pour
 une donnée lisse fixée ou une stabilité non perturbative qui ne réutilise pas
 compacité `L³`, excitation impaire symétrique ou identification des traces.
+
+`GAP-CRITICAL-PROFILE-ADMISSIBILITY` est suspendu dans la classe exactement
+homogène/log-périodique après trois portes différentes : la magnitude scalaire
+ne fixe pas une vorticité, la récurrence vectorielle contredit log-BMO pour un
+profil non nul, et la coupure radiale porte un défaut critique invariant. Le
+pivot `GAP-LOG-RECTIFIED-PROFILE` doit rompre la récurrence exacte.
 
 `GAP-SIGN-FLUX` est borné par deux résultats négatifs : l'hélicité globale ne
 fixe pas le flux triadique et la cohérence d'un seul patch ne fixe pas le
