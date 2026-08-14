@@ -76,3 +76,14 @@ pas automatiquement un axe unitaire : les moyennes actives peuvent s'annuler
 ou refléter plusieurs phases. Le pivot actif est
 `GAP-MULTICORE-ANGULAR-CASCADE`, avec occupation angulaire, divergence,
 Biot–Savart et résidu visqueux à suivre.
+
+Le cycle 0024 corrige et précise ce point. Une **même extension globalement
+unitaire** à petite oscillation a nécessairement des moyennes proches de la
+sphère; mais sa valeur sur `{omega=0}` n'est pas intrinsèque et aucune source
+primaire inspectée ne fournit cette extension. Plus généralement, si
+`Phi<=M` et chaque bloc porte une masse critique, la fraction active est
+uniforme et même une extension seulement bornée fournit un axe. Sa variation
+et son erreur pondérée sont `O(log N)`, en contradiction avec le budget
+linéaire du cycle 0023. Le contre-profil sparse `a_n=n^-3`, `Phi_n=n²` montre
+que faible-`L^(3/2)` seul ne remplace pas `Phi<=M`. Le verrou actif est
+`GAP-UNBOUNDED-ANGULAR-INTERMITTENCY`.

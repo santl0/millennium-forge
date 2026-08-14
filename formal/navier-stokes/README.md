@@ -653,3 +653,30 @@ Elles certifieraient les constantes du claim
 `NS-LOG-RECTIFIED-SOLENOIDAL-OBSTRUCTION`, pas le passage depuis une solution
 Clay, la pression ou le critère du double cône. Le noyau Fourier–Leray reste
 prioritaire tant qu'aucun environnement formel n'est installé et compilé.
+
+## Backlog issu des cycles 0023–0024 — axe mobile et moyenne active
+
+Les noyaux de mesure suivants sont assez stables pour une formalisation
+indépendante de la PDE :
+
+1. sur la sphère normalisée, prouver
+   `<|a dot theta|>=|a|/2` et le coût mobile `(M/2)Var(e)`;
+2. formaliser la règle du produit pour un axe absolument continu, puis garder
+   l'extension `BV` comme module séparé avec traces explicites;
+3. sur un espace de probabilité, si `|zeta|<=1`, `|zeta|=1` sur un ensemble de
+   mesure `a` et `epsilon=E|zeta-Ezeta|`, prouver
+   `|Ezeta|>=1-epsilon/a`;
+4. normaliser la moyenne non nulle et établir
+   `E|zeta-e|<=(1+1/a)epsilon`;
+5. formaliser le rapport de volumes de deux boules imbriquées et l'incrément
+   `|e_(k+1)-e_k|<=q^-3 A_k+A_(k+1)`;
+6. certifier l'enveloppe dyadique
+   `sum_(k<2^n)1/k<=n` à la constante de bloc près;
+7. combiner ce module avec le budget scalaire du cycle 0023 sans encoder
+   Biot–Savart ou Navier–Stokes.
+
+Ce module certifierait les constantes de
+`NS-BMO-ACTIVE-AXIS-EXTRACTION`. Il ne produirait ni `Phi<=M`, ni la masse
+critique par bloc, ni l'existence d'une extension directionnelle globale à
+partir d'une solution. Le noyau Fourier–Leray reste la première cible
+compilable.

@@ -476,3 +476,31 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   `23802f4b094aaccd020ab6d5d0ae9b136cc8cf70738b069c712fa6cddc432ba4`.
 - Pivot : l'axe unique lent est fermé sous les hypothèses suivies;
   `GAP-MULTICORE-ANGULAR-CASCADE` devient actif.
+
+## 2026-08-14 — Extraction BMO de l'axe actif et intermittence non bornée
+
+- Objet : même profil spatial `W=r^-2 Omega(s,theta)`; aucune simulation ni
+  solution d'évolution.
+- Entrées : `Phi<=M`, masse `integral_block<Phi^(3/2)>ds>=kappa`, même
+  extension `|zeta|<=1` à toutes les échelles et oscillation centrée
+  `epsilon_k<=B/(1+S_k)`.
+- Fraction active : `a_k>=a_*=3q³kappa/M^(3/2)`; la constante de baignoire
+  plus fine vaut `[exp(3Lalpha)-1]/[exp(3L)-1]`,
+  `alpha=kappa/[LM^(3/2)]`.
+- Axe : `|m_k|>=1-epsilon_k/a_*` et
+  `average_B|zeta-e_k|<=(1+1/a_*)epsilon_k`.
+- Multi-échelle : volumes imbriqués, interpolation géodésique et conversion
+  boule–coquille donnent `Var(e)+D=O(log N)`, contredisant la dépense linéaire
+  du budget mobile.
+- Correction de veille : si `zeta` est globalement unitaire, l'identité
+  quadratique `average|zeta-m|²=1-|m|²` normalise déjà les moyennes. Le passage
+  de la direction sur `{omega!=0}` à un tel prolongement reste une hypothèse
+  non intrinsèque et non fournie par les théorèmes d'extension BMO inspectés.
+- Contre-profil : fraction `n^-3`, amplitude `n²`, masse critique fixe et
+  oscillation binaire `2n^-3(1-n^-3)->0`. Il réfute toute suppression de
+  `Phi<=M` fondée sur la masse seule.
+- Artefact : `BMO-ACTIVE-AXIS-EXTRACTION-1`, 66 contrôles rationnels exacts,
+  zéro échec, première contradiction certifiée à 1023 blocs, empreinte
+  `e2603081b46d4aab9599e9681eaf50cbc460df46e3b6d1c3d2383b0a71005e0e`.
+- Pivot : `GAP-MULTICORE-ANGULAR-CASCADE` est fermé sous amplitude bornée;
+  `GAP-UNBOUNDED-ANGULAR-INTERMITTENCY` devient actif.

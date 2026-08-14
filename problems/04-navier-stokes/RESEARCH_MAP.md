@@ -944,3 +944,42 @@ pondérée sublinéaire. Le verrou actif devient
 `GAP-MULTICORE-ANGULAR-CASCADE` : construire ou exclure une occupation
 angulaire multivaluée, intermittente ou à centre mobile sans axe global
 admissible.
+
+## Cycle 0024 : extraction d'un axe actif depuis log-BMO
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| extraire un axe depuis log-BMO et une fraction active minimale | 5 | 5 | 5 | 5 | **20** |
+| coercivité par matrice de covariance sans axe | 5 | 3 | 5 | 4 | 17 |
+| jet intermittent à amplitude non bornée | 5 | 2 | 4 | 4 | 15 |
+
+Pour `W=r^-2 Omega(s,theta)`, `Phi=|Omega|<=M`, une masse critique au moins
+`kappa` par bloc de longueur `L=-log q` donne dans chaque boule centrée la
+fraction active grossière
+
+```text
+a_*=3q³kappa/M^(3/2).
+```
+
+Si une même extension `zeta`, bornée par un et unitaire sur le cœur, a une
+oscillation centrée `epsilon_k<=B/(1+S_k)`, alors sa moyenne `m_k` vérifie
+`|m_k|>=1-epsilon_k/a_*`. Les axes `e_k=m_k/|m_k|` sont donc définis à petite
+échelle. La comparaison des boules imbriquées et l'interpolation géodésique
+donnent
+
+```text
+Var(e)+integral <Phi|xi-e|> ds = O(sum epsilon_k)=O(log N).
+```
+
+Le budget mobile du cycle 0023 exige au contraire une dépense linéaire en
+`N`; le profil est impossible. Un champ global unitaire rend même la masse
+inutile pour normaliser la moyenne, via
+`average|zeta-m|²=1-|m|²`, mais son existence sur les zéros n'est pas
+intrinsèque à la vorticité.
+
+Le falsificateur `a_n=n^-3`, `Phi_n=n²` conserve la masse `Phi^(3/2)` et fait
+tendre la moyenne de l'extension par zéro vers zéro. La borne de tranche ne
+peut donc être supprimée par la seule criticité faible. Le verrou actif est
+`GAP-UNBOUNDED-ANGULAR-INTERMITTENCY` : produire soit une inégalité coercive
+avec contrôle critique faible, soit un profil intermittent solénoïdal dont le
+résidu Navier–Stokes et les queues non locales sont quantifiés.

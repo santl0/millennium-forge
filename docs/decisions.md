@@ -99,3 +99,20 @@
   passage au continuum.
 - Le programme active `GAP-MULTICORE-ANGULAR-CASCADE` : moyennes actives
   dégénérées, occupation angulaire multivaluée et intermittence.
+
+### 2026-08-14 — axe actif extrait et pivot vers l'intermittence non bornée
+
+- Correction du cycle 0023 : un champ global unitaire log-BMO a des moyennes
+  non dégénérées; l'ambiguïté subsiste dans l'existence et la convention du
+  prolongement aux zéros.
+- `NS-BMO-ACTIVE-AXIS-EXTRACTION` ferme au statut `COMPUTATION_ONLY` les
+  configurations multicoeurs sous amplitude critique bornée, masse par bloc
+  et extension commune à oscillation logarithmique.
+- Les constantes de fraction active, comparaison de volumes, interpolation
+  géodésique et raccord au budget mobile sont suivies; trois passes Codex
+  séparées ont attaqué la dérivation sans constituer une revue externe.
+- Le contre-profil d'amplitude `n²` sur une fraction `n^-3` conserve la masse
+  critique et annule l'axe moyen. Il interdit de remplacer silencieusement la
+  borne de tranche par le seul faible-Lorentz.
+- `GAP-MULTICORE-ANGULAR-CASCADE` est fermé sous les prémisses suivies et
+  `GAP-UNBOUNDED-ANGULAR-INTERMITTENCY` devient actif.

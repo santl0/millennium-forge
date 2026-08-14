@@ -38,9 +38,12 @@
 - [x] Exclure, sous borne de tranche et masse critique par bloc, les axes
   `e(s)` dont la variation et l'erreur directionnelle sont sublinéaires;
   séparer rotation uniforme et phase logarithmique par un test BMO centré.
-- [ ] Construire ou exclure une cascade multicoeur sans axe global : définir
-  une mesure d'occupation angulaire, suivre la non-dégénérescence de sa
-  moyenne active, le faible-`L^(3/2)`, Biot–Savart et le résidu visqueux.
+- [x] Exclure une cascade multicoeur sans axe global sous amplitude critique
+  bornée, masse par bloc et même extension log-BMO : la fraction active
+  produit un axe à variation et erreur `O(log N)` au cycle 0024.
+- [ ] Construire ou exclure une intermittence angulaire à amplitude non
+  bornée : imposer d'abord `div omega=0`, puis suivre faible-`L^(3/2)`,
+  Biot–Savart, énergie locale et résidu Navier–Stokes avec constantes.
 - [ ] Quantifier une formulation pré-singulière cohérente par rayon de cœur
   `r_c(t)` ou convergence de profils remis à l'échelle.
 - [ ] Formaliser le lemme scalaire de séparation de phases

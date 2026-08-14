@@ -537,3 +537,29 @@ purement temporelle mais pas un axe radial de gradient
 tranche sous une condition pairwise sur toute vorticité non nulle. Aucun de
 ces résultats ne convertit la seule hypothèse log-BMO en axe normalisable ni
 ne ferme les configurations multicoeurs.
+
+Le cycle 0024 corrige cette dernière formulation. Si la direction est déjà
+prolongée en un **même champ global unitaire** `Xi`, alors
+
+```text
+average_B |Xi-(Xi)_B|² = 1-|(Xi)_B|²
+```
+
+et une oscillation logarithmique petite rend ses moyennes non dégénérées. La
+dérive entre boules dyadiques reste toutefois `O(1/k)`, donc non sommable. Pour
+une extension seulement bornée, égale à la direction unitaire sur le cœur
+actif, une borne `Phi<=M` et une masse `Phi^(3/2)` par bloc donnent une fraction
+active uniforme. Les axes normalisés ainsi extraits ont variation et erreur
+pondérée `O(log N)`; le budget du cycle 0023, linéaire en `N`, exclut alors le
+profil solénoïdal. Cela ferme `GAP-MULTICORE-ANGULAR-CASCADE` sous ces prémisses.
+
+La frontière est nette : des fractions actives `a_n=n^-3` d'amplitude
+`Phi_n=n²` conservent la masse critique tandis que l'extension par zéro a une
+oscillation `2a_n(1-a_n)` et une moyenne de norme `a_n`, toutes deux tendant
+vers zéro. Le faible-`L^(3/2)` seul ne remplace donc pas la borne d'amplitude.
+Aucune source primaire inspectée ne construit par ailleurs un prolongement
+global `S²`-valué log-BMO depuis la direction définie seulement sur
+`{omega!=0}`. Le verrou actif devient
+`GAP-UNBOUNDED-ANGULAR-INTERMITTENCY` : quantifier ou réaliser une concentration
+angulaire d'amplitude non bornée qui satisfasse aussi divergence, Biot–Savart,
+pression, évolution et admissibilité Clay.

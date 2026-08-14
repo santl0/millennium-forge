@@ -131,28 +131,32 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | `GAP-CRITICAL-PROFILE-ADMISSIBILITY` | admissibilité/pression | profil critique ponctuel de vorticité vers champ divergence-free énergétique et direction globale `bmo_phi` | fermé négativement au cycle 0021 pour la classe vectorielle exactement récurrente : porte sphérique, rigidité log-BMO et défaut de coupure; la Definition 2.1 scalaire reste sous-quantifiée |
 | `GAP-LOG-RECTIFIED-PROFILE` | géométrie/admissibilité | direction vers un axe fixe, amplitude critique bornée et masse non dégénérée vers profil solénoïdal | fermé négativement au cycle 0022 sous masse par bloc : signe radial corrigé, budget de degré un et construction dégénérée tranchante; le faible-Lorentz seul reste insuffisant |
 | `GAP-WANDERING-AXIS-PROFILE` | géométrie/multi-échelle | axe `e=e(s)` échappant à tout double cône fixe vers profil critique solénoïdal | fermé négativement au cycle 0023 pour variation et erreur pondérée sublinéaires; une rotation uniforme assez rapide échoue au test log-BMO centré |
-| `GAP-MULTICORE-ANGULAR-CASCADE` | géométrie/multi-échelle | phases multiples ou intermittentes sans axe global vers profil critique solénoïdal, faible-Lorentz et solution-admissible | actif : remplacer la sélection d'axe par une mesure d'occupation angulaire, suivre sa coercivité, Biot–Savart et le résidu visqueux |
+| `GAP-MULTICORE-ANGULAR-CASCADE` | géométrie/multi-échelle | phases multiples sans axe global vers profil critique solénoïdal | fermé négativement au cycle 0024 sous `Phi<=M`, masse critique par bloc et même extension bornée log-BMO : la fraction active extrait un axe à variation et erreur `O(log N)` |
+| `GAP-UNBOUNDED-ANGULAR-INTERMITTENCY` | géométrie/multi-échelle | faible-`L^(3/2)` et log-BMO vers contrôle d'une amplitude critique concentrée | actif : le contre-profil `a_n=n^-3`, `Phi_n=n²` conserve la masse et annule la moyenne; imposer `div omega=0`, Biot–Savart, pression et résidu NS ou démontrer une coercivité critique plus faible |
 | `GAP-LIMIT-ADMISSIBLE` | stabilité/admissibilité | profil singulier vers donnée de Schwartz | trois portes distinctes fermées : `FAIL-NS-0013` réfute la compacité `L³`, `0014` annule le mode impair sous lissage symétrique, `0015` réfute l'identification trace asymptotique/donnée finie; axe suspendu |
 | `GAP-NUM-CONTINUUM` | calcul vers continuum | discrétisation finie | résidu d'intervalle + queue analytique |
 
 ## Arêtes prioritaires
 
-1. `GAP-MULTICORE-ANGULAR-CASCADE` : construire une mesure d'occupation
-   angulaire multicoeur et tester si masse critique, log-BMO et solénoïdalité
-   peuvent coexister sans sélection d'axe à budget contrôlé.
-2. `GAP-WANDERING-AXIS-PROFILE` : fermé négativement pour variation et erreur
+1. `GAP-UNBOUNDED-ANGULAR-INTERMITTENCY` : construire un profil sparse
+   solénoïdal à amplitude critique croissante ou remplacer `Phi<=M` par une
+   borne critique héritée; suivre Biot–Savart et le résidu d'évolution.
+2. `GAP-MULTICORE-ANGULAR-CASCADE` : fermé négativement sous amplitude bornée,
+   masse par bloc et extension log-BMO commune; ne le rouvrir qu'en cassant
+   explicitement une de ces prémisses.
+3. `GAP-WANDERING-AXIS-PROFILE` : fermé négativement pour variation et erreur
    sublinéaires; ne le rouvrir qu'avec une sélection non `BV`, un centre mobile
    ou un terme de recharge effectif non contrôlé par la variation.
-3. `GAP-LOG-RECTIFIED-PROFILE` : fermé négativement pour l'axe fixe sous
+4. `GAP-LOG-RECTIFIED-PROFILE` : fermé négativement pour l'axe fixe sous
    amplitude bornée et masse par bloc; ne le rouvrir qu'en quantifiant une
    intermittence angulaire non bornée ou une perte de masse.
-4. `GAP-CRITICAL-PROFILE-ADMISSIBILITY` : fermé négativement pour la
+5. `GAP-CRITICAL-PROFILE-ADMISSIBILITY` : fermé négativement pour la
    récurrence vectorielle exacte; ne le rouvrir qu'avec un profil non
    récurrent ou une limite espace-temps quantifiée.
-5. `GAP-VORTICITY-TAIL` : confronter la queue de strain annulaire réparée à
+6. `GAP-VORTICITY-TAIL` : confronter la queue de strain annulaire réparée à
    un contre-profil multi-échelle divergence-free issu d'une dynamique.
-6. `GAP-NUM-CONTINUUM` : isoler un opérateur compact à queues certifiables.
-7. Noyau Fourier–Leray formel : certifier les identités d'énergie finies avant
+7. `GAP-NUM-CONTINUUM` : isoler un opérateur compact à queues certifiables.
+8. Noyau Fourier–Leray formel : certifier les identités d'énergie finies avant
    toute formalisation de scénario PDE.
 
 `GAP-COMPACT-Q` est suspendu sous énergie seule après trois stratégies
@@ -174,9 +178,12 @@ ne fixe pas une vorticité, la récurrence vectorielle contredit log-BMO pour un
 profil non nul, et la coupure radiale porte un défaut critique invariant. Le
 pivot `GAP-LOG-RECTIFIED-PROFILE` a rompu la récurrence exacte mais échoue à
 axe fixe sous masse critique par bloc. `GAP-WANDERING-AXIS-PROFILE` échoue à
-son tour pour tout axe à variation et erreur pondérée sublinéaires. Le pivot
-actif `GAP-MULTICORE-ANGULAR-CASCADE` doit éviter une sélection d'axe unique
-sans perdre les contraintes critiques suivies.
+son tour pour tout axe à variation et erreur pondérée sublinéaires. Le cycle
+0024 montre que les multicœurs ne suppriment pas cet axe lorsque amplitude,
+masse et extension log-BMO sont uniformes. Le pivot actif
+`GAP-UNBOUNDED-ANGULAR-INTERMITTENCY` doit donc concentrer l'amplitude ou
+casser explicitement l'extension commune, sans perdre les contraintes PDE
+suivies.
 
 `GAP-SIGN-FLUX` est borné par deux résultats négatifs : l'hélicité globale ne
 fixe pas le flux triadique et la cohérence d'un seul patch ne fixe pas le
