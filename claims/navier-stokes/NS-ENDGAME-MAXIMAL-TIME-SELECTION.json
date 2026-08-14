@@ -1,0 +1,43 @@
+{
+  "id": "NS-ENDGAME-MAXIMAL-TIME-SELECTION",
+  "problem": "navier-stokes",
+  "statement": "Dans l'endgame des équations (49)–(58) de arXiv:2607.08866v2, si T_t est interprété comme la durée maximale locale d'analyticité à partir d'un temps t<T*, alors le choix s=t+T_t fournit automatiquement un temps intérieur s dans (t,T*) auquel la propriété de temps d'échappement peut être appliquée.",
+  "status": "REFUTED",
+  "hypotheses": [
+    "u est une solution classique maximale sur (0,T*) et T* est supposé premier temps singulier fini",
+    "T_t désigne littéralement la durée maximale de la branche analytique redémarrée en t",
+    "la conclusion attaquée est uniquement s<T*, pas le critère harmonique réparé"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0059, arXiv:2607.08866v2, preuve du théorème 7.4; NS-SRC-0064 pour la dichotomie temporelle publiée absente de ce passage"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "Avec T*=1, t=3/4 et T_t=1/4, on obtient s=1 et le résidu strict T*−s=0; plus généralement une durée maximale atteignant le premier temps singulier ne donne pas un point de (t,T*)"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/endgame-synchronization/endgame_synchronization_audit.py, contrôle maximal_time_selection_refuted",
+      "sha256": "41b27f8649977c8a2d564c80418678017eb5d409956c8f3c5e3eb9016f916a3b"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0019-analysis.md; cycle-0019-literature.md; cycle-0019-countermodel.md"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0019-endgame-synchronization"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois passes Codex séparées, même famille de modèle; non indépendantes au sens externe",
+    "notes": "La réfutation porte seulement sur l'inférence de temps intérieur. Elle est réparée en remplaçant le temps maximal par tau_t prescrit et en séparant t+tau_t>=T* du cas t+tau_t<T*."
+  }
+}

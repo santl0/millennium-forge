@@ -1,0 +1,55 @@
+{
+  "id": "NS-CONDITIONAL-ENDGAME-SYNCHRONIZATION",
+  "problem": "navier-stokes",
+  "statement": "Sur R³, une solution classique maximale de Navier–Stokes incompressible 3D non forcé ne peut avoir un premier temps singulier fini si, sur un intervalle terminal, sa vitesse satisfait uniformément une queue de distribution C_mu/[a³ log³(e+a/U_*)] au-dessus d'un seuil fixe et si l'on applique le théorème local d'analyticité avec la dichotomie temps garanti franchissant T* ou temps intérieur; le rayon sparse construit devient alors inférieur au rayon analytique et le principe des deux constantes impose une contradiction au temps d'échappement.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "Navier–Stokes incompressible standard sur R³, sans frontière ni force, viscosité nu>0",
+    "u est une solution classique et mild unique sur son intervalle maximal (0,T*) avec u dans C((0,T*);L∞(R³))",
+    "il existe epsilon,C_mu,U_*,a_0>0 uniformes tels que |{|u(t)|>a}|<=C_mu/[a³ log³(e+a/U_*)] pour t dans (T*−epsilon,T*) et a>=a_0",
+    "un facteur M>1 est fixé par la borne harmonique h*, puis les constantes d'analyticité c1(M),c2(M) sont uniformes à chaque redémarrage",
+    "le temps local certifié est tau_t=nu/[c1(M)||u(t)||∞²] et le rayon certifié à son extrémité est au moins nu/[c2(M)sqrt(c1(M))||u(t)||∞]",
+    "le rayon sparse est le rayon témoin construit depuis le majorant de volume, non un rayon arbitrairement plus petit",
+    "le principe additif des deux constantes de Ransford et la borne extrémale de Solynin sont appliqués à la projection scalaire harmonique avec une même convention de norme complexe",
+    "la conclusion est conditionnelle à la queue uniforme; aucune de ces hypothèses n'est produite pour toute donnée Clay"
+  ],
+  "dependencies": [
+    "NS-REARRANGEMENT-LOG-INVERSION",
+    "NS-SPARSENESS-RESTRICTION-SHARP"
+  ],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0064, NS-SRC-0066 et NS-SRC-0076 à NS-SRC-0078: critère publié avec dichotomie, analyticité mild, mesure harmonique et principe des deux constantes"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0059, arXiv:2607.08866v2, équations (49)-(58), après corrections explicites du temps, du seuil, du logarithme et du rayon"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0019-endgame-synchronization.md"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/endgame-synchronization/endgame_synchronization_audit.py, onze contrôles rationnels et ledgers exacts",
+      "sha256": "41b27f8649977c8a2d564c80418678017eb5d409956c8f3c5e3eb9016f916a3b"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0019-analysis.md; cycle-0019-literature.md; cycle-0019-countermodel.md"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0019-endgame-synchronization"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois passes Codex séparées, même famille de modèle; non indépendantes au sens externe",
+    "notes": "Le statut porte sur une dérivation conditionnelle et ses quantificateurs. Les théorèmes externes sont publiés, mais la synthèse n'est ni formalisée ni revue extérieurement et ne fournit pas la queue de distribution pour les solutions Clay générales."
+  }
+}
