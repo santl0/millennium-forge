@@ -97,3 +97,19 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   gain temporel critique; la compacité faible de trajectoire ne devient pas une
   compacité forte de trace.
 - Artefact : `TRACE-MODULUS-1`, résidus rationnels zéro.
+
+## 2026-08-14 — Mode zéro et pression harmonique ancienne
+
+- Équation : NS incompressible non forcé sur `R³ x (-infinity,0]`.
+- Contre-profil : `u=b(t)e_1` avec `b=-t/(1+t²)` et
+  `p=-b'(t)x_1`.
+- Échelle spatiale : mode de fréquence zéro; convection et viscosité
+  s'annulent. L'évolution est entièrement portée par une pression affine
+  harmonique, invisible à l'équation de Poisson.
+- Bornes : `||u||_infinity=1/2`, mais toutes les normes globales `L^q_x` finies
+  avec `q<infinity` divergent pour les temps où `b(t) !=0`.
+- Perte localisée : la régularité locale, l'adaptation et la trace terminale ne
+  fixent pas la composante harmonique de pression au domaine infini.
+- Porte positive : mildness, pression BMO modulo constantes, ou jauge
+  Leray/Riesz force `b'=0` dans la classe spatialement constante.
+- Artefact : `ANCIENT-PRESSURE-GAUGE-1`, résidus rationnels zéro.

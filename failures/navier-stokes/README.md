@@ -154,6 +154,29 @@ l'énergie seule sans hypothèse structurelle nouvelle. L'axe actif suivant est
 la rigidité des solutions anciennes et l'inventaire exact de la classe limite
 réellement produite par un premier blow-up.
 
+## `FAIL-NS-0009` — Ancienne à vitesse bornée adaptée à trace terminale nulle supposée rigide
+
+- Date : 2026-08-14.
+- Équation : NS incompressible 3D sur `R³ x (-infinity,0]`, `nu>0`, force
+  nulle, sans frontière.
+- Cible : conclure `u=0` de « lisse + ancienne + vitesse bornée + adaptée localement +
+  `u(·,0)=0` » sans formule mild ni normalisation globale de pression.
+- Attaque : `u=(-t/(1+t²))e_1` et
+  `p=((1-t²)/(1+t²)²)x_1`.
+- Résultat : la vitesse est bornée par `1/2`, non nulle à `t=-1`, la trace
+  terminale est nulle et l'égalité locale d'énergie est satisfaite. Le gradient
+  de pression affine porte exactement la variation temporelle.
+- Résidus : divergence, convection, Laplacien, momentum, Poisson, énergie
+  locale et identité de borne exactement nuls pour six temps rationnels; le
+  défaut de formule mild entre `-1` et `0` vaut exactement `-1/2`.
+- Pression : à `t=0`, `p=x_1` et son oscillation moyenne sur `[-R,R]³` vaut
+  `R/2`; la pression n'est pas BMO et n'est pas la jauge Leray/Riesz.
+- Portée : ne réfute pas KNSS ni un Liouville mild. La solution n'est ni dans
+  `L²(R³)`, ni dans `L³(R³)`, ni décroissante; elle fixe seulement une hypothèse
+  indispensable de jauge ou de mildness.
+- Statut : Liouville faible/adapté sans jauge `REFUTED`; porte mild conservée
+  `SOURCE_VERIFIED` dans la sous-classe spatialement constante.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,

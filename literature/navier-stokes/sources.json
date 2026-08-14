@@ -315,15 +315,15 @@
       "venue": "Acta Mathematica 203, 83–105",
       "identifiers": {"doi": "10.1007/s11511-009-0039-6", "arxiv": "0709.3599", "url": "https://arxiv.org/abs/0709.3599"},
       "equation": {"model": "Navier–Stokes incompressible standard", "dimension": "2 et 3", "domain": "R^n×(-∞,0)", "boundary": "aucune", "forcing": "non forcée", "viscosity": "ν>0"},
-      "solution_notions": ["solution ancienne mild bornée"],
-      "result": "Établit des théorèmes de Liouville dans plusieurs classes, notamment 2D et certains cadres axisymétriques; relie les limites de blow-up à des solutions anciennes.",
-      "hypotheses": ["ancienneté", "bornitude", "hypothèses supplémentaires selon le théorème"],
+      "solution_notions": ["solution ancienne faible bornée", "solution ancienne mild bornée"],
+      "result": "Distingue explicitement les solutions parasites u=b(t) des solutions mild; en 2D, une solution ancienne faible bornée dépend seulement du temps et une solution mild est constante. Établit aussi des Liouville partiels axisymétriques 3D et relie certains zooms de blow-up à des solutions anciennes mild.",
+      "hypotheses": ["ancienneté et bornitude espace-temps", "mildness pour exclure la pression affine parasite", "axisymétrie et hypothèses supplémentaires selon le théorème 3D"],
       "constants_uniformity": "La bornitude est invariantement exploitable; le cas général 3D non trivial n'est pas éliminé.",
       "clay_relevance": "Expose le verrou de rigidité des solutions anciennes obtenues par zoom autour d'une singularité.",
-      "limitations": ["Pas de Liouville général pour toute solution ancienne 3D admissible."],
+      "limitations": ["Pas de Liouville général pour toute solution ancienne mild bornée 3D", "sans mildness, les solutions u=b(t), p=-b'(t)·x empêchent même une rigidité avec trace terminale nulle"],
       "reproduction": {"status": "paper_not_reproved"},
-      "verification": {"level": "primary_full_text", "checked_on": "2026-08-14", "notes": "Prépublication primaire et publication contrôlées."},
-      "tags": ["ancient_solution", "Liouville", "compactness_rigidity", "axisymmetric"]
+      "verification": {"level": "primary_full_text", "checked_on": "2026-08-14", "notes": "Prépublication primaire et publication contrôlées; introduction, sections 3–6 et remarque 6.1 réextraites au cycle 0006."},
+      "tags": ["ancient_solution", "Liouville", "compactness_rigidity", "axisymmetric", "mild", "parasitic_pressure"]
     },
     {
       "id": "NS-SRC-0016",

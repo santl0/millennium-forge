@@ -28,7 +28,7 @@ fini.
 | Koch–Tataru 2001 | mild NS sur `R^3` | bonne position globale pour petite donnée dans `BMO^(-1)` | petitesse; ne couvre pas toute donnée Clay |
 | Gallagher–Koch–Planchon | mild NS critique sur `R^3` | décomposition en profils et élément minimal conditionnel dans des cadres critiques | la rigidité finale exige encore une propriété critique bornée ou compacte |
 | Nečas–Růžička–Šverák 1996 | profil rétrograde auto-similaire, `R^3` | exclusion des profils non triviaux sous intégrabilité `L^3` | n'exclut ni Type II, ni multi-échelles, ni auto-similarité discrète générale |
-| Koch–Nadirashvili–Seregin–Šverák 2009 | solutions anciennes bornées | théorèmes de Liouville en classes particulières, notamment axisymétriques | le Liouville général 3D borné reste hors de portée |
+| Koch–Nadirashvili–Seregin–Šverák 2009 | solutions anciennes à vitesse bornée, faibles ou mild selon le résultat | théorèmes de Liouville en classes particulières, notamment axisymétriques | sans mildness, les solutions parasites `u=b(t)`, `p=-b'(t)·x` subsistent; le Liouville général 3D mild borné reste hors de portée |
 | Constantin–Fefferman 1993 | vorticité d'une solution lisse | régularité conditionnelle sous cohérence géométrique de la direction de vorticité | l'alignement requis n'est pas une conséquence de l'énergie |
 | axisymétrie sans swirl | NS 3D réduit | régularité globale classique dans cette classe | le swirl restaure l'étirement critique |
 
@@ -77,6 +77,15 @@ non triviale. La chaîne comporte trois passages fragiles : compacité forte du
 terme quadratique, contrôle non local de la pression, puis théorème de
 Liouville dans la classe limite. L'exclusion des profils exactement
 auto-similaires ne ferme que cette sous-classe.
+
+La notion de solution limite est décisive. Une solution ancienne localement
+adaptée, même lisse et à vitesse bornée, peut être parasite :
+`u(x,t)=b(t)`, `p(x,t)=-b'(t)·x`. La pression affine est localement admissible
+mais échappe à la jauge de Riesz/BMO, et la formule mild impose au contraire que
+`b` soit constante. Ainsi, une rigidité portant seulement sur « ancienne,
+adaptée, à vitesse bornée et de trace terminale nulle » est fausse; une
+extraction de blow-up utile doit transmettre explicitement la mildness ou une
+normalisation globale équivalente de la pression.
 
 L'extraction détaillée ESS/GKP précise toutefois que la pression **lointaine
 centrée** n'est pas un verrou supplémentaire lorsque la suite est globalement

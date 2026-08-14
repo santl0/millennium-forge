@@ -1,0 +1,42 @@
+{
+  "id": "NS-PARASITIC-ANCIENT-ZERO-TRACE-FAMILY",
+  "problem": "navier-stokes",
+  "statement": "Sur R^3 x (-infini,0], u(x,t)=(-t/(1+t^2))e_1 et p(x,t)=((1-t^2)/(1+t^2)^2)x_1 forment une solution Navier–Stokes 3D non forcée, lisse, ancienne, à vitesse bornée et localement adaptée, non triviale malgré u(·,0)=0; cette solution n'est pas mild.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "domaine R^3 sans frontière et temps (-infini,0]",
+    "viscosité arbitraire nu>0 et force extérieure nulle",
+    "solution classique avec pression affine, donc pression dans L^(3/2)_loc mais sans décroissance spatiale",
+    "adaptation locale entendue par l'inégalité locale d'énergie, ici satisfaite avec égalité",
+    "aucune appartenance globale L^2 ou L^3 n'est revendiquée",
+    "la notion mild est celle de la formule de Duhamel avec le semi-groupe de Stokes"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "Koch–Nadirashvili–Seregin–Šverák, Acta Math. 203 (2009), doi:10.1007/s11511-009-0039-6, solutions parasites u=b(t), p=-b'(t)·x"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/ancient-pressure-gauge/ancient_pressure_gauge.py",
+      "sha256": "4853899209792e9608e01f49c2c0c66a1194502bd933595c9f397856b1dc8fc8"
+    },
+    {
+      "kind": "derivation",
+      "reference": "experiments/navier-stokes/README.md, section ANCIENT-PRESSURE-GAUGE-1"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-state-of-art/cycle-0006"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Sous-agent Codex distinct, même famille de modèle; non indépendant au sens externe",
+    "notes": "Dérivée, signe de pression, momentum, borne de vitesse, trace, Poisson, égalité locale d'énergie, mildness et témoin BMO recalculés. La pression est affine non bornée; suitable signifie localement sur les cylindres compacts."
+  }
+}

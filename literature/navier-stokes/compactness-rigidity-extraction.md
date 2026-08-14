@@ -403,3 +403,85 @@ absence de continuité » : la continuité forte individuelle est classique. Le
 verrou est la précompacité forte uniforme des tranches rescalées. ESS/GKP
 l'obtiennent seulement sous la structure critique qui nourrit déjà leur
 argument de rigidité; l'énergie générale ne la fournit pas.
+
+## 8. Porte de pression pour les solutions anciennes — cycle 0006
+
+### Distinction KNSS entre faible et mild
+
+**[SOURCE]** KNSS signale dès l'introduction les solutions parasites
+
+```text
+u(x,t)=b(t),
+p(x,t)=-b'(t) dot x,
+```
+
+et choisit la notion mild pour les éliminer. Le théorème 5.1 montre en 2D
+qu'une solution ancienne faible bornée est de la forme `b(t)`; la remarque 6.1
+ajoute qu'une solution ancienne mild de cette forme est constante. Dans la
+construction par blow-up de la section 6, les limites pertinentes sont
+explicitement anciennes et mild, et leur non-trivialité est normalisée par une
+valeur ponctuelle telle que `|v(0,0)|=1`.
+
+La définition littérale d'une ancienne mild demande une suite
+`T_l->-infinity` telle que la formule intégrale de Stokes vaille sur chaque
+`(T_l,0)`. Elle implique donc la formule entre deux temps finis situés dans un
+même intervalle. Pour une solution faible `u=b(t)` avec `b` seulement
+mesurable, la pression `-b'(t) dot x` est distributionnelle; le contre-profil
+du laboratoire choisit `b in C^infinity` et possède une pression classique.
+
+**[SOURCE]** Le papier ne démontre pas que toute solution ancienne mild bornée
+3D est constante. Il obtient des résultats partiels, notamment dans des cadres
+axisymétriques. Remplacer « mild » par « faible », « adaptée » ou simplement
+« lisse » agrandit réellement la classe et invalide une étape de Liouville.
+
+### Contre-profil exact avec trace terminale nulle
+
+**[CALCUL]** Avec
+
+```text
+b(t)=(-t/(1+t²))e_1,
+p(x,t)=((1-t²)/(1+t²)²)x_1,
+```
+
+on obtient sur `R³ x (-infinity,0]` une solution classique non forcée,
+divergence-free, à vitesse bornée par `1/2`, localement adaptée et satisfaisant l'égalité
+d'énergie locale. Elle vérifie pourtant
+
+```text
+u(·,0)=0,
+u(·,-1)=(1/2)e_1.
+```
+
+Le défaut n'est ni visqueux ni convectif : il est entièrement porté par la
+partie affine harmonique de la pression. L'équation de Poisson ne la voit pas,
+car ses deux membres sont nuls.
+
+### Lemme minimal de fermeture
+
+Soit une solution spatialement constante `u=b(t)` avec `b in C¹`. L'équation
+implique
+
+```text
+p(x,t)=-b'(t) dot x+c(t).
+```
+
+Chacune des hypothèses suivantes force `b'=0` :
+
+- formule mild sur tous les sous-intervalles compacts;
+- pression `p(·,t)` dans `BMO(R³)` modulo les constantes temporelles;
+- normalisation Leray/Riesz excluant toute composante harmonique affine.
+
+Pour la première, le semi-groupe de chaleur conserve les constantes et le terme
+de Duhamel est nul. Pour la seconde, l'oscillation moyenne d'une fonction affine
+sur `[-R,R]³` croît comme `R`. Une trace terminale nulle force alors `b=0`.
+
+**Portée.** Ce lemme ne prouve aucun Liouville 3D général. Il fixe le premier
+quantificateur : toute classe limite de blow-up doit transporter une propriété
+mild ou une jauge de pression assez forte. La seule adaptation locale, même
+avec bornitude et trace terminale nulle, ne suffit pas.
+
+La porte `BMO`/Riesz et la vérification d'adaptation locale sont des
+**[CALCULS]** propres au cycle, non des énoncés attribués à KNSS. De même, la
+préservation de mildness en section 6 vient de la structure mild des
+approximants; elle ne s'étend pas automatiquement à une extraction arbitraire
+de solutions seulement faibles ou adaptées.

@@ -49,3 +49,19 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
   sous l'échelle NS, puis le confronter à la famille exacte du cycle 0004.
 - Limite : les moteurs consultés peuvent avoir une indexation incomplète; cette
   entrée établit le delta contrôlé, pas une absence dans toute la littérature.
+
+## 2026-08-14 — Cycle 0006
+
+- Fenêtre recherchée : identifiants arXiv `2607.*` et `2608.*`, solutions
+  anciennes à vitesse bornée, théorèmes de Liouville 3D, mildness et pression
+  parasite.
+- Résultat différentiel : aucun nouveau résultat primaire 2026 modifiant le
+  verrou général n'a été identifié. La source KNSS
+  `arXiv:0709.3599` a été réouverte au texte intégral : elle distingue
+  explicitement les solutions faibles parasites `u=b(t)` des solutions mild,
+  et son problème de Liouville général 3D reste formulé dans la classe mild.
+- Décision : ne promouvoir aucune annonce récente. Recalculer une solution
+  parasite ancienne, adaptée et à trace terminale nulle, puis isoler la
+  normalisation de pression ou la propriété mild qui l'exclut.
+- Limite : cette veille ne réaudite pas encore tous les Liouville postérieurs
+  à KNSS; ils seront comparés seulement après fermeture du test de jauge.

@@ -1,0 +1,41 @@
+{
+  "id": "NS-ANCIENT-SUITABLE-ZERO-TRACE-LIOUVILLE",
+  "problem": "navier-stokes",
+  "statement": "Toute solution Navier–Stokes 3D ancienne, lisse, à vitesse bornée et localement adaptée sur R^3 x (-infini,0], avec force nulle et trace terminale u(·,0)=0, est identiquement nulle, sans hypothèse mild ni normalisation globale de la pression.",
+  "status": "REFUTED",
+  "hypotheses": [
+    "domaine R^3 sans frontière et temps (-infini,0]",
+    "viscosité nu>0 et force extérieure nulle",
+    "u et p lisses, div u=0 et équation satisfaite classiquement",
+    "u bornée dans l'espace-temps et p dans L^(3/2)_loc",
+    "inégalité locale d'énergie satisfaite",
+    "u(·,0)=0",
+    "aucune formule mild, décroissance, intégrabilité globale ou jauge BMO de la pression"
+  ],
+  "dependencies": [
+    "NS-PARASITIC-ANCIENT-ZERO-TRACE-FAMILY"
+  ],
+  "evidence": [
+    {
+      "kind": "counterexample",
+      "reference": "experiments/navier-stokes/ancient-pressure-gauge/ancient_pressure_gauge.py",
+      "sha256": "4853899209792e9608e01f49c2c0c66a1194502bd933595c9f397856b1dc8fc8"
+    },
+    {
+      "kind": "derivation",
+      "reference": "literature/navier-stokes/compactness-rigidity-extraction.md, section Porte de pression pour les solutions anciennes"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-state-of-art/cycle-0006"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Sous-agent Codex distinct, même famille de modèle; non indépendant au sens externe",
+    "notes": "Quantificateurs et polarité REFUTED vérifiés. La bornitude concerne u, l'adaptation est locale, et la classe exclut explicitement mildness, décroissance, intégrabilité globale et jauge de pression; aucun théorème KNSS n'est contesté."
+  }
+}

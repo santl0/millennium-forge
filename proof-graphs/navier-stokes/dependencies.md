@@ -53,7 +53,11 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | convergence forte espace-temps `L²` + borne `L^(10/3)` | convergence forte locale `L³` | conditionnelle | interpolation sur cylindres fixés | ne donne pas automatiquement une trace forte à `t_n->0` |
 | limite locale de vitesse | limite de pression | conditionnelle | Calderón–Zygmund + tension pondérée | pression proche: convergence forte; queue: tension uniforme |
 | profil rétrograde `L³` | trivialité | classique et sourcée | Nečas–Růžička–Šverák | ne couvre pas Type II/DSS général |
-| solution ancienne bornée générale 3D | trivialité | manquante | Liouville partiel seulement | rigidité |
+| solution ancienne mild à vitesse bornée générale 3D | trivialité | manquante | Liouville partiel seulement | rigidité |
+| solution ancienne faible/adaptée à vitesse bornée + trace terminale nulle | trivialité | réfutée | solution parasite `u=b(t)`, pression affine | mildness ou jauge globale indispensable |
+| solution ancienne spatialement constante + mildness | constance temporelle | classique et sourcée | KNSS remarque 6.1 | ne traite aucun mode spatial non nul |
+| pression ancienne `BMO_x` modulo constantes | exclusion du mode affine parasite | dérivation locale, `COMPUTATION_ONLY` | oscillation moyenne `R/2` | ne donne pas la rigidité des modes non constants |
+| zoom de blow-up KNSS borné | solution ancienne mild non nulle | classique et sourcée sous hypothèses KNSS | compacité mild + normalisation ponctuelle | pas disponible pour tout blow-up Clay général |
 | alignement critique de vorticité | régularité | conditionnelle, sourcée | Constantin–Fefferman | alignement non déduit de NS |
 | hélicité globale nulle | petit flux instantané universel | réfutée | contre-triade exacte | pas de positivité modale |
 | profil Euler IA | profil NS perturbatif | réfutée pour l'ansatz mono-échelle `lambda>-1/2` | rapport visqueux exact | viscosité dominante |
@@ -70,6 +74,7 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | `GAP-CONST-TRUNC` | constante | Galerkin ou troncature renormalisée | tracer la constante avec le cutoff |
 | `GAP-COMPACT-Q` | compacité | passage `u_n tensor u_n` | trois échecs sous énergie seule: queue, défaut de trace, module supercritique; pivot requis |
 | `GAP-PRESSURE-TAIL` | pression/localisation | défaut de tension de `integral |U_n|²|y|^-4` après zoom | paquets multi-échelles; extraction ESS/GKP |
+| `GAP-PRESSURE-HARMONIC` | jauge de pression | équation de Poisson sur `R³` ne fixe pas les composantes affines | solution ancienne parasite exacte |
 | `GAP-SIGN-FLUX` | positivité | flux d'énergie inter-échelles | contre-triades exactes |
 | `GAP-LIMIT-ADMISSIBLE` | stabilité/admissibilité | profil singulier vers donnée de Schwartz | troncature `epsilon` et temps local |
 | `GAP-NUM-CONTINUUM` | calcul vers continuum | discrétisation finie | résidu d'intervalle + queue analytique |
@@ -78,9 +83,9 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 
 1. `GAP-LIMIT-ADMISSIBLE` : faible coût pour déterminer si la nouvelle
    construction non unique a un premier maillon vers Clay.
-2. rigidité des solutions anciennes : extraire la classe limite exacte des
-   chaînes ESS/GKP/KNSS, puis identifier le premier théorème de Liouville
-   réellement manquant hors borne globale `L³`.
+2. rigidité des solutions anciennes mild : la jauge parasite est maintenant
+   isolée; comparer ensuite la trace terminale et la non-trivialité réellement
+   transmises par ESS, GKP et KNSS avant tout Liouville 3D.
 3. `GAP-SIGN-FLUX` : élimination rapide de fonctionnelles candidates.
 
 `GAP-COMPACT-Q` est suspendu sous énergie seule après trois stratégies

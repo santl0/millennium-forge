@@ -98,10 +98,13 @@ Le graphe annoté et les arêtes manquantes sont détaillés dans
   de blow-up.
 - Lemme minimal : toute solution ancienne adaptée avec énergie locale uniforme,
   non-concentration de pression et normalisation critique est triviale.
-- Échec actuel : des classes anciennes non triviales existent dès que les
-  hypothèses sont trop faibles; Type II échappe aux bornes naturelles Type I.
-- Test discriminant : solveur renormalisé multi-résolution cherchant un point
-  fixe ou un cycle, puis contrôle des résidus sans prétention de preuve.
+- Échec actuel révisé : même « lisse + bornée + adaptée + trace terminale
+  nulle » permet les solutions parasites `u=b(t)` si la pression affine n'est
+  pas exclue. KNSS travaille dans la classe mild précisément pour fermer cette
+  jauge. Type II échappe encore aux bornes naturelles Type I.
+- Test discriminant : vérifier désormais, source par source, quelle notion de
+  trace terminale, mildness et normalisation de pression survit au zoom; puis
+  attaquer le premier Liouville uniquement dans cette classe exacte.
 - Circularité : imposer la décroissance ou l'intégrabilité qui donne déjà le
   théorème de Liouville.
 - Coût : très élevé.
@@ -221,3 +224,22 @@ sur la fermeture de `GAP-COMPACT-Q` depuis l'énergie seule. Conformément au
 protocole, cet axe est suspendu et le prochain lemme actif portera sur la classe
 de solutions anciennes produite par un premier blow-up et le théorème de
 rigidité manquant.
+
+## Cycle 0006 : décision automatisée
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| solution ancienne parasite et porte de pression | 4 | 5 | 5 | 5 | **19** |
+| audit abstrait de la préservation de mildness par zoom | 3 | 4 | 4 | 5 | 16 |
+| recherche directe d'un Liouville Type II général | 5 | 1 | 2 | 5 | 13 |
+
+Décision : tester d'abord si les propriétés locales souvent conservées par
+compacité — lissité, bornitude, adaptation et trace terminale nulle — suffisent
+à la rigidité ancienne.
+
+Résultat : non. Une solution spatialement constante, accélérée par une pression
+affine harmonique, satisfait toutes ces propriétés et reste non triviale. Le
+lemme minimal positif est exact : dans la sous-classe `u=b(t)`, mildness ou une
+pression BMO modulo constantes force `b` à être constante. Le premier trou du
+Liouville n'est donc pas seulement la vorticité; c'est déjà la jauge globale de
+pression.

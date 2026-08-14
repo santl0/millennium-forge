@@ -16,6 +16,7 @@ leur rapport JSON sur la sortie standard.
 | `PRESSURE-MULTISCALE-1` | une borne physique `L²` seule impose-t-elle la tension uniforme de la pression après zoom ? | lois d'échelle et moments exacts | `python -B experiments/navier-stokes/pressure-multiscale/pressure_multiscale.py` | zéro |
 | `QUADRATIC-PRESSURE-DEFECT-1` | énergie uniforme et convergence faible d'une trace imposent-elles la convergence du produit et de la pression ? | solution NS de Fourier exacte, fractions rationnelles | `python -B experiments/navier-stokes/quadratic-pressure-defect/quadratic_pressure_defect.py` | zéro |
 | `TRACE-MODULUS-1` | le module temporel déduit de l'énergie atteint-il le seuil critique nécessaire à une trace forte ? | lois d'échelle et solution NS exacte, fractions rationnelles | `python -B experiments/navier-stokes/trace-modulus/trace_modulus.py` | zéro |
+| `ANCIENT-PRESSURE-GAUGE-1` | ancienne, à vitesse bornée, adaptée et trace terminale nulle suffisent-elles à la rigidité sans normalisation de pression ? | solution NS exacte, fractions rationnelles | `python -B experiments/navier-stokes/ancient-pressure-gauge/ancient_pressure_gauge.py` | zéro |
 
 Environnement reproduit au checkpoint initial : Windows, Python 3.13.14,
 bibliothèque standard uniquement. Les scripts ne lisent aucun fichier, n'ont
@@ -95,7 +96,7 @@ aucune dépendance réseau et ne produisent pas d'artefact lourd.
 
 ## Passage au continuum
 
-Aucune des sept expériences ne part d'une discrétisation PDE : il n'y a donc
+Aucune des huit expériences ne part d'une discrétisation PDE : il n'y a donc
 pas de passage grille-vers-continuum. Le raccord analytique restant est
 explicite dans chaque cas. Tout futur solveur doit ajouter divergence mesurée,
 convergence multi-résolution, second schéma, bornes de troncature, contrôle des
@@ -493,3 +494,92 @@ norme `L²` non nulle.
   pas qu'une suite minimale de blow-up réalise ce défaut.
 - Résultat négatif : une compacité temporelle dans une topologie trop faible
   peut coexister avec un défaut de Reynolds et de pression sur la trace.
+
+## `ANCIENT-PRESSURE-GAUGE-1` — solution parasite et jauge harmonique
+
+### Équation et contre-exemple exact
+
+Sur `R³ x (-infinity,0]`, pour toute viscosité `nu>0`, posons
+
+```text
+a(t)=-t/(1+t²),
+u(x,t)=a(t)e_1,
+p(x,t)=-a'(t)x_1=((1-t²)/(1+t²)²)x_1.
+```
+
+Alors `div u=0`, `Delta u=0`, `(u dot nabla)u=0` et
+`partial_t u+nabla p=0`. La solution est lisse, ancienne, non forcée et
+
+```text
+sup_(t<=0,x)|u(x,t)|=1/2,
+u(x,0)=0,
+u(x,-1)=(1/2)e_1.
+```
+
+Elle est donc non triviale malgré une trace terminale nulle. La pression est
+locale `L^(3/2)` et l'identité locale d'énergie est exacte :
+
+```text
+partial_t(|u|²/2)+div((|u|²/2+p)u)
+ =a a'+a(-a')=0.
+```
+
+La famille est ainsi classique et adaptée localement, mais n'a ni énergie
+globale finie, ni décroissance spatiale, ni norme globale `L³`.
+
+### Pourquoi la solution n'est pas mild
+
+Pour une vitesse spatialement constante `b(t)`, la formule mild entre `s<t`
+se réduit à
+
+```text
+b(t)=exp((t-s)Delta)b(s)=b(s),
+```
+
+car `div(b tensor b)=0`. Elle impose donc que `b` soit constante. Pour
+`s=-1`, `t=0`, la solution adverse a un défaut mild exact `-1/2`.
+
+La même obstruction se lit dans la pression. L'équation de Poisson donne
+seulement
+
+```text
+-Delta p=partial_i partial_j(u_i u_j)=0,
+```
+
+et ne détecte pas le terme harmonique affine `-a'(t)x_1`. Une normalisation
+par les transformées de Riesz donne un gradient nul pour le tenseur constant,
+alors que le gradient réel vaut `e_1` à `t=0`.
+
+### Porte BMO et lemme minimal
+
+Une fonction affine non constante n'appartient pas à `BMO(R³)`. À `t=0`,
+`p=x_1`; sur le cube `Q_R=[-R,R]³`, sa moyenne est zéro et
+
+```text
+average_(Q_R)|p-average_(Q_R)p|=R/2 -> infinity.
+```
+
+Plus généralement, toute solution spatialement constante `u=b(t)` a
+`p=-b'(t) dot x+c(t)`. L'une ou l'autre des conditions suivantes force
+`b'(t)=0` :
+
+1. la formule mild sur chaque intervalle compact;
+2. une pression appartenant à `BMO_x` modulo les constantes temporelles;
+3. la normalisation de pression de Leray/Riesz excluant toute partie affine.
+
+Avec la trace terminale `b(0)=0`, chacune donne `u=0`. La mildness n'est donc
+pas un raffinement cosmétique : elle ferme exactement une liberté harmonique
+que l'équation de Poisson et l'inégalité locale d'énergie laissent ouverte.
+
+### Reproduction et limites
+
+- Temps testés : `0,-1,-2,-4,-8,-16`; la formule est symbolique pour tout
+  `t<=0`.
+- Arithmétique : fractions exactes; divergence, momentum, Poisson, énergie
+  locale et borne de vitesse ont un résidu maximal `0/1`.
+- Pression : témoin BMO exact sur `R=1,2,4,8,16,32`; aucune quadrature.
+- Graine, grille et pas de temps : sans objet.
+- Portée : réfute un Liouville formulé pour les solutions faibles/adaptées à
+  vitesse bornée sans jauge de pression. Elle ne réfute aucun théorème KNSS, qui
+  emploie précisément la notion mild, ni un profil de blow-up déjà obtenu comme
+  limite de solutions mild avec normalisation héritée.

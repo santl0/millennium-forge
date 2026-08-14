@@ -1,0 +1,35 @@
+{
+  "id": "NS-KNSS-SPATIALLY-CONSTANT-MILD-RIGIDITY",
+  "problem": "navier-stokes",
+  "statement": "Une solution ancienne mild bornée de Navier–Stokes sur R^3 qui est spatialement constante, u(x,t)=b(t), est également constante en temps; si sa trace terminale est nulle, elle est identiquement nulle.",
+  "status": "SOURCE_VERIFIED",
+  "hypotheses": [
+    "Navier–Stokes incompressible non forcé sur R^3 x (-infini,0)",
+    "solution ancienne bornée et mild au sens KNSS: il existe T_l tendant vers -infini tels que la formule intégrale de Stokes vaut sur chaque (T_l,0)",
+    "u(x,t)=b(t) est indépendante de x",
+    "la conclusion de nullité utilise en plus une extension terminale b(0)=0"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "Koch–Nadirashvili–Seregin–Šverák, Acta Math. 203 (2009), Remark 6.1, doi:10.1007/s11511-009-0039-6"
+    },
+    {
+      "kind": "derivation",
+      "reference": "experiments/navier-stokes/README.md, section Pourquoi la solution n'est pas mild"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-state-of-art/cycle-0006"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Deux sous-agents Codex distincts, même famille de modèle; non indépendants au sens externe",
+    "notes": "La remarque 6.1 et la définition ancienne mild par une suite T_l ont été réextraites du texte primaire. La formule réduit bien à b(t)=b(s); la conclusion depuis b(0)=0 est une inférence élémentaire explicitement ajoutée."
+  }
+}
