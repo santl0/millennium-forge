@@ -869,3 +869,31 @@ une solution globale ou un blow-up admissible de Navier–Stokes.
 La veille ajoute `NS-SRC-0140`–`0147` et porte le corpus à 147 sources. Les
 prépublications récentes surveillées restent aux versions consignées; aucune
 ne ferme le gap de cellule faible-Lorentz statique.
+
+## Audit ciblé du cycle 0035 — coaire 3D et bandes dynamiques
+
+- Fleming–Rishel (`0132`) fournit la formule de coaire; Federer–Fleming
+  (`0148`) fournit l'isopérimétrie globale tridimensionnelle. Ensemble, ces
+  briques donnent sur la bande
+  `lambda/4<sigma F_j<lambda/2` une masse
+  `integral|curl U_j|>=c lambda V_(j,sigma)^(2/3)`.
+- La bande n'est pas un halo contenant le superniveau. Son volume est contrôlé
+  parce qu'elle est incluse dans `{|U|>lambda/6}`. Les sources ne sélectionnent
+  ni le niveau global `lambda`, ni une cellule : cette composition reste une
+  dérivation interne.
+- Korte–Lahti (`0149`), Lions limite II (`0150`), Calderón–Zygmund (`0151`)
+  et Coifman–Fefferman (`0152`) sont des analogues de localisation,
+  concentration ou good-lambda. Aucun n'est nécessaire à la preuve et aucun
+  ne couple automatiquement `U` et `curl U`.
+- Li–Ozawa–Wang (`0153`), Barker (`0154`) et
+  Barker–Fernández-Dalgo–Prange (`0155`) localisent des quantités critiques
+  pour de vraies solutions Navier–Stokes sous hypothèse de blow-up, Type I ou
+  géométrie parabolique. Ils ne fournissent pas la sélection statique des deux
+  endpoints faibles.
+- La constante du lemme interne est
+  `(36pi)^(1/3)/324` sous les conventions du registre; aucun résultat source
+  n'est promu ni réinterprété comme cette nouvelle inégalité.
+
+La veille ajoute `NS-SRC-0148`–`0155` et porte le corpus à 155 sources. Aucun
+théorème littéral identique n'a été trouvé dans le périmètre primaire ciblé;
+ce résultat négatif de recherche n'est pas une preuve d'absence absolue.

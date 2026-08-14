@@ -653,3 +653,24 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
   directionnel avec puissance douze.
 - Décision : fermer les cellules épaisses disjointes enregistrées et activer
   `GAP-DEGENERATE-CELL-REGISTER-OR-OVERLAP`.
+
+## 2026-08-14 — Cycle 0035
+
+- Veille différentielle primaire : coaire de Fleming–Rishel,
+  isopérimétrie de Federer–Fleming, variantes relatives et good-lambda, puis
+  localisations dynamiques de Li–Ozawa–Wang, Barker et
+  Barker–Fernández-Dalgo–Prange.
+- Sources ajoutées : `NS-SRC-0148`–`0155`; corpus porté à 155 entrées.
+- Résultat négatif : aucun texte contrôlé ne formule la sélection cellulaire
+  pure-swirl aux deux endpoints faibles. Les briques classiques suffisent,
+  mais leur composition avec le curl exact et le niveau global est interne.
+- Statuts recontrôlés sur les notices primaires : Lei–Ren–Tian
+  `2501.08976v1`, Grujić `2511.00725v3`, Grujić `2607.08866v2`, Barker
+  `2510.20757v3`; aucune version plus récente visible au 2026-08-14.
+- Les annonces Shahmurov `2606.07869v1` et `2605.09797v2` restent en
+  quarantaine : aucun transfert n'est admis sans audit de preuve.
+- Résultat interne : la bande commune remplace toute boîte support pour la
+  sélection endpoint pure-swirl, avec constante `C_I/324`. Elle contrôle un
+  volume, pas un diamètre ni une boule.
+- Décision : fermer `|Q_j|/v_j->infinity` comme échappement endpoint et
+  activer `GAP-ACTIVE-HALO-DIAMETER-OR-OVERLAP`.
