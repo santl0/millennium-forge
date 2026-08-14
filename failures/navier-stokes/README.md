@@ -1565,3 +1565,22 @@ claim éventuellement supersédé.
   `F=sum_j F_j` avant toute valeur absolue rétablit le cycle 0038.
 - Statut : sélection par sommants arbitraires `REFUTED`; pivot vers
   `GAP-MULTIAXIS-TOTAL-FIELD-LOCALIZATION`.
+
+## `FAIL-NS-0076` — Petit rayon pris pour petit coût de cutoff
+
+- Date : 2026-08-15.
+- Cible : rendre négligeable le terme `nabla chi_R cross U` en envoyant
+  `R->0`, ou amincir la couronne pour réduire son volume.
+- Loi d'échelle : pour `|U|~R^-1` sur un volume `beta R^3`, le terme de col a
+  taille `R^-2` et sa quasi-norme faible-`L^(3/2)` reste d'ordre un.
+- Saturation exacte : sur le plateau, le cube du rapport de l'inclusion de
+  mesure finie vaut exactement `beta=7`, indépendamment de `R`.
+- Obstruction géométrique : dans l'échelle forte `L^p`, toute droite inverse
+  de la divergence sur `A_(R,h)` à trace nulle a une norme au moins
+  `c_pR/h`; une couronne mince détériore le correcteur.
+- Certificat : 9 167 assertions rationnelles exactes, résidu nul; empreinte
+  `510be7b9354f6e18a188afd87bbec510ecde01d97e187671fe6334c2529ba6e5`.
+- Portée : la minoration `R/h` n'est pas revendiquée en faible Lorentz; aucune
+  conclusion dynamique Navier–Stokes.
+- Statut : gain d'échelle gratuit `REFUTED`; conserver une couronne de rapport
+  fixé et suivre le coût critique.

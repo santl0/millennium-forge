@@ -655,3 +655,57 @@ pression, dynamique et passage au temps maximal : manquants.
 1. Localisation divergence-free intrinsèque du champ total sous axes multiples.
 2. Coût critique du curl de col, de Leray et de la pression dans une même boule.
 3. Hypothèse anti-annulation canonique falsifiable, puis raccord Type I/Type II.
+
+## Cycle 0040 — fermeture du cutoff solénoïdal statique
+
+```text
+NS-SRC-0103 + NS-SRC-0176
+  -- droite inverse de divergence sur domaine Lipschitz/John fixé
+  -- support et gain d'une dérivée
+  + interpolation réelle d'un même opérateur
+  + homothétie A_1 -> A_R
+       --> correction Bogovskii uniforme en R
+
+div U=0 + chi_RU compact
+  --> integral div(chi_RU)=0
+  --> b_R=B_R(grad chi_R dot U)
+  --> V_R=chi_RU-b_R
+  --> NS-SOLENOIDAL-ANNULAR-CUTOFF [COMPUTATION_ONLY]
+
+NS-SRC-0177
+  --> usage Navier-Stokes publié sur une couronne fixe
+  -/-> borne faible-L3 interne ou régularité globale
+
+plateau critique lisse
+  --> coût du col indépendant de R
+  --> gain o_R(1) [REFUTED]
+
+A_(R,h) + q=x_1/|x| + Poincare radiale
+  --> inf-sup <=C_ph/R
+  --> NS-THIN-ANNULUS-DIVERGENCE-COST [COMPUTATION_ONLY]
+  --> uniformité h/R->0 [REFUTED dans L^p fort]
+
+Biot-Savart faible HLS
+  + NS-SOLENOIDAL-ANNULAR-CUTOFF
+  --> q(V_R)>=C_loc^-1(K_core/K_global)q(U)
+  -?-> GAP-WEAK-L3-CORE-CAPTURE-AT-PRESINGULAR-SCALE.
+```
+
+Nature des arêtes :
+
+```text
+Bogovskii Lipschitz/John et usage NS : classiques sourcés;
+interpolation Lorentz, homothétie et composition du curl : dérivation auditée;
+saturation du cutoff : calcul exact et raccord lisse;
+minoration R/h : dérivation forte auditée, pas de claim Lorentz faible;
+capture par boule sans contrainte de rayon : triviale et non pertinente;
+capture avec R(t)->0 : manquante;
+champ coupé statique -> évolution NS non forcée : manquant;
+pression, diffusion, non-linéarité, compacité temporelle : manquantes.
+```
+
+## Priorité après le cycle 0040
+
+1. Capture faible-`L3` à une échelle pré-singulière imposée.
+2. Contre-profil multi-échelle lisse testant toute gamme candidate de rayons.
+3. Équation forcée exacte du champ localisé, seulement si la capture survit.

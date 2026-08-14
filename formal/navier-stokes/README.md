@@ -1021,3 +1021,30 @@ Les modules 1–4 et 8 sont élémentaires et prioritaires. Les modules 5–7
 requièrent intégration cylindrique et quasi-normes de Lorentz. Une compilation
 certifierait l'échec d'une règle de sélection étiquetée, pas Navier–Stokes en
 temps ni une implication vers Clay.
+
+## Backlog issu du cycle 0040 — cutoff solénoïdal annulaire
+
+Le lemme se décompose en interfaces indépendantes :
+
+1. calculer `integral div(chi U)=0` pour `chi U` lisse compact;
+2. formaliser l'inclusion de mesure finie
+   `||f||_(L^(3/2,infinity)(E))<=|E|^(1/3)||f||_(L^(3,infinity)(E))`;
+3. transporter un domaine annulaire et un inverse droit par homothétie;
+4. enregistrer l'interpolation d'un **même** opérateur aux exposants
+   `4/3`, `3/2` et `2`, indice Lorentz secondaire infini;
+5. vérifier `|curl b|<=sqrt(2)|grad b|` et le facteur trois de la
+   quasi-inégalité triangulaire;
+6. séparer la sortie `W_c^(1,(3/2,infinity))` de la sortie `C_c^infinity`, qui
+   requiert une propriété explicite de préservation du support lisse;
+7. formaliser Biot–Savart faible HLS
+   `||U||_(3,infinity)<=C_BS||curl U||_(3/2,infinity)`;
+8. pour la couronne mince, prouver la Poincaré radiale pondérée et la dualité
+   forte conduisant à `||T||>=c_pR/h`;
+9. garder hors du théorème toute version faible-Lorentz de cette minoration
+   tant que la dualité `L^(3/2,infinity)`–`L^(3,1)` n'est pas implantée.
+
+Les étapes 1, 2 et 5 sont les premières cibles Lean élémentaires. Aucune
+bibliothèque épinglée du dépôt ne fournit encore l'opérateur de Bogovskiĭ sur
+une couronne Lipschitz avec support lisse. Une formalisation partielle ne
+certifierait ni la sélection d'une boule critique, ni une évolution
+Navier–Stokes.

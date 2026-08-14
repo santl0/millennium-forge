@@ -379,3 +379,23 @@
   norme. Les carrés-fonctions restent des outils du champ total, pas des labels.
 - `GAP-MULTIAXIS-TOTAL-FIELD-LOCALIZATION` devient actif. Projection de Leray,
   curl de col, pression et dynamique doivent désormais être estimés ensemble.
+
+### 2026-08-15 — localisation solénoïdale à géométrie fixe
+
+- Le correcteur de Bogovskiĭ sur la couronne homothétique fixe est retenu
+  avec le score `18/20`; la projection globale de Leray et la matrice de Gram
+  multi-axe restent des alternatives non sélectionnées.
+- La compatibilité de moyenne est calculée exactement depuis
+  `div(chi_RU)`; aucun flux nul local n'est supposé silencieusement.
+- Le passage faible-`L^(3/2)` utilise un même opérateur interpolé entre deux
+  exposants forts. La conclusion lisse exige séparément la préservation du
+  support `C_c^infinity`.
+- Le coût du col est critique et saturé par un plateau lisse; toute petitesse
+  `o_R(1)` fondée sur le seul rayon est abandonnée.
+- Les couronnes minces sont abandonnées comme moyen de gagner du volume : la
+  norme forte de toute droite inverse croît au moins comme `R/h`.
+- `GAP-MULTIAXIS-SOLENOIDAL-CUTOFF` est fermé statiquement. La pression et la
+  dynamique ne sont pas incluses dans cette décision.
+- `GAP-WEAK-L3-CORE-CAPTURE-AT-PRESINGULAR-SCALE` devient actif. Une capture
+  par grande boule est déclarée triviale; seul un rayon lié à une
+  concentration et tendant vers zéro est admissible.

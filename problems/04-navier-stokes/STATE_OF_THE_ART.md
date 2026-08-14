@@ -1160,3 +1160,50 @@ Le corpus atteint 175 sources. Le verrou devient
 `GAP-MULTIAXIS-TOTAL-FIELD-LOCALIZATION` : localiser intrinsèquement le champ
 total avec constantes critiques suivies, sans dépendre d'une décomposition
 modifiable par jauge, puis seulement traiter pression et temps.
+
+## Cycle 0040 — localisation solénoïdale critique et géométrie du correcteur
+
+Une coupure du champ total peut être rendue divergence-free sans projection
+globale de Leray. Pour une couronne de forme fixe
+`A_R=B(x0,2R)\Bbar(x0,R)`, poser
+
+```text
+g=div(chi_R U)=grad chi_R dot U,
+b=B_(A_R)g,
+V=chi_R U-b.
+```
+
+La moyenne de `g` est exactement nulle parce que `chi_RU` est compact. Le
+même opérateur de Bogovskiĭ, borné à deux exposants forts et interpolé, donne
+le contrôle faible-`L^(3/2)`; l'homothétie rend la constante indépendante de
+`x0,R`. Avec les conventions du registre,
+
+```text
+||curl V||_(3/2,infinity)
+ <=3[H_out+C_chi(28pi/3)^(1/3)(1+sqrt(2)C_B)G_col].
+```
+
+La conclusion lisse utilise explicitement une réalisation préservant
+`C_(c,0)^infinity`; une trace nulle Sobolev seule ne suffit pas après
+prolongement par zéro. Biot–Savart faible HLS absorbe les deux budgets dans le
+curl global et laisse comme seul facteur non contrôlé la fraction
+`K_core/K_global`.
+
+Le coût reste critique. Un plateau divergence-free lisse remis à l'échelle
+sature le terme de col; 9 167 assertions rationnelles vérifient la loi
+d'échelle avec résidu nul. Amincir la couronne ne répare rien : dans `L^p`
+fort, Poincaré radiale et inf-sup imposent à toute droite inverse à trace nulle
+une norme `>=c_pR/h`. Aucune version faible-Lorentz de cette minoration n'est
+revendiquée.
+
+Costabel–McIntosh (`0103`), Acosta–Durán–Muschietti (`0176`) et
+Albritton–Barker–Prange (`0177`) sourcent respectivement l'opérateur sur
+domaines Lipschitz/John et son usage NS sur une couronne fixe. Les
+prépublications `0178`–`0179` n'apportent pas de constante critique nouvelle.
+Le corpus atteint 179 sources.
+
+Le sous-gap statique de cutoff multi-axe est fermé, mais aucune régularité
+Clay n'en résulte. Le premier quantificateur non trivial est désormais la
+capture d'une fraction du faible-`L3` par une boule à rayon pré-singulier
+`R(t)->0`; une grande boule capture trivialement un champ compact et ne doit
+pas être comptée comme progrès.

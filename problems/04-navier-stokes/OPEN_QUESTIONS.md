@@ -409,3 +409,32 @@ contre-ledgers exacts ne respectent pas le registre coaire d'un curl compact.
 arbitrairement étiquetés et positivement, par agrégation, lorsque axe, rayon et
 anneau sont communs. La multiplicité seule et le caractère curl-compatible ne
 sont plus des hypothèses admissibles d'anti-annulation.
+
+## Priorité active après le cycle 0040
+
+1. **`GAP-WEAK-L3-CORE-CAPTURE-AT-PRESINGULAR-SCALE`.** Sous une hypothèse
+   pré-singulière précisément sourcée, existe-t-il `x(t),R(t)` avec
+   `R(t)->0` et
+   `||1_(B(x(t),R(t)))u(t)||_(3,infinity)>=alpha||u(t)||_(3,infinity)` ?
+   Sans la contrainte `R(t)->0`, la question est triviale pour un champ
+   compact et doit être rejetée.
+2. **Dichotomie multi-échelle adverse.** Construire un champ lisse compact
+   divergence-free dont la norme faible-`L3` se répartit sur un nombre
+   croissant d'échelles de sorte qu'aucune boule de la gamme candidate ne
+   capture une fraction uniforme, ou prouver qu'une concentration issue d'un
+   temps maximal interdit cette dispersion.
+3. **Dénominateur local.** Si l'usage de Biot–Savart global est incompatible
+   avec la future compacité, sélectionner simultanément une couronne où
+   `H_out+G_col` est contrôlé par le core, avec constantes explicites.
+4. **Raccord dynamique.** Calculer l'équation satisfaite par
+   `V_R=chi_Ru-B_R(grad chi_R dot u)`, y compris dérivée temporelle,
+   diffusion, non-linéarité et pression. Ce travail ne commence qu'après une
+   capture d'échelle non triviale.
+5. **Formalisation.** Certifier d'abord moyenne nulle, inclusion Lorentz de
+   mesure finie et constantes algébriques; l'opérateur de Bogovskiĭ demeure
+   une interface papier tant qu'une bibliothèque épinglée manque.
+
+`GAP-MULTIAXIS-TOTAL-FIELD-LOCALIZATION` est partiellement fermé : la partie
+cinématique solénoïdale ne requiert aucun axe. Il reste ouvert comme problème
+dynamique, car la sélection d'échelle, la pression et les commutateurs ne sont
+pas contrôlés.

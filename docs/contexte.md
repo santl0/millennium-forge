@@ -289,3 +289,20 @@ anneau, l'agrégation du potentiel total rétablit cependant exactement le cycle
 plein faible-Lorentz et classe l'annonce forcée `arXiv:2608.11553v1` hors du
 problème Clay. Le verrou actif est
 `GAP-MULTIAXIS-TOTAL-FIELD-LOCALIZATION`.
+
+Le cycle 0040 ferme la partie statique solénoïdale de ce verrou. Pour une
+couronne homothétique fixe, le correcteur de Bogovskiĭ appliqué à
+`grad chi_R dot U` produit un champ compact divergence-free égal au champ
+total dans le core, avec toutes les constantes critiques suivies. Un plateau
+lisse montre que le coût du col ne décroît pas avec `R`; une couronne mince
+coûte au moins `c_pR/h` dans les espaces forts. Les deux claims internes sont
+`NS-SOLENOIDAL-ANNULAR-CUTOFF` et
+`NS-THIN-ANNULUS-DIVERGENCE-COST`.
+
+Après absorption par Biot–Savart faible HLS, le seul facteur statique non
+contrôlé est `K_core/K_global`. Le nouveau verrou est
+`GAP-WEAK-L3-CORE-CAPTURE-AT-PRESINGULAR-SCALE` : le rayon doit appartenir à
+une gamme dictée par la concentration et tendre vers zéro. Sans cette
+contrainte, une boule assez grande capture trivialement tout champ compact.
+Pression, temps et équation du champ localisé restent ouverts. Le corpus
+primaire compte 179 sources.

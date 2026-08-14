@@ -1566,3 +1566,55 @@ champ total, construire une localisation divergence-free canonique et suivre
 au même endpoint le curl de col, la correction non locale, la pression et le
 packing des axes. Abandonner toute sélection universelle parmi des sommants
 dont l'étiquetage peut être modifié par ajout de `+Z,-Z`.
+
+## Cycle 0040 — coupure solénoïdale intrinsèque à rapport fixé
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| correcteur de Bogovskiĭ sur une couronne fixe | 3 | 5 | 5 | 5 | **18** |
+| minoration directe après projection globale de Leray | 4 | 3 | 5 | 4 | 16 |
+| deux swirls à axes distincts et matrice de Gram numérique | 5 | 2 | 5 | 4 | 16 |
+
+```text
+U lisse compact divergence-free, W=curl U
+  -- chi_R U --> défaut g=grad chi_R dot U, moyenne exactement nulle
+  -- Bogovskii sur A_R=B_2R\Bbar_R, même opérateur interpolé
+       --> b_R compact dans A_R, div b_R=g
+  -- V_R=chi_R U-b_R
+       --> div V_R=0, V_R=U sur B_R, supp V_R subset Bbar_2R
+       --> ||curl V_R||_(3/2,infinity)
+           <=3[H_out+C_chi c_A^(1/3)(1+sqrt(2)C_B)G_col]
+  --> NS-SOLENOIDAL-ANNULAR-CUTOFF [COMPUTATION_ONLY]
+
+Biot-Savart faible HLS
+  --> G_col<=C_BS H_global et H_out<=H_global
+  --> q(V_R)>=C_loc^-1(K_core/K_global)q(U)
+
+couronne mince A_(R,h)
+  -- test q=x_1/|x| + Poincare radiale + inf-sup fort
+  --> ||B_(R,h)||>=c_pR/h
+  --> NS-THIN-ANNULUS-DIVERGENCE-COST [COMPUTATION_ONLY].
+```
+
+Nature des arêtes :
+
+```text
+droite inverse sur domaine Lipschitz/John : classique sourcée;
+usage NS sur couronne fixe : classique sourcé;
+interpolation Lorentz et constantes 3,sqrt(2),c_A : dérivation auditée;
+saturation du coût de col : calcul rationnel exact + raccord lisse;
+uniformité sous homothétie fixe : valide;
+uniformité quand h/R->0 : réfutée dans L^p fort;
+capture K_core>=alpha K_global sans contrainte d'échelle : triviale par grande boule;
+capture à une échelle pré-singulière R(t)->0 : manquante;
+champ statique coupé -> solution NS non forcée localisée : manquante;
+pression, diffusion et temps maximal : absents.
+```
+
+Le sous-gap `GAP-MULTIAXIS-SOLENOIDAL-CUTOFF` est fermé pour une couronne de
+rapport fixé. Le verrou actif devient
+`GAP-WEAK-L3-CORE-CAPTURE-AT-PRESINGULAR-SCALE` : sélectionner depuis une
+solution réelle une boule dont le rayon appartient à la gamme de
+concentration et capture une fraction uniforme du numérateur critique. Une
+existence sans contrainte sur le rayon n'a aucune valeur, car le champ est
+compact.

@@ -99,9 +99,18 @@
 - [x] Étendre ou réfuter le registre lorsque les supports de curl se
   chevauchent et peuvent s'annuler : sélection parmi sommants arbitraires
   réfutée à multiplicité deux au cycle 0039; agrégation même axe–anneau valide.
-- [ ] Construire ou réfuter une localisation intrinsèque du champ total sous
-  axes multiples; suivre exactement le curl de col, la correction de Leray,
-  la queue de pression et les constantes géométriques.
+- [x] Construire une localisation intrinsèque statique du champ total sous
+  axes multiples : cutoff de Bogovskiĭ sur couronne fixe au cycle 0040, curl
+  de col et constantes géométriques suivis; pression et temps non inclus.
+- [ ] À une échelle pré-singulière imposée `R(t)->0`, sélectionner une boule
+  capturant une fraction uniforme de `||u(t)||_(L^(3,infinity))`, ou construire
+  un contre-profil lisse multi-échelle qui réfute toute gamme candidate.
+- [ ] Si cette capture survit, calculer l'équation exacte du champ localisé :
+  dérivée temporelle du correcteur, diffusion, convection, force effective et
+  pression non locale, avec constantes uniformes.
+- [ ] Certifier numériquement l'inf-sup `p=2` sur `A_(1,h)` par deux familles
+  de maillages indépendantes et bornes d'erreur; ne pas confondre cette
+  expérience avec la minoration analytique forte déjà dérivée.
 - [ ] Tester une hypothèse de coercivité Gram/angle sur une décomposition
   canonique de phase-espace, en exigeant qu'elle soit calculable depuis le
   champ total et stable à l'endpoint faible-Lorentz.

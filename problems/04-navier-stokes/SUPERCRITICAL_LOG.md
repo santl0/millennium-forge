@@ -879,3 +879,23 @@ solution ou précise qu'il s'agit seulement d'un champ test.
 - Perte restante : aucune représentation scalaire unique pour plusieurs axes;
   cutoff de Leray, pression, temps et `R(t)->0` restent ouverts.
 - Pivot : `GAP-MULTIAXIS-TOTAL-FIELD-LOCALIZATION`.
+
+## 2026-08-15 — Cutoff solénoïdal du champ total
+
+- Objet : champ statique `U in C_c^infinity(R3)`, divergence-free; aucune
+  évolution Navier–Stokes.
+- Quantités critiques : `K_core`, `G_col` en faible-`L3` et `H_out` en
+  faible-`L^(3/2)` sont invariantes sous l'échelle Clay.
+- Fermeture cinématique : `V=chi_RU-B_R(grad chi_R dot U)` est compact,
+  divergence-free et égal à `U` dans le core, avec coût de curl critique à
+  constante uniforme sur une couronne de rapport fixé.
+- Absorption globale : faible HLS donne
+  `q(V)>=C_loc^-1(K_core/K_global)q(U)`.
+- Saturation : un plateau lisse divergence-free montre que le coût du col
+  n'est jamais `o_R(1)`; 9 167 assertions rationnelles exactes, résidu nul.
+- Dégénérescence : pour `A_(R,h)`, tout inverse droit fort `L^p->W_0^(1,p)`
+  coûte au moins `c_pR/h`; l'épaisseur petite aggrave la constante.
+- Perte restante : le quotient `K_core/K_global` n'est contrôlé à aucune
+  échelle de concentration; une grande boule serait une capture triviale.
+  Pression, temps, commutateurs et Type II sont absents.
+- Pivot : `GAP-WEAK-L3-CORE-CAPTURE-AT-PRESINGULAR-SCALE`.
