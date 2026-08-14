@@ -1,0 +1,36 @@
+{
+  "id": "NS-CRITICAL-MAGNITUDE-IMPLIES-BMO",
+  "problem": "navier-stokes",
+  "statement": "Toute vorticité distributionnellement divergence-free sur R³ dont la magnitude vaut exactement |x|^-2 et qui appartient à L^(3/2,∞) possède automatiquement une direction dans le bmo logarithmique global utilisé par arXiv:2607.08866v2.",
+  "status": "REFUTED",
+  "hypotheses": [
+    "R³ sans frontière",
+    "W est localement intégrable, div W=0 dans les distributions et |W(x)|=|x|^-2 pour x non nul",
+    "xi=W/|W| est évaluée dans la norme globale bmo_phi avec phi(r)=1/|log r|"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/cycle-0021-critical-profile-admissibility.md: W=r^-2[a cross theta+(a dot theta)theta] est un curl divergence-free de magnitude r^-2, mais MO_(B_r)(xi)>=2/3 à tout rayon"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/critical-profile-admissibility/critical_profile_admissibility_audit.py, div-curl vérifié par différentiation automatique rationnelle et coût bmo exact",
+      "sha256": "95bbb128522b9c90437c05903ab86dd4f7cfc42f687218993ee9324ece5a0f85"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0021-critical-profile-admissibility"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois passes Codex séparées, même famille de modèle; non indépendantes au sens externe",
+    "notes": "La réfutation montre l'indépendance de l'hypothèse géométrique par rapport à la magnitude critique et à l'incompressibilité; elle ne prétend pas que la prépublication déduisait explicitement bmo_phi de ces seules prémisses."
+  }
+}
+

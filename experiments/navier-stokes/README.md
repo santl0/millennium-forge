@@ -1154,3 +1154,47 @@ cellule reste donc `NOT_PROVIDED`.
 - Limite : chaque `epsilon` définit une donnée initiale distincte. Le calcul ne
   produit ni trajectoire multi-échelle, ni pression globale dans les coquilles,
   ni régularité, ni blow-up Clay.
+
+## `CRITICAL-PROFILE-ADMISSIBILITY-1` — profil homogène et rigidité log-BMO
+
+- Question falsifiable : un profil vectoriel ponctuel exactement récurrent,
+  de magnitude `r^-2`, peut-il satisfaire simultanément divergence nulle,
+  faible-`L^(3/2)` global et direction `bmo_phi` ?
+- Équation : raccord cinématique à NS incompressible 3D non forcé sur `R³`,
+  `nu>0`. Le profil singulier ne résout pas l'évolution; ses doubles coupures
+  sont seulement des données initiales `C_c^infinity` divergence-free.
+- Profil :
+
+  ```text
+  u=(1/2)[a/r+(a.x)x/r^3+a cross x/r^2],
+  omega=a cross x/r^3+(a.x)x/r^4,
+  |omega|=r^-2.
+  ```
+
+- Discrétisation : aucune grille ni intégrateur temporel. Fractions exactes,
+  identités vectorielles et différentiation automatique rationnelle sur 25
+  points stéréographiques; aucune graine.
+- Résultats : `div u=0`, `curl u=omega`, flux nul, distribution faible exacte
+  et `MO_(B_r)(xi)>=2/3`. Aux rayons `exp(-N)`, le coût log-BMO est au moins
+  `2N/3`.
+- Lemme : toute direction exactement récurrente par dilatation et dans un
+  `bmo_phi` avec `phi(r)->0` est constante; divergence nulle plus faible-
+  `L^p` global force alors la vorticité à être nulle.
+- Coupures : `A=-x cross u`, puis `u_(epsilon,R)=curl(chi A)`, conserve
+  exactement la divergence. Énergie de coquille `O(epsilon)`, vorticité de
+  coquille `O(epsilon^-2)` et norme critique uniforme; `L³` croît
+  logarithmiquement.
+- Pression : la pression de chaque donnée est recalculée par la projection de
+  Leray globale. Aucun résidu stationnaire nul ni borne uniforme de pression
+  n'est certifié.
+- Résidus : seize contrôles passent, `assertion_failure_count=0`.
+- Commande :
+
+  ```text
+  python -B experiments/navier-stokes/critical-profile-admissibility/critical_profile_admissibility_audit.py
+  ```
+
+- Empreinte du script :
+  `95bbb128522b9c90437c05903ab86dd4f7cfc42f687218993ee9324ece5a0f85`.
+- Limite : aucune exclusion des directions seulement asymptotiques ou
+  rectifiées logarithmiquement, et aucune trajectoire de blow-up Clay.

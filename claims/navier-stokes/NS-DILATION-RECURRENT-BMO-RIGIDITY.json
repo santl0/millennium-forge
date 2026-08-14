@@ -1,0 +1,43 @@
+{
+  "id": "NS-DILATION-RECURRENT-BMO-RIGIDITY",
+  "problem": "navier-stokes",
+  "statement": "Il n'existe pas de vorticité non nulle sur R³, globalement dans L^(p,∞) pour un p fini, divergence-free, non nulle presque partout et exactement récurrente de degré -2 sous une dilatation fixe, dont la direction appartient à un espace bmo_phi avec phi(r) tendant vers zéro.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "0<q<1, 1<=p<infinity et phi(r)>0 avec phi(r)->0 quand r->0",
+    "W appartient à L1_loc(R³;R³) intersection L^(p,infinity)(R³;R³)",
+    "div W=0 au sens des distributions et |W|>0 presque partout",
+    "W(qx)=q^-2 W(x) presque partout",
+    "xi=W/|W| possède une borne globale bmo_phi sur toutes les petites boules",
+    "la récurrence est spatiale exacte; aucun profil seulement asymptotique ou seulement scalaire n'est couvert"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0021-critical-profile-admissibility.md et reviews/cycle-0021-analysis.md"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0021-countermodel.md: profil critique explicite et obstruction exacte de la direction"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/critical-profile-admissibility/critical_profile_admissibility_audit.py, seize contrôles exacts",
+      "sha256": "95bbb128522b9c90437c05903ab86dd4f7cfc42f687218993ee9324ece5a0f85"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0021-critical-profile-admissibility"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois passes Codex séparées, même famille de modèle; non indépendantes au sens externe",
+    "notes": "La preuve combine invariance de l'oscillation sous dilatation, phi(r)->0, puis l'incompatibilité entre direction constante, divergence nulle et superniveaux globaux de mesure finie. Elle n'est ni publiée, ni formalisée, ni revue extérieurement."
+  }
+}
+

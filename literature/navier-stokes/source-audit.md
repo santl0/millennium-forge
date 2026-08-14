@@ -467,3 +467,36 @@ extension globale uniforme déduite de la seule cohérence sur chaque
 composante. Cela ne réfute pas le théorème conditionnel de la v2, qui suppose
 la norme globale; cela ferme négativement le raccord vers des données Clay
 générales sans hypothèse inter-composantes.
+
+## Audit ciblé du cycle 0021 — profil critique ponctuel
+
+| Source primaire | Passage contrôlé | Verdict exact |
+|---|---|---|
+| Grujić `arXiv:2607.08866v1-v2` (`0059`) | Definition 2.1, théorèmes 4.1 et 7.4 | la magnitude scalaire, la récurrence de `Phi`, le gradient, le faible-Lorentz et la contenance des sur-niveaux ne forment pas une classe quantifiée cohérente sans rayon de cœur ou limite remise à l'échelle |
+| Barker `arXiv:2510.20757v3` (`0084`) | notions de solution/singularité, théorèmes 1–3 | fournit un contraste primaire précis et des classifications quantitatives sous approximation axisymétrique; ne valide ni ne réfute seul la v2 |
+| Leray 1934, Nečas–Růžička–Šverák 1996 et Tsai 1998 (`0002`, `0016`, `0017`) | profils auto-similaires et énergie locale | exclusions publiées de sous-classes distinctes; aucune réduction de tout blow-up Clay vers Definition 2.1 |
+
+La veille différentielle confirme que `2607.08866` reste à la v2 du 13
+juillet 2026, sans référence de revue ou erratum. La v3 de Barker, révisée le
+11 août 2026, est ajoutée comme prépublication récente, sans promotion de ses
+preuves au-delà de l'audit de texte primaire.
+
+Le profil scalaire doit être séparé du champ vectoriel. Pour
+`W=r^-2 Omega(theta)`, les contraintes absentes de la définition sont
+
+```text
+div_(S²) Omega_T=0,
+integral_(S²) Omega_r dS=0.
+```
+
+Le cycle construit un `W` exact, divergence-free, de magnitude `r^-2` et
+faible-`L^(3/2)`, dont la direction conserve une oscillation au moins `2/3`
+sur toutes les boules centrées. La magnitude critique n'implique donc pas
+l'hypothèse directionnelle. Plus généralement, une direction exactement
+récurrente par dilatation et dans `bmo_phi`, avec `phi(r)->0`, devient
+constante; divergence nulle plus faible-`L^p` global force alors `W=0`.
+
+Cette exclusion ne porte que sur la récurrence spatiale vectorielle exacte.
+La v2 ne suppose explicitement la récurrence que du facteur scalaire `Phi`;
+les directions non récurrentes ou seulement asymptotiques restent hors du
+lemme.

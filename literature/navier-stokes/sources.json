@@ -1684,6 +1684,26 @@
       "reproduction": {"status": "statement_definition_and_scope_audited_cycle_0020"},
       "verification": {"level": "primary_published_metadata_and_arxiv_full_text", "checked_on": "2026-08-14", "notes": "Version arXiv v5, théorème 1, définition de tilde-bmo_phi et DOI contrôlés."},
       "tags": ["vorticity", "LlogL", "tilde_bmo_phi", "active_region", "Bradshaw_Grujic"]
+    },
+    {
+      "id": "NS-SRC-0084",
+      "title": "Quantitative classification of potential Navier-Stokes singularities beyond the blow-up time",
+      "authors": ["Tobias Barker"],
+      "year": 2026,
+      "source_type": "preprint",
+      "publication_status": "arxiv_preprint",
+      "venue": "arXiv:2510.20757v3",
+      "identifiers": {"arxiv": "2510.20757v3", "doi": "10.48550/arXiv.2510.20757", "url": "https://arxiv.org/abs/2510.20757"},
+      "equation": {"model": "Navier–Stokes incompressible standard", "dimension": "3", "domain": "R³ dans les théorèmes principaux; comparaison avec un cylindre axisymétrique pour le scénario de Hou", "boundary": "sans frontière sur R³; Dirichlet radial dans le scénario numérique comparé", "forcing": "non forcé", "viscosity": "positive normalisée à un"},
+      "solution_notions": ["solution faible adaptée de Leray–Hopf", "point singulier défini localement", "solution lisse avant un premier temps singulier dans le théorème 3"],
+      "result": "Donne pour des données approximativement axisymétriques des classifications quantitatives et des minorations localisées près de temps singuliers potentiels; la v3 ajoute des conditions reliant blow-up à gauche et à droite.",
+      "hypotheses": ["données approximativement axisymétriques et bornes quantitatives spécifiques pour les théorèmes 1 et 2", "solution faible adaptée de Leray–Hopf", "hypothèses ponctuelles supplémentaires de taux pour le théorème 3"],
+      "constants_uniformity": "Les théorèmes affichent des constantes universelles et des exposants dépendant de p ou q; aucune constante n'est importée dans le lemme du cycle 0021.",
+      "clay_relevance": "Fournit des notions précises de solution et de singularité et des tests quantitatifs potentiellement numériques; ne prouve ni existence de singularité ni régularité globale.",
+      "limitations": ["prépublication v3 non publiée au jour de coupure", "hypothèses d'approximation axisymétrique", "ne valide pas le profil scalaire de Grujić 2026", "ne résout pas le problème Clay"],
+      "reproduction": {"status": "metadata_definitions_and_main_theorem_scope_audited_cycle_0021"},
+      "verification": {"level": "primary_arxiv_v3_full_text_and_metadata", "checked_on": "2026-08-14", "notes": "Notice v3 du 11 août 2026, équation, notions de solution/singularité et théorèmes 1 à 3 ciblés."},
+      "tags": ["recent", "quantitative_singularity", "Leray_Hopf", "approximately_axisymmetric", "Barker"]
     }
   ],
   "watchlist": [
@@ -1766,7 +1786,8 @@
     "weak_nonuniqueness": ["NS-SRC-0029", "NS-SRC-0030", "NS-SRC-0031", "NS-SRC-0032", "NS-SRC-0033", "NS-SRC-0044", "NS-SRC-0047", "NS-SRC-0054", "NS-SRC-0055"],
     "numerics_and_CAP": ["NS-SRC-0033", "NS-SRC-0037", "NS-SRC-0038", "NS-SRC-0039", "NS-SRC-0040", "NS-SRC-0041", "NS-SRC-0054", "NS-SRC-0057"],
     "formalization": ["NS-SRC-0042"],
-    "recent_false_transfers": ["NS-SRC-0031", "NS-SRC-0032", "NS-SRC-0044", "NS-SRC-0055", "NS-SRC-0056", "NS-SRC-0057", "NS-SRC-0058"]
+    "recent_false_transfers": ["NS-SRC-0031", "NS-SRC-0032", "NS-SRC-0044", "NS-SRC-0055", "NS-SRC-0056", "NS-SRC-0057", "NS-SRC-0058"],
+    "recent_quantitative_singularity": ["NS-SRC-0084"]
   },
   "unverified_zones": [
     "Le domaine et la plage d'exposants exacts des articles historiques Prodi et Ladyzhenskaya doivent être réextraits des originaux avant création d'un claim formel.",
