@@ -135,3 +135,25 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   leur intersection.
 - Artefact : `BLOWUP-INHERITANCE-AUDIT-1`, treize propriétés, quatre chaînes,
   zéro échec d'assertion exacte.
+
+## 2026-08-14 — Lissage d'une ancienne mild bornée et trace terminale
+
+- Équation : NS incompressible 3D non forcé sur
+  `R³ x (-infinity,0)`, viscosité `1`, solution ancienne mild au sens KNSS.
+- Hypothèses : `M=sup|u|<infinity` et vraie limite `u(t)->0` dans `D'` quand
+  `t->0-` sur le même objet.
+- Échelle : `nabla^k partial_t^l u` porte le facteur
+  `lambda^(k+2l+1)` sous `u_lambda=lambda u(lambda x,lambda²t)`.
+- Borne redémarrée : la proposition 4.1 de KNSS, appliquée à distance
+  `h=epsilon_(k,l)/(2M²)` avant chaque temps, donne
+  `||nabla^k partial_t^l u||_infinity <= C_(k,l) M^(k+2l+1)` avec constante
+  indépendante de la distance au bord terminal.
+- Conséquence : la trace distributionnelle devient nulle dans `C^m_loc`; la
+  vorticité satisfait l'unicité rétrograde ESS sur chaque bande finie. La
+  mildness élimine ensuite le mode spatial constant.
+- Perte localisée : la classe `L-infinity_(x,t)` est sous-critique pour la
+  vitesse et n'est pas héritée par l'extraction ESS; la trace nulle n'est pas
+  héritée par l'extraction maximum-normalisée KNSS. La rigidité ne crée donc
+  aucune borne critique depuis l'énergie.
+- Artefact : `ANCIENT-ZERO-TRACE-RIGIDITY-AUDIT-1`, neuf obligations directes,
+  cinq contre-profils, résidu d'assertion nul.

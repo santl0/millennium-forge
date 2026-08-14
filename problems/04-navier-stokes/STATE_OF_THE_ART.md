@@ -29,6 +29,8 @@ fini.
 | Gallagher–Koch–Planchon | mild NS critique sur `R^3` | décomposition en profils et élément minimal conditionnel dans des cadres critiques | la rigidité finale exige encore une propriété critique bornée ou compacte |
 | Nečas–Růžička–Šverák 1996 | profil rétrograde auto-similaire, `R^3` | exclusion des profils non triviaux sous intégrabilité `L^3` | n'exclut ni Type II, ni multi-échelles, ni auto-similarité discrète générale |
 | Koch–Nadirashvili–Seregin–Šverák 2009 | solutions anciennes à vitesse bornée, faibles ou mild selon le résultat | théorèmes de Liouville en classes particulières, notamment axisymétriques | sans mildness, les solutions parasites `u=b(t)`, `p=-b'(t)·x` subsistent; le Liouville général 3D mild borné reste hors de portée |
+| Lei–Yang–Yuan 2024 | deux solutions mild bornées sur `R³ x [0,T]`, vorticités bornées | unicité à même donnée finale bornée, y compris non nulle | ne produit ni donnée finale ni classe limite depuis un blow-up; la route est seulement corroborante dans ce dépôt |
+| Pineau–Vicol 2026, prépublication v2 | profils backward RSS/DSS/RDSS sur `R³`, borne Type I | exclusions quantitatives pour rotations petites ou grandes et critères locaux quasi-auto-similaires | rotation intermédiaire et Type II non couverts; aucune exclusion générale de blow-up |
 | Constantin–Fefferman 1993 | vorticité d'une solution lisse | régularité conditionnelle sous cohérence géométrique de la direction de vorticité | l'alignement requis n'est pas une conséquence de l'énergie |
 | axisymétrie sans swirl | NS 3D réduit | régularité globale classique dans cette classe | le swirl restaure l'étirement critique |
 
@@ -93,6 +95,18 @@ bornée dans `L³` : Hölder donne une queue pondérée `O(A^-3)`. En revanche,
 l'énergie seule n'assure pas cette tension après zoom, et cette estimation ne
 donne aucune compacité forte pour la pression proche.
 
+Le cycle 0008 ferme une porte de rigidité plus précise. Si une **même** solution
+ancienne mild au sens KNSS est globalement bornée et possède une vraie limite
+nulle dans `D'` au temps terminal, les estimations redémarrées de KNSS donnent
+des bornes uniformes sur toutes ses dérivées; la vorticité a alors une trace
+terminale classique nulle et l'unicité rétrograde ESS l'annule sur chaque bande
+finie. Le champ restant est harmonique borné, donc spatialement constant, et la
+mildness puis la trace l'annulent. Cette dérivation du laboratoire reste
+`COMPUTATION_ONLY`, sans revue externe. Elle ne se transfère pas encore au
+problème Clay : ESS transmet la trace sans la borne ponctuelle/mildness, tandis
+que KNSS transmet mildness et bornitude avec la normalisation opposée
+`|v(0,0)|=1`.
+
 Un scénario Type I conserve une quantité critique de vitesse ou de vorticité à
 l'échelle naturelle; un scénario Type II la laisse croître plus vite. Les
 résultats Type I et plusieurs résultats au bord ne se transfèrent pas à un Type
@@ -109,6 +123,13 @@ Wang–Yang (`arXiv:2608.06040v1`) obtient de nouveaux Liouville pour des
 pas connue pour contenir les limites ESS/KNSS. Binz–Coiculescu
 (`arXiv:2607.12159v1`) traite des profils homothétiques forward à donnée
 homogène singulière, pas des profils backward généraux.
+
+Pineau–Vicol (`arXiv:2607.09619v2`, révisé le 2026-08-06) exclut des profils
+backward rotated self-similar sous borne Type I lorsque la rotation est assez
+petite ou assez grande, ainsi que certains régimes DSS/RDSS proches de
+l'identité. C'est une exclusion substantielle de profils structurés, mais non
+un Liouville pour toute solution ancienne : le régime de rotation intermédiaire
+et les scénarios Type II restent hors de ses hypothèses.
 
 ### Vorticité, pression, cascade et intermittence
 
@@ -208,9 +229,10 @@ pas une régularité globale par elles-mêmes.
 ## Conclusion falsifiable
 
 La bibliographie ferme de nombreuses classes conditionnelles mais ne fournit
-pas l'arête « énergie -> borne critique ». La première campagne du laboratoire
-testera des arêtes plus petites : (i) stabilité d'une construction singulière
-sous désingularisation, (ii) impossibilité de déplétions triadiques universelles,
-et (iii) compatibilité d'un profil renormalisé avec la viscosité. Tout résultat
-est raccordé explicitement au graphe et peut être abandonné sans modifier
-l'énoncé Clay.
+pas l'arête « énergie -> borne critique ». Huit cycles ont déjà éliminé ou
+borné plusieurs substituts : transfert inviscide mono-échelle, déplétion
+triadique universelle, tension de pression issue de l'énergie, compacité de
+traces mobiles, module temporel critique et composition naïve ESS–KNSS. Le
+verrou actif est maintenant falsifiable : déterminer si un module terminal
+uniforme, réellement hérité par une extraction maximum-normalisée, permet de
+commuter les deux limites sans réintroduire circulairement une borne critique.

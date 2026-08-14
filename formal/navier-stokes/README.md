@@ -270,6 +270,28 @@ Galerkin–Aubin–Lions prête à l'emploi.
 
 ## Premier noyau formalisable minimal
 
+### Frontière de formalisation après le cycle 0008
+
+Le lemme « ancienne mild bornée + vraie trace terminale nulle implique zéro »
+n'est pas encore une bonne cible monolithique. Son noyau analytique dépend de
+la sémantique exacte de la formule d'Oseen sur le domaine infini, des
+estimations de lissage KNSS et d'un théorème de Carleman/unicité rétrograde
+ESS; formaliser l'énoncé complet maintenant risquerait de masquer ces
+dépendances dans des axiomes.
+
+Trois sous-lemmes stables peuvent en revanche rejoindre le backlog après le
+noyau Fourier :
+
+1. la loi d'échelle
+   `nabla^k partial_t^l u_lambda = lambda^(k+2l+1)` après composition;
+2. le lemme abstrait « précompacité `C^m(K)` + limite unique dans `D'(K)`
+   implique convergence `C^m(K)` »;
+3. `div u=0`, `curl u=0` implique `Delta u=0`, suivi du Liouville harmonique
+   sous bornitude.
+
+Aucun de ces sous-lemmes n'est créé ni compilé dans ce cycle. Le statut du
+claim reste donc `COMPUTATION_ONLY`, et non `FORMALIZED`.
+
 Le premier développement propre à Millennium Forge ne doit pas tenter Leray–Hopf
 ou un critère critique complet. Le noyau proposé est une **identité d'énergie
 Fourier finie sur le tore**, suffisamment petite pour être revue et suffisamment

@@ -18,10 +18,12 @@ leur rapport JSON sur la sortie standard.
 | `TRACE-MODULUS-1` | le module temporel déduit de l'énergie atteint-il le seuil critique nécessaire à une trace forte ? | lois d'échelle et solution NS exacte, fractions rationnelles | `python -B experiments/navier-stokes/trace-modulus/trace_modulus.py` | zéro |
 | `ANCIENT-PRESSURE-GAUGE-1` | ancienne, à vitesse bornée, adaptée et trace terminale nulle suffisent-elles à la rigidité sans normalisation de pression ? | solution NS exacte, fractions rationnelles | `python -B experiments/navier-stokes/ancient-pressure-gauge/ancient_pressure_gauge.py` | zéro |
 | `BLOWUP-INHERITANCE-AUDIT-1` | une seule chaîne ESS/GKP/KNSS/Seregin transmet-elle toutes les hypothèses du Liouville hybride « ancienne + mild + vitesse bornée + trace locale nulle » ? | matrice sourcée et inclusion finie exacte | `python -B experiments/navier-stokes/blowup-inheritance-audit/inheritance_audit.py` | zéro échec d'assertion |
+| `ANCIENT-ZERO-TRACE-RIGIDITY-AUDIT-1` | les hypothèses exactes « ancienne mild bornée + vraie trace `D'` nulle » franchissent-elles toutes les portes de rigidité, et les contre-profils usuels en violent-ils une explicitement ? | graphe d'obligations, ensembles finis et fractions rationnelles | `python -B experiments/navier-stokes/ancient-zero-trace-rigidity/rigidity_audit.py` | zéro échec d'assertion |
 
 Environnement reproduit au checkpoint initial : Windows, Python 3.13.14,
-bibliothèque standard uniquement. Les scripts ne lisent aucun fichier, n'ont
-aucune dépendance réseau et ne produisent pas d'artefact lourd.
+bibliothèque standard uniquement. Les deux audits de matrice lisent leur JSON
+versionné voisin; les autres scripts sont autonomes. Aucun n'a de dépendance
+réseau ni ne produit d'artefact lourd.
 
 ## `VAS-1` — seuil visqueux
 
@@ -97,7 +99,7 @@ aucune dépendance réseau et ne produisent pas d'artefact lourd.
 
 ## Passage au continuum
 
-Aucune des neuf expériences ne part d'une discrétisation PDE : il n'y a donc
+Aucune des dix expériences ne part d'une discrétisation PDE : il n'y a donc
 pas de passage grille-vers-continuum. Le raccord analytique restant est
 explicite dans chaque cas. Tout futur solveur doit ajouter divergence mesurée,
 convergence multi-résolution, second schéma, bornes de troncature, contrôle des
@@ -664,3 +666,51 @@ cellule reste donc `NOT_PROVIDED`.
   de toute la littérature ni la fausseté intrinsèque du Liouville hybride. Une
   nouvelle source ou un lemme de raccord peut falsifier le résultat borné au
   corpus et doit alors modifier la matrice.
+
+## `ANCIENT-ZERO-TRACE-RIGIDITY-AUDIT-1` — rigidité conditionnelle
+
+- Question falsifiable : une ancienne mild KNSS, bornée sur tout
+  `R³ x (-infinity,0)` et ayant une vraie trace nulle dans `D'`, satisfait-elle
+  toutes les hypothèses d'une chaîne de rétro-unicité sans ajouter décroissance,
+  énergie finie ou pression normalisée ?
+- Équation : Navier–Stokes incompressible 3D standard, `nu=1`, force nulle,
+  `R³`, sans frontière. La pression disparaît dans la route principale après
+  passage à la vorticité; la formule mild conserve la jauge de Leray.
+- Discrétisation : aucune grille spatiale ou temporelle. Le script vérifie un
+  graphe fini de neuf obligations, les lois d'échelle et deux modules exacts
+  avec `Fraction`.
+- Constantes suivies : la proposition 4.1 de KNSS redémarrée à distance
+  `h~M^-2` donne
+
+  ```text
+  ||nabla^k partial_t^l u||_infinity
+    <= C_(k,l) M^(k+2l+1).
+  ```
+
+  Le script certifie l'exposant `k+2l+1` pour `0<=k<=3`, `0<=l<=2`. Pour les
+  valeurs rationnelles de test `M=2`, `C=3`, il vérifie exactement le module
+  temporel `24h`. Il vérifie aussi la queue d'Oseen
+  `2 C_K M² sqrt(delta)` pour `delta=4^-j`; elle est divisée par deux à chaque
+  raffinement.
+- Test adverse : cinq familles sont confrontées aux sept propriétés requises.
+  Le parasite accéléré échoue seulement à la mildness; la constante avec
+  endpoint assigné et la limite maximum KNSS échouent seulement à la vraie
+  trace nulle; les hautes fréquences perdent vorticité uniforme et identité de
+  trajectoire; les translations à l'infini perdent le module mild global.
+- Route principale : lissage KNSS, promotion locale de la trace, équation de
+  vorticité, unicité rétrograde ESS sur bandes finies et demi-espaces
+  translatés, Liouville harmonique, puis remarque 6.1 de KNSS.
+- Contrôle : Lei–Yang–Yuan 2024 donne une route directe au niveau vitesse après
+  extension mild à `t=0`. Trois anomalies de l'arXiv v1 sont consignées; cette
+  route corroborante n'est pas l'unique support.
+- Résultat : `assertion_failure_count=0`; aucune famille adverse n'ouvre toutes
+  les portes. C'est un contrôle exact de la dérivation, pas une formalisation
+  du théorème d'ESS ni une preuve numérique de PDE.
+- Graine : sans objet. Sensibilité : rationnelle exacte, aucun flottant.
+- Empreintes : obligations
+  `d0d6da661fb195f8eb44caf013e0ffe430fbb31b575212172d07ceccf860e078`;
+  script
+  `5bd28f4e420744e3ebdda9b672afb6d6c050b906bec160476510709ba5588cf5`.
+- Limite Clay : aucune extraction auditée ne transmet simultanément mildness,
+  borne ponctuelle, trace nulle et non-trivialité au même objet. Le calcul ne
+  change pas ce statut.

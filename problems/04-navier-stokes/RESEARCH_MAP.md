@@ -96,15 +96,17 @@ Le graphe annoté et les arêtes manquantes sont détaillés dans
 
 - Verrou : théorème de Liouville dans une classe assez large pour toute limite
   de blow-up.
-- Lemme minimal : toute solution ancienne adaptée avec énergie locale uniforme,
-  non-concentration de pression et normalisation critique est triviale.
-- Échec actuel révisé : même « lisse + bornée + adaptée + trace terminale
-  nulle » permet les solutions parasites `u=b(t)` si la pression affine n'est
-  pas exclue. KNSS travaille dans la classe mild précisément pour fermer cette
-  jauge. Type II échappe encore aux bornes naturelles Type I.
-- Test discriminant : vérifier désormais, source par source, quelle notion de
-  trace terminale, mildness et normalisation de pression survit au zoom; puis
-  attaquer le premier Liouville uniquement dans cette classe exacte.
+- Lemme minimal fermé conditionnellement : une ancienne mild KNSS globalement
+  bornée et de vraie trace terminale nulle dans `D'` est triviale, par lissage
+  uniforme, rétro-unicité de la vorticité et jauge mild.
+- Échec actuel révisé : la rigidité du paquet exact n'est plus le premier trou.
+  Aucune extraction auditée ne transmet ce paquet à un même objet non trivial :
+  ESS a la trace sans borne ponctuelle/mildness, KNSS a la borne et mildness
+  avec la normalisation terminale opposée. Type II échappe en outre aux bornes
+  naturelles Type I.
+- Test discriminant : chercher un critère critique de trace compatible avec la
+  normalisation maximum KNSS, puis tester s'il est transmis par la même suite
+  sans supposer une borne `L³` ou une compacité terminale circulaire.
 - Circularité : imposer la décroissance ou l'intégrabilité qui donne déjà le
   théorème de Liouville.
 - Coût : très élevé.
@@ -268,3 +270,35 @@ ancienne mild bornée au sens KNSS qui tend réellement vers zéro dans `D'`
 quand `t` monte vers `0` est nulle par unicité rétrograde de la vorticité. Même
 s'il est confirmé, il ne s'appliquera à Clay qu'après un nouveau raccord
 transmettant simultanément bornitude, mildness et trace depuis une même suite.
+
+## Cycle 0008 : décision automatisée
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| fermer le lemme ancien mild borné par lissage KNSS + rétro-unicité ESS | 3 | 5 | 5 | 5 | **18** |
+| appliquer directement l'unicité finale Lei–Yang–Yuan après pont `D' -> L-infinity` | 4 | 4 | 4 | 4 | 16 |
+| chercher un contre-exemple dans la classe faible/adaptée élargie | 3 | 4 | 5 | 3 | 15 |
+
+Décision : fermer d'abord la route vorticité KNSS–ESS, plus ancienne et
+indépendante du traitement direct de la pression. Lei–Yang–Yuan, dont le statut
+publié a été vérifié, sert de route corroborante; trois anomalies de son arXiv
+v1 interdisent de l'utiliser comme unique support avant comparaison éditeur.
+
+Résultat positif conditionnel : si `M=sup|u|<infinity`, le redémarrage des
+estimations KNSS donne
+
+```text
+||nabla^k partial_t^l u||_infinity
+  <= C_(k,l) M^(k+2l+1)
+```
+
+uniformément jusqu'à `t=0`. La trace `D'` devient une trace lisse locale nulle;
+la vorticité satisfait les hypothèses ESS sur chaque bande finie, donc s'annule.
+Le champ est alors spatialement constant, et la mildness puis la trace
+l'annulent. Le test machine rapporte zéro échec sur neuf obligations et cinq
+contre-profils.
+
+Le verrou dominant devient `GAP-HYBRID-INHERITANCE` : produire — ou réfuter
+quantitativement — une trace terminale nulle pour la **même** limite
+maximum-normalisée KNSS sans perdre la normalisation non triviale ni supposer
+le contrôle critique recherché.

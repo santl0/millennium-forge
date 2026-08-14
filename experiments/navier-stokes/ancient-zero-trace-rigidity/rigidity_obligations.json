@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-08-14",
+  "experiment": "ANCIENT-ZERO-TRACE-RIGIDITY-AUDIT-1",
+  "equation": "partial_t u - Delta u + (u dot nabla)u + nabla p = 0, div u = 0 on R^3 x (-infinity,0), viscosity 1",
+  "lemma": "A bounded ancient mild solution in the KNSS sense that converges to zero in D'(R^3) as t approaches 0 from below is identically zero.",
+  "status_vocabulary": {
+    "SOURCE": "stated in the cited primary source",
+    "SOURCE_PLUS_SCALING": "source estimate restarted on a uniform parabolic interval and rescaled algebraically",
+    "DERIVATION": "laboratory implication, not attributed to a paper",
+    "CROSSCHECK": "second proof route not needed by the selected direct route"
+  },
+  "properties": {
+    "unforced_viscous_ns": "standard unforced incompressible Navier-Stokes with positive viscosity",
+    "ancient_interval": "one solution is defined for all negative times",
+    "global_velocity_bound": "sup over R^3 x (-infinity,0) of |u| is finite",
+    "knss_mild_formula": "the Oseen/Leray Duhamel formula restarts between every two finite negative times",
+    "true_terminal_Dprime_zero": "u(t) tends to zero in distributions as t approaches 0 from below",
+    "same_object_trace": "the terminal limit belongs to the same solution, not to a sequence of unrelated solutions",
+    "bounded_vorticity_on_finite_strips": "curl u is bounded on each finite strip, with a bound uniform up to t=0"
+  },
+  "obligations": {
+    "O1_ANCIENT_MILD_RESTART": {
+      "status": "SOURCE",
+      "source": "KNSS 2009, definition before Lemma 6.1 and the semigroup property",
+      "conclusion": "the mild formula may be restarted at every s<t<0"
+    },
+    "O2_UNIFORM_DERIVATIVES": {
+      "status": "SOURCE_PLUS_SCALING",
+      "source": "KNSS 2009, Proposition 4.1",
+      "conclusion": "if M=sup|u|, then ||nabla^k partial_t^l u||_infinity <= C_(k,l) M^(k+2l+1), uniformly for t<0"
+    },
+    "O3_DPRIME_TO_SMOOTH_LOCAL_TRACE": {
+      "status": "DERIVATION",
+      "source": "uniform derivative bounds, Arzela-Ascoli and uniqueness of distributional limits; k=0,l=1 also yields a global L-infinity trace",
+      "conclusion": "u tends to zero in C^m_local for every m, and in particular curl u has pointwise terminal trace zero"
+    },
+    "O4_ENDPOINT_MILD_EXTENSION": {
+      "status": "CROSSCHECK",
+      "source": "Oseen kernel L1 bound ||K(t)||_1 <= C t^(-1/2)",
+      "conclusion": "for every a<0, u extended by u(0)=0 is a bounded mild solution on [a,0], as required only by the Lei-Yang-Yuan cross-check route"
+    },
+    "O5_BOUNDED_VORTICITY": {
+      "status": "SOURCE_PLUS_SCALING",
+      "source": "KNSS 2009, Proposition 4.1 with k=1,l=0",
+      "conclusion": "curl u is bounded uniformly up to the terminal time"
+    },
+    "O6_VORTICITY_INEQUALITY": {
+      "status": "DERIVATION",
+      "source": "curl of Navier-Stokes and the bounds from O2",
+      "conclusion": "after time reversal, |partial_tau omega+Delta omega| <= C_M(|omega|+|nabla omega|)"
+    },
+    "O7_ESS_BACKWARD_UNIQUENESS": {
+      "status": "SOURCE",
+      "source": "ESS 2003, Theorem 5.1 in the L3-infinity paper and the original parabolic backward-uniqueness theorem",
+      "conclusion": "the vorticity vanishes on every finite strip by application on translated half-spaces"
+    },
+    "O8_HARMONIC_CLASSIFICATION": {
+      "status": "DERIVATION",
+      "source": "Delta u = nabla div u - curl curl u and the bounded harmonic Liouville theorem",
+      "conclusion": "u(x,t)=b(t) for each time"
+    },
+    "O9_MILD_CONSTANT_RIGIDITY": {
+      "status": "SOURCE",
+      "source": "KNSS 2009, Remark 6.1",
+      "conclusion": "a bounded ancient mild solution of the form b(t) is constant, and the trace makes it zero"
+    },
+    "O10_ALL_FINITE_STRIPS": {
+      "status": "DERIVATION",
+      "source": "apply O7 on every finite strip",
+      "conclusion": "u vanishes on R^3 x (-infinity,0)"
+    },
+    "O11_LEI_YANG_YUAN_ROUTE": {
+      "status": "CROSSCHECK",
+      "source": "Lei-Yang-Yuan, IMRN 2024, Theorem 1.1, DOI 10.1093/imrn/rnae208",
+      "conclusion": "after O4, published final-state uniqueness gives a second velocity-level route; three arXiv-v1 anomalies require comparison with the publisher version before formalization"
+    }
+  },
+  "direct_route": [
+    "O1_ANCIENT_MILD_RESTART",
+    "O2_UNIFORM_DERIVATIVES",
+    "O3_DPRIME_TO_SMOOTH_LOCAL_TRACE",
+    "O5_BOUNDED_VORTICITY",
+    "O6_VORTICITY_INEQUALITY",
+    "O7_ESS_BACKWARD_UNIQUENESS",
+    "O8_HARMONIC_CLASSIFICATION",
+    "O9_MILD_CONSTANT_RIGIDITY",
+    "O10_ALL_FINITE_STRIPS"
+  ],
+  "required_properties": [
+    "unforced_viscous_ns",
+    "ancient_interval",
+    "global_velocity_bound",
+    "knss_mild_formula",
+    "true_terminal_Dprime_zero",
+    "same_object_trace",
+    "bounded_vorticity_on_finite_strips"
+  ],
+  "counterprofiles": {
+    "ACCELERATED_SPATIAL_CONSTANT": {
+      "description": "u=b(t), p=-b'(t) dot x, with bounded nonconstant b(t) tending to zero",
+      "satisfies": [
+        "unforced_viscous_ns",
+        "ancient_interval",
+        "global_velocity_bound",
+        "true_terminal_Dprime_zero",
+        "same_object_trace",
+        "bounded_vorticity_on_finite_strips"
+      ],
+      "expected_failed_properties": ["knss_mild_formula"]
+    },
+    "NONZERO_CONSTANT_WITH_ASSIGNED_ENDPOINT": {
+      "description": "u=c for t<0, while the value u(0)=0 is assigned without being a limit",
+      "satisfies": [
+        "unforced_viscous_ns",
+        "ancient_interval",
+        "global_velocity_bound",
+        "knss_mild_formula",
+        "same_object_trace",
+        "bounded_vorticity_on_finite_strips"
+      ],
+      "expected_failed_properties": ["true_terminal_Dprime_zero"]
+    },
+    "HIGH_FREQUENCY_DIVERGENCE_FREE_SLICES": {
+      "description": "f_N=(0,sin(N x_1),0) tends to zero in distributions but has ||nabla f_N||_infinity=N and is not one ancient trajectory",
+      "satisfies": ["global_velocity_bound", "true_terminal_Dprime_zero"],
+      "expected_failed_properties": [
+        "unforced_viscous_ns",
+        "ancient_interval",
+        "knss_mild_formula",
+        "same_object_trace",
+        "bounded_vorticity_on_finite_strips"
+      ]
+    },
+    "TRANSLATED_DIVERGENCE_FREE_PACKETS": {
+      "description": "a fixed smooth compact divergence-free packet translated to spatial infinity has a zero D' limit but no global L-infinity decay and is not one mild trajectory",
+      "satisfies": [
+        "global_velocity_bound",
+        "true_terminal_Dprime_zero",
+        "bounded_vorticity_on_finite_strips"
+      ],
+      "expected_failed_properties": [
+        "unforced_viscous_ns",
+        "ancient_interval",
+        "knss_mild_formula",
+        "same_object_trace"
+      ]
+    },
+    "KNSS_MAXIMUM_ZOOM_LIMIT": {
+      "description": "the maximum-normalized bounded ancient mild limit has |u(0,0)|=1",
+      "satisfies": [
+        "unforced_viscous_ns",
+        "ancient_interval",
+        "global_velocity_bound",
+        "knss_mild_formula",
+        "same_object_trace",
+        "bounded_vorticity_on_finite_strips"
+      ],
+      "expected_failed_properties": ["true_terminal_Dprime_zero"]
+    }
+  }
+}

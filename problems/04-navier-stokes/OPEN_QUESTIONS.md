@@ -6,7 +6,7 @@ des décisions reste dans les checkpoints.
 
 | Priorité | Question falsifiable | Pourquoi maintenant | Critère de sortie |
 |---:|---|---|---|
-| 1 | une ancienne mild globalement bornée au sens KNSS, satisfaisant `u(t)->0` dans `D'` quand `t->0-`, est-elle nécessairement nulle sous les hypothèses exactes du théorème d'unicité rétrograde employé ? | le cycle 0007 montre que ce paquet d'hypothèses n'est transmis par aucune chaîne auditée, mais isole un lemme de rigidité falsifiable | preuve avec constantes/croissance et vraie trace, ou contre-exemple mild; puis audit séparé du raccord à une extraction |
+| 1 | quelle hypothèse non circulaire sur une extraction maximum-normalisée KNSS permet d'échanger la limite des zooms avec `t->0-` et d'obtenir une vraie trace nulle dans `D'` sur le même profil ? | le cycle 0008 ferme la rigidité du paquet hybride; l'unique verrou restant est désormais son héritage simultané, incompatible avec la normalisation `|v(0,0)|=1` si la trace est effectivement transmise | module uniforme ou équi-intégrabilité critique démontré et hérité; ou contre-profil exact montrant que toute hypothèse suffisante réintroduit déjà un critère critique connu |
 | 2 | une désingularisation du profil initial homogène `-1` de Hou–Wang–Yang possède-t-elle une estimation de stabilité uniforme dans un espace compatible avec des données Clay ? | résultat primaire récent et premier raccord possible | estimation uniforme sourcée/démontrée, ou divergence nécessaire de toutes les constantes de la méthode |
 | 3 | une contrainte géométrique locale de vorticité, strictement plus forte que l'hélicité globale mais déductible de NS, impose-t-elle une déplétion triadique ? | le contre-profil exact ferme la version globale naïve | inégalité signée prouvée ou nouveau contre-profil |
 | 4 | une extraction de premier blow-up fournit-elle une équicontinuité critique de trace par une structure absente de l'énergie seule ? | `C_t^(1/4)H^-1` est supercritique et coexiste avec le défaut exact; l'axe est suspendu après trois échecs | hypothèse structurelle explicitement sourcée et testée; sinon conserver la suspension |
@@ -20,6 +20,14 @@ des décisions reste dans les checkpoints.
 - Auditer intégralement les manuscrits Shahmurov 2026 : veille conservée, mais
   une revendication unilatérale non publiée ne dépasse pas les verrous mieux
   bornés ci-dessus sans vérification indépendante.
+
+## Question fermée conditionnellement au cycle 0008
+
+Une ancienne mild au sens KNSS sur `R³ x (-infinity,0)`, globalement bornée et
+ayant une vraie trace nulle dans `D'` quand `t->0-`, est nécessairement nulle.
+Le statut reste `COMPUTATION_ONLY` parce que le chaînage est une dérivation du
+laboratoire non revue extérieurement. Le raccord de ces hypothèses à une
+extraction Clay reste ouvert et constitue la priorité 1 ci-dessus.
 
 ## Règle de pivot
 

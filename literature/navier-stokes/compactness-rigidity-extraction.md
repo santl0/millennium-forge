@@ -567,3 +567,134 @@ Le fichier machine et son validateur sont dans
 `experiments/navier-stokes/blowup-inheritance-audit/`. Le résultat négatif est
 borné au corpus : une nouvelle construction ou un vrai lemme `Bridge(C)` peut
 le falsifier.
+
+## 10. Rigidité de la porte mild bornée à trace nulle — cycle 0008
+
+### Énoncé fermé conditionnellement
+
+**[DÉRIVATION DU LABORATOIRE, non promue en preuve papier]** Soit `u` une
+solution ancienne mild au sens de KNSS de Navier–Stokes incompressible 3D,
+non forcé, viscosité `1`, sur `R³ x (-infinity,0)`. Si
+
+```text
+M=sup_(R³ x (-infinity,0)) |u| < infinity
+```
+
+et si `u(t)->0` dans `D'(R³)` lorsque `t->0-`, alors `u=0`.
+
+Le point nouveau de l'audit n'est pas un nouveau Carleman. Il est le raccord
+de topologie entre la définition ancienne KNSS et l'unicité rétrograde ESS
+appliquée à la vorticité. Le théorème publié de Lei–Yang–Yuan fournit une
+seconde route au niveau de la vitesse, non nécessaire à la route sélectionnée.
+
+### Étape A — constantes de lissage uniformes
+
+La définition KNSS permet de redémarrer la formule mild à tout temps fini.
+La proposition 4.1 de KNSS donne, depuis une donnée `L-infinity`,
+
+```text
+h^(k/2+l)||nabla^k partial_t^l u(s+h)||_infinity
+  <= C_(k,l)||u(s)||_infinity
+```
+
+pour `h<=epsilon_(k,l)||u(s)||_infinity^-2`. En choisissant
+`h=epsilon_(k,l)/(2M²)` et en redémarrant à `s=t-h`, on obtient pour tout
+`t<0`
+
+```text
+||nabla^k partial_t^l u(t)||_infinity
+  <= C'_(k,l) M^(k+2l+1).                                    (10.1)
+```
+
+La puissance est imposée par l'échelle NS : sous
+`u_lambda=lambda u(lambda x,lambda²t)`, le membre de gauche porte
+`lambda^(k+2l+1)`. Les constantes sont indépendantes de `t`, de la distance
+au bord terminal et du temps ancien choisi.
+
+Pour `k=0,l=1`, (10.1) donne un module global
+
+```text
+||u(t)-u(s)||_infinity <= C M³ |t-s|.                         (10.2)
+```
+
+Les tranches sont donc de Cauchy dans `L-infinity` quand `s,t->0-`. Leur
+limite bornée `u_*` est aussi leur limite dans `D'`; l'hypothèse impose
+`u_*=0`. Cette étape est plus forte que la seule promotion locale par
+Arzelà–Ascoli et exclut les paquets qui s'échappent à l'infini.
+
+### Étape B — extension mild au temps terminal
+
+Pour tout `a<0`, la formule mild vaut sur `[a,t]`, `t<0`. Le noyau d'Oseen
+différentié satisfait
+
+```text
+||K(t)||_1 <= C_K t^(-1/2).
+```
+
+La queue de Duhamel sur un intervalle de longueur `delta` est donc au plus
+
+```text
+2 C_K M² sqrt(delta),                                         (10.3)
+```
+
+uniformément en espace. Les autres termes convergent en `L-infinity` par
+continuité du semi-groupe à temps strictement positif. En passant `t->0-`, on
+obtient la formule mild sur `[a,0]` avec donnée finale `u(0)=0`. La borne
+`k=1,l=0` de (10.1) donne en même temps une vorticité bornée.
+
+### Étape C — unicité rétrograde de la vorticité
+
+La vorticité vérifie
+
+```text
+partial_t omega-Delta omega
+  =(omega dot nabla)u-(u dot nabla)omega.
+```
+
+Après renversement du temps sur une bande finie, (10.1) donne
+
+```text
+|partial_tau omega+Delta omega|
+  <= C_M(|omega|+|nabla omega|).                              (10.4)
+```
+
+La convergence `D'` et les bornes uniformes de toutes les dérivées donnent
+`omega(t)->0` dans `C^0_local`. **[SOURCE]** Le théorème 5.1 d'ESS s'applique
+sur chaque demi-espace translaté : régularité locale quadratique, croissance
+gaussienne, coefficients bornés et trace finale nulle sont toutes vérifiées.
+L'union des demi-espaces annule `omega` sur `R³` et le raisonnement vaut sur
+toute bande finie.
+
+Alors `Delta u=nabla div u-curl curl u=0`. Le Liouville harmonique et la
+bornitude donnent `u=b(t)`; la remarque 6.1 de KNSS rend `b` constante, et la
+trace l'annule.
+
+**Contrôle corroborant.** Le théorème 1.1 publié de
+[Lei–Yang–Yuan 2024](https://doi.org/10.1093/imrn/rnae208) donne aussi
+l'unicité de deux solutions mild bornées à même donnée finale. L'extension
+mild jusqu'à `t=0`, justifiée par (10.3), permettrait de comparer `u` à zéro.
+Cette route n'est pas le seul support retenu : l'arXiv v1 comporte un renvoi
+interne erroné, un facteur `1/2` manquant dans une identité de Laplacien et un
+écart `k/2k` dans un poids. Ces anomalies paraissent localement réparables et
+ne réfutent pas l'article évalué, mais la version éditeur sous accès contrôlé
+n'a pas été comparée ligne à ligne.
+
+### Attaques et portée Clay
+
+- Sans mildness, `u=b(t)`, `p=-b'(t) dot x` est un contre-exemple classique.
+- Une valeur `u(0)=0` assignée à une constante non nulle sur `t<0` n'est pas
+  une trace.
+- Une suite `f_N=(0,sin(Nx_1),0)` converge dans `D'`, mais perd la borne de
+  vorticité et ne constitue pas une trajectoire ancienne unique.
+- Des paquets traduits à l'infini conservent toutes leurs dérivées et
+  convergent dans `D'`, mais violent le module temporel global (10.2) s'ils
+  sont assemblés sans structure mild.
+- La limite KNSS par maximum satisfait précisément toutes les portes sauf la
+  trace nulle : elle porte la normalisation opposée `|u(0,0)|=1`.
+
+Le lemme de rigidité est donc fermé, mais son raccord au problème Clay ne
+l'est pas. Aucune chaîne ESS, GKP ou KNSS ne transmet à un **même objet**
+`mildness + borne L-infinity globale + trace terminale nulle + non-trivialité`.
+Le prochain verrou est la possibilité — ou l'impossibilité quantitative — de
+faire hériter cette trace à une extraction maximum-normalisée sans réintroduire
+une borne critique circulaire.
