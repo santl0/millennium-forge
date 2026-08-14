@@ -631,3 +631,25 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
   `MO_B>=c_Lambda(K_u/K_w)^6`.
 - Décision : abaisser le degré seul et activer
   `GAP-AXIALLY-DISPERSED-PURE-SWIRL-SELECTION`.
+
+## 2026-08-14 — Cycle 0034
+
+- Veille différentielle primaire : Lions, Solimini, Gérard, Jaffard, Koch et
+  Bahouri–Cohen–Koch pour concentration-compacité et profils; Barker–Prange
+  2020–2021 pour la concentration dynamique près des singularités.
+- Sources ajoutées : `NS-SRC-0140`–`0147`; corpus porté à 147 entrées.
+- Résultat négatif de veille : aucune source contrôlée ne sélectionne une même
+  cellule depuis les seules bornes faible-`L3` de `U` et
+  faible-`L^(3/2)` de `curl U`. Les théorèmes de profils exigent une source
+  plus forte ou un indice secondaire strict.
+- Raccord publié le plus proche : Barker–Prange sélectionnent dynamiquement un
+  même centre sous Type I et singularité déjà supposée; ce n'est pas le lemme
+  statique actif.
+- Statuts 2025–2026 recontrôlés : Lei–Ren–Tian `2501.08976v1`, Grujić
+  `2511.00725v3`, Grujić `2607.08866v2`, Barker `2510.20757v3`; annonces
+  Shahmurov toujours en quarantaine.
+- Résultat interne : sélection normique abstraite réfutée; sélection
+  hétérogène rétablie sous registre BV uniforme, puis raccordée au gate
+  directionnel avec puissance douze.
+- Décision : fermer les cellules épaisses disjointes enregistrées et activer
+  `GAP-DEGENERATE-CELL-REGISTER-OR-OVERLAP`.

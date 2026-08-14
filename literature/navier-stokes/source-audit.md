@@ -840,3 +840,32 @@ pas des résultats nouveaux sur l'équation de Navier–Stokes.
 La veille ajoute `NS-SRC-0136`–`0139` et porte le corpus à 139 sources. Les
 textes sont des outils topologiques publiés, sans implication directe vers
 une solution globale ou un blow-up admissible de Navier–Stokes.
+
+## Audit ciblé du cycle 0034 — profils et sélection de cellule
+
+- Lions (`0140`) organise compacité, évanescence et dichotomie pour des
+  mesures et suites minimisantes. La dichotomie n'est pas exclue sans
+  structure variationnelle; aucune paire `U/curl U` n'est synchronisée.
+- Solimini (`0141`), Gérard (`0142`), Jaffard (`0143`), Koch (`0144`) et
+  Bahouri–Cohen–Koch (`0145`) décomposent des suites bornées dans un espace
+  source plus fort. Ils ne transforment pas les seules bornes cibles
+  `L^(3,infinity)` et `L^(3/2,infinity)` en une cellule commune.
+- Le même indice secondaire faible est une frontière réelle : la source
+  Bahouri–Cohen–Koch montre l'échec de son hypothèse d'approximation sur un
+  empilement multi-échelle, mais conjecture seulement l'échec de toute
+  décomposition générale. Ce statut n'est pas renforcé dans le catalogue.
+- Barker–Prange (`0146`, `0147`) fournissent le raccord dynamique publié le
+  plus proche. Sous Type I et singularité supposée, ils localisent vitesse
+  critique et enstrophie près d'un même centre. Ils ne prouvent pas la
+  sélection statique aux deux endpoints faibles et ne couvrent pas Type II.
+- La localisation de Biot–Savart conserve un champ lointain critique; un
+  cutoff crée `nabla chi cross U` et un défaut de divergence. Les profils de
+  `U` et de `W` ne sont donc pas synchronisés par une coupure formelle.
+- Le cycle réfute exactement la sélection fondée sur les seules quasi-normes,
+  puis la rétablit sous le registre BV
+  `integral_(Q_j)|W_j|>=cA_jv_j^(2/3)`. Cette implication est une dérivation
+  interne, pas un théorème attribué aux sources de profils.
+
+La veille ajoute `NS-SRC-0140`–`0147` et porte le corpus à 147 sources. Les
+prépublications récentes surveillées restent aux versions consignées; aucune
+ne ferme le gap de cellule faible-Lorentz statique.
