@@ -322,3 +322,31 @@ Une famille dont le cutoff `v_0(t)` tend vers zéro montre en outre que la
 constante temporelle n'est uniforme que si le domaine de validité de (47)
 l'est. Le statut reste `COMPUTATION_ONLY`: le transfert vorticité–vitesse
 `(40) -> (41) -> (47)` n'est pas encore reproduit.
+
+## Audit ciblé du cycle 0016 — transfert O'Neil et jauge de Biot–Savart
+
+| Source primaire | Passage contrôlé | Verdict exact |
+|---|---|---|
+| Grujić `arXiv:2607.08866v2` (`0059`) | équations (40)–(47) | les exposants se transfèrent après quantification; le reste positif de (46) n'est pas `O(1)` et la vitesse entière n'est pas reconstruite depuis la vorticité sous la seule hypothèse `L∞` |
+| O'Neil 1963, DOI `10.1215/S0012-7094-63-03015-1` (`0067`) | inégalité de convolution | la forme `(f*g)**` donne exactement les poids `v^-2/3` et `s^-2/3`; le facteur trois du coeur vient de `K**` |
+| Majda–Bertozzi 2002, DOI `10.1017/CBO9780511613203` (`0068`) | Biot–Savart et décomposition de Hodge sur `R³` | la reconstruction exige décroissance, intégrabilité ou fixation explicite de la composante harmonique |
+
+Une version dimensionnée et uniforme de (40), complétée par le contrôle global
+`omega∈L^{3/2,infinity}` et une décomposition
+`u=B[omega]+h`, `||h||_infinity≤H`, implique quantitativement (47). Le cycle
+0016 fournit un seuil de sécurité `0<v≤Vexp(-6)` et une constante explicite.
+
+Deux énoncés littéraux sont toutefois réfutés :
+
+1. le reste
+   `3 integral_v^1 s^(-4/3)/log²(e/s) ds` diverge comme
+   `9v^(-1/3)/log²(e/v)`; il est inférieur au terme principal, mais pas
+   `O(1)`;
+2. un champ constant non nul a vorticité nulle et contredit (41) si la
+   composante harmonique n'est ni retranchée ni contrôlée.
+
+Ces défauts sont localement réparables et ne changent pas l'exposant de (47).
+Ils empêchent néanmoins de classer la rédaction actuelle comme une preuve à
+constantes et quantificateurs suivis. La priorité remonte à la production
+dynamique de (40), notamment les seuils de troncature et le coefficient de
+Grönwall de l'étape De Giorgi.

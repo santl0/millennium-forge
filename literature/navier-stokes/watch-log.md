@@ -297,3 +297,22 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
 - Décision : conserver le lemme réparé au statut `COMPUTATION_ONLY` et auditer
   ensuite `(40) -> (41) -> (47)`, notamment le reste positif de (46), la
   normalisation Biot–Savart et l'uniformité des deux intégrales d'O'Neil.
+
+## 2026-08-14 — Cycle 0016
+
+- Veille différentielle : `arXiv:2607.08866` reste en v2 du 2026-07-13;
+  aucune v3 ni publication évaluée n'est indiquée dans la notice courante.
+- Source ajoutée : Majda–Bertozzi, *Vorticity and Incompressible Flow*, DOI
+  `10.1017/CBO9780511613203`, pour la jauge de Hodge/Biot–Savart sur `R³`.
+- Résultat positif borné : une queue (40) dimensionnée, un seuil uniforme, le
+  contrôle global faible `L^{3/2}` et une composante harmonique bornée donnent
+  (47) avec constante et cutoff explicites, sans perte d'échelle.
+- Résultat négatif : le reste positif de (46) n'est pas `O(1)`; il diverge
+  comme `9v^-1/3 log^-2(e/v)`. L'exposant final survit parce que ce reste est
+  inférieur d'un logarithme.
+- Test de jauge : `u=(2,-3,6)` est divergence-free, analytique et de
+  vorticité nulle, mais sa réarrangée est non nulle. (41) doit porter sur
+  `u-h`, ou supposer décroissance/intégrabilité.
+- Décision : fermer conditionnellement le transfert fonctionnel (40)–(47),
+  conserver les deux omissions comme claims réfutés et remonter vers
+  l'uniformité de la dérivation dynamique de (40).
