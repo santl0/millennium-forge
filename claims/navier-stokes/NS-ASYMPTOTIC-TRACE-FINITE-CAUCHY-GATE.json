@@ -1,0 +1,51 @@
+{
+  "id": "NS-ASYMPTOTIC-TRACE-FINITE-CAUCHY-GATE",
+  "problem": "navier-stokes",
+  "statement": "Sur tout intervalle où une solution forte de Navier–Stokes vérifie l'intégrabilité temporelle de sa norme de gradient L-infinity, une solution de Leray–Hopf issue de la même donnée à un temps fini coïncide avec elle; par conséquent, la multiplicité de branches HWY partageant seulement une trace critique singulière lorsque tau tend vers moins l'infini ne se transfère pas, à elle seule, en multiplicité pour une même donnée Clay lisse posée à temps fini.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "Navier–Stokes incompressible 3D non forcé sur R3, viscosité 1, aucune frontière",
+    "u est une solution forte/classique et v une solution de Leray–Hopf sur un intervalle commun [t0,T]",
+    "u(t0)=v(t0) dans L2 et les deux champs sont divergence-free",
+    "l'intégrale de ||nabla u(t)||_infinity sur [t0,T] est finie",
+    "l'inégalité de relative énergie faible–forte est légitime; la pression est éliminée dans le pairing divergence-free",
+    "la conclusion s'arrête au premier temps où la solution forte ou son coefficient de Grönwall cesse d'être contrôlé",
+    "le contre-modèle logistique certifie seulement la différence de quantificateurs entre trace asymptotique et donnée finie; ce n'est pas une réduction de Navier–Stokes"
+  ],
+  "dependencies": [
+    "NS-HWY-UNFORCED-NONUNIQUENESS-V2",
+    "NS-HWY-INNER-CUTOFF-CRITICAL-GATE",
+    "NS-HWY-SYMMETRIC-CUTOFF-ODD-MODE-GATE"
+  ],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "Prodi, Un teorema di unicità per le equazioni di Navier–Stokes, Ann. Mat. Pura Appl. 48 (1959), DOI 10.1007/BF02410664"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "Hou–Wang–Yang, arXiv:2509.25116v2: branches forward partageant une donnée critique singulière à t=0, coordonnées instables prescrites à tau=0; https://arxiv.org/abs/2509.25116"
+    },
+    {
+      "kind": "derivation",
+      "reference": "experiments/navier-stokes/asymptotic-trace-cauchy-gate/trace_cauchy_audit.py",
+      "sha256": "f78d90967e7546b5f4c04658f9537b70f3e7df8f7530e4b592734fbb6fb86375"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "ASYMPTOTIC-TRACE-CAUCHY-GATE-1: la famille b_A=aA exp(a tau)/(a+A exp(a tau)) partage la trace zéro à moins l'infini mais l'état à tout temps fini détermine A; le contrôle non lipschitzien x'=2sqrt(x) admet au contraire trois solutions retardées depuis x(0)=0"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-state-of-art/cycle-0012"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "OpenAI Codex et sous-agents Codex, même famille de modèle; non indépendant au sens externe",
+    "notes": "Le résultat ne donne aucune existence globale forte. Le contrôle x'=2sqrt(x) montre que la conclusion peut échouer hors d'une classe localement lipschitzienne/forte; une non-unicité faible après breakdown reste compatible."
+  }
+}

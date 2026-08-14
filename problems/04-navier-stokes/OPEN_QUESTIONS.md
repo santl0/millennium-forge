@@ -6,10 +6,10 @@ des décisions reste dans les checkpoints.
 
 | Priorité | Question falsifiable | Pourquoi maintenant | Critère de sortie |
 |---:|---|---|---|
-| 1 | pour une couche intérieure volontairement impaire d'amplitude `epsilon^beta`, peut-on certifier le fonctionnel adjoint HWY, son conditionnement et la balance non linéaire complète ? | le cycle 0011 montre que le lissage radial pair projette exactement zéro sur le mode certifié impair; le seuil linéaire nécessaire est `beta>=2a>=0.217`, mais les données CAP adjointes manquent | enclosure du couple adjoint et de la résolvante, résidu de balance contenant zéro et contrôle du cutoff/pression, ou constat reproductible que les artefacts publics sont insuffisants |
-| 2 | une contrainte géométrique locale de vorticité, strictement plus forte que l'hélicité globale mais déductible de NS, impose-t-elle une déplétion triadique ? | le contre-profil exact ferme la version globale naïve | inégalité signée prouvée ou nouveau contre-profil |
-| 3 | un problème renormalisé NS peut-il être réduit à un opérateur compact avec bornes de queue certifiables ? | préalable à toute preuve assistée par ordinateur | rayon de contraction validable sous raffinement |
-| 4 | le noyau Fourier fini énergie–Leray peut-il être formalisé sans axiome ni `sorry` en Lean ? | petite brique stable, indépendante des scénarios spéculatifs | build épinglé + `#print axioms` vide hors logique standard |
+| 1 | une contrainte quantitative **locale** de cohérence des directions de vorticité, strictement plus forte que l'hélicité globale, impose-t-elle un signe ou une déplétion uniforme de l'étirement sur des triades divergence-free ? | après le troisième échec HWY, ce verrou indépendant obtient `17/20`; `TRI-PHASE-1` réfute déjà toute règle fondée seulement sur les invariants globaux | inégalité à constante suivie ou contre-profil Fourier exact satisfaisant la cohérence proposée et gardant un étirement de signe arbitraire |
+| 2 | un problème renormalisé NS peut-il être réduit à un opérateur compact avec bornes de queue certifiables ? | deuxième score du pivot, `16/20`; préalable à toute preuve assistée par ordinateur | rayon de contraction validable sous raffinement |
+| 3 | le noyau Fourier fini énergie–Leray peut-il être formalisé sans axiome ni `sorry` en Lean ? | score `15/20`; petite brique stable, indépendante des scénarios spéculatifs | build épinglé + `#print axioms` vide hors logique standard |
+| 4 | peut-on construire un dictionnaire exact entre cohérence de vorticité en espace physique et restrictions de phase/amplitude dans une triade de Fourier finie ? | nécessaire pour que l'axe géométrique ne se réduise pas à une heuristique de turbulence | formule explicite contrôlée sur un champ réel divergence-free et test de violation |
 
 ## Questions suspendues
 
@@ -27,6 +27,11 @@ des décisions reste dans les checkpoints.
   une nouvelle extraction, pas une autre topologie sur la même suite.
 - Déduire une compacité critique de trace depuis l'énergie seule : suspendu
   après les trois échecs `FAIL-NS-0006` à `0008`.
+- Transférer la multiplicité HWY vers une même donnée Clay lisse : suspendu
+  après `FAIL-NS-0013` à `0015`. Les trois portes indépendantes sont la
+  compacité critique, l'annulation par parité du mode certifié et la différence
+  entre trace asymptotique et donnée de Cauchy finie. Une couche impaire et son
+  adjoint ne seront réouverts qu'avec un mécanisme de perte forte non circulaire.
 
 ## Question fermée conditionnellement au cycle 0008
 
@@ -35,8 +40,9 @@ ayant une vraie trace nulle dans `D'` quand `t->0-`, est nécessairement nulle.
 Le statut reste `COMPUTATION_ONLY` parce que le chaînage est une dérivation du
 laboratoire non revue extérieurement. Le raccord de ces hypothèses à une
 extraction Clay reste ouvert mais est suspendu après le troisième test du
-cycle 0009; la priorité active est désormais la désingularisation
-Hou–Wang–Yang.
+cycle 0009. La désingularisation Hou–Wang–Yang a ensuite été suspendue après
+trois tests supplémentaires; la priorité active est désormais la géométrie
+locale de la vorticité confrontée aux triades signées.
 
 ## Résultat négatif du cycle 0010
 
@@ -60,6 +66,17 @@ par unicité. La route « lissage radial puis excitation générique du mode
 certifié » est abandonnée. Une asymétrie contrôlée reste testable, mais ses
 signes différents sont des données Clay différentes et sa balance terminale
 exige un adjoint certifié ainsi que les termes non linéaires et non locaux.
+
+## Résultat négatif du cycle 0012
+
+Une condition commune à `tau=-infinity` oublie les coefficients instables et
+ne constitue pas une même donnée de Cauchy à temps fini. Sur l'intervalle fort,
+l'identité de relative énergie et Grönwall imposent au contraire l'injectivité
+faible–forte depuis une donnée finie commune. La famille logistique exacte
+`b_A=aA exp(a tau)/(a+A exp(a tau))` partage la trace zéro, tandis que son état
+à tout temps fini récupère `A`. Le transfert par identification des traces est
+abandonné. Après ce troisième échec HWY réellement distinct, le programme
+pivote vers la géométrie locale de la vorticité et les triades signées.
 
 ## Règle de pivot
 

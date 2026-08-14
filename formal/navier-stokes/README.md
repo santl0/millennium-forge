@@ -411,3 +411,22 @@ formalisé sans dépendre du profil CAP :
 Cette brique certifierait la logique de `FAIL-NS-0014`, pas la commutation d'un
 opérateur PDE non borné ni le mode HWY. Le fichier Python exact reste
 `COMPUTATION_ONLY`; aucune preuve formelle n'est revendiquée au cycle 0011.
+
+## Backlog issu du cycle 0012 — porte de Cauchy finie
+
+Deux noyaux stables peuvent être formalisés après `NS-FORMAL-0001`, sans
+encoder une théorie faible PDE complète :
+
+1. pour `a,A,q>0`, définir `b=aAq/(a+Aq)` et prouver les identités finies
+   `db/dtau=ab-b²` sous `dq/dtau=aq`, puis
+   `A=ab/[q(a-b)]` lorsque `0<b<a`;
+2. formaliser le lemme de Grönwall scalaire avec la normalisation
+   `E=(1/2)||w||²` et le coefficient `2g(t)`, en séparant clairement
+   l'inégalité fonctionnelle abstraite de la légitimité de la relative énergie
+   pour une solution de Leray–Hopf.
+
+Le premier noyau certifierait seulement que trace asymptotique et état fini ont
+des quantificateurs différents. Le second ne certifierait Navier–Stokes
+qu'après formalisation des espaces, du pairing divergence-free, de la pression
+et de l'inégalité d'énergie, absents du dépôt. Aucune preuve Lean n'est donc
+revendiquée au cycle 0012; la priorité formelle reste le noyau Fourier–Leray.

@@ -419,3 +419,45 @@ permettant le calcul asymétrique. Le verrou est révisé vers le certificat
 minimal résolvante–simplicité–adjoint–pairing. Une perturbation asymétrique
 servira seulement de test de sensibilité vers la donnée singulière : ses
 variantes sont des données Clay différentes.
+
+## Cycle 0012 : décision automatisée
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| tester l'injectivité du flot fort à temps fini face à une trace commune à `tau=-infinity` | 4 | 5 | 5 | 5 | **19** |
+| construire une couche impaire divergence-free et suivre son coefficient spectral formel | 4 | 5 | 5 | 3 | 17 |
+| formaliser immédiatement les projecteurs de parité finis en Lean | 3 | 3 | 5 | 3 | 14 |
+
+Décision : isoler la porte de Cauchy avant tout nouveau calcul spectral. Pour
+`w=v-u`, avec `u` forte et `v` Leray–Hopf de même donnée à un temps fini,
+
+```text
+(1/2)d||w||²_2/dt+||nabla w||²_2
+  <= ||nabla u||_infinity ||w||²_2.
+```
+
+Ainsi le flot reste injectif tant que le coefficient de Grönwall est
+intégrable. Une perte de cette classe à temps fini serait déjà l'événement
+négatif Clay recherché; elle ne peut pas être supposée pour obtenir le raccord.
+
+Le contre-modèle exact `b'=ab-b²` possède la famille
+`b_A=aA exp(a tau)/(a+A exp(a tau))`. Toutes les branches ont la trace zéro à
+`tau=-infinity`, mais l'état à tout temps fini récupère injectivement `A`. Le
+contrôle adverse `x'=2sqrt(x)` montre que plusieurs trajectoires depuis une
+même donnée finie réapparaissent seulement après perte de l'unicité locale.
+
+Résultat négatif décisif : l'arête
+
+```text
+même trace critique singulière à tau=-infinity
+  -> même donnée de Cauchy lisse à temps fini
+```
+
+est réfutée (`FAIL-NS-0015`). Avec les échecs indépendants de compacité
+critique (`0013`) et de parité (`0014`), cela atteint le seuil de trois
+stratégies. `GAP-LIMIT-ADMISSIBLE` est suspendu.
+
+Pivot noté : géométrie locale de vorticité + triades signées `17/20`, opérateur
+renormalisé compact `16/20`, noyau Fourier–Leray formel `15/20`. Le prochain
+cycle sélectionne le premier axe et cherchera un contre-profil divergence-free
+exact contre une déplétion géométrique quantitative.

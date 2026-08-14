@@ -334,6 +334,56 @@ d'équivalence entre deux profils, pas un autre renommage de topologie.
   `COMPUTATION_ONLY`, sans revue indépendante externe.
 - Artefact : `HWY-PARITY-PROJECTION-GATE-1`.
 
+## `FAIL-NS-0015` — Confusion entre trace asymptotique HWY et donnée de Cauchy finie
+
+- Date : 2026-08-14.
+- Équation : NS incompressible 3D non forcé sur `R³`, viscosité `1`; une
+  solution forte/classique et une solution de Leray–Hopf sur un intervalle
+  commun issu d'une même donnée `L²` à temps fini.
+- Cible : déduire de plusieurs branches HWY ayant la même trace critique
+  singulière lorsque `tau->-infinity` plusieurs solutions depuis une même
+  donnée Clay lisse posée à `t=0`.
+- Hypothèse silencieuse trouvée : une condition asymptotique qui oublie le
+  premier coefficient instable a été traitée comme un état de Cauchy fini.
+- Attaque : identité de relative énergie pour `w=v-u`, coefficient exact de
+  Grönwall, puis famille logistique
+  `b_A=aA exp(a tau)/(a+A exp(a tau))` calculée en fractions exactes.
+- Résultat : tant que `integral ||nabla u||_infinity dt<infinity`, une même
+  donnée finie impose `w=0`. Dans le contre-modèle, toutes les branches ont la
+  trace zéro à moins l'infini, mais leur état à tout temps fini détermine
+  injectivement `A`. La trace commune n'est donc pas la donnée commune requise.
+- Test adverse : `x'=2sqrt(x)` et `x_c(t)=(t-c)_+²` possèdent réellement la
+  même donnée finie et des trajectoires distinctes, parce que la dynamique
+  perd l'unicité localement lipschitzienne. Cela localise exactement la porte
+  au breakdown de la classe forte.
+- Pression : elle s'annule seulement dans le pairing global divergence-free;
+  aucun contrôle local ou uniforme de pression n'est obtenu.
+- Résidus : ODE, asymptotique, inverse, différence de branches et contrôle
+  non lipschitzien exactement nuls; aucun flottant ni grille.
+- Portée : réfute le transfert par simple identification des traces. N'exclut
+  ni un breakdown fort, ni une non-unicité faible ultérieure, ni un nouveau
+  mécanisme non perturbatif produisant la perte forte.
+- Statut : `REFUTED` pour l'arête « même trace asymptotique -> même donnée de
+  Cauchy finie »; claim de porte `COMPUTATION_ONLY`.
+- Artefact : `ASYMPTOTIC-TRACE-CAUCHY-GATE-1`.
+
+## Obstacle consolidé — désingularisation HWY vers une même donnée Clay
+
+Trois stratégies distinctes ont fermé les inférences actuellement disponibles :
+
+1. `FAIL-NS-0013` : `L²` plus une borne `L^{3,infinity}` n'apporte pas la
+   compacité forte critique `L³` du cutoff intérieur;
+2. `FAIL-NS-0014` : le lissage radial pair n'excite pas le mode instable impair
+   certifié;
+3. `FAIL-NS-0015` : une trace commune à `tau=-infinity` n'est pas une donnée
+   de Cauchy finie commune, laquelle reste injective sur l'intervalle fort.
+
+Décision de pivot : suspendre `GAP-LIMIT-ADMISSIBLE`. Toute réouverture devra
+fournir un mécanisme de perte forte pour une donnée lisse fixée ou un théorème
+de stabilité non perturbatif qui ne suppose aucune de ces trois arêtes. Le
+prochain verrou actif devient la géométrie locale de la vorticité confrontée
+aux triades de Fourier signées.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,

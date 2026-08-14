@@ -240,3 +240,30 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   cutoff/pression. Un mode instable pair n'est pas exclu.
 - Artefact : `HWY-PARITY-PROJECTION-GATE-1`, dix résidus rationnels nuls,
   opérateur adverse non équivariant explicitement détecté.
+
+## 2026-08-14 — Trace asymptotique versus donnée de Cauchy finie
+
+- Équation : NS incompressible 3D non forcé sur `R³`, viscosité `1`; solution
+  forte `u` et solution de Leray–Hopf `v` sur le même intervalle.
+- Identité : pour `E=(1/2)||v-u||²_2`,
+  `dE/dt+||nabla(v-u)||²_2<=2||nabla u||_infinity E`. La constante `2` est
+  exacte avec cette normalisation.
+- Porte : si `integral ||nabla u||_infinity dt<infinity` et les données à un
+  temps fini coïncident, Grönwall impose la coïncidence des solutions. Cette
+  hypothèse est locale à l'intervalle fort; aucune borne jusqu'à un hypothétique
+  temps singulier n'est revendiquée.
+- Échelle : une différence de mode HWY
+  `(c-d)t^a v(x/sqrt(t))` vérifie
+  `||delta u(t)||²_2=|c-d|² t^(2a+1/2)||v||²_2`. Elle peut tendre vers zéro en
+  `L²` à la trace tout en restant non nulle pour chaque `t>0`.
+- Contre-modèle : `b_A=aAq/(a+Aq)`, `q=exp(a tau)`, partage la trace zéro mais
+  vérifie `b_A/q->A` et `A=ab/[q(a-b)]` à temps fini.
+- Pression : le gradient de pression s'annule dans le pairing global grâce à
+  la divergence nulle. Cette annulation ne donne aucune localisation uniforme
+  de la pression ni contrôle de couche asymétrique.
+- Perte localisée : le passage `tau=-infinity -> tau0 fini` perd une coordonnée
+  asymptotique; ce n'est pas une interpolation critique. La seule porte pour
+  plusieurs continuations depuis le même état est la perte de la classe forte,
+  exactement le verrou Clay.
+- Artefact : `ASYMPTOTIC-TRACE-CAUCHY-GATE-1`, résidus rationnels nuls et aucun
+  flottant.

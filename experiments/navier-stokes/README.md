@@ -2,7 +2,8 @@
 
 Les expériences de ce répertoire sont des tests analytiques finis. Elles ne
 simulent pas une solution Navier–Stokes et ne constituent ni une preuve de
-régularité ni un blow-up. Toutes utilisent la graine « sans objet » et écrivent
+régularité ni un blow-up. Les quatorze expériences utilisent la graine « sans
+objet » et écrivent
 leur rapport JSON sur la sortie standard.
 
 ## Matrice de reproduction
@@ -14,6 +15,7 @@ leur rapport JSON sur la sortie standard.
 | `DESINGULARIZATION-GATE-1` | les normes d'une troncature de `r^-1` restent-elles uniformes quand `epsilon -> 0` ? | intégrales radiales exactes; logarithme symbolique | `python -B experiments/navier-stokes/desingularization-gate/desingularization_gate.py` | zéro pour les identités rationnelles |
 | `HWY-INNER-CUTOFF-GATE-1` | une régularisation intérieure divergence-free petite en `L²` et bornée en `L^{3,infinity}` est-elle compacte dans `L³` ? | matrices et intégrales exactes; transcendantes symboliques | `python -B experiments/navier-stokes/hwy-inner-cutoff/inner_cutoff_audit.py` | zéro pour les identités rationnelles et l'arrondi |
 | `HWY-PARITY-PROJECTION-GATE-1` | un lissage intérieur respectant la réflexion HWY peut-il exciter le mode certifié impair ? | projecteurs de parité et exposants rationnels exacts; aucune grille | `python -B experiments/navier-stokes/hwy-parity-projection/parity_projection_audit.py` | zéro pour dix obligations; aucun arrondi |
+| `ASYMPTOTIC-TRACE-CAUCHY-GATE-1` | une trace asymptotique commune à `tau=-infinity` impose-t-elle une même donnée de Cauchy à temps fini ? | fractions rationnelles exactes et exponentielle symbolique; aucune grille | `python -B experiments/navier-stokes/asymptotic-trace-cauchy-gate/trace_cauchy_audit.py` | zéro pour toutes les identités; aucun arrondi |
 | `PRESSURE-TAIL-1` | centrer la pression d'un paquet distant gagne-t-il une puissance de distance ? | noyau multipolaire exact, tenseur ponctuel | `python -B experiments/navier-stokes/pressure-tail/pressure_tail.py` | zéro |
 | `PRESSURE-MULTISCALE-1` | une borne physique `L²` seule impose-t-elle la tension uniforme de la pression après zoom ? | lois d'échelle et moments exacts | `python -B experiments/navier-stokes/pressure-multiscale/pressure_multiscale.py` | zéro |
 | `QUADRATIC-PRESSURE-DEFECT-1` | énergie uniforme et convergence faible d'une trace imposent-elles la convergence du produit et de la pression ? | solution NS de Fourier exacte, fractions rationnelles | `python -B experiments/navier-stokes/quadratic-pressure-defect/quadratic_pressure_defect.py` | zéro |
@@ -132,7 +134,7 @@ réseau ni ne produit d'artefact lourd.
 
 ## Passage au continuum
 
-Aucune des treize expériences ne part d'une discrétisation PDE : il n'y a donc
+Aucune des quatorze expériences ne part d'une discrétisation PDE : il n'y a donc
 pas de passage grille-vers-continuum. Le raccord analytique restant est
 explicite dans chaque cas. Tout futur solveur doit ajouter divergence mesurée,
 convergence multi-résolution, second schéma, bornes de troncature, contrôle des
@@ -829,3 +831,38 @@ cellule reste donc `NOT_PROVIDED`.
   `2fa2148a5ebb7b8fcce370655faca1df4b2c4a56990f99704481e54bf060d51e`;
   script
   `00334a12f7b51cb4f5a397e28f014230d2126cfd1cbbe8b2ffec90aa9c729451`.
+
+## `ASYMPTOTIC-TRACE-CAUCHY-GATE-1` — trace asymptotique et état fini
+
+- Question falsifiable : des branches qui ont toutes la trace zéro quand
+  `tau->-infinity` donnent-elles plusieurs trajectoires depuis un même état
+  posé à un temps fini ?
+- Cadre NS analytique : incompressible 3D non forcé sur `R³`, `nu=1`. Pour une
+  solution forte `u` et une solution de Leray–Hopf `v` de même donnée finie,
+  `w=v-u` satisfait
+
+  ```text
+  (1/2)d||w||²_2/dt+||nabla w||²_2
+    =-integral (w dot nabla)u dot w.
+  ```
+
+  Si `integral ||nabla u||_infinity dt<infinity`, Grönwall impose `w=0`.
+  L'identité PDE est une dérivation papier; le script ne simule pas NS.
+- Contre-modèle exact : pour `a=217/2000`,
+  `b_A=aAq/(a+Aq)`, `q=exp(a tau)`, résout `b'=ab-b²`. Toutes les trajectoires
+  ont la trace zéro, mais `b_A/q->A` et
+  `A=ab/[q(a-b)]` à tout temps fini.
+- Test adverse : `x'=2sqrt(x)` admet les solutions retardées
+  `x_c(t)=(t-c)_+²` depuis le même état `x(0)=0`. Il montre que l'injectivité
+  dépend bien de la classe localement lipschitzienne/forte.
+- Dictionnaire HWY : une différence modale physique de la forme
+  `(c-d)t^a v(x/sqrt(t))` a carré de norme `L²` proportionnel à
+  `|c-d|² t^(2a+1/2)||v||²_2`; elle peut donc disparaître dans la trace alors
+  que les états diffèrent pour chaque `t>0`.
+- Résidus : ODE logistique, coefficient asymptotique, inverse à temps fini,
+  différence de deux branches et solutions retardées tous exactement nuls;
+  ordre strict sans échec, aucun flottant, aucune discrétisation.
+- Limite : l'ODE n'est pas une réduction de NS. Le test ne borne pas le temps
+  fort maximal et n'exclut aucune non-unicité faible après breakdown.
+- Empreinte du script :
+  `f78d90967e7546b5f4c04658f9537b70f3e7df8f7530e4b592734fbb6fb86375`.

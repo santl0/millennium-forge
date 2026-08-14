@@ -213,6 +213,41 @@ conditionnement suffisants pour mesurer un lissage asymétrique. Aucun mode
 instable pair n'est exclu, et la brisure de symétrie faible après perte de
 l'unicité forte reste possible.
 
+Le cycle 0012 ferme la troisième inférence du même raccord. Une trace commune
+dans la limite renormalisée `tau→-∞` n'est pas une même donnée de Cauchy à un
+temps physique fini. Sur tout intervalle où une solution forte `u` existe et
+où `∫||∇u||∞ dt<∞`, la différence `w=v-u` avec une solution de Leray–Hopf de
+même donnée vérifie
+
+```text
+(1/2)d||w||²L²/dt + ||∇w||²L² <= ||∇u||∞ ||w||²L².
+```
+
+La pression disparaît ici seulement dans le pairing global divergence-free;
+elle n'est pas devenue locale. Grönwall impose `w=0` jusqu'au temps maximal
+fort. Dans le modèle normal exact `b'=ab-b²`, la famille
+`b_A=aAe^(a tau)/(a+Ae^(a tau))` a pourtant la même trace nulle à
+`tau=-∞`, tandis que l'état à tout temps fini détermine injectivement `A`.
+Ainsi, une amplitude instable perdue dans la trace asymptotique ne fournit pas
+deux branches depuis une même donnée lisse. Après les échecs indépendants de
+compacité critique (0010), de parité (0011) et de donnée de Cauchy (0012), le
+raccord HWY est suspendu.
+
+Quatre sources récentes renforcent les barrières de vocabulaire sans fermer
+Clay. Cheskidov–Zeng–Zhang (`2503.05692v1`) appellent « dissipatives » des
+solutions à énergie continue et décroissante, mais indiquent explicitement
+qu'elles ne satisfont pas l'inégalité de Leray–Hopf. Palasek
+(`2509.18595v1`) construit une croissance arbitraire de normes pour une
+famille de données lisses distinctes, chaque solution étant forte et globale.
+Liao–Qin (`2602.12666v1`) calcule une sensibilité chaotique pour un écoulement
+de Kolmogorov **2D forcé** depuis des données différentes. Galdi–Gazzola
+(`2606.15189v3`) construit au contraire un blow-up rigoureux d'une unique
+solution globale de Leray–Hopf avec égalité d'énergie, mais sous une force
+extérieure spécialement ajustée. Les alternatives négatives Clay autorisent
+une force, mais l'exigent lisse et rapidement décroissante avec ses dérivées;
+les forces de cette construction sont seulement dans des classes
+d'intégrabilité critiques/surcritiques et portent la singularité temporelle.
+
 ## Calculs, IA et preuve assistée par ordinateur
 
 Quatre niveaux sont conservés séparément :
@@ -265,13 +300,15 @@ pas une régularité globale par elles-mêmes.
 ## Conclusion falsifiable
 
 La bibliographie ferme de nombreuses classes conditionnelles mais ne fournit
-pas l'arête « énergie -> borne critique ». Neuf cycles ont déjà éliminé ou
+pas l'arête « énergie -> borne critique ». Douze cycles ont déjà éliminé ou
 borné plusieurs substituts : transfert inviscide mono-échelle, déplétion
 triadique universelle, tension de pression issue de l'énergie, compacité de
 traces mobiles, module temporel critique et composition naïve ESS–KNSS. Le
 raccord ESS–KNSS maximum-normalisé est suspendu : les deux profils ne sont pas
 le même objet, le paquet hybride serait rigide, et la suite KNSS conserve
-nécessairement une trace non nulle. Le programme pivote vers un verrou
-indépendant : déterminer si la construction récente à donnée homogène `-1`
-possède une stabilité uniforme sous désingularisation vers une donnée Clay
-lisse, ou si ses constantes doivent diverger avec le cutoff.
+nécessairement une trace non nulle. Le raccord de la donnée homogène `-1` à
+une même donnée Clay lisse est lui aussi suspendu après trois tests négatifs
+distincts. Le programme pivote vers un verrou indépendant : déterminer, sur
+des champs divergence-free explicites, si une cohérence quantitative locale
+des directions de vorticité impose une déplétion signée du terme d'étirement
+qui ne soit pas déjà réfutée par les triades de Fourier.

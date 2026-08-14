@@ -74,7 +74,12 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | lissage intérieur radial du profil HWY pair | excitation du mode instable certifié impair | réfutée | `[L_U,J]=0`, `Q_-g_epsilon=0`, `HWY-PARITY-PROJECTION-GATE-1` | un mode pair ou une perturbation impaire ne sont pas exclus |
 | couche impaire `epsilon^beta` à `t=kappa epsilon²` | coordonnée instable bornée à `tau=0` | conditionnelle | facteur linéaire exact `kappa^-a epsilon^(beta-2a)`; nécessaire `beta>=2a>=217/1000` | adjoint, conditionnement, cutoff extérieur, non-linéarité et pression projetée non certifiés |
 | profil/couche pairs + solution forte unique | préservation de la parité avant le temps maximal | classique et dérivé par équivariance | unicité forte locale et commutation de NS avec la réflexion | n'interdit pas une brisure de symétrie faible après perte d'unicité forte |
+| même donnée `L²` à temps fini + une branche forte sur l'intervalle | coïncidence de toute branche Leray–Hopf sur cet intervalle | classique et sourcée; dérivation à constante suivie | relative énergie, Prodi/Grönwall; coefficient `2||nabla u||_infinity` pour `E=(1/2)||w||²_2` | s'arrête au premier temps où la classe forte ou le coefficient est perdu |
+| même trace critique quand `tau->-infinity` | même donnée de Cauchy à un temps fini | réfutée | famille exacte `b_A=aA exp(a tau)/(a+A exp(a tau))`, `ASYMPTOTIC-TRACE-CAUCHY-GATE-1` | la trace oublie le coefficient `A`, récupérable à tout temps fini |
 | branche HWY singulière | deux solutions Leray–Hopf pour une même donnée Clay lisse | manquante | unicité faible–forte sur la durée classique | il faut d'abord une perte de régularité forte, déjà un breakdown Clay |
+| énergie `L²` seulement continue et décroissante | inégalité d'énergie Leray–Hopf | réfutée en général | Cheskidov–Zeng–Zhang `2503.05692v1` construit explicitement hors classe Leray–Hopf | la monotonie scalaire n'impose pas l'inégalité entre deux temps |
+| solutions depuis des données arbitrairement proches | non-unicité depuis une même donnée | non transférable | Palasek `2509.18595v1`; Liao–Qin `2602.12666v1` | quantificateurs de Cauchy différents; le second cadre est 2D forcé et numérique |
+| blow-up d'une solution Leray–Hopf forcée unique | alternative négative Clay (C) | non transférable | Galdi–Gazzola `2606.15189v3` | force seulement dans des classes d'intégrabilité singulières, pas `C∞` rapidement décroissante avec toutes ses dérivées |
 | calcul flottant convergé | solution PDE exacte | manquante | — | compact analytique, bornes de queue, intervalles |
 | non-unicité faible forcée | breakdown (A)/(B) | non transférable | Albritton–Brué–Colombo | force et notion de conclusion |
 
@@ -90,17 +95,16 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | `GAP-PRESSURE-HARMONIC` | jauge de pression | équation de Poisson sur `R³` ne fixe pas les composantes affines | solution ancienne parasite exacte |
 | `GAP-HYBRID-INHERITANCE` | stabilité des hypothèses | mildness/bornitude KNSS et trace nulle ESS appartiennent à deux limites distinctes; dans la normalisation maximum, les limites commutent au temps-record `t_k`, tandis que `T` devient l'extrémité mobile `B_k` | matrice d'héritage + rigidité à trace nulle + audit des horloges/commutateur; axe suspendu après trois stratégies |
 | `GAP-SIGN-FLUX` | positivité | flux d'énergie inter-échelles | contre-triades exactes |
-| `GAP-LIMIT-ADMISSIBLE` | stabilité/admissibilité | profil singulier vers donnée de Schwartz | la convolution donne l'admissibilité `L²`, `FAIL-NS-0013` réfute la compacité `L³`, puis `FAIL-NS-0014` annule exactement la projection sur le mode impair pour tout lissage symétrique; restent asymétrie, adjoint certifié et shadowing non linéaire |
+| `GAP-LIMIT-ADMISSIBLE` | stabilité/admissibilité | profil singulier vers donnée de Schwartz | trois portes distinctes fermées : `FAIL-NS-0013` réfute la compacité `L³`, `0014` annule le mode impair sous lissage symétrique, `0015` réfute l'identification trace asymptotique/donnée finie; axe suspendu |
 | `GAP-NUM-CONTINUUM` | calcul vers continuum | discrétisation finie | résidu d'intervalle + queue analytique |
 
 ## Arêtes prioritaires
 
-1. `GAP-LIMIT-ADMISSIBLE` : certifier l'adjoint et la balance d'une couche
-   intérieure impaire ajustée à l'ordre `epsilon^(2a)`; le raccord critique
-   statique et l'excitation du mode impair par lissage symétrique sont fermés
-   négativement.
-2. `GAP-SIGN-FLUX` : élimination rapide de fonctionnelles candidates.
-3. `GAP-NUM-CONTINUUM` : isoler un opérateur compact à queues certifiables.
+1. `GAP-SIGN-FLUX` : tester une cohérence **locale** des directions de
+   vorticité contre des champs divergence-free à triades signées exactes.
+2. `GAP-NUM-CONTINUUM` : isoler un opérateur compact à queues certifiables.
+3. Noyau Fourier–Leray formel : certifier les identités d'énergie finies avant
+   toute formalisation de scénario PDE.
 
 `GAP-COMPACT-Q` est suspendu sous énergie seule après trois stratégies
 distinctes réfutées. Il ne sera rouvert qu'avec une hypothèse structurelle
@@ -109,6 +113,11 @@ explicitement héritée d'un premier blow-up.
 `GAP-HYBRID-INHERITANCE` est également suspendu dans la normalisation maximum
 KNSS : une réouverture exige une extraction différente ou un lemme
 d'équivalence de profils, et non une nouvelle permutation des mêmes limites.
+
+`GAP-LIMIT-ADMISSIBLE` est suspendu après les trois stratégies
+`FAIL-NS-0013`–`0015`. Une réouverture exige un mécanisme de perte forte pour
+une donnée lisse fixée ou une stabilité non perturbative qui ne réutilise pas
+compacité `L³`, excitation impaire symétrique ou identification des traces.
 
 Une arête ne passe à « classique et sourcée » qu'avec une source primaire et
 des hypothèses identiques. Une expérience finie reste « numérique » ou
