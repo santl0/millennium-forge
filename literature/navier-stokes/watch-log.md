@@ -128,3 +128,27 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
 - Limite : les preuves complètes de Pineau–Vicol et Lei–Yang–Yuan n'ont pas été
   reproduites; seuls les énoncés ciblés, définitions et métadonnées primaires
   ont été audités.
+
+## 2026-08-14 — Cycle 0009
+
+- Fenêtre recherchée : concentration critique `L³`, équi-intégrabilité,
+  limites anciennes et résultats Navier–Stokes 2025–2026 jusqu'à `2608.*`.
+- Source de borne de nouveauté ajoutée : Constantin,
+  `arXiv:2301.04489v1`, publié dans *J. Math. Fluid Mech.* 25 (2023), article
+  36, DOI `10.1007/s00021-023-00779-7`. La condition (23) est une petite masse
+  `L³` uniforme sur les ensembles de volume au plus `delta`; le théorème 2
+  donne une borne explicite de l'enstrophie et le prolongement.
+- Source de comparaison au bord ajoutée : Barker–Seregin, *Math. Ann.* 369
+  (2017), DOI `10.1007/s00208-016-1488-9`, arXiv correct `1508.05313v1` : un
+  blow-up au demi-espace force la divergence de `L^{3,q}` pour `q<infinity`.
+- Résultat différentiel : aucune source primaire nouvelle de 2025–2026
+  identifiée ne ferme le raccord terminal mobile des zooms KNSS. Le résultat
+  right-sided instant blow-up de Cheskidov–Dai–Palasek reste hors classe
+  Leray–Hopf et ne constitue pas un blow-up Clay admissible.
+- Correction scientifique : `s=0` dans le zoom par temps records correspond à
+  `t_k`, tandis que `T` correspond à `B_k=M_k²(T-t_k)`. La concentration
+  `pi/(48G³)` est une reformulation quantitative; l'équi-intégrabilité qui
+  l'exclut n'est pas un critère nouveau au regard de Constantin 2023.
+- Décision : ne promouvoir aucune annonce récente; suspendre l'axe hybride
+  ESS–KNSS après trois stratégies et pivoter vers la désingularisation des
+  données homogènes `-1` de Hou–Wang–Yang.

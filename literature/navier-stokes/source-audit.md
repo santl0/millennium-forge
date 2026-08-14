@@ -144,6 +144,8 @@ Il est incorrect de remplacer la seconde arête par « les profils self-similair
 | [Escauriaza–Seregin–Šverák 2003](https://doi.org/10.1007/s00205-003-0263-8) (`0049`) | article publié, *Arch. Rational Mech. Anal.* 169(2), 147–157 | unicité rétrograde pour une inégalité parabolique avec termes d'ordre inférieur bornés et croissance gaussienne | outil de vorticité conditionnel; ne crée ni trace nulle ni bornes de coefficients |
 | [Lei–Yang–Yuan 2024](https://academic.oup.com/imrn/article/2024/20/13417/7769704) (`0050`) | article publié le 2024-09-24, DOI `10.1093/imrn/rnae208`; arXiv resté `2311.02429v1` | unicité à donnée finale pour deux solutions mild bornées 3D de vorticités bornées | ferme le Liouville conditionnel après construction d'une vraie trace finale sur le même objet; ne fournit pas cette construction |
 | [Pineau–Vicol, arXiv:2607.09619v2](https://arxiv.org/abs/2607.09619) (`0051`) | prépublication, révisée le 2026-08-06 | exclusions quantitatives RSS/DSS/RDSS backward sous borne Type I et critère local de quasi-auto-similarité | sous-classes Type I structurées; rotation intermédiaire et scénarios Type II non couverts |
+| [Constantin 2023](https://doi.org/10.1007/s00021-023-00779-7) (`0052`) | article publié, *J. Math. Fluid Mech.* 25, article 36; arXiv `2301.04489v1` | la condition (23), petite masse `L³` sur tout ensemble de volume `<=delta` uniformément en temps, donne au théorème 2 une borne explicite de `Hdot1` et le prolongement | le seuil critique n'est pas déduit de l'énergie; l'équi-intégrabilité complète envisagée au cycle 0009 est plus forte et ne constitue pas un critère nouveau |
+| [Barker–Seregin 2017](https://doi.org/10.1007/s00208-016-1488-9) (`0053`) | article publié, *Math. Ann.* 369, 1327–1352; arXiv correct `1508.05313v1` | au demi-espace, un blow-up force la divergence des normes `L^{3,q}`, `3<=q<infinity`, via une limite ancienne locale-énergie | frontière sans glissement, endpoint faible `L³` exclu; aucune borne critique a priori pour les cas Clay sans frontière |
 
 Deux confusions doivent être activement empêchées :
 
@@ -251,12 +253,15 @@ commande de compilation.
 L'extraction théorème-par-théorème ESS/GKP/KNSS/Seregin a été réalisée. Elle
 ferme conditionnellement la rigidité d'une ancienne mild bornée à trace nulle,
 mais prouve aussi que cette classe n'est produite par aucune chaîne auditée.
-La priorité n'est donc plus un Liouville supplémentaire : c'est la topologie
-terminale d'une extraction maximum-normalisée, et le quantificateur uniforme
-qui permettrait — ou empêcherait — de commuter la limite des zooms avec
-`t->0-` sans supposer déjà `L-infinity_tL³_x` ou un critère équivalent.
+Le cycle 0009 corrige l'horloge de cette priorité : dans le zoom KNSS,
+`s=0` représente le temps-record `t_k`, et non le temps physique `T`, lequel
+devient l'extrémité mobile `B_k=M_k²(T-t_k)`. La commutation au temps-record est
+contrôlée et donne une valeur non nulle. L'équi-intégrabilité complète de
+`|u|³` exclurait la concentration, mais Constantin 2023 fournit déjà un critère
+plus faible à seuil fixe; aucune nouveauté n'est revendiquée.
 
-La prochaine veille doit chercher des théorèmes primaires d'équi-intégrabilité,
-de non-concentration de trace ou de stabilité terminale sous zoom critique. Un
-résultat stationnaire, auto-similaire ou portant sur une autre limite ne sera
-pertinent que s'il fournit explicitement ce raccord sur le même objet.
+Après trois stratégies sur le paquet hybride ESS–KNSS, la priorité
+bibliographique pivote vers la stabilité sous désingularisation des données
+homogènes de degré `-1` de Hou–Wang–Yang : dépendance exacte en cutoff des
+constantes spectrales, de l'instabilité et du calcul validé, puis confrontation
+à l'unicité faible–forte pour les données Clay lisses.
