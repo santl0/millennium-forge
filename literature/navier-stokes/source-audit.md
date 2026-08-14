@@ -435,3 +435,35 @@ Le claim `NS-CONDITIONAL-ENDGAME-SYNCHRONIZATION` est `COMPUTATION_ONLY`.
 Le choix maximal littéral est enregistré `REFUTED`. Ce cycle ne valide pas la
 production de la queue uniforme depuis une donnée Clay générale; il ferme
 seulement le maillon aval sous ses prémisses.
+
+## Audit ciblé du cycle 0020 — direction active et espaces log-BMO
+
+| Source primaire | Passage contrôlé | Verdict exact |
+|---|---|---|
+| Grujić `arXiv:2607.08866v2` (`0059`) | équation (2), théorème 4.1 | norme globale ancrée par `L∞`, petites boules mais tous centres; aucune convention de `xi` sur `{omega=0}` |
+| Bradshaw–Grujić 2015 (`0083`) | définition de `tilde-bmo_phi`, théorème 1 | espace ancré par `L¹` appliqué à `psi xi`; il n'est pas la norme globale non coupée de 2026 |
+| Spanne 1965 (`0079`) et Janson 1976 (`0080`) | BMO pondéré par l'oscillation | provenance des semi-normes `BMO_phi` modulo les constantes; aucune ancre identique à la v2 |
+| Goldberg 1979 (`0081`) | Hardy local et dual `bmo` | le `bmo` inhomogène sépare petites et grandes échelles; il ne définit pas le quotient de la v2 |
+| Nakai–Yabuta 1985 (`0082`) | multiplicateurs sur `R^n` | distingue semi-norme, ancre et poids position–échelle; interdit une identification silencieuse des espaces |
+
+La solution nulle fournit un test intrinsèque exact. Avec
+`u=p=omega=0`, les extensions unitaires `xi=e_1` et
+`xi=sign(x_1)e_1` satisfont toutes deux `omega=|omega|xi`. La première a
+une semi-norme nulle; la seconde a une oscillation moyenne un sur chaque
+petite boule centrée sur le plan de saut, donc une norme log-pondérée infinie.
+Les résidus PDE, divergence et vorticité sont nuls dans les deux cas.
+
+La propriété n'est donc pas définie par la seule vorticité tant qu'une
+convention ou un quantificateur d'existence sur les zéros n'est pas fixé. En
+outre, le lemme optimal du cycle donne, pour deux phases antipodales de
+fractions `a,b` dans un domaine test,
+
+```text
+MO_D(xi) >= 4ab/(a+b).
+```
+
+Deux cœurs de fractions fixes à des échelles tendant vers zéro réfutent toute
+extension globale uniforme déduite de la seule cohérence sur chaque
+composante. Cela ne réfute pas le théorème conditionnel de la v2, qui suppose
+la norme globale; cela ferme négativement le raccord vers des données Clay
+générales sans hypothèse inter-composantes.

@@ -1,0 +1,39 @@
+{
+  "id": "NS-ACTIVE-CORE-BMO-EXTENSION",
+  "problem": "navier-stokes",
+  "statement": "Une cohérence parfaite de la direction de vorticité sur chaque composante d'un ensemble actif implique, sans hypothèse entre les composantes ni convention aux zéros, l'existence d'une extension globale dont la norme bmo_phi est uniforme à mesure que l'échelle active tend vers zéro.",
+  "status": "REFUTED",
+  "hypotheses": [
+    "R³ sans frontière et poids logarithmique phi(r)=1/|log r|, ou sa version dimensionnée équivalente à petite échelle",
+    "deux cœurs actifs de rayon epsilon dans une boule commune de rayon 3epsilon",
+    "la direction vaut +e_3 sur un cœur et -e_3 sur l'autre, donc son oscillation interne est nulle sur chacun",
+    "les valeurs dans le corridor, où la vorticité peut s'annuler, sont laissées arbitraires avec |xi|<=1"
+  ],
+  "dependencies": [
+    "NS-BMO-PHASE-SEPARATION-BOUND"
+  ],
+  "evidence": [
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/cycle-0020-active-core-bmo.md: deux boules de fraction 1/27 imposent MO>=2/27 et un coût au moins 2n/27 aux échelles 3epsilon_n=exp(-n)"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/active-core-bmo/active_core_bmo_audit.py, extension arbitraire, scaling critique et réalisation divergence-free",
+      "sha256": "df595323ec3630d25747548feb53295b9a849cef8aba1d6b22c101d4136644ae"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0020-active-core-bmo"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois passes Codex séparées, même famille de modèle; non indépendantes au sens externe",
+    "notes": "La réfutation porte sur l'implication universelle composante-par-composante. Elle ne réfute pas un critère qui suppose d'emblée la borne globale ou ajoute une condition quantitative de packing inter-composantes."
+  }
+}
+

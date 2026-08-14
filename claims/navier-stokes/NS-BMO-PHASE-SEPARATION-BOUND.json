@@ -1,0 +1,38 @@
+{
+  "id": "NS-BMO-PHASE-SEPARATION-BOUND",
+  "problem": "navier-stokes",
+  "statement": "Si une direction mesurable vaut +e et -e sur deux parties de fractions a et b d'un même domaine test, toute extension vérifie une oscillation moyenne au moins 4ab/(a+b), constante optimale même sous la contrainte |xi|<=1; le coût bmo_phi associé est cette quantité divisée par phi à l'échelle du domaine.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "D est un ensemble mesurable de mesure finie positive",
+    "E_+ et E_- sont disjoints dans D, avec a=|E_+|/|D|, b=|E_-|/|D| et a+b>0",
+    "e est un vecteur unitaire et xi est une extension mesurable intégrable telle que xi=e sur E_+ et xi=-e sur E_-",
+    "pour la conséquence pondérée, D est un domaine admissible dans le supremum définissant bmo_phi",
+    "le lemme est géométrique et ne suppose ni ne produit une solution de Navier–Stokes"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0020-active-core-bmo.md et reviews/cycle-0020-analysis.md"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/active-core-bmo/active_core_bmo_audit.py, cas symétrique exact a=b=1/27 et douze contrôles",
+      "sha256": "df595323ec3630d25747548feb53295b9a849cef8aba1d6b22c101d4136644ae"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0020-active-core-bmo"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois passes Codex séparées, même famille de modèle; non indépendantes au sens externe",
+    "notes": "L'optimum a été attaqué analytiquement et par 5000 tests aléatoires. Le statut reste COMPUTATION_ONLY car la dérivation interne n'est ni publiée, ni formalisée, ni revue extérieurement."
+  }
+}
+

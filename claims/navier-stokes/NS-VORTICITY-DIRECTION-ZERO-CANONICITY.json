@@ -1,0 +1,36 @@
+{
+  "id": "NS-VORTICITY-DIRECTION-ZERO-CANONICITY",
+  "problem": "navier-stokes",
+  "statement": "La seule identité xi=omega/|omega| là où omega est non nul détermine intrinsèquement, sans convention supplémentaire aux zéros, si la direction de vorticité appartient à l'espace global logarithmique bmo_phi.",
+  "status": "REFUTED",
+  "hypotheses": [
+    "Navier–Stokes incompressible standard sur R³, sans force, viscosité positive",
+    "xi est unitaire et satisfait omega=|omega|xi",
+    "aucune convention ni quantificateur d'existence n'est imposé sur {omega=0}",
+    "phi(r)=1/|log r| pour 0<r<1/2"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0059, arXiv:2607.08866v2, équation (2) et théorème 4.1; aucune convention aux zéros n'est donnée dans le texte audité"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0020-literature.md: pour la solution nulle, xi=e_1 a semi-norme zéro tandis que xi=sign(x_1)e_1 a oscillation moyenne un à toutes les petites échelles"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0020-active-core-bmo"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Passe bibliographique Codex séparée, même famille de modèle; non indépendante au sens externe",
+    "notes": "Le résidu de l'équation, de la divergence et de la relation vorticité–vitesse est exactement nul. La réfutation disparaît si l'énoncé fixe une convention canonique ou quantifie explicitement l'existence d'une extension."
+  }
+}
+

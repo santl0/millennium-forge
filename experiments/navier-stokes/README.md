@@ -1117,3 +1117,40 @@ cellule reste donc `NOT_PROVIDED`.
 - Limite : le calcul ne certifie ni le théorème d'analyticité, ni la queue de
   distribution uniforme, ni Ransford/Solynin, ni l'existence des temps
   d'échappement, ni une solution ou une conclusion Clay.
+
+## `ACTIVE-CORE-BMO-OBSTRUCTION-1` — séparation de phases directionnelles
+
+- Question falsifiable : une direction constante sur chaque composante d'un
+  cœur actif admet-elle automatiquement une extension globale dont la norme
+  logarithmique `bmo_phi` est uniforme à petite échelle ?
+- Équation : application visée à NS incompressible 3D non forcé sur `R³`,
+  `nu>0`; le script construit des données `C_c^infinity` divergence-free mais
+  ne simule aucune trajectoire PDE.
+- Discrétisation : aucune grille. Fractions exactes, suites symboliques et
+  certificats analytiques toutes échelles; aucun flottant ni graine.
+- Données adverses : deux boules de rayon `epsilon`, centrées en
+  `+/-2epsilon e_1`, portent les directions `+e_3` et `-e_3` dans une boule
+  commune de rayon `3epsilon`.
+- Résultat : chaque cœur a une oscillation interne nulle, mais toute extension
+  a une oscillation moyenne au moins `2/27` sur la boule commune. Aux rayons
+  `r_n=exp(-n)`, le coût pondéré est au moins `2n/27`.
+- Réalisation : potentiel compact lisse, vitesse égale à son rotationnel
+  vectoriel, divergence exactement nulle et vorticité constante opposée dans
+  les deux cœurs. La rotation solide non coupée a un résidu stationnaire nul;
+  la pression et le résidu des coquilles coupées ne sont pas certifiés.
+- Scaling : pour `A=epsilon^-2`, vitesse `epsilon^-1`, énergie
+  `epsilon`, volume `epsilon³`, vorticité faible-`L^(3/2)` critique.
+- Résidus : douze contrôles passent, `assertion_failure_count=0`; le cas
+  symétrique du lemme optimal `4ab/(a+b)` est exact.
+- Commande :
+
+  ```text
+  python -B experiments/navier-stokes/active-core-bmo/active_core_bmo_audit.py
+  ```
+
+- Environnement : bibliothèque standard Python; aucun artefact binaire.
+  Empreinte du script :
+  `df595323ec3630d25747548feb53295b9a849cef8aba1d6b22c101d4136644ae`.
+- Limite : chaque `epsilon` définit une donnée initiale distincte. Le calcul ne
+  produit ni trajectoire multi-échelle, ni pression globale dans les coquilles,
+  ni régularité, ni blow-up Clay.
