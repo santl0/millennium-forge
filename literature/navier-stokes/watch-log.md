@@ -237,3 +237,28 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
   même donnée Clay lisse (compacité critique, parité, puis porte de Cauchy),
   suspendre `GAP-LIMIT-ADMISSIBLE` et pivoter vers la géométrie locale de la
   vorticité et les triades signées.
+
+## 2026-08-14 — Cycle 0013
+
+- Fenêtre recherchée : critères primaires de géométrie de vorticité, résultats
+  2025–2026 sur déplétion, filtrage et singularités géométriques, ainsi que
+  toute revendication de signe ponctuel du stretching.
+- Sources fixées : Constantin–Fefferman 1993 est un critère high–high
+  lipschitzien uniforme sur `R³`, avec contrôle `L¹` de la vorticité dans la
+  route originale; Beirão da Veiga–Berselli 2002 donne la famille pondérée
+  `beta∈[1/2,1]` et l'endpoint demi-Hölder; Berselli 2023 teste des sauts
+  directionnels discrets mais paie de hautes normes.
+- Sources récentes ajoutées : Lei–Ren–Tian `2501.08976v1`, critère local du
+  double cône pour solutions faibles adaptées; Yu `2606.27560v1`, estimation
+  filtrée laissant une perte `(r/ell)^5` et les queues; Grujić
+  `2607.08866v2`, revendication conditionnelle logarithmique non reproduite.
+- Résultat différentiel : aucune source auditée ne déduit un signe ponctuel de
+  `omega·S omega` de la cohérence locale. Les preuves contrôlent une intégrale
+  singulière, un bilan ou un objet limite et conservent des hypothèses globales
+  ou uniformes.
+- Test exact : la paire périodique `u_a`, `a=±1`, garde les mêmes quantités
+  quadratiques et modules locaux de direction mais inverse le stretching au
+  centre, tous résidus Fourier et pression nuls.
+- Décision : abandonner la porte de signe local sans queue non locale. Auditer
+  ensuite le premier raccord géométrique quantifié de `2607.08866v2`, en
+  commençant par la conversion mesure/sparseness au rayon analytique.
