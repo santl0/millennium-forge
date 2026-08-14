@@ -52,7 +52,9 @@ littérature. Le calcul fini ne certifie pas la constante HLS du continuum.
 Claim, rapport principal, trois revues, expérience, catalogue et audit des
 sources, veille, état de l'art, carte de recherche, graphe de dépendances,
 registre supercritique, questions, échecs, backlog formel et journaux de
-contexte/décision.
+contexte/décision. La branche est poussée sur `origin`; aucune PR n'est créée
+car le remote n'a pas de branche de base distincte et a adopté cette première
+branche publiée comme défaut. `main` local reste intact.
 
 # ÉTAT : CONTINUER / RÉVISER / ABANDONNER / À REPRENDRE
 

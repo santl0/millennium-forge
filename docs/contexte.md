@@ -210,3 +210,10 @@ fini donnent
 attaquent l'analyse fonctionnelle, les contre-profils et la littérature. Le
 corpus compte 135 sources. Le verrou actif est désormais la direction du
 gradient sur une section épaisse, avant toute dynamique.
+
+Au checkpoint 0032, le remote GitHub ne possédait aucune branche de base. Le
+premier push autorisé de
+`codex/millennium-forge/navier-stokes-state-of-art` l'a donc fait devenir la
+branche par défaut distante. La branche `main` reste uniquement locale et
+intacte; aucune pull request ne peut être ouverte tant qu'une base distante
+distincte n'est pas publiée par le socle. Aucun historique n'a été réécrit.
