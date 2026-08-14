@@ -1637,3 +1637,35 @@ cellule reste donc `NOT_PROVIDED`.
   `4759238f59a46f64f0a547881f8aeb86ca6755ceea06c4a1728648db57847f8f`.
 - Limites : constantes de profil et cône non certifiées; aucun supremum BMO
   continu, aucune cellule hétérogène optimisée, aucune PDE en temps.
+
+## `HETEROGENEOUS-CELL-SELECTION-1` — distributions et registre BV
+
+- Question falsifiable : les deux endpoints globaux sélectionnent-ils une
+  même cellule, et quel registre géométrique est indispensable ?
+- Équation simulée : aucune; ledger statique d'atomes disjoints et modèle de
+  fermeture `B_jq_j=A_jv_j^(2/3)`.
+- Discrétisation : aucune grille; fonctions de distribution finies triées et
+  calculées avec `fractions.Fraction`.
+- Contre-exemple : quatre lignes fermées `N=8^n` et deux lignes entièrement
+  matérialisées; `K_u^3=1`, `K_w^3<=64/49`, rapport local cubique `8^-n`.
+- Registre : 1 152 familles hétérogènes, 9 792 cellules, amplitudes et tailles
+  variables. Identités certifiées :
+
+  ```text
+  B_jq_j=A_jv_j^(2/3),
+  epsilon>=K_u^2/(3K_w),
+  max_j(K_(u,j)/K_(w,j))>=K_u^2/(3K_w^2).
+  ```
+
+- Commande :
+
+  ```text
+  python -B experiments/navier-stokes/heterogeneous-cell-selection/heterogeneous_cell_selection_audit.py
+  ```
+
+- Environnement : Python 3.13.14, bibliothèque standard, aucune graine.
+- Résidu certifié : 31 746 assertions rationnelles exactes, zéro échec.
+- Empreinte :
+  `d918ff7ec5e200d388cde1d3ed5230ebdd4535bc65fc3b94a2c7ac21c0962763`.
+- Limites : le contre-exemple n'est pas curl-compatible; le calcul encode mais
+  ne prouve pas coaire/BV; chevauchement, pression, diffusion et temps absents.

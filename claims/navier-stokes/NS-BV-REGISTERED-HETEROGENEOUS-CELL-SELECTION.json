@@ -1,0 +1,61 @@
+{
+  "id": "NS-BV-REGISTERED-HETEROGENEOUS-CELL-SELECTION",
+  "problem": "navier-stokes",
+  "statement": "Pour une famille finie de cellules disjointes Q_j portant U_j et W_j, si chaque cellule possède une amplitude A_j, un volume effectif v_j, un plateau de volume comparable, une boîte |Q_j|<=C_0v_j, une borne |U_j|<=C_2A_j et un registre de fermeture integral_(Q_j)|W_j|>=c_1A_jv_j^(2/3), alors une cellule vérifie ||U_j||_(L^(3,infinity))>=c K_u^2/K_w et ||U_j||_(L^(3,infinity))/||W_j||_(L^(3/2,infinity))>=c(K_u/K_w)^2. Pour des cellules pure-swirl épaisses à aspect et plateau uniformes, coaire donne le registre; le gate du cycle 0033 force ensuite MO_B>=c(K_u/K_w)^12.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "la famille de cellules est finie et les supports complets Q_j sont deux à deux disjoints dans R^3",
+    "U=sum_j U_j et W=sum_j W_j, avec U_j et W_j supportés dans Q_j",
+    "il existe A_j,v_j>0 et E_j subset Q_j tels que |Q_j|<=C_0v_j, |E_j|>=c_0v_j, c_2A_j<=|U_j| sur E_j et |U_j|<=C_2A_j sur Q_j",
+    "le registre BV uniforme integral_(Q_j)|W_j|>=c_1A_jv_j^(2/3) est satisfait",
+    "K_u=||U||_(L^(3,infinity))>0 et K_w=||W||_(L^(3/2,infinity))<infinity",
+    "le corollaire pure-swirl suppose F_j lisse compact, R_j/2<r<3R_j/2, |z-z_j|<Lambda R_j, des boîtes disjointes, un aspect Lambda uniforme et un superniveau de |F_j| d'aire comparable à R_j^2",
+    "la conclusion log-BMO le long d'une suite suppose en plus que les rayons des cellules sélectionnées tendent vers zéro"
+  ],
+  "dependencies": [
+    "NS-BOUNDED-CROSS-SECTION-DIRECTION-GATE",
+    "NS-LORENTZ-CONE-COMPENSATION"
+  ],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0132 pour coaire/variation totale et NS-SRC-0067 pour les règles Lorentz; la sélection et le raccord de puissance douze sont des dérivations internes"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0034-heterogeneous-cell-selection.md"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/heterogeneous-cell-selection/heterogeneous_cell_selection_audit.py; 31746 assertions rationnelles exactes sur 1152 familles enregistrées",
+      "sha256": "d918ff7ec5e200d388cde1d3ed5230ebdd4535bc65fc3b94a2c7ac21c0962763"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0034-analysis.md; sélection sous registre synchronisé et audit du quantificateur",
+      "sha256": "c9e86e38966aa6d5843a52c1624ae6bf9e8e2cbad2dcc48d26c9e5c83356697d"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0034-countermodel.md; distributions indépendantes, retour compact obligatoire et seconde preuve du registre BV",
+      "sha256": "cbb7cb4a37ac4f5d7fbbdbf35e852f1e0c303d379dfc777422f8b5b87405cc67"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0034-literature.md; limites des profils faible-endpoint et raccord dynamique Barker-Prange",
+      "sha256": "1f4e41b64845ca14b745bf71f657f4ce0db18d287068eb45b57021cb7c715631"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0034-heterogeneous-cell-selection"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois passes IA séparées: analyse, contre-modèle exact et audit bibliographique; aucune revue humaine externe",
+    "notes": "Les fonctions de distribution globales, le niveau presque optimal, la densité du plateau, le volume de boîte, la masse BV, la disjonction et la constante trois faible-Lorentz ont été séparés. Queues ou corridors de volume non comparable, chevauchements avec annulation, axes touchés et sélection dynamique de l'échelle restent hors portée."
+  }
+}
