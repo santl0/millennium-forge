@@ -173,7 +173,7 @@ comme `A exp(a tau)` vers le passé. Mesurer un coefficient adjoint d'une donné
 lissée peut identifier une trajectoire ou une sensibilité de sélection; cela
 ne rend pas le problème de Cauchy multivoque pour cette donnée lisse fixée.
 Plus précisément, une différence physique
-`delta u=(c-d)t^a v(x/sqrt(t))` vérifie
+`delta u=(c-d)t^(a-1/2) v(x/sqrt(t))` vérifie
 
 ```text
 ||delta u(t)||²_2=|c-d|² t^(2a+1/2)||v||²_2.

@@ -856,7 +856,7 @@ cellule reste donc `NOT_PROVIDED`.
   `x_c(t)=(t-c)_+²` depuis le même état `x(0)=0`. Il montre que l'injectivité
   dépend bien de la classe localement lipschitzienne/forte.
 - Dictionnaire HWY : une différence modale physique de la forme
-  `(c-d)t^a v(x/sqrt(t))` a carré de norme `L²` proportionnel à
+  `(c-d)t^(a-1/2) v(x/sqrt(t))` a carré de norme `L²` proportionnel à
   `|c-d|² t^(2a+1/2)||v||²_2`; elle peut donc disparaître dans la trace alors
   que les états diffèrent pour chaque `t>0`.
 - Résidus : ODE logistique, coefficient asymptotique, inverse à temps fini,

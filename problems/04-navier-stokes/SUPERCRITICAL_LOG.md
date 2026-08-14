@@ -253,7 +253,7 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   hypothèse est locale à l'intervalle fort; aucune borne jusqu'à un hypothétique
   temps singulier n'est revendiquée.
 - Échelle : une différence de mode HWY
-  `(c-d)t^a v(x/sqrt(t))` vérifie
+  `(c-d)t^(a-1/2) v(x/sqrt(t))` vérifie
   `||delta u(t)||²_2=|c-d|² t^(2a+1/2)||v||²_2`. Elle peut tendre vers zéro en
   `L²` à la trace tout en restant non nulle pour chaque `t>0`.
 - Contre-modèle : `b_A=aAq/(a+Aq)`, `q=exp(a tau)`, partage la trace zéro mais
