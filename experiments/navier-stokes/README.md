@@ -1846,3 +1846,42 @@ cellule reste donc `NOT_PROVIDED`.
 - Limites : le ledger atomique n'est pas un curl spatial; ni lui ni le raccord
   lisse ne calculent pression, viscosité, temps ou résidu PDE. La réfutation
   concerne les sommants étiquetés, pas la sélection depuis le champ total.
+
+## `SOLENOIDAL-ANNULAR-CUTOFF-1` — coût critique exact du col
+
+- Question falsifiable : le facteur `R^-1` du gradient d'un cutoff peut-il
+  devenir petit dans `L^(3/2,infinity)` grâce au volume `O(R^3)` de la
+  couronne ?
+- Équation calculée : aucune évolution; fonctions de distribution exactes
+  d'une vitesse plateau `a/R` et du terme de col `C_chi a/R^2`.
+- Discrétisation : aucune grille; profils étagés rationnels et quasi-normes
+  cubées calculées par tri exact des seuils.
+- Géométrie : couronne cubique abstraite de volume `7R^3`; le raccord lisse
+  divergence-free spatial est donné séparément par
+  `U_R=R^-1 curl(phi(c cross x)/2)((x-x0)/R)`.
+- Résolutions : plateau pour `R=2^-40,...,2^80`; seize profils étagés et
+  `R=2^-m`, `0<=m<=64`.
+- Précision : `fractions.Fraction`, aucune tolérance, aucune graine.
+- Identités certifiées :
+
+  ```text
+  K_3(U)^3=7,
+  K_(3/2)((C_chi/R)U)^3=49,
+  sharp cube ratio=7.
+  ```
+
+- Commande :
+
+  ```text
+  python -B experiments/navier-stokes/solenoidal-annular-cutoff/cutoff_cost_audit.py
+  ```
+
+- Environnement : Python 3.13.14, bibliothèque standard.
+- Résidu certifié : 9 167 assertions rationnelles exactes, zéro échec et
+  résidu arithmétique nul. Empreinte :
+  `510be7b9354f6e18a188afd87bbec510ecde01d97e187671fe6334c2529ba6e5`.
+- Sensibilité : toutes les remises à l'échelle dyadiques conservent exactement
+  le coût; le plateau sature l'inclusion de mesure finie.
+- Limites : ni l'opérateur de Bogovskiĭ, ni pression, temps, viscosité ou
+  résidu PDE ne sont certifiés. Le calcul réfute seulement un gain
+  `o_R(1)` fondé sur l'échelle.

@@ -1023,3 +1023,36 @@ pages et textes primaires ont été contrôlés le 2026-08-15. Le résultat du
 cycle reste un contre-théorème cinématique interne; aucune base, simulation ou
 prépublication récente ne ferme la pression, le temps ou le passage au
 continuum.
+
+## Audit ciblé du cycle 0040 — localisation solénoïdale sur couronne fixe
+
+- Costabel–McIntosh (`0103`) construit un même opérateur régularisé de type
+  Bogovskiĭ sur les domaines Lipschitz avec support et gain d'une dérivée.
+  Une couronne n'est pas étoilée : le raccord licite passe par leur résultat
+  Lipschitz/recouvrement, puis par homothétie du domaine fixé.
+- Guzmán–Salgado (`0111`) suit des **majorations constructives** dépendant de
+  la géométrie en `L2->H1`. Leur croissance ne prouve pas l'impossibilité
+  d'un meilleur opérateur; cette ancienne ambiguïté du catalogue est corrigée.
+- Acosta–Durán–Muschietti (`0176`) fournit la droite inverse sur les domaines
+  de John et confirme que la géométrie gouverne les constantes.
+- Albritton–Barker–Prange (`0177`) emploie effectivement Bogovskiĭ sur la
+  couronne fixe `B_(15/16)\Bbar_(7/8)` dans une preuve d'epsilon-régularité
+  Navier–Stokes. Cette source valide le maillon de localisation, pas la borne
+  faible-L3 interne ni une conclusion globale.
+- Chan–Chen–Su (`0178`, v1 2026) construit un correcteur analytique sur une
+  couronne, mais sans estimation `L^p`/Lorentz quantitative identifiée.
+- Isett–Mao–Oh–Tao (`0179`, v1 2025) développe des inverses à support prescrit
+  dans une théorie générale; aucune spécialisation critique Navier–Stokes ne
+  ferme le verrou actif.
+- L'interpolation entre les exposants forts `4/3` et `2`, le transport par
+  homothétie, la constante de quasi-triangle trois et la minoration
+  `c_pR/h` sur une couronne mince sont des dérivations internes, jamais
+  attribuées aux sources.
+- Le calcul discret arXiv:2603.29018v2 reste en watchlist : il ne certifie
+  aucune limite continue faible-Lorentz.
+
+La veille ajoute `NS-SRC-0176`–`0179` et porte le corpus à 179 sources. Les
+textes primaires, DOI, versions et usages ciblés ont été contrôlés le
+2026-08-15. Aucun développement 2025–2026 audité ne fournit la capture
+intrinsèque d'une fraction de la norme faible-`L3` à une échelle de
+concentration.

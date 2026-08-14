@@ -1,0 +1,41 @@
+{
+  "id": "NS-THIN-ANNULUS-DIVERGENCE-COST",
+  "problem": "navier-stokes",
+  "statement": "Pour 1<p<infini et A_(R,h)={x dans R3:R<|x|<R+h}, 0<h<=R, toute droite inverse T:L_0^p(A_(R,h))->W_0^(1,p)(A_(R,h);R3) de la divergence vérifiant ||grad Tf||_p<=M_(R,h)||f||_p satisfait M_(R,h)>=c_p R/h, avec c_p>0 indépendant de R et h.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "1<p<infini et p' est l'exposant conjugué",
+    "la cible impose la trace de Dirichlet nulle sur les deux composantes du bord",
+    "T est une droite inverse définie sur toutes les fonctions L^p de moyenne nulle",
+    "la norme est la norme forte L^p; aucune minoration faible-Lorentz n'est revendiquée"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0040-solenoidal-annular-cutoff.md; test q=x_1/|x|, Poincaré radiale, intégration par parties et dual impair"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0040-analysis.md; audit indépendant de la dualité forte et de la dépendance R/h",
+      "sha256": "ba2e7068aa7b77571a7db9c706b05f9b79afbd224811a3bad92fdf37db3cc62e"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0040-literature.md; distinction entre majorations constructives publiées et borne inférieure interne",
+      "sha256": "e94d6601d7bb09711741946fb5053bec715133a4106d9f445c10ca0689f9e0e9"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0040-thin-annulus-inf-sup"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Deux passes IA séparées; aucune revue humaine externe",
+    "notes": "La minoration est un résultat d'analyse fonctionnelle statique. Elle réfute l'uniformité sous amincissement avec trace nulle complète, mais ne dit rien à elle seule sur une singularité Navier–Stokes."
+  }
+}

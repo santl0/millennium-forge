@@ -2078,11 +2078,11 @@
       "solution_notions": ["formes différentielles dans des échelles de Sobolev, Besov et Triebel–Lizorkin"],
       "result": "Construit des homotopies régularisées d'ordre -1 avec propriétés de support, donnant des inverses de type Bogovskiĭ et Poincaré et un gain d'une dérivée.",
       "hypotheses": ["géométrie Lipschitz adaptée", "compatibilité fermée ou moyenne nulle selon l'opérateur", "classe fonctionnelle de l'article"],
-      "constants_uniformity": "Les constantes dépendent du domaine; le théorème général n'assure pas leur uniformité quand le rapport d'aspect dégénère.",
-      "clay_relevance": "Fournit un outil de raccord compact div–curl, mais ne préserve ni le cône directionnel ni une borne BMO/Lorentz uniforme.",
-      "limitations": ["aucune dynamique Navier–Stokes", "coût géométrique non uniforme non suivi", "aucun contrôle de direction"],
-      "reproduction": {"status": "primary_arxiv_v2_and_published_scope_audited_cycle_0027"},
-      "verification": {"level": "primary_arxiv_and_published_metadata_targeted_theorem", "checked_on": "2026-08-14", "notes": "Version, DOI, support et gain d'une dérivée contrôlés; aucune uniformité d'aspect n'est inférée."},
+      "constants_uniformity": "Les constantes dépendent du domaine fixé; sur la famille homothétique d'une couronne Lipschitz de référence, la même constante se transporte exactement, mais aucune uniformité n'est fournie pour une géométrie dégénérante.",
+      "clay_relevance": "Fournit le correcteur compact de divergence employé pour localiser un champ total; l'interpolation d'un même opérateur entre deux exposants forts donne ensuite le contrôle Lorentz secondaire q=infini. Il ne préserve ni direction de vorticité ni dynamique Navier–Stokes.",
+      "limitations": ["aucune dynamique Navier–Stokes", "géométrie dégénérante non uniforme", "aucun contrôle de direction", "le passage Lorentz est une dérivation séparée"],
+      "reproduction": {"status": "primary_arxiv_v2_full_text_reaudited_cycle_0040"},
+      "verification": {"level": "primary_full_text", "checked_on": "2026-08-15", "notes": "Version arXiv v2, publication, DOI, support, conditions de Dirichlet et gain d'une dérivée contrôlés; le cas annulaire utilise le théorème Lipschitz par recouvrement, non une fausse étoilabilité de la couronne."},
       "tags": ["Bogovskii", "Poincare", "de_Rham", "div_curl", "compact_support"]
     },
     {
@@ -2238,11 +2238,11 @@
       "solution_notions": ["formes différentielles L² et H¹"],
       "result": "Suit explicitement la dépendance des constantes de continuité des opérateurs régularisés en fonction de caractéristiques géométriques, notamment le rapport diamètre du domaine/diamètre de la boule étoilante.",
       "hypotheses": ["domaine étoilé par rapport à une boule ou chaîne admissible", "cadre L²–H¹"],
-      "constants_uniformity": "La dépendance au rapport géométrique est explicite; elle confirme qu'une uniformité sous dégénérescence d'aspect doit être prouvée et non supposée.",
+      "constants_uniformity": "La source donne des majorations constructives dépendant du rapport géométrique et, pour certaines unions, du nombre de pièces. Leur croissance ne constitue pas une borne inférieure d'impossibilité pour tout opérateur.",
       "clay_relevance": "Outil quantitatif pour auditer les correcteurs div–curl, sans contrôle de la direction ou de l'évolution NS.",
-      "limitations": ["cadre L²", "aucune dynamique", "aucun BMO directionnel"],
-      "reproduction": {"status": "primary_arxiv_and_published_constant_dependence_audited_cycle_0027"},
-      "verification": {"level": "primary_arxiv_and_published_metadata_targeted_theorem", "checked_on": "2026-08-14", "notes": "DOI, arXiv et dépendance géométrique annoncée contrôlés."},
+      "limitations": ["cadre L²–H¹", "bornes supérieures seulement", "aucune dynamique", "aucun BMO directionnel"],
+      "reproduction": {"status": "primary_arxiv_full_text_constant_dependence_reaudited_cycle_0040"},
+      "verification": {"level": "primary_full_text", "checked_on": "2026-08-15", "notes": "DOI, arXiv, théorème quantitatif et sens des estimations contrôlés; l'obstruction intrinsèque R/h du cycle 0040 est une dérivation séparée et n'est pas attribuée à cet article."},
       "tags": ["Bogovskii", "Poincare", "constants", "geometry", "aspect_ratio"]
     },
     {
@@ -3640,6 +3640,86 @@
         "notes": "Version v1, date, équation, domaine, frontière, force, notions de solution et non-transfert Clay contrôlés sur la prépublication primaire; preuve non auditée."
       },
       "tags": ["Navier_Stokes", "forced", "pure_swirl", "loss_of_boundedness", "Leray_Hopf", "boundary"]
+    },
+    {
+      "id": "NS-SRC-0176",
+      "title": "Solutions of the Divergence Operator on John Domains",
+      "authors": ["Gabriel Acosta", "Ricardo G. Durán", "María A. Muschietti"],
+      "year": 2006,
+      "source_type": "journal_article",
+      "publication_status": "published",
+      "venue": "Advances in Mathematics 206(2), 373–401",
+      "identifiers": {"doi": "10.1016/j.aim.2005.09.004", "url": "https://doi.org/10.1016/j.aim.2005.09.004"},
+      "equation": {"model": "équation de divergence div u=f, sans PDE d'évolution", "dimension": "n générale", "domain": "domaines de John bornés", "boundary": "trace de Dirichlet nulle", "forcing": "f de moyenne nulle", "viscosity": "sans objet"},
+      "solution_notions": ["solution W_0^(1,p) de l'équation de divergence"],
+      "result": "Construit une droite inverse de la divergence L_0^p vers W_0^(1,p) sur les domaines de John, pour 1<p<infini, et étudie une réciproque sous une propriété de séparation.",
+      "hypotheses": ["domaine de John borné", "1<p<infini", "intégrale de f nulle"],
+      "constants_uniformity": "La constante dépend quantitativement de la géométrie de John; une famille homothétique de domaine fixé conserve sa constante, contrairement à une géométrie dégénérante non contrôlée.",
+      "clay_relevance": "Confirme la frontière géométrique du correcteur de divergence utilisé dans la coupure solénoïdale, sans fournir de dynamique Navier–Stokes.",
+      "limitations": ["outil elliptique statique", "pas d'estimation Lorentz publiée dans l'énoncé utilisé", "aucune implication de régularité Clay"],
+      "reproduction": {"status": "primary_published_full_text_scope_audited_cycle_0040"},
+      "verification": {"level": "primary_full_text", "checked_on": "2026-08-15", "notes": "Auteurs, DOI, pagination, plage 1<p<infini, domaine de John et condition de moyenne contrôlés sur le texte publié."},
+      "tags": ["divergence", "Bogovskii", "John_domain", "geometry", "Dirichlet"]
+    },
+    {
+      "id": "NS-SRC-0177",
+      "title": "Epsilon Regularity for the Navier–Stokes Equations via Weak-Strong Uniqueness",
+      "authors": ["Dallas Albritton", "Tobias Barker", "Christophe Prange"],
+      "year": 2023,
+      "source_type": "journal_article",
+      "publication_status": "published",
+      "venue": "Journal of Mathematical Fluid Mechanics 25, article 49",
+      "identifiers": {"doi": "10.1007/s00021-023-00780-0", "arxiv": "2211.16188", "url": "https://arxiv.org/abs/2211.16188"},
+      "equation": {"model": "Navier–Stokes incompressible standard", "dimension": "3", "domain": "cylindre parabolique local puis extension dans R³", "boundary": "problème local intérieur; coupure dans une couronne fixe", "forcing": "non forcé dans le cylindre local", "viscosity": "normalisée à 1"},
+      "solution_notions": ["solution faible adaptée locale", "solution de référence forte", "unicité faible-forte"],
+      "result": "Prouve une epsilon-régularité par unicité faible-forte; la construction localisée emploie explicitement un correcteur de Bogovskiĭ sur B_(15/16) moins Bbar_(7/8) pour obtenir une extension compacte divergence-free.",
+      "hypotheses": ["hypothèses locales critiques de l'article", "couronne de rapport fixé", "compatibilité de divergence"],
+      "constants_uniformity": "La constante de coupure est universelle pour la géométrie normalisée fixe; l'article ne revendique pas d'uniformité sur des couronnes minces.",
+      "clay_relevance": "Valide l'usage Navier–Stokes publié du maillon de localisation solénoïdale; l'argument complet reste un critère local conditionnel et non une preuve de régularité globale.",
+      "limitations": ["pas de borne faible-L³ publiée pour la coupure", "pas de couronnes dégénérantes", "pas de résolution Clay"],
+      "reproduction": {"status": "primary_arxiv_and_published_full_text_targeted_construction_audited_cycle_0040"},
+      "verification": {"level": "primary_full_text", "checked_on": "2026-08-15", "notes": "Publication, DOI, arXiv et construction de Bogovskiĭ sur la couronne B_(15/16) moins Bbar_(7/8) contrôlés dans la preuve."},
+      "tags": ["Navier_Stokes", "epsilon_regularity", "Bogovskii", "localization", "weak_strong_uniqueness"]
+    },
+    {
+      "id": "NS-SRC-0178",
+      "title": "Real Analytic Solutions to the Divergence Equation",
+      "authors": ["Chi Hin Chan", "Jun-Shuo Chen", "Cheng-Fang Su"],
+      "year": 2026,
+      "source_type": "preprint",
+      "publication_status": "preprint_not_peer_reviewed",
+      "venue": "arXiv",
+      "identifiers": {"arxiv": "2602.21925v1", "url": "https://arxiv.org/abs/2602.21925"},
+      "equation": {"model": "équation de divergence div u=f", "dimension": "n>=2", "domain": "couronne sphérique fermée", "boundary": "u nul sur les deux composantes du bord", "forcing": "f réelle-analytique d'intégrale nulle", "viscosity": "sans objet"},
+      "solution_notions": ["solution réelle-analytique jusqu'au bord"],
+      "result": "Construit sur une couronne une solution réelle-analytique, nulle au bord, de l'équation de divergence pour une donnée analytique de moyenne nulle.",
+      "hypotheses": ["donnée réelle-analytique", "intégrale nulle", "couronne non dégénérée"],
+      "constants_uniformity": "Aucune borne L^p ou Lorentz quantitative ni uniformité lorsque le rapport des rayons tend vers un n'a été identifiée dans l'énoncé principal.",
+      "clay_relevance": "Veille méthodologique sur les correcteurs annulaires; ne renforce pas actuellement la borne critique utilisée pour Clay.",
+      "limitations": ["prépublication non évaluée", "pas de borne Lorentz quantitative", "extension par zéro non analytique à travers le bord", "aucune dynamique Navier–Stokes"],
+      "reproduction": {"status": "primary_arxiv_v1_full_text_scope_audited_cycle_0040"},
+      "verification": {"level": "primary_full_text", "checked_on": "2026-08-15", "notes": "Version v1 du 25 février 2026, auteurs, domaine annulaire, compatibilité et conclusion analytique contrôlés; absence de borne critique enregistrée comme limite, non comme théorème d'impossibilité."},
+      "tags": ["divergence", "annulus", "real_analytic", "preprint_2026"]
+    },
+    {
+      "id": "NS-SRC-0179",
+      "title": "Integral Formulas for Under/Overdetermined Differential Operators via Recovery on Curves and the Finite-Dimensional Cokernel Condition I: General Theory",
+      "authors": ["Philip Isett", "Yuchen Mao", "Sung-Jin Oh", "Zhongkai Tao"],
+      "year": 2025,
+      "source_type": "preprint",
+      "publication_status": "preprint_not_peer_reviewed",
+      "venue": "arXiv",
+      "identifiers": {"arxiv": "2509.04617v1", "url": "https://arxiv.org/abs/2509.04617"},
+      "equation": {"model": "opérateurs différentiels linéaires sous- ou surdéterminés, incluant la divergence", "dimension": "générale", "domain": "ouverts et géométries de support de la théorie", "boundary": "support prescrit modulo cokernel fini", "forcing": "sans objet", "viscosity": "sans objet"},
+      "solution_notions": ["droites inverses intégrales modulo opérateur de rang fini"],
+      "result": "Développe une théorie générale de formules intégrales avec ordre de régularisation optimal et propriétés de support, sous une condition de cokernel de dimension finie.",
+      "hypotheses": ["opérateur appartenant à la classe du texte", "condition de cokernel fini", "géométrie admissible de récupération sur des courbes"],
+      "constants_uniformity": "Aucune spécialisation quantitative faible-L³ sur une famille de couronnes Navier–Stokes n'est fournie dans cette première partie générale.",
+      "clay_relevance": "Piste de veille pour des correcteurs à support prescrit; aucun maillon critique ou dynamique Clay n'en découle encore.",
+      "limitations": ["prépublication non évaluée", "théorie générale", "applications annoncées ultérieurement", "pas de constante annulaire Lorentz auditée"],
+      "reproduction": {"status": "primary_arxiv_v1_full_text_scope_audited_cycle_0040"},
+      "verification": {"level": "primary_full_text", "checked_on": "2026-08-15", "notes": "Version v1 du 4 septembre 2025, auteurs, cadre général, support et rôle du cokernel contrôlés; aucune application quantitative Navier–Stokes n'est inférée."},
+      "tags": ["differential_operators", "right_inverse", "support", "cokernel", "preprint_2025"]
     }
   ],
   "watchlist": [
@@ -3699,6 +3779,16 @@
       "version": "prépublication arXiv non publiée repérée pendant l'audit",
       "status": "unreviewed_criticism_not_adjudicated",
       "reason": "Le texte allègue des erreurs dans l'usage de l'unicité rétrograde ESS. Aucune correction publiée ni adjudication experte n'a été établie dans ce cycle; l'allégation est consignée, sans renverser seule les théorèmes publiés et réutilisés dans la littérature. La route principale du cycle utilise l'outil ESS sur la vorticité et conserve Lei–Yang–Yuan comme contrôle publié séparé; cette controverse non publiée reste donc une dette d'audit explicite, pas un verdict."
+    },
+    {
+      "id": "NS-WATCH-0007",
+      "title": "Discrete Poincaré and Bogovskiĭ Operators on Cochains and Whitney Forms",
+      "authors": ["Johnny Guzmán", "Anil N. Hirani", "Bingyan Liu", "Pratyush Potu"],
+      "year": 2026,
+      "locator": "https://arxiv.org/abs/2603.29018",
+      "version": "arXiv:2603.29018v2, révisé le 2026-04-02",
+      "status": "preprint_discrete_watch_only",
+      "reason": "Opérateurs discrets pertinents pour une future expérience FEEC; aucune droite inverse continue faible-Lorentz ni borne d'erreur continuum certifiée ne permet une promotion dans le corpus probant du cycle 0040."
     }
   ],
   "coverage": {
@@ -3731,7 +3821,8 @@
     "recent_axisymmetric_euler_growth": ["NS-SRC-0113", "NS-SRC-0114", "NS-SRC-0115", "NS-SRC-0116", "NS-SRC-0117"],
     "recent_vortex_filaments_and_rings": ["NS-SRC-0119", "NS-SRC-0120", "NS-SRC-0121", "NS-SRC-0122", "NS-SRC-0123", "NS-SRC-0124", "NS-SRC-0131"],
     "merge_trees_and_persistence": ["NS-SRC-0163", "NS-SRC-0164", "NS-SRC-0165", "NS-SRC-0166", "NS-SRC-0168", "NS-SRC-0169", "NS-SRC-0170", "NS-SRC-0171"],
-    "wavelets_square_functions_and_weak_endpoint": ["NS-SRC-0069", "NS-SRC-0145", "NS-SRC-0172", "NS-SRC-0173", "NS-SRC-0174"]
+    "wavelets_square_functions_and_weak_endpoint": ["NS-SRC-0069", "NS-SRC-0145", "NS-SRC-0172", "NS-SRC-0173", "NS-SRC-0174"],
+    "solenoidal_localization_and_bogovskii": ["NS-SRC-0103", "NS-SRC-0111", "NS-SRC-0154", "NS-SRC-0176", "NS-SRC-0177", "NS-SRC-0178", "NS-SRC-0179"]
   },
   "unverified_zones": [
     "Le domaine et la plage d'exposants exacts des articles historiques Prodi et Ladyzhenskaya doivent être réextraits des originaux avant création d'un claim formel.",
