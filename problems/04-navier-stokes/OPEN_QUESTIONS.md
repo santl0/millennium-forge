@@ -217,3 +217,25 @@ Trois variantes réellement distinctes du tube homogène sont fermées : tore
 unique, cardinal fixé avec moments, cardinal croissant sous packing local. Ne
 pas rouvrir cette branche sans hétérogénéité quantitative ou chevauchement
 géométrique explicitement compatible avec le log-BMO all-ball.
+
+## Priorité active après le cycle 0031
+
+1. **`GAP-NONSEPARABLE-COMPACT-CURL-FLATNESS`.** Deux couches de
+   streamfunction à transitions décalées peuvent-elles masquer les zones où
+   `partial_r U_theta` ou `partial_z U_theta` est grande, tout en gardant
+   faible-`L^3(U)` non petit, faible-`L^(3/2)(curl U)` borné et log-BMO
+   all-ball ? Le test décisif est un ledger exact de fonctions de distribution
+   pour deux couches, avec signes et échelles indépendants.
+2. **Flux de bord critique.** Le quotient
+   `||U||_(L^(3,infinity))/||curl U||_(L^(3/2,infinity))` peut-il être assez
+   petit pour sélectionner une bonne sphère tout en conservant une masse
+   conique normalisée non dégénérée ? Le contre-profil compact de la revue
+   0031 interdit de supprimer le terme de bord.
+3. **Temps commun.** Toujours différé : une famille statique admissible devra
+   d'abord passer les trois gates avant l'audit de `min(a,b)^2/nu`, de la
+   pression et du stretching.
+
+Abandonner la construction à deux couches si chaque zone de transition porte
+un sous-ensemble dont le coût Lorentz se minore indépendamment des autres
+couches, ou si tout masquage exige une nouvelle transition de capacité au
+moins comparable.

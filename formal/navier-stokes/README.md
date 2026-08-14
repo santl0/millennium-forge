@@ -819,3 +819,22 @@ ne dépend ni des coordonnées tubulaires ni de Navier–Stokes. La minoration p
 Stokes et la réduction all-ball restent des modules distincts. Aucun de ces
 objets ne certifierait la propagation de la direction, une solution en temps
 ou une résolution Clay.
+
+## Backlog issu du cycle 0031 — budget anisotrope du curl compact
+
+Le noyau formel recommandé ne requiert pas Navier–Stokes en temps :
+
+1. encoder le champ cylindrique
+   `U=V(R/r)eta((r-R)/a)chi(z/b)e_theta` sur un support séparé de l'axe;
+2. certifier `div U=0` et l'annulation exacte de la courbure dans
+   `(partial_r+1/r)U_theta`;
+3. isoler deux sous-ensembles de transition de mesure `>=cRab`;
+4. déduire les minorants faibles-Lorentz par une seule valeur de seuil;
+5. formaliser l'algèbre
+   `x^2/y>=q`, `y^2/x>=q` implique `x,y>=q`;
+6. réutiliser le lemme de boule radiale du cycle 0027 pour conclure à
+   l'obstruction log-BMO sous concentration.
+
+Le futur objet doit conserver les constantes des profils dans les hypothèses.
+Il certifierait seulement un no-go cinématique pour un ansatz séparable, jamais
+un critère de régularité ni une solution de Navier–Stokes.

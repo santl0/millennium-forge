@@ -1199,3 +1199,32 @@ L'arête manquante n'est plus la compacité de la vitesse mais l'existence d'un
 bloc dont le curl devient intérieurement plat à chaque échelle, tout en
 conservant un budget faible-`L^3` non perturbatif et un temps d'interaction
 indépendant de la plus petite échelle.
+
+## Cycle 0031 : gate d'aspect du curl compact
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| budget Lorentz anisotrope d'un swirl compact | 5 | 5 | 5 | 5 | **20** |
+| no-go universel pour toute vitesse compacte | 5 | 2 | 5 | 5 | 17 |
+| évolution pseudospectrale d'un profil torique | 4 | 2 | 4 | 4 | 14 |
+
+```text
+U=V(R/r)eta((r-R)/a)chi(z/b)e_theta
+  -- exact --> div U=0 et U compact
+  -- exact --> W_z=V(R/r)eta'chi/a
+  -- exact --> W_r=-V(R/r)etachi'/b
+  -- faible-Lorentz --> K_U^3~V^3Rab
+  -- faible-Lorentz --> K_W^3>=cV^3 max(R^2b^2/a,R^2a^2/b)
+  -- gates critiques --> a/R,b/R>=c(kappa/K)^3
+  -- boule de calotte --> MO(direction)>=c(kappa/K)^3
+  -- concentration --> divergence log-BMO
+  -- réfute --> grand aspect sauve le produit compact séparable
+  -- ouvre --> GAP-NONSEPARABLE-COMPACT-CURL-FLATNESS.
+```
+
+La perte est un budget de dérivées, pas une queue de Biot–Savart : amincir la
+transition radiale charge `W_z`, amincir la calotte charge `W_r`. Le lemme de
+flux local de la passe contradictoire montre parallèlement que
+`integral curl U=0` ne produit pas une boule oscillante arbitraire sans terme
+de bord. Une extension universelle exigera donc un ledger non séparable des
+zones de transition, et non la seule compensation globale.

@@ -1272,6 +1272,33 @@ rapport d'aspect reste une constante auxiliaire à suivre.
 - Statut : gate fonctionnel `REFUTED`; le verrou actif inclut désormais la
   direction active et le temps d'interaction.
 
+## `FAIL-NS-0063` — Grand rapport d'aspect pris pour un échappement compact
+
+- Date : 2026-08-14.
+- Cadre : donnée statique `U=V(R/r)eta((r-R)/a)chi(z/b)e_theta` sur `R^3`,
+  lisse, compacte et divergence-free; aucune évolution.
+- Cible : faire tendre `a/R` et `b/R` vers zéro afin d'aplatir la direction
+  `e_r` sur les calottes, tout en gardant `U` non petite dans
+  faible-`L^3` et `curl U` bornée dans faible-`L^(3/2)`.
+- Attaque : les transitions radiale et axiale donnent séparément
+
+  ```text
+  K_z^3/K_U^3 >= c Rb/a^2,
+  K_r^3/K_U^3 >= c Ra/b^2.
+  ```
+
+- Résultat : les deux gates critiques forcent `a/R` et `b/R` à rester
+  uniformément minorés. Une boule de calotte conserve alors une oscillation
+  directionnelle positive, qui diverge après pondération logarithmique sous
+  concentration.
+- Test adverse : `R_n=2^-n`, `a_n=b_n=2^-2n`. Le minorant BMO pondéré
+  `2n/2^n` tend vers zéro, mais le cube du coût vorticité vaut `2^n`; après
+  renormalisation vorticité, le cube du gate vitesse vaut `2^-n`.
+- Portée : profils séparables fixes seulement; des couches non séparables
+  peuvent masquer ou redistribuer les transitions.
+- Statut : échappement par aspect seul `REFUTED` dans cette classe; pivot vers
+  `GAP-NONSEPARABLE-COMPACT-CURL-FLATNESS`.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,

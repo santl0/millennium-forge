@@ -638,3 +638,24 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   `821c0e7e442698397c5d426fefca42ca12e5949f904e3ce243d3277377ecbbae`.
 - Pivot : branche tubulaire homogène abandonnée;
   `GAP-COMPACT-VELOCITY-WEAK-CRITICAL-DIRECTION` devient actif.
+
+## 2026-08-14 — Budget d'aspect du swirl compact
+
+- Objet : `U=V(R/r)eta((r-R)/a)chi(z/b)e_theta`, donnée compacte
+  divergence-free; `W=curl U`, aucune évolution.
+- Annulation exacte : le facteur `R/r` supprime le terme cylindrique de
+  courbure et sépare `W_z~V/a` de `W_r~V/b`.
+- Gates critiques : `K_U^3~V^3Rab`, tandis que
+  `K_W^3>=cV^3 max(R^2b^2/a,R^2a^2/b)`.
+- Perte irréductible : `K_U>=kappa` et `K_W<=K` imposent
+  `a/R,b/R>=c(kappa/K)^3`; le profil ne peut devenir mince dans aucune des
+  deux directions.
+- Direction : une boule de rayon `c min(a,b)` porte exactement `+/-e_r` et
+  conserve donc une oscillation d'ordre un sous les gates.
+- Test adverse : aspect `2^n`; le proxy BMO pondéré `2n/2^n` s'annule, mais le
+  cube vorticité croît comme `2^n`, ou le cube vitesse tombe comme `2^-n`.
+- Artefact : `COMPACT-SWIRL-ASPECT-GATE-1`, 37 214 contrôles exacts, zéro
+  échec, empreinte
+  `e392e3570e4de6f85bcb5f91a7eef6b36a1ed22c55bf8c483a918319b9a848e4`.
+- Pivot : le produit séparable est fermé à tout rapport d'aspect;
+  `GAP-NONSEPARABLE-COMPACT-CURL-FLATNESS` devient actif.

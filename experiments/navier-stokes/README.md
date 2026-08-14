@@ -1544,3 +1544,31 @@ cellule reste donc `NOT_PROVIDED`.
   paramètres hétérogènes, pression, stretching, temps positif et passage
   calcul-continuum non traités. La réalisation coaxiale est axisymétrique sans
   swirl.
+
+## `COMPACT-SWIRL-ASPECT-GATE-1` — budget critique anisotrope
+
+- Question falsifiable : un rapport d'aspect toroïdal croissant peut-il
+  neutraliser la boule directionnelle active tout en conservant les gates
+  faible-`L^3` de la vitesse et faible-`L^(3/2)` de la vorticité ?
+- Équation simulée : aucune; donnée statique
+  `U=V(R/r)eta((r-R)/a)chi(z/b)e_theta` sur `R^3`.
+- Discrétisation : aucune grille, aucun flottant, aucune graine; arithmétique
+  `fractions.Fraction`.
+- Quantités auditées : cubes `V^3Rab`, `V^3R^2b^2/a` et
+  `V^3R^2a^2/b`, ainsi que leur invariance d'échelle.
+- Famille adverse : `R_n=2^-n`, `a_n=b_n=2^-2n`. Sous gate vitesse un, les
+  deux coûts vorticité valent `2^n`; sous coûts vorticité un, le gate vitesse
+  vaut `2^-n`.
+- Commande :
+
+  ```text
+  python -B experiments/navier-stokes/compact-swirl-aspect/compact_swirl_aspect_audit.py
+  ```
+
+- Environnement : Python 3.13.14, bibliothèque standard uniquement.
+- Résidu certifié : zéro échec sur 37 214 contrôles rationnels exacts.
+  Empreinte :
+  `e392e3570e4de6f85bcb5f91a7eef6b36a1ed22c55bf8c483a918319b9a848e4`.
+- Limites : constantes des profils et lemme all-ball analytiques, non
+  interval-certified; superpositions non séparables, pression et évolution
+  Navier–Stokes non traitées.

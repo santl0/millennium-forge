@@ -316,3 +316,36 @@ compacité et les seules normes critiques ne les fournissent pas.
    et le packing des corridors.
 3. Propagation/diffusion — manquante; ne l'ouvrir qu'après un gate statique
    non perturbatif, puis suivre `t_int/(r_min^2/nu)` et la pression non locale.
+
+## Cycle 0031 — arête d'aspect compacte
+
+```text
+NS-COMPACT-SWIRL-ASPECT-ENDPOINT-GATE
+  -- exact --> div U=0 pour U=V(R/r)eta chi e_theta
+  -- exact --> annulation du terme cylindrique de courbure
+  -- dérivation interne --> K_U^3~V^3Rab
+  -- dérivation interne --> K_W^3>=cV^3 max(R^2b^2/a,R^2a^2/b)
+  -- condition endpoint --> K_U>=kappa et K_W<=K
+  -- implique --> a/R,b/R>=c(kappa/K)^3
+  -- géométrie sourcée en interne --> boule pure e_r avec MO>=c min(a,b)/R
+  -- réfute dans l'ansatz --> aspect divergent compatible avec les deux gates
+  -- manque --> ledger de transitions pour couches non séparables
+  -- ouvre --> GAP-NONSEPARABLE-COMPACT-CURL-FLATNESS.
+```
+
+La passe de flux ajoute une arête distincte, non suffisante :
+
+```text
+integral_B curl U = integral_(partial B) n cross U
+  -- terme manquant --> contrôle du flux de bord
+  -- sous petit L^(3,infinity)/L^(3/2,infinity) --> bonne sphère annulaire
+  -- contre-profil compact --> aucune minoration sur chaque boule active.
+```
+
+## Priorité après le cycle 0031
+
+1. `GAP-NONSEPARABLE-COMPACT-CURL-FLATNESS` — actif; tester deux couches
+   décalées et sommer leurs coûts de distribution sans utiliser Minkowski.
+2. Flux de bord local — conditionnel; relier une masse conique non dégénérée à
+   une bonne sphère sans imposer une petitesse perturbative de la vitesse.
+3. Propagation/diffusion — toujours différée jusqu'à un gate statique complet.

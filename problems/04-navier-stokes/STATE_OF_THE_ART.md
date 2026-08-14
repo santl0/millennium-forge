@@ -762,3 +762,38 @@ uniforme lorsque le nombre de filaments tend vers l'infini. Le verrou actif
 est `GAP-COMPACT-VELOCITY-WEAK-CRITICAL-DIRECTION` : aplatir la direction
 interne d'un curl compact multi-échelle sans tomber dans le régime faible-`L^3`
 petite donnée ni perdre le temps d'interaction visqueux.
+
+## Cycle 0031 — fermeture du rapport d'aspect séparable
+
+Une vitesse compacte construite en amont évite les queues multipolaires, mais
+un produit toroïdal séparable ne peut aplatir gratuitement sa direction. Pour
+
+```text
+U=V(R/r)eta((r-R)/a)chi(z/b)e_theta,
+```
+
+le facteur `R/r` annule exactement la courbure dans `curl U`. Les transitions
+radiale et axiale occupent chacune un volume comparable à `Rab` et donnent
+
+```text
+||U||_(L^(3,infinity))^3~V^3Rab,
+||curl U||_(L^(3/2,infinity))^3
+ >=cV^3 max(R^2b^2/a,R^2a^2/b).
+```
+
+Une vitesse faible critique uniformément non petite et une vorticité faible
+critique uniformément bornée forcent donc `a/R` et `b/R` à rester positifs.
+Sur une boule de calotte, la direction vaut exactement `e_r`; son oscillation
+ne peut plus décroître et le poids logarithmique diverge sous concentration.
+
+Ce no-go est `COMPUTATION_ONLY` : les exposants sont dérivés analytiquement et
+37 214 identités rationnelles les auditent, mais les constantes de profils ne
+sont pas certifiées par intervalles. La veille primaire confirme que
+`NS-SRC-0059` reste une prépublication v2 et `NS-SRC-0061` une v1; aucune ne
+construit un curl compact satisfaisant simultanément les deux endpoints et le
+gate directionnel. Les entrées `NS-SRC-0128`–`0131` ajoutent les grandes
+données anisotropes régulières, deux critères axisymétriques publiés et une
+construction Euler hélicoïdale récente; le corpus atteint 131 sources. Le
+verrou actif devient
+`GAP-NONSEPARABLE-COMPACT-CURL-FLATNESS`, où des couches décalées pourraient
+masquer les transitions du produit simple.
