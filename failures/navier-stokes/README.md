@@ -1356,6 +1356,35 @@ rapport d'aspect reste une constante auxiliaire à suivre.
 - Statut : plateau/compensateur dans une cellule bornée `REFUTED`; pivot vers
   `GAP-AXIALLY-DISPERSED-PURE-SWIRL-SELECTION`.
 
+## `FAIL-NS-0066` — Pigeonhole faible-Lorentz pris pour sélection de cellule
+
+- Date : 2026-08-14.
+- Cible : déduire des seuls endpoints globaux l'existence d'une cellule dont
+  `K_(u,j)/K_(w,j)` reste non dégénéré.
+- Contre-exemple : `N` cellules de vitesse de volume `N^-1` au même niveau;
+  curls abstraits d'amplitudes `N^(2/3)2^j` et de volumes
+  `N^-1 2^(-3j/2)`.
+- Résultat exact :
+
+  ```text
+  K_u=1,
+  1<=K_w<=(1-2^(-3/2))^(-2/3),
+  sup_j K_(u,j)/K_(w,j)=N^(-1/3)->0.
+  ```
+
+- Premier quantificateur faux : le niveau réalisant le curl local est traité
+  comme s'il était synchronisé avec le niveau presque optimal global de la
+  vitesse.
+- Limite : `W_j=curl U_j` n'est pas imposé. La masse de retour du
+  contre-exemple perd exactement le registre BV de fermeture compacte.
+- Réparation : sous `|Q_j|<=Cv_j` et
+  `integral_(Q_j)|W_j|>=cA_jv_j^(2/3)`, une cellule vérifie
+  `K_(u,j)/K_(w,j)>=c(K_u/K_w)^2`.
+- Certificat : 31 746 assertions exactes, zéro échec; empreinte
+  `d918ff7ec5e200d388cde1d3ed5230ebdd4535bc65fc3b94a2c7ac21c0962763`.
+- Statut : sélection normique abstraite `REFUTED`; sélection géométrique BV
+  conservée.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,

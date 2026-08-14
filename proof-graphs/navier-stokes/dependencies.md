@@ -418,3 +418,40 @@ degré de la Gauss map
 1. Sélection Lorentz d'une cellule dominante — manquante.
 2. Packing axial hétérogène sans dominance — expérience décisive.
 3. Temps, pression et profil limite — toujours différés.
+
+## Cycle 0034 — sélection par registre BV
+
+```text
+quasi-normes faibles cellulaires seules
+  -- niveaux de curl échelonnés --> NS-WEAK-LORENTZ-CELL-SELECTION [REFUTED]
+
+plateau effectif + boîte comparable
+  -- coaire/isopérimétrie --> registre BV A_j v_j^(2/3)
+  -- distribution globale de U --> niveau lambda et volume S
+  -- concavité --> sum v_j^(2/3)>=c lambda S/epsilon
+  -- intégrale faible-L^(3/2) --> epsilon>=cK_u^2/K_w
+  -- monotonie --> rapport local >=c(K_u/K_w)^2
+  -- NS-BV-REGISTERED-HETEROGENEOUS-CELL-SELECTION
+  -- NS-BOUNDED-CROSS-SECTION-DIRECTION-GATE
+  --> MO local >=c(K_u/K_w)^12
+  -- ferme --> cellules pure-swirl épaisses disjointes enregistrées
+  -- ouvre --> GAP-DEGENERATE-CELL-REGISTER-OR-OVERLAP.
+```
+
+Nature des arêtes :
+
+```text
+coaire/isopérimétrie cylindrique : classique sourcée + spécialisation interne;
+sélection BV : dérivation interne COMPUTATION_ONLY;
+contre-distribution : contre-exemple exact REFUTED;
+profiles faible-endpoint -> même cellule : manquante;
+Barker-Prange Type I -> même centre dynamique : classique sourcée conditionnelle;
+même centre Type I -> Type II général : manquante;
+rapport local -> rayon R_j tendant vers zéro : manquante.
+```
+
+## Priorité après le cycle 0034
+
+1. Registre stable sous queues/corridors dégénérés ou contre-exemple lisse.
+2. Packing signé lorsque les curls se chevauchent.
+3. Sélection dynamique de l'échelle et contrôle du cutoff de Leray.

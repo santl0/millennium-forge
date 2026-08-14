@@ -884,3 +884,26 @@ Les modules 1, 2 et 8 sont les premières cibles raisonnables. Le module 4
 exige BV/coaire, tandis que 7 dépend du noyau non encore formalisé du cycle
 0026. La compilation éventuelle certifierait une obstruction statique à
 diamètre borné, jamais une solution de Navier–Stokes.
+
+## Backlog issu du cycle 0034 — sélection BV finie
+
+Le théorème de sélection se décompose en un noyau fini plus accessible que le
+corollaire pure-swirl :
+
+1. définition de la fonction de distribution d'une somme à supports disjoints;
+2. sélection d'un niveau presque optimal de faible-`L3` avec défaut `eta`;
+3. passage du plateau effectif à
+   `K_(u,j)>=a_0A_jv_j^(1/3)`;
+4. inégalité finie
+   `sum v_j^(2/3)>=c lambda S/epsilon`;
+5. inégalité d'intégration faible-`L^(3/2)` avec constante trois;
+6. algèbre donnant `epsilon>=cK_u^2/K_w` et le rapport quadratique;
+7. contre-exemple fini dyadique réfutant la version sans registre;
+8. corollaire analytique par coaire/isopérimétrie et lift cylindrique;
+9. composition avec le gate directionnel du cycle 0033.
+
+Les modules 4, 6 et 7 utilisent seulement des sommes finies et des puissances
+rationnelles après cubage; ils sont les premières cibles formelles. Le module
+8 exige la bibliothèque BV/coaire et le module 9 hérite du noyau conique non
+formalisé. Une compilation ne certifierait qu'un lemme statique conditionnel,
+pas la dynamique Clay.

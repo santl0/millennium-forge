@@ -1305,3 +1305,49 @@ une cellule dominante; le cas hétérogène sans dominance reste manquant.
    globaux restent non dégénérés.
 3. Sortir du swirl pur seulement si cette sélection est réfutée; recalculer
    alors la projection de Leray et les composantes poloïdales.
+
+## Cycle 0034 : sélection hétérogène et registre de fermeture
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| pigeonhole direct sur quasi-normes cellulaires | 2 | 5 | 5 | 4 | 16 |
+| contre-distribution dyadique puis sélection BV | 4 | 5 | 5 | 5 | **19** |
+| profils faible-endpoint curl-compatibles généraux | 5 | 2 | 4 | 5 | 16 |
+
+```text
+endpoints faibles globaux seuls
+  -- contre-exemple dyadique --> aucune cellule normiquement dominante
+  -- réfute --> NS-WEAK-LORENTZ-CELL-SELECTION
+
+plateau effectif dans Q_j
+  -- coaire/isopérimétrie --> integral_(Q_j)|W_j|>=cA_jv_j^(2/3)
+  -- niveau global presque optimal --> lambda S^(1/3)>=cK_u
+  -- faible-L^(3/2) sur union Q_j --> max_j K_(u,j)>=cK_u^2/K_w
+  -- monotonie locale --> max_j K_(u,j)/K_(w,j)>=c(K_u/K_w)^2
+  -- NS-BOUNDED-CROSS-SECTION-DIRECTION-GATE
+       --> MO_(B_j)>=c(K_u/K_w)^12
+  -- ferme --> cellules épaisses disjointes enregistrées
+  -- ouvre --> GAP-DEGENERATE-CELL-REGISTER-OR-OVERLAP.
+```
+
+Arêtes manquantes :
+
+```text
+endpoints globaux
+  -/-> rayon sélectionné tendant vers zéro,
+queue/corridor de volume >> volume actif
+  -?-> registre BV localisable,
+supports de curl superposés
+  -?-> contrôle après annulations,
+cutoff local
+  -- perte critique --> nabla chi cross U + projection de Leray non locale.
+```
+
+## Priorité après le cycle 0034
+
+1. `GAP-DEGENERATE-CELL-REGISTER-OR-OVERLAP` — actif; construire ou exclure
+   une suite où `|Q_j|/v_j->infinity` ou les supports de curl se chevauchent.
+2. Tester un registre Morrey–Carleson des cols qui reste stable sous cutoff et
+   projection de Leray.
+3. Relier la cellule sélectionnée à une échelle pré-singulière `R_j(t)->0`,
+   éventuellement sous Type I avant d'attaquer Type II.

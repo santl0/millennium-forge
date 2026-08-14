@@ -275,3 +275,19 @@
   bornée sont abandonnés comme échappements aux trois gates.
 - `GAP-AXIALLY-DISPERSED-PURE-SWIRL-SELECTION` devient actif. Aucune inférence
   vers la pression ou le temps n'est autorisée avant sélection d'un bloc local.
+
+### 2026-08-14 — sélection hétérogène réparée par registre BV
+
+- Toute sélection reposant seulement sur les quasi-normes cellulaires est
+  abandonnée : une distribution dyadique exacte réfute le pigeonhole commun.
+- Une nouvelle sélection est admise sous plateau effectif, boîte de volume
+  comparable et coût BV uniforme de fermeture compacte.
+- Pour des cellules pure-swirl épaisses, disjointes et à aspect borné, coaire
+  produit ce coût; le rapport local sélectionné est quadratique dans le
+  rapport global.
+- La composition avec le cycle 0033 donne une puissance directionnelle douze,
+  sans prétendre sélectionner une échelle de concentration.
+- Les théorèmes de profils avec espace source plus fort et Barker–Prange sous
+  Type I sont des comparateurs sourcés, pas une preuve du lemme statique.
+- `GAP-DEGENERATE-CELL-REGISTER-OR-OVERLAP` devient actif. Pression, cutoff de
+  Leray et évolution restent différés jusqu'à survie de ce nouveau gate.

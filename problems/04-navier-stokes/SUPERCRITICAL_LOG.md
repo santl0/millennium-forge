@@ -710,3 +710,38 @@ solution ou précise qu'il s'agit seulement d'un champ test.
 - Limite : diamètre axial non borné, cellules hétérogènes, composantes
   poloïdales et dynamique non couverts.
 - Pivot : `GAP-AXIALLY-DISPERSED-PURE-SWIRL-SELECTION`.
+
+## 2026-08-14 — Registre BV de cellules hétérogènes
+
+- Contre-profil normique : `K_u=1`, `K_w<=1.338`, mais tout rapport local
+  vaut `N^-1/3`; les niveaux de curl sont géométriquement échelonnés.
+- Défaut du contre-profil : il ne transporte pas la variation totale requise
+  pour fermer chaque plateau, donc ne satisfait pas `W=curl U`.
+- Registre positif :
+
+  ```text
+  integral_(Q_j)|W_j|>=cA_jv_j^(2/3),
+  |Q_j|<=Cv_j.
+  ```
+
+- Sélection critique :
+
+  ```text
+  K_(u,j)>=cK_u^2/K_w,
+  K_(u,j)/K_(w,j)>=c(K_u/K_w)^2.
+  ```
+
+- Gate directionnel composé :
+
+  ```text
+  MO_(B_j)>=c(K_u/K_w)^12.
+  ```
+
+- Échelle : toutes les normes et rapports sont invariants sous le scaling
+  Clay; le volume `v_j` se transforme comme une longueur au cube et le registre
+  BV comme la norme critique correspondante.
+- Certificat : 31 746 assertions rationnelles exactes, zéro échec; empreinte
+  `d918ff7ec5e200d388cde1d3ed5230ebdd4535bc65fc3b94a2c7ac21c0962763`.
+- Limites : boîtes non comparables, chevauchements, projection de Leray,
+  pression, diffusion et sélection de `R_j->0` non contrôlés.
+- Pivot : `GAP-DEGENERATE-CELL-REGISTER-OR-OVERLAP`.

@@ -226,3 +226,13 @@ lemme conique du cycle 0026 forcent
 donc le log-BMO non uniforme sous concentration, y compris pour les plateaux
 épais et les compensateurs rares. Le prochain verrou porte sur des cellules
 axialement dispersées et hétérogènes, avant toute sortie du swirl pur.
+
+Le cycle 0034 réfute le pigeonhole fondé sur les seules quasi-normes : des
+niveaux de curl échelonnés gardent le rapport global non nul tout en faisant
+tendre tous les rapports locaux vers zéro. La fermeture compacte rétablit la
+sélection si chaque cellule possède un plateau effectif, une boîte comparable
+et le registre BV `integral|W_j|>=cA_jv_j^(2/3)`. Une cellule a alors un
+rapport local `>=c(K_u/K_w)^2`, puis une oscillation directionnelle
+`>=c(K_u/K_w)^12`. Le prochain verrou est la dégénérescence des boîtes, le
+chevauchement des curls et la sélection dynamique d'une échelle tendant vers
+zéro.

@@ -878,3 +878,48 @@ La veille topologique ajoute Hopf, Amann, Brezis–Nirenberg Part II et Whitney
 vorticité ni constante endpoint. Le facteur de la vraie boule dans le résultat
 quantitatif est `c(9/4+Lambda^2)^(-3/2)`; le meilleur facteur `Lambda^-1`
 concerne seulement le domaine annulaire axial, qui n'est pas une boule.
+
+## Cycle 0034 — cellules hétérogènes et registre BV
+
+La sélection d'une cellule depuis les seules quasi-normes faibles est fausse.
+Une famille dyadique exacte vérifie
+
+```text
+K_u=1,
+1<=K_w<=(1-2^(-3/2))^(-2/3),
+sup_j K_(u,j)/K_(w,j)=N^(-1/3)->0.
+```
+
+Elle ne satisfait pas `W_j=curl U_j` : sa masse de retour perd un facteur
+géométrique croissant. Le claim abstrait
+`NS-WEAK-LORENTZ-CELL-SELECTION` est donc `REFUTED` sans transfert silencieux
+à la classe pure-swirl.
+
+Le claim `NS-BV-REGISTERED-HETEROGENEOUS-CELL-SELECTION`, statut
+`COMPUTATION_ONLY`, rétablit la sélection sous
+
+```text
+|Q_j|<=C v_j,
+plateau effectif de taille v_j,
+integral_(Q_j)|W_j|>=c A_j v_j^(2/3).
+```
+
+Il existe alors une cellule telle que
+
+```text
+K_(u,j)>=cK_u^2/K_w,
+K_(u,j)/K_(w,j)>=c(K_u/K_w)^2.
+```
+
+Coaire et isopérimétrie donnent ce registre pour des cellules pure-swirl
+épaisses, disjointes, à aspect et plateau uniformes. Le cycle 0033 transforme
+le rapport sélectionné en
+`MO_(B_j)>=c(K_u/K_w)^12`. Une suite ne donne un coût log-BMO divergent que
+si les rayons des cellules sélectionnées tendent effectivement vers zéro.
+
+Le corpus atteint 147 sources après ajout des outils de profils et des
+résultats dynamiques de Barker–Prange. Aucun théorème publié contrôlé ne
+fournit la même cellule depuis les seuls endpoints faibles. Le verrou devient
+`GAP-DEGENERATE-CELL-REGISTER-OR-OVERLAP` : boîtes trop grandes, plateaux
+dégénérés, curls qui se chevauchent, ou absence de sélection dynamique de
+l'échelle.

@@ -77,9 +77,16 @@
   compensateurs rares.
 - [x] Fermer les sections épaisses de diamètre axial `O(R)` par troncature,
   coaire et compensation conique; puissance directionnelle six au cycle 0033.
-- [ ] Pour des cellules axialement dispersées et hétérogènes, sélectionner un
+- [x] Pour des cellules axialement dispersées et hétérogènes, sélectionner un
   bloc dont le rapport endpoint local reste non dégénéré, ou construire une
   distribution exacte sans bloc dominant.
+- [x] Réfuter la sélection fondée sur les seules quasi-normes par une
+  distribution dyadique exacte; rétablir une sélection pour cellules épaisses
+  disjointes sous registre BV uniforme au cycle 0034.
+- [ ] Étendre ou réfuter le registre BV lorsque `|Q_j|/v_j->infinity`, que les
+  plateaux dégénèrent ou que les supports de curl se chevauchent.
+- [ ] Relier la cellule de bon rapport à une échelle `R_j(t)->0`; auditer
+  d'abord le raccord Type I de Barker–Prange, puis le trou Type II.
 - [ ] Formuler un ledger Morrey–Carleson pour des tubes hétérogènes
   `A_j,h_j,q_j`; tester si le budget faible-Lorentz force le collapse.
 - [ ] Si un gate statique survit, obtenir un temps d'interaction uniforme face

@@ -277,3 +277,25 @@ d'abandon prévu : le weak HLS du champ total donne directement
 
 Le degré topologique seul est abaissé : il ne quantifie ni la masse active ni
 le volume de la boule. La troncature/coaire est désormais le mécanisme retenu.
+
+## Priorité active après le cycle 0034
+
+1. **`GAP-DEGENERATE-CELL-REGISTER-OR-OVERLAP`.** Le registre BV sélectionne
+   une cellule si sa boîte a un volume comparable au plateau effectif. Peut-on
+   traiter des corridors ou queues avec `|Q_j|/v_j->infinity` sans perdre la
+   constante faible-Lorentz ?
+2. **Chevauchements et annulations.** Construire deux potentiels pure-swirl
+   dont les plateaux restent spatialement identifiables mais dont les curls
+   se chevauchent et s'annulent avant la fonction de distribution, ou prouver
+   qu'un packing signé conserve un registre local.
+3. **Échelle dynamique.** Les gates sélectionnent un bon rapport, pas un rayon
+   tendant vers zéro. Relier la cellule au coeur pré-singulier par un argument
+   Type I publié, puis identifier exactement le trou Type II.
+4. **Cutoff curl-compatible.** Quantifier simultanément
+   `nabla chi cross U`, le défaut de divergence, la projection de Leray et la
+   composante harmonique/de bord à l'échelle critique.
+
+Le pigeonhole fondé uniquement sur les quasi-normes est définitivement
+abandonné : `NS-WEAK-LORENTZ-CELL-SELECTION` est réfuté par distributions
+totales exactes. Toute nouvelle sélection doit afficher son registre
+géométrique ou dynamique.
