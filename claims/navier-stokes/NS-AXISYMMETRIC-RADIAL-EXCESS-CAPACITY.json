@@ -1,0 +1,40 @@
+{
+  "id": "NS-AXISYMMETRIC-RADIAL-EXCESS-CAPACITY",
+  "problem": "navier-stokes",
+  "statement": "Soit W=curl(psi e_theta) un champ poloidal axisymétrique sur un domaine fini D, K sa quasi-norme faible-L^(3/2), E={|W_r|>=|W|/4}, et Omega* la rotation d'une région méridienne. Si Delta_Omega=integral_(Omega*)|W_r|-(1/sqrt(15))integral_(Omega*)|W_z|, alors |E intersection Omega*|>=((Delta_Omega)_+/(3K))^3 et Cap_2(E intersection Omega*)>=(Delta_Omega)_+/(3 S_3^2 K), où S_3 est la constante de Sobolev ||phi||_6<=S_3||nabla phi||_2.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "D est un domaine mesurable de mesure finie dans R3 et Omega* est contenu dans D",
+    "W est mesurable, poloidal axisymétrique et sa quasi-norme K=sup_lambda lambda |{|W|>lambda}|^(2/3) est finie",
+    "W=curl(psi e_theta) avec régularité suffisante pour les composantes cylindriques; l'inégalité de mesure n'utilise ensuite que W_r et W_z",
+    "E est l'ensemble où la fraction directionnelle radiale |W_r|/|W| est au moins 1/4",
+    "Cap_2 est la capacité newtonienne définie par l'énergie de Dirichlet des fonctions C_c^infinity au moins égales à un près de l'ensemble",
+    "la conclusion est informative seulement lorsque Delta_Omega est strictement positif"
+  ],
+  "dependencies": [
+    "NS-LORENTZ-CONE-COMPENSATION",
+    "NS-AXISYMMETRIC-RETURN-FLOW-BMO-GATE"
+  ],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0028-analysis.md, sections 1–2"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "le rang fini d'une somme tensorielle ne force pas Delta_Omega>0; des annulations entre niveaux peuvent rendre le lemme vide, ce qui interdit toute conclusion de capacité fondée sur le seul rang"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0028-radial-excess-capacity"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Passe analytique Codex séparée puis synthèse racine; non indépendante au sens externe",
+    "notes": "Le seuil exact est 1/sqrt(15), la constante Lorentz est trois et la puissance cubique est suivie. La capacité newtonienne ne fournit pas à elle seule une boule BMO de densité uniforme."
+  }
+}

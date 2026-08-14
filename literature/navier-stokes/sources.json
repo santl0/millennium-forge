@@ -2244,6 +2244,26 @@
       "reproduction": {"status": "primary_arxiv_and_published_constant_dependence_audited_cycle_0027"},
       "verification": {"level": "primary_arxiv_and_published_metadata_targeted_theorem", "checked_on": "2026-08-14", "notes": "DOI, arXiv et dépendance géométrique annoncée contrôlés."},
       "tags": ["Bogovskii", "Poincare", "constants", "geometry", "aspect_ratio"]
+    },
+    {
+      "id": "NS-SRC-0112",
+      "title": "On taming Moffatt–Kimura vortices of doom in the viscous case",
+      "authors": ["Zoran Grujić"],
+      "year": 2025,
+      "source_type": "preprint",
+      "publication_status": "preprint",
+      "venue": "arXiv",
+      "identifiers": {"arxiv": "2511.00725v3", "url": "https://arxiv.org/abs/2511.00725"},
+      "equation": {"model": "scénario visqueux de deux anneaux de Moffatt–Kimura et critères géométriques conditionnels associés", "dimension": "3", "domain": "R³ dans le cadre du modèle/scénario", "boundary": "sans frontière", "forcing": "non forcé", "viscosity": "positive"},
+      "solution_notions": ["mécanisme conditionnel de prévention d'une singularité; pas une construction de solution singulière"],
+      "result": "Propose une analyse à deux couches combinant échelle de parcimonie, rayon d'analyticité et annulation du stretching dans des espaces bmo locaux log-composites pour le scénario de deux anneaux en collision.",
+      "hypotheses": ["géométrie du scénario Moffatt–Kimura", "contrôles conditionnels de parcimonie et d'oscillation locale", "cadre exact du préprint"],
+      "constants_uniformity": "Aucune borne universelle vérifiée dans ce cycle pour toute solution Navier–Stokes; les constantes du mécanisme conditionnel ne sont pas importées dans les claims.",
+      "clay_relevance": "Source récente directement liée aux anneaux visqueux et au log-BMO, mais elle ne démontre ni régularité globale générale ni blow-up admissible au sens Clay.",
+      "limitations": ["prépublication v3", "mécanisme conditionnel", "aucun transfert automatique vers une résolution Clay", "pas de validation indépendante identifiée"],
+      "reproduction": {"status": "primary_arxiv_v3_metadata_and_abstract_audited_cycle_0028"},
+      "verification": {"level": "primary_arxiv_v3", "checked_on": "2026-08-14", "notes": "Titre, auteur, version v3 du 2026-06-10 et portée du résumé contrôlés; aucune publication liée identifiée."},
+      "tags": ["Navier_Stokes", "vortex_rings", "Moffatt_Kimura", "log_bmo", "preprint_2025_2026"]
     }
   ],
   "watchlist": [
@@ -2322,13 +2342,13 @@
     "analyticity_harmonic_endgame": ["NS-SRC-0059", "NS-SRC-0064", "NS-SRC-0066", "NS-SRC-0076", "NS-SRC-0077", "NS-SRC-0078", "NS-SRC-0092", "NS-SRC-0093"],
     "weighted_bmo_and_active_direction": ["NS-SRC-0059", "NS-SRC-0079", "NS-SRC-0080", "NS-SRC-0081", "NS-SRC-0082", "NS-SRC-0083", "NS-SRC-0090", "NS-SRC-0091"],
     "biot_savart_and_hodge": ["NS-SRC-0059", "NS-SRC-0068", "NS-SRC-0103", "NS-SRC-0111"],
-    "cascade_intermittency_supercriticality": ["NS-SRC-0024", "NS-SRC-0025", "NS-SRC-0026", "NS-SRC-0027", "NS-SRC-0028", "NS-SRC-0052", "NS-SRC-0094", "NS-SRC-0095", "NS-SRC-0096", "NS-SRC-0099", "NS-SRC-0100", "NS-SRC-0101", "NS-SRC-0104", "NS-SRC-0105", "NS-SRC-0106"],
+    "cascade_intermittency_supercriticality": ["NS-SRC-0024", "NS-SRC-0025", "NS-SRC-0026", "NS-SRC-0027", "NS-SRC-0028", "NS-SRC-0052", "NS-SRC-0094", "NS-SRC-0095", "NS-SRC-0096", "NS-SRC-0099", "NS-SRC-0100", "NS-SRC-0101", "NS-SRC-0104", "NS-SRC-0105", "NS-SRC-0106", "NS-SRC-0112"],
     "compact_return_flow_and_axisymmetry": ["NS-SRC-0094", "NS-SRC-0095", "NS-SRC-0096", "NS-SRC-0099", "NS-SRC-0101", "NS-SRC-0102", "NS-SRC-0103", "NS-SRC-0104", "NS-SRC-0105", "NS-SRC-0106", "NS-SRC-0107", "NS-SRC-0108", "NS-SRC-0109", "NS-SRC-0110", "NS-SRC-0111"],
     "weak_nonuniqueness": ["NS-SRC-0029", "NS-SRC-0030", "NS-SRC-0031", "NS-SRC-0032", "NS-SRC-0033", "NS-SRC-0044", "NS-SRC-0047", "NS-SRC-0054", "NS-SRC-0055"],
     "numerics_and_CAP": ["NS-SRC-0033", "NS-SRC-0037", "NS-SRC-0038", "NS-SRC-0039", "NS-SRC-0040", "NS-SRC-0041", "NS-SRC-0054", "NS-SRC-0057"],
     "formalization": ["NS-SRC-0042"],
     "recent_false_transfers": ["NS-SRC-0031", "NS-SRC-0032", "NS-SRC-0044", "NS-SRC-0055", "NS-SRC-0056", "NS-SRC-0057", "NS-SRC-0058"],
-    "recent_quantitative_singularity": ["NS-SRC-0084"]
+    "recent_quantitative_singularity": ["NS-SRC-0084", "NS-SRC-0112"]
   },
   "unverified_zones": [
     "Le domaine et la plage d'exposants exacts des articles historiques Prodi et Ladyzhenskaya doivent être réextraits des originaux avant création d'un claim formel.",

@@ -1,0 +1,47 @@
+{
+  "id": "NS-TOROIDAL-LOG-BMO-VELOCITY-COLLAPSE",
+  "problem": "navier-stokes",
+  "statement": "Sur T^3, il existe une famille de vorticités lisses toroïdales omega_n=A_n beta(d_n^2/h_n^2)e_theta, avec R_n=2^-n, h_n=2^-n^2 et A_n=(R_n h_n^2)^(-2/3), dont les normes forte et faible L^(3/2) restent uniformément non dégénérées et dont la direction admet une extension unitaire uniformément bornée dans le bmo logarithmique local; néanmoins la vitesse périodique de Biot-Savart vérifie ||u_n||_3^3<=C[h_n/R_n+(h_n/R_n)^2] et tend vers zéro.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "T^3 est représenté par une cellule contenant les tores dans son intérieur et nu>0, force nulle",
+    "n>=4, R_n=2^-n, q_n=2^-2n et h_n=2^-n^2",
+    "beta est une bosse C-infinity non négative d'un profil radial carré, supportée dans le coeur d_n<h_n/2 et positive sur une sous-région fixe",
+    "omega_n est axisymétrique, purement azimutale et de moyenne vectorielle nulle",
+    "u_n est l'unique vitesse périodique lisse, de moyenne nulle, obtenue par le multiplicateur Fourier de Biot-Savart",
+    "l'extension zeta_n coïncide avec e_theta sur le support actif et tourne vers e_z selon log(q_n/d_n)/log(q_n/h_n)",
+    "la semi-norme bmo logarithmique est le supremum de |log rho| fois l'oscillation moyenne sur toutes les petites boules",
+    "les constantes de coordonnées tubulaires et du BMO de log d sont universelles mais non évaluées numériquement"
+  ],
+  "dependencies": [
+    "NS-LORENTZ-CONE-COMPENSATION",
+    "NS-AXISYMMETRIC-RETURN-FLOW-BMO-GATE"
+  ],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0028-toroidal-log-bmo.md"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/toroidal-log-bmo/toroidal_log_bmo_audit.py, 2207 contrôles rationnels exacts",
+      "sha256": "0e1ea53d24e3c241c67e24a35bedbd81a16043cea580581ddc6c4f1f5729d274"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "la famille réfute qu'une fermeture compacte divergence-free compatible avec log-BMO exige nécessairement des calottes radialement dominantes, mais elle élimine simultanément le profil comme candidat de blow-up par petitesse L3"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0028-toroidal-log-bmo"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Passes Codex analytique, contre-modèle et littérature; non indépendantes au sens externe",
+    "notes": "La réduction all-ball suit quatre régimes et sépare les constantes analytiques de l'arithmétique exacte. Une passe indépendante confirme la borne Biot-Savart forte sous rayon d'injectivité, profil fixe, moyenne de vorticité nulle et vitesse périodique de moyenne nulle. Le résultat est statique; pour l'évolution R3 unisignée sans swirl, la diffusion réactive e_theta près de l'axe et détruit le log-BMO global. Aucune pression ou trajectoire singulière n'est construite."
+  }
+}
