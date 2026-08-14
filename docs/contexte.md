@@ -48,3 +48,17 @@ La coupure ne fournit pas d'échappatoire perturbative : son défaut de
 divergence est invariant d'échelle et son correcteur reste critique. Le verrou
 actif devient un profil non récurrent dont la direction se rectifie seulement
 comme `1/|log r|`, avec pression et résidu PDE suivis.
+
+Le cycle 0022 ferme négativement cette rectification lorsqu'elle vise un axe
+fixe, que l'amplitude critique est uniformément bornée et que chaque bloc
+logarithmique conserve une masse `L^(3/2)` non dégénérée. Le premier
+harmonique sphérique impose alors une dérive monotone impossible à un moment
+borné. Une construction exacte montre la frontière : la direction peut se
+rectifier comme `1/|log r|`, mais seulement ici en perdant la masse critique
+comme `e^-2s s²`.
+
+La veille primaire ajoute que le confinement uniforme espace-temps de toute
+forte vorticité autour d'un axe fixe tombe déjà, conditionnellement, sous le
+critère de double cône de Lei–Ren–Tian v1. Le verrou actif devient donc un axe
+errant, une cascade angulaire ou plusieurs cœurs échappant à tout cône fixe,
+avec le coût de recharge du moment et le résidu visqueux suivis.

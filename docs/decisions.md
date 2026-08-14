@@ -61,3 +61,21 @@
   rigidité directionnelle et défaut critique des coupures.
 - Le programme pivote vers `GAP-LOG-RECTIFIED-PROFILE`, sans réétiqueter un
   profil asymptotique comme homogène exact.
+
+### 2026-08-14 — rectification à axe fixe exclue sous masse par bloc
+
+- Pour `s=log(R_*/r)`, la contrainte solénoïdale porte le signe
+  `div_S Omega_T-partial_s Omega_r`; le signe provisoire contraire est
+  corrigé avant tout usage.
+- `NS-LOG-RECTIFIED-SOLENOIDAL-OBSTRUCTION` exclut, au statut
+  `COMPUTATION_ONLY`, une amplitude angulaire uniformément bornée, une masse
+  critique non dégénérée par bloc et une direction rectifiée vers un axe
+  fixe. Aucun statut publié ou formalisé n'est attribué.
+- Le faible-`L^(3/2)` global ne remplace pas ces hypothèses : des calottes
+  intermittentes gardent la masse critique avec amplitude non bornée.
+- Une construction div–curl exacte réalise la rectification en perdant la
+  singularité critique; son résidu stationnaire ne s'annule pas.
+- Lei–Ren–Tian `2501.08976v1` est enregistré `SOURCE_VERIFIED` pour le critère
+  conditionnel du double cône, sans reproduction de la preuve.
+- `GAP-LOG-RECTIFIED-PROFILE` est fermé pour l'axe fixe sous les prémisses
+  suivies. `GAP-WANDERING-AXIS-PROFILE` devient le verrou actif.

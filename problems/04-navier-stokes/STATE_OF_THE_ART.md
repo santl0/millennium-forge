@@ -471,7 +471,44 @@ directions asymptotiques ou Type II. Une coupure radiale brute crée en outre
 un défaut de divergence `L¹` indépendant de son échelle; le correcteur exact
 reste critique et le contrôle standard de pression perd un logarithme.
 
-Le prochain axe doit donc rompre l'homogénéité exacte : construire ou exclure
-une direction `e+O(1/|log r|)` satisfaisant la contrainte sphérique, conservant
-une masse faible-`L^(3/2)` non dégénérée et produisant après coupure un résidu
-Navier–Stokes réellement inférieur aux termes principaux.
+Le cycle 0022 traite cette rectification fixe. Dans les variables
+`s=log(R_*/r)`, le signe exact est
+
+```text
+div(r^-2 Omega)=r^-3[div_(S²)Omega_T-partial_s Omega_r].
+```
+
+Le premier harmonique `e dot theta` fournit un moment borné. Si
+`Phi=|Omega|` reste uniformément borné, si chaque bloc logarithmique conserve
+une masse moyenne `Phi^(3/2)` non nulle et si la direction converge vers un
+axe fixe en moyenne pondérée, ce moment doit décroître d'une quantité fixe à
+chaque bloc. Le profil solénoïdal ne peut donc atteindre le centre. Cela
+exclut en particulier une magnitude homogène ou log-périodique non nulle avec
+direction uniforme `e+O(1/|log r|)`.
+
+La frontière est explicite :
+
+```text
+W=(s²-s)e+s(e dot theta)theta,
+u=(s²/2)e cross x
+```
+
+réalise exactement la rectification et le raccord div–curl, mais son facteur
+critique dégénère comme `e^-2s s²`; la vorticité physique n'est plus que
+logarithmique. Des calottes angulaires d'amplitude croissante montrent que la
+borne faible-`L^(3/2)` globale seule ne remplace ni la borne de tranche ni la
+masse par bloc.
+
+La veille primaire ajoute quatre résultats publiés : Chae 2015 et Chae–Wolf
+2017 excluent des classes asymptotiquement DSS, Giga–Miura 2011 traite une
+direction uniformément continue sous Type I, et Ożański–Palasek 2023 obtient
+une rigidité quantitative axisymétrique sous faible-`L³`. Lei–Ren–Tian
+`arXiv:2501.08976v1` affirme en outre qu'un double cône fixe contenant toute
+la forte vorticité régularise une solution faible adaptée; une rectification
+uniforme espace-temps vers un axe fixe tombe dans ce critère, sous réserve du
+statut de prépublication.
+
+Le verrou restant n'est donc plus l'axe fixe : il faut construire ou exclure
+un axe errant, une cascade angulaire ou plusieurs cœurs qui échappent à tout
+double cône fixe, tout en conservant divergence, masse critique, Biot–Savart,
+pression et résidu Navier–Stokes. C'est `GAP-WANDERING-AXIS-PROFILE`.

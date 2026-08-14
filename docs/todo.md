@@ -30,9 +30,14 @@
   vers la prémisse globale `bmo_phi`, zéros et multicœurs inclus.
 - [x] Auditer l'admissibilité du profil critique ponctuel sous
   `div omega=0`, Biot–Savart, énergie finie, coupures et `bmo_phi` global.
-- [ ] Construire ou exclure un profil à direction
+- [x] Construire ou exclure un profil à direction
   `e+O(1/|log r|)` avec masse faible-`L^(3/2)` non dégénérée et résidu PDE
-  sous-critique après coupure.
+  sous-critique après coupure, dans la sous-classe à axe fixe, amplitude
+  bornée et masse critique par bloc : exclusion cinématique au cycle 0022;
+  l'échappatoire dégénérée n'est pas stationnaire.
+- [ ] Construire ou exclure un profil à axe `e(s)` errant ou multicœur qui
+  échappe à tout double cône fixe; suivre le terme `e'(s)`, les harmoniques,
+  le faible-`L^(3/2)`, Biot–Savart et le résidu visqueux.
 - [ ] Quantifier une formulation pré-singulière cohérente par rayon de cœur
   `r_c(t)` ou convergence de profils remis à l'échelle.
 - [ ] Formaliser le lemme scalaire de séparation de phases

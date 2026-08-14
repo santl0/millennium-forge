@@ -627,3 +627,29 @@ La partie mesure/dilatation peut être certifiée sans bibliothèque PDE lourde.
 La formule de divergence sphérique et le monopôle nécessitent davantage
 d'analyse distributionnelle. Aucun de ces modules ne formaliserait la
 pression, Biot–Savart singulier ou une trajectoire Navier–Stokes.
+
+## Backlog issu du cycle 0022 — budget du premier harmonique
+
+Le noyau nouveau se sépare en une partie finie et une interface analytique :
+
+1. sur la mesure de probabilité de `S²`, formaliser pour
+   `mu=e dot theta` les identités `<|mu|>=1/2` et
+   `|nabla_S mu|²=1-mu²`;
+2. pour `0<=Phi<=M`, formaliser le lemme de calottes
+   `<Phi(1-mu²)> >= M(a²-a³/3) >= 2<Phi>²/(3M)`,
+   `a=<Phi>/M`;
+3. combiner `Phi^(3/2)<=sqrt(M)Phi`, Cauchy sur un bloc de longueur `L` et
+   un budget scalaire borné pour obtenir la profondeur maximale
+   `3M³L/kappa²`;
+4. garder comme hypothèse externe l'identité distributionnelle
+   `partial_s Omega_r=div_S Omega_T`, puis formaliser séparément son test
+   contre `mu`;
+5. certifier par polynômes la construction dégénérée
+   `W=(s²-s)e+s mu theta`, `u=(s²/2)e cross x` et les coefficients de son
+   résidu visqueux.
+
+Les étapes 2, 3 et 5 sont des cibles finies sans bibliothèque Navier–Stokes.
+Elles certifieraient les constantes du claim
+`NS-LOG-RECTIFIED-SOLENOIDAL-OBSTRUCTION`, pas le passage depuis une solution
+Clay, la pression ou le critère du double cône. Le noyau Fourier–Leray reste
+prioritaire tant qu'aucun environnement formel n'est installé et compilé.

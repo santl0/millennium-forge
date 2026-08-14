@@ -837,3 +837,65 @@ direction, défaut de coupure — `GAP-CRITICAL-PROFILE-ADMISSIBILITY` est
 suspendu pour l'homogénéité exacte. Le verrou actif devient
 `GAP-LOG-RECTIFIED-PROFILE`, où la direction doit rompre la récurrence avec un
 taux précisément compatible avec `1/|log r|`.
+
+## Cycle 0022 : budget de moment d'une rectification fixe
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| moment sphérique de degré un pour une direction rectifiée | 5 | 5 | 5 | 5 | **20** |
+| perturbation harmonique avec borne sur `partial_s xi` | 4 | 4 | 5 | 4 | 17 |
+| jet angulairement intermittent et résidu validé | 5 | 2 | 4 | 4 | 15 |
+
+Avec `s=log(R_*/r)`, la contrainte correcte est
+
+```text
+div[r^-2 Omega(s,theta)]
+=r^-3[div_(S²)Omega_T-partial_s Omega_r].
+```
+
+Le signe moins corrige la formule provisoire du pivot précédent. Pour un axe
+fixe `e`, le premier harmonique `mu=e dot theta` donne le budget
+
+```text
+J=<mu Omega_r>,
+J'=-<Phi(1-mu²)>-<Phi(xi-e) dot nabla_(S²)mu>.
+```
+
+Si `0<=Phi<=M`, si tout bloc logarithmique de longueur `L` porte au moins
+`kappa` de moyenne `Phi^(3/2)` et si la direction se rectifie vers `e` en
+moyenne pondérée, la minoration optimale par calottes force
+
+```text
+J(S+L)-J(S)<=-kappa²/(3M²L).
+```
+
+Or `|J|<=M/2`; après au plus `3M³L/kappa²` blocs, la contradiction est
+inévitable. Une magnitude homogène ou log-périodique non nulle satisfait
+automatiquement la non-dégénérescence de bloc. Elle ne peut donc être sauvée
+par une direction `e+O(1/s)` tout en restant solénoïdale.
+
+L'échappatoire dégénérée est explicite :
+
+```text
+W=(s²-s)e+s(e dot theta)theta,
+u=(s²/2)e cross x.
+```
+
+Elle est divergence-free, vérifie `curl u=W` et a une direction à distance
+`O(1/s)` de `e`, mais son facteur critique vaut `Phi~e^-2s s²`; la masse
+`r^-2` disparaît. Sans borne angulaire uniforme, des calottes de mesure
+`2^-3n` et amplitude `2^2n` montrent aussi que la masse `L^(3/2)` peut rester
+fixe tandis que le moment transverse tend vers zéro.
+
+La veille resserre encore la classe : Lei–Ren–Tian `2501.08976v1` exclut
+conditionnellement, pour une solution faible adaptée, tout confinement
+uniforme de la forte vorticité dans un double cône fixe. La rectification
+uniforme espace-temps vers `+/-e` satisfait cette porte. `bmo_phi` seul ne
+produit toutefois ni axe fixe, ni contrôle ponctuel de tous les grands
+niveaux.
+
+`GAP-LOG-RECTIFIED-PROFILE` est fermé négativement pour l'axe fixe sous
+amplitude bornée et masse critique par bloc. Le verrou actif devient
+`GAP-WANDERING-AXIS-PROFILE` : un axe `e(s)` ou plusieurs cœurs doivent
+échapper à tout cône fixe, et le terme de recharge du moment, les harmoniques,
+Biot–Savart, la pression et le résidu visqueux doivent être suivis ensemble.
