@@ -2,7 +2,7 @@
 
 Les expériences de ce répertoire sont des tests analytiques finis. Elles ne
 simulent pas une solution Navier–Stokes et ne constituent ni une preuve de
-régularité ni un blow-up. Les quatorze expériences utilisent la graine « sans
+régularité ni un blow-up. Les quinze expériences utilisent la graine « sans
 objet » et écrivent
 leur rapport JSON sur la sortie standard.
 
@@ -12,6 +12,7 @@ leur rapport JSON sur la sortie standard.
 |---|---|---|---|---|
 | `VAS-1` | quand la viscosité est-elle perturbative dans un ansatz mono-échelle ? | rationnels exacts; aucune grille | `python -B experiments/navier-stokes/viscosity-gate/test_viscosity_gate.py` | zéro pour les identités testées |
 | `TRI-PHASE-1` | divergence nulle et hélicité nulle imposent-elles un flux sous-linéaire universel ? | modes Fourier finis, rationnels gaussiens exacts | `python -B experiments/navier-stokes/triad-phase/test_triad_phase.py` | zéro |
+| `VORTICITY-LOCAL-COHERENCE-SIGN-GATE-1` | une cohérence locale arbitrairement fine de la direction fixe-t-elle le signe ou déplète-t-elle sans échelle le stretching central ? | six modes Fourier, fractions rationnelles gaussiennes exactes; aucune grille | `python -B experiments/navier-stokes/vorticity-local-coherence/local_coherence_audit.py` | zéro pour les identités, la pression et les lois d'échelle |
 | `DESINGULARIZATION-GATE-1` | les normes d'une troncature de `r^-1` restent-elles uniformes quand `epsilon -> 0` ? | intégrales radiales exactes; logarithme symbolique | `python -B experiments/navier-stokes/desingularization-gate/desingularization_gate.py` | zéro pour les identités rationnelles |
 | `HWY-INNER-CUTOFF-GATE-1` | une régularisation intérieure divergence-free petite en `L²` et bornée en `L^{3,infinity}` est-elle compacte dans `L³` ? | matrices et intégrales exactes; transcendantes symboliques | `python -B experiments/navier-stokes/hwy-inner-cutoff/inner_cutoff_audit.py` | zéro pour les identités rationnelles et l'arrondi |
 | `HWY-PARITY-PROJECTION-GATE-1` | un lissage intérieur respectant la réflexion HWY peut-il exciter le mode certifié impair ? | projecteurs de parité et exposants rationnels exacts; aucune grille | `python -B experiments/navier-stokes/hwy-parity-projection/parity_projection_audit.py` | zéro pour dix obligations; aucun arrondi |
@@ -76,6 +77,44 @@ réseau ni ne produit d'artefact lourd.
   suppression d'un helper inutilisé et renommage anglais. Empreinte Forge :
   `c469d9a9984753c95fa0f21cd8fbeb723bd6ed1f8c6a500376af02d13ce5da33`.
 
+## `VORTICITY-LOCAL-COHERENCE-SIGN-GATE-1` — cohérence locale et stretching signé
+
+- Question : la cohérence locale de `xi=omega/|omega|`, jointe à l'énergie,
+  l'enstrophie, la palinstrophie et l'hélicité globale, détermine-t-elle le
+  signe ou une petite borne sans échelle sur `omega·S omega` au centre ?
+- Équation réellement testée : donnée initiale analytique pour Navier–Stokes
+  incompressible 3D non forcé, `nu>0`, sur le tore normalisé; aucune évolution
+  discrétisée.
+- Champs :
+  `u_a=(sin y+a sin x cos z,0,-a cos x sin z)`, `a=+-1`, et
+  `omega_a=(0,-2a sin x sin z,-cos y)`.
+- Préservation : réalité et divergence nulles mode par mode; pression de
+  moyenne nulle reconstruite par la convolution de Poisson,
+  `p_a=(a²/4)(cos 2x+cos 2z)`.
+- Données appariées : `E=1/2`, `Z=3/4`, palinstrophie `5/2`, hélicité zéro,
+  même vorticité `-e_3` et même premier jet nul à l'origine. Le changement
+  `a->-a` est la translation exacte `x->x+pi`.
+- Sortie décisive : `omega·S omega=-a cos x cos z cos²y`; il vaut `-a` au
+  centre et garde ce signe sur `Q_r`, `0<r<=1/2`, avec module au moins
+  `(1-r²/2)^4`.
+- Cohérence certifiée :
+  `sin angle(xi(X),xi(0))<=2r²/(1-r²/2)` et
+  `sin angle(xi(X),xi(Y))<=(2r/(1-r²/2))||X-Y||_1` sur `Q_r`.
+- Échelle : pour `U_N=N u(Nx)`, énergie `N²`, enstrophie `N⁴`,
+  palinstrophie et production ponctuelle `N⁶`, tandis que le ratio critique
+  `(omega·S omega)/|omega|³` au centre reste `-a`. Le lift `u(Nx)` est aussi
+  contrôlé séparément.
+- Arithmétique : six modes Fourier, `fractions.Fraction`, aucune grille,
+  graine, FFT ou valeur flottante; tous les résidus algébriques sont nuls.
+- Sensibilité : les bornes de direction deviennent arbitrairement petites en
+  rétrécissant le cube, sans diminuer le stretching central.
+- Limites : instant initial seulement; pas de borne énergétique uniforme sous
+  scaling critique, pas de contrôle de tout le high-vorticity set, pas de
+  persistance temporelle. Les critères intégrés de Constantin–Fefferman et
+  Beirão da Veiga–Berselli ne sont pas réfutés.
+- Empreinte :
+  `04112a48e77a5286fd3e98a73471577a7f30a9b0acbd027699177b6204649708`.
+
 ## `DESINGULARIZATION-GATE-1` — premier cycle autonome
 
 - Question : la contribution de coquille d'un champ homogène
@@ -134,7 +173,7 @@ réseau ni ne produit d'artefact lourd.
 
 ## Passage au continuum
 
-Aucune des quatorze expériences ne part d'une discrétisation PDE : il n'y a donc
+Aucune des quinze expériences ne part d'une discrétisation PDE : il n'y a donc
 pas de passage grille-vers-continuum. Le raccord analytique restant est
 explicite dans chaque cas. Tout futur solveur doit ajouter divergence mesurée,
 convergence multi-résolution, second schéma, bornes de troncature, contrôle des

@@ -1,0 +1,46 @@
+{
+  "id": "NS-VORTICITY-LOCAL-COHERENCE-SIGN-GATE",
+  "problem": "navier-stokes",
+  "statement": "Sur le tore tridimensionnel normalisé, les données analytiques divergence-free u_a=(sin y+a sin x cos z,0,-a cos x sin z), a=plus ou moins 1, ont les mêmes énergie, enstrophie, palinstrophie, hélicité globale nulle et modules locaux certifiés de cohérence de direction de vorticité autour de l'origine, mais omega(0)^T S(0) omega(0)=-a; ces seules données ne déterminent donc ni le signe ni une déplétion ponctuelle sans échelle de l'étirement.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "tore T³=(R/2πZ)³ avec intégrales normalisées",
+    "donnée initiale C-infinity, analytique, périodique, de moyenne nulle et divergence-free",
+    "Navier–Stokes incompressible 3D non forcé, viscosité ν>0, identité évaluée à l'instant initial",
+    "vorticité omega=curl u, strain S=(nabla u+nabla u transpose)/2 et direction xi=omega/|omega| là où omega est non nulle",
+    "cube Q_r={|x|,|y|,|z|<=r}, 0<r<=1/2, choisi localement autour de l'origine",
+    "aucune hypothèse uniforme en temps ni sur la totalité de la région de forte vorticité"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0021 et NS-SRC-0060 pour les critères géométriques conditionnels que le contre-profil ne réfute pas"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "experiments/navier-stokes/vorticity-local-coherence/local_coherence_audit.py",
+      "sha256": "04112a48e77a5286fd3e98a73471577a7f30a9b0acbd027699177b6204649708"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0013-vorticity-local-coherence-sign-gate.md"
+    },
+    {
+      "kind": "computation",
+      "reference": "VORTICITY-LOCAL-COHERENCE-SIGN-GATE-1: six modes Fourier, fractions rationnelles exactes, pression de Poisson et lois d'échelle; tous les résidus algébriques sont nuls"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "human_ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0013-vorticity-local-coherence"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois passes Codex séparées, même famille de modèle; non indépendantes au sens externe",
+    "notes": "La pression, les jets, la palinstrophie, le signe local, la cohérence pairwise, la translation a vers -a et deux scalings entiers ont été recalculés. Les passes interdisent explicitement toute promotion vers un critère global de forte vorticité, une propriété dynamique ou une conclusion Clay."
+  }
+}

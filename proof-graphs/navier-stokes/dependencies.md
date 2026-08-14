@@ -66,6 +66,9 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | réunion des sorties ESS et KNSS | ancienne mild bornée + trace nulle | non transférable | `BLOWUP-INHERITANCE-AUDIT-1` : propriétés portées par deux objets différents | lemme de raccord absent |
 | zoom Type II d'échelle Euler | ancienne dissipative Euler non triviale | conditionnel et sourcé | Seregin `2507.08733v2`, `2606.29468v1`, `2402.13229v3` | un Liouville Navier–Stokes ne s'applique pas à l'équation limite |
 | alignement critique de vorticité | régularité | conditionnelle, sourcée | Constantin–Fefferman | alignement non déduit de NS |
+| cohérence locale dans un patch + énergie/enstrophie/palinstrophie/hélicité | signe ou petite déplétion ponctuelle de `omega·S omega` | réfutée | paire Fourier exacte `a=+-1`, `FAIL-NS-0016` | strain lointain et quantificateurs globaux absents |
+| cohérence high–high uniforme en temps sur `R³` | régularité | conditionnelle, sourcée | Constantin–Fefferman; Beirão da Veiga–Berselli | module non déduit de la dynamique générale |
+| cohérence locale sur cylindre | absorption du stretching localisé | conditionnelle, sourcée | Grujić 2009 | commutateurs de cutoff et queue extérieure à conserver |
 | hélicité globale nulle | petit flux instantané universel | réfutée | contre-triade exacte | pas de positivité modale |
 | profil Euler IA | profil NS perturbatif | réfutée pour l'ansatz mono-échelle `lambda>-1/2` | rapport visqueux exact | viscosité dominante |
 | donnée homogène `-1` non unique | donnée compacte énergétique singulière non unique | source vérifiée, CAP non reproduite | Hou–Wang–Yang v2; cutoff extérieur, gain `R^-1/8` pour `p=4` | le coeur `1/r` est conservé |
@@ -95,13 +98,14 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | `GAP-PRESSURE-HARMONIC` | jauge de pression | équation de Poisson sur `R³` ne fixe pas les composantes affines | solution ancienne parasite exacte |
 | `GAP-HYBRID-INHERITANCE` | stabilité des hypothèses | mildness/bornitude KNSS et trace nulle ESS appartiennent à deux limites distinctes; dans la normalisation maximum, les limites commutent au temps-record `t_k`, tandis que `T` devient l'extrémité mobile `B_k` | matrice d'héritage + rigidité à trace nulle + audit des horloges/commutateur; axe suspendu après trois stratégies |
 | `GAP-SIGN-FLUX` | positivité | flux d'énergie inter-échelles | contre-triades exactes |
+| `GAP-VORTICITY-TAIL` | non-localité/quantificateurs | direction locale vers strain total et stretching positif | `FAIL-NS-0016`; exiger une queue Biot–Savart annulaire explicite |
 | `GAP-LIMIT-ADMISSIBLE` | stabilité/admissibilité | profil singulier vers donnée de Schwartz | trois portes distinctes fermées : `FAIL-NS-0013` réfute la compacité `L³`, `0014` annule le mode impair sous lissage symétrique, `0015` réfute l'identification trace asymptotique/donnée finie; axe suspendu |
 | `GAP-NUM-CONTINUUM` | calcul vers continuum | discrétisation finie | résidu d'intervalle + queue analytique |
 
 ## Arêtes prioritaires
 
-1. `GAP-SIGN-FLUX` : tester une cohérence **locale** des directions de
-   vorticité contre des champs divergence-free à triades signées exactes.
+1. `GAP-VORTICITY-TAIL` : auditer la conversion mesure/sparseness de
+   `arXiv:2607.08866v2`, puis formuler une queue de strain sommable.
 2. `GAP-NUM-CONTINUUM` : isoler un opérateur compact à queues certifiables.
 3. Noyau Fourier–Leray formel : certifier les identités d'énergie finies avant
    toute formalisation de scénario PDE.
@@ -118,6 +122,11 @@ d'équivalence de profils, et non une nouvelle permutation des mêmes limites.
 `FAIL-NS-0013`–`0015`. Une réouverture exige un mécanisme de perte forte pour
 une donnée lisse fixée ou une stabilité non perturbative qui ne réutilise pas
 compacité `L³`, excitation impaire symétrique ou identification des traces.
+
+`GAP-SIGN-FLUX` est borné par deux résultats négatifs : l'hélicité globale ne
+fixe pas le flux triadique et la cohérence d'un seul patch ne fixe pas le
+stretching ponctuel. Une réouverture doit porter une hypothèse globale,
+uniforme en temps, et conserver explicitement `GAP-VORTICITY-TAIL`.
 
 Une arête ne passe à « classique et sourcée » qu'avec une source primaire et
 des hypothèses identiques. Une expérience finie reste « numérique » ou

@@ -367,6 +367,42 @@ d'équivalence entre deux profils, pas un autre renommage de topologie.
   Cauchy finie »; claim de porte `COMPUTATION_ONLY`.
 - Artefact : `ASYMPTOTIC-TRACE-CAUCHY-GATE-1`.
 
+## `FAIL-NS-0016` — Signe local du stretching déduit de la seule cohérence locale
+
+- Date : 2026-08-14.
+- Équation : Navier–Stokes incompressible 3D non forcé sur
+  `T³=(R/2piZ)³`, viscosité `nu>0`; données initiales analytiques,
+  périodiques, de moyenne nulle et divergence-free.
+- Cible : déduire un signe universel ou une petite borne ponctuelle sans
+  facteur d'échelle sur `omega·S omega` au centre à partir de la cohérence de
+  `xi=omega/|omega|` dans un patch et de quantités quadratiques globales.
+- Contre-profil :
+  `u_a=(sin y+a sin x cos z,0,-a cos x sin z)`, `a=+-1`.
+  Les deux signes sont reliés par la translation `x->x+pi` et ont les mêmes
+  énergie `1/2`, enstrophie `3/4`, palinstrophie `5/2`, hélicité nulle,
+  vorticité centrale `-e_3` et premier jet de vorticité nul.
+- Résultat :
+  `omega_a·S_a omega_a=-a cos x cos z cos²y`. Le terme vaut `-a` à
+  l'origine et garde ce signe sur `Q_r`, tandis que les défauts angulaires
+  centre–boule et pairwise sont respectivement `O(r²)` et `O(r|X-Y|)`.
+- Non-localité : la pression périodique est reconstruite exactement et paire
+  en `a`; le degré de liberté manquant est le strain global de Biot–Savart,
+  non un terme local de la direction.
+- Scaling : `U_N=N u_a(Nx)` conserve le ratio critique signé sur
+  `Q_{r/N}` mais son énergie croît comme `N²`; aucune famille énergétique
+  uniforme n'est revendiquée.
+- Test : six modes Fourier et fractions rationnelles exactes; divergence,
+  réalité, pression, jets, quantités quadratiques et scalings ont un résidu
+  zéro. Empreinte du script :
+  `04112a48e77a5286fd3e98a73471577a7f30a9b0acbd027699177b6204649708`.
+- Portée : réfute seulement le lemme ponctuel local sans queue lointaine. Ne
+  réfute ni Constantin–Fefferman, ni Beirão da Veiga–Berselli, ni un critère
+  espace-temps uniforme sur tout l'ensemble de forte vorticité, ni un bilan
+  intégré.
+- Statut : `COMPUTATION_ONLY` avec dérivation exacte et trois passes
+  adversariales de même famille de modèle; aucune revue externe indépendante.
+- Artefact : `VORTICITY-LOCAL-COHERENCE-SIGN-GATE-1`.
+
 ## Obstacle consolidé — désingularisation HWY vers une même donnée Clay
 
 Trois stratégies distinctes ont fermé les inférences actuellement disponibles :

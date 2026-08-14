@@ -461,3 +461,51 @@ Pivot noté : géométrie locale de vorticité + triades signées `17/20`, opér
 renormalisé compact `16/20`, noyau Fourier–Leray formel `15/20`. Le prochain
 cycle sélectionne le premier axe et cherchera un contre-profil divergence-free
 exact contre une déplétion géométrique quantitative.
+
+## Cycle 0013 : cohérence locale contre strain non local
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| contre-profil périodique exact de cohérence locale et stretching signé | 4 | 5 | 5 | 5 | **19** |
+| audit complet de `arXiv:2607.08866v2` | 5 | 2 | 4 | 5 | 16 |
+| formalisation du noyau Fourier vorticité–strain | 3 | 4 | 5 | 3 | 15 |
+
+Le champ
+
+```text
+u_a=(sin y+a sin x cos z,0,-a cos x sin z),  a=+-1,
+```
+
+est analytique, divergence-free et satisfait
+
+```text
+omega_a=(0,-2a sin x sin z,-cos y),
+omega_a·S_a omega_a=-a cos x cos z cos²y.
+```
+
+Les deux signes sont reliés par translation, partagent énergie, enstrophie,
+palinstrophie, hélicité et vorticité centrale, et ont le même module pairwise
+de cohérence sur `Q_r`. Le stretching garde pourtant des signes opposés et un
+module strictement positif tandis que le défaut angulaire centre–boule tend
+vers zéro comme `r²`. L'arête
+
+```text
+cohérence locale de xi + quantités quadratiques
+  -> signe ou petite déplétion ponctuelle sans queue
+```
+
+est réfutée (`FAIL-NS-0016`). Ce résultat est cinématique et instantané : les
+critères Constantin–Fefferman et Beirão da Veiga–Berselli restent hors portée,
+car ils sont uniformes en temps, high–high et intégrés.
+
+Nouvelle arête active :
+
+```text
+géométrie sur tout le high-vorticity set
+  + queue de strain contrôlée
+  -> absorption intégrée / sparseness au rayon analytique.
+```
+
+Le prochain test fige les quantificateurs de la conversion géométrique de
+`arXiv:2607.08866v2` et cherche un ensemble mesurable adverse avant d'auditer
+les estimations PDE plus longues.

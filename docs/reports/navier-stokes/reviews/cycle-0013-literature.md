@@ -1,7 +1,7 @@
 # Cycle 0013 — veille primaire : direction de la vorticité et déplétion du vortex stretching
 
-Date de coupure : **2026-08-14**  
-Périmètre : équations de Navier–Stokes incompressibles 3D, non forcées, principalement sur \(\mathbb R^3\), avec une section séparée sur Euler 3D et sur les résultats locaux.  
+Date de coupure : **2026-08-14**
+Périmètre : équations de Navier–Stokes incompressibles 3D, non forcées, principalement sur \(\mathbb R^3\), avec une section séparée sur Euler 3D et sur les résultats locaux.
 Statut : audit bibliographique et contradictoire ; aucune affirmation nouvelle de ce document n'est une preuve papier.
 
 ## 1. Conclusion exécutable

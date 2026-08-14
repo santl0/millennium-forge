@@ -6,10 +6,10 @@ des décisions reste dans les checkpoints.
 
 | Priorité | Question falsifiable | Pourquoi maintenant | Critère de sortie |
 |---:|---|---|---|
-| 1 | une contrainte quantitative **locale** de cohérence des directions de vorticité, strictement plus forte que l'hélicité globale, impose-t-elle un signe ou une déplétion uniforme de l'étirement sur des triades divergence-free ? | après le troisième échec HWY, ce verrou indépendant obtient `17/20`; `TRI-PHASE-1` réfute déjà toute règle fondée seulement sur les invariants globaux | inégalité à constante suivie ou contre-profil Fourier exact satisfaisant la cohérence proposée et gardant un étirement de signe arbitraire |
-| 2 | un problème renormalisé NS peut-il être réduit à un opérateur compact avec bornes de queue certifiables ? | deuxième score du pivot, `16/20`; préalable à toute preuve assistée par ordinateur | rayon de contraction validable sous raffinement |
-| 3 | le noyau Fourier fini énergie–Leray peut-il être formalisé sans axiome ni `sorry` en Lean ? | score `15/20`; petite brique stable, indépendante des scénarios spéculatifs | build épinglé + `#print axioms` vide hors logique standard |
-| 4 | peut-on construire un dictionnaire exact entre cohérence de vorticité en espace physique et restrictions de phase/amplitude dans une triade de Fourier finie ? | nécessaire pour que l'axe géométrique ne se réduise pas à une heuristique de turbulence | formule explicite contrôlée sur un champ réel divergence-free et test de violation |
+| 1 | la conversion « petit volume de superniveau 3D -> sparseness linéaire uniforme par le point critique, à la même échelle » utilisée dans `arXiv:2607.08866v2` est-elle valide avec les quantificateurs annoncés ? | meilleure valeur informationnelle après `FAIL-NS-0016`; maillon purement géométrique testable avant les estimations PDE | preuve élémentaire à constantes suivies ou ensemble mesurable adverse explicite |
+| 2 | une inégalité locale de stretching positif peut-elle être fermée avec une queue de strain lointain explicite et sommable, sans supposer la norme critique recherchée ? | le cycle 0013 prouve que toute suppression de cette queue est fausse | borne annulaire/Carleson uniforme, ou contre-profil multi-échelle à énergie suivie |
+| 3 | un problème renormalisé NS peut-il être réduit à un opérateur compact avec bornes de queue certifiables ? | préalable à toute preuve assistée par ordinateur | rayon de contraction validable sous raffinement |
+| 4 | le noyau Fourier fini énergie–Leray peut-il être formalisé sans axiome ni `sorry` en Lean ? | petite brique stable, indépendante des scénarios spéculatifs | build épinglé + `#print axioms` vide hors logique standard |
 
 ## Questions suspendues
 
@@ -77,6 +77,17 @@ faible–forte depuis une donnée finie commune. La famille logistique exacte
 à tout temps fini récupère `A`. Le transfert par identification des traces est
 abandonné. Après ce troisième échec HWY réellement distinct, le programme
 pivote vers la géométrie locale de la vorticité et les triades signées.
+
+## Résultat négatif du cycle 0013
+
+La paire périodique exacte `u_a`, `a=+-1`, a les mêmes quantités
+quadratiques, la même vorticité centrale, un premier jet nul et les mêmes
+bornes de cohérence locale, mais
+`omega_a·S_a omega_a(0)=-a`. Sous scaling Navier–Stokes, le ratio critique
+signé reste `-a` sur un patch à l'échelle `|omega|^-1/2`, au prix d'une énergie
+croissant comme `N²`. Toute règle de signe ponctuel fondée seulement sur un
+patch local est donc abandonnée. Une réouverture doit inclure tout l'ensemble
+de forte vorticité, l'uniformité temporelle et une queue Biot–Savart explicite.
 
 ## Règle de pivot
 

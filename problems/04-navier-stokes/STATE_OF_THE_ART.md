@@ -295,12 +295,13 @@ pas une régularité globale par elles-mêmes.
 | compacité forte | limite d'une séquence critique | exclusion de dichotomie/cascade et contrôle du défaut |
 | pression | localisation physique | contrôle des queues et commutateurs de Riesz |
 | positivité | flux triadiques et étirement | fonctionnelle de signe stable sous interactions |
+| géométrie locale | passage de `xi` au strain total | queue Biot–Savart et quantificateurs uniformes sur tout le high-vorticity set |
 | stabilité | passage d'un profil singulier à des données Clay | théorème robuste respectant unicité faible–forte |
 
 ## Conclusion falsifiable
 
 La bibliographie ferme de nombreuses classes conditionnelles mais ne fournit
-pas l'arête « énergie -> borne critique ». Douze cycles ont déjà éliminé ou
+pas l'arête « énergie -> borne critique ». Treize cycles ont déjà éliminé ou
 borné plusieurs substituts : transfert inviscide mono-échelle, déplétion
 triadique universelle, tension de pression issue de l'énergie, compacité de
 traces mobiles, module temporel critique et composition naïve ESS–KNSS. Le
@@ -308,7 +309,11 @@ raccord ESS–KNSS maximum-normalisé est suspendu : les deux profils ne sont pa
 le même objet, le paquet hybride serait rigide, et la suite KNSS conserve
 nécessairement une trace non nulle. Le raccord de la donnée homogène `-1` à
 une même donnée Clay lisse est lui aussi suspendu après trois tests négatifs
-distincts. Le programme pivote vers un verrou indépendant : déterminer, sur
-des champs divergence-free explicites, si une cohérence quantitative locale
-des directions de vorticité impose une déplétion signée du terme d'étirement
-qui ne soit pas déjà réfutée par les triades de Fourier.
+distincts. Le cycle 0013 ferme ensuite la porte ponctuelle locale : deux champs
+analytiques périodiques reliés par translation ont les mêmes quantités
+quadratiques et les mêmes modules locaux de direction, mais des stretchings
+centraux opposés. Une cohérence choisie dans un seul patch ne contrôle pas la
+partie lointaine du strain et ne réfute aucun critère géométrique intégré. Le
+verrou actif devient une inégalité avec queue non locale explicite et l'audit
+des raccords de `arXiv:2607.08866v2` entre mesure de superniveau, sparseness
+linéaire et rayon d'analyticité.

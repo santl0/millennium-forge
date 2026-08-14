@@ -267,3 +267,29 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   exactement le verrou Clay.
 - Artefact : `ASYMPTOTIC-TRACE-CAUCHY-GATE-1`, résidus rationnels nuls et aucun
   flottant.
+
+## 2026-08-14 — Cohérence locale de vorticité et strain lointain
+
+- Équation : donnée analytique pour NS incompressible 3D non forcé sur `T³`,
+  viscosité positive; identité évaluée à l'instant initial.
+- Famille : `u_a=(sin y+a sin x cos z,0,-a cos x sin z)`, `a=+-1`.
+  Le changement de signe est une translation spatiale exacte.
+- Quantités testées : `E=1/2`, `Z=3/4`, palinstrophie `5/2`, hélicité zéro,
+  `omega(0)=-e_3`, `Domega(0)=0` pour les deux champs.
+- Signe : `omega·S omega=-a cos x cos z cos²y`; il vaut `-a` au centre et
+  garde ce signe sur `Q_r` avec module au moins `(1-r²/2)^4`.
+- Cohérence : le sinus de l'angle centre–boule est au plus
+  `2r²/(1-r²/2)`; le module pairwise `L¹` est au plus
+  `2r/(1-r²/2)`. Le premier tend vers zéro sans dépléter le stretching.
+- Pression/non-localité :
+  `p_a=(a²/4)(cos 2x+cos 2z)` est reconstruite exactement et paire en `a`.
+  Le défaut est le contrôle global du strain de Biot–Savart, pas une pression
+  locale oubliée.
+- Échelle : pour `U_N=N u(Nx)`, énergie `N²`, enstrophie `N⁴`, stretching
+  `N⁶`, ratio critique ponctuel invariant. La cohérence au rayon critique ne
+  s'accompagne donc pas ici d'une borne énergétique uniforme.
+- Perte localisée : passer d'une direction locale à `S` perd la queue lointaine
+  et l'ordre des quantificateurs. Les critères high–high uniformes en temps ne
+  sont pas attaqués.
+- Artefact : `VORTICITY-LOCAL-COHERENCE-SIGN-GATE-1`, tous résidus exacts
+  nuls; `FAIL-NS-0016`.

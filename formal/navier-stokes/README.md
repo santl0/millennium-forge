@@ -430,3 +430,28 @@ des quantificateurs différents. Le second ne certifierait Navier–Stokes
 qu'après formalisation des espaces, du pairing divergence-free, de la pression
 et de l'inégalité d'énergie, absents du dépôt. Aucune preuve Lean n'est donc
 revendiquée au cycle 0012; la priorité formelle reste le noyau Fourier–Leray.
+
+## Backlog issu du cycle 0013 — champ périodique vorticité–strain
+
+Le contre-profil offre un noyau fini stable, à formaliser seulement après
+`NS-FORMAL-0001` :
+
+1. définir les six coefficients Fourier de
+   `u_a=(sin y+a sin x cos z,0,-a cos x sin z)` et prouver réalité,
+   moyenne nulle et `k·u_hat(k)=0`;
+2. calculer `omega=curl u`, `S=sym(nabla u)` et l'identité
+   `omega·S omega=-a cos x cos z cos²y`;
+3. prouver les moyennes exactes énergie, enstrophie, palinstrophie et
+   hélicité, puis l'équation de Poisson de
+   `p=(a²/4)(cos 2x+cos 2z)`;
+4. encoder les bornes élémentaires sur `Q_r` à partir de
+   `|sin s|<=|s|` et `cos s>=1-s²/2`, en gardant séparées cohérence
+   centre–boule et cohérence pairwise;
+5. vérifier le scaling entier `U_N=N u(Nx)` et distinguer les normes moyennes
+   des quantités ponctuelles.
+
+Cette formalisation certifierait un contre-exemple cinématique à une règle de
+signe locale. Elle ne formaliserait ni une trajectoire Navier–Stokes, ni les
+critères de Constantin–Fefferman, ni une implication Clay. Le script exact
+reste `COMPUTATION_ONLY` et les trois passes Codex ne sont pas une revue
+indépendante externe.
