@@ -569,3 +569,21 @@ Le budget mobile du cycle 0023 exclut néanmoins toute sélection déjà obtenue
 dont la variation et l'erreur pondérée sont sublinéaires, sous amplitude
 bornée et masse critique par bloc. Le prochain maillon doit donc traiter les
 moyennes actives dégénérées, les phases multiples ou l'intermittence.
+
+## Audit ciblé du cycle 0024 — extension unitaire et axes actifs
+
+| Source primaire | Passage contrôlé | Verdict exact |
+|---|---|---|
+| Grujić `arXiv:2607.08866v2` (`0059`) | section 2.3, direction globale et norme de base | la lecture littérale utilise un champ unitaire global; sa petite oscillation force des moyennes non dégénérées, mais la convention sur `{omega=0}` et l'existence de cette extension ne sont pas produites par la vorticité |
+| Bradshaw–Grujić 2015 (`0083`) | direction de vorticité et `tilde-bmo_phi` | ne formule pas un théorème de prolongement `S²`-valué depuis un ensemble actif arbitraire |
+| Jones 1980 (`0074`) | extension BMO depuis un domaine uniforme | préserve une norme BMO à valeurs vectorielles, mais ni un ensemble actif arbitraire, ni la contrainte de sphère, ni automatiquement le poids logarithmique |
+| Lei–Ren–Tian `arXiv:2501.08976v1` (`0061`) | cône fixe et critère pairwise | les quantificateurs portent intrinsèquement sur la vorticité non nulle; une exclusion de petit ensemble en mesure ne donne pas le cône ponctuel requis |
+| Miller 2021 (`0089`) | champ de plan auxiliaire | évite la convention aux zéros en supposant un champ auxiliaire régulier et une norme critique transverse; log-BMO seul ne fournit ni son gradient ni cette norme |
+
+Correction du cycle 0023 : pour un champ global `S²`-valué `Xi`,
+`average_B|Xi-(Xi)_B|²=1-|(Xi)_B|²`. Une petite oscillation quadratique fournit
+donc bien un axe local. Les incréments dyadiques restent `O(1/k)` et leur série
+diverge; aucun axe limite ni cône fixe n'en résulte. Aucune source primaire
+inspectée ne ferme le raccord depuis la direction définie seulement sur
+`{omega!=0}` vers une même extension globale unitaire log-BMO uniforme en
+temps. Aucun nouvel identifiant de source n'est ajouté au cycle 0024.

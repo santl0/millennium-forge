@@ -1,0 +1,44 @@
+{
+  "id": "NS-BMO-ACTIVE-AXIS-EXTRACTION",
+  "problem": "navier-stokes",
+  "statement": "Un profil W=r^-2 Omega(log(R*/r),theta) divergence-free ne peut conserver jusqu'au centre une amplitude critique uniformément bornée, une masse L^(3/2) non dégénérée sur chaque bloc logarithmique et une extension bornée de sa direction dont l'oscillation sur les boules centrées décroît comme 1/|log r|.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "R³ sans frontière; le profil est spatial et ne constitue pas à lui seul une solution de Navier-Stokes",
+    "Omega appartient localement à W^(1,1), W=r^-2 Omega est divergence-free dans la boule ponctuée et Phi=|Omega| vérifie 0<=Phi<=M",
+    "pour un rapport q dans (0,1), L=-log q et des constantes kappa>0, chaque bloc [S_k,S_k+L] porte une intégrale de la moyenne sphérique de Phi^(3/2) au moins kappa",
+    "il existe une extension mesurable zeta avec |zeta|<=1 partout et zeta=Omega/|Omega| sur {Phi>0}",
+    "l'oscillation moyenne de zeta sur B_(R_* exp(-S_k)) est au plus B/(1+S_k)",
+    "la fraction active minimale utilisée est a_*=3q^3 kappa/M^(3/2)"
+  ],
+  "dependencies": [
+    "NS-WANDERING-AXIS-MOMENT-BUDGET"
+  ],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0024-bmo-active-axis.md et docs/reports/navier-stokes/reviews/cycle-0024-analysis.md"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/cycle-0024-bmo-active-axis.md: fractions actives n^-3 et amplitudes n² montrant la nécessité de Phi<=M"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/bmo-axis-extraction/bmo_axis_extraction_audit.py, 66 contrôles rationnels exacts",
+      "sha256": "e2603081b46d4aab9599e9681eaf50cbc460df46e3b6d1c3d2383b0a71005e0e"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0024-bmo-active-axis"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois passes Codex séparées, même famille de modèle; non indépendantes au sens externe",
+    "notes": "La fraction active, la normalisation des moyennes, les ratios de volumes imbriqués et le raccord au budget mobile sont explicites. La borne de tranche et la masse par bloc ne viennent pas du faible-Lorentz ou de l'énergie; aucun profil dynamique ni passage au continuum n'est construit."
+  }
+}

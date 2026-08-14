@@ -1283,3 +1283,42 @@ cellule reste donc `NOT_PROVIDED`.
   aucun `Omega` mobile complet, vitesse, pression, résidu NS, coupure ou passage
   au continuum n'est construit. Une grande variation peut provenir de petites
   boucles qui restent dans un cône fixe.
+
+## `BMO-ACTIVE-AXIS-EXTRACTION-1` — moyenne active et axes dyadiques
+
+- Question falsifiable : une direction log-BMO peut-elle garder des moyennes
+  non normalisables malgré une amplitude critique bornée et une masse positive
+  sur chaque coquille logarithmique ?
+- Équation : porte cinématique `div W=0` pour
+  `W=r^-2 Omega(log(R_*/r),theta)`; aucune trajectoire NS n'est simulée.
+- Extension : `|zeta|<=1` partout et `zeta=Omega/|Omega|` sur `{Phi>0}`;
+  l'extension par zéro est admise.
+- Fraction active : pour des rayons de rapport `q`, `Phi<=M` et masse de bloc
+  `kappa`, toute boule centrée contient une fraction active au moins
+  `a_*=3q³kappa/M^(3/2)`.
+- Axe : si l'oscillation de boule vaut `epsilon_k`, la moyenne `m_k` vérifie
+  `|m_k|>=1-epsilon_k/a_*`; son normalisé `e_k` a une erreur moyenne au plus
+  `(1+1/a_*)epsilon_k`.
+- Cumul : sous `epsilon_k=O(1/k)`, les incréments des axes, leur variation et
+  l'erreur directionnelle pondérée sont `O(log N)`. Le budget de moment du
+  cycle 0023 impose au contraire une dépense linéaire et exclut le profil.
+- Témoin exact : `q=1/2`, `M=1`, `kappa=1/4`, `B=1/100` donne
+  `a_*=3/32`, facteur d'axe `35/3` et une contradiction certifiée à
+  `N=1023` blocs.
+- Test adverse : fractions actives `n^-3` et amplitudes `n²` gardent
+  `<Phi^(3/2)>=1` mais font tendre moyenne et oscillation de l'extension par
+  zéro vers zéro. La borne `Phi<=M` ne peut pas être supprimée.
+- Commande :
+
+  ```text
+  python -B experiments/navier-stokes/bmo-axis-extraction/bmo_axis_extraction_audit.py
+  ```
+
+- Discrétisation : aucune grille, aucun flottant, aucune graine. Le script
+  utilise `fractions.Fraction`, encadre `log 2` par série rationnelle et
+  exécute 66 contrôles sans échec.
+- Empreinte :
+  `e2603081b46d4aab9599e9681eaf50cbc460df46e3b6d1c3d2383b0a71005e0e`.
+- Limites : ni la borne de tranche, ni la masse de bloc, ni l'ansatz ne sont
+  extraits d'une solution Clay. Aucune vitesse, pression, coupure, viscosité
+  ou évolution n'est calculée.

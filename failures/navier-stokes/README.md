@@ -870,6 +870,62 @@ fermés sous les hypothèses de tranche suivies; la rotation uniforme persistant
 échoue au test log-BMO centré. Le prochain verrou est
 `GAP-MULTICORE-ANGULAR-CASCADE`.
 
+## `FAIL-NS-0039` — Zéros et multicœurs supposés annuler toute moyenne active
+
+- Date : 2026-08-14.
+- Cadre : profil spatial `W=r^-2 Omega(log(R_*/r),theta)` dans une boule
+  ponctuée; extension `|zeta|<=1` égale à la direction unitaire sur
+  `{Phi>0}`.
+- Cible : empêcher toute sélection d'axe en faisant s'annuler les moyennes de
+  `zeta` malgré une oscillation `O(1/|log r|)`.
+- Attaque : convertir la masse critique de bloc et `Phi<=M` en fraction active
+  `a_*=3q³kappa/M^(3/2)`, puis utiliser
+  `|m_k|>=1-epsilon_k/a_*`.
+- Résultat : les moyennes sont non nulles à petite échelle et leurs normalisés
+  ont variation et erreur cumulées `O(log N)`. Le budget mobile les exclut
+  contre la dépense linéaire de masse.
+- Portée : l'implication d'annulation est réfutée seulement sous borne de
+  tranche, masse sur chaque bloc et une même extension BMO. Aucune dynamique
+  NS n'est obtenue.
+- Statut : `REFUTED`; claim positif
+  `NS-BMO-ACTIVE-AXIS-EXTRACTION`, `COMPUTATION_ONLY`.
+
+## `FAIL-NS-0040` — Masse critique supposée remplacer la borne de tranche
+
+- Date : 2026-08-14.
+- Cadre : facteurs mesurables sur une coquille; aucune PDE.
+- Cible : déduire une fraction active uniforme de la seule masse
+  `<Phi^(3/2)>`.
+- Contre-profil : sur une fraction `a_n=n^-3`, poser `Phi_n=n²` et une
+  direction constante, étendue par zéro ailleurs.
+- Résultat : `<Phi_n^(3/2)>=1`, mais la norme de la moyenne directionnelle vaut
+  `a_n->0` et son oscillation exacte `2a_n(1-a_n)->0`.
+- Portée : la suite ne satisfait aucune borne `Phi<=M` uniforme et n'est pas
+  annoncée solénoïdale. Elle réfute l'extraction d'axe sous masse seule, pas un
+  profil NS intermittent construit.
+- Statut : mécanisme `REFUTED`; active
+  `GAP-UNBOUNDED-ANGULAR-INTERMITTENCY`.
+
+## `FAIL-NS-0041` — Extension des zéros choisie séparément à chaque échelle
+
+- Date : 2026-08-14.
+- Cadre : définition fonctionnelle de la direction sur `{omega=0}`.
+- Cible : satisfaire chaque moyenne de boule en choisissant a posteriori une
+  extension différente de la direction sur ses zéros.
+- Attaque : vérifier le quantificateur nécessaire au télescopage des boules
+  imbriquées.
+- Résultat : l'incrément des axes compare les moyennes d'une **même** fonction
+  `zeta` sur deux boules. Une famille d'extensions dépendant du rayon ne définit
+  ni champ mesurable unique ni semi-norme BMO et rend l'argument circulaire.
+- Réparation : fixer une extension globale avant toute moyenne; l'extension
+  unitaire littérale et l'extension par zéro sont deux hypothèses différentes.
+- Statut : formulation `REFUTED`; l'ambiguïté intrinsèque aux zéros du cycle
+  0020 demeure.
+
+Décision de pivot : sous amplitude bornée, masse par bloc et une même extension
+log-BMO, le scénario multicoeur est fermé cinématiquement. Le verrou actif
+devient `GAP-UNBOUNDED-ANGULAR-INTERMITTENCY`.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,

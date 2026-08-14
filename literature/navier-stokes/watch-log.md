@@ -424,3 +424,25 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
 - Décision : resserrer le pivot vers `GAP-MULTICORE-ANGULAR-CASCADE`, où la
   moyenne active peut dégénérer et aucune sélection d'axe unique n'est
   disponible.
+
+## 2026-08-14 — Cycle 0024
+
+- Veille différentielle : Grujić `arXiv:2607.08866` reste en v2,
+  Lei–Ren–Tian `arXiv:2501.08976` en v1 et les critères publiés de
+  Bradshaw–Grujić, Jones et Miller inchangés dans les notices primaires
+  contrôlées. Aucun nouvel identifiant de source n'est requis.
+- Correction : pour un champ global unitaire, l'identité de variance empêche
+  bien les moyennes de s'annuler lorsque l'oscillation tend vers zéro. La
+  conclusion contraire du cycle 0023 n'était valide que pour une extension
+  bornée pouvant valoir zéro.
+- Trou bibliographique : aucune source inspectée ne construit une extension
+  globale `S²`-valuée log-BMO à partir de la direction sur l'ensemble actif;
+  les théorèmes BMO de domaine ne préservent pas ce triplet de contraintes.
+- Résultat analytique interne : amplitude bornée et masse par bloc fournissent
+  une fraction active uniforme; les axes extraits ont variation et erreur
+  `O(log N)`, ce qui contredit le budget linéaire du cycle 0023.
+- Test adverse : fractions `n^-3`, amplitudes `n²`, masse critique fixe et
+  moyenne directionnelle tendant vers zéro. La borne d'amplitude est
+  indispensable à ce raccord.
+- Décision : fermer `GAP-MULTICORE-ANGULAR-CASCADE` sous les prémisses suivies
+  et activer `GAP-UNBOUNDED-ANGULAR-INTERMITTENCY`.
