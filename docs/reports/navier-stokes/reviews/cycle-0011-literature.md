@@ -1,6 +1,6 @@
 # Revue bibliographique contradictoire — cycle 0011
 
-Date de la veille : 2026-08-14  
+Date de la veille : 2026-08-14
 Périmètre : projecteurs de Riesz, modes instables, constantes de semi-groupe, quantificateurs de séparation et stabilité sous désingularisation intérieure dans Hou–Wang–Yang, Jia–Šverák, Albritton–Brué–Colombo et Ionescu–Jia–Palasek.
 
 ## Verdict différentiel
@@ -481,7 +481,7 @@ Son domaine est
 D=
 \left\{
 U\in L^2_\sigma:
-U\in H^2,\ 
+U\in H^2,\\
 \xi\cdot\nabla U\in L^2
 \right\}.
 \]
