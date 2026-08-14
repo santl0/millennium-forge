@@ -236,3 +236,13 @@ rapport local `>=c(K_u/K_w)^2`, puis une oscillation directionnelle
 `>=c(K_u/K_w)^12`. Le prochain verrou est la dégénérescence des boîtes, le
 chevauchement des curls et la sélection dynamique d'une échelle tendant vers
 zéro.
+
+Le cycle 0035 montre que le volume de boîte du cycle 0034 est évitable dans
+la géométrie pure-swirl exacte. Un halo de volume fixé par un témoin `v_j` est
+d'abord réfuté par dilatation critique. La réparation choisit au niveau global
+`lambda` la bande `lambda/4<+/-F_j<lambda/2`; coaire R3, isopérimétrie et
+faible-Lorentz donnent une cellule avec rapport local
+`>=(C_I/324)(K_u/K_w)^2`, sans borne axiale, volume support ou plateau
+uniforme. Le volume actif est contrôlé mais son diamètre ne l'est pas. Le
+verrou devient `GAP-ACTIVE-HALO-DIAMETER-OR-OVERLAP`, d'abord sur une cellule
+à gouttelettes dispersées.

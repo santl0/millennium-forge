@@ -83,8 +83,14 @@
 - [x] Réfuter la sélection fondée sur les seules quasi-normes par une
   distribution dyadique exacte; rétablir une sélection pour cellules épaisses
   disjointes sous registre BV uniforme au cycle 0034.
-- [ ] Étendre ou réfuter le registre BV lorsque `|Q_j|/v_j->infinity`, que les
-  plateaux dégénèrent ou que les supports de curl se chevauchent.
+- [x] Étendre la sélection endpoint pure-swirl lorsque `|Q_j|/v_j->infinity`
+  ou que les plateaux dégénèrent : bande commune et isopérimétrie R3 au cycle
+  0035, sans borne axiale ni volume support.
+- [ ] Décomposer une bande commune en gouttelettes axialement dispersées et
+  sélectionner une boule de diamètre contrôlé, ou construire un contre-profil
+  exact relié par des filaments sous le seuil.
+- [ ] Étendre ou réfuter le registre lorsque les supports de curl se
+  chevauchent et peuvent s'annuler.
 - [ ] Relier la cellule de bon rapport à une échelle `R_j(t)->0`; auditer
   d'abord le raccord Type I de Barker–Prange, puis le trou Type II.
 - [ ] Formuler un ledger Morrey–Carleson pour des tubes hétérogènes

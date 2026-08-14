@@ -923,3 +923,43 @@ fournit la même cellule depuis les seuls endpoints faibles. Le verrou devient
 `GAP-DEGENERATE-CELL-REGISTER-OR-OVERLAP` : boîtes trop grandes, plateaux
 dégénérés, curls qui se chevauchent, ou absence de sélection dynamique de
 l'échelle.
+
+## Cycle 0035 — bande de niveau commune sans boîte
+
+Le volume témoin `v_j` du cycle 0034 ne calibre pas automatiquement un halo.
+Une dilatation pure-swirl lisse avec `R_L=L`, `A_L=L^-1` conserve ses deux
+endpoints, sur-satisfait le registre BV total et possède un témoin de volume
+un, mais toute masse de curl sur un ensemble de volume borné est `O(L^-2)`,
+contre `A_Lv_L^(2/3)=L^-1`. Le claim
+`NS-FIXED-CORE-HALO-LOCALIZATION` est donc `REFUTED`.
+
+La réparation n'utilise aucun halo fixé. Pour une famille finie de cellules
+
+```text
+U_j=(R_j/r)F_j e_theta,
+supp F_j subset {R_j/2<r<3R_j/2},
+```
+
+à supports complets disjoints, un niveau global presque optimal `lambda`
+définit les bandes signées
+
+```text
+H_(j,sigma)={lambda/4<sigma F_j<lambda/2}.
+```
+
+Elles sont incluses dans `{|U|>lambda/6}`. Coaire tridimensionnelle et
+isopérimétrie donnent une masse de curl proportionnelle à
+`lambda sum V_(j,sigma)^(2/3)`. Après la borne faible-`L^(3/2)`, une cellule
+vérifie
+
+```text
+K_(u,j)>=(C_I/324)K_u^2/K_w,
+K_(u,j)/K_(w,j)>=(C_I/324)(K_u/K_w)^2.
+```
+
+Le claim `NS-PURE-SWIRL-COMMON-LEVEL-CELL-SELECTION` reste
+`COMPUTATION_ONLY` malgré trois passes contradictoires IA. Il ne suppose ni
+diamètre axial, ni volume support, ni plateau uniforme. Il contrôle toutefois
+seulement le volume total de la bande; une bande dispersée n'est pas localisée
+dans une boule. Le corpus atteint 155 sources et le verrou actif devient
+`GAP-ACTIVE-HALO-DIAMETER-OR-OVERLAP`.

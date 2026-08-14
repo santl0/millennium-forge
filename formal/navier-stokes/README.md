@@ -907,3 +907,27 @@ rationnelles après cubage; ils sont les premières cibles formelles. Le module
 8 exige la bibliothèque BV/coaire et le module 9 hérite du noyau conique non
 formalisé. Une compilation ne certifierait qu'un lemme statique conditionnel,
 pas la dynamique Clay.
+
+## Backlog issu du cycle 0035 — bande commune pure-swirl
+
+Le nouveau théorème fini se prête à une formalisation plus courte que le
+registre BV cellulaire du cycle 0034 :
+
+1. fonction de distribution et choix `eta`-presque optimal;
+2. inclusions annulaires aux niveaux `lambda`, `lambda/3`, `lambda/6`;
+3. séparation des deux signes et omission des volumes nuls;
+4. coaire tridimensionnelle sur la bande
+   `lambda/4<sigma F<lambda/2`;
+5. isopérimétrie `Per(E)>=C_I|E|^(2/3)`;
+6. identité exacte du curl pure-swirl et facteur `R/r>=2/3`;
+7. somme finie
+   `sum V_i^(2/3)>=lambda sum V_i/(3epsilon)`;
+8. intégration faible-`L^(3/2)` avec constante trois;
+9. arithmétique `324=18*18`, maximum fini et rapport local;
+10. contradiction `K_u>0`, `K_w=0` par compacité du potentiel.
+
+Les modules 1–3, 7, 9 et 10 sont élémentaires. Les modules 4–5 exigent une
+bibliothèque de coaire/BV/isopérimétrie sur `R3`; le module 6 exige seulement
+le calcul cylindrique loin de l'axe. Formaliser ce noyau certifierait une
+sélection statique pure-swirl à supports disjoints, pas la localisation dans
+une boule, la direction BMO ou Navier–Stokes en temps.

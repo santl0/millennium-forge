@@ -745,3 +745,29 @@ solution ou précise qu'il s'agit seulement d'un champ test.
 - Limites : boîtes non comparables, chevauchements, projection de Leray,
   pression, diffusion et sélection de `R_j->0` non contrôlés.
 - Pivot : `GAP-DEGENERATE-CELL-REGISTER-OR-OVERLAP`.
+
+## 2026-08-14 — Bande commune et support dégénéré
+
+- Contre-profil de halo fixe : sous dilatation critique, endpoints constants,
+  `||W_L||_infinity~L^-2` et registre total `~L`; un témoin `v_L=1` ne
+  localise aucune masse de curl `~A_Lv_L^(2/3)` dans volume borné.
+- Premier quantificateur faux : un minorant de plateau n'est pas un calibrage
+  bilatéral du superniveau.
+- Réparation pure-swirl : au niveau global `lambda`, les bandes
+  `lambda/4<+/-F_j<lambda/2` ont leur volume contrôlé par
+  `{|U|>lambda/6}` et leur variation contrôlée par isopérimétrie R3.
+- Sélection critique :
+
+  ```text
+  K_(u,j)>=(C_I/324)K_u^2/K_w,
+  K_(u,j)/K_(w,j)>=(C_I/324)(K_u/K_w)^2.
+  ```
+
+- Échelle : toutes les quasi-normes et la constante sont critiques; aucune
+  longueur axiale ni volume support n'entre.
+- Certificat : 10 837 assertions rationnelles, zéro échec, résidu nul;
+  empreinte
+  `b197d3b45af0f034c09c91d4b7bb6d3be55293ab1f458ec769c250c8998490f8`.
+- Limite : un contrôle de volume ne donne ni diamètre, ni boule, ni
+  composition automatique avec le gate directionnel du cycle 0033.
+- Pivot : `GAP-ACTIVE-HALO-DIAMETER-OR-OVERLAP`.

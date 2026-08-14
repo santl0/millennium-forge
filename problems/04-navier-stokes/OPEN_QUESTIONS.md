@@ -299,3 +299,21 @@ Le pigeonhole fondé uniquement sur les quasi-normes est définitivement
 abandonné : `NS-WEAK-LORENTZ-CELL-SELECTION` est réfuté par distributions
 totales exactes. Toute nouvelle sélection doit afficher son registre
 géométrique ou dynamique.
+
+## Priorité active après le cycle 0035
+
+1. **`GAP-ACTIVE-HALO-DIAMETER-OR-OVERLAP`.** La bande commune a un volume
+   contrôlé mais peut comporter de nombreuses gouttelettes séparées. Un budget
+   faible-Lorentz sélectionne-t-il une composante contenue dans une boule
+   `O(R_j)`, ou seulement leur union dispersée ?
+2. **Décomposition par composantes de niveau.** Quantifier les raccords créés
+   lorsqu'un filament sous `lambda/4` relie des superniveaux actifs et décider
+   si chaque composante peut être traitée comme une pseudo-cellule.
+3. **Chevauchements.** Après le test mono-cellule, autoriser un multiplicité de
+   recouvrement bornée et suivre les annulations de curls avant la valeur
+   absolue.
+4. **Échelle dynamique.** Même une boule statique sélectionnée doit encore
+   être liée à `R(t)->0` pour produire un coût log-BMO pré-singulier.
+
+Le halo fixé par un volume témoin est abandonné; seule une bande construite au
+niveau global est admissible dans la branche pure-swirl.

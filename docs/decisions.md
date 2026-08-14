@@ -291,3 +291,20 @@
   Type I sont des comparateurs sourcés, pas une preuve du lemme statique.
 - `GAP-DEGENERATE-CELL-REGISTER-OR-OVERLAP` devient actif. Pression, cutoff de
   Leray et évolution restent différés jusqu'à survie de ce nouveau gate.
+
+### 2026-08-14 — boîte supprimée par bande de niveau commune
+
+- L'inférence « volume témoin `v_j` vers halo `O(v_j)` » est abandonnée après
+  un contre-exemple pure-swirl lisse et curl-compatible par dilatation.
+- Le niveau global presque optimal est retenu comme seul calibrage de volume :
+  la bande entre `lambda/4` et `lambda/2` reste dans le superniveau
+  `lambda/6` de la vitesse.
+- Coaire tridimensionnelle et isopérimétrie remplacent le registre de boîte;
+  la constante finale est `C_I/324` et ne dépend pas de la longueur axiale,
+  du volume support, du nombre de composantes ou d'un plateau.
+- Le claim positif reste `COMPUTATION_ONLY`; trois passes IA ne constituent
+  pas une revue éditoriale indépendante.
+- Aucune puissance directionnelle douze n'est composée sans boule de diamètre
+  contrôlé. Le volume de la bande ne suffit pas.
+- `GAP-ACTIVE-HALO-DIAMETER-OR-OVERLAP` devient actif. Le test mono-cellule à
+  gouttelettes dispersées précède tout recouvrement intercellulaire.

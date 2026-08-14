@@ -1385,6 +1385,48 @@ rapport d'aspect reste une constante auxiliaire à suivre.
 - Statut : sélection normique abstraite `REFUTED`; sélection géométrique BV
   conservée.
 
+## `FAIL-NS-0067` — Volume témoin pris pour volume d'un halo de curl
+
+- Date : 2026-08-14.
+- Cible : supprimer `|Q_j|<=C_0v_j` du cycle 0034 en affirmant qu'un plateau
+  témoin et un registre BV total produisent un ensemble `H_j` de volume
+  `O(v_j)` portant une fraction uniforme de `A_jv_j^(2/3)`.
+- Contre-exemple : dilatation pure-swirl
+  `R_L=L`, `A_L=L^-1`, `F_L=A_LPhi(r/L,z/L)`, avec témoin artificiel
+  `v_L=1` pris dans le grand plateau.
+- Résultat exact d'échelle : endpoints invariants,
+  `integral|W_L|~L`, mais `||W_L||_infinity~L^-2`. Pour tout
+  `|H_L|<=Gamma`, `integral_(H_L)|W_L|=O(L^-2)`, alors que le registre demandé
+  est `A_Lv_L^(2/3)=L^-1`.
+- Premier quantificateur faux : `|E_j|>=c_0v_j` minore un témoin, mais ne
+  majore pas le superniveau complet et ne calibre pas son diamètre.
+- Claim : `NS-FIXED-CORE-HALO-LOCALIZATION`, statut `REFUTED`.
+- Statut : ABANDONNER le halo fixé par `v_j`; employer une bande définie au
+  niveau global.
+
+## `FAIL-NS-0068` — Queue axiale basse comme fuite endpoint
+
+- Date : 2026-08-14.
+- Cible : reproduire le contre-exemple dyadique du cycle 0034 par une cellule
+  pure-swirl à section fixe et queue axiale arbitrairement longue.
+- Test : chapeau radial compact et décroissance axiale par demi-niveaux
+  `a_k=2^-k`, avec longueurs `d_k=R2^(alpha k)` et curl complet.
+- Résultat : sur chaque transition,
+
+  ```text
+  K_U~AaR(d/R)^(1/3),
+  K_(W_z)>=cAaR(d/R)^(2/3),
+  K_(W_r)>=cAaR(R/d)^(1/3).
+  ```
+
+  Le maximum des deux coûts est minimal pour `d~R`; diluer le raccord axial
+  rend le raccord radial visible sur tout le superniveau.
+- Réparation générale : la bande commune et l'isopérimétrie R3 couvrent aussi
+  les sections variables et topologies compliquées, tant que les supports
+  complets restent disjoints.
+- Statut : ABANDONNER la queue longue comme fuite endpoint; la dispersion
+  métrique de la bande reste ouverte pour le gate directionnel.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,

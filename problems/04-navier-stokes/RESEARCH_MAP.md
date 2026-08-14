@@ -1351,3 +1351,44 @@ cutoff local
    projection de Leray.
 3. Relier la cellule sélectionnée à une échelle pré-singulière `R_j(t)->0`,
    éventuellement sous Type I avant d'attaquer Type II.
+
+## Cycle 0035 : bande dynamique et perte de diamètre
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| halo fixe `O(v_j)` depuis le registre total | 3 | 4 | 5 | 4 | 16 |
+| fuite pure-swirl par queue axiale longue | 4 | 5 | 5 | 4 | 18 |
+| bande absolue au niveau global commun | 5 | 5 | 5 | 5 | **20** |
+
+```text
+plateau témoin + registre BV global
+  -/-> halo de volume O(v_j)
+  -- dilatation critique --> NS-FIXED-CORE-HALO-LOCALIZATION [REFUTED]
+
+niveau lambda presque optimal de U
+  -- facteurs annulaires --> D_lambda(U) subset union E_(j,+/-)
+  -- bande H_(j,+/-) --> H subset D_(lambda/6)(U)
+  -- coaire R3 + isopérimétrie --> integral_H|W|>=c lambda sum V^(2/3)
+  -- faible-L^(3/2) --> max K_(u,j)>=cK_u^2/K_w
+  -- disjonction --> rapport local >=c(K_u/K_w)^2
+  -- NS-PURE-SWIRL-COMMON-LEVEL-CELL-SELECTION [COMPUTATION_ONLY]
+  -- ferme --> volume support/volume coeur dégénéré pour sélection endpoint
+  -/-> boule de diamètre contrôlé ou gate directionnel.
+```
+
+Arêtes manquantes :
+
+```text
+volume contrôlé de H
+  -/-> diamètre ou nombre de composantes contrôlé,
+composantes dispersées
+  -?-> sélection d'une boule portant rapport endpoint + compensation,
+supports de curl chevauchants
+  -?-> registre après annulations,
+boule statique sélectionnée
+  -?-> rayon dynamique tendant vers zéro.
+```
+
+Priorité : `GAP-ACTIVE-HALO-DIAMETER-OR-OVERLAP`. Le premier test porte sur
+une seule cellule à gouttelettes dispersées; les chevauchements intercellules
+sont différés au cycle suivant.

@@ -455,3 +455,37 @@ rapport local -> rayon R_j tendant vers zéro : manquante.
 1. Registre stable sous queues/corridors dégénérés ou contre-exemple lisse.
 2. Packing signé lorsque les curls se chevauchent.
 3. Sélection dynamique de l'échelle et contrôle du cutoff de Leray.
+
+## Cycle 0035 — bande de niveau globale pure-swirl
+
+```text
+volume témoin v_j
+  -/-> halo O(v_j) portant le registre
+  -- dilatation critique --> NS-FIXED-CORE-HALO-LOCALIZATION [REFUTED]
+
+Ku faible-L3 global
+  -- niveau eta-presque optimal lambda --> mu_U(lambda)
+  -- anneau R_j/2<r<3R_j/2
+       --> {|U|>lambda} subset union {|F_j|>lambda/2}
+       --> H subset {|U|>lambda/6}
+  -- Fleming–Rishel coaire + Federer–Fleming isopérimétrie
+       --> integral_H|W|>=c lambda sum V_i^(2/3)
+  -- max K_(u,j)=epsilon --> sum V_i^(2/3)>=lambda V/(3epsilon)
+  -- Lorentz faible-L^(3/2) --> epsilon>=(C_I/324)K_u^2/K_w
+  -- disjonction des curls --> rapport local quadratique
+  --> NS-PURE-SWIRL-COMMON-LEVEL-CELL-SELECTION [COMPUTATION_ONLY]
+  -- ferme --> longues queues et sections variables pour sélection endpoint
+  -- ouvre --> GAP-ACTIVE-HALO-DIAMETER-OR-OVERLAP.
+```
+
+Nature des arêtes :
+
+```text
+coaire/isopérimétrie/Lorentz : classiques et sourcées;
+composition à niveau commun : dérivation interne auditée;
+halo fixe v_j : contre-exemple lisse curl-compatible;
+volume de H -> diamètre de H : manquante et fausse sans structure;
+composante active -> boule directionnelle : manquante;
+supports disjoints -> recouvrement/annulation : manquante;
+boule statique -> échelle pré-singulière : manquante.
+```
