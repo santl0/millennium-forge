@@ -1,0 +1,38 @@
+{
+  "id": "NS-ENERGY-HMINUS1-TIME-MODULUS",
+  "problem": "navier-stokes",
+  "statement": "Pour une solution Leray–Hopf périodique de moyenne nulle et I=[s,t], l'équation fournit ||u(t)-u(s)||_(dot H^-1) <= nu |I|^(1/2)D_I + C_GN^2 M_I^(1/2)|I|^(1/4)D_I^(3/2), où M_I=sup_I||u||_2 et D_I^2=integrale_I||nabla u||_2^2; sur chaque horizon fini T, une borne énergétique uniforme donne donc un module C_t^(1/4)dot H^-1 uniforme avec constante dépendant explicitement de T.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "Navier–Stokes incompressible 3D sur T^3, viscosité nu>0 et force nulle",
+    "solution Leray–Hopf de moyenne spatiale nulle",
+    "représentant absolument continu à valeurs dot H^-1 et équation projetée satisfaite dans dot H^-1",
+    "inégalité de Gagliardo–Nirenberg ||u||_4<=C_GN||u||_2^(1/4)||nabla u||_2^(3/4)",
+    "M_I et D_I sont finis; C_GN dépend seulement du tore et de la normalisation",
+    "sur [0,T], la constante est au plus nu T^(1/4)D_T+C_GN^2 M_T^(1/2)D_T^(3/2)",
+    "le résultat ne donne ni continuité forte L^2 uniforme ni module critique C_t^(3/4)dot H^-1"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "Foias–Rosa–Temam, Ann. Inst. Fourier 63 (2013), doi:10.5802/aif.2836, cadre Leray–Hopf périodique et régularité temporelle dans V'"
+    },
+    {
+      "kind": "derivation",
+      "reference": "experiments/navier-stokes/README.md, section Module réellement fourni par l'énergie"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-state-of-art/cycle-0005"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Sous-agent Codex distinct, même famille de modèle; non indépendant au sens externe",
+    "notes": "Termes visqueux et non linéaire, exposants de Hölder, puissance D_I^(3/2) et dépendance en T recalculés. Le cadre intrinsèque est V'; dot H^-1 est valide sur le tore de moyenne nulle."
+  }
+}

@@ -71,12 +71,21 @@ et la projection de Leray est `P = I - ∇Δ⁻¹ div`. Les arguments localisés
 
 Une solution peut être lisse pour chaque `t>0` tout en ayant une trace initiale singulière. Cela ne la transforme pas en solution Clay issue d'une donnée `C∞`.
 
+La continuité forte à `t=0` d'une solution Leray–Hopf fixée ne fournit pas un
+module fort uniforme pour une famille de données seulement bornée. Le cadre
+trajectoriel de [Foias–Rosa–Temam 2013](https://doi.org/10.5802/aif.2836)
+(`NS-SRC-0043`) donne `partial_t u in L^(4/3)_tV'` et la compacité dans une
+topologie temporelle faible. Une famille initiale fortement précompacte permet
+de récupérer une trace forte uniforme par projection finie et inégalité
+d'énergie; les zooms de blow-up ne possèdent pas cette précompacité a priori.
+
 ## Matrice des résultats établis
 
 | Bloc | Source primaire | Formulation et conclusion contrôlées | Maillon obtenu | Trou exact vers Clay |
 |---|---|---|---|---|
 | Énoncé | [Fefferman/CMI](https://www.claymath.org/wp-content/uploads/2022/02/MPPc.pdf) (`NS-SRC-0001`) | `R³` et `T³`, `ν>0`, alternatives forcées/non forcées | cible normative | aucun résultat intermédiaire |
 | Existence faible | [Leray 1934](https://doi.org/10.1007/BF02547354) (`0002`), [Hopf 1951](https://doi.org/10.1002/mana.3210040121) (`0003`) | solutions faibles globales d'énergie | existence pour tout temps | énergie supercritique; unicité et lissité absentes |
+| Topologie temporelle Leray–Hopf | [Foias–Rosa–Temam 2013](https://doi.org/10.5802/aif.2836) (`0043`) | continuité faible `L²`, continuité forte initiale individuelle, dérivée dans `L^(4/3)V'` | compacité de trajectoire faible | aucun module critique fort uniforme pour des données seulement bornées |
 | Régularité partielle | [Scheffer 1976](https://doi.org/10.2140/pjm.1976.66.535) (`0004`), [CKN 1982](https://doi.org/10.1002/cpa.3160350604) (`0005`), [Lin 1998](https://doi.org/10.1002/(SICI)1097-0312(199803)51:3%3C241::AID-CPA2%3E3.0.CO;2-A) (`0006`) | solutions adaptées; ensemble singulier parabolique très petit | critères epsilon-locaux et compacité | un point singulier reste possible; pression localisée non locale |
 | Prodi–Serrin | [Prodi 1959](https://doi.org/10.1007/BF02410664) (`0007`), [Serrin 1962](https://doi.org/10.1007/BF00253344) (`0008`), [Ladyzhenskaya 1967](https://www.mathnet.ru/eng/znsl2228) (`0009`) | intégrabilité espace-temps supplémentaire implique unicité/régularité | critère de prolongement | aucune borne a priori de la norme conditionnelle depuis l'énergie |
 | Endpoint `L³` | [Escauriaza–Seregin–Šverák 2003](https://doi.org/10.1070/RM2003v058n02ABEH000609) (`0012`), [Seregin 2012](https://doi.org/10.1007/s00220-011-1391-x) (`0013`) | la borne `L∞_tL³_x` exclut le blow-up; au blow-up `||u(t)||₃→∞` | quantité critique nécessaire | ne contrôle ni la croissance ni la concentration de `L³` |

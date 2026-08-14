@@ -116,6 +116,44 @@ ou une nouvelle affirmation, jamais à supprimer l'échec.
 - Statut : implication universelle sur les traces mobiles `REFUTED`; la
   convergence forte `L³` reste un critère suffisant `COMPUTATION_ONLY`.
 
+## `FAIL-NS-0008` — Module temporel faible assimilé à un module critique de trace
+
+- Date : 2026-08-14.
+- Équation : NS incompressible 3D; loi d'échelle sur `R³`, contre-test sur
+  `T³`, `nu=1`, force nulle, solutions globales lisses.
+- Cible : déduire des seules bornes uniformes
+  `L^infinity_tL²_x intersection L²_tH¹_x` un semi-module uniforme
+  `C_t^(1/4)L²_x` ou `C_t^(3/4)dot H^-1_x`, tous deux critiques.
+- Attaque : la famille oscillatoire exacte du cycle 0004, observée entre `0`
+  et `t_N=log(2)/(N²+1)`.
+- Résultat : les deux quotients critiques croissent comme `N^(1/2)`. En
+  revanche, le module énergétique `C_t^(1/4)dot H^-1` est uniformément borné
+  et même décroît comme `N^(-1/2)` pour cette famille.
+- Résidus : sept identités d'exposants, normes spectrales et puissances
+  normalisées exactement nulles pour `N=1,2,4,...,128`; `log(2)` reste
+  symbolique.
+- Portée : réfute une estimation universelle depuis l'énergie, pas une
+  équicontinuité supplémentaire imposée par minimalité, borne critique ou
+  structure de premier blow-up.
+- Statut : implication énergétique `REFUTED`; loi d'échelle et module faible
+  positif conservés `COMPUTATION_ONLY`.
+
+## Obstacle consolidé — `GAP-COMPACT-Q` sous énergie seule
+
+Trois stratégies distinctes ont maintenant échoué sur la même tentative de
+fermeture énergétique :
+
+1. la pression distante après zoom n'est pas tendue (`FAIL-NS-0006`);
+2. une trace faiblement convergente garde un défaut quadratique et de pression
+   même pour des solutions NS exactes (`FAIL-NS-0007`);
+3. le module temporel déduit de l'énergie perd une puissance d'échelle et ne
+   contrôle aucun des deux modules critiques testés (`FAIL-NS-0008`).
+
+Décision de pivot : ne plus chercher une compacité critique à partir de
+l'énergie seule sans hypothèse structurelle nouvelle. L'axe actif suivant est
+la rigidité des solutions anciennes et l'inventaire exact de la classe limite
+réellement produite par un premier blow-up.
+
 ## Gabarit d'ajout
 
 Chaque échec futur doit préciser cible, équation, domaine, type de solution,

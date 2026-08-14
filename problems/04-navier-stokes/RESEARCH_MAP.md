@@ -81,10 +81,12 @@ Le graphe annoté et les arêtes manquantes sont détaillés dans
   `A^-3`. L'énergie seule ne la donne pas après zoom. Même parmi des solutions
   NS globales lisses, la convergence faible de traces mobiles ne suffit pas à
   la compacité quadratique; l'intérieur espace-temps reste compact sous les
-  hypothèses usuelles d'approximation.
-- Test discriminant : isoler une équicontinuité temporelle de trace, stable sous
-  zoom de premier blow-up, qui promeut la convergence faible en convergence
-  forte locale sans réintroduire une borne critique déjà décisive.
+  hypothèses usuelles d'approximation. Le module énergétique
+  `C_t^(1/4)H^-1` perd en outre une puissance d'échelle et ne contrôle pas la
+  trace forte.
+- Test discriminant : axe suspendu sous énergie seule après trois stratégies
+  distinctes. Ne le rouvrir qu'avec une structure explicitement héritée d'un
+  premier blow-up.
 - Circularité : absorber la queue par une norme globale critique non disponible.
 - Coût : moyen.
 - Abandon local : famille éloignée à énergie bornée dont le commutateur ne tend
@@ -194,3 +196,28 @@ solutions convergent fortement à tout temps fixé positif et en volume
 espace-temps. Le verrou se resserre donc sur une équicontinuité de trace
 compatible avec les zooms de blow-up, et non sur la compacité d'approximation
 bulk standard.
+
+## Cycle 0005 : décision automatisée
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| seuil critique du module de trace + test NS exact | 4 | 5 | 5 | 5 | **19** |
+| endpoint de trace par Aubin–Lions local | 3 | 4 | 4 | 4 | 15 |
+| module temporel dans un espace de Besov critique | 5 | 2 | 3 | 5 | 15 |
+
+Décision : calculer la loi d'échelle de
+`C_t^alpha dot H_x^sigma`, dériver avec constantes le module réellement donné
+par l'énergie, puis utiliser la solution exacte du cycle 0004 comme test
+adverse.
+
+Résultat : `alpha=1/4-sigma/2` est le seuil critique. L'énergie donne
+`C_t^(1/4)H^-1`, alors que le seuil en `H^-1` est `3/4`; le facteur manquant est
+exactement `lambda^-1`. La famille adverse respecte le module faible mais fait
+diverger les modules critiques `C_t^(1/4)L²` et
+`C_t^(3/4)dot H^-1` comme `N^(1/2)`.
+
+Pivot : les cycles 0003–0005 constituent trois stratégies différentes bloquées
+sur la fermeture de `GAP-COMPACT-Q` depuis l'énergie seule. Conformément au
+protocole, cet axe est suspendu et le prochain lemme actif portera sur la classe
+de solutions anciennes produite par un premier blow-up et le théorème de
+rigidité manquant.

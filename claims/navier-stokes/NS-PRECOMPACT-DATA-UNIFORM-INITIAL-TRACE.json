@@ -1,0 +1,40 @@
+{
+  "id": "NS-PRECOMPACT-DATA-UNIFORM-INITIAL-TRACE",
+  "problem": "navier-stokes",
+  "statement": "Pour une famille de solutions Leray–Hopf périodiques non forcées de moyenne nulle dont les données initiales sont relativement compactes dans L^2 solénoïdal, les bornes énergétiques uniformes et le module uniforme dans V' impliquent sup_n ||u_n(t)-u_n(0)||_2 tendant vers zéro lorsque t tend vers zéro par valeurs positives.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "Navier–Stokes incompressible 3D sur T^3, viscosité nu>0 et force nulle",
+    "solutions Leray–Hopf de moyenne nulle dont le représentant satisfait l'inégalité d'énergie depuis t=0",
+    "H=L^2_sigma(T^3), V=H^1_sigma(T^3), V' est le dual de V et t appartient à [0,T]",
+    "la clôture K de l'ensemble {u_n(0)} est compacte dans H",
+    "sup_n sup_[0,T] ||u_n(t)||_H est fini",
+    "il existe un module omega(t) tendant vers zéro tel que sup_n ||u_n(t)-u_n(0)||_(V')<=omega(t)",
+    "le résultat porte sur la trace initiale; aucune compacité critique au temps de blow-up n'est affirmée"
+  ],
+  "dependencies": [
+    "NS-ENERGY-HMINUS1-TIME-MODULUS"
+  ],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "Foias–Rosa–Temam, Ann. Inst. Fourier 63 (2013), doi:10.5802/aif.2836, cadre Leray–Hopf et topologie trajectorielle"
+    },
+    {
+      "kind": "derivation",
+      "reference": "literature/navier-stokes/compactness-rigidity-extraction.md, section Raccord positif pour des données précompactes"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-state-of-art/cycle-0005"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Sous-agent Codex distinct, même famille de modèle; non indépendant au sens externe",
+    "notes": "Signe énergétique, projecteur solénoïdal P_m:H vers V, facteur 4, uniformité sur K et ordre des limites m puis t vérifiés. La moyenne nulle raccorde V' au claim spectral dot H^-1."
+  }
+}

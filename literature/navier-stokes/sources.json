@@ -864,6 +864,26 @@
       "reproduction": {"status": "repository_not_cloned_or_built"},
       "verification": {"level": "repository_inspection", "checked_on": "2026-08-14", "notes": "Inspection du README primaire seulement; commit exact non épinglé dans cet audit."},
       "tags": ["formalization", "Lean", "incomplete", "unverified_zone"]
+    },
+    {
+      "id": "NS-SRC-0043",
+      "title": "Properties of time-dependent statistical solutions of the three-dimensional Navier-Stokes equations",
+      "authors": ["Ciprian Foias", "Ricardo M. S. Rosa", "Roger Temam"],
+      "year": 2013,
+      "source_type": "journal_article",
+      "publication_status": "published",
+      "venue": "Annales de l'Institut Fourier 63(6), 2515–2573",
+      "identifiers": {"doi": "10.5802/aif.2836", "url": "https://numdam.org/articles/10.5802/aif.2836/"},
+      "equation": {"model": "Navier–Stokes incompressible standard", "dimension": "3", "domain": "cadre fonctionnel périodique ou domaine borné", "boundary": "périodique ou Dirichlet selon le cadre", "forcing": "forçage admissible dans le cadre abstrait; sous-cas non forcé utilisé ici", "viscosity": "ν>0"},
+      "solution_notions": ["solution faible de Leray–Hopf", "solution statistique dépendant du temps"],
+      "result": "Fixe le cadre trajectoriel des solutions Leray–Hopf, leur continuité faible en L², la continuité forte initiale individuelle et des propriétés de compacité faible utiles aux solutions statistiques.",
+      "hypotheses": ["u dans L∞_tH intersection L²_tV", "équation dans V'", "inégalité d'énergie", "donnée initiale dans H"],
+      "constants_uniformity": "La compacité trajectorielle est dans la topologie faible; aucun module fort L² uniforme n'est fourni pour une famille de données seulement bornée.",
+      "clay_relevance": "Clarifie exactement la topologie temporelle disponible dans la classe énergétique et empêche de confondre continuité forte individuelle à t=0 avec compacité forte uniforme de traces rescalées.",
+      "limitations": ["ne produit aucune borne critique", "ne prouve ni unicité ni régularité globale 3D", "la couche statistique dépasse le besoin du lemme temporel utilisé"],
+      "reproduction": {"status": "analytic_statements_extracted_not_proof_reproduced"},
+      "verification": {"level": "primary_full_text", "checked_on": "2026-08-14", "notes": "Métadonnées DOI et définitions/propriétés temporelles contrôlées; extraction contradictoire séparée du cycle 0005."},
+      "tags": ["Leray_Hopf", "time_continuity", "weak_compactness", "trajectory"]
     }
   ],
   "watchlist": [
@@ -917,7 +937,7 @@
   ],
   "coverage": {
     "official_formulation": ["NS-SRC-0001"],
-    "Leray_Hopf": ["NS-SRC-0002", "NS-SRC-0003"],
+    "Leray_Hopf": ["NS-SRC-0002", "NS-SRC-0003", "NS-SRC-0043"],
     "suitable_partial_regularity": ["NS-SRC-0004", "NS-SRC-0005", "NS-SRC-0006"],
     "Prodi_Serrin_endpoint": ["NS-SRC-0007", "NS-SRC-0008", "NS-SRC-0009", "NS-SRC-0012", "NS-SRC-0013"],
     "critical_spaces": ["NS-SRC-0010", "NS-SRC-0011", "NS-SRC-0014", "NS-SRC-0035", "NS-SRC-0036"],

@@ -45,6 +45,10 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | borne critique uniforme `L³` | tension pondérée `A^-3` | Hölder à constante explicite, passe adverse; compatible ESS/GKP | la borne `L³` n'est pas issue de l'énergie |
 | norme `L²` physique bornée | tension pondérée après zoom | réfutée | contre-paquets lisses multi-échelles | structure dynamique ou borne critique nécessaire |
 | convergence faible d'une trace mobile + énergie | convergence du produit et de la pression | réfutée | solution NS oscillatoire exacte, `t_N~N^-2` | équicontinuité ou compacité forte de trace nécessaire |
+| énergie Leray–Hopf | module `C_t^(1/4)H^-1` | dérivation locale, `COMPUTATION_ONLY` | équation dans `H^-1` + Gagliardo–Nirenberg | facteur d'échelle `lambda^-1`, donc supercritique au zoom |
+| énergie Leray–Hopf | module critique `C_t^(1/4)L²` ou `C_t^(3/4)dot H^-1` | réfutée | famille oscillatoire exacte | les quotients croissent comme `N^(1/2)` |
+| donnée initiale forte `L²` + module uniforme `C_t^(1/4)L²` | trace mobile forte `L²` | dérivation conditionnelle | inégalité triangulaire à constante 1 | prémisse critique non issue de l'énergie |
+| données initiales précompactes `L²` + énergie + module `V'` | trace initiale uniforme forte `L²` | dérivation locale, `COMPUTATION_ONLY` | projection Fourier finie + inégalité d'énergie | les tranches rescalées de blow-up ne sont pas précompactes a priori |
 | convergence forte `L³(T³)` | convergence forte produit/pression en `L^(3/2)` | dérivation locale, `COMPUTATION_ONLY` | Hölder + Riesz périodique | obtenir `L³` fort sans supposer le critère critique recherché |
 | convergence forte espace-temps `L²` + borne `L^(10/3)` | convergence forte locale `L³` | conditionnelle | interpolation sur cylindres fixés | ne donne pas automatiquement une trace forte à `t_n->0` |
 | limite locale de vitesse | limite de pression | conditionnelle | Calderón–Zygmund + tension pondérée | pression proche: convergence forte; queue: tension uniforme |
@@ -64,7 +68,7 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | `GAP-SCALE-ENERGY` | puissance d'échelle | `||u_lambda||_2²=lambda^-1||u||_2²` | paquets concentrés à énergie fixée |
 | `GAP-DERIV-NL` | dérivée | `u dot nabla u` dans l'énergie haute | triades haute–basse signées |
 | `GAP-CONST-TRUNC` | constante | Galerkin ou troncature renormalisée | tracer la constante avec le cutoff |
-| `GAP-COMPACT-Q` | compacité | passage `u_n tensor u_n` | défaut exact sur traces mobiles; distinguer intérieur espace-temps et trace |
+| `GAP-COMPACT-Q` | compacité | passage `u_n tensor u_n` | trois échecs sous énergie seule: queue, défaut de trace, module supercritique; pivot requis |
 | `GAP-PRESSURE-TAIL` | pression/localisation | défaut de tension de `integral |U_n|²|y|^-4` après zoom | paquets multi-échelles; extraction ESS/GKP |
 | `GAP-SIGN-FLUX` | positivité | flux d'énergie inter-échelles | contre-triades exactes |
 | `GAP-LIMIT-ADMISSIBLE` | stabilité/admissibilité | profil singulier vers donnée de Schwartz | troncature `epsilon` et temps local |
@@ -74,11 +78,14 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 
 1. `GAP-LIMIT-ADMISSIBLE` : faible coût pour déterminer si la nouvelle
    construction non unique a un premier maillon vers Clay.
-2. `GAP-COMPACT-Q` / pression proche : `L³` fort ferme le produit et la pression
-   proche; une solution NS exacte réfute la version à trace faiblement
-   convergente. Identifier maintenant l'équicontinuité critique de trace
-   réellement disponible dans une extraction de premier blow-up.
+2. rigidité des solutions anciennes : extraire la classe limite exacte des
+   chaînes ESS/GKP/KNSS, puis identifier le premier théorème de Liouville
+   réellement manquant hors borne globale `L³`.
 3. `GAP-SIGN-FLUX` : élimination rapide de fonctionnelles candidates.
+
+`GAP-COMPACT-Q` est suspendu sous énergie seule après trois stratégies
+distinctes réfutées. Il ne sera rouvert qu'avec une hypothèse structurelle
+explicitement héritée d'un premier blow-up.
 
 Une arête ne passe à « classique et sourcée » qu'avec une source primaire et
 des hypothèses identiques. Une expérience finie reste « numérique » ou

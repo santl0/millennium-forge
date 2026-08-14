@@ -32,3 +32,20 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
   au passage à la limite de `u tensor u` et de la pression.
 - Limite : résultat négatif de veille seulement; une absence dans les index
   consultés n'est pas une preuve d'absence dans la littérature.
+
+## 2026-08-14 — Cycle 0005
+
+- Fenêtre recherchée : identifiants arXiv `2607.*` et `2608.*`, régularité
+  temporelle des solutions Leray–Hopf, compacité de traces et premier temps de
+  blow-up pour NS incompressible 3D.
+- Résultat : aucun nouveau résultat primaire 2026 modifiant le verrou n'a été
+  identifié. Les résultats retournés rappellent la continuité faible en `L²`
+  et la continuité forte à l'instant initial pour chaque solution Leray–Hopf
+  fixée; ils ne donnent pas un module fort uniforme pour des familles dont la
+  donnée et l'échelle varient dans une boule seulement bornée. Une donnée
+  commune ou une famille initiale fortement précompacte est un cas positif
+  distinct, désormais enregistré.
+- Décision : aucune source promue. Calculer le seuil de Hölder temporel critique
+  sous l'échelle NS, puis le confronter à la famille exacte du cycle 0004.
+- Limite : les moteurs consultés peuvent avoir une indexation incomplète; cette
+  entrée établit le delta contrôlé, pas une absence dans toute la littérature.

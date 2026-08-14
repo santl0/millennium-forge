@@ -327,3 +327,79 @@ Les quatre sources remplissent des arêtes différentes :
 **Lemme transférable minimal, déjà fermé.** Pour toute suite globalement bornée dans (L^3(\mathbb R^3)), la queue pondérée (L^2(|y|^{-4}dy)) est uniformément (O(A^{-3})). Elle ne constitue donc pas une hypothèse supplémentaire dans les chaînes ESS/GKP si le contrôle (L^3) global est conservé.
 
 **Verrou scientifique exact.** Cette observation n'aide pas le régime général de l'énergie ni le zoom Type II de Seregin, où aucune borne globale (L^3) uniforme des profils n'est fournie. Toute stratégie qui utilise cette queue doit donc exhiber d'abord, sans circularité, soit une borne globale (L^3), soit une estimation pondérée indépendante stable sous la limite et compatible avec le contrôle non local de la pression.
+
+## 7. Audit des traces temporelles — cycle 0005
+
+### Classe énergétique classique
+
+**[SOURCE]** Foias–Rosa–Temam 2013, définition 2.1 et lemme 2.4, placent les
+solutions Leray–Hopf dans le triplet `V subset H subset V'` avec
+
+```text
+u in L^infinity(0,T;H) intersection L²(0,T;V),
+partial_t u in L^(4/3)(0,T;V'),
+u in C([0,T];H_weak).
+```
+
+Pour chaque solution fixée, l'inégalité d'énergie et la trace faible donnent
+la continuité forte en `H=L²_sigma` à l'instant initial. Ce résultat est
+individuel : il ne contient pas de taux uniforme pour une famille dont les
+données parcourent seulement une boule bornée de `H`.
+
+**[CALCUL]** Dans le cas périodique de moyenne nulle, `V'` s'identifie au
+`dot H^-1` solénoïdal. L'équation projetée et Gagliardo–Nirenberg donnent le
+module explicite du claim `NS-ENERGY-HMINUS1-TIME-MODULUS`. Son exposant
+temporel `1/4` n'est pas critique dans `dot H^-1`; le seuil d'échelle serait
+`3/4`.
+
+### Raccord positif pour des données précompactes
+
+**[CALCUL]** Posons `H=L²_sigma(T³)`, `V=H¹_sigma(T³)` et notons `V'` son dual.
+Soit une famille de solutions non forcées, de moyenne nulle, dont le
+représentant satisfait l'inégalité d'énergie depuis `0`, avec `u_n(0)` dans un
+ensemble relativement compact de `H`; on note `K` sa clôture compacte. Supposons
+un module uniforme `omega(t)` dans `V'` pour `t in [0,T]`. Pour le projecteur
+orthogonal solénoïdal de Fourier de rang fini `P_m:H->V`, l'énergie donne
+
+```text
+||u_n(t)-u_n(0)||_H²
+ <=2 <u_n(0)-u_n(t),u_n(0)>.
+```
+
+En écrivant `u_n(0)=P_m u_n(0)+(I-P_m)u_n(0)`, on obtient
+
+```text
+||u_n(t)-u_n(0)||_H²
+ <=2 omega(t) sup_(v in K)||P_m v||_V
+   +4 sup_(v in K)||v||_H sup_(v in K)||(I-P_m)v||_H.
+```
+
+La compacité de `K` rend le dernier supremum arbitrairement petit pour `m`
+grand; à `m` fixé, `omega(t)->0` ferme le premier terme. Donc
+
+```text
+sup_n ||u_n(t)-u_n(0)||_2 ->0 quand t->0+.
+```
+
+La famille adverse du cycle 0004 ne contredit pas ce lemme : ses données
+initiales convergent seulement faiblement vers zéro et gardent une norme
+`L²` non nulle, donc elles ne sont pas fortement précompactes.
+
+### Mécanismes ESS et GKP
+
+**[SOURCE]** Dans ESS, la convergence forte locale des zooms sur des cylindres
+intérieurs utilise les estimations renforcées de dérivée temporelle, dérivées
+spatiales secondes et pression localisée; la nullité de la trace terminale
+emploie en plus l'absolue continuité de l'intégrale `L³` sur des boules qui se
+rétrécissent. Elle n'est donc pas produite par l'énergie seule.
+
+**[SOURCE]** Dans GKP, les objets sont mild/forts dans `L³`, puis décomposés en
+profils critiques. La convergence vers zéro au temps critique est dans
+`S'`; elle ne constitue pas un module fort uniforme pour des tranches de
+familles énergétiques changeantes.
+
+**Conclusion de raccord.** La vraie alternative n'est pas « continuité ou
+absence de continuité » : la continuité forte individuelle est classique. Le
+verrou est la précompacité forte uniforme des tranches rescalées. ESS/GKP
+l'obtiennent seulement sous la structure critique qui nourrit déjà leur
+argument de rigidité; l'énergie générale ne la fournit pas.

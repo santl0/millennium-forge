@@ -15,6 +15,7 @@ leur rapport JSON sur la sortie standard.
 | `PRESSURE-TAIL-1` | centrer la pression d'un paquet distant gagne-t-il une puissance de distance ? | noyau multipolaire exact, tenseur ponctuel | `python -B experiments/navier-stokes/pressure-tail/pressure_tail.py` | zéro |
 | `PRESSURE-MULTISCALE-1` | une borne physique `L²` seule impose-t-elle la tension uniforme de la pression après zoom ? | lois d'échelle et moments exacts | `python -B experiments/navier-stokes/pressure-multiscale/pressure_multiscale.py` | zéro |
 | `QUADRATIC-PRESSURE-DEFECT-1` | énergie uniforme et convergence faible d'une trace imposent-elles la convergence du produit et de la pression ? | solution NS de Fourier exacte, fractions rationnelles | `python -B experiments/navier-stokes/quadratic-pressure-defect/quadratic_pressure_defect.py` | zéro |
+| `TRACE-MODULUS-1` | le module temporel déduit de l'énergie atteint-il le seuil critique nécessaire à une trace forte ? | lois d'échelle et solution NS exacte, fractions rationnelles | `python -B experiments/navier-stokes/trace-modulus/trace_modulus.py` | zéro |
 
 Environnement reproduit au checkpoint initial : Windows, Python 3.13.14,
 bibliothèque standard uniquement. Les scripts ne lisent aucun fichier, n'ont
@@ -94,7 +95,7 @@ aucune dépendance réseau et ne produisent pas d'artefact lourd.
 
 ## Passage au continuum
 
-Aucune des six expériences ne part d'une discrétisation PDE : il n'y a donc
+Aucune des sept expériences ne part d'une discrétisation PDE : il n'y a donc
 pas de passage grille-vers-continuum. Le raccord analytique restant est
 explicite dans chaque cas. Tout futur solveur doit ajouter divergence mesurée,
 convergence multi-résolution, second schéma, bornes de troncature, contrôle des
@@ -357,3 +358,138 @@ et la compacité forte `L²` permettent en revanche, par interpolation avec la
 borne `L^(10/3)`, d'obtenir `L^q` fort pour chaque `q<10/3`, donc `q=3`.
 Ce critère n'est pas minimal pour la seule convergence distributionnelle du
 produit : une convergence locale forte `L²` y suffit déjà.
+
+## `TRACE-MODULUS-1` — seuil critique d'une trace temporelle
+
+### Question et loi d'échelle
+
+La question falsifiable est : les bornes uniformes de Leray–Hopf imposent-elles
+un module temporel fort, invariant sous l'échelle NS, qui élimine le défaut de
+trace du cycle 0004 ?
+
+Sur `R³`, pour
+
+```text
+u_lambda(x,t)=lambda u(lambda x,lambda²t),
+```
+
+on a, dans les espaces homogènes,
+
+```text
+||u_lambda(t)||_(dot H^sigma)
+ =lambda^(sigma-1/2)||u(lambda²t)||_(dot H^sigma),
+[u_lambda]_(C_t^alpha dot H_x^sigma)
+ =lambda^(sigma-1/2+2alpha)[u]_(C_t^alpha dot H_x^sigma).
+```
+
+Le seuil critique est donc `alpha=1/4-sigma/2`. En particulier,
+`C_t^(1/4)L²_x` et `C_t^(3/4)dot H^-1_x` sont critiques. Le module
+`C_t^(1/4)H^-1_x` issu de l'énergie porte au contraire le facteur
+`lambda^-1`; il perd exactement une puissance d'échelle lors d'un zoom
+`lambda->0`.
+
+### Module réellement fourni par l'énergie
+
+Sur le tore, soit une solution Leray–Hopf de moyenne nulle. On note
+`dot H^-1` la norme de Fourier sans mode nul et, pour
+`I=[s,t]`,
+
+```text
+M_I=sup_(tau in I)||u(tau)||_2,
+D_I=(integral_I ||nabla u||_2² d tau)^(1/2),
+h=t-s.
+```
+
+L'équation dans `H^-1`, Hölder en temps et
+`||u||_4<=C_GN||u||_2^(1/4)||nabla u||_2^(3/4)` donnent
+
+```text
+||u(t)-u(s)||_(dot H^-1)
+ <= nu h^(1/2)D_I
+    +C_GN² M_I^(1/2)h^(1/4)D_I^(3/2).
+```
+
+La constante `C_GN` dépend seulement du tore et de la normalisation; elle est
+indépendante de la solution et de la troncature. Sur un horizon fini `[0,T]`,
+en remplaçant `D_I` par `D_T` et en utilisant `h^(1/2)<=T^(1/4)h^(1/4)`, on
+obtient
+
+```text
+[u]_(C_t^(1/4)dot H^-1;[0,T])
+ <=nu T^(1/4)D_T+C_GN² M_T^(1/2)D_T^(3/2).
+```
+
+L'énergie donne donc ce module faible sur chaque horizon fini, mais pas le
+module critique `C_t^(3/4)dot H^-1` ni un module fort `L²`.
+
+### Test adverse exact
+
+Reprenons la solution périodique du cycle 0004. Tous ses modes ont
+`|k|²=N²+1`; à `t_N=log(2)/(N²+1)`,
+
+```text
+||u_N(t_N)-u_N(0)||_2²=(N²+1)/(16N²),
+||u_N(t_N)-u_N(0)||_(dot H^-1)²=1/(16N²).
+```
+
+Pour les quotients sur la seule paire `(0,t_N)`, le script certifie
+
+```text
+256 log(2) [Q_N^(L²,1/4)]^4
+ =256 log(2)^3 [Q_N^(H^-1,3/4)]^4
+ =(N²+1)^3/N^4 ~ N²,
+
+256 log(2) [Q_N^(H^-1,1/4)]^4
+ =(N²+1)/N^4 ~ N^-2.
+```
+
+Les deux modules critiques divergent au moins comme `N^(1/2)`, tandis que le
+quotient faible fourni par l'énergie tend vers zéro comme `N^(-1/2)`. Pour le
+semi-module faible complet, l'identité de semi-groupe et
+`1-exp(-z)<=min(z,1)` donnent aussi
+
+```text
+[u_N]_(C_t^(1/4)dot H^-1)
+ <= ||u_N^0||_2 (N²+1)^(-1/4),
+```
+
+donc une borne uniforme qui ne supprime pourtant pas le défaut quadratique.
+
+### Lemme de raccord et limites
+
+Si `u_n(0)->u_0` fortement dans `L²` et si
+`sup_n[u_n]_(C_t^(1/4)L²)<infinity`, alors, pour toute suite `t_n->0`,
+
+```text
+||u_n(t_n)-u_0||_2
+ <= C t_n^(1/4)+||u_n(0)-u_0||_2 ->0.
+```
+
+Les produits convergent alors dans `L¹`, et les pressions convergent comme
+distributions après application de la projection de Leray. Ce raccord est
+critique mais conditionnel : l'expérience prouve que l'énergie ne fournit pas
+sa prémisse uniformément.
+
+Un raccord plus faible, mais utile, ne demande pas ce taux `L²`. Si les données
+`u_n(0)` appartiennent à un compact `K` de `L²`, l'inégalité d'énergie et le
+module uniforme dans `V'` suffisent. Pour un projecteur de Fourier fini `P_m`,
+
+```text
+||u_n(t)-u_n(0)||_2²
+ <=2 omega(t) sup_(v in K)||P_m v||_V
+   +4 sup_(v in K)||v||_2 sup_(v in K)||(I-P_m)v||_2.
+```
+
+Prendre d'abord `m` grand par compacité de `K`, puis `t` petit, donne une trace
+forte uniforme. La famille adverse n'a précisément pas de données initiales
+fortement précompactes : elle converge seulement faiblement et conserve une
+norme `L²` non nulle.
+
+- Résolutions : `N=1,2,4,...,128`; aucune grille ou intégration temporelle.
+- Précision : fractions exactes; les puissances de `log(2)` restent
+  symboliques. Résidu maximal `0/1`; graine sans objet.
+- Portée : l'invariance est calculée sur `R³`, tandis que le contre-test est
+  périodique. Il réfute une estimation énergétique universelle, mais ne prouve
+  pas qu'une suite minimale de blow-up réalise ce défaut.
+- Résultat négatif : une compacité temporelle dans une topologie trop faible
+  peut coexister avec un défaut de Reynolds et de pression sur la trace.

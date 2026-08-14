@@ -79,3 +79,21 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   paraboliques mobiles ne suit de la seule énergie. À temps fixé positif, la
   chaleur élimine le défaut.
 - Artefact : `QUADRATIC-PRESSURE-DEFECT-1`, résidus rationnels zéro.
+
+## 2026-08-14 — Perte d'une puissance dans le module temporel
+
+- Équation : loi d'échelle NS sur `R³`; estimation énergétique et contre-test
+  exact périodique.
+- Loi générale :
+  `[u_lambda]_(C_t^alpha dot H_x^sigma)
+  =lambda^(sigma-1/2+2alpha)[u]`.
+- Seuils critiques : `C_t^(1/4)L²` et `C_t^(3/4)dot H^-1`.
+- Contrôle énergétique : l'équation et Gagliardo–Nirenberg donnent seulement
+  `C_t^(1/4)H^-1`, de facteur d'échelle `lambda^-1`.
+- Contre-profil : sur la famille exacte, les quotients critiques croissent
+  comme `N^(1/2)`, alors que le quotient énergétique faible décroît comme
+  `N^(-1/2)`.
+- Perte localisée : une dérivée spatiale négative n'est compensée par aucun
+  gain temporel critique; la compacité faible de trajectoire ne devient pas une
+  compacité forte de trace.
+- Artefact : `TRACE-MODULUS-1`, résidus rationnels zéro.

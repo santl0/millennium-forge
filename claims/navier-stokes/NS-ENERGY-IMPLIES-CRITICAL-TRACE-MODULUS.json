@@ -1,0 +1,40 @@
+{
+  "id": "NS-ENERGY-IMPLIES-CRITICAL-TRACE-MODULUS",
+  "problem": "navier-stokes",
+  "statement": "Toute famille de solutions globales lisses périodiques de Navier–Stokes 3D non forcé ayant énergie et dissipation uniformément bornées possède des semi-modules temporels uniformément bornés dans les topologies critiques C_t^(1/4)L^2_x et C_t^(3/4)dot H^-1_x.",
+  "status": "REFUTED",
+  "hypotheses": [
+    "domaine T^3=(R/2piZ)^3, viscosité nu=1 et force nulle",
+    "solutions globales lisses de moyenne spatiale nulle",
+    "sup_n sup_t ||u_n(t)||_2^2 et sup_n integrale_0^infinity ||nabla u_n||_2^2 dt finis",
+    "semi-modules évalués sur des intervalles contenant 0 avec la norme dot H^-1 de Fourier",
+    "la qualification critique vient de la loi d'échelle sur R^3; le contre-exemple est périodique"
+  ],
+  "dependencies": [
+    "NS-OSCILLATORY-TRACE-DEFECT-FAMILY",
+    "NS-TIME-TRACE-SCALING-LAW"
+  ],
+  "evidence": [
+    {
+      "kind": "counterexample",
+      "reference": "experiments/navier-stokes/trace-modulus/trace_modulus.py",
+      "sha256": "131dbc3439a065a408ef24aa49b9a892979cd9dd6c65d44eacf54223b871c1cf"
+    },
+    {
+      "kind": "derivation",
+      "reference": "experiments/navier-stokes/README.md, section Test adverse exact de TRACE-MODULUS-1"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-state-of-art/cycle-0005"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Sous-agent Codex distinct, même famille de modèle; non indépendant au sens externe",
+    "notes": "Normes dot H^-1 spectrales, puissances de log(2) et croissance N^(1/2) recalculées. La paire (0,t_N) suffit à réfuter les semi-modules; aucune portée vers une suite de premier blow-up ou R3."
+  }
+}
