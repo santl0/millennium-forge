@@ -1602,3 +1602,38 @@ cellule reste donc `NOT_PROVIDED`.
   `597dc2e2828df34d836556c5419904d39e6ee240aa93b353a49683699ae40443`.
 - Limites : énumération finie, majorant `L-infinity` pour la vitesse, aucune
   certification de HLS continuum, de BMO, de pression ou d'évolution.
+
+## `BOUNDED-CROSS-SECTION-DIRECTION-GATE-1` — plateaux et retours rares
+
+- Question falsifiable : une coque directionnelle rare, un compensateur
+  antipodal ou des cellules axialement séparées peuvent-ils réduire le BMO
+  sans payer l'un des deux endpoints critiques ?
+- Équation simulée : aucune; ledger statique de
+  `U=(R/r)F e_theta`, `W=curl U`.
+- Discrétisation : aucune grille; identités de cubes de quasi-normes et modèles
+  à volumes finis calculés en `fractions.Fraction`.
+- Familles : 32 rayons dyadiques et 12 couples de cubes de normes; 276 coques
+  de plateau; 29 retours rares; `1<=N<=256` cellules séparées.
+- Identités certifiées :
+
+  ```text
+  K_f^6/(K_g^3K_w^3)=(K_u^3/K_w^3)^2,
+  K_w^3/K_u^3=R/delta,
+  K_w^3(rare)=(1-epsilon)^3/epsilon,
+  K_w^3/K_u^3=N pour N cellules égales.
+  ```
+
+- Amplitudes dyadiques : les deux endpoints sont exactement dominés par la
+  première cellule; la séparation seule n'efface pas un bloc local.
+- Commande :
+
+  ```text
+  python -B experiments/navier-stokes/bounded-cross-section-direction/bounded_cross_section_direction_audit.py
+  ```
+
+- Environnement : Python 3.13.14, bibliothèque standard, aucune graine.
+- Résidu certifié : 2 884 contrôles rationnels exacts, zéro échec.
+- Empreinte :
+  `4759238f59a46f64f0a547881f8aeb86ca6755ceea06c4a1728648db57847f8f`.
+- Limites : constantes de profil et cône non certifiées; aucun supremum BMO
+  continu, aucune cellule hétérogène optimisée, aucune PDE en temps.
