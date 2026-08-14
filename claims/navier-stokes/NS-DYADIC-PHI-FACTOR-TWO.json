@@ -24,6 +24,11 @@
       "sha256": "cbdca92eec11a287c31bb67d48dfeda339768863b2ccfa58b6cd8f66e3682721"
     },
     {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/commutator-uniformity/commutator_uniformity_audit.py, résidu général, facteur trois et somme pondérée",
+      "sha256": "387898492a0dc370d6ca50aadbc18e7e524ebdc0d7326fe2347952cbce57ebbf"
+    },
+    {
       "kind": "derivation",
       "reference": "docs/reports/navier-stokes/reviews/cycle-0017-analysis.md"
     }
@@ -38,6 +43,6 @@
   "review": {
     "status": "adversarial_pass",
     "reviewer": "Trois passes Codex séparées, même famille de modèle; non indépendantes au sens externe",
-    "notes": "La réfutation porte sur la constante deux. Une constante trois pour R assez petit conserve l'ordre R^-2 phi(R); le théorème 4.1 complet reste non reproduit."
+    "notes": "La réfutation porte sur la constante deux. Le cycle 0018 prouve qu'une constante trois pour log_2(1/R)>=6 et le poids 4^-k conservent uniformément l'ordre R^-2 phi(R); le théorème 4.1 réparé reste une dérivation conditionnelle COMPUTATION_ONLY."
   }
 }

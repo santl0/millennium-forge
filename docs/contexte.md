@@ -20,3 +20,12 @@ Le projet complète les formulations Lean existantes et les corpus de conjecture
 ## Principe de sûreté scientifique
 
 Une ressemblance, un calcul numérique ou une preuve générée par IA ne change jamais seul le statut d'une affirmation. Les conclusions canoniques doivent rester proportionnées à la meilleure preuve effectivement disponible.
+
+## État Navier–Stokes au cycle 0018
+
+Le programme actif a reproduit conditionnellement les blocs fonctionnels
+`(8)->(49)` de `arXiv:2607.08866v2`, en conservant leurs hypothèses globales
+et en corrigeant plusieurs constantes et quantificateurs. Le dernier bloc
+fermé est le commutateur localisé logarithmique; il reste
+`COMPUTATION_ONLY`. Le verrou actif est la synchronisation de l'endgame
+`(49)->(58)`, non une prétendue résolution Clay.

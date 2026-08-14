@@ -517,14 +517,59 @@ d'équivalence entre deux profils, pas un autre renommage de topologie.
   `phi(2^jR)<=2phi(R)` pour tout `j<=N+1`.
 - Contre-test exact : `R=2^-8`, `N=4`, `j=5` donne
   `phi(2^jR)/phi(R)=8/3>2`.
-- Réparation : une constante trois convient au bord pour `R` assez petit et
-  préserve l'ordre `R^-2phi(R)`; elle ne valide pas les autres étapes du
-  commutateur.
+- Famille exacte : pour `R=2^(-2m)`, l'excès signé au dernier indice est
+  `1/[m(m-1)log 2]>0`. Une constante trois convient lorsque
+  `log_2(1/R)>=6` et préserve l'ordre `R^-2phi(R)`.
+- Réparation vérifiée : le cycle 0018 valide séparément extension BMO,
+  interpolation, champ proche et queues; le résultat réparé reste
+  conditionnel aux hypothèses globales de direction et de vorticité.
 - Portée : réfute une constante locale de (20)–(21), pas le théorème 4.1
   complet ni sa conclusion après révision.
 - Statut : claim `NS-DYADIC-PHI-FACTOR-TWO` `REFUTED`.
 - Empreinte :
-  `cbdca92eec11a287c31bb67d48dfeda339768863b2ccfa58b6cd8f66e3682721`.
+  `cbdca92eec11a287c31bb67d48dfeda339768863b2ccfa58b6cd8f66e3682721`;
+  audit étendu
+  `387898492a0dc370d6ca50aadbc18e7e524ebdc0d7326fe2347952cbce57ebbf`.
+
+## `FAIL-NS-0023` — Réarrangée `min` exacte du noyau tronqué
+
+- Date : 2026-08-14.
+- Cadre : fonction radiale `h_a(y)=|y|^-3 1_(|y|>a)` sur `R³`; aucun objet
+  Navier–Stokes n'est construit.
+- Cible : l'identité `h_a^*(s)=min(a^-3,Cs^-1)` annoncée avant (12) de
+  `arXiv:2607.08866v2`.
+- Calcul exact : la fonction de distribution s'inverse en
+  `h_a^*(s)=1/(a³+s/|B_1|)`, strictement décroissante pour tout `s>0`.
+  Toute fonction `min` avec `C>0` possède un plateau; aucune constante ne
+  donne l'identité.
+- Réparation : les deux expressions sont comparables et
+  `||h_a||_(L^(3,1))=(2pi/sqrt(3))|B_1|^(1/3)a^-2`. La puissance utilisée en
+  (11)–(15) survit.
+- Portée : réfute une formule exacte, pas la borne de Lorentz ni le taux du
+  commutateur réparé.
+- Statut : claim `NS-TRUNCATED-KERNEL-MIN-REARRANGEMENT` `REFUTED`.
+- Artefact : `COMMUTATOR-UNIFORMITY-AUDIT-1` et dérivation du cycle 0018.
+
+## `FAIL-NS-0024` — Petite dérive uniforme des moyennes emboîtées
+
+- Date : 2026-08-14.
+- Cadre : enveloppe scalaire des moyennes BMO sur les rayons `2^jR`; le
+  contre-profil n'est pas une solution Navier–Stokes.
+- Cible : remplacer la somme télescopique de (16) par
+  `|c_k-c_0|<=Cphi(R)` uniformément jusqu'à l'échelle `sqrt(RR_*)`.
+- Contre-profil : choisir tous les incréments au plafond
+  `c_j-c_(j-1)=phi(2^jR)`. Pour `T=log_2(R_*/R)`, le rapport de la dérive
+  terminale à `phi(R)` est au moins `floor(T/2)+1` et diverge.
+- Réalisation géométrique adverse : une phase unitaire de type
+  `eta log log(eR_*/|x|)` accumule une variation d'ordre un entre `R` et
+  `sqrt(RR_*)` tout en gardant l'oscillation moyenne logarithmique.
+- Réparation : conserver la double somme. Le facteur `4^-k` du noyau donne
+  exactement `sum_(k>=1)(k+1)4^-k=7/9`, donc le taux final reste
+  `O(phi(R))`.
+- Portée : élimine une simplification tentante; ne réfute pas la preuve
+  annulaire qui conserve les poids géométriques.
+- Artefact : `COMMUTATOR-UNIFORMITY-AUDIT-1`, contrôle exact
+  `unweighted_mean_drift_not_small`.
 
 ## Obstacle consolidé — désingularisation HWY vers une même donnée Clay
 

@@ -20,3 +20,12 @@
 - Politique de conservation des gros artefacts : Git LFS, stockage objet ou régénération.
 - Processus de nomination des réviseurs spécialisés.
 - Niveau de formalisation réaliste par problème.
+
+## Navier–Stokes — prochaine reprise
+
+- [x] Auditer à constantes suivies le commutateur localisé `(8)->(22)`.
+- [ ] Synchroniser `(49)->(58)` au même temps d'échappement et vérifier les
+  deux branches du critère harmonique.
+- [ ] Tester l'extension d'une direction connue seulement sur le cœur actif
+  vers la prémisse globale `bmo_phi`, zéros et multicœurs inclus.
+- [ ] Obtenir une revue externe indépendante du lemme du cycle 0018.

@@ -376,3 +376,22 @@ Enfin, le facteur deux de la sommation dyadique (20)–(21) est faux (`8/3`
 sur un exemple exact), bien qu'une constante trois répare localement l'ordre.
 Le premier maillon non reproduit est désormais le théorème de commutateur
 (8)–(22), pas Grönwall ni Chebyshev.
+
+Le cycle 0018 ferme ce maillon fonctionnel **conditionnellement**. Après
+dimensionnement par une longueur `R_*`, l'extension de Jones contrôle la
+semi-norme BMO du symbole avec une constante indépendante de la boule; CRW et
+interpolation réelle contrôlent le champ proche dans faible-`L^(3/2)`. Les
+termes lointains compensent exactement `R^-2` par le facteur local `R²`.
+Dans la queue intermédiaire, les moyennes imbriquées peuvent dériver d'ordre
+un, mais le poids du noyau `4^-k` donne la somme convergente
+`sum_(k>=1)(k+1)4^-k=7/9` et conserve le gain logarithmique.
+
+Trois erreurs littérales de `arXiv:2607.08866v2` sont isolées sans réfuter le
+taux final : faible-`L^(3/2)` n'est pas réflexif; la réarrangée du noyau
+tronqué est `1/(a³+s/|B_1|)` plutôt qu'un `min` exact; le facteur deux du
+dernier anneau doit être remplacé par trois à petite échelle. Le lemme
+`NS-LOCALIZED-LOG-COMMUTATOR` reste `COMPUTATION_ONLY` et exige déjà la borne
+globale uniforme `bmo_phi` de la direction. Il ne la déduit pas de la
+dynamique, ne gère pas automatiquement les zéros de vorticité ou plusieurs
+cœurs et n'implique donc aucune alternative Clay. Le verrou actif passe à la
+synchronisation quantitative de l'endgame `(49)–(58)`.

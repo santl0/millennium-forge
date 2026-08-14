@@ -1,0 +1,38 @@
+{
+  "id": "NS-TRUNCATED-KERNEL-MIN-REARRANGEMENT",
+  "problem": "navier-stokes",
+  "statement": "Pour h_a(y)=|y|^-3 1_(|y|>a) sur R³, la réarrangée décroissante est exactement min(a^-3,Cs^-1) pour une constante C indépendante de s.",
+  "status": "REFUTED",
+  "hypotheses": [
+    "a>0 et mesure de Lebesgue sur R³",
+    "la réarrangée utilise les superniveaux stricts et v_3=|B_1|",
+    "la cible est l'identité exacte annoncée avant l'équation (12) de arXiv:2607.08866v2, non la comparabilité à constantes"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0059, arXiv:2607.08866v2, équations (11)-(12)"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "La distribution donne h_a^*(s)=1/(a^3+s/v_3), strictement décroissante pour tout s>0; toute fonction min(a^-3,Cs^-1) avec C>0 possède au contraire un plateau non trivial, et C=0 est impossible. Pour le choix naturel C=v_3, a=1 et s=v_3 donnent déjà 1/2 contre 1. La comparabilité et la norme L^(3,1) d'ordre a^-2 survivent."
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0018-commutator-uniformity.md et reviews/cycle-0018-analysis.md"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-14",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0018-commutator-uniformity"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Trois passes Codex séparées, même famille de modèle; non indépendantes au sens externe",
+    "notes": "La réfutation porte sur une identité de réarrangée. Elle ne réfute ni la puissance a^-2 de la norme L^(3,1), ni le lemme de commutateur après correction."
+  }
+}

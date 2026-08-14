@@ -71,7 +71,8 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | cohérence locale sur cylindre | absorption du stretching localisé | conditionnelle, sourcée | Grujić 2009 | commutateurs de cutoff et queue extérieure à conserver |
 | majorant global `|V|≤B` | 3D `delta`-sparseness au rayon construit `r=[B/(delta|B_1|)]^(1/3)` | dérivation exacte, `COMPUTATION_ONLY` | mesure globale et volume de la boule; rayon uniforme en centre | les rayons plus petits ne sont pas garantis; majorant PDE amont requis |
 | 3D `delta`-sparseness dans `B_r(x_0)` | 1D `delta^(1/3)`-sparseness sur une droite centrale au même rayon | dérivation exacte sharp, sources publiées `0065`–`0066`, passe adverse | formule polaire signée + réarrangement radial; boule centrale extrémale | aucun trou géométrique; direction dépendante de `x_0` |
-| borne uniforme de commutateur (22) + solution classique pré-singulière + `omega∈L∞_tL^(3/2,infinity)` | distribution de vorticité (40) à seuil uniforme | conditionnelle, chaîne énergétique confirmée après révision | `NS-DEGIORGI-ONE-LEVEL-TRANSFER`, cycle 0017 | (22) non reproduite; seuil exponentiel non absolu; logarithme et intervalle à normaliser |
+| `omega∈L∞_tL^(3/2,infinity)` + direction globale uniforme `bmo_phi` + raccord tensoriel | borne localisée de commutateur (22) | conditionnelle, dérivation exacte après corrections, `COMPUTATION_ONLY` | `NS-LOCALIZED-LOG-COMMUTATOR`, Jones/CRW/John–Nirenberg, cycle 0018 | l'hypothèse globale de direction n'est pas produite par NS; zéros et multicœurs non raccordés |
+| borne uniforme de commutateur (22) + solution classique pré-singulière + `omega∈L∞_tL^(3/2,infinity)` | distribution de vorticité (40) à seuil uniforme | conditionnelle, chaîne énergétique confirmée après révision | `NS-DEGIORGI-ONE-LEVEL-TRANSFER`, cycle 0017 | seuil exponentiel non absolu; logarithme et intervalle à normaliser |
 | faible-`L^(3/2)` de la vorticité seulement | tronqué `(omega-lambda)_+∈H¹` | réfutée | `NS-WEAK-L32-TRUNCATION-H1`, profil `|x|^-2` | la régularité classique pré-singulière doit justifier l'énergie |
 | estimation de stretching seulement sur `(T*−epsilon,T*)` | absorption sur tout `(0,T*)` | réfutée | `NS-DEGIORGI-ENTIRE-INTERVAL-ABSORPTION` | restreindre l'ODE à l'intervalle terminal suffit |
 | distribution de vorticité (40) + contrôle global faible + Biot–Savart/O'Neil normalisé | enveloppe de réarrangée de vitesse (47) | dérivation exacte après correction, `COMPUTATION_ONLY` | `NS-SRC-0059`, `0067`, `0068`, `ONEIL-TRANSFER-1` | exige seuil uniforme, queue globale et mode harmonique fixé ou borné |
@@ -110,19 +111,22 @@ laboratoire : ce statut vérifie la source, pas la preuve ligne à ligne.
 | `GAP-SIGN-FLUX` | positivité | flux d'énergie inter-échelles | contre-triades exactes |
 | `GAP-VORTICITY-TAIL` | non-localité/quantificateurs | direction locale vers strain total et stretching positif | `FAIL-NS-0016`; exiger une queue Biot–Savart annulaire explicite |
 | `GAP-DEGIORGI-UNIFORMITY` | constante/troncature | production de (40) depuis (22) par énergie tronquée | fermé conditionnellement au cycle 0017 : pas d'itération, coefficient `nu lambda/(2S_6²M)`, seuil fixe et Chebyshev suivis; la finitude des tronqués vient de la solution classique, pas du faible-`L^(3/2)` |
-| `GAP-COMMUTATOR-UNIFORMITY` | non-localité/constante | production de (22) depuis la cohérence `bmo_phi`, extension locale et queues dyadiques | premier maillon actif; le facteur `2` de (20)–(21) est réfuté par `8/3` mais réparable par `3`; toute la chaîne (8)–(22) reste à reproduire |
+| `GAP-COMMUTATOR-UNIFORMITY` | non-localité/constante | production de (22) depuis la cohérence `bmo_phi`, extension locale et queues dyadiques | fermé conditionnellement au cycle 0018 : semi-norme de Jones, interpolation CRW, réarrangée exacte, facteur trois et poids `4^-k`; l'hypothèse géométrique globale reste une prémisse |
+| `GAP-ENDGAME-SYNCHRONIZATION` | quantificateur/constante | passage de la queue de vitesse (49) au rayon de sparseness puis au critère analytique (58) | premier maillon actif : temps d'échappement, seuil de niveau, rayon analytique et deux branches harmoniques doivent être vrais simultanément avec constantes uniformes |
 | `GAP-LIMIT-ADMISSIBLE` | stabilité/admissibilité | profil singulier vers donnée de Schwartz | trois portes distinctes fermées : `FAIL-NS-0013` réfute la compacité `L³`, `0014` annule le mode impair sous lissage symétrique, `0015` réfute l'identification trace asymptotique/donnée finie; axe suspendu |
 | `GAP-NUM-CONTINUUM` | calcul vers continuum | discrétisation finie | résidu d'intervalle + queue analytique |
 
 ## Arêtes prioritaires
 
-1. `GAP-COMMUTATOR-UNIFORMITY` : auditer quantitativement `(8)->(22)`,
-   extension BMO, anneaux, dernier indice et dépendance du petit rayon; le
-   bloc aval `(22)->(49)` est désormais fermé conditionnellement.
-2. `GAP-VORTICITY-TAIL` : formuler la queue de strain annulaire sommable et
-   la confronter à un contre-profil multi-échelle divergence-free.
-3. `GAP-NUM-CONTINUUM` : isoler un opérateur compact à queues certifiables.
-4. Noyau Fourier–Leray formel : certifier les identités d'énergie finies avant
+1. `GAP-ENDGAME-SYNCHRONIZATION` : auditer quantitativement `(49)->(58)`,
+   avec un seul temps d'échappement, les rayons dans le bon ordre et toutes
+   les constantes analytiques uniformes.
+2. Extension depuis le cœur actif : relier une direction définie sur
+   `{omega>lambda}` à la prémisse globale `bmo_phi`, zéros et multicœurs inclus.
+3. `GAP-VORTICITY-TAIL` : confronter la queue de strain annulaire réparée à
+   un contre-profil multi-échelle divergence-free issu d'une dynamique.
+4. `GAP-NUM-CONTINUUM` : isoler un opérateur compact à queues certifiables.
+5. Noyau Fourier–Leray formel : certifier les identités d'énergie finies avant
    toute formalisation de scénario PDE.
 
 `GAP-COMPACT-Q` est suspendu sous énergie seule après trois stratégies

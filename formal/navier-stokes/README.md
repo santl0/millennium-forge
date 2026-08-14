@@ -536,3 +536,27 @@ Ces cibles certifieraient le chaînage fonctionnel conditionnel et deux
 contre-exemples. Elles ne certifieraient pas la chaîne Kato pour une solution
 faible, le théorème de commutateur (8)–(22) ou une conclusion Clay. La
 formalisation Fourier–Leray reste prioritaire.
+
+## Backlog issu du cycle 0018 — commutateur localisé logarithmique
+
+Le bloc stable est surtout scalaire et peut être formalisé sans encoder
+immédiatement Calderón–Zygmund :
+
+1. définir `phi_*(r)=1/[1+log(R_*/r)]` et prouver sa covariance quand `R` et
+   `R_*` sont dilatés ensemble;
+2. formaliser le contre-lemme dyadique au facteur deux et la borne uniforme
+   au facteur trois pour `log_2(R_*/R)>=6`;
+3. prouver exactement `sum_(k>=1)(k+1)4^-k=7/9`, puis la borne de la double
+   somme avec incréments positifs maximaux;
+4. définir la distribution de `h_a(y)=|y|^-3 1_(|y|>a)` et établir
+   `h_a^*(s)=1/(a³+s/|B_1|)`, ainsi que le contre-lemme à la formule `min`;
+5. séparer une semi-norme modulo constantes d'une norme BMO ancrée et encoder
+   l'identité algébrique `[T,b+c]=[T,b]` pour un opérateur linéaire abstrait;
+6. formaliser le ledger d'exposants `R^-2 R²=1` et
+   `(RR_*)^-1R²=R/R_*`.
+
+Ces cibles certifieraient les noyaux arithmétiques et les portes logiques du
+cycle. Elles ne formaliseraient ni les théorèmes de Jones, CRW ou
+John–Nirenberg, ni le noyau tensoriel de Biot–Savart, ni le fait qu'une
+direction de vorticité NS satisfasse `bmo_phi`. Le noyau Fourier–Leray reste
+la première cible formelle compilable; le présent bloc vient ensuite.

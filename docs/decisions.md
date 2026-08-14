@@ -23,3 +23,12 @@
 - Le calcul explore et falsifie ; il ne remplace pas une preuve universelle.
 - Lean est utilisé lorsque les fondations nécessaires existent.
 - Une preuve candidate générale requiert une expertise humaine indépendante en plus des contrôles automatisés.
+
+### 2026-08-14 — fermeture conditionnelle du commutateur localisé
+
+- `GAP-COMMUTATOR-UNIFORMITY` est fermé seulement sous les hypothèses globales
+  faible-`L^(3/2)` et `bmo_phi`, le raccord tensoriel et les théorèmes
+  classiques de Jones, CRW et John–Nirenberg.
+- Les corrections de semi-norme BMO, interpolation faible, réarrangée exacte
+  et dernier anneau sont enregistrées; aucun statut `PAPER_PROOF` n'est créé.
+- `GAP-ENDGAME-SYNCHRONIZATION` devient le verrou actif.

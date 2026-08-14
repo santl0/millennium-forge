@@ -6,10 +6,11 @@ des décisions reste dans les checkpoints.
 
 | Priorité | Question falsifiable | Pourquoi maintenant | Critère de sortie |
 |---:|---|---|---|
-| 1 | l'estimation locale du commutateur du théorème 4.1 contrôle-t-elle toutes les queues dyadiques avec une constante sommable, un rayon de référence et un seuil uniformes en temps ? | le cycle 0017 ferme `(23)->(40)` conditionnellement à (22), mais réfute le facteur `2` au bord de (20)–(21); le commutateur devient la première prémisse PDE non reproduite | preuve annulaire/BMO à constantes suivies de `(8)->(22)`, ou contre-profil multi-échelle compatible avec les hypothèses |
-| 2 | la définition du « critical point singularity » de la v2 se raccorde-t-elle sans contradiction à une solution classique bornée pour chaque `t<T*` et au confinement uniforme `A_lambda(t)⊂B_(C lambda^-1/2)` ? | faible-`L^(3/2)` seul ne rend pas l'énergie tronquée finie; le cycle 0017 doit invoquer séparément la régularité pré-singulière | formulation espace-temps quantifiée du profil avec seuils uniformes, ou contre-exemple logique à la coexistence des hypothèses |
-| 3 | un problème renormalisé NS peut-il être réduit à un opérateur compact avec bornes de queue certifiables ? | préalable à toute preuve assistée par ordinateur | rayon de contraction validable sous raffinement |
-| 4 | le noyau Fourier fini énergie–Leray peut-il être formalisé sans axiome ni `sorry` en Lean ? | petite brique stable, indépendante des scénarios spéculatifs | build épinglé + `#print axioms` vide hors logique standard |
+| 1 | les équations `(49)->(58)` peuvent-elles être synchronisées au même temps d'échappement avec rayon analytique, rayon de sparseness, seuil de superniveau et constantes uniformes dans le bon sens ? | les cycles 0014–0018 ferment conditionnellement chaque bloc amont; une constante dépendant du niveau ou un temps choisi après le rayon suffirait à casser l'endgame | système quantifié d'inégalités avec deux branches du critère harmonique, ou contre-modèle exact d'ordre des quantificateurs |
+| 2 | une hypothèse géométrique définie seulement sur le cœur `{omega>lambda}` s'étend-elle en une direction globale `bmo_phi` avec constante uniforme malgré les zéros et plusieurs cœurs ? | le cycle 0018 valide Jones seulement quand la semi-norme locale de la restriction est déjà contrôlée sur une boule entière | lemme d'extension depuis l'ensemble actif, ou paire de champs avec même cœur mais coûts d'extension divergents |
+| 3 | la définition du « critical point singularity » de la v2 se raccorde-t-elle sans contradiction à une solution classique bornée pour chaque `t<T*` et au confinement uniforme `A_lambda(t)⊂B_(C lambda^-1/2)` ? | faible-`L^(3/2)` seul ne rend pas l'énergie tronquée finie; le cycle 0017 doit invoquer séparément la régularité pré-singulière | formulation espace-temps quantifiée du profil avec seuils uniformes, ou contre-exemple logique à la coexistence des hypothèses |
+| 4 | un problème renormalisé NS peut-il être réduit à un opérateur compact avec bornes de queue certifiables ? | préalable à toute preuve assistée par ordinateur | rayon de contraction validable sous raffinement |
+| 5 | le noyau Fourier fini énergie–Leray peut-il être formalisé sans axiome ni `sorry` en Lean ? | petite brique stable, indépendante des scénarios spéculatifs | build épinglé + `#print axioms` vide hors logique standard |
 
 ## Questions suspendues
 
@@ -43,6 +44,16 @@ extraction Clay reste ouvert mais est suspendu après le troisième test du
 cycle 0009. La désingularisation Hou–Wang–Yang a ensuite été suspendue après
 trois tests supplémentaires; la priorité active est désormais la géométrie
 locale de la vorticité confrontée aux triades signées.
+
+## Question fermée conditionnellement au cycle 0018
+
+Sous une borne uniforme de vorticité faible-`L^(3/2)`, une semi-norme globale
+de direction `bmo_phi`, l'extension BMO de Jones et le raccord tensoriel de
+Biot–Savart, les quatre morceaux de `(8)->(22)` conservent le taux
+`1/[1+log(R_*/R)]` avec constante uniforme. Le poids `4^-k` est indispensable :
+la dérive brute des moyennes n'est pas petite. Le statut est
+`COMPUTATION_ONLY`; l'hypothèse géométrique globale et sa compatibilité avec
+les zéros de vorticité restent ouvertes.
 
 ## Résultat négatif du cycle 0010
 

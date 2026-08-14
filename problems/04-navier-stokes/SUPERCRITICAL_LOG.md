@@ -387,3 +387,31 @@ solution ou précise qu'il s'agit seulement d'un champ test.
 - Artefact : `DEGIORGI-UNIFORMITY-AUDIT-1`, douze contrôles exacts, aucun
   flottant, empreinte
   `cbdca92eec11a287c31bb67d48dfeda339768863b2ccfa58b6cd8f66e3682721`.
+
+## 2026-08-14 — Commutateur localisé et dérive des moyennes
+
+- Objet : estimation statique du stretching d'une solution classique de NS
+  incompressible 3D non forcé sur `R³`; aucune simulation PDE.
+- Entrées : `M=sup_t||omega||_(L^(3/2,infinity))`, semi-norme directionnelle
+  `B_xi/[1+log(R_*/r)]`, `|xi|<=1` et raccord Calderón–Zygmund.
+- Champ proche : l'extension de Jones doit contrôler une semi-norme modulo
+  constantes; CRW atteint faible-`L^(3/2)` par interpolation, non par
+  réflexivité.
+- Queue : `I1` et la partie intermédiaire portent `R^-2` ponctuellement et
+  récupèrent `R²` par restriction. La queue au-delà de `sqrt(RR_*)` vaut
+  `O(MR/R_*)`.
+- Multi-échelle : la dérive non pondérée des moyennes est au moins
+  `floor(T/2)+1` fois `phi(R)` et peut donc être macroscopique. Le facteur de
+  noyau `4^-k` est le gain structurel exact;
+  `sum_(k>=1)(k+1)4^-k=7/9`.
+- Défauts : la constante deux au dernier anneau, la formule `min` exacte de la
+  réarrangée et la réflexivité du Lorentz faible sont réfutées. Facteur trois,
+  réarrangée `1/(a³+s/|B_1|)` et interpolation réelle réparent la chaîne.
+- Échelle : `M` et la norme de sortie sont critiques; `R/R_*` et le logarithme
+  sont invariants. Aucune puissance d'échelle n'est perdue.
+- Perte restante : rien ne produit la prémisse globale `bmo_phi` depuis
+  l'énergie ou les données Clay; l'extension depuis un cœur actif et les zéros
+  de vorticité restent ouvertes.
+- Artefact : `COMMUTATOR-UNIFORMITY-AUDIT-1`, huit contrôles exacts, zéro
+  échec, empreinte
+  `387898492a0dc370d6ca50aadbc18e7e524ebdc0d7326fe2347952cbce57ebbf`.

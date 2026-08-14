@@ -661,3 +661,43 @@ commutateur uniforme (22) + régularité classique + borne critique uniforme
 
 Le verrou actif remonte à `GAP-COMMUTATOR-UNIFORMITY`, c'est-à-dire à la
 preuve complète et quantitative de (8)–(22), et non à Poincaré ou Grönwall.
+
+## Cycle 0018 : commutateur localisé
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| auditer `(8) -> (22)`, extension BMO et queues | 5 | 4 | 5 | 5 | **19** |
+| synchroniser l'endgame `(49) -> (58)` | 4 | 3 | 5 | 5 | 17 |
+| tester l'admissibilité PDE d'un profil multi-échelle | 4 | 3 | 4 | 5 | 16 |
+
+Sous une borne uniforme `M` de la vorticité en faible-`L^(3/2)`, une
+semi-norme directionnelle pondérée `B_xi/[1+log(R_*/r)]` et le raccord
+tensoriel de Biot–Savart, la chaîne réparée donne
+
+```text
+||alpha||_(L^(3/2,infinity)(B_R(z)))
+ <=C M(B_xi+1)/[1+log(R_*/R)],
+0<R<=R_*/64.
+```
+
+Le champ proche utilise Jones, CRW et interpolation réelle; `I1` compense
+`R^-2` par `R²`; la queue au-delà de `sqrt(RR_*)` vaut `O(MR/R_*)`; et la
+queue intermédiaire est sauvée par `4^-k`. La dérive non pondérée des moyennes
+croît comme le nombre d'échelles et interdit toute preuve qui la remplacerait
+par `O(phi(R))` uniforme.
+
+Arête confirmée après correction, `COMPUTATION_ONLY` :
+
+```text
+borne globale faible-L^(3/2) + direction globale bmo_phi
+  -> commutateur localisé logarithmique (22)
+  -> énergie tronquée uniforme (cycle 0017)
+  -> queue de vorticité (40).
+```
+
+Trois réparations sont indispensables : semi-norme BMO modulo constantes,
+interpolation sans réflexivité du Lorentz faible et facteur trois au dernier
+anneau. La formule `min` pour la réarrangée du noyau est aussi remplacée par
+sa valeur exacte. `GAP-COMMUTATOR-UNIFORMITY` est fermé conditionnellement;
+`GAP-ENDGAME-SYNCHRONIZATION` devient actif sur les temps, rayons et constantes
+de `(49)->(58)`.

@@ -2,7 +2,7 @@
 
 Les expériences de ce répertoire sont des tests analytiques finis. Elles ne
 simulent pas une solution Navier–Stokes et ne constituent ni une preuve de
-régularité ni un blow-up. Les dix-huit expériences utilisent la graine « sans
+régularité ni un blow-up. Les vingt expériences utilisent la graine « sans
 objet » et écrivent
 leur rapport JSON sur la sortie standard.
 
@@ -16,6 +16,8 @@ leur rapport JSON sur la sortie standard.
 | `SPARSENESS-RESTRICTION-1` | une densité volumique `delta` impose-t-elle une tranche linéaire `delta^(1/3)` au même point et rayon ? | preuve polaire + fractions exactes, profils radiaux et colonnes angulaires | `python -B experiments/navier-stokes/sparseness-restriction/sparseness_restriction_audit.py` | zéro pour toutes les identités algébriques |
 | `REARRANGEMENT-INVERSION-1` | une enveloppe `v^-1/3 log^-1` de la réarrangée impose-t-elle une queue `lambda^-3 log^-3` malgré les plateaux ? | pseudo-inverses sur fonctions simples, fractions exactes et encadrements rationnels de logarithmes | `python -B experiments/navier-stokes/rearrangement-inversion/rearrangement_inversion_audit.py` | zéro pour toutes les identités et aucun flottant |
 | `ONEIL-TRANSFER-1` | la queue logarithmique de vorticité se transfère-t-elle à la vitesse avec seuils, queue macroscopique et jauge harmonique suivis ? | fractions exactes, supersolutions analytiques et contre-profils en escalier; aucune grille | `python -B experiments/navier-stokes/oneil-transfer/oneil_transfer_audit.py` | zéro arrondi; marge rationnelle minimale huit |
+| `DEGIORGI-UNIFORMITY-AUDIT-1` | la chaîne à un niveau `(23)->(40)` conserve-t-elle seuil, amortissement et logarithme uniformes sous (22) ? | fractions exactes et ledger symbolique; aucune grille | `python -B experiments/navier-stokes/degiorgi-uniformity/degiorgi_uniformity_audit.py` | douze contrôles; zéro échec |
+| `COMMUTATOR-UNIFORMITY-AUDIT-1` | la dérive multi-échelle des moyennes détruit-elle le taux logarithmique de `(8)->(22)` ? | fractions exactes, sommes dyadiques et ledger de scaling; aucune grille | `python -B experiments/navier-stokes/commutator-uniformity/commutator_uniformity_audit.py` | huit contrôles; zéro échec |
 | `DESINGULARIZATION-GATE-1` | les normes d'une troncature de `r^-1` restent-elles uniformes quand `epsilon -> 0` ? | intégrales radiales exactes; logarithme symbolique | `python -B experiments/navier-stokes/desingularization-gate/desingularization_gate.py` | zéro pour les identités rationnelles |
 | `HWY-INNER-CUTOFF-GATE-1` | une régularisation intérieure divergence-free petite en `L²` et bornée en `L^{3,infinity}` est-elle compacte dans `L³` ? | matrices et intégrales exactes; transcendantes symboliques | `python -B experiments/navier-stokes/hwy-inner-cutoff/inner_cutoff_audit.py` | zéro pour les identités rationnelles et l'arrondi |
 | `HWY-PARITY-PROJECTION-GATE-1` | un lissage intérieur respectant la réflexion HWY peut-il exciter le mode certifié impair ? | projecteurs de parité et exposants rationnels exacts; aucune grille | `python -B experiments/navier-stokes/hwy-parity-projection/parity_projection_audit.py` | zéro pour dix obligations; aucun arrondi |
@@ -275,7 +277,7 @@ réseau ni ne produit d'artefact lourd.
 
 ## Passage au continuum
 
-Aucune des dix-huit expériences ne part d'une discrétisation PDE : il n'y a donc
+Aucune des vingt expériences ne part d'une discrétisation PDE : il n'y a donc
 pas de passage grille-vers-continuum. Le raccord analytique restant est
 explicite dans chaque cas. Tout futur solveur doit ajouter divergence mesurée,
 convergence multi-résolution, second schéma, bornes de troncature, contrôle des
@@ -1043,3 +1045,38 @@ cellule reste donc `NOT_PROVIDED`.
   fort maximal et n'exclut aucune non-unicité faible après breakdown.
 - Empreinte du script :
   `f78d90967e7546b5f4c04658f9537b70f3e7df8f7530e4b592734fbb6fb86375`.
+
+## `COMMUTATOR-UNIFORMITY-AUDIT-1` — enveloppe annulaire exacte
+
+- Question falsifiable : sous les seules enveloppes faible-`L^(3/2)` et
+  `bmo_phi`, la dérive maximale des moyennes peut-elle faire dépasser à la
+  queue intermédiaire l'ordre `phi(R)` revendiqué en (21) ?
+- Équation : application conditionnelle à NS incompressible 3D non forcé sur
+  `R³`, `nu>0`, solution classique avant `T*`; le script ne simule aucune PDE.
+- Discrétisation : aucune grille spatiale ou temporelle. Sommes dyadiques et
+  ledgers d'exposants en `fractions.Fraction`; balayages `T=6,...,512`
+  accompagnés de bornes analytiques toutes échelles.
+- Données adverses : incréments de moyennes tous positifs et au plafond
+  `phi(2^jR)`; amplitude critique annulaire implicite `r_j^-2`; aucune graine.
+- Résultats : facteur deux réfuté par `8/3`; facteur trois uniforme; budget
+  géométrique `7/9`; maximum exact de la double somme `697/640`, marge
+  `2389/1920` sous `7/3`; dérive sans `4^-k` non uniformément petite.
+- Contrôles auxiliaires : interpolation `p_0=4/3`, `p_1=2`, `theta=1/3`;
+  échec exact de l'extension naïve par zéro; invariance du ledger de scaling;
+  queue macroscopique `R/R_*`.
+- Résidus : huit contrôles passent, `assertion_failure_count=0`; aucun
+  flottant, résidu d'égalité rationnelle nul dans les portes déclarées.
+- Sensibilité : le pire balayé se trouve à `T=6`; la preuve analytique
+  `phi(2^jR)<=3phi(R)` et la série géométrique couvrent tout `T>=6`.
+- Commande :
+
+  ```text
+  python -B experiments/navier-stokes/commutator-uniformity/commutator_uniformity_audit.py
+  ```
+
+- Environnement : Python standard library; graine sans objet; aucun artefact
+  binaire. Empreinte du script :
+  `387898492a0dc370d6ca50aadbc18e7e524ebdc0d7326fe2347952cbce57ebbf`.
+- Limite : le calcul ne certifie ni Jones, ni CRW, ni John–Nirenberg, ni le
+  raccord tensoriel de Biot–Savart, ni l'existence d'une solution portant les
+  hypothèses, ni une conclusion Clay.
