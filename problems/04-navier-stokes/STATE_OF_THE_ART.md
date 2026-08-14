@@ -186,15 +186,21 @@ critiques doivent faire l'objet d'une revue indépendante avant tout emploi.
 | Buckmaster–Vicol 2019 | NS 3D, solutions faibles de faible régularité | non-unicité faible; pas un blow-up classique ni une non-unicité Leray–Hopf standard |
 | Albritton–Brué–Colombo 2022 | NS 3D forcé, deux solutions de Leray, donnée initiale nulle | non-unicité dans un cadre forcé borderline; ne réfute pas (A) ou (B) |
 | Hou–Wang–Yang, `arXiv:2509.25116v2` | NS 3D non forcé sur `R^3`, solutions adaptées de Leray–Hopf | la prépublication revendique une infinité de solutions issues d'une même donnée compacte, lisse hors de `0`, dans tout `L^q`, `q<3`, mais singulière à `0`; cette donnée n'est pas admissible par Clay |
+| Ionescu–Jia–Palasek, `arXiv:2606.07501v1` | NS 3D non forcé sur `R^3`, profils forward axisymétriques sans swirl | calcul non certifié de profils instables à résidu annoncé `10^-10` et théorème conditionnel vers non-unicité dans `H^alpha∩L^{3,infinity}`, `alpha<1/2`; le profil exact et son mode restent des hypothèses, la donnée reste singulière |
 | Cheskidov–Hou, `arXiv:2603.03666v2` | NS standard sur `T^d`, solutions mild singulières dans des Besov d'indice négatif | non-unicité pour données distributionnelles avec `u tensor u` renormalisé et sans `L²_loc` général; le mot « mild » ne raccorde pas cette classe à KNSS ni aux solutions classiques Clay |
 
 Le résultat Hou–Wang–Yang est accompagné d'un calcul par intervalles pour un
 profil auto-similaire et un mode instable. Le code public annonce Julia 1.11 et
-environ 800 Go de mémoire; le dépôt consulté ne fournit pas de manifeste Julia
-effectivement épinglé. Le calcul n'a pas été reproduit localement. Même si la
-preuve prépubliée est correcte, l'implication vers Clay s'arrête à la donnée
-initiale singulière. Régulariser cette donnée déclenche l'unicité faible–forte
-sur l'intervalle classique et détruit l'invariance auto-similaire exacte.
+environ 800 Go de mémoire; au commit `615ee6f`, il ne fournit ni release ni
+`Manifest.toml` effectivement épinglé et dépend de candidats `.mat`
+pré-calculés. Le calcul n'a pas été reproduit localement. La localisation de la
+preuve coupe uniquement la queue à grand rayon : pour `p=4`, le point fixe
+gagne `R^-1/8`, mais la donnée compacte conserve `1/|x|` à l'origine. Même si
+la preuve prépubliée est correcte, l'implication vers Clay s'arrête à cette
+donnée singulière. Régulariser le coeur déclenche l'unicité faible–forte sur
+l'intervalle classique et détruit l'invariance auto-similaire exacte. Le cycle
+0010 montre en outre que convergence `L²` et borne `L^{3,infinity}` ne donnent
+pas la compacité `L³` requise par un raccord perturbatif naïf.
 
 ## Calculs, IA et preuve assistée par ordinateur
 

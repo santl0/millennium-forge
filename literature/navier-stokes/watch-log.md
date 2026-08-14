@@ -152,3 +152,33 @@ d'absence; elle documente seulement le delta effectivement contrôlé.
 - Décision : ne promouvoir aucune annonce récente; suspendre l'axe hybride
   ESS–KNSS après trois stratégies et pivoter vers la désingularisation des
   données homogènes `-1` de Hou–Wang–Yang.
+
+## 2026-08-14 — Cycle 0010
+
+- Fenêtre recherchée : statut éditorial et versions de
+  `arXiv:2509.25116`, dépôt CAP primaire, travaux postérieurs sur les profils
+  forward et la non-unicité jusqu'à `2608.*`.
+- Source courante : Hou–Wang–Yang reste en `v2` du 2026-03-19; aucune `v3`,
+  publication évaluée ou DOI éditorial n'a été repéré. La date interne
+  d'août 2026 visible dans le HTML n'est pas une version arXiv supplémentaire.
+- Delta logique : la section 2.2 a été relue exactement. Son cutoff est
+  extérieur, `w=0` dans `B_R`, avec constantes indépendantes de `R,tau` dans
+  (2.10) et gain `R^-1/8` dans la contraction pour `p=4`. Il conserve la
+  singularité `1/r`; aucun rayon intérieur ni théorème de stabilité sous
+  lissage n'apparaît.
+- Delta reproductibilité : dépôt public au commit
+  `615ee6f3eca3abad7b5814fe9334bcd80bea0328`, aucun tag/release/CI,
+  `Manifest.toml` absent malgré un README contradictoire, Julia `>=1.11`,
+  au moins 800 Go RAM et données `.mat` amont pré-calculées. La CAP reste non
+  reproduite.
+- Sources postérieures contrôlées : Ionescu–Jia–Palasek
+  `arXiv:2606.07501v1` fournit une autre évidence numérique et un théorème
+  conditionnel, sans CAP ni lissage du coeur; Binz–Coiculescu
+  `arXiv:2607.12159v1` contraint une autre limite homothétique et ne réfute pas
+  HWY.
+- Résultat différentiel : aucun maillon primaire ne transmet la multiplicité à
+  une même donnée Clay lisse. Le test local réfute en plus le module statique
+  `L² + borne L^{3,infinity} -> compacité L³`.
+- Décision : poursuivre sur un shadowing dynamique de la couche
+  `t~epsilon²` et sa projection instable; ne pas lancer la CAP de 800 Go avant
+  extraction d'un sous-certificat léger et épinglé.

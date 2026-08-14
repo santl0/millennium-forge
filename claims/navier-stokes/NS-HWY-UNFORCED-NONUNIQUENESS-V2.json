@@ -8,6 +8,7 @@
     "domaine R^3",
     "donnée initiale compacte mais singulière à l'origine",
     "version arXiv v2 du 19 mars 2026",
+    "la localisation est une troncature extérieure qui laisse intact le coeur homogène de degré -1",
     "SOURCE_VERIFIED qualifie la lecture de la source, pas l'acceptation de la preuve"
   ],
   "dependencies": [
@@ -20,7 +21,7 @@
     },
     {
       "kind": "computation",
-      "reference": "Code des auteurs annoncé pour la preuve assistée, non reproduit localement: https://github.com/HouGroup2026/3d-navier-stokes-nonuniqueness"
+      "reference": "Code des auteurs au commit 615ee6f3eca3abad7b5814fe9334bcd80bea0328, non reproduit localement (Julia >=1.11, au moins 800 Go RAM annoncés, aucun Manifest.toml): https://github.com/HouGroup2026/3d-navier-stokes-nonuniqueness"
     }
   ],
   "provenance": {
@@ -33,6 +34,6 @@
   "review": {
     "status": "adversarial_pass",
     "reviewer": "OpenAI Codex, seconde lecture non indépendante",
-    "notes": "Théorème 1 et avertissement des auteurs sur donnée singulière versus blow-up rétrograde lus dans v2; CAP non reproduit, environ 800 Go annoncés."
+    "notes": "Théorème 1, avertissement forward/backward et localisation (2.7)-(2.20) relus dans v2. Le cutoff enlève la queue lointaine avec un gain R^-1/8 pour p=4, mais u_loc garde 1/|x| à l'origine. CAP non reproduite; le dépôt exige au moins 800 Go et n'épingle pas ses dépendances par Manifest.toml."
   }
 }
