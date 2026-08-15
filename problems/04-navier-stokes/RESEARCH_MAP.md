@@ -1915,3 +1915,44 @@ ancienne standard suitable locale + Riesz + Linfinity_t L^(3,infinity)_x
 Les pertes de signe, jacobien, pression et énergie locale sont fermées. La
 première perte restante n'est plus une puissance d'échelle : c'est la
 structure globale de Cauchy à l'endpoint faible-Lorentz, puis la rigidité.
+
+## Cycle 0048 — Duhamel faible-étoile et porte d'énergie relative
+
+```text
+NS-TYPE-I-DERENORMALIZED-ANCIENT-LOCAL-SUITABLE
+  + Linfinity_t L^(3,infinity)_x
+  + pression globale Riesz / projection de Leray
+  --> C_w* L^(3,infinity)
+      [équation testée + densité du prédual L^(3/2,1)]
+  --> Duhamel dans L^(3,infinity), intégrale de Gelfand
+      [Yamazaki NS-SRC-0118; Taniuchi NS-SRC-0190, lemme 7]
+
+stress v tensor v in Linfinity_t L^(3/2,infinity)_x
+  + noyau Oseen K_h in L^(k,1), 1/k=1/3+1/p
+  --> B(v,v) in C_tL^p_x, 3/2<p<3
+  --> w=v-S(t-t_0)v(t_0) in C_tL2_x
+  --> ||w(t)||_2<=CM²(t-t_0)^(1/4)
+      [NS-WEAK-L3-DUHAMEL-L2-CORRECTOR]
+
+estimation ponctuelle endpoint h^-1
+  -/-> intégrale de Bochner / petite constante temporelle
+      [FAIL-NS-0084, résidu logarithmique]
+
+C_w* L^(3,infinity) + Duhamel Gelfand
+  -/-> C_tL^(3,infinity) en norme
+  -/-> mildness Taniuchi/Yamazaki
+  -/-> mildness bornée KNSS
+
+w in C_tL2
+  -/-> w in L2_tHdot1_x
+      [nabla K_h: h^-5/4]
+  -/-> inégalité d'énergie perturbée globale BSS
+  -?-> GAP-TYPE-I-RELATIVE-ENERGY-GLOBALIZATION
+  -?-> rigidité ancienne
+  -?-> problème Clay.
+```
+
+La continuité faible-étoile et l'identité endpoint sont désormais des arêtes
+fermées conditionnellement au pipeline Type I. Les pertes restantes sont la
+continuité critique forte ou, sur la branche BSS sélectionnée, la dissipation
+globale, les flux de cutoff et la pression à l'infini.

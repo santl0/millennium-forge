@@ -2,7 +2,7 @@
 
 Les expériences de ce répertoire sont des tests analytiques finis. Elles ne
 simulent pas une solution Navier–Stokes et ne constituent ni une preuve de
-régularité ni un blow-up. Les vingt et une expériences utilisent la graine « sans
+régularité ni un blow-up. Les vingt-deux expériences indexées utilisent la graine « sans
 objet » et écrivent
 leur rapport JSON sur la sortie standard.
 
@@ -31,6 +31,7 @@ leur rapport JSON sur la sortie standard.
 | `BLOWUP-INHERITANCE-AUDIT-1` | une seule chaîne ESS/GKP/KNSS/Seregin transmet-elle toutes les hypothèses du Liouville hybride « ancienne + mild + vitesse bornée + trace locale nulle » ? | matrice sourcée et inclusion finie exacte | `python -B experiments/navier-stokes/blowup-inheritance-audit/inheritance_audit.py` | zéro échec d'assertion |
 | `ANCIENT-ZERO-TRACE-RIGIDITY-AUDIT-1` | les hypothèses exactes « ancienne mild bornée + vraie trace `D'` nulle » franchissent-elles toutes les portes de rigidité, et les contre-profils usuels en violent-ils une explicitement ? | graphe d'obligations, ensembles finis et fractions rationnelles | `python -B experiments/navier-stokes/ancient-zero-trace-rigidity/rigidity_audit.py` | zéro échec d'assertion |
 | `MAXIMUM-ZOOM-TRACE-COMMUTATOR-1` | les limites du zoom KNSS commutent-elles au temps-record `s=0`, et que reste-t-il à contrôler au temps physique `T` ? | graphe d'obligations, exposants et résidus rationnels exacts; `pi` symbolique | `python -B experiments/navier-stokes/maximum-zoom-trace/commutator_audit.py` | zéro échec d'assertion |
+| `WEAK-L3-MILDNESS-AUDIT-1` | le Duhamel faible-L3 donne-t-il un gain sous-critique, une borne endpoint directe, une énergie globale ou un split radial uniforme ? | fractions rationnelles, exposants symboliques et coefficients exacts de `pi`; aucune grille | `python -B experiments/navier-stokes/weak-l3-mildness/weak_l3_mildness_audit.py` | 144 assertions exactes, résidu rationnel nul |
 
 Environnement reproduit au checkpoint initial : Windows, Python 3.13.14,
 bibliothèque standard uniquement. Les trois audits structurés lisent leur JSON
@@ -2091,3 +2092,32 @@ cellule reste donc `NOT_PROVIDED`.
   `dcb59c2a926846be15d2f088ffbd4484b8b2838ce24c6a2e721d5f1404872050`.
 - Limites : certificat algébrique, pas simulation, CAP continuum, preuve de
   mildness, rigidité ancienne ou résultat Clay.
+
+## `WEAK-L3-MILDNESS-AUDIT-1` — endpoint, gain `L2` et queue critique
+
+- Question falsifiable : l'estimation directe du stress
+  `L^(3/2,infinity)` ferme-t-elle l'endpoint `L^(3,infinity)` et la
+  dissipation, ou seulement un correcteur sous-critique ?
+- Équations réellement calculées : exposants du noyau
+  `S(h)Pdiv`, intégrales temporelles, fonctions de distribution de profils
+  critiques; aucune intégration de Navier–Stokes.
+- Gain : pour `3/2<p<3`, puissance temporelle exacte
+  `(3-p)/(2p)`; à `p=2`, gain `h^(1/4)` compatible avec le correcteur
+  `C_tL2`.
+- Endpoint adverse : à `p=3`, chaque coquille logarithmique contribue une
+  unité. Le script certifie l'échec de l'intégration directe de la norme,
+  sans réfuter l'estimation duale séparée de Meyer--Yamazaki.
+- Profil solénoïdal : `U=(-x_2,x_1,0)/|x|²`, avec
+  `K_3(U)^3=pi²/4` et énergie `L2(B_R)^2=(8pi/3)R`; la queue radiale conserve
+  exactement sa taille critique.
+- Discrétisation et précision : aucune; bibliothèque standard,
+  `fractions.Fraction`, facteurs `pi` et `pi²` symboliques, graine sans objet,
+  aucune sortie lourde.
+- Commande :
+  `python -B experiments/navier-stokes/weak-l3-mildness/weak_l3_mildness_audit.py`.
+- Résidu certifié : 144 assertions exactes, zéro échec, résidu rationnel nul;
+  résidu endpoint normalisé `N` sur `N` coquilles. Empreinte :
+  `c5fcfef5a5cb3202cbc55bc7656c03651e281679badb4561ae34eabd7414a902`.
+- Limites : le profil n'est pas une solution de Navier–Stokes et le script
+  ne prouve ni l'estimation de Yamazaki, ni dissipation, ni rigidité, ni
+  résultat Clay.

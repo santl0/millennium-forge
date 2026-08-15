@@ -1761,3 +1761,39 @@ claim éventuellement supersédé.
   l'éventuelle promotion PDE vers une classe mild/scindée.
 - Statut : promotion automatique `REFUTED`; le raccord PDE reste
   `GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY-OR-MILDNESS`.
+- Révision cycle 0048 : la pression globale et l'équation ferment bien un
+  Duhamel **faible-étoile** de Gelfand ainsi qu'un correcteur `C_tL2`. La
+  partie « formule de Duhamel absente » est donc supersédée; l'échec reste
+  valide pour Leray–Hopf, la continuité mild forte, la dissipation BSS et la
+  bornitude KNSS.
+
+## `FAIL-NS-0084` — Duhamel faible-étoile pris pour mildness forte ou énergie globale
+
+- Date : 2026-08-15.
+- Cible : déduire de `v in C_w*L^(3,infinity)` et du Duhamel endpoint une
+  intégrale de Bochner, une petite constante de court temps, une trajectoire
+  `C_tL^(3,infinity)` en norme ou un correcteur BSS dissipatif.
+- Premier quantificateur inversé : Yamazaki intègre le pairing après fixation
+  du test `phi in L^(3/2,1)`. Intégrer le supremum sur tous les tests rétablit
+  la norme d'opérateur `h^-1` et une divergence logarithmique; chaque
+  coquille dyadique temporelle coûte exactement une unité normalisée.
+- Perte de dérivée : le gain sous-critique donne
+  `||w(h)||_2<=CM²h^(1/4)`, mais le noyau différencié coûte `h^-5/4`. Cette
+  estimation ne fournit pas `nabla w in L2_(t,x)`.
+- Contre-profil énergétique exact :
+  `U=(-x_2,x_1,0)/|x|²` est solénoïdal,
+  `K_3(U)^3=pi²/4` et `||U||_(L2(B_R))²=(8pi/3)R`. Toute queue radiale garde
+  sa taille faible-`L3`; un coeur `L2` uniformément contrôlé ne s'accompagne
+  pas d'une queue arbitrairement petite.
+- Contre-profil de passage quadratique : des oscillations solénoïdales
+  compactes peuvent tendre faible-étoile vers zéro tandis que leur carré a
+  une limite distributionnelle non nulle. La stabilité BSS exige donc sa
+  compacité forte locale propre.
+- Certificat : 144 assertions exactes, résidu rationnel nul, résidu endpoint
+  normalisé `N` après `N` coquilles; aucune discrétisation PDE.
+- Portée : ces témoins sont fonctionnels, pas des solutions anciennes de
+  Navier–Stokes. Ils réfutent les raccourcis de mapping et de topologie, pas
+  une globalisation énergétique qui utiliserait réellement l'équation et la
+  suitability locale.
+- Statut : raccourcis `REFUTED`; pivot vers
+  `GAP-TYPE-I-RELATIVE-ENERGY-GLOBALIZATION`.

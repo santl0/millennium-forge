@@ -422,3 +422,16 @@ zéro. `NS-SRC-0189` documente que les rigidités Albritton–Barker exigent des
 classes plus fortes. Le corpus atteint 189 sources et le registre 85 claims.
 Le verrou actif est
 `GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY-OR-MILDNESS`.
+
+Le cycle 0048 ferme la trace faible-étoile et la formule de Duhamel endpoint.
+L'estimation intégrée de Meyer--Yamazaki, contrôlée dans Taniuchi 2024,
+construit le terme bilinéaire comme intégrale de Gelfand dans
+`L^(3,infinity)`; elle ne donne ni intégrale de Bochner ni continuité forte.
+Le noyau d'Oseen fournit en plus un correcteur canonique dans `C_tL2_x`, de
+taille `O((t-t_0)^(1/4))` au redémarrage.
+
+La dissipation `L2_tHdot1_x` et l'inégalité d'énergie globale BSS restent
+absentes. `FAIL-NS-0084` bloque le passage par le logarithme endpoint, le
+split énergétique naïf et l'inversion des quantificateurs. Le corpus compte
+191 sources et le registre 86 claims. Le verrou actif est
+`GAP-TYPE-I-RELATIVE-ENERGY-GLOBALIZATION`.

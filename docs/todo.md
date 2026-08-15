@@ -271,3 +271,23 @@
 - [ ] Identifier ou réfuter une condition de trace faible-étoile annulant le
   reste calorique homogène à l'endpoint `L^(3,infinity)`.
 - [ ] Garder séparées rigidité faible-`L3`, singularité terminale et Type II.
+
+### Cycle 0048
+
+- [x] Construire le représentant `C_w*L^(3,infinity)` sur toute bande finie.
+- [x] Justifier Duhamel dans `L^(3,infinity)` comme intégrale faible-étoile
+  de Gelfand via Meyer--Yamazaki.
+- [x] Dériver le gain fort `L^p`, `3/2<p<3`, et le correcteur
+  `C_tL2` avec taux `h^(1/4)`.
+- [x] Distinguer la définition mild forte de Taniuchi, la classe énergétique
+  BSS et la classe mild bornée KNSS.
+- [x] Certifier 144 assertions exactes et le contre-profil solénoïdal à
+  queue faible-`L3` persistante.
+- [x] Enregistrer `FAIL-NS-0084` et raffiner le graphe vers la globalisation
+  d'énergie relative.
+- [ ] Appliquer l'inégalité locale au correcteur avec des cutoffs `chi_R` et
+  suivre séparément convection, pression et flot calorique.
+- [ ] Prouver que tous les flux de couronne tendent uniformément vers zéro,
+  ou construire un contre-profil PDE-compatible d'influx à l'infini.
+- [ ] Ne promouvoir vers BSS qu'après obtention indépendante de
+  `w in L2_tHdot1_x` et de l'inégalité d'énergie perturbée globale.

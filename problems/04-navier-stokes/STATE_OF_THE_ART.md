@@ -1437,3 +1437,46 @@ Le claim `NS-TYPE-I-DERENORMALIZED-ANCIENT-LOCAL-SUITABLE` reste
 `COMPUTATION_ONLY`. `GAP-TYPE-I-DERENORMALIZATION-CLASS` est fermé au statut
 interne; le verrou devient
 `GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY-OR-MILDNESS`.
+
+## Mise à jour 2026-08-15 — cycle 0048, Duhamel endpoint faible-étoile
+
+Sur toute bande finie `[t_0,t_1]`, la solution ancienne standard du cycle
+0047, supposée distributionnelle, solénoïdale, à pression globale de Riesz et
+uniformément bornée dans `L^(3,infinity)`, possède un représentant
+`C_w*([t_0,t_1];L^(3,infinity))`. La projection globale de l'équation fournit
+la formule de Duhamel pour tout `s<t`.
+
+La divergence logarithmique de l'estimation ponctuelle
+`||S(h)P div||_(L^(3/2,infinity)->L^(3,infinity))~h^-1` ne détruit pas ce
+raccord. Le lemme intégré de Yamazaki (`NS-SRC-0118`), réénoncé explicitement
+par Taniuchi, définition 1 et lemme 7 (`NS-SRC-0190`), construit le terme
+quadratique comme intégrale faible-étoile de Gelfand dans
+`L^(3,infinity)`, avec borne `C M^2` indépendante de la longueur temporelle.
+Cette borne n'est ni une intégrale de Bochner, ni une petitesse de court
+temps, ni une continuité forte dans l'espace critique.
+
+Dans les espaces sous-critiques, le noyau d'Oseen donne pour
+`3/2<p<3`
+
+```text
+||B(v,v)(t)||_p <= C_p M^2 (t-t_0)^((3-p)/(2p)).
+```
+
+En particulier le correcteur calorique canonique appartient à `C_tL2_x`,
+a une trace forte nulle et vérifie `||w(t)||_2<=CM^2(t-t_0)^(1/4)`. Il manque
+encore `w in L2_tHdot1_x` et l'inégalité d'énergie perturbée globale de
+Barker–Seregin–Šverák (`NS-SRC-0188`). La définition mild publiée de
+Taniuchi exige par ailleurs `C_tL^(3,infinity)` en norme; les classes mild
+bornées de KNSS et Albritton–Barker exigent davantage la bornitude spatiale.
+
+Le témoin solénoïdal homogène
+`U=(-x_2,x_1,0)/|x|^2` a exactement
+`K_3(U)^3=pi^2/4` et une énergie `L2(B_R)^2=(8pi/3)R`; sa queue radiale ne
+devient pas petite en faible-`L3`. Il réfute un split énergétique naïf, sans
+être une solution Navier–Stokes. La prépublication récente de Jarrín
+(`NS-SRC-0191`) requiert donnée `L2`, trace forte et contrôle Morrey
+sous-critique; elle ne ferme pas le raccord ancien endpoint.
+
+Le corpus atteint 191 sources et le registre 86 claims. Le claim
+`NS-WEAK-L3-DUHAMEL-L2-CORRECTOR` reste `COMPUTATION_ONLY`. Le verrou actif
+est raffiné en `GAP-TYPE-I-RELATIVE-ENERGY-GLOBALIZATION`.

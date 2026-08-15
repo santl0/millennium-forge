@@ -999,3 +999,44 @@ NS-TYPE-I-DERENORMALIZED-ANCIENT-LOCAL-SUITABLE
 
 `NS-SRC-0189` ferme seulement la documentation de la cible mild bornée et
 de son Liouville `L3` fort; ses hypothèses ne sont pas héritées.
+
+## Cycle 0048 — arête Duhamel endpoint et correcteur énergétique instantané
+
+```text
+NS-TYPE-I-DERENORMALIZED-ANCIENT-LOCAL-SUITABLE
+  + Linfinity_tL^(3,infinity)_x
+  + équation projetée globale
+  --> C_w*L^(3,infinity)
+      [interne: équation scalaire + densité du prédual]
+
+Yamazaki NS-SRC-0118
+  + Taniuchi NS-SRC-0190, définition 1 et lemme 7
+  --> bilinéaire endpoint borné test par test
+  --> Duhamel Gelfand dans L^(3,infinity) pour tout s<t
+      [classique sourcée + application interne]
+
+noyau Oseen + O'Neil Lorentz
+  --> B(v,v) in C_tL^p, 3/2<p<3
+  --> w in C_tL2, ||w(t)||_2<=CM²(t-t_0)^(1/4)
+  --> NS-WEAK-L3-DUHAMEL-L2-CORRECTOR
+      [COMPUTATION_ONLY]
+
+Duhamel Gelfand + C_w*L^(3,infinity)
+  -/-> C_tL^(3,infinity) en norme
+      [Taniuchi mild exige cette clause]
+  -/-> intégrale de Bochner / petite constante temporelle
+      [FAIL-NS-0084: h^-1 logarithmique]
+
+w in C_tL2
+  -/-> w in L2_tHdot1
+      [nabla K_h~h^-5/4; contre-profils de mapping]
+  -/-> inégalité d'énergie globale perturbée BSS
+  -?-> GAP-TYPE-I-RELATIVE-ENERGY-GLOBALIZATION
+  -?-> classe BSS
+  -?-> rigidité ancienne
+  -?-> régularité Clay.
+```
+
+L'arête « Duhamel endpoint absent » du cycle 0047 est donc fermée au sens
+faible-étoile seulement. Les arêtes de continuité forte, dissipation et
+globalisation énergétique restent explicitement manquantes.

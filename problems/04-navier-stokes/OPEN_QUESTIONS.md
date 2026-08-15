@@ -605,3 +605,31 @@ contre-profils de tranche de `FAIL-NS-0081` et ne ferme aucune rigidité.
 `GAP-TYPE-I-DERENORMALIZATION-CLASS` est fermé au statut interne par le claim
 0047. `FAIL-NS-0083` bloque seulement la promotion fonctionnelle automatique
 vers Leray–Hopf; la question PDE de mildness reste ouverte.
+
+## Priorité active après le cycle 0048
+
+1. **`GAP-TYPE-I-RELATIVE-ENERGY-GLOBALIZATION`.** Partir du correcteur
+   canonique `w=v-S(t-t_0)v(t_0) in C_tL2_x` et globaliser l'inégalité
+   d'énergie relative avec des cutoffs `chi_R`, sans tester par `w` avant
+   d'avoir obtenu `nabla w in L2`.
+2. **Flux à l'infini.** Suivre séparément convection, gradient du flot
+   calorique, pression de Riesz et termes de cutoff sur les couronnes. Le
+   contrôle faible-Lorentz n'est pas absolument continu sur les queues.
+3. **Dissipation.** Décider si l'équation et la suitability locale réparent
+   la perte du noyau `nabla K_h~h^-5/4`; la seule taille critique ne le fait
+   pas.
+4. **Branche de continuité forte.** Tester en parallèle, sans la confondre
+   avec BSS, si les traces appartiennent au sous-espace
+   `tilde L^(3,infinity)` de continuité du semi-groupe. Duhamel Gelfand et
+   `C_w*` ne donnent pas ce fait.
+5. **Contre-profil PDE-compatible.** Transformer ou réfuter le témoin
+   cinématique homogène à queue persistante en une solution adaptée qui
+   porte un flux d'énergie relatif non nul à l'infini.
+6. **Rigidité et Type II.** Aucune rigidité KNSS/Albritton–Barker n'est
+   applicable avant bornitude ou mildness forte; Type II reste hors du
+   pipeline à constantes fixées.
+
+`NS-WEAK-L3-DUHAMEL-L2-CORRECTOR` ferme la trace faible-étoile, le Duhamel
+endpoint de Gelfand et le correcteur `C_tL2`. `FAIL-NS-0084` interdit d'en
+déduire une intégrale de Bochner, une petite constante temporelle, une
+dissipation globale ou un split énergétique naïf.

@@ -1058,3 +1058,29 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   solution standard, mildness et rigidité faible-`L3`.
 - Pivot : `GAP-TYPE-I-DERENORMALIZATION-CLASS`, puis
   `GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY`.
+
+## 2026-08-15 — Duhamel endpoint fermé, dissipation globale perdue
+
+- Objet : ancienne distributionnelle standard sur `R3`, non forcée,
+  viscosité un, pression de Riesz, uniformément
+  `L-infinity_tL^(3,infinity)_x`.
+- Scaling : `L^(3,infinity)` est critique; le stress est critique dans
+  `L^(3/2,infinity)`. Le noyau `S(h)Pdiv` agit sous-critically avec le gain
+  `h^((3-p)/(2p))`, `3/2<p<3`, mais sa norme endpoint ponctuelle vaut
+  `h^-1`.
+- Gain endpoint : Meyer--Yamazaki intègre le pairing après fixation du test
+  `L^(3/2,1)`. Le terme quadratique existe dans `L^(3,infinity)` comme
+  intégrale de Gelfand avec borne `CM²`, sans intégrale de Bochner.
+- Gain énergétique instantané : à `p=2`, le correcteur canonique est dans
+  `C_tL2_x` et vaut `O(h^(1/4))` au redémarrage.
+- Perte d'une dérivée : `nabla S(h)Pdiv` coûte `h^-5/4` dans le mapping
+  choisi. La borne critique seule ne fournit pas `L2_tHdot1_x`.
+- Contre-profil : `U=(-x_2,x_1,0)/|x|²` a
+  `K_3(U)^3=pi²/4`, énergie tronquée `(8pi/3)R` et queue critique de taille
+  constante. Aucun split radial coeur énergétique/queue petite n'est
+  disponible uniformément.
+- Résidu : 144 assertions symboliques exactes, résidu rationnel nul;
+  croissance endpoint normalisée `N` sur `N` coquilles logarithmiques.
+- Résultat : `C_w*`, Duhamel Gelfand et correcteur `C_tL2` fermés; continuité
+  forte critique, dissipation, énergie BSS, bornitude et rigidité absentes.
+- Pivot : `GAP-TYPE-I-RELATIVE-ENERGY-GLOBALIZATION`.

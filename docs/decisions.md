@@ -546,3 +546,23 @@
   mild. Il ne réfute pas un raccord PDE futur vers une classe scindée.
 - `GAP-TYPE-I-DERENORMALIZATION-CLASS` est fermé au statut interne. Le verrou
   actif devient `GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY-OR-MILDNESS`.
+
+### 2026-08-15 — Duhamel faible-étoile fermé, énergie relative sélectionnée
+
+- La construction Duhamel et du correcteur obtient `17/20`; le split BSS
+  direct obtient `15/20` et le Liouville direct `12/20`.
+- Le représentant `C_w*L^(3,infinity)` est construit avant d'écrire la
+  formule pour tous les temps de redémarrage.
+- L'estimation de Yamazaki est utilisée dans son ordre de quantificateurs
+  exact : pairing fixé puis intégration. L'intégrale est de Gelfand, pas de
+  Bochner.
+- Le gain sous-critique est retenu en espace **fort** `L^p` pour
+  `3/2<p<3`; à `p=2`, le correcteur est `C_tL2` avec taux `h^(1/4)`.
+- La continuité forte critique, la dissipation BSS et la bornitude KNSS ne
+  sont pas promues. `NS-WEAK-L3-DUHAMEL-L2-CORRECTOR` reste
+  `COMPUTATION_ONLY`.
+- `FAIL-NS-0084` enregistre le logarithme endpoint, le profil solénoïdal à
+  queue persistante et l'absence d'implication `C_tL2 -> L2_tHdot1`.
+- Le verrou actif devient `GAP-TYPE-I-RELATIVE-ENERGY-GLOBALIZATION` :
+  cutoffs, flux de pression et défaut d'énergie à l'infini doivent être
+  suivis sans tester circulairement par le correcteur.

@@ -1224,3 +1224,34 @@ Les points 1–7 sont stables et élémentaires. La continuité faible-étoile d
 Riesz, la suitability issue de compacité et toute mildness restent des
 interfaces papier. Compiler ce noyau certifierait la conjugaison, pas le
 claim conditionnel complet ni Clay.
+
+## Backlog issu du cycle 0048 — trace faible-étoile et correcteur sous-critique
+
+1. définir les Lorentz abstraits `L^(3,infinity)` et leur prédual
+   `L^(3/2,1)` comme interface papier, sans prétendre construire leur théorie
+   de réarrangement dans le premier noyau;
+2. formaliser le principe élémentaire : continuité des pairings sur un
+   sous-espace dense plus borne uniforme implique un représentant
+   `C_w*` unique;
+3. encoder la variation des constantes dans un espace de distributions pour
+   l'équation projetée;
+4. isoler comme interface publiée l'estimation intégrée de Meyer--Yamazaki,
+   avec l'ordre exact des quantificateurs « fixer le test, puis intégrer »;
+5. formaliser les exposants
+   `1/k=1/3+1/p` et
+   `integral_0^h r^(-3/2+3/(2p))dr
+     =C_p h^((3-p)/(2p))` pour `3/2<p<3`;
+6. spécialiser `p=2` pour obtenir la puissance `h^(1/4)` et une trace forte
+   nulle du correcteur dans `L2`;
+7. formaliser le résidu endpoint : à `p=3`, chaque coquille dyadique de
+   `r^-1` a masse constante et la somme croît linéairement;
+8. formaliser la fonction de distribution du champ
+   `(-x_2,x_1,0)/|x|²`, les constantes `pi²/4` et `(8pi/3)R`, et
+   l'invariance de la queue faible-`L3` sous coupure radiale;
+9. garder comme interfaces papier O'Neil, le noyau d'Oseen et la projection
+   de Leray; ne pas encoder avant stabilisation l'inégalité énergétique BSS.
+
+Les points 2, 5–8 forment le premier noyau compilable. Une formalisation de
+ces éléments certifierait le ledger d'exposants, pas l'estimation analytique
+de Yamazaki, la dissipation globale, la classe BSS, la rigidité ancienne ou
+le problème Clay.
