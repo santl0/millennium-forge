@@ -1661,3 +1661,42 @@ Une source publiée non redondante est ajoutée; le corpus atteint 224 entrées.
 Le lemme d'enveloppe convexe reste `COMPUTATION_ONLY` : la source confirme la
 formule finie, pas son extension `H^-3`, ses quantificateurs ni sa connexion
 au pipeline Clay.
+
+## Audit ciblé du cycle 0062 — transferts triadiques et tangente d'orbite
+
+La question gelée est de savoir si une identité primaire force
+
+```text
+C_m=<P_m d(Z),mathcal RZ_m>=0
+```
+
+ou au moins `sum_m C_m=0` pour l'opérateur renormalisé sur `R3`. Aucune
+source inspectée ne fournit cette conclusion.
+
+| source | identité réellement publiée | non-transfert vers `C_m` |
+|---|---|---|
+| Waleffe 1992 (`NS-SRC-0225`) | somme nulle des transferts d'énergie et somme hélicoïdale pondérée dans chaque triade | le test est radial par le mode, pas tangent par `im` fois le mode; les transferts individuels sont signés |
+| Charnyi et al. 2017 (`NS-SRC-0226`) | conservation d'énergie et moment angulaire testé contre `x cross e_i` | le champ de Killing est fixe; `mathcal Ru` dépend de l'état et contient une dérivée spatiale |
+| Willis et al. 2013 (`NS-SRC-0221`) | action diagonale des rotations/translations sur les coefficients de Fourier d'un pipe flow | covariance et sélection seulement; domaine forcé avec bord et DNS non certifiée |
+| Yeung et al. 2026 (`NS-SRC-0227`) | cancellations radiales par paires, sextuplets et somme globale sous flux nul | les transferts individuels restent positifs ou négatifs; indices principalement temporels |
+| Pineau--Vicol v2 (`NS-SRC-0051`) | dans `L2_mu`, la projection RSS couple `|alpha|||RU||²` à `<RU,N>` | produit gaussien, pression conservée, profil RSS exact et aucune conclusion par isotype |
+
+La recherche différentielle 2025--2026 a aussi contrôlé Nekkanti et al.
+2025, Bertram 2026, Kankaria et al. 2026 et Inage 2026. Ces travaux portent
+respectivement sur des données turbulentes, un bilan périodique forcé, une
+équation décimée DNS et une proposition dyadique qui exclut explicitement
+une preuve complète. Aucun ne fournit une identité tangentielle adaptée au
+pipeline Clay.
+
+La distinction vérifiée est :
+
+```text
+covariance SO(2) --> sélection k+l=m, pas signe;
+énergie --> cancellation radiale globale, pas C_m;
+moment angulaire --> test contre x cross e_i, pas contre mathcal Ru.
+```
+
+Le détail des équations, domaines, versions, empreintes documentaires et
+non-transferts est dans
+`docs/reports/navier-stokes/reviews/cycle-0062-literature.md`. Le corpus
+structuré ajoute `NS-SRC-0225` à `NS-SRC-0227` et atteint 227 sources.
