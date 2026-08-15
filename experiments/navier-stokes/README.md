@@ -2006,3 +2006,34 @@ cellule reste donc `NOT_PROVIDED`.
   donnée d'énergie uniformément bornée. Le script certifie le noyau et les
   puissances, pas la compacité temporelle, le passage à la limite ou la
   rigidité ancienne.
+
+## `LOCAL-COMPACTNESS-1` — volume compact contre trace critique
+
+- Question falsifiable : les sorties fonctionnelles du ledger de compacité
+  locale transmettent-elles une minoration faible-`L3` ou `L2` à la trace,
+  sans utiliser davantage l'équation et la topologie forte de la force ?
+- Équations réellement testées : cisaillements périodiques exacts pour
+  Navier–Stokes forcé, profils solénoïdaux statiques sur `R3`, identités de
+  scaling et normes négatives. Aucune intégration numérique de la PDE.
+- Profil A : `cos(nt)sin(nx_1)e_2` garde une dérivée temporelle `H^-1` mais
+  perd la borne dissipative et laisse un défaut quadratique de moyenne `1/4`.
+- Profil B : `Y_n=(1+n²t)_+sin(nx_1)e_2` sur `[-1,0]` résout exactement
+  Navier–Stokes forcé avec pression et non-linéarité nulles. Son volume `L2²`
+  vaut `1/(6n²)` tandis que sa trace vaut `1/2`.
+- Force du profil B : `||F_n||_(L2_tH^-1_x)^2=7/6` et
+  `sqrt(2)||F_n||_(L1_tH^-1_x)=3/(2n)`. Elle ne tend pas dans
+  `C^infinity_x,loc` uniformément en temps.
+- Profil C : `C_n(x)=nV(nx)`, `V=curl A` lisse compact, conserve `K_3`,
+  vérifie `||C_n||_r=n^(1-3/r)||V||_r` et
+  `||nabla C_n||_q=n^(2-3/q)||nabla V||_q`. Sa norme `W^(-1,q)` décroît
+  comme `n^(-3/q)`, mais son enstrophie croît comme `n`.
+- Résidu PDE : le profil C a un résidu principal d'échelle `n^3`; il ne
+  réfute donc pas le lemme Caccioppoli pour les solutions du cycle.
+- Discrétisation et précision : aucune; `fractions.Fraction`, arithmétique
+  rationnelle exacte, calcul déterministe, aucune graine ni sortie lourde.
+- Commande :
+  `python -B experiments/navier-stokes/local-compactness/local_compactness_audit.py`.
+- Résidu certifié : `401` assertions exactes, zéro échec. Empreinte :
+  `100bb5ee2be5cddd2c3ea6b22b4ef23ddd52464d57ad53e9567548ed367ef25b`.
+- Limites : les profils certifient la séparation entre compacité volumique,
+  trace et résidu. Aucun n'est un blow-up admissible non forcé sur `R3`.

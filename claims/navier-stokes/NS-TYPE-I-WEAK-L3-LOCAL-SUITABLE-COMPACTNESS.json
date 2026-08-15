@@ -1,0 +1,61 @@
+{
+  "id": "NS-TYPE-I-WEAK-L3-LOCAL-SUITABLE-COMPACTNESS",
+  "problem": "navier-stokes",
+  "statement": "Soit I=[-S,0] et soit Z_j une suite de solutions classiques solénoïdales sur R3 x I de l'équation renormalisée partial_s Z_j-Delta Z_j+div(Z_j tensor Z_j)+nabla Pi_j+kappa(1+y dot nabla)Z_j=F_j, avec pression globale Pi_j=R_aR_b(Z_(j,a)Z_(j,b)), kappa fixé, borne uniforme L-infinity_s L^(3,infinity)_y et F_j tendant vers zéro dans C-infinity_y sur chaque compact uniformément en temps. Alors, après extraction, Z_j converge fortement localement dans L^q pour tout q<10/3, le produit converge fortement dans L^(3/2)_local, et la limite est une solution faible adaptée locale de l'équation renormalisée non forcée. La conclusion ne conserve pas à elle seule une trace critique non nulle et ne dérenormalise pas la limite en solution ancienne standard.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "domaine R3 sans frontière, viscosité un, fenêtre temporelle finie I=[-S,0]",
+    "Z_j est classique sur I, divergence-free, et satisfait l'équation renormalisée exacte avec un coefficient kappa fixe ou une suite kappa_j uniformément bornée et convergente",
+    "la pression est fixée dans la jauge globale de Riesz Pi_j=R_aR_b(Z_(j,a)Z_(j,b)); sa partie harmonique locale n'est pas supprimée",
+    "sup_j ess sup_(s in I) K_3(Z_j(s))<=M_0<infinity",
+    "F_j tend vers zéro dans C-infinity spatial sur tout compact, uniformément pour s dans I",
+    "dans l'application aux cutoffs, Q_(L_j) est la conjugaison d'une même réalisation de Bogovskii et sa borne faible-L3 est uniforme; L_j est constant sur chaque fenêtre",
+    "les fenêtres croissantes et l'extraction diagonale sont requises séparément pour obtenir une limite sur (-infinity,0]"
+  ],
+  "dependencies": [
+    "NS-TYPE-I-OUTER-CUTOFF-LOCAL-FORCE-ESCAPE",
+    "NS-TYPE-I-WEAK-L3-PARABOLIC-CORE-CAPTURE"
+  ],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0045-local-distributional-compactness.md; Caccioppoli locale, remplissage des trous, compacité de Simon, pression proche plus harmonique et passage de l'énergie"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0187 et NS-SRC-0188, ainsi que Jacques Simon, DOI 10.1007/BF01762360; compacité adaptée sous ledger énergétique, stabilité endpoint structurée et mécanisme abstrait de compacité"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0045-analysis.md; passe contradictoire indépendante du cutoff, de l'énergie, de Simon, de l'interpolation et de la pression",
+      "sha256": "532047cbd61e8cb16c037da52a6e5063643c3213a9d9d1da86a3c2539979ad9e"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/local-compactness/local_compactness_audit.py; 401 assertions exactes sur oscillations, couche terminale et concentration critique",
+      "sha256": "100bb5ee2be5cddd2c3ea6b22b4ef23ddd52464d57ad53e9567548ed367ef25b"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0045-countermodel.md; profils qui réfutent le transfert abstrait de la compacité volumique vers la trace sans satisfaire la topologie de résidu PDE",
+      "sha256": "db7bf6b12f3dafdb0788335b9e5a0f50407a6d5a149b8e40eb07d4fe7f26b2fe"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0045-literature.md; audit des hypothèses publiées de compacité, pression, persistance et stabilité faible-L3",
+      "sha256": "dc431ac3d0e6fac47ca3720807bf43deb4aafd86465940909c6248ed7480fc26"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0045-local-suitable-compactness"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Dérivation principale, audit analytique, audit bibliographique et contre-profils séparés de même famille de modèles; aucune revue humaine externe",
+    "notes": "Le statut reste COMPUTATION_ONLY. Le claim ferme localement énergie, produit et admissibilité dans l'équation renormalisée, mais ne prouve ni moment fixe non nul à la trace, ni dérenormalisation ancienne mild, ni rigidité, ni régularité Clay."
+  }
+}

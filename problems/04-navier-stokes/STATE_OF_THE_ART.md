@@ -1335,3 +1335,33 @@ compacité locale : dérivée temporelle, pression, passage du produit,
 inégalité d'énergie locale et trace non triviale. Même après ce passage, il
 faut dérenormaliser exactement le drift puis traiter la rigidité des solutions
 anciennes faible-`L3`; aucune de ces arêtes n'est fermée par ce cycle.
+
+## Mise à jour 2026-08-15 — cycle 0045, compacité locale adaptée
+
+Sous la borne Type I uniforme faible-`L3`, la pression globale de Riesz est
+uniformément faible-`L^(3/2)`, donc localement `L^(4/3)`. Pour les champs
+tronqués lisses dont la force disparaît dans `C^infinity_x,loc` uniformément
+en temps, un test par cutoff donne, après absorption et remplissage des
+trous, une borne uniforme
+
+```text
+Z_j dans L^infinity_tL2_x,loc inter L2_tH1_x,loc.
+```
+
+Simon produit alors la convergence forte `L2_loc`; la borne parabolique
+`L^(10/3)_loc` l'améliore en forte `Lq_loc` pour tout `q<10/3`, notamment
+`L3`. Le produit converge fortement dans `L^(3/2)_loc`. La décomposition de
+pression en partie de Riesz proche et reste harmonique permet de passer
+l'inégalité d'énergie locale : la limite est faible adaptée pour l'équation
+renormalisée non forcée avec drift.
+
+Ce progrès ne conserve pas la non-trivialité terminale. Simon ne donne que
+`C_tH^-1_loc`; une minoration de norme critique ou `L2` à une tranche peut
+disparaître par concentration ou oscillation. Il faut un moment contre un
+test fixe, une trace fortement compacte ou un théorème de persistance des
+singularités dont les hypothèses soient réellement vérifiées.
+
+Albritton–Barker 2020 et Barker–Seregin–Šverák 2018 sont ajoutés comme
+`NS-SRC-0187`–`0188`. Le corpus atteint 188 sources. Aucun résultat du cycle
+ne dérenormalise encore la limite, ne la rend non triviale, ni ne résout une
+branche du problème Clay.

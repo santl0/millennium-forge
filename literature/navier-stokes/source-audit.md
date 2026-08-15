@@ -1170,3 +1170,29 @@ ancienne non forcée.
 La veille ajoute `NS-SRC-0186` et porte le corpus à 186 sources. Le statut du
 lemme de queue reste `PUBLISHED_INGREDIENTS + AI_INTERNAL_DERIVATION`; il ne
 reçoit pas `PAPER_PROOF` et ne résout aucun cas Clay.
+
+## Audit ciblé du cycle 0045 — compacité adaptée et trace critique
+
+- Albritton–Barker (`0187`, JDE 2020) publie une compacité forte `L3` pour
+  des solutions faibles adaptées sous bornes fortes `L3` vitesse et
+  `L^(3/2)` pression. Leur proposition A.5 conserve une singularité sous une
+  hypothèse distincte d'explosion `L-infinity` persistante; leur extraction
+  ancienne mild utilise une normalisation ponctuelle et une compacité
+  höldérienne.
+- Barker–Seregin–Šverák (`0188`, CPDE 2018) publie une stabilité faible-étoile
+  pour des données dans `L^(3,infinity)`, dans une classe scindée
+  `v=S(t)u0+u` où le correcteur possède une énergie globale et locale. La
+  preuve donne `C_tL^(9/8)_loc` et forte `L^s_loc`, `1<s<10/3`.
+- Simon 1987 fournit le mécanisme abstrait de compacité. Son corollaire 4 ne
+  transforme pas une borne `L2_tH1_x` en compacité forte `C_tL2_x`; la porte
+  terminale reste indépendante.
+- La dérivation interne du cycle ferme néanmoins l'énergie locale de la
+  suite réelle par Caccioppoli, pression locale `L^(4/3)`, absorption et
+  remplissage des trous. Ce raccord n'est attribué mot pour mot à aucune des
+  sources et reste `AI_INTERNAL_DERIVATION`.
+- La veille 2025–2026 n'a trouvé aucun théorème générique transformant une
+  seule capture Type I faible-`L3` en moment fixe non nul à la trace.
+
+La veille ajoute `NS-SRC-0187`–`0188` et porte le corpus à 188 sources. Le
+claim de compacité adaptée reste `COMPUTATION_ONLY`; les théorèmes publiés
+servent d'ingrédients et de contrôles, pas de substitution à la dérivation.

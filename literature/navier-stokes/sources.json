@@ -3860,6 +3860,46 @@
       "reproduction": {"status": "primary_arxiv_v1_full_text_scope_and_kernel_audited_cycle_0044"},
       "verification": {"level": "primary_full_text", "checked_on": "2026-08-15", "notes": "Métadonnées de publication, théorèmes 1.4–1.5, noyau de pression et soustraction de champ lointain contrôlés; PDF arXiv SHA256 C264534A59BA09E2AFC9C5CFE3AA6FDC8EDFBC8C35C5207C174D6ACA83D267AF."},
       "tags": ["Navier_Stokes", "local_pressure", "mild_solution", "Leray_projection", "far_field", "R3"]
+    },
+    {
+      "id": "NS-SRC-0187",
+      "title": "Localised Necessary Conditions for Singularity Formation in the Navier–Stokes Equations with Curved Boundary",
+      "authors": ["Dallas Albritton", "Tobias Barker"],
+      "year": 2020,
+      "source_type": "journal_article",
+      "publication_status": "published",
+      "venue": "Journal of Differential Equations 269, 7529–7573",
+      "identifiers": {"doi": "10.1016/j.jde.2020.06.009", "arxiv": "1811.00507v2", "url": "https://doi.org/10.1016/j.jde.2020.06.009"},
+      "equation": {"model": "Navier–Stokes incompressible non forcé; une force régulière apparaît après troncature", "dimension": "3", "domain": "domaines bornés à bord courbe, demi-espace et limites locales selon le théorème", "boundary": "non-glissement sur la portion de bord physique; cas intérieur inclus", "forcing": "nulle dans le problème initial, sous-critique et localisée après troncature", "viscosity": "normalisée à 1"},
+      "solution_notions": ["solution faible adaptée au bord", "solution ancienne mild après extraction sous hypothèses renforcées"],
+      "result": "Le lemme A.2 donne, sous bornes fortes L3 pour la vitesse et L^(3/2) pour la pression, une convergence locale forte L3 vers une solution faible adaptée. La proposition A.5 conserve une singularité sous explosion L-infinity persistante. La proposition 4.1 et le corollaire 4.2 donnent une compacité höldérienne qui transmet une normalisation ponctuelle à une limite ancienne mild.",
+      "hypotheses": ["géométries de bord aplaties convergeant en C2 pour le lemme A.2", "bornes locales fortes L3 vitesse et L^(3/2) pression pour la compacité adaptée", "explosion L-infinity persistante pour la proposition A.5", "normalisation ponctuelle et bornes paraboliques uniformes pour l'extraction ancienne mild"],
+      "constants_uniformity": "Les constantes sont uniformes sur les cylindres intérieurs sous les bornes et le contrôle géométrique fixés; aucune uniformité n'est revendiquée depuis la seule borne L-infinity_t L^(3,infinity)_x.",
+      "clay_relevance": "Source primaire directe de mécanismes de compacité, de pression et de persistance utilisables dans une stratégie de blow-up. Le cycle 0045 ne produit pas leurs hypothèses endpoint fortes depuis la seule borne faible-L3.",
+      "limitations": ["la compacité adaptée exige les endpoints forts L3 et L^(3/2)", "la non-trivialité vient d'une explosion persistante ou d'une normalisation ponctuelle plus forte", "aucun théorème générique de stabilité sous seule borne faible-L3", "aucune résolution du problème Clay"],
+      "reproduction": {"status": "primary_published_and_arxiv_v2_full_text_audited_cycle_0045"},
+      "verification": {"level": "primary_full_text", "checked_on": "2026-08-15", "notes": "Lemme A.2, proposition A.5, proposition 4.1 et corollaire 4.2 contrôlés; PDF arXiv SHA256 FDD91E657B5CF503286B4E45CC084C12C8B202AAF24BCDAD67EDEA46EDFA4102."},
+      "tags": ["Navier_Stokes", "suitable_solution", "local_compactness", "persistence_of_singularities", "ancient_mild_solution", "curved_boundary"]
+    },
+    {
+      "id": "NS-SRC-0188",
+      "title": "On Stability of Weak Navier–Stokes Solutions with Large L^(3,infinity) Initial Data",
+      "authors": ["Tobias Barker", "Gregory Seregin", "Vladimír Šverák"],
+      "year": 2018,
+      "source_type": "journal_article",
+      "publication_status": "published",
+      "venue": "Communications in Partial Differential Equations 43, 628–651",
+      "identifiers": {"doi": "10.1080/03605302.2018.1449219", "arxiv": "1603.03211v1", "url": "https://doi.org/10.1080/03605302.2018.1449219"},
+      "equation": {"model": "Navier–Stokes incompressible standard non forcé", "dimension": "3", "domain": "R3 x (0,infinity)", "boundary": "sans frontière physique", "forcing": "nulle", "viscosity": "normalisée à 1"},
+      "solution_notions": ["solution faible globale L^(3,infinity) scindée en flot calorique et correcteur énergétique", "solution satisfaisant les inégalités d'énergie globale perturbée et locale"],
+      "result": "Le théorème 1.3 établit la stabilité sous convergence faible-étoile des données dans L^(3,infinity). La preuve extrait pour le correcteur une convergence dans C_t L^(9/8)_loc et une convergence forte L^s_loc pour 1<s<10/3, suffisante pour fermer le produit quadratique et passer les inégalités d'énergie dans cette classe structurée.",
+      "hypotheses": ["données initiales solénoïdales bornées et convergeant faible-étoile dans L^(3,infinity)(R3)", "décomposition v=S(t)u0+u imposée par la définition", "correcteur u dans L-infinity_t L2_x inter L2_t Hdot1_x", "inégalités d'énergie globale perturbée et locale"],
+      "constants_uniformity": "Les bornes portent sur toute fenêtre forward finie et toute boule fixée dans la classe scindée. Elles ne couvrent pas une suite arbitraire seulement bornée dans L-infinity_t L^(3,infinity)_x ni une diagonale ancienne sans raccord supplémentaire.",
+      "clay_relevance": "Montre qu'une stabilité endpoint faible-L3 est possible avec une scission calorique et un correcteur énergétique. Cette structure n'est pas encore obtenue globalement pour les champs renormalisés tronqués et ne conserve pas seule leur non-trivialité.",
+      "limitations": ["temps initial forward fixe", "classe scindée plus forte qu'une solution distributionnelle arbitraire", "aucune normalisation empêchant une limite nulle", "pas de rigidité ancienne ni de régularité Clay"],
+      "reproduction": {"status": "primary_published_metadata_arxiv_v1_and_accepted_manuscript_audited_cycle_0045"},
+      "verification": {"level": "primary_full_text", "checked_on": "2026-08-15", "notes": "La prépublication v1 porte un titre différent et ne liste que Barker et Seregin; les métadonnées publiées ajoutent Šverák. PDF arXiv SHA256 ADEACBBB2E18A2E4C2C29E057AEA8B7293949602066F68AC0BCD8C999A1003A2; manuscrit accepté Oxford SHA256 E623CCA4A7F5622BB2BFE27681395B2578ED65E402882236D0F6990BD58699DB."},
+      "tags": ["Navier_Stokes", "weak_L3", "weak_star_stability", "local_energy", "strong_local_compactness", "R3"]
     }
   ],
   "watchlist": [
@@ -3934,10 +3974,10 @@
   "coverage": {
     "official_formulation": ["NS-SRC-0001"],
     "Leray_Hopf": ["NS-SRC-0002", "NS-SRC-0003", "NS-SRC-0043", "NS-SRC-0058"],
-    "suitable_partial_regularity": ["NS-SRC-0004", "NS-SRC-0005", "NS-SRC-0006"],
+    "suitable_partial_regularity": ["NS-SRC-0004", "NS-SRC-0005", "NS-SRC-0006", "NS-SRC-0187"],
     "Prodi_Serrin_endpoint": ["NS-SRC-0007", "NS-SRC-0008", "NS-SRC-0009", "NS-SRC-0012", "NS-SRC-0013", "NS-SRC-0052", "NS-SRC-0053"],
-    "critical_spaces": ["NS-SRC-0010", "NS-SRC-0011", "NS-SRC-0014", "NS-SRC-0031", "NS-SRC-0035", "NS-SRC-0036", "NS-SRC-0044", "NS-SRC-0052", "NS-SRC-0053", "NS-SRC-0055", "NS-SRC-0056", "NS-SRC-0088", "NS-SRC-0118", "NS-SRC-0128", "NS-SRC-0129", "NS-SRC-0130"],
-    "ancient_compactness_rigidity": ["NS-SRC-0012", "NS-SRC-0014", "NS-SRC-0015", "NS-SRC-0034", "NS-SRC-0045", "NS-SRC-0046", "NS-SRC-0048", "NS-SRC-0049", "NS-SRC-0050", "NS-SRC-0053", "NS-SRC-0088", "NS-SRC-0140", "NS-SRC-0141", "NS-SRC-0142", "NS-SRC-0143", "NS-SRC-0144", "NS-SRC-0145"],
+    "critical_spaces": ["NS-SRC-0010", "NS-SRC-0011", "NS-SRC-0014", "NS-SRC-0031", "NS-SRC-0035", "NS-SRC-0036", "NS-SRC-0044", "NS-SRC-0052", "NS-SRC-0053", "NS-SRC-0055", "NS-SRC-0056", "NS-SRC-0088", "NS-SRC-0118", "NS-SRC-0128", "NS-SRC-0129", "NS-SRC-0130", "NS-SRC-0188"],
+    "ancient_compactness_rigidity": ["NS-SRC-0012", "NS-SRC-0014", "NS-SRC-0015", "NS-SRC-0034", "NS-SRC-0045", "NS-SRC-0046", "NS-SRC-0048", "NS-SRC-0049", "NS-SRC-0050", "NS-SRC-0053", "NS-SRC-0088", "NS-SRC-0140", "NS-SRC-0141", "NS-SRC-0142", "NS-SRC-0143", "NS-SRC-0144", "NS-SRC-0145", "NS-SRC-0187", "NS-SRC-0188"],
     "profile_decomposition_and_selection": ["NS-SRC-0014", "NS-SRC-0140", "NS-SRC-0141", "NS-SRC-0142", "NS-SRC-0143", "NS-SRC-0144", "NS-SRC-0145", "NS-SRC-0146", "NS-SRC-0147", "NS-SRC-0150", "NS-SRC-0153", "NS-SRC-0156", "NS-SRC-0159"],
     "coarea_isoperimetry_and_level_selection": ["NS-SRC-0067", "NS-SRC-0069", "NS-SRC-0132", "NS-SRC-0148", "NS-SRC-0149", "NS-SRC-0150", "NS-SRC-0151", "NS-SRC-0152", "NS-SRC-0156", "NS-SRC-0157", "NS-SRC-0158", "NS-SRC-0159", "NS-SRC-0163", "NS-SRC-0166"],
     "selfsimilar_TypeI_TypeII": ["NS-SRC-0016", "NS-SRC-0017", "NS-SRC-0018", "NS-SRC-0019", "NS-SRC-0020", "NS-SRC-0032", "NS-SRC-0034", "NS-SRC-0045", "NS-SRC-0047", "NS-SRC-0048", "NS-SRC-0051", "NS-SRC-0054", "NS-SRC-0085", "NS-SRC-0086", "NS-SRC-0087"],
@@ -3967,6 +4007,7 @@
     "moving_domains_and_time_dependent_divergence": ["NS-SRC-0180", "NS-SRC-0183"],
     "local_pressure_and_projection": ["NS-SRC-0181", "NS-SRC-0182", "NS-SRC-0186"],
     "outer_cutoff_and_far_field_pressure": ["NS-SRC-0069", "NS-SRC-0181", "NS-SRC-0182", "NS-SRC-0186"],
+    "weak_L3_local_compactness_and_trace": ["NS-SRC-0146", "NS-SRC-0187", "NS-SRC-0188"],
     "forced_blowup_and_force_scaling": ["NS-SRC-0032", "NS-SRC-0033", "NS-SRC-0057", "NS-SRC-0175", "NS-SRC-0184"]
   },
   "unverified_zones": [
