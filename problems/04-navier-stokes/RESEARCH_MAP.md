@@ -2274,3 +2274,42 @@ de suitability reste conditionné au ledger uniforme déjà séparé. La
 branche stationnaire utilise une rigidité publiée, tandis que l'annulation
 d'une RSS tournée faible-`L3` et la production du défaut modulé depuis une
 singularité générale restent manquantes.
+
+## Cycle 0057 — réciproque BV et collapse des vitesses extrêmes
+
+```text
+Z_n -> Z fortement L3_loc
+  + borne uniforme L-infinity_t L2_loc
+  + q_n=1/beta_n ->0 dans L-infinity et BV sur chaque fenêtre
+  + r_n borné dans L1_t H^(-1)_loc
+  --> mathcal RZ=0
+      [test q_n phi; dérivation interne]
+  --> Z exactement axisymétrique
+
+r_n ->0 dans D'
+  + moyenne de Haar mathcal A mathcal R=0
+  --> partial_s mathcal A Z=0
+  + mathcal A Z=Z
+  --> Z stationnaire
+      [NS-TYPE-I-ADIABATIC-FAST-ROTATION-COLLAPSE]
+
+ledger suitable + pression Riesz + faible-L3 + capture
+  --> profil stationnaire non nul dans W1,2_loc inter L^(3,infinity)
+  --> U=0 [Guevara--Phuc; SOURCE_VERIFIED]
+  --> contradiction
+
+beta_n=alpha_n constant, |alpha_n|->infinity, r_n=0
+  --> aucune famille RSS compacte et capturée sous le paquet précédent
+
+||q_n||_infinity->0 sans Var(q_n)->0
+  -/-> mathcal RZ=0
+      [stroboscopie positive; FAIL-NS-0093]
+
+contrôle PDE de Var(1/beta_n)
+  -?-> GAP-TYPE-I-FAST-ROTATION-STROBOSCOPIC-OR-RSS-RIGIDITY
+  -?-> rigidité ancienne / problème Clay.
+```
+
+Le collapse est cinématique jusqu'au passage stationnaire de l'équation.
+La rigidité finale est publiée, mais la condition BV inverse et la norme
+forte du défaut ne sont pas produites par une singularité générale.

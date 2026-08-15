@@ -1998,3 +1998,30 @@ claim éventuellement supersédé.
   lemme PDE sous forte `L3_loc` et ledger suitable uniforme.
 - Statut : variantes faible--faible et non bornée `REFUTED`; continuer avec
   `GAP-TYPE-I-UNBOUNDED-ROTATION-MODULATION-OR-RSS-RIGIDITY`.
+
+## `FAIL-NS-0093` — grande vitesse prise pour collapse axisymétrique
+
+- Date : 2026-08-15.
+- Cible : conclure `mathcal RZ=0` depuis la seule minoration
+  `ess inf|beta_n|->infinity`, sans contrôler la variation de
+  `q_n=1/beta_n` ni la topologie du défaut modulé.
+- Porte positive : l'intégration par parties ferme si
+  `||q_n||_infinity+Var(q_n)->0`, avec état `L-infinity_tL2_x` et résidu
+  borné dans `L1_tH^(-1)_x`.
+- Stroboscopie positive : sur `N²` cycles, `beta_N` alterne entre `N` et
+  `N^4`, donc `||q_N||_infinity=1/N`, mais
+  `Var(q_N)=(2N²-1)(1/N-1/N^4)~2N`.
+- Convergence adverse : les passages rapides ont mesure exacte
+  `1/(N²+N+1)` et l'orbite converge fortement dans tout `L^p` fini vers un
+  profil constant non axisymétrique; la convergence n'est pas uniforme.
+- Autres portes : une stroboscopie signée suit uniformément une orbite
+  prescrite mais viole signe/W1,1; un zéro rend `1/beta` indéfini; un résidu
+  Rademacher s'annule contre chaque test fixe mais pas contre le test mobile;
+  une moyenne angulaire symétrique ne symétrise pas le profil.
+- Résidu : 44218 assertions rationnelles exactes, zéro échec, empreinte
+  `ab815a4d6db1a1b956a50b87c428f8fb6aaf97bc6e16abb3e977685758a1ea69`.
+- Portée : modèles temporels discrets et de dimension finie, sans équation,
+  pression, divergence ni dissipation Navier--Stokes. Ils réfutent
+  l'inférence cinématique, pas une coercivité PDE encore à découvrir.
+- Statut : grandeur de vitesse seule `REFUTED`; continuer avec
+  `GAP-TYPE-I-FAST-ROTATION-STROBOSCOPIC-OR-RSS-RIGIDITY`.

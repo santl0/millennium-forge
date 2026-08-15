@@ -1276,3 +1276,27 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   et la RSS tournée faible-`L3` intermédiaire n'est pas rigide.
 - Pivot : moyenne angulaire lorsque `|beta_n|->infinity`, ou rigidité RSS
   dans `GAP-TYPE-I-UNBOUNDED-ROTATION-MODULATION-OR-RSS-RIGIDITY`.
+
+## 2026-08-15 — rotation rapide adiabatique et variation inverse
+
+- Objet : suite renormalisée sur `R3`, axe centré fixe, forte `L3_loc`,
+  ledger local uniforme et vitesse de modulation sans dimension divergente.
+- Quantité critique : `q_n=1/beta_n`; l'estimation perd exactement
+  `||q_n||_infinity` et `Var(q_n)` sur chaque fenêtre similaire.
+- Gain : si ces deux quantités tendent vers zéro et le défaut est contrôlé
+  dans `L1_tH^(-1)_loc`, alors `mathcal RZ=0`. Si le défaut tend vers zéro,
+  la moyenne angulaire rend la limite stationnaire.
+- Endgame : suitability, pression Riesz, faible-`L3` et capture donnent un
+  profil stationnaire non nul, interdit par Guevara--Phuc.
+- Pression : absente du cœur cinématique; elle revient au passage PDE global
+  et conserve son ledger de queues distinct.
+- Contre-profil : vitesses positives `N,N^4`, passages rapides de mesure
+  `1/(N²+N+1)`, `||q_N||_infinity=1/N`, mais `Var(q_N)~2N`; convergence forte
+  vers un profil non axisymétrique.
+- Résidu : 44218 assertions rationnelles exactes, aucune discrétisation PDE
+  ni arrondi; empreinte
+  `ab815a4d6db1a1b956a50b87c428f8fb6aaf97bc6e16abb3e977685758a1ea69`.
+- Perte restante : aucune estimation NS connue ne contrôle encore
+  `Var(1/beta_n)` pour une phase sélectionnée près d'un stabilisateur.
+- Pivot : stroboscopie PDE ou rigidité RSS dans
+  `GAP-TYPE-I-FAST-ROTATION-STROBOSCOPIC-OR-RSS-RIGIDITY`.

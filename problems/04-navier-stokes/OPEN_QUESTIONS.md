@@ -844,3 +844,30 @@ classification.
 `NS-TYPE-I-BOUNDED-MODULATION-COMPACTNESS-TO-RSS` ferme le sous-cas borné,
 sans division par `||mathcal R U||`. `FAIL-NS-0092` interdit d'étendre ce
 passage à faible fois faible ou à une modulation non uniformément bornée.
+
+## Priorité active après le cycle 0057
+
+1. **`GAP-TYPE-I-FAST-ROTATION-STROBOSCOPIC-OR-RSS-RIGIDITY`.** Le régime
+   `1/beta_n->0` dans `L-infinity inter BV` est fermé. Déterminer si
+   Navier--Stokes contrôle la variation du réciproque ou permet une phase
+   stroboscopique.
+2. **Norme du défaut.** Produire
+   `r_n=partial_sZ_n-beta_n mathcal RZ_n` dans
+   `L1_tH^(-1)_loc`, pas seulement dans `D'`; le test mobile `phi/beta_n`
+   exige cette uniformité.
+3. **Sélection de phase.** Construire `beta_n` depuis le champ total par une
+   condition de phase dont la matrice de Gram, les zéros et la variation
+   sont contrôlés uniformément près du stabilisateur.
+4. **Route axisymétrique.** Si seule `mathcal RZ=0` est acquise, auditer le
+   raccord exact de la limite suitable vers le Liouville ancien
+   Ożański--Palasek; ne pas supposer la régularité classique.
+5. **RSS intermédiaire.** La fermeture compacte à vitesse extrême ne tue pas
+   un profil individuel ni les vitesses d'ordre un. Conserver séparés les
+   théorèmes Pineau--Vicol sous Type I ponctuel.
+6. **Critère d'abandon.** Après trois mécanismes PDE distincts incapables de
+   contrôler `Var(1/beta_n)`, enregistrer l'obstacle et pivoter vers la
+   rigidité RSS faible-`L3` ou la production du défaut modulé.
+
+`NS-TYPE-I-ADIABATIC-FAST-ROTATION-COLLAPSE` ferme le régime adiabatique.
+`FAIL-NS-0093` interdit d'inférer l'axisymétrie de la seule grandeur de la
+vitesse de phase.

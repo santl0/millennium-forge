@@ -1,0 +1,73 @@
+{
+  "id": "NS-TYPE-I-ADIABATIC-FAST-ROTATION-COLLAPSE",
+  "problem": "navier-stokes",
+  "statement": "Soient kappa>0, I un intervalle connexe et Z_n des solutions renormalisees divergence-free de Navier-Stokes 3D sur R3 x I, de viscosite un, sans force et pour une rotation centree autour d'un axe fixe. Supposons Z_n vers Z fortement dans L3_loc, une borne uniforme locale L-infinity_s L2_y, beta_n dans W1,1_loc avec q_n=1/beta_n tel que ||q_n||_infinity+Var(q_n) vers zero sur chaque fenetre compacte, et r_n=partial_s Z_n-beta_n mathcal R Z_n uniformement borne dans L1_s H^-1_y local. Alors mathcal R Z=0 et Z est axisymetrique, swirl permis. Si en outre r_n vers zero dans les distributions, alors la moyenne de Haar donne partial_s Z=0. Sous le ledger suitable et de pression uniforme, la borne globale L-infinity_s L^(3,infinity)_y et une capture cylindrique persistante, ce profil stationnaire est simultanement non nul et interdit par le Liouville publie de Guevara--Phuc. En particulier, une famille RSS exacte de vitesses constantes |alpha_n| vers infinity ne peut etre compacte et capturee sous ce paquet complet; aucune conclusion Clay generale ne suit.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "domaine R3 sans frontiere, viscosite un, force nulle et coefficient de drift renormalise kappa>0 fixe",
+    "I est connexe et l'action SO(2) est centree autour d'un axe fixe passant par l'origine du drift similaire; la conclusion est axisymetrique avec swirl eventuel",
+    "Z_n converge fortement vers Z dans L3 sur tout compact espace-temps et sup_n ||Z_n||_(L-infinity(J;L2(B_R))) est fini pour chaque J compactement inclus dans I et R fini",
+    "beta_n appartient a W1,1(J), b_(n,J)=ess inf_J |beta_n| tend vers infinity, q_n=1/beta_n et ||q_n||_(L-infinity(J))+Var_J(q_n) tend vers zero",
+    "r_n=partial_s Z_n-beta_n mathcal R Z_n est uniformement borne dans L1(J;H^-1(B_R)); cette bornitude suffit seulement a l'axisymetrie",
+    "la stationnarite exige en plus r_n vers zero dans D'(I x R3); la convergence forte L1H^-1 locale est une condition suffisante plus forte",
+    "le passage suitable exige uniformement L-infinity_tL2_x, L2_tH1_x et pression L^(3/2) locale, avec pression globale normalisee par Riesz et queues controlees",
+    "l'endgame exige une borne globale uniforme L-infinity_s L^(3,infinity)_y et une capture L3 sur un cylindre centre commun de mesure temporelle positive"
+  ],
+  "dependencies": [
+    "NS-TYPE-I-WEAK-L3-LOCAL-SUITABLE-COMPACTNESS",
+    "NS-TYPE-I-PERSISTENT-CAPTURE-SPACETIME-NONTRIVIALITY",
+    "NS-TYPE-I-DERENORMALIZED-ANCIENT-LOCAL-SUITABLE",
+    "NS-BACKWARD-SELFSIMILAR-WEAK-L3-LIOUVILLE"
+  ],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0057-fast-rotation-collapse.md; integration par parties contre q_n phi, collapse axisymetrique, moyenne de Haar et raccord conditionnel",
+      "sha256": "080bca588850d67549c9545d38ff4afd9dbcb275a5790617fc14c61d86e9385f"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0057-analysis.md; audit des constantes, zeros, tests H1, bords, pression, suitability, capture et Guevara--Phuc",
+      "sha256": "d505eeb04d5233b242e69bf6f526bc2a6dcff90951aef9a089a29bb8f608d4cc"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0057-literature.md; recherche d'absence et separation rotation de profil, Coriolis, obstacle tournant et Liouville",
+      "sha256": "38e4d41701e85f03d946db0cab09b14c3cdf2ae5b751a66c64dd393e6f6476e5"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0057-countermodel.md; stroboscopie positive, changements de signe, zeros, tests mobiles et moyenne angulaire",
+      "sha256": "4c501c2f7a890d3b3cee0eed34e71207360ca5995c85c8df136aebf4dfbb9347"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/fast-rotation-collapse/fast_rotation_audit.py; 44218 assertions rationnelles exactes",
+      "sha256": "ab815a4d6db1a1b956a50b87c428f8fb6aaf97bc6e16abb3e977685758a1ea69"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0203; Guevara--Phuc, SIAM Journal on Mathematical Analysis 50 (2018), rigidite du profil stationnaire de Leray dans W1,2_loc inter L^(3,infinity)"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0088; Ozanski--Palasek, Annals of PDE 9 (2023), exclusion ancienne axisymetrique seulement dans la classe forte/classique"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0051; Pineau--Vicol, arXiv:2607.09619v2, exclusion de RSS exactes extremes sous borne Type I ponctuelle, sans fermeture de suites modulees"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0057-adiabatic-fast-rotation-collapse"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Derivation principale, audit analytique, veille primaire et contre-modeles exacts separes; aucune revue humaine externe",
+    "notes": "Le statut reste COMPUTATION_ONLY. Le coeur cinematique ferme l'axisymetrie sous petite norme uniforme et petite variation du reciproque; la stationnarite demande en plus l'annulation distributionnelle du defaut. La forte L3, le ledger suitable, la pression, la borne globale faible-L3 et la capture sont des hypotheses distinctes non produites par un blow-up arbitraire. La seule grandeur de beta_n est refutee par FAIL-NS-0093; Type II, axes mobiles, stroboscopie PDE et RSS intermediaires restent ouverts."
+  }
+}

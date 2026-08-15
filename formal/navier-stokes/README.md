@@ -1440,3 +1440,23 @@ aux variantes faible--faible, non bornée, test mobile et extraction non
 commune. La compacité suitable, la pression de Riesz, la capture et le
 Liouville de Guevara--Phuc restent des interfaces papier. Aucun projet Lean,
 Isabelle ou Coq n'est créé dans ce cycle.
+
+## Backlog issu du cycle 0057 — rotation rapide et projecteur de Haar
+
+Le noyau stable comporte les lemmes suivants :
+
+1. formaliser l'inverse d'une fonction absolument continue séparée de zéro
+   et l'identité `(1/beta)'=-beta'/beta²`;
+2. encoder l'intégration par parties scalaire contre `eta/beta` et le
+   majorant à trois termes utilisant `L-infinity_tL2_x`,
+   `Var(1/beta)` et `L1_tH^(-1)_x`;
+3. formaliser la moyenne de Haar d'une action SO(2),
+   `mathcal A mathcal R=0`, et la contraction sur une boule centrée;
+4. prouver `mathcal RZ=0 -> Q_theta Z=Z -> mathcal AZ=Z`, puis
+   `partial_s mathcal AZ=0 -> partial_sZ=0`;
+5. encoder la sommation par parties rationnelle et la stroboscopie positive
+   comme contre-exemple à la suppression de `Var(1/beta)`.
+
+Le passage du stress, la pression de Riesz, suitability, capture et le
+Liouville de Guevara--Phuc restent des interfaces papier. Aucun projet Lean,
+Isabelle ou Coq n'est modifié dans ce cycle.

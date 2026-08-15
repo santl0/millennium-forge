@@ -714,3 +714,22 @@
   bornée, sous-suites dépendantes des tests et tests mobiles.
 - Le prochain test sélectionné porte sur `|beta_n|->infinity` : moyenne
   angulaire vers un profil axisymétrique ou contre-profil de compensation.
+
+### 2026-08-15 — rotation rapide adiabatique fermée, stroboscopie isolée
+
+- Trois actions ont été notées : collapse par réciproque BV `20/20`, défaut
+  de mesure/H-mesure `16/20`, rigidité RSS directe `13/20`.
+- La variable sélectionnée est `q_n=1/beta_n`; ses deux coûts séparés sont
+  `||q_n||_infinity` et `Var(q_n)` sur une fenêtre similaire fixe.
+- Le résidu est renforcé de `D'` à `L1_tH^(-1)_loc` afin que le test mobile
+  `q_n phi` soit admissible avec une constante uniforme.
+- Le projecteur de Haar est centré sur l'axe du drift. Il rend la moyenne
+  stationnaire; l'axisymétrie du champ vient séparément du test divisé.
+- La branche limite est raccordée au Liouville stationnaire publié, pas à un
+  théorème de rotation physique avec Coriolis.
+- `FAIL-NS-0093` abandonne toute inférence depuis la seule grandeur de
+  `beta_n`; une stroboscopie positive conserve forte compacité sans devenir
+  axisymétrique.
+- La prochaine action cherche une estimation PDE de
+  `Var(1/beta_n)` pour une condition de phase canonique, avec matrice de Gram
+  et dégénérescence suivies.

@@ -1345,3 +1345,43 @@ profil Type I général
 Le cœur cinématique est fermé sans division par le générateur. Les bornes
 uniformes suitable et de pression restent une arête séparée indispensable;
 le caractère suitable individuel des approximants ne les remplace pas.
+
+## Cycle 0057 — collapse adiabatique des vitesses non bornées
+
+```text
+NS-TYPE-I-WEAK-L3-LOCAL-SUITABLE-COMPACTNESS
+  + q_n=1/beta_n ->0 dans L-infinity et BV
+  + r_n borné dans L1_t H^(-1)_loc
+  --> mathcal RZ=0
+      [intégration par parties contre q_n phi]
+  --> limite axisymétrique
+
+r_n ->0
+  + mathcal A mathcal R=0
+  --> partial_s mathcal A Z=0
+  + mathcal A Z=Z
+  --> limite stationnaire
+  --> NS-TYPE-I-ADIABATIC-FAST-ROTATION-COLLAPSE
+
+NS-TYPE-I-PERSISTENT-CAPTURE-SPACETIME-NONTRIVIALITY
+  + ledger suitable uniforme
+  + pression globale de Riesz
+  + borne L^(3,infinity)
+  --> profil stationnaire non nul
+  + NS-BACKWARD-SELFSIMILAR-WEAK-L3-LIOUVILLE
+  --> contradiction
+
+|beta_n|->infinity sans Var(1/beta_n)->0
+  -/-> limite axisymétrique
+      [FAIL-NS-0093; stroboscopie positive exacte]
+
+sélection de phase depuis la PDE
+  -?-> borne de Var(1/beta_n) et norme L1H^(-1) du défaut
+  -?-> GAP-TYPE-I-FAST-ROTATION-STROBOSCOPIC-OR-RSS-RIGIDITY
+  -?-> régularité Clay.
+```
+
+L'arête de collapse est interne et quantitative. La rigidité stationnaire
+est publiée; la production des hypothèses de phase depuis la dynamique Type I
+reste une arête manquante. Les résultats de rotation physique avec Coriolis
+ne raccordent pas cette action de profil en temps similaire.

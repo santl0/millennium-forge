@@ -1499,3 +1499,40 @@ empreintes des textes audités.
 Deux sources primaires adjacentes et non redondantes sont ajoutées pour
 fixer exactement le domaine de la reconstruction de phase classique : le
 corpus atteint 210 entrées.
+
+## Audit ciblé du cycle 0057 — collapse des rotations rapides
+
+- Aucun théorème PDE primaire identifié ne traite exactement une suite de
+  profils en variables similaires telle que
+  `r_n=partial_s Z_n-beta_n mathcal R Z_n->0`, `|beta_n|->infinity` et
+  `Z_n->Z` fortement dans `L3_loc`, puis conclut simultanément axisymétrie et
+  stationnarité de la limite suitable faible-`L3`.
+- Ożański--Palasek (`0088`, *Annals of PDE* 2023, DOI
+  `10.1007/s40818-023-00156-7`) excluent une solution ancienne
+  axisymétrique uniformément faible-`L3` dans leur classe forte/classique.
+  Une limite seulement suitable n'entre pas automatiquement dans cette
+  classe. Après stationnarité, Guevara--Phuc (`0203`) couvre directement le
+  profil faible `W1,2_loc inter L^(3,infinity)` de l'équation de Leray.
+- Pineau--Vicol (`0051`, `arXiv:2607.09619v2`) excluent des RSS backward
+  exactes à rotation extrême sous une borne Type I ponctuelle. Ils ne donnent
+  ni fermeture de défaut modulé, ni compacité suitable faible-`L3`.
+- Babin--Mahalov--Nicolaenko (`0211`) et Gallagher--Saint-Raymond (`0212`)
+  concernent une rotation physique de Coriolis. Le grand opérateur est le
+  projecteur de Leray composé avec la rotation physique, et son noyau n'est
+  pas `ker(mathcal R)`; aucun transfert vers une rotation de profil n'est
+  admis.
+- Gallagher--Higaki--Maekawa (`0213`) et Gallay (`0214`) quantifient des
+  mécanismes d'axisymétrisation en 2D, respectivement avec disque tournant et
+  près d'un vortex visqueux. Frontière, dimension, classe de solution et
+  équation diffèrent du problème Clay.
+- Korobkov--Pileckas--Russo (`0215`), Chae--Weng (`0216`) et Chae (`0217`)
+  fixent des frontières récentes du Liouville stationnaire physique. Leurs
+  hypothèses sans swirl, de décroissance ou de pression de tête ne sont pas
+  produites par la moyenne angulaire, et leur équation n'est pas le profil
+  stationnaire de Leray avec drift.
+
+Sept sources publiées sont ajoutées. Le corpus atteint 217 entrées. La revue
+primaire complète conserve équations, domaines, notions de solution,
+quantificateurs, empreintes disponibles et non-transferts. Le lemme du cycle
+reste `COMPUTATION_ONLY` : la veille différentielle est bornée et la preuve
+cinématique est une dérivation du laboratoire.

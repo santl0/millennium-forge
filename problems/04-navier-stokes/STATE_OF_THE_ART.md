@@ -1791,3 +1791,39 @@ claims; deux sources adjacentes sur la reconstruction de phase sont ajoutées
 et le corpus atteint 210.
 Le verrou devient
 `GAP-TYPE-I-UNBOUNDED-ROTATION-MODULATION-OR-RSS-RIGIDITY`.
+
+## Mise à jour 2026-08-15 — cycle 0057, collapse des rotations rapides adiabatiques
+
+Sur chaque fenêtre compacte `J`, posons `q_n=1/beta_n`. Sous forte
+convergence `L3_loc`, borne uniforme `L-infinity_tL2_loc`,
+
+```text
+ess inf_J |beta_n| -> infinity,
+||q_n||_infinity+Var_J(q_n) ->0,
+r_n=partial_sZ_n-beta_n mathcal RZ_n ->0
+    dans L1_t H^(-1)_loc,
+```
+
+le test `q_n phi` donne une estimation à trois constantes :
+
+```text
+|<mathcal RZ_n,phi>|
+ <=C||q_n||_infinity||partial_sphi||
+   +C Var(q_n)||phi||
+   +||q_n||_infinity||r_n||||phi||_(H1).
+```
+
+Ainsi `mathcal RZ=0`. La moyenne de Haar `mathcal A` satisfait
+`mathcal A mathcal R=0`; elle transforme le défaut nul en
+`partial_s mathcal A Z=0`. Comme `mathcal A Z=Z`, la limite est
+stationnaire. Avec le ledger suitable uniforme, la pression de Riesz, la
+borne faible-`L3` et la capture, Guevara--Phuc impose simultanément `Z=0` et
+`Z!=0`. Une famille compacte capturée de RSS exactes avec
+`|alpha_n|->infinity` est donc exclue conditionnellement.
+
+La variation du réciproque est essentielle à l'argument. Une stroboscopie
+exacte à vitesses positives `N` et `N^4` a `||q_N||_infinity=1/N`, mais
+`Var(q_N)~2N`; ses passages rapides ont mesure `O(N^-2)` et l'orbite converge
+fortement vers un profil non axisymétrique. Ce modèle n'est pas une solution
+Navier--Stokes. Le registre passe à 97 claims. Le verrou devient
+`GAP-TYPE-I-FAST-ROTATION-STROBOSCOPIC-OR-RSS-RIGIDITY`.

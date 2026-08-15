@@ -538,3 +538,17 @@ exactes l'échec faible--faible et sans borne de vitesse. Deux sources de
 reconstruction classique portent le corpus à 210; le registre passe à 96
 claims et le verrou devient
 `GAP-TYPE-I-UNBOUNDED-ROTATION-MODULATION-OR-RSS-RIGIDITY`.
+
+Le cycle 0057 ferme une partie du régime de vitesses divergentes. Si le
+réciproque `q_n=1/beta_n` tend vers zéro dans `L-infinity` et en variation
+totale, le test `q_n phi`, la borne locale `L-infinity_tL2_x` et un défaut
+`L1_tH^(-1)_x` donnent `mathcal RZ=0`. La moyenne SO(2) annule le générateur;
+si le défaut tend vers zéro, la limite devient stationnaire.
+
+Le paquet suitable faible-`L3` et la capture rendent alors cette limite à la
+fois non nulle et interdite par Guevara--Phuc. Une stroboscopie positive
+exacte montre toutefois que `min beta_n->infinity` ne contrôle pas
+`Var(1/beta_n)`: 44218 assertions certifient la convergence forte d'une
+orbite non axisymétrique avec variation inverse divergente. Le registre passe
+à 97 claims; le verrou devient
+`GAP-TYPE-I-FAST-ROTATION-STROBOSCOPIC-OR-RSS-RIGIDITY`.

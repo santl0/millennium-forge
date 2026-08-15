@@ -443,3 +443,23 @@
   prendre comme hypothèse dynamique.
 - [ ] Attaquer la rigidité RSS faible-`L3` à rotation intermédiaire sans
   importer une borne Type I ponctuelle absente.
+
+### Cycle 0057
+
+- [x] Introduire `q_n=1/beta_n` et suivre séparément sa norme uniforme et sa
+  variation totale sur chaque fenêtre compacte.
+- [x] Prouver l'estimation contre `q_n phi` dans le couple
+  `L-infinity_tL2_x`--`L1_tH^(-1)_x`.
+- [x] Déduire `mathcal RZ=0`, puis la stationnarité par moyenne de Haar et
+  annulation du défaut.
+- [x] Raccorder le profil stationnaire capturé à Guevara--Phuc sans utiliser
+  la route axisymétrique classique comme hypothèse silencieuse.
+- [x] Certifier une stroboscopie à vitesses positives `N,N^4`, les zéros,
+  tests mobiles et moyennes par 44218 assertions rationnelles exactes.
+- [ ] Construire une condition de phase depuis `Z_n` dont
+  `Var(1/beta_n)` est contrôlée par des quantités suitable uniformes.
+- [ ] Déterminer si l'autonomie de Navier--Stokes interdit la stroboscopie
+  positive malgré son admissibilité cinématique forte `L3_loc`.
+- [ ] Auditer le raccord exact « limite suitable axisymétrique faible-`L3`
+  -> ancienne classique » avant d'utiliser Ożański--Palasek sans
+  stationnarité.

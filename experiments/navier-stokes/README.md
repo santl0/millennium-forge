@@ -2332,3 +2332,30 @@ cellule reste donc `NOT_PROVIDED`.
 - Limites : aucune vitesse tridimensionnelle, pression, divergence ou
   solution NS; le certificat valide une porte fonctionnelle, pas la
   production PDE de la modulation ni une conclusion Clay.
+
+## `FAST-ROTATION-COLLAPSE-AUDIT-1` — variation inverse et stroboscopie
+
+- Question falsifiable : `||1/beta_n||_infinity->0` suffit-il à effondrer
+  une orbite compacte sur le stabilisateur, ou faut-il aussi contrôler sa
+  variation totale ?
+- Équations réellement calculées : sommation par parties discrète pour
+  `RX=qX'`, phases stroboscopiques sur un groupe périodique, Rademacher et
+  moyenne de quatre rotations; aucune PDE n'est intégrée.
+- Discrétisation : grilles dyadiques exactes, `Fraction`, vitesses positives
+  `N,N^4`, périodes normalisées et tests rationnels; aucune graine.
+- Cas positif : `||q_n||_infinity` et `Var(q_n)` tendent vers zéro et ferment
+  exactement le majorant d'intégration par parties.
+- Cas adverse : `N²` cycles donnent variation `~2N`, passages rapides de
+  mesure `1/(N²+N+1)` et convergence forte `L^p`, `p<infinity`, vers un
+  profil non axisymétrique malgré `min beta_N=N`.
+- Sensibilité : plusieurs échelles dyadiques, exposants `p=1,...,6`, zéros,
+  tests fixes/mobiles et quarts de tour; les identités fermées dépassent le
+  balayage fini.
+- Précision : 44218 assertions rationnelles exactes, résidu nul, SHA-256
+  `ab815a4d6db1a1b956a50b87c428f8fb6aaf97bc6e16abb3e977685758a1ea69`.
+- Commande :
+  `python -B experiments/navier-stokes/fast-rotation-collapse/fast_rotation_audit.py`.
+- Environnement : Python standard, sans dépendance externe ni aléa.
+- Limites : aucune vitesse NS tridimensionnelle, pressure ou suitability;
+  le certificat sépare les quantificateurs, sans prouver une stroboscopie
+  compatible avec Navier--Stokes ni un résultat Clay.
