@@ -1503,3 +1503,24 @@ Le noyau stable à formaliser est :
 Le plongement `W^(-2,4/3)->H^-3`, la pression vectorielle complète,
 suitability, capture et le Liouville restent des interfaces papier. Aucun
 projet Lean, Isabelle ou Coq n'est modifié dans ce cycle.
+
+## Backlog issu du cycle 0060 — moyenne covariante et stress de Reynolds
+
+Le noyau désormais assez stable pour une formalisation isolée est :
+
+1. définir les actions SO(2) covariantes sur scalaires, vecteurs et tenseurs,
+   puis formaliser leurs commutations avec gradient, divergence et Laplacien;
+2. prouver `A_2((V+W) tensor (V+W))=V tensor V+A_2(W tensor W)` sous
+   `A_1V=V` et `A_1W=0`;
+3. formaliser la positivité de `A_2(W tensor W)` et montrer séparément
+   qu'elle ne donne aucun signe contre un tenseur symétrique sans trace;
+4. encoder les deux identités d'énergie de Schwartz, y compris le coefficient
+   général `1-d/2` du drift et l'annulation des transferts dans la somme;
+5. formaliser le lemme de fermeture
+   `W_n->0 in L3_loc -> A_2(W_n tensor W_n)->0 in L^(3/2)_loc`;
+6. porter le certificat polynomial--gaussien exact, avec transfert normalisé
+   `-8/27`, comme contre-exemple algébrique compilable.
+
+Le passage de la pression par dualité Lorentz, la suitability et la rigidité
+des solutions anciennes restent des interfaces papier. Aucun projet formel
+n'est créé dans ce cycle.

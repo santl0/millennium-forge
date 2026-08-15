@@ -770,3 +770,19 @@
   depuis la seule projection; la composante de Haar est le nouveau verrou.
 - La prochaine action applique la moyenne de Haar à l'équation complète et
   cherche une identité PDE coercive pour `partial_s mathcal A Z_n`.
+
+### 2026-08-15 — fermer le stress et remplacer l'endgame stationnaire
+
+- Trois actions ont été notées : système moyen/fluctuant et signe du stress
+  `19/20`, asymptotique ancienne `16/20`, observable moyen de capture `13/20`.
+- L'action tensorielle est explicitement covariante; la pression moyenne
+  contient `mathcal A_2(W tensor W)` et conserve la jauge globale de Riesz.
+- La forte `L3_loc` ferme le stress dans `L^(3/2)_loc`; la borne globale
+  faible-`L3` ferme sa pression dans les distributions.
+- `FAIL-NS-0096` abandonne tout signe déduit de la seule positivité du stress.
+- La passe indépendante corrige la carte : Seregin régularise la limite
+  suitable axisymétrique, puis Ożański--Palasek l'annulent. Les mécanismes de
+  stationnarisation 2/3 et 3/3 deviennent inutiles, pas échoués.
+- La prochaine action teste la robustesse de la vitesse canonique sous les
+  poids invariants. Le régime rapide doit devenir intrinsèque ou être
+  abandonné comme artefact de métrique.

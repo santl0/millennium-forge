@@ -1348,3 +1348,29 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   `e20050eecda07b8776b3a420a5b69b7a149c38bcb2117759330eb661109885b4`.
 - Pivot : identifier une identité PDE coercive pour
   `partial_s mathcal A Z`; sinon rigidité RSS intermédiaire.
+
+## 2026-08-15 — stress moyen de Haar et transfert signé
+
+- Objet : décomposition `Z_n=V_n+W_n` de la suite renormalisée, avec
+  `V_n=mathcal AZ_n` et stress `Sigma_n=mathcal A_2(W_n tensor W_n)`.
+- Échelle : `L3` pour `W_n` et `L^(3/2)` pour `Sigma_n` sont critiques;
+  `Sigma:nabla V` a le même poids intégré que le taux de dissipation.
+- Gain : forte `L3_loc` et axisymétrie de la limite donnent
+  `Sigma_n->0` fortement `L^(3/2)_loc`, sans constante inverse de Gram.
+- Pression : le stress contribue `R_iR_jSigma_ij`; sa disparition
+  distributionnelle utilise la borne globale faible-`L3`, la jauge de Riesz
+  et la dualité Lorentz. Une pression locale peut garder un reste harmonique.
+- Perte : l'équation moyenne limite est seulement la NS renormalisée
+  axisymétrique dépendante du temps. Aucun taux du stress ne contrôle
+  `partial_sV_n`.
+- Budget : le transfert moyen/fluctuation apparaît avec signes opposés et le
+  drift fournit `-kappa||U||²/2` au membre gauche pour des champs décroissants.
+- Contre-profil : champs polynomial--gaussiens de Schwartz, divergence-free,
+  `mathcal AV=V`, `mathcal AW=0`, avec transfert exact
+  `-(8/27)(pi/3)^(3/2)`; `V->-V` inverse le signe.
+- Résidu : 20 assertions exactes, aucun flottant, empreinte script
+  `2295e890391f8ed34044a1e35ca16a90748f27743ea0a081a677ff590df5fc50`.
+- Décision : la dissipation seule est abandonnée, mais la veille ferme la
+  branche ancienne axisymétrique par Seregin puis Ożański--Palasek, sans
+  stationnarité. Le pivot remonte à la robustesse métrique et à la production
+  PDE du régime canonique rapide.

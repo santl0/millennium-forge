@@ -1887,3 +1887,41 @@ stationnarité exige toujours `mathcal A r_n->0`.
 
 Le registre atteint 99 claims et le corpus 221 sources. Le verrou actif
 devient `GAP-TYPE-I-HAAR-DEFECT-DECAY-OR-RSS-RIGIDITY`.
+
+## Mise à jour 2026-08-15 — cycle 0060, fermeture du stress de Haar
+
+Avec `V_n=mathcal A Z_n`, `W_n=(I-mathcal A)Z_n`, la moyenne covariante de
+l'équation renormalisée contient exactement le stress
+
+```text
+Sigma_n=mathcal A_2(W_n tensor W_n),
+partial_sV_n-Delta V_n+div(V_n tensor V_n+Sigma_n)
+ +nabla bar(Pi)_n+kappa(1+y dot nabla)V_n=bar(F)_n.
+```
+
+La pression de Riesz moyenne dépend de `V_n tensor V_n+Sigma_n`. Sous la
+forte convergence `L3_loc` du cycle 0045 et l'axisymétrie limite du cycle
+0059, `W_n->0` fortement dans `L3_loc`, donc `Sigma_n->0` fortement dans
+`L^(3/2)_loc`. La borne globale faible-`L3` et la dualité de Lorentz font
+aussi tendre sa pression de Riesz vers zéro dans les distributions. Aucun
+défaut de Reynolds intérieur ne subsiste.
+
+Cette fermeture ne donne pourtant pas la stationnarité : la limite satisfait
+simplement l'équation renormalisée axisymétrique complète, swirl et dépendance
+temporelle permis. Pour des champs lisses décroissants, les budgets moyen et
+fluctuant échangent `T=integral Sigma_n:nabla V_n` avec des signes opposés.
+Deux champs de Schwartz divergence-free certifiés donnent exactement
+`T=-(8/27)(pi/3)^(3/2)`, tandis que `V->-V` inverse ce signe. La positivité de
+`Sigma_n` ne fournit donc aucune coercivité.
+
+`FAIL-NS-0096` abandonne le mécanisme de dissipation seule. Une passe primaire
+indépendante ferme cependant l'endgame sans stationnarité : Seregin 2020 rend
+classique toute ancienne suitable axisymétrique uniformément faible-`L3`,
+swirl permis, puis Ożański--Palasek 2023 la rendent nulle par translation du
+temps initial vers `-infinity`. Sous le ledger et la capture, la branche
+canonique rapide est donc exclue conditionnellement.
+
+Le registre passe à 101 claims et le corpus à 223 sources, avec les nouveaux
+maillons Seregin 2020 et Lei--Ren 2024. Le verrou actif remonte à
+`GAP-TYPE-I-METRIC-ROBUST-FAST-AXISYMMETRIZATION` : produire le régime rapide
+depuis un blow-up général et le rendre robuste au choix de métrique.

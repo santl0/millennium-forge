@@ -2399,3 +2399,51 @@ Le gain ferme la dépendance incohérente en rayon par une somme pondérée, mai
 la vitesse dépend de la métrique et de la fenêtre. Les antécédents classiques
 de freezing et connexion mécanique ne fournissent ni phase à la régularité
 du ledger, ni pression, ni suitability.
+
+## Cycle 0060 — moyenne de Haar, stress et premier mécanisme en échec
+
+```text
+Z_n -> Z fortement dans L3_loc
+  + mathcal RZ=0
+  --> V_n=mathcal AZ_n -> Z dans L3_loc
+  --> W_n=(I-mathcal A)Z_n ->0 dans L3_loc
+
+Sigma_n=mathcal A_2(W_n tensor W_n)
+  --> Sigma_n->0 fortement dans L^(3/2)_loc
+      [constante 1 sur les cylindres centrés]
+
+borne globale L-infinity_t L^(3,infinity)_x
+  + jauge globale de Riesz
+  --> R_iR_j Sigma_(n,ij)->0 dans D'
+      [dualité L^(3/2,infinity)-L^(3,1)]
+
+équation moyenne exacte
+  --> limite Z axisymétrique résout encore la NS renormalisée complète
+  -/-> partial_sZ=0
+
+Sigma_n positif semi-défini
+  -/-> T_n=integral Sigma_n:nabla V_n de signe fixé
+      [FAIL-NS-0096; valeur exacte ±(8/27)(pi/3)^(3/2)]
+
+dissipation seule
+  -/-> mathcal A r_n->0
+      [FAIL-NS-0096]
+
+solution ancienne suitable axisymétrique + pression de Riesz
+  + borne globale uniforme faible-L3
+  --> classique [Seregin 2020; NS-SRC-0222]
+  --> nulle [Ożański--Palasek 2023; NS-SRC-0088]
+  + capture non triviale
+  --> contradiction conditionnelle sans stationnarité
+
+blow-up Type I général
+  -?-> ess inf|beta_n|->infinity de façon robuste en métrique
+  -?-> GAP-TYPE-I-METRIC-ROBUST-FAST-AXISYMMETRIZATION
+  -?-> régularité Clay.
+```
+
+Les arêtes de fermeture du stress sont analytiques et conditionnées à la
+forte `L3_loc`; elles ne produisent ni grande vitesse canonique ni
+stationnarité. Cette dernière n'est plus requise dans la branche exactement
+axisymétrique grâce à la chaîne publiée. La vitesse canonique reste dépendante
+de la métrique; son régime rapide n'est pas produit par le pipeline.

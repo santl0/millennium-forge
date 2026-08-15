@@ -1463,3 +1463,45 @@ Beyn--Thümmler et Rowley--Marsden sourcent la projection/connexion classique,
 mais pas sa reconstruction à régularité négative. Willis--Cvitanović--Avila
 est un antécédent Navier--Stokes numérique avec bord et force, sans passage
 continuum certifié.
+
+## Cycle 0060 — fermeture du stress de Reynolds de Haar
+
+```text
+NS-TYPE-I-WEAK-L3-LOCAL-SUITABLE-COMPACTNESS
+  + NS-TYPE-I-CANONICAL-HILBERT-PHASE-COLLAPSE
+  + ess inf|beta_n|->infinity
+  --> Z_n->Z fortement L3_loc et mathcal RZ=0
+  --> mathcal AZ=Z
+  --> W_n=(I-mathcal A)Z_n->0 fortement L3_loc
+
+W_n->0 fortement L3_loc
+  --> Sigma_n=mathcal A_2(W_n tensor W_n)->0 fortement L^(3/2)_loc
+
+borne globale faible-L3 + pression globale de Riesz
+  --> R_iR_j Sigma_(n,ij)->0 dans D'
+  --> équation limite axisymétrique sans défaut de Reynolds
+      [NS-TYPE-I-HAAR-REYNOLDS-STRESS-CLOSURE]
+
+équation limite axisymétrique dépendante du temps
+  + suitable ancienne + pression Riesz + borne globale faible-L3
+  --> classique [NS-SRC-0222; Seregin 2020]
+  --> nulle [NS-SRC-0088; Ożański--Palasek 2023]
+      [NS-AXISYMMETRIC-ANCIENT-WEAK-L3-RIGIDITY]
+  + NS-TYPE-I-PERSISTENT-CAPTURE-SPACETIME-NONTRIVIALITY
+  --> contradiction conditionnelle
+
+Sigma_n>=0
+  -/-> integral Sigma_n:nabla V_n de signe fixé
+      [FAIL-NS-0096]
+
+singularité Type I générale
+  -?-> vitesse canonique rapide robuste sous les métriques invariantes
+  -?-> GAP-TYPE-I-METRIC-ROBUST-FAST-AXISYMMETRIZATION
+  -?-> contradiction Clay.
+```
+
+Le passage de pression est une arête globale; sans jauge de Riesz, un reste
+harmonique local doit être conservé. La rigidité ancienne suitable faible-
+`L3` est fermée par la composition de deux résultats publiés; l'arête
+manquante est désormais en amont, dans la production intrinsèque de
+l'axisymétrie rapide.

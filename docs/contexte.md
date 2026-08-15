@@ -582,3 +582,19 @@ assertions montre surtout que `mathcal A r_n` peut rester non nul et porter
 une limite invariante non stationnaire. Deux sources primaires supplémentaires
 portent le corpus à 221; le registre atteint 99 claims. Le verrou devient
 `GAP-TYPE-I-HAAR-DEFECT-DECAY-OR-RSS-RIGIDITY`.
+
+Le cycle 0060 applique la moyenne covariante à l'équation complète. La
+moyenne `V_n` est forcée par le stress exact
+`Sigma_n=mathcal A_2(W_n tensor W_n)`, pression de Riesz comprise. La forte
+`L3_loc` et l'axisymétrie limite imposent `W_n->0`, donc aucun défaut de
+Reynolds intérieur ne survit; la limite reste néanmoins une solution ancienne
+axisymétrique dépendante du temps.
+
+Le signe dissipatif espéré échoue sur des champs de Schwartz exacts et devient
+`FAIL-NS-0096`. La revue primaire découvre toutefois le raccord publié
+Seregin 2020 puis Ożański--Palasek 2023 : toute ancienne suitable exactement
+axisymétrique et uniformément faible-`L3` est classique puis nulle, swirl
+permis. La stationnarité n'est donc plus requise dans cette branche. Deux
+sources publiées portent le corpus à 223 et deux claims portent le registre à
+101. Le verrou remonte à
+`GAP-TYPE-I-METRIC-ROBUST-FAST-AXISYMMETRIZATION`.

@@ -920,3 +920,30 @@ stationnarité lorsque seule la norme du défaut est bornée.
 `NS-TYPE-I-CANONICAL-HILBERT-PHASE-COLLAPSE` ferme la borne du défaut pour
 une métrique fixée. `FAIL-NS-0095` interdit d'en déduire stabilité du
 coefficient, phase absolument continue ou stationnarité.
+
+## Priorité active après le cycle 0060
+
+1. **`GAP-TYPE-I-METRIC-ROBUST-FAST-AXISYMMETRIZATION`.** La branche où la
+   vitesse canonique diverge est rigide, mais cette divergence dépend de la
+   métrique hilbertienne et n'est pas produite par un blow-up Type I général.
+2. **Décomposition modale.** Écrire `partial_sZ` et `mathcal RZ` dans les
+   modes azimutaux et déterminer si `beta` est une moyenne pondérée de
+   vitesses modales. Suivre exactement les modes de Gram nul.
+3. **Robustesse métrique.** Caractériser les conditions nécessaires et
+   suffisantes pour que `ess inf|beta_n|->infinity` survive à tout choix de
+   poids SO(2)-invariants admissibles. Un contre-exemple doit être enregistré
+   comme obstruction à une phase intrinsèque.
+4. **Production PDE.** Chercher si l'équation, la capture ou un flux signé
+   imposent la condition modale robuste. La seule projection orthogonale ne
+   la crée pas.
+5. **Endgame fermé.** Ne plus exiger `mathcal A r_n->0` dans la branche
+   axisymétrique : Seregin 2020 puis Ożański--Palasek 2023 annulent directement
+   l'ancienne suitable uniformément faible-`L3`, swirl permis.
+6. **Alternative.** Si la vitesse rapide n'est pas robuste, pivoter vers un
+   défaut d'axisymétrie intrinsèque ou la rigidité RSS faible-`L3`, sans
+   réintroduire sous un autre nom une phase métrique arbitraire.
+
+`NS-TYPE-I-HAAR-REYNOLDS-STRESS-CLOSURE` ferme la présence d'un défaut de
+Reynolds intérieur. `NS-AXISYMMETRIC-ANCIENT-WEAK-L3-RIGIDITY` ferme le
+raccord suitable ancien. Le défaut de Haar temporel n'est plus le verrou de
+cette branche; la grande vitesse canonique robuste reste ouverte.

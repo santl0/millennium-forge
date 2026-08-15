@@ -495,9 +495,32 @@
   de Haar non nul par 37763 assertions rationnelles exactes.
 - [x] Séparer les antécédents classiques de freezing/connexion mécanique du
   passage suitable et du problème Clay.
-- [ ] Dériver l'équation exacte vérifiée par `mathcal A Z_n`, stress et
+- [x] Dériver l'équation exacte vérifiée par `mathcal A Z_n`, stress et
   pression moyens inclus.
-- [ ] Tester trois mécanismes distincts pour forcer
-  `partial_s mathcal A Z_n->0`: dissipation, asymptotique ancienne et capture.
-- [ ] En cas de triple échec, consigner l'obstacle et pivoter vers la rigidité
-  RSS faible-`L3` intermédiaire.
+- [x] Tester la dissipation pour forcer `partial_s mathcal A Z_n->0`, puis
+  annuler asymptotique et capture lorsque la revue publie un endgame ne
+  demandant plus la stationnarité.
+- [x] Remplacer le pivot après triple échec par le raccord publié
+  suitable-axisymétrique, puis remonter au verrou de robustesse métrique.
+
+### Cycle 0060
+
+- [x] Dériver les équations covariantes exactes de la moyenne et de la
+  fluctuation, avec termes croisés, stress, pression et projection de Leray.
+- [x] Prouver `W_n->0` fortement `L3_loc` et
+  `mathcal A_2(W_n tensor W_n)->0` fortement `L^(3/2)_loc` dans la branche
+  canonique rapide.
+- [x] Passer la pression du stress dans les distributions par borne globale
+  faible-`L3` et dualité `L^(3/2,infinity)`--`L^(3,1)`.
+- [x] Recalculer les budgets moyen/fluctuant et réfuter leur signe coercif par
+  20 assertions exactes sur des champs polynomial--gaussiens divergence-free.
+- [x] Fermer le raccord « ancienne suitable axisymétrique faible-`L3` ->
+  nulle » par Seregin 2020 puis Ożański--Palasek 2023, swirl permis.
+- [x] Annuler les tâches d'asymptotique ancienne et de capture destinées à la
+  stationnarité : le nouvel endgame publié les rend superflues.
+- [ ] Décomposer la vitesse canonique en modes azimutaux et suivre les poids
+  de la métrique SO(2)-invariante.
+- [ ] Caractériser ou réfuter la robustesse de
+  `ess inf|beta_n|->infinity` sous tout choix admissible de poids.
+- [ ] Si le régime rapide est un artefact métrique, pivoter vers un défaut
+  d'axisymétrie intrinsèque ou la rigidité RSS faible-`L3`.

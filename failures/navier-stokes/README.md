@@ -2078,3 +2078,33 @@ n'est ni supprimé ni réinterprété comme solution Navier--Stokes.
   fonctionnelle; une rigidité PDE additionnelle reste possible.
 - Statut : phase stable et stationnarité automatiques `REFUTED`; conserver le
   projecteur pour le collapse, attaquer séparément `mathcal A r_n`.
+
+## `FAIL-NS-0096` — positivité du stress de Haar prise pour dissipation
+
+- Idée réfutée : puisque
+  `Sigma=mathcal A_2(W tensor W)` est positif semi-défini, le terme
+  `integral Sigma:nabla V` devrait avoir un signe et amortir la dynamique de
+  la moyenne `V=mathcal AZ`.
+- Cause exacte : seul le tenseur de déformation symétrique sans trace de
+  `V` contribue. Il possède des directions propres positives et négatives;
+  la positivité de `Sigma` ne fixe pas leur contraction.
+- Contre-exemple : avec `G=exp(-|x|²)`,
+  `A_V=zG(-y,x,0)`, `A_W=xGe_3`, `V=curl A_V`, `W=curl A_W`, les champs sont
+  de Schwartz, divergence-free, `mathcal AV=V` et `mathcal AW=0`, mais
+
+  ```text
+  integral_R3 (W tensor W):nabla V
+    =-(8/27)(pi/3)^(3/2).
+  ```
+
+  Remplacer `V` par `-V` inverse le signe sans changer les autres contraintes.
+- Certificat : 20 assertions polynomial--gaussiennes exactes, arithmétique
+  rationnelle, aucune graine ni discrétisation; empreinte
+  `2295e890391f8ed34044a1e35ca16a90748f27743ea0a081a677ff590df5fc50`.
+- Portée : ces champs ne sont pas une trajectoire Navier--Stokes. Le résultat
+  réfute la coercivité **structurelle** depuis la seule décomposition de
+  Haar, pas une éventuelle estimation PDE utilisant des hypothèses
+  supplémentaires.
+- Décision : abandonner le mécanisme « dissipation seule » pour annuler
+  `partial_s mathcal AZ`; conserver l'équation moyenne exacte et tester
+  l'asymptotique ancienne.

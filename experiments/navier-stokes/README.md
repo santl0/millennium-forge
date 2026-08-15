@@ -2412,3 +2412,24 @@ cellule reste donc `NOT_PROVIDED`.
 - Limites : aucune vitesse 3D, pression, divergence ou solution NS; la
   trajectoire trigonométrique est dérivée analytiquement et la grille
   rationnelle certifie seulement les identités de phase indépendantes.
+
+## `HAAR-REYNOLDS-TRANSFER-1` — signe du transfert moyen/fluctuation
+
+- Question falsifiable : la positivité du stress
+  `Sigma=mathcal A_2(W tensor W)`, avec `mathcal AV=V` et `mathcal AW=0`,
+  impose-t-elle un signe à `integral Sigma:nabla V` ?
+- Équations réellement calculées : rotationnels, divergences, générateur
+  SO(2), produit tensoriel et moments gaussiens; aucune PDE n'est intégrée.
+- Champs : potentiels `A_V=z exp(-|x|²)(-y,x,0)` et
+  `A_W=x exp(-|x|²)e_3`; champs de Schwartz sur `R3`.
+- Discrétisation : aucune. Les polynômes et moments sont évalués avec
+  `Fraction`; aucune graine ni flottant.
+- Résultat : `V` est axisymétrique, `mathcal AW=0`, et
+  `T=-(8/27)(pi/3)^(3/2)`; `T(-V,W)=-T(V,W)`.
+- Résidu et précision : 20 assertions exactes, zéro échec, SHA-256
+  `2295e890391f8ed34044a1e35ca16a90748f27743ea0a081a677ff590df5fc50`.
+- Commande :
+  `python -B experiments/navier-stokes/haar-reynolds-transfer/haar_reynolds_transfer.py`.
+- Environnement : Python standard, sans dépendance externe ni aléa.
+- Limites : champs tests statiques, pas solutions NS; le certificat élimine
+  seulement un argument de signe structurel.
