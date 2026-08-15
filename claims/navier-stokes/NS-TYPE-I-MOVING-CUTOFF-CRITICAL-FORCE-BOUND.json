@@ -1,0 +1,62 @@
+{
+  "id": "NS-TYPE-I-MOVING-CUTOFF-CRITICAL-FORCE-BOUND",
+  "problem": "navier-stokes",
+  "statement": "Soit u,p une solution classique de Navier–Stokes incompressible 3D non forcé, de viscosité un sur R3 avant T_*, telle que sup_t||u(t)||_(L^(3,infinity))<=M. Fixons sur la couronne unité une droite inverse de Bogovskii exacte, support-preserving et pseudodifférentielle d'ordre -1, puis Q U=chi U-B(nabla chi dot U). Pour la remise à l'échelle Type I du cutoff mobile, la force projetée F_sol=P_L div(Z tensor Z)-Q div(U tensor U+P I)-[Delta,Q]U+kappa[D,Q]U appartient uniformément à X=L1+div L^(3/2,infinity), avec ||F_sol||_X<=C_[A,chi,B,CZ](M^2+(1+|kappa|)M). La constante est indépendante du temps et du rayon R, mais dépend de la réalisation fixée et, par kappa=2/S_w^*(C_M M), de M.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "u et p sont lisses avant T_*; le passage à une solution faible au temps terminal n'est pas inclus",
+    "le domaine est R3, la viscosité vaut un, la force extérieure originale est nulle et il n'y a pas de frontière",
+    "la pression est fixée par la jauge globale de Riesz P=R_iR_j(U_iU_j)",
+    "chi appartient à C_c^infinity(B_2), vaut un sur B_1 et le support de nabla chi est compactement contenu dans A",
+    "B est une droite inverse exacte sur les distributions de moyenne nulle supportées strictement dans A, préserve le support, gagne une dérivée dans W_0^(s,p) aux indices utilisés et est d'ordre pseudodifférentiel -1 à reste lissant près; W_0^(-1,p) désigne ici le dual de W^(1,p')",
+    "D=1+y dot nabla, Z=QU, kappa=-RR' et, dans l'application Barker–Prange, kappa=2/S_w^*(C_M M)",
+    "la quasi-norme de X est l'infimum de ||f||_L1+||G||_(L^(3/2,infinity)) sur les représentations F=f+div G"
+  ],
+  "dependencies": [
+    "NS-MOVING-SOLENOIDAL-CUTOFF-FORCED-EQUATION",
+    "NS-TYPE-I-WEAK-L3-PARABOLIC-CORE-CAPTURE",
+    "NS-SOLENOIDAL-ANNULAR-CUTOFF"
+  ],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0043-critical-negative-force.md; décomposition exacte du commutateur et de la force complète dans X"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0103 et NS-SRC-0185; ordre pseudodifférentiel, support et prolongement de Bogovskii aux Sobolev négatifs"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0043-literature.md; distinction entre la flèche publiée W_0^(-1,4/3) vers L^(4/3), l'échelle supportée tous ordres et les commutateurs dérivés",
+      "sha256": "e7c1708efa29fecfd531d412814d073d0d3ca096bf1e82a5f56dbf56c7a1e416"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0043-analysis.md; audit formel séparé des identités et isolement de la marche W^(-2,p) vers W^(-1,p)",
+      "sha256": "a7e3d31296b340d9d0de56f14d704e53b2862f8e1d532073ac72d7eb985a4700"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/moving-commutator/moving_commutator_audit.py; 222 assertions exactes sur la croissance positive et la décomposition négative uniforme",
+      "sha256": "df0e6cd76ccd21fe64a1d8f426408afc9f807f33354fe139383330b976380707"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0043-countermodel.md; la croissance Theta(N) ne survit pas dans X et le correcteur non nul dépend de la réalisation",
+      "sha256": "957b853b4d11f254e1ce970d5b545909086766d26738c16aeb679b3fd9b7f3c6"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0043-critical-negative-force"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Dérivation principale et test haute fréquence séparé; aucune revue humaine externe",
+    "notes": "Le claim est une borne critique négative conditionnelle. Il ne donne ni petitesse, ni compacité forte, ni convergence des produits, ni solution ancienne non forcée, ni régularité Clay."
+  }
+}

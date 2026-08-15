@@ -1270,3 +1270,29 @@ Wolf et Kwon sur la pression locale, Breit sur la régularité au bord mobile,
 et la prépublication forcée de Zhang (`0180`–`0184`). Le catalogue atteint
 184 sources. Le rayon parabolique viole l'hypothèse de vitesse de bord
 `L3_t` de Breit, et aucune source ne fournit l'annulation critique manquante.
+
+## Cycle 0043 — la croissance haute fréquence disparaît dans la norme négative
+
+Geißert–Heck–Hieber étend l'opérateur exact de Bogovskii sur domaine
+lipschitzien de `W_0^(s,p)` vers `W_0^(s+1,p)` pour
+`s>-2+1/p`. Costabel–McIntosh identifie les opérateurs régularisés supportés
+comme pseudodifférentiels d'ordre `-1`, avec échelle de régularité sans perte
+sur une géométrie fixe. Ces deux résultats permettent de choisir le même
+inverse exact pour lequel `[Delta,B M_a]` est d'ordre zéro et
+`[D,B M_a]` d'ordre `-1`.
+
+La conséquence interne est une borne de la force projetée complète dans
+
+```text
+X=L1+div L^(3/2,infinity),
+||F_sol||_X<=C[M²+(1+|kappa|)M].
+```
+
+Le mode pure-swirl haute fréquence vérifie simultanément une croissance
+`Theta(N)` en `L2` et un budget uniforme dans `X`. Il élimine donc la norme
+positive terme à terme comme test du verrou, sans rendre la force petite.
+
+Le catalogue atteint 185 sources après ajout de la source négative de
+Geißert–Heck–Hieber. Le nouveau trou n'est plus la bornitude instantanée :
+il est la compacité dans un espace non réflexif, puis la rigidité avec force
+critique ou l'échappement contrôlé de la couronne à l'infini.

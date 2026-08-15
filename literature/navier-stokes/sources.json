@@ -3820,6 +3820,26 @@
       "reproduction": {"status": "primary_arxiv_v3_statement_and_construction_scope_audited_cycle_0042_not_reproduced"},
       "verification": {"level": "primary_full_text", "checked_on": "2026-08-15", "notes": "Version v3, équation forcée, notion de blow-up, classe de force et convention de criticité contrôlées; aucune validation indépendante de la construction."},
       "tags": ["Navier_Stokes", "forced", "blowup", "critical_force", "preprint_2024"]
+    },
+    {
+      "id": "NS-SRC-0185",
+      "title": "On the Equation div u = g and Bogovskii's Operator in Sobolev Spaces of Negative Order",
+      "authors": ["Matthias Geißert", "Horst Heck", "Matthias Hieber"],
+      "year": 2006,
+      "source_type": "book_chapter",
+      "publication_status": "published",
+      "venue": "Partial Differential Equations and Functional Analysis, Operator Theory: Advances and Applications 168, 113–121",
+      "identifiers": {"doi": "10.1007/3-7643-7601-5_7", "url": "https://doi.org/10.1007/3-7643-7601-5_7"},
+      "equation": {"model": "équation de divergence div u = g", "dimension": "n au moins 2", "domain": "domaine borné localement lipschitzien", "boundary": "conditions encodées par W_0^(s+1,p); C_c^infinity est préservé sur les données lisses", "forcing": "sans objet", "viscosity": "sans objet"},
+      "solution_notions": ["droite inverse linéaire de la divergence dans les espaces de Sobolev d'ordre négatif"],
+      "result": "Le théorème 2.5 construit un opérateur de Bogovskii exact qui envoie W_0^{s,p} dans W_0^{s+1,p} pour 1<p<infini et s>-2+1/p, sous la condition de moyenne nulle. En particulier s=-1, p=4/3 est admissible.",
+      "hypotheses": ["domaine borné localement lipschitzien", "1<p<infini", "s>-2+1/p", "donnée de moyenne nulle dans la convention W_0^{s,p} des auteurs"],
+      "constants_uniformity": "La constante dépend du domaine, de p et de s; aucune uniformité sur une famille de domaines dégénérants n'est revendiquée.",
+      "clay_relevance": "Fournit le pont W_0^{-1,4/3} vers L^{4/3} utilisé pour absorber le défaut de divergence de la pression localisée sur une couronne fixe; ce résultat fonctionnel ne donne aucune régularité Navier–Stokes.",
+      "limitations": ["la notation W_0^{-1,p} est le dual de W^{1,p'} et est plus restrictive que le dual usuel de W_0^{1,p'}", "pas d'endpoint Lorentz faible", "pas de dynamique Navier–Stokes", "constantes non uniformes sous dégénérescence géométrique"],
+      "reproduction": {"status": "primary_author_full_text_theorem_2_5_audited_cycle_0043"},
+      "verification": {"level": "primary_full_text", "checked_on": "2026-08-15", "notes": "Énoncé, plage s>-2+1/p, convention des espaces négatifs, compatibilité de moyenne et construction par recollement contrôlés sur le texte primaire."},
+      "tags": ["divergence", "Bogovskii", "negative_Sobolev", "support", "Lipschitz_domain"]
     }
   ],
   "watchlist": [
@@ -3922,7 +3942,8 @@
     "recent_vortex_filaments_and_rings": ["NS-SRC-0119", "NS-SRC-0120", "NS-SRC-0121", "NS-SRC-0122", "NS-SRC-0123", "NS-SRC-0124", "NS-SRC-0131"],
     "merge_trees_and_persistence": ["NS-SRC-0163", "NS-SRC-0164", "NS-SRC-0165", "NS-SRC-0166", "NS-SRC-0168", "NS-SRC-0169", "NS-SRC-0170", "NS-SRC-0171"],
     "wavelets_square_functions_and_weak_endpoint": ["NS-SRC-0069", "NS-SRC-0145", "NS-SRC-0172", "NS-SRC-0173", "NS-SRC-0174"],
-    "solenoidal_localization_and_bogovskii": ["NS-SRC-0103", "NS-SRC-0111", "NS-SRC-0154", "NS-SRC-0176", "NS-SRC-0177", "NS-SRC-0178", "NS-SRC-0179", "NS-SRC-0180", "NS-SRC-0183"],
+    "solenoidal_localization_and_bogovskii": ["NS-SRC-0103", "NS-SRC-0111", "NS-SRC-0154", "NS-SRC-0176", "NS-SRC-0177", "NS-SRC-0178", "NS-SRC-0179", "NS-SRC-0180", "NS-SRC-0183", "NS-SRC-0185"],
+    "negative_sobolev_divergence": ["NS-SRC-0103", "NS-SRC-0180", "NS-SRC-0185"],
     "moving_domains_and_time_dependent_divergence": ["NS-SRC-0180", "NS-SRC-0183"],
     "local_pressure_and_projection": ["NS-SRC-0181", "NS-SRC-0182"],
     "forced_blowup_and_force_scaling": ["NS-SRC-0032", "NS-SRC-0033", "NS-SRC-0057", "NS-SRC-0175", "NS-SRC-0184"]

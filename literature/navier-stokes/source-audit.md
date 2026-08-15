@@ -1118,3 +1118,32 @@ La veille ajoute `NS-SRC-0180`–`0184` et porte le corpus à 184 sources. Les
 textes primaires, DOI, versions et limites de transfert ont été contrôlés le
 2026-08-15. Le résultat du cycle est une identité conditionnelle et un test
 d'échelle interne, pas un théorème de régularité publié.
+
+## Audit ciblé du cycle 0043 — force critique en espace négatif
+
+- Costabel–McIntosh (`0103`) construit sur un domaine lipschitzien un
+  opérateur préservant le support et pseudodifférentiel d'ordre `-1`; son
+  théorème 4.6 donne l'action dans les espaces de Sobolev de tout ordre. Le
+  calcul des ordres `[Delta,B]` et `[B,y·nabla]` relève ensuite du calcul
+  symbolique standard : cette inférence est interne et non un énoncé cité
+  mot pour mot.
+- Geißert–Heck–Hieber (`0185`) énonce exactement
+  `B:W_0^{s,p}->W_0^{s+1,p}` pour `s>-2+1/p`. Le choix
+  `s=-1,p=4/3` ferme le pont négatif requis par le défaut de pression.
+- La notation des auteurs est essentielle : leur `W_0^{-1,p}` est le dual de
+  `W^{1,p'}`, donc plus petit que le dual usuel de `W_0^{1,p'}`. Ici le défaut
+  est de support strictement intérieur et de moyenne nulle; ces deux
+  compatibilités sont vérifiées avant d'appliquer le théorème.
+- Saari–Schwarzacher (`0180`) confirme indépendamment la formule intégrale
+  de Bogovskii et le gain d'une dérivée pour tout ordre sur la géométrie
+  qu'ils considèrent, mais leur cadre mobile n'apporte pas la compacité de la
+  force quand la couronne s'éloigne.
+- La veille différentielle n'a identifié aucun article primaire 2025–2026
+  qui transforme une borne dans
+  `L1+div L^(3/2,infinity)` en disparition locale de la force, ni en théorème
+  de rigidité ancienne non forcée.
+
+La veille ajoute `NS-SRC-0185` et porte le corpus à 185 sources. La borne
+critique uniforme du cycle est une dérivation interne conditionnée au choix
+fixe de l'opérateur; elle ne fournit ni petitesse, ni compacité, ni limite
+ancienne non forcée.

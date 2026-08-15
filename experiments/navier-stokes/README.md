@@ -1941,3 +1941,31 @@ cellule reste donc `NOT_PROVIDED`.
 - Limites : le témoin n'est pas une trajectoire Navier–Stokes et aucune
   pression non locale n'est résolue. Le certificat réfute la petitesse par
   scaling, pas une cancellation PDE de la force complète.
+
+## `MOVING-COMMUTATOR-1` — norme positive contre budget négatif
+
+- Question falsifiable : la croissance haute fréquence de
+  `[Delta,Q]U_N` force-t-elle la divergence de sa norme critique
+  `L1+div L^(3/2,infinity)` ?
+- Équations calculées : identités différentielles du cutoff sur une famille
+  pure-swirl; aucune intégration de Navier–Stokes.
+- Géométrie : tore `1<r<5/4`, `|z|<1/8`, hors de l'axe; cutoff radial autour
+  de `(0,0,-1)`, affine sur toute la zone active.
+- Champ : `U_N=epsilon phi(r,z)sin(Nz)e_theta`; divergence et deux entrées de
+  Bogovskii nulles exactement.
+- Résultat positif : norme `L2` au moins
+  `epsilon(5N/32-8/15)` pour `N>=16`.
+- Résultat adverse :
+  `[Delta,chi]U_N=-(Delta chi)U_N+div(2U_N tensor nabla chi)` avec budgets
+  `99epsilon/140` et `8epsilon/5`, indépendants de `N`.
+- Correcteur activé : un profil poloidal séparé donne
+  `nabla chi dot W=3/5` en un point, sans prétendre calculer `B W` avant choix
+  de la réalisation.
+- Discrétisation et erreur : aucune; `fractions.Fraction`, bibliothèque
+  standard, calcul déterministe, aucune graine.
+- Commande :
+  `python -B experiments/navier-stokes/moving-commutator/moving_commutator_audit.py`.
+- Résidu certifié : 222 assertions exactes, zéro échec. Empreinte :
+  `df0e6cd76ccd21fe64a1d8f426408afc9f807f33354fe139383330b976380707`.
+- Limites : le certificat ne calcule ni la pression ni la force complète;
+  leur borne est une dérivation analytique séparée.
