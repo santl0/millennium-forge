@@ -483,3 +483,25 @@ vorticité au même centre, ni solution ancienne, ni rigidité.
 La simple implication `R(t)->0` vers une force de cutoff `o(1)` est fermée
 négativement. L'échelle instantanée naturelle de la force est `L1`, ou une
 divergence de stress faible-`L^(3/2)`, et elle est exactement critique.
+
+## Priorité active après le cycle 0043
+
+1. **`GAP-TYPE-I-FORCE-COMPACTNESS`.** Une borne uniforme dans
+   `X=L1+div L^(3/2,infinity)` ne donne aucune compacité forte. Identifier une
+   topologie où la pression et les produits quadratiques passent à la limite
+   sans supposer le lissage recherché.
+2. **Couronne externe `L`.** Choisir `chi_L=1` sur `B_1`, placer la transition
+   près de `B_L`, puis suivre les normes de Bogovskii et des commutateurs en
+   fonction de `L`. Tester si la force s'échappe de tout compact.
+3. **Localité contre Leray.** Comparer la forme annulaire avec pression locale
+   et la forme solénoïdale à queue non locale; ne pas confondre disparition du
+   support source et disparition de la pression harmonique.
+4. **`GAP-TYPE-I-FORCED-RIGIDITY`.** Si une force limite subsiste, classifier
+   les solutions anciennes correspondantes. Une borne critique grande n'est
+   pas perturbative.
+5. **Type II.** Maintenir `GAP-TYPE-II-RELATIVE-CORE-CAPTURE` séparé : la
+   dépendance de `kappa` et du rayon en `M` n'est pas uniforme.
+
+Le sous-gap `GAP-TYPE-I-MOVING-COMMUTATOR-BOUND` est fermé uniquement pour la
+réalisation exacte, supportée et pseudodifférentielle fixée au cycle 0043. Le
+caractère qualitatif `C_c^infinity->C_c^infinity` ne suffirait pas.

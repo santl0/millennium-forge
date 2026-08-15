@@ -440,3 +440,22 @@
   `GAP-TYPE-I-FORCED-RIGIDITY`.
 - La prochaine action fixe une formule intégrale de Bogovskii et teste les
   commutateurs sur une famille pure-swirl haute fréquence.
+
+### 2026-08-15 — commutateur fermé dans un espace négatif critique
+
+- La réalisation de Bogovskii est désormais fixée comme droite inverse
+  exacte, support-preserving et pseudodifférentielle d'ordre `-1`; le seul
+  mapping qualitatif sur les tests n'est plus accepté comme hypothèse cachée.
+- La marche `W_0^(-1,4/3)->L^(4/3)` utilise la notation exacte de
+  Geißert–Heck–Hieber et des données strictement supportées dans la couronne.
+- La croissance haute fréquence positive est abandonnée comme obstruction à
+  `L1+div L^(3/2,infinity)` : la dérivée passe exactement dans le stress.
+- Le claim `NS-TYPE-I-MOVING-CUTOFF-CRITICAL-FORCE-BOUND` reste
+  `COMPUTATION_ONLY`; trois passes IA et des sources opératorielles ne le
+  transforment pas en preuve publiée.
+- La borne obtenue dépend de `M`, de `kappa`, du cutoff et de l'opérateur
+  fixé. Elle est uniforme en `R` et en temps, mais n'est pas petite.
+- `GAP-TYPE-I-MOVING-COMMUTATOR-BOUND` est fermé pour ce choix.
+  `GAP-TYPE-I-FORCE-COMPACTNESS` devient actif avant la rigidité forcée.
+- La prochaine expérience déplace la couronne vers le facteur externe `L`
+  et suit toutes les constantes avant tout passage `L->infinity`.

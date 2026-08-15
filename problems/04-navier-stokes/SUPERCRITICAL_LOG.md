@@ -942,3 +942,26 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   projetée et commutateurs de Bogovskii dans les espaces négatifs.
 - Pivot : `GAP-TYPE-I-MOVING-COMMUTATOR-BOUND`, puis
   `GAP-TYPE-I-FORCED-RIGIDITY`.
+
+## 2026-08-15 — Commutateur mobile dans l'espace négatif critique
+
+- Objet : même branche Type I, mais avec une réalisation exacte et
+  pseudodifférentielle d'ordre `-1` de Bogovskii sur la couronne unité.
+- Espace invariant : `X=L1+div L^(3/2,infinity)`; les deux coefficients se
+  remettent à l'échelle comme `R^-3f` et `R^-2G`.
+- Identité : `-[Delta,Q]+kappa[D,Q]` est la somme d'un terme `L1` et de la
+  divergence de `-2U tensor nabla chi`; les commutateurs restants sont
+  d'ordre zéro ou inférieur.
+- Force complète : pression de Riesz et non-linéarité coûtent `O(M²)`;
+  mobilité et commutateurs coûtent `O((1+|kappa|)M)`.
+- Test : la norme positive du mode pure-swirl croît au moins comme
+  `epsilon(5N/32-8/15)`, mais les budgets négatifs restent bornés par
+  `99epsilon/140` et `8epsilon/5`.
+- Certificat : 222 assertions rationnelles exactes, zéro échec; aucune
+  discrétisation et aucune intégration Navier–Stokes.
+- Résultat : `GAP-TYPE-I-MOVING-COMMUTATOR-BOUND` est fermé pour l'opérateur
+  fixé. La force est critique et grande, pas petite.
+- Perte restante : `X` est non réflexif, la projection est non locale et
+  aucune convergence forte des produits n'est acquise.
+- Pivot : `GAP-TYPE-I-FORCE-COMPACTNESS`, puis
+  `GAP-TYPE-I-FORCED-RIGIDITY`.

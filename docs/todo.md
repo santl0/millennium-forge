@@ -162,14 +162,33 @@
 - [x] Certifier les puissances `R^-3`, les normes spatiales et l'accumulation
   logarithmique sur un témoin pure-swirl annulant le correcteur.
 - [x] Réfuter la petitesse de force fondée uniquement sur `R(t)->0`.
-- [ ] Fixer une formule intégrale support-lisse précise de Bogovskii sur la
+- [x] Fixer une formule intégrale support-lisse précise de Bogovskii sur la
   couronne unité et établir ses bornes dans les espaces négatifs de Lorentz.
-- [ ] Calculer `[Delta,Q]U` et `[D,Q]U` sur
+- [x] Calculer `[Delta,Q]U` et `[D,Q]U` sur
   `U_N=epsilon phi(r,z)sin(Nz)e_theta`; suivre le terme principal en `N` dans
   la somme complète.
-- [ ] Prouver ou réfuter une borne uniforme
+- [x] Prouver ou réfuter une borne uniforme
   `L1+div L^(3/2,infinity)` dépendant seulement de la taille Type I `M`.
 - [ ] Si cette borne tient, formuler un problème de rigidité pour une solution
   ancienne avec force annulaire critique non évanescente.
 - [ ] Garder le passage Type II séparé : injecter `M_j->infinity` seulement
   après fermeture ou réfutation du commutateur Type I.
+
+### Cycle 0043
+
+- [x] Fixer une réalisation exacte, support-preserving et
+  pseudodifférentielle d'ordre `-1` de Bogovskii sur la couronne unité.
+- [x] Calculer les ordres de `[Delta,B M_a]` et `[D,B M_a]` et suivre leurs
+  constantes comme normes d'opérateur nommées.
+- [x] Tester le mode pure-swirl haute fréquence dans une norme positive et
+  dans `L1+div L^(3/2,infinity)`.
+- [x] Composer commutateur, pression, non-linéarité et projection de Leray
+  pour obtenir une borne critique uniforme en `R`.
+- [ ] Introduire une transition externe à facteur `L` et suivre la croissance
+  de toutes les constantes géométriques et pseudodifférentielles.
+- [ ] Tester si la force annulaire disparaît sur chaque compact lorsque
+  `L->infinity`, sans perdre la capture du core.
+- [ ] Si elle ne disparaît pas, définir la topologie faible-étoile exacte de
+  `X` et construire un test de passage des produits quadratiques.
+- [ ] Conserver le cas Type II séparé jusqu'à un contrôle uniforme des
+  constantes Barker–Prange et de `kappa(M)`.

@@ -813,3 +813,48 @@ ni démontrée ni réfutée.
 3. Si la borne critique tient, formuler un théorème de rigidité forcé; sinon,
    enregistrer le contre-profil et pivoter vers une localisation intrinsèque
    sans frontière mobile.
+
+## Cycle 0043 — borne critique négative et nouveau trou compact
+
+```text
+Costabel–McIntosh: opérateur supporté Psi^(-1)
+  + Geißert–Heck–Hieber: échelle Sobolev négative
+  --> [Delta,B M_a] d'ordre 0
+  --> [D,B M_a] d'ordre -1
+      [classique et sourcé au niveau opérateur]
+
+U dans faible-L3 sur la couronne fixe
+  --> U dans L2 et dans faible-L3/2 local
+  --> -[Delta,Q]U+kappa[D,Q]U dans X
+      [dérivation interne]
+
+P=R_iR_j(U_iU_j), H=div(U tensor U+P I)
+  --> P,S dans faible-L3/2
+  --> B(a dot H) dans L4/3 local
+  --> QH dans X
+      [dérivation interne + source négative]
+
+P_L div(Z tensor Z)
+  --> div(stress faible-L3/2 non local)
+      [Calderon–Zygmund classique]
+
+les trois branches
+  --> NS-TYPE-I-MOVING-CUTOFF-CRITICAL-FORCE-BOUND
+      [COMPUTATION_ONLY]
+  --> GAP-TYPE-I-MOVING-COMMUTATOR-BOUND fermé pour B fixé
+  -?-> GAP-TYPE-I-FORCE-COMPACTNESS
+  -?-> GAP-TYPE-I-FORCED-RIGIDITY
+  -?-> régularité globale Clay.
+```
+
+Le mode haute fréquence ne détruit que les normes positives. Son terme
+`Theta(N)` est exactement la divergence d'un stress d'amplitude uniforme;
+il ne constitue donc pas une arête négative vers l'espace `X`.
+
+## Priorité après le cycle 0043
+
+1. Introduire un cutoff externe de facteur `L` et suivre la croissance des
+   constantes de l'inverse de divergence avec la géométrie normalisée.
+2. Tester l'échappement de la force sur les compacts quand `L->infinity`.
+3. Si l'échappement échoue, isoler la topologie faible-étoile minimale dans
+   laquelle pression et produits quadratiques passent à la limite.

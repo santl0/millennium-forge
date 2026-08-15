@@ -1712,3 +1712,56 @@ Priorité : choisir une formule intégrale précise de Bogovskii, intégrer par
 parties dans les commutateurs et tester une famille pure-swirl haute fréquence.
 Même une borne critique uniforme ne supprimerait pas la force et demanderait
 ensuite un théorème de rigidité forcé distinct.
+
+## Cycle 0043 — force complète dans un espace négatif critique
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| exploiter l'ordre pseudodifférentiel de Bogovskii dans `L1+div faible-L^(3/2)` | 4 | 4 | 5 | 5 | **18** |
+| réfuter toute borne par le mode haute fréquence | 3 | 5 | 5 | 2 | 15 |
+| remplacer Bogovskii par la projection de Leray globale | 3 | 4 | 5 | 3 | 15 |
+
+On fixe une droite inverse support-preserving d'ordre `-1` sur la couronne
+unité, `T=B M_(nabla chi)` et `Q=M_chi-T`. Le calcul fonctionnel donne
+
+```text
+K_kappa(U)=-[Delta,Q]U+kappa[D,Q]U
+           =f_kappa(U)+div G(U),
+
+G(U)=-2U tensor nabla chi,
+f_kappa=[Delta,T]U-kappa[D,T]U
+        +[(Delta chi)+kappa(y dot nabla chi)]U.
+```
+
+Comme `[Delta,T]` est d'ordre zéro et `[D,T]` d'ordre `-1`, le faible-`L3`
+sur la couronne fixe donne
+
+```text
+||K_kappa(U)||_(L1+div L^(3/2,infinity))
+ <=C_(A,chi,B,kappa)K_3(U).
+```
+
+En écrivant `H=div(U tensor U+P I)`, la marche négative
+`B:W^(-1,4/3)_0->L^(4/3)` contrôle `QH`. La projection du défaut quadratique
+reste la divergence d'un stress faible-`L^(3/2)`. Ainsi
+
+```text
+borne Type I faible-L3
+  + B exact, support-preserving, Psi^(-1)
+  --> NS-TYPE-I-MOVING-CUTOFF-CRITICAL-FORCE-BOUND
+      ||F_sol||_X<=C[M^2+(1+|kappa|)M]
+      [COMPUTATION_ONLY]
+
+mode pure-swirl U_N
+  --> ||[Delta,chi]U_N||_2=Theta(N)
+  -/-> divergence de ||[Delta,chi]U_N||_X
+      [budget exact indépendant de N]
+
+borne dans X
+  -?-> GAP-TYPE-I-FORCE-COMPACTNESS
+  -?-> GAP-TYPE-I-FORCED-RIGIDITY.
+```
+
+Priorité : déplacer la couronne externe vers `|y|~L`, suivre les constantes
+en `L` et déterminer si la force disparaît sur tout compact lorsque
+`L->infinity`, avant de chercher une rigidité globale forcée.

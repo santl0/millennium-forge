@@ -1627,3 +1627,25 @@ claim éventuellement supersédé.
   somme complète imposée par Navier–Stokes et sa pression.
 - Statut : petitesse tirée du seul rayon `REFUTED`; pivot vers
   `GAP-TYPE-I-MOVING-COMMUTATOR-BOUND`.
+
+## `FAIL-NS-0079` — Croissance haute fréquence positive prise pour obstruction négative
+
+- Date : 2026-08-15.
+- Cible : réfuter une borne dans `L1+div L^(3/2,infinity)` en montrant que
+  `[Delta,chi]U_N` croît comme `N` dans une norme positive.
+- Témoin : `U_N=epsilon phi(r,z)sin(Nz)e_theta`, divergence-free, avec
+  `nabla chi dot U_N=nabla chi dot Delta U_N=0`; tout correcteur de Bogovskii
+  s'annule sur cette famille.
+- Croissance réelle : pour `N>=16`,
+  `||[Delta,chi]U_N||_2>=epsilon(5N/32-8/15)`.
+- Quantificateur faux : la dérivée oscillante se réécrit exactement comme
+  `div(2U_N tensor nabla chi)`. Les budgets des coefficients vérifient
+  `||f_0||_1<=99epsilon/140` et
+  `||G_0||_(3/2,infinity)<=8epsilon/5`, uniformément en `N`.
+- Certificat : 222 assertions rationnelles, empreinte
+  `df0e6cd76ccd21fe64a1d8f426408afc9f807f33354fe139383330b976380707`.
+- Portée : le test réfute une borne positive terme à terme, pas la borne
+  négative. Il ne prouve pas à lui seul la borne de la force complète.
+- Statut : stratégie haute fréquence positive `ABANDONNÉE`; le choix
+  pseudodifférentiel fixé ferme ensuite la borne négative et déplace le verrou
+  vers la compacité.

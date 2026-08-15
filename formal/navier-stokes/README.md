@@ -1098,3 +1098,27 @@ Les étapes 5 et 8, ainsi que les jets du témoin, sont couvertes par 499
 assertions rationnelles. Une compilation de 1–8 certifierait une identité de
 changement d'échelle et une équation forcée, pas la bornitude uniforme des
 commutateurs, la convergence vers une solution ancienne ou un résultat Clay.
+
+## Backlog issu du cycle 0043 — décomposition négative critique
+
+Le noyau stable à formaliser est :
+
+1. définir `X=L1+div L^(3/2,infinity)` comme norme quotient;
+2. prouver les lois d'échelle séparées de `f` et du stress `G`;
+3. développer `[Delta,M_chi]U` et `[D,M_chi]U` avec les signes de (43.5);
+4. encoder comme interface papier les propriétés
+   `T in Psi^(-1)`, `[Delta,T] in Psi^0`, `[D,T] in Psi^(-1)`;
+5. prouver l'inclusion faible-`L3` vers `L2(A)` avec constante
+   `sqrt(3)|A|^(1/6)`;
+6. prouver l'inclusion faible-`L^(3/2)` vers `L^(4/3)(A)` avec constante
+   `3^(3/2)|A|^(1/12)`;
+7. vérifier la décomposition de `Q div S` et toutes les moyennes nulles;
+8. formaliser la composition algébrique donnant
+   `C[M²+(1+|kappa|)M]`;
+9. formaliser séparément les 222 assertions rationnelles du mode
+   haute fréquence.
+
+Les points 4 et la bornitude négative de Bogovskii restent des interfaces de
+source, non des théorèmes présents dans une bibliothèque formelle épinglée.
+Une compilation de 1–9 certifierait la composition fonctionnelle, pas la
+compacité temporelle, la convergence des produits ou la rigidité forcée.

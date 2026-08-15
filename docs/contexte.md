@@ -350,3 +350,15 @@ négatif critique. Aucune annulation de la force complète, compacité forte ou
 rigidité ancienne n'est revendiquée. La veille ajoute cinq sources primaires
 sur domaines mobiles, pression locale et blow-up forcé; le corpus atteint 184
 sources sans théorème couvrant le collapse parabolique.
+
+Le cycle 0043 fixe une réalisation exacte et pseudodifférentielle d'ordre
+`-1` de l'inverse de divergence. Le commutateur mobile et les termes de
+pression/non-linéarité se regroupent alors dans l'espace invariant
+`X=L1+div L^(3/2,infinity)`, avec borne
+`C[M²+(1+|kappa|)M]`. Le mode haute fréquence croît comme `N` dans une norme
+positive mais garde un budget `X` uniforme; 222 assertions exactes ferment
+ce faux contre-test. Le corpus atteint 185 sources.
+
+`GAP-TYPE-I-MOVING-COMMUTATOR-BOUND` est fermé pour l'opérateur fixé. Le
+verrou actif devient `GAP-TYPE-I-FORCE-COMPACTNESS`, suivi de la rigidité
+forcée. Aucune petitesse, convergence forte ou régularité Clay n'est obtenue.
