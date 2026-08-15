@@ -1,0 +1,36 @@
+{
+  "id": "NS-BACKWARD-SELFSIMILAR-WEAK-L3-LIOUVILLE",
+  "problem": "navier-stokes",
+  "statement": "Pour l'equation stationnaire tridimensionnelle de Leray associee a l'ansatz backward auto-similaire exact de Navier-Stokes incompressible non force sur R3, tout profil faible U dans W1,2_loc(R3) inter L^(3,infinity)(R3) est identiquement nul. C'est le cas q=3 du theoreme 1.3 publie de Guevara-Phuc, egalement couvert par les Liouville Lorentz de Chae-Wolf. Ce resultat exclut le sous-scenario backward auto-similaire exact sous ces hypotheses; il n'exclut ni toute solution ancienne faible-L3, ni toute DSS, ni toute recurrence modulee, ni tout blow-up Clay.",
+  "status": "SOURCE_VERIFIED",
+  "hypotheses": [
+    "equation stationnaire de profil de Leray sur R3, issue de Navier-Stokes incompressible standard non force et de viscosite positive normalisee",
+    "auto-similarite backward exacte avec parametre positif",
+    "U est un profil faible dans W1,2_loc(R3)",
+    "U appartient a l'espace de Lorentz L^(3,infinity)(R3)",
+    "aucune extension a une orbite ancienne non auto-similaire ou a une convergence faible-étoile n'est incluse"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0203; Guevara--Phuc, SIAM Journal on Mathematical Analysis 50 (2018), theoreme 1.3, DOI 10.1137/16M110099X"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0204; Chae--Wolf, Archive for Rational Mechanics and Analysis 225 (2017), DOI 10.1007/s00205-017-1110-7"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0052-backward-selfsimilar-literature-audit"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Audit de sources primaires et verification croisee des domaines d'application; aucune reproduction humaine externe de la preuve",
+    "notes": "SOURCE_VERIFIED signifie que l'enonce publie et ses hypotheses ont ete controles, non que la preuve papier a ete reproduite. La passe adverse interdit tout transfert a DSS arbitraire, recurrence faible, ancienne generale, Type II ou probleme Clay sans lemme de raccord explicite."
+  }
+}

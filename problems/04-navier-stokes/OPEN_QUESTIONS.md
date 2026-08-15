@@ -711,3 +711,30 @@ cocycle calorique.
 le critère bas. `NS-FORWARD-SELFSIMILAR-CORRECTOR-SATURATION` et
 `FAIL-NS-0087` interdisent désormais toute nouvelle tentative d'obtenir une
 borne uniforme de fenêtre depuis la seule taille faible-`L3`.
+
+## Priorité active après le cycle 0052
+
+1. **`GAP-TYPE-I-ANCIENT-SIGNED-BASE-FLUX-CANCELLATION`.** Obtenir, pour un
+   filtre `a>0` fixe et une suite ancienne, une borne de la primitive signée
+   `integral_s^r Phi_a`, sans remplacer `Phi_a` par son module.
+2. **Gain dyadique dynamique.** Tester un énoncé non tautologique
+   `integral_(s_n)^r Phi_(a,j)<=C_r2^(epsilon(j-J))` pour `j<=J`, après
+   somme des triades et intégration temporelle. La coercivité d'une triade
+   isolée est réfutée.
+3. **Récurrence de blow-down.** Déterminer si une suite de retours de la même
+   orbite force une compensation entre primitives. Distinguer récurrence
+   faible-étoile, DSS exacte et auto-similarité backward exacte.
+4. **Liouville exact déjà fermé.** Ne pas réattaquer les profils backward
+   auto-similaires exacts dans faible-`L3` : Guevara--Phuc et Chae--Wolf les
+   excluent sous leurs hypothèses. Chercher le premier raccord vers une
+   récurrence moins rigide.
+5. **Pression et localisation.** Tout passage dyadique doit conserver la
+   projection globale ou suivre la pression de Riesz dans la dualité
+   `L^(3/2,infinity)`--`L^(3,1)`.
+6. **Branches séparées.** Le pipeline reste conditionnel à Type I. Type II,
+   une donnée Clay générale et un blow-up admissible ne sont pas réduits au
+   critère de flux.
+
+`FAIL-NS-0088` abandonne les valeurs absolues et le signe triadique
+universel. La prochaine expérience doit porter sur une corrélation
+temporelle d'une même trajectoire ancienne.

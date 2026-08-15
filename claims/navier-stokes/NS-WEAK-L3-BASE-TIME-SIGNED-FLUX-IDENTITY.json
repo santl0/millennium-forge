@@ -1,0 +1,52 @@
+{
+  "id": "NS-WEAK-L3-BASE-TIME-SIGNED-FLUX-IDENTITY",
+  "problem": "navier-stokes",
+  "statement": "Soit v une solution ancienne faible adaptee locale de Navier-Stokes incompressible standard non force sur R3 x (-infinity,T), de viscosite un, a pression globale de Riesz, avec sup_t||v(t)||_(L^(3,infinity))<=M. Pour s<r<T, g_(s,r)=v(r)-exp((r-s)Delta)v(s), G_a(s;r)=exp(aDelta)g_(s,r) et E_a=||G_a||_2^2, a>0 fixe, verifient G_a dans AC_loc en temps de base et E_a(s;r)=integral_s^r Phi_a(sigma;r)dsigma, ou Phi_a(s;r)=2 integral (v tensor v)(s):nabla exp((2a+r-s)Delta)g_(s,r) dx. La bornitude de cette primitive sur une suite s_n->-infinity est exactement equivalente au critere calorifique du cycle 0051 et implique v(r) dans L2. Les bornes disponibles sur |Phi_a| ne donnent que O(M^4(r-s)^(-1/2)) au passe et ne prouvent pas ce critere.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "domaine R3 sans frontiere, viscosite un, force exterieure nulle et temps anciens (-infinity,T)",
+    "v est une solution faible adaptee locale avec representant C_w*L^(3,infinity) et pression q=R_iR_j(v_iv_j)",
+    "le Duhamel global et le correcteur L2 sont ceux de NS-WEAK-L3-DUHAMEL-L2-CORRECTOR",
+    "le filtre calorifique a>0 et le temps terminal r<T sont fixes avant la limite s vers moins l'infini",
+    "les identites differentielles valent presque partout en s et les identites integrees pour tous endpoints finis",
+    "aucun signe ponctuel de Phi_a, aucune integrabilite absolue et aucune convergence impropre ne sont supposes"
+  ],
+  "dependencies": [
+    "NS-WEAK-L3-DUHAMEL-L2-CORRECTOR",
+    "NS-WEAK-L3-ANCIENT-INFRARED-CRITERION"
+  ],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0052-base-time-infrared-flux.md; identite de flux, scaling et obstruction absolue",
+      "sha256": "5ab317781caa4a5c568d2a99beed62a72ba760d279c9e3dba831b4468afe7bbb"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0052-analysis.md; audit independant du signe, facteur deux, double lissage, pression et quantificateurs",
+      "sha256": "e28a7833ca6436ad44f8cdd67f93b65b376c465b91e796f4cdd31148ecd09de1"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0052-countermodel.md; absence de signe et de coercivite triadiques universels",
+      "sha256": "79264e9499fdb668935fe3e2d2a6f6980a8f351518deeed4941216d46e015d40"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/infrared-triad/infrared_triad_audit.py; 1058 assertions exactes en rationnels de Gauss",
+      "sha256": "946bdab1e449ed56a8bbdfe7f7f1d09557e41e2caa8012b055e77f334cc68417"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0052-base-time-signed-flux"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Derivation principale, audit analytique et contre-modele triadique exact separes; aucune revue humaine externe",
+    "notes": "Le statut reste COMPUTATION_ONLY. Le signe, le facteur deux, le lissage, la dualite Lorentz, la pression, l'echelle et les quantificateurs ont ete attaques. Le certificat T3 ne porte pas sur Phi_a le long d'une ancienne R3 et ne prouve aucune cancellation temporelle, rigidite, regularite Clay ou singularite admissible."
+  }
+}

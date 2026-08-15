@@ -1367,3 +1367,34 @@ cadres Herz/Besov et un contraste Liouville axisymétrique. Les
 spécialisations, l'estimation dyadique du correcteur et le contre-exemple à
 une borne forward universelle restent des dérivations IA et ne sont pas
 promus en preuve papier.
+
+## Audit ciblé du cycle 0052 — Liouville backward SS et frontière DSS
+
+- Guevara--Phuc (`0203`, SIAM J. Math. Anal. 2018, DOI
+  `10.1137/16M110099X`) annulent, au théorème 1.3, tout profil faible de
+  Leray `U in W1,2_loc` appartenant à `L^(q,infinity)`,
+  `12/5<q<6`; le cas `q=3` ferme donc l'auto-similarité backward exacte
+  faible-`L3`.
+- Chae--Wolf (`0204`, ARMA 2017, DOI
+  `10.1007/s00205-017-1110-7`) donnent une exclusion Lorentz plus large,
+  `p>3/2`, et un énoncé asymptotiquement auto-similaire sous la convergence
+  structurée de l'article. Ce n'est pas une rigidité de toute ancienne.
+- Jiu--Wang--Wei (`0205`, SIAM J. Math. Anal. 2022, DOI
+  `10.1137/20M1346055`) étendent l'exclusion exacte à des espaces de Morrey;
+  ils ne prouvent pas que la limite Type I du laboratoire possède cette
+  appartenance supplémentaire.
+- Chae (`0085`, arXiv:1306.0305) traite une asymptotique DSS avec profil
+  périodique dans `C1_s(L3_x inter C2_x)`, donc en `L3` fort et non au seul
+  endpoint faible-`L3`.
+- Chae--Wolf (`0086`, CPDE 2017, DOI
+  `10.1080/03605302.2017.1358275`) localisent un unique point possible et
+  excluent le scénario DSS lorsque le facteur `lambda` est proche de un.
+  L'hypothèse de petit pas est essentielle; l'entrée reste au niveau résumé
+  publié avant réemploi d'hypothèses techniques.
+
+La veille différentielle n'a localisé aucun théorème publié 2025--2026 qui
+transforme une ancienne suitable locale, uniformément faible-`L3`, en profil
+backward SS/DSS exact ou en primitive de flux calorifiée bornée. C'est un
+constat de corpus, non une preuve d'absence. Le corpus atteint 205 sources.
+`NS-BACKWARD-SELFSIMILAR-WEAK-L3-LIOUVILLE` est `SOURCE_VERIFIED`; l'identité
+de flux du cycle reste `COMPUTATION_ONLY`.

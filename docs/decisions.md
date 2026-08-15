@@ -619,3 +619,21 @@
 - La prochaine action autonome teste un gain infrarouge signé sur les
   triades du stress d'une même orbite ancienne. Les approches forward
   uniformes en horizon sont abandonnées.
+
+### 2026-08-15 — identité de flux retenue, signe triadique abandonné
+
+- Trois actions ont été notées : flux du temps de base `19/20`, récurrence
+  backward-DSS `17/20`, moment `L1` uniforme du stress `16/20`.
+- Le filtre `a>0` est fixé avant le recul du temps de base; l'absolue
+  continuité est démontrée pour `G_a=S(a)g`, pas supposée pour la trace
+  faible-`L3`.
+- La primitive signée, sa variation absolue et son intégrale impropre sont
+  conservées comme trois objets distincts.
+- `FAIL-NS-0088` abandonne toute fermeture par valeur absolue et toute
+  positivité triadique universelle. Il ne réfute pas une cancellation
+  temporelle produite par une même orbite ancienne.
+- Le Liouville backward auto-similaire exact faible-`L3` est enregistré
+  `SOURCE_VERIFIED`; aucune extension à DSS arbitraire ou à une récurrence
+  faible-étoile n'est attribuée aux sources.
+- Le prochain verrou est un gain dyadique après somme dynamique et
+  intégration temporelle, avec pression et loi d'échelle suivies.

@@ -1157,3 +1157,26 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   trajectoire Navier--Stokes.
 - Pivot : `GAP-TYPE-I-ANCIENT-INFRARED-STRESS-DEPLETION`, puis
   `GAP-TYPE-I-SINGLE-ANCIENT-ORBIT-RECURRENCE`.
+
+## 2026-08-15 — primitive signée exacte, variation absolue divergente
+
+- Objet : même ancienne conditionnelle sur `R3`, suitable locale,
+  uniformément faible-`L3`, avec pression globale de Riesz.
+- Quantité : `E_a=||S(a)g_(s,r)||_2²` a le poids d'échelle
+  `lambda^(-1)`; sa densité `Phi_a` a le poids `lambda` et
+  `Phi_a ds` retrouve `lambda^(-1)`.
+- Gain : `E_a(s;r)=integral_s^rPhi_a` exactement. Le critère minimal est la
+  bornitude de cette primitive sur une seule suite ancienne.
+- Perte : le pairing endpoint donne seulement
+  `|Phi_a|=O(M^4(r-s)^(-1/2))`. Sa variation diverge comme
+  `M^4(r-s)^(1/2)`, exactement le carré de la croissance critique du
+  correcteur.
+- Pression : le test est solénoïdal et appartient au dual
+  `L^(3,1)`; la pression de Riesz s'annule sans localisation abusive.
+- Contre-test : une triade périodique conserve l'énergie totale mais son
+  transfert bas change de signe avec la phase; une polarisation admissible
+  donne zéro. Le temps visqueux réduit toutefois le ledger à `2N^(-2)`.
+- Résidu : 1058 assertions en rationnels de Gauss, aucune discrétisation,
+  aucun arrondi, résidu rationnel nul.
+- Pivot : conserver somme, phases et temps sur la même orbite dans
+  `GAP-TYPE-I-ANCIENT-SIGNED-BASE-FLUX-CANCELLATION`.

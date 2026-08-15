@@ -1156,3 +1156,44 @@ La première branche est publiée jusqu'à l'existence/décroissance puis
 interne pour la non-nullité. La seconde est entièrement interne au-dessus
 des claims 0048--0050. La contre-implication ne concerne que les solutions
 forward quantifiées sur toutes bandes; le maillon ancien reste manquant.
+
+## Cycle 0052 — primitive signée et Liouville SS exact
+
+```text
+NS-WEAK-L3-ANCIENT-INFRARED-CRITERION
+  + G_a=S(a)g_(s,r)
+  + G_a in AC_loc((-infinity,r];L2)
+  --> partial_sG_a=S(a+r-s)Pdiv(v tensor v)(s)
+  --> partial_s||G_a||_2²=-Phi_a
+  --> ||G_a(s;r)||_2²=integral_s^rPhi_a
+  --> NS-WEAK-L3-BASE-TIME-SIGNED-FLUX-IDENTITY
+
+dualité L^(3/2,infinity)--L^(3,1)
+  --> |Phi_a|<=CM²(a+r-s)^(-3/4)||G_a||_2
+  --> majorant O(M^4(r-s)^(-1/2))
+  -/-> intégrabilité absolue au passé
+      [FAIL-NS-0088]
+
+triade k=(N,0,0), ell=(-N,0,1), q=(0,0,1)
+  --> sortie basse indépendante de N
+  --> transfert (-2ABC,0,+2ABC)
+  --> signe inversable et sortie annulable
+  -/-> coercivité instantanée par incompressibilité
+
+NS-BACKWARD-SELFSIMILAR-WEAK-L3-LIOUVILLE
+  [Guevara--Phuc; Chae--Wolf, publié]
+  --> exclusion du profil backward SS exact faible-L3
+  -/-> exclusion DSS générale
+  -/-> exclusion récurrence faible-étoile/modulée
+  -/-> rigidité de toute ancienne faible-L3
+
+même orbite ancienne + intégration temporelle signée
+  -?-> gain dyadique sommable au passé
+      [GAP-TYPE-I-ANCIENT-SIGNED-BASE-FLUX-CANCELLATION]
+  -?-> trace L2 / Liouville / problème Clay.
+```
+
+Arête publiée : Liouville du profil stationnaire de Leray dans les classes
+Lorentz indiquées. Arête interne : identité de flux. Arêtes réfutées :
+variation absolue et positivité triadique universelle. Arête manquante :
+cancellation temporelle quantitative d'une même orbite ancienne.

@@ -1330,3 +1330,29 @@ Les points 1--2 et 4--9 forment un noyau algébrique stable. Une compilation
 certifierait les exposants, sommes et quantificateurs; elle ne certifierait
 ni le théorème d'existence publié, ni le mapping Lorentz, ni l'annulation
 infrarouge manquante, ni Clay.
+
+## Backlog issu du cycle 0052 — flux de base et triades signées
+
+1. définir abstraitement `G_a(s;r)` dans un espace de Hilbert et formaliser
+   la dérivation de l'intégrale de Bochner à borne inférieure mobile;
+2. encoder `E_a=||G_a||²`, le facteur deux et l'identité
+   `E_a(s;r)=integral_s^rPhi_a`;
+3. formaliser les transformations d'échelle
+   `E_a^lambda=lambda^(-1)E_(lambda²a)` et
+   `Phi_a^lambda=lambda Phi_(lambda²a)`;
+4. isoler comme interfaces papier O'Neil, le mapping
+   `S(h)Pdiv:L^(3/2,infinity)->L2` et la dualité
+   `L^(3/2,infinity)`--`L^(3,1)`;
+5. encoder la différence de quarts de puissance et prouver que son majorant
+   absolu a l'asymptotique `h^(-1/2)` non intégrable;
+6. formaliser les vecteurs d'onde, la divergence, la projection de Leray et
+   la réalité des six modes de la triade adverse;
+7. prouver exactement les transferts `(-2ABC,0,+2ABC)`, leur somme nulle,
+   l'inversion de signe et la polarisation de sortie nulle;
+8. typer le certificat comme algèbre instantanée sur `T3`, jamais comme
+   solution ancienne sur `R3`.
+
+Les points 1--3 et 5--8 forment un noyau algébrique stable. Les mappings
+Lorentz et le passage de l'équation faible au Duhamel lissé restent des
+interfaces papier. Une compilation ne certifierait ni cancellation
+temporelle, ni rigidité ancienne, ni Clay.

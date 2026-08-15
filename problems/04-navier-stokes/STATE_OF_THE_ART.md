@@ -1601,3 +1601,47 @@ deux nouveaux claims restent `COMPUTATION_ONLY`. `FAIL-NS-0087` clôt la
 borne forward universelle; restent
 `GAP-TYPE-I-SINGLE-ANCIENT-ORBIT-RECURRENCE` et
 `GAP-TYPE-I-ANCIENT-INFRARED-STRESS-DEPLETION`.
+
+## Mise à jour 2026-08-15 — cycle 0052, primitive signée du flux de base
+
+Pour `r<T` et un filtre calorifique fixe `a>0`, le correcteur ancien
+`g_(s,r)=v(r)-S(r-s)v(s)` vérifie, avec `G_a=S(a)g_(s,r)`,
+
+```text
+E_a(s;r)=||G_a(s;r)||_2²
+        =integral_s^r Phi_a(sigma;r)dsigma,
+
+Phi_a(s;r)=2 integral_R3 (v tensor v)(s)
+                       :nabla S(2a+r-s)g_(s,r) dx.
+```
+
+Le signe, le facteur deux et le double lissage ont été contrôlés
+indépendamment. Cette identité est exactement équivalente au critère
+calorifique du cycle 0051 : une seule suite `s_n->-infinity` sur laquelle la
+primitive signée reste bornée suffit à obtenir `v(r) in L2`. Elle ne demande
+ni convergence impropre, ni variation totale finie.
+
+La majoration disponible après valeur absolue est seulement
+
+```text
+|Phi_a(s;r)|<=CM^4(a+r-s)^(-3/4)
+                    [(a+r-s)^(1/4)-a^(1/4)],
+```
+
+donc d'ordre `(r-s)^(-1/2)` au passé. Son intégrale reproduit la croissance
+énergétique `(r-s)^(1/2)` et ne ferme rien. Une triade exacte sur `T3`
+montre en outre que l'incompressibilité et la projection de Leray
+n'imposent ni signe ni coercivité instantanés; la phase inverse le transfert
+et une autre polarisation annule la sortie. Ce certificat ne construit pas
+une orbite ancienne sur `R3`, et son ledger sur le temps visqueux décroît
+comme `N^(-2)`.
+
+La littérature primaire ferme séparément le profil backward
+auto-similaire **exact** dans faible-`L3` : le théorème de
+Guevara--Phuc annule tout profil de Leray faible dans
+`W1,2_loc inter L^(3,infinity)`, et Chae--Wolf couvre une gamme Lorentz plus
+large. Cette rigidité ne s'étend pas à une récurrence faible-étoile, modulée
+ou discrètement auto-similaire sans hypothèses supplémentaires.
+
+Le corpus atteint 205 sources et le registre 92 claims. Le verrou actif est
+raffiné en `GAP-TYPE-I-ANCIENT-SIGNED-BASE-FLUX-CANCELLATION`.

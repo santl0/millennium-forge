@@ -347,3 +347,21 @@
   récurrence de blow-down est héritée du scénario Type I.
 - [ ] Ne jamais remplacer l'orbite ancienne par une famille de solutions
   forward translatées ni sommer les normes avant les phases.
+
+### Cycle 0052
+
+- [x] Dériver l'identité lissée en temps de base avec signe, facteur deux,
+  double paramètre calorifique et pairing de pression justifiés.
+- [x] Séparer primitive signée, variation absolue et intégrale impropre; en
+  déduire le quantificateur minimal sur une suite ancienne.
+- [x] Suivre l'échelle de `E_a`, `Phi_a` et `Phi_a ds`.
+- [x] Certifier l'absence de signe et de coercivité triadiques universels par
+  1058 assertions exactes sur `T3`.
+- [x] Auditer les Liouville backward SS/DSS et enregistrer seulement le
+  sous-cas faible-`L3` exact effectivement publié.
+- [ ] Décomposer `Phi_a` en flux Littlewood--Paley signés et tester un gain
+  après somme des triades et intégration temporelle.
+- [ ] Chercher une propriété de récurrence de blow-down héritée par la même
+  orbite ancienne, sans la supposer auto-similaire.
+- [ ] Ne pas réutiliser une valeur absolue, une triade instantanée isolée ou
+  un théorème DSS à petit paramètre comme rigidité générale.

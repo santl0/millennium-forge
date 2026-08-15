@@ -2085,3 +2085,40 @@ internes : non-nullité du profil, saturation exacte, noyau dyadique et
 critère calorifique. Arête réfutée : uniformité forward dépendant seulement
 de la norme critique. Arête manquante : toute annulation infrarouge propre à
 une même trajectoire ancienne.
+
+## Cycle 0052 — flux signé et frontière de la rigidité auto-similaire
+
+```text
+NS-WEAK-L3-ANCIENT-INFRARED-CRITERION
+  + G_a(s;r)=S(a)[v(r)-S(r-s)v(s)]
+  + Duhamel lissé en L2
+  --> partial_s E_a(s;r)=-Phi_a(s;r)
+  --> E_a(s;r)=integral_s^r Phi_a(sigma;r)dsigma
+  --> NS-WEAK-L3-BASE-TIME-SIGNED-FLUX-IDENTITY
+      [COMPUTATION_ONLY]
+
+borne de Lorentz + valeurs absolues
+  --> |Phi_a|<=CM^4(r-s)^(-1/2) au passé
+  -/-> primitive uniformément bornée
+      [FAIL-NS-0088]
+
+incompressibilité + projection de Leray sur une triade T3
+  -/-> signe/coercivité de la réception basse
+      [1058 identités exactes; résidu rationnel nul]
+
+profil backward SS exact U in W1,2_loc inter L^(3,infinity)
+  --> U=0
+      [Guevara--Phuc; Chae--Wolf; SOURCE_VERIFIED]
+
+ancienne faible-L3 générale
+  -/-> auto-similarité backward exacte
+  -/-> DSS avec paramètre arbitraire
+  -/-> récurrence faible-étoile/modulée
+  -?-> GAP-TYPE-I-ANCIENT-SIGNED-BASE-FLUX-CANCELLATION
+  -?-> rigidité ancienne / problème Clay.
+```
+
+L'identité de flux ne crée aucune nouvelle estimation : elle expose le
+quantificateur et les corrélations à préserver. La seule arête publiée
+ajoutée ferme le sous-cas auto-similaire exact; le raccord depuis le scénario
+Type I vers ce sous-cas est manquant.

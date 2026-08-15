@@ -2201,3 +2201,32 @@ cellule reste donc `NOT_PROVIDED`.
 - Limites : le script certifie une obstruction fonctionnelle et l'ordre des
   limites, pas la solution Jia--Sverak, la pression, la suitability, une
   ancienne unique, un blow-up ou Clay.
+
+## `INFRARED-TRIAD-AUDIT-1` — signe et coercivité d'une triade basse
+
+- Question falsifiable : l'incompressibilité et la projection de Leray
+  imposent-elles un signe ou un gain en séparation d'échelles au transfert
+  haute--haute vers une fréquence relativement basse ?
+- Équations réellement calculées : coefficient de convolution Fourier du
+  terme `-P(u dot nabla u)` sur `T3` et transfert énergétique instantané;
+  aucune trajectoire PDE n'est intégrée.
+- Modes et données : `k=(N,0,0)`, `ell=(-N,0,1)`, `q=(0,0,1)`, modes
+  conjugués pour la réalité, polarisations divergence-free et amplitudes
+  rationnelles signées.
+- Discrétisation : aucune. Les coefficients complexes sont des rationnels de
+  Gauss bâtis sur `fractions.Fraction`; graine sans objet.
+- Résultat : sortie basse `e2` indépendante de `N`, transferts
+  `(-2ABC,0,+2ABC)`, signe inversable par phase et sortie nulle pour une
+  autre polarisation admissible.
+- Sensibilité : balayage de huit séparations `N`, sept échelles absolues,
+  quatre facteurs d'échelle et six triplets d'amplitudes; les identités
+  closes valent au-delà des échantillons.
+- Erreur : 1058 assertions exactes, résidu rationnel nul. Le ledger
+  illustratif sur la fenêtre visqueuse vaut `2N^(-2)` et tend vers zéro.
+- Commande :
+  `python -B experiments/navier-stokes/infrared-triad/infrared_triad_audit.py`.
+- Empreinte :
+  `946bdab1e449ed56a8bbdfe7f7f1d09557e41e2caa8012b055e77f334cc68417`.
+- Limites : tore fixe, algèbre instantanée, support non invariant. Le calcul
+  ne certifie ni solution ancienne `R3`, ni suitability, ni transfert
+  cumulé, ni blow-up, ni Clay.

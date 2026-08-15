@@ -1876,3 +1876,29 @@ claim éventuellement supersédé.
 - Statut : estimation forward universelle `REFUTED`. Continuer seulement
   avec une propriété propre à une orbite ancienne cohérente, par exemple une
   déplétion infrarouge signée du stress.
+
+## `FAIL-NS-0088` — valeur absolue ou signe triadique pris pour cancellation ancienne
+
+- Date : 2026-08-15.
+- Cible : fermer la primitive calorifiée du temps de base soit en intégrant
+  `|Phi_a|`, soit en attribuant un signe coercif universel aux triades
+  divergence-free après projection de Leray.
+- Coefficient critique : la dualité de Lorentz donne
+  `|Phi_a|<=CM²(a+r-s)^(-3/4)E_a^(1/2)` et Duhamel donne
+  `E_a^(1/2)<=CM²[(a+r-s)^(1/4)-a^(1/4)]`. Au passé, le produit vaut
+  seulement `CM^4(r-s)^(-1/2)` et sa variation croît comme
+  `CM^4(r-s)^(1/2)`.
+- Contre-test triadique : sur `T3`, avec
+  `k=(N,0,0)`, `ell=(-N,0,1)`, `q=(0,0,1)`, la sortie projetée est
+  indépendante de `N` et les transferts sont exactement
+  `(-2ABC,0,+2ABC)`. La phase `C` inverse le signe; une autre polarisation
+  unitaire annule la sortie.
+- Résidu : 1058 assertions exactes en rationnels de Gauss, conservation
+  triadique exacte et résidu rationnel nul; empreinte
+  `946bdab1e449ed56a8bbdfe7f7f1d09557e41e2caa8012b055e77f334cc68417`.
+- Limite : le certificat est instantané sur le tore. Le ledger sur la
+  fenêtre visqueuse est `2N^(-2)`; aucune cascade persistante, ancienne sur
+  `R3` ou singularité n'est construite.
+- Statut : les deux raccourcis sont `REFUTED`. Une cancellation temporelle
+  d'une même orbite reste ouverte dans
+  `GAP-TYPE-I-ANCIENT-SIGNED-BASE-FLUX-CANCELLATION`.

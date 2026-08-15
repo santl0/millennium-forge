@@ -474,3 +474,12 @@ sur les seules basses fréquences, ou sur `S(a)g` pour un `a>0` fixe. Le
 corpus compte 202 sources et le registre 90 claims. Les verrous actifs sont
 `GAP-TYPE-I-ANCIENT-INFRARED-STRESS-DEPLETION` et
 `GAP-TYPE-I-SINGLE-ANCIENT-ORBIT-RECURRENCE`.
+
+Le cycle 0052 dérive l'identité exacte de flux du temps de base
+`||S(a)g_(s,r)||_2²=integral_s^rPhi_a`. Le contrôle absolu disponible reste
+non intégrable, d'ordre `(r-s)^(-1/2)`, et 1058 identités triadiques exactes
+réfutent tout signe coercif universel issu de la seule incompressibilité.
+La littérature ferme le profil backward auto-similaire exact faible-`L3`,
+mais pas la récurrence faible d'une ancienne générale. Le corpus compte 205
+sources et 92 claims; le verrou actif devient
+`GAP-TYPE-I-ANCIENT-SIGNED-BASE-FLUX-CANCELLATION`.
