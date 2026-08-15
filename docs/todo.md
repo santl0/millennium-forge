@@ -384,3 +384,22 @@
   générateur reste actif mais la primitive infrarouge demeure bornée.
 - [ ] Ne pas promouvoir la dérivation au-delà de `COMPUTATION_ONLY` sans
   revue humaine ou formalisation du paquet compactité--pression.
+
+### Cycle 0054
+
+- [x] Conjuguer exactement l'horloge, la dilatation, la chaleur et le
+  générateur renormalisé, avec signe, facteur `rho²` et pression suivis.
+- [x] Distinguer le filtre de la dérivée `B_s` du second temps calorifique du
+  test de stress.
+- [x] Établir que `D_R` ne contrôle pas le flux par les normes disponibles :
+  fenêtre/tranche, local/global, dérivée/résidu et norme/direction.
+- [x] Certifier un contre-modèle tangent par 47259 assertions exactes et
+  vérifier que sa réalisation sur `T3` a un résidu NS non nul.
+- [x] Auditer Pineau--Vicol v2 comme prépublication RSS/RDSS, sans transfert
+  automatique depuis faible-`L3`.
+- [ ] Écrire l'équation de profil RSS dans les conventions du laboratoire et
+  reproduire les seuils extrêmes de rotation avec constantes suivies.
+- [ ] Tester une rotation intermédiaire et une modulation lente contre le
+  flux calorifié, en séparant calcul de découverte et preuve PDE.
+- [ ] Ne pas présenter l'exclusion RSS exacte comme exclusion des orbites
+  apériodiques, Type II ou du problème Clay.

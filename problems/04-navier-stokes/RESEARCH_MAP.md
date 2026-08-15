@@ -2161,3 +2161,38 @@ rigidité stationnaire est publiée. L'arête nouvelle exclut seulement une
 asymptotique stationnaire globale sur une sous-suite de fenêtres. Elle ne
 produit aucune borne quantitative universelle et laisse possibles les
 orbites récurrentes non stationnaires, DSS, apériodiques et Type II.
+
+## Cycle 0054 — conjugaison exacte et angle manquant
+
+```text
+ancienne renormalisée Z, kappa>0
+  + rho=e^(-kappa s), tau=(1-rho^2)/(2kappa)
+  + B_s=(a-tau)/rho^2
+  --> d_s[T_rho S(B_s)Z]=T_rho S(B_s)L_kappa Z
+      [commutateur [D,Delta]=-2Delta]
+
+correcteur G_a=S(a)[v(0)-S(-tau)v(tau)]
+  --> J_a=rho^2 I_a=-d_s||G_a||_2^2
+  --> J_a=2<G_a,T_rho S(B_s)L_kappa Z>
+      [NS-TYPE-I-GENERATOR-FLUX-CONJUGACY; COMPUTATION_ONLY]
+
+D_R>=epsilon au passé
+  -/-> |J_a|>=c
+  -/-> croissance de integral J_a
+      [local/global; fenêtre/tranche; norme/direction; dérivée/résidu]
+
+flux scalaire intégrable
+  -/-> petit générateur
+      [contre-modèle tangent exact; FAIL-NS-0090]
+
+activité tangentielle compatible avec Navier--Stokes
+  -?-> orbite RSS/RDSS ou modulation
+      [GAP-TYPE-I-RENORMALIZED-TANGENTIAL-ACTIVITY-CLASSIFICATION]
+  -?-> rigidité ancienne / critère infrarouge / problème Clay.
+```
+
+L'arête de conjugaison est une dérivation interne auditée. Le contre-modèle
+est fonctionnel et sa réalisation de Galerkin ne résout pas Navier--Stokes.
+Les exclusions RSS de Pineau--Vicol v2 sont une prépublication sur des
+régimes de rotation extrêmes sous borne Type I ponctuelle; elles ne ferment
+ni l'angle général, ni le régime intermédiaire, ni Type II.

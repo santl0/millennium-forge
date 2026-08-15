@@ -1231,3 +1231,40 @@ normalisation de `kappa`. Arêtes internes : compacité suitable, passage de
 la capture et diagonale des défauts. Arête réfutée : promotion depuis la
 seule borne faible-`L3` ou une simple récurrence. Arête manquante : toute
 coercivité reliant générateur local et flux infrarouge signé.
+
+## Cycle 0054 — générateur, flux et projection radiale
+
+```text
+NS-TYPE-I-DERENORMALIZED-ANCIENT-LOCAL-SUITABLE
+  + NS-WEAK-L3-BASE-TIME-SIGNED-FLUX-IDENTITY
+  + rho=e^(-kappa s), B_s=(a-tau)/rho^2
+  --> NS-TYPE-I-GENERATOR-FLUX-CONJUGACY
+      [dérivation interne; audit indépendant]
+
+NS-TYPE-I-GENERATOR-FLUX-CONJUGACY
+  --> J_a=2<L_kappa Z,Theta_a>
+      [pairing L^(3/2,infinity)--L^(3,1)]
+  -/-> ||partial_s Z|| local
+  -/-> signe ou coercivité de J_a
+      [FAIL-NS-0090]
+
+NS-TYPE-I-RENORMALIZED-GENERATOR-NONVANISHING
+  + identité scalaire de flux
+  -/-> primitive infrarouge non bornée
+      [contre-modèle tangent exact]
+
+orbite relative RSS/RDSS, borne Type I ponctuelle
+  --> rigidités dans des régimes extrêmes de rotation
+      [Pineau--Vicol v2; prépublication]
+  -/-> rotation intermédiaire
+  -/-> ancienne seulement faible-L3
+  -/-> orbite modulée ou Type II
+
+compatibilité PDE de l'activité tangentielle
+  -?-> GAP-TYPE-I-RENORMALIZED-TANGENTIAL-ACTIVITY-CLASSIFICATION
+  -?-> rigidité ancienne / problème Clay.
+```
+
+L'identité exacte décrit une projection radiale calorifiée du résidu, pas
+une norme du générateur. L'arête manquante est désormais angulaire et PDE :
+elle doit exploiter l'équation, la dissipation ou la géométrie du stress.

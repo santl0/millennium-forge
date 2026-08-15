@@ -1206,3 +1206,25 @@ solution ou précise qu'il s'agit seulement d'un champ test.
 - Perte restante : aucune implication connue entre activité locale du
   générateur, signe du flux calorifique et contrôle infrarouge.
 - Pivot : `GAP-TYPE-I-RENORMALIZED-GENERATOR-TO-SIGNED-FLUX`.
+
+## 2026-08-15 — conjugaison du flux et obstruction tangentielle
+
+- Objet : ancienne renormalisée suitable sur `R3`, viscosité un, force
+  nulle, borne uniforme faible-`L3`, horloge Type I de coefficient
+  `kappa>0`.
+- Échelle : `J_a ds=I_a dt` et `E_a` ont le poids physique
+  `lambda^(-1)`; `dt/ds=rho^2`. Le filtre similaire `B_s` reste borné entre
+  deux constantes strictement positives.
+- Identité : `J_a=2<G_a,T_rho S(B_s)L_kappa Z>=-d_s||G_a||_2²`, avec
+  `L_kappa=partial_s-Delta+kappa D` et pression globale projetée.
+- Perte : `D_R` porte sur `partial_s Z`, localement et en norme intégrée;
+  le flux porte sur `L_kappa Z`, globalement et dans une direction signée.
+  Aucun angle, taux de queue ou contrôle du facteur d'horloge n'est acquis.
+- Contre-profil : `G=(1-e^s)e(s)` donne flux total un et
+  `||G'||²>=1/2`; sur `N` coquilles, l'action vaut au moins
+  `N log(2)/2` tandis que le flux tronqué tend vers un.
+- Résidu : 47259 assertions rationnelles exactes, zéro échec; la réalisation
+  solénoïdale sur `T3` a un résidu Navier--Stokes partout non nul.
+- Pivot : classifier l'activité tangentielle PDE, d'abord par les orbites
+  relatives RSS, dans
+  `GAP-TYPE-I-RENORMALIZED-TANGENTIAL-ACTIVITY-CLASSIFICATION`.

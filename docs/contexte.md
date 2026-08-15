@@ -496,3 +496,15 @@ diagonale commune au moyen de 1814 assertions exactes. Le corpus reste à 205
 sources et le registre passe à 93 claims. Le verrou actif devient
 `GAP-TYPE-I-RENORMALIZED-GENERATOR-TO-SIGNED-FLUX`; aucune conclusion Type
 II, Clay ou de blow-up admissible n'est revendiquée.
+
+Le cycle 0054 conjugue exactement ce flux aux variables renormalisées :
+`J_a=rho²I_a=2<G_a,T_rho S(B_s)L_kappa Z>` avec
+`B_s=(a-tau)/rho²`. Cette quantité est une projection radiale globale et
+signée du résidu complet, non une norme locale de `partial_sZ`.
+
+`FAIL-NS-0090` certifie par 47259 assertions exactes qu'un mouvement
+tangent peut garder le générateur uniformément actif avec flux total fini.
+La réalisation périodique ne résout pas Navier--Stokes et n'est donc qu'un
+test de logique. Le corpus reste à 205 sources, le registre passe à 94
+claims et le verrou actif devient
+`GAP-TYPE-I-RENORMALIZED-TANGENTIAL-ACTIVITY-CLASSIFICATION`.

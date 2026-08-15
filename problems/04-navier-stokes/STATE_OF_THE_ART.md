@@ -1674,3 +1674,44 @@ non stationnaire et extractions non emboîtées invalident les raccourcis
 correspondants. Le corpus reste à 205 sources; le registre passe à 93 claims.
 Le verrou est raffiné en
 `GAP-TYPE-I-RENORMALIZED-GENERATOR-TO-SIGNED-FLUX`.
+
+## Mise à jour 2026-08-15 — cycle 0054, flux radial et activité tangentielle
+
+Pour la même ancienne renormalisée, l'horloge exacte
+`rho=exp(-kappa s)`, `tau=(1-rho^2)/(2kappa)` et le filtre physique fixe
+`a>0` donnent
+
+```text
+B_s=(a-tau)/rho^2
+   =1/(2kappa)+(a-1/(2kappa))rho^(-2),
+L_kappa Z=partial_s Z-Delta Z+kappa(1+y dot nabla)Z.
+```
+
+Le correcteur du temps terminal zéro satisfait, presque partout,
+
+```text
+J_a(s):=rho^2 I_a(tau(s);0)
+       =2 <G_a,T_rho S(B_s)L_kappa Z>
+       =-partial_s ||G_a||_2^2.
+```
+
+La pression est conservée par la projection de Leray globale et le pairing
+final est celui de `L^(3/2,infinity)` avec `L^(3,1)`. Le temps `B_s` reste
+uniformément entre `a` et `1/(2kappa)`; la densité change toutefois par le
+facteur d'horloge `rho^2`.
+
+Cette identité ne raccorde pas le défaut local `D_R` au flux. `D_R` mesure
+une norme intégrée de `partial_s Z`, sur une fenêtre et après supremum sur
+tous les tests locaux. `J_a` mesure à un instant un unique appariement
+global et signé du résidu complet `L_kappa Z` contre un test dépendant de la
+trajectoire terminale. Un contre-modèle hilbertien exact conserve
+`||G'||^2>=1/2` tout en ayant `J=-d||G||^2/ds`, `integral J=1` et
+`J(s)->0` au passé. Sa réalisation solénoïdale sur `T3` a un résidu
+Navier--Stokes non nul : elle réfute seulement la coercivité fonctionnelle,
+pas un théorème PDE.
+
+Le registre passe à 94 claims, sans nouvelle source. Pineau--Vicol v2 ferme
+des orbites RSS Type I pour rotation suffisamment petite ou grande, mais
+laisse le régime intermédiaire ouvert et n'obtient pas son hypothèse
+ponctuelle Type I depuis le seul faible-`L3`. Le verrou devient
+`GAP-TYPE-I-RENORMALIZED-TANGENTIAL-ACTIVITY-CLASSIFICATION`.

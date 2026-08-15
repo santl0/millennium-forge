@@ -1423,3 +1423,28 @@ de flux du cycle reste `COMPUTATION_ONLY`.
 Aucune source nouvelle n'est ajoutée : le corpus reste à 205 entrées. Ce
 constat différentiel est borné aux sources primaires inspectées et ne prouve
 pas l'inexistence d'un résultat extérieur au corpus.
+
+## Audit ciblé du cycle 0054 — activité tangentielle et RSS
+
+- Pineau--Vicol (`0051`, `arXiv:2607.09619v2`) étudient bien Navier--Stokes
+  incompressible standard, non forcé, de viscosité un sur `R3`, sous ansatz
+  backward rotatoirement auto-similaire ou variantes discrètes.
+- Leur équation de profil RSS inclut explicitement le générateur de rotation
+  `alpha(JU-(Jy dot nabla)U)` en plus du drift de Leray, de la diffusion, de
+  la convection et de la pression. Elle constitue le premier sous-cas PDE
+  exact d'une activité tangentielle persistante.
+- Sous la borne Type I ponctuelle, les profils RSS sont triviaux pour une
+  vitesse de rotation suffisamment petite ou suffisamment grande. Le régime
+  intermédiaire reste ouvert dans la prépublication; les variantes RDSS
+  exigent en outre un facteur discret proche de un dans les énoncés visés.
+- Le critère local à une tranche impose une quasi-auto-similarité
+  quantitative et des contrôles supplémentaires. Il ne résulte ni du seul
+  faible-`L3`, ni de `D_R>=epsilon`, ni de l'identité scalaire du flux.
+- Aucun résultat primaire inspecté ne transforme une activité locale du
+  générateur d'une ancienne suitable faible-`L3` en angle coercif avec le
+  test calorifié global. Cette veille différentielle n'est pas une preuve
+  d'inexistence.
+
+Aucune source n'est ajoutée : le corpus reste à 205 entrées. Le statut de
+`0051` reste `preprint_v2`; le régime intermédiaire et le raccord depuis le
+pipeline Type I demeurent des trous explicites.

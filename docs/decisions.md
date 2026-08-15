@@ -658,3 +658,23 @@
 - Le prochain verrou est
   `GAP-TYPE-I-RENORMALIZED-GENERATOR-TO-SIGNED-FLUX` : déterminer si
   l'activité locale persistante force un transfert signé détectable.
+
+### 2026-08-15 — conjugaison exacte retenue, coercivité radiale abandonnée
+
+- Trois actions ont été notées : conjugaison générateur--flux `19/20`,
+  triade visqueuse intégrée `16/20`, observabilité locale de pression
+  `15/20`.
+- Le temps calorifique correct est
+  `B_s=(a-tau)/rho²`, et sa dérivée doit être combinée au commutateur
+  `[D,Delta]=-2Delta`; l'horloge fournit `J_a=rho²I_a`.
+- La dérivée conjuguée observe `L_kappa Z`, pas `partial_sZ` seule. Le test
+  est global, unique et dépendant du futur, tandis que `D_R` est local,
+  intégré sur une fenêtre et défini par un supremum.
+- `FAIL-NS-0090` abandonne l'inférence « générateur actif ou flux intégrable
+  implique coercivité ». Le contre-modèle est explicitement séparé d'une
+  solution Navier--Stokes.
+- Le premier sous-cas PDE sélectionné est l'orbite relative RSS. Les régimes
+  extrêmes de rotation de Pineau--Vicol v2 seront utilisés seulement sous
+  leurs hypothèses Type I ponctuelles.
+- Le verrou devient
+  `GAP-TYPE-I-RENORMALIZED-TANGENTIAL-ACTIVITY-CLASSIFICATION`.

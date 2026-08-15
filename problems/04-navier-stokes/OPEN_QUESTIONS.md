@@ -765,3 +765,29 @@ temporelle d'une même trajectoire ancienne.
 `NS-TYPE-I-RENORMALIZED-GENERATOR-NONVANISHING` ferme le raccord
 « petit générateur sur toutes les boules -> profil BSS interdit ». Il ne
 contrôle pas encore le flux signé ni l'énergie globale.
+
+## Priorité active après le cycle 0054
+
+1. **`GAP-TYPE-I-RENORMALIZED-TANGENTIAL-ACTIVITY-CLASSIFICATION`.**
+   Déterminer si une ancienne suitable Type I capturée peut porter une
+   activité asymptotiquement tangentielle aux niveaux du correcteur
+   calorifié, ou si la PDE fournit une coercivité absente du bilan scalaire.
+2. **Orbites relatives de rotation.** Partir de
+   `Z(s,y)=R(alpha s)U(R(-alpha s)y)` et reproduire les régimes RSS déjà
+   exclus. Isoler exactement ce qui reste pour les rotations intermédiaires,
+   sans remplacer la borne Type I ponctuelle par faible-`L3`.
+3. **Angle PDE.** Chercher un contrôle quantitatif de la composante de
+   `L_kappa Z` orthogonale au test `Theta_a`, avec queues de chaleur et de
+   Riesz, facteur `rho^2` et constantes uniformes.
+4. **Orbites non exactes.** Tester ensuite une modulation de phase lente ou
+   une pseudo-orbite RSS; une exclusion des profils exacts ne couvre pas ces
+   mouvements.
+5. **Critère d'abandon.** Abandonner l'axe si trois classes distinctes
+   (RSS, modulation, multi-échelle) admettent des contre-profils compatibles
+   avec toutes les identités disponibles sans produire de coercivité PDE.
+6. **Portée.** La branche reste conditionnelle à Type I; Type II et la donnée
+   Clay générale demeurent hors de ce raccord.
+
+`FAIL-NS-0090` interdit désormais d'inférer la petitesse du générateur depuis
+un flux scalaire instantané ou intégrable sans inégalité angulaire propre à
+Navier--Stokes.

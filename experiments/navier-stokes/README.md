@@ -2256,3 +2256,27 @@ cellule reste donc `NOT_PROVIDED`.
 - Limites : les champs et l'orbite sont des contre-tests fonctionnels ou
   logiques. Le certificat ne prouve ni compacité suitable, ni pression PDE,
   ni Liouville, ni régularité ou blow-up Clay.
+
+## `TANGENTIAL-FLUX-AUDIT-1` — flux radial aveugle à la rotation
+
+- Question falsifiable : `J=-d||G||²/ds`, `G(0)=0` et un flux total fini
+  forcent-ils la petitesse du générateur sur une suite ancienne ?
+- Équations calculées : modèle hilbertien exact
+  `e'=t`, `t'=-e`, `G=(1-e^s)e`; puis réalisation dans deux polarisations
+  solénoïdales de fréquence commune sur `T3`. Aucune PDE n'est intégrée.
+- Discrétisation : aucune. Bibliothèque standard et `Fraction`; orientations
+  rationnelles, rationnels dyadiques jusqu'à `2^8`, 64 échelles anciennes et
+  partitions jusqu'à `2^10`; graine sans objet.
+- Résultat : `J=2e^s(1-e^s)`, `integral J=1`, mais
+  `||G'||²=e^(2s)+(1-e^s)²>=1/2`. Le flux tronqué vaut
+  `(1-2^(-N))²`, tandis que l'action est au moins `N log(2)/2`.
+- Contrôle PDE : la convection de la réalisation périodique est nulle, mais
+  le résidu visqueux `G'+G=(1-2q)e+(1-q)t` est partout non nul; le flux
+  artificiel est distinct de la dissipation réelle.
+- Précision : 47259 assertions rationnelles exactes, résidu nul.
+- Commande :
+  `python -B experiments/navier-stokes/tangential-flux/tangential_flux_audit.py`.
+- Empreinte :
+  `d5de9de189ed2f2a2db7887b88aa6530a6fe365388c6db0de99ce2c30814693e`.
+- Limites : contre-modèle Hilbert/Galerkin sur `T3`, pas une ancienne
+  suitable sur `R3`, pas un blow-up et pas une preuve Clay.

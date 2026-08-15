@@ -1376,3 +1376,24 @@ preuve PDE complète :
 Le passage suitable, la compacité forte `L3_loc`, la pression de Riesz et le
 théorème de Guevara--Phuc restent des dépendances papier non encodées. Aucun
 objet Lean, Isabelle ou Coq n'est modifié dans ce cycle.
+
+## Backlog issu du cycle 0054 — conjugaison et projection radiale
+
+Le noyau algébrique stable peut être séparé des mappings PDE :
+
+1. formaliser `rho_s=-kappa rho`, `tau_s=rho²`,
+   `B_s=(a-tau)/rho²` et `B_s'=2kappa B_s-1`;
+2. encoder `[D,Delta]=-2Delta` et
+   `D S(B)=S(B)D-2B Delta S(B)` sur un domaine abstrait adéquat;
+3. déduire la conjugaison
+   `d_s[T_rho S(B_s)Z]=T_rho S(B_s)L_kappa Z`;
+4. dans un espace de Hilbert, formaliser
+   `J=2<G,T L>=-d_s||G||²` et le contre-modèle tournant exact;
+5. prouver les formules fermées `integral J=1`, `||G'||²>=1/2` et la
+   divergence linéaire de l'action sur les coquilles dyadiques;
+6. typer séparément la réalisation de Fourier sur `T3` et son résidu non
+   nul, afin qu'elle ne puisse être instanciée comme solution NS.
+
+La covariance du semi-groupe, les espaces de Lorentz, la projection de
+Leray globale et l'absolue continuité `L2` restent des interfaces papier.
+Aucun projet formel n'est modifié dans ce cycle.

@@ -1925,3 +1925,25 @@ claim éventuellement supersédé.
   lemme PDE qui conserve suitability, capture et compacité forte.
 - Statut : raccourcis `REFUTED`; continuer avec
   `GAP-TYPE-I-RENORMALIZED-GENERATOR-TO-SIGNED-FLUX`.
+
+## `FAIL-NS-0090` — flux scalaire pris pour coercivité du générateur
+
+- Date : 2026-08-15.
+- Cible : déduire d'une minoration du générateur local, ou d'un flux signé
+  intégrable, une croissance coercive du correcteur calorifié.
+- Identité exacte : en temps similaire,
+  `J_a=2<G_a,T_rho S(B_s)L_kappa Z>=-d_s||G_a||_2²`. Elle ne mesure qu'une
+  projection radiale, à une tranche, contre un test global dépendant de la
+  trajectoire.
+- Contre-modèle : `G=(1-e^s)e(s)`, avec une base orthonormée tournante,
+  satisfait `G(0)=0`, `integral J=1` et `||G'||²>=1/2`. La composante
+  tangentielle reste invisible au flux; sur `N` coquilles son action diverge
+  au moins comme `N log(2)/2`.
+- Résidu : 47259 assertions exactes, empreinte
+  `d5de9de189ed2f2a2db7887b88aa6530a6fe365388c6db0de99ce2c30814693e`.
+- Portée : la réalisation solénoïdale sur `T3` est une courbe de Galerkin,
+  non une solution Navier--Stokes; son résidu `G'+G` est partout non nul.
+  Elle réfute l'inférence fonctionnelle, pas une coercivité PDE encore à
+  découvrir.
+- Statut : raccord direct norme--flux `REFUTED`; continuer avec
+  `GAP-TYPE-I-RENORMALIZED-TANGENTIAL-ACTIVITY-CLASSIFICATION`.

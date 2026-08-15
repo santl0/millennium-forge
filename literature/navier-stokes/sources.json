@@ -1042,7 +1042,7 @@
       "clay_relevance": "Exclusion substantielle de profils backward Type I structurés, mais ni tout Type I, ni Type II, ni toute ancienne mild bornée ne sont couverts.",
       "limitations": ["prépublication v2", "auto-similarité ou quasi-auto-similarité imposée", "régime de rotation intermédiaire ouvert", "aucun raccord général à toute singularité Clay"],
       "reproduction": {"status": "analytic_statements_extracted_not_proof_reproduced"},
-      "verification": {"level": "primary_theorem_statement", "checked_on": "2026-08-14", "notes": "Métadonnées v2, équation (1.1), borne Type I (1.10) et théorème 1.4 contrôlés dans le HTML primaire; autres théorèmes résumés depuis l'introduction, preuves non reproduites."},
+      "verification": {"level": "primary_preprint_full_statement_audit", "checked_on": "2026-08-15", "notes": "Métadonnées v2, équation standard et équation de profil RSS, borne Type I, régimes de rotation petits/grands, régime intermédiaire ouvert et portée du critère local contrôlés dans le HTML primaire; preuves non reproduites."},
       "tags": ["recent", "backward_selfsimilar", "RSS", "RDSS", "Type_I", "Liouville", "conditional"]
     },
     {
