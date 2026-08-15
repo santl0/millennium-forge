@@ -1797,3 +1797,31 @@ claim éventuellement supersédé.
   suitability locale.
 - Statut : raccourcis `REFUTED`; pivot vers
   `GAP-TYPE-I-RELATIVE-ENERGY-GLOBALIZATION`.
+
+## `FAIL-NS-0085` — bornes fonctionnelles prises pour annulation des flux
+
+- Date : 2026-08-15.
+- Cible : déduire de
+  `w in C_tL2_x inter L-infinity_tL^(3,infinity)_x` et du taux
+  `||w(h)||_2=O(h^(1/4))` que les flux cubique et de pression contre
+  `nabla chi_R` tendent vers zéro lorsque `R->infinity`.
+- Contre-profil : une somme d'atomes solénoïdaux lisses sur les couronnes
+  `R_n=4^n`, d'amplitudes `delta_n=2^-n` et de multiplicités `32^n`, reste
+  dans `L2 inter L^(3,infinity)` tandis que son moment cubique signé sur la
+  couronne `n` vaut `J R_n`.
+- Résidu adverse : pour un cutoff adapté, le flux normalisé est exactement
+  constant, égal à un après normalisation, le long de toute la diagonale
+  `R=R_n`. Les troncatures finies et la limite complète ne commutent pas.
+- Coût caché : la somme des `||nabla W_(n,j)||_2²` diverge aux petites
+  échelles. Le profil est donc exclu par une dissipation globale, mais pas par
+  les deux normes fonctionnelles seules.
+- Portée : ce champ n'est ni une solution de Navier–Stokes ni une paire
+  suitable avec pression PDE. Il réfute seulement le raccourci fonctionnel.
+  La dérivation positive utilise précisément l'inégalité locale relative et
+  le contrôle global de Riesz pour absorber le flux avant la limite.
+- Certificat : 97 assertions exactes, résidu rationnel nul, flux diagonal
+  normalisé un; empreinte
+  `b2ae64c546e0d155a305b43dd0d9f726aef67624af52d654091ca391467bd64d`.
+- Statut : implication fonctionnelle `REFUTED`; le raccord PDE conditionnel
+  sur bande finie est conservé dans
+  `NS-WEAK-L3-RELATIVE-ENERGY-GLOBALIZATION`.

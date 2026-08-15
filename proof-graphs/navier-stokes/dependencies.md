@@ -1040,3 +1040,44 @@ w in C_tL2
 L'arête « Duhamel endpoint absent » du cycle 0047 est donc fermée au sens
 faible-étoile seulement. Les arêtes de continuité forte, dissipation et
 globalisation énergétique restent explicitement manquantes.
+
+## Cycle 0049 — arête d'énergie relative
+
+```text
+NS-TYPE-I-DERENORMALIZED-ANCIENT-LOCAL-SUITABLE
+  --> NS-WEAK-L3-DUHAMEL-L2-CORRECTOR
+  + pression globale de Riesz
+  + inégalité locale d'énergie
+  --> identité relative locale compacte
+      [interne: chaleur + polarisation]
+
+trace ||w(h)||_2<=CM²h^(1/4)
+  + lissage ||V(h)||_4<=CMh^(-1/8)
+  --> sources absorbées de taille h^-1/2
+      [intégrables]
+
+q in L^(3/2,infinity)
+  + L^(3/2,infinity)(A_R)->L^(6/5)(A_R)
+  + H1_0(B_2R)->L6(B_2R)
+  --> flux <=epsilon||chi_R nabla w||_2²+C_epsilon M^4/R+cutoffs
+  --> w in Linfinity_tL2 inter L2_tHdot1
+  --> énergie globale perturbée signée
+  --> NS-WEAK-L3-RELATIVE-ENERGY-GLOBALIZATION
+
+bornes fonctionnelles seules
+  -/-> flux à l'infini
+      [FAIL-NS-0085]
+
+NS-WEAK-L3-RELATIVE-ENERGY-GLOBALIZATION
+  -/-> continuité forte L^(3,infinity)
+  -/-> cohérence des redémarrages à t_0->-infinity
+  -/-> mildness bornée / unicité grande donnée
+  -?-> GAP-TYPE-I-BSS-TO-STRONG-MILD-CONTINUITY
+  -?-> GAP-TYPE-I-BSS-ANCIENT-RIGIDITY
+  -?-> problème Clay.
+```
+
+L'arête énergétique est interne et conditionnelle, non `PAPER_PROOF`. Les
+interfaces publiées sont la classe BSS (`NS-SRC-0188`), le transfert
+énergétique après hypothèse dissipative (`NS-SRC-0192`) et les estimations
+endpoint du cycle 0048.

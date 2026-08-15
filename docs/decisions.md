@@ -566,3 +566,21 @@
 - Le verrou actif devient `GAP-TYPE-I-RELATIVE-ENERGY-GLOBALIZATION` :
   cutoffs, flux de pression et défaut d'énergie à l'infini doivent être
   suivis sans tester circulairement par le correcteur.
+
+### 2026-08-15 — énergie relative globalisée sur bande finie
+
+- La globalisation relative obtient `18/20`; la régularité maximale Duhamel
+  `14/20` et l'identification par unicité BSS `11/20`.
+- La première passe combine le flux total, l'inclusion Lorentz locale et
+  Sobolev, puis absorbe avec un reste `O(R^-1)` indépendant du rayon.
+- Le coefficient critique `||V||_4^8~h^-1` n'est jamais intégré seul : le
+  taux déjà établi de `w` le transforme en `h^-1/2`.
+- Une seconde passe est exigée pour retrouver le signe exact du transfert;
+  la première ne sert qu'à construire la dissipation.
+- `NS-SRC-0192` confirme le transfert publié une fois la classe d'énergie
+  supposée, mais pas sa construction. Le claim interne reste donc
+  `COMPUTATION_ONLY`.
+- `FAIL-NS-0085` enregistre le contre-profil multi-annulaire et interdit la
+  promotion depuis les seules normes fonctionnelles.
+- Le prochain verrou est la cohérence des scissions quand le temps de base
+  tend vers moins l'infini, puis la rigidité ancienne ou la mildness forte.

@@ -633,3 +633,25 @@ vers Leray–Hopf; la question PDE de mildness reste ouverte.
 endpoint de Gelfand et le correcteur `C_tL2`. `FAIL-NS-0084` interdit d'en
 déduire une intégrale de Bochner, une petite constante temporelle, une
 dissipation globale ou un split énergétique naïf.
+
+## Priorité active après le cycle 0049
+
+1. **`GAP-TYPE-I-BSS-ANCIENT-RIGIDITY`.** Décider si les scissions BSS
+   obtenues séparément depuis chaque `t_0<0` ont une cohérence ou une
+   compacité uniforme lorsque `t_0->-infinity`.
+2. **`GAP-TYPE-I-BSS-TO-STRONG-MILD-CONTINUITY`.** Identifier une condition
+   falsifiable plaçant les traces dans le sous-espace de continuité du
+   semi-groupe `tilde L^(3,infinity)`.
+3. **Dépendance au temps de base.** Suivre la croissance `T^(1/2)` des bornes
+   d'énergie relative et décider si une annulation ancienne peut l'améliorer.
+4. **Non-unicité à grande donnée.** Ne pas recoller deux redémarrages par une
+   unicité de classe BSS qui n'est pas disponible.
+5. **Rigidité minimale.** Formuler un Liouville pour solution ancienne
+   localement suitable, globalement faible-`L3`, munie de scissions
+   énergétiques sur toutes bandes, puis rechercher ses contre-profils.
+6. **Branches hors portée.** Le pipeline reste conditionnel à Type I; Type II
+   et les données Clay générales ne sont pas réduits à cette classe.
+
+`NS-WEAK-L3-RELATIVE-ENERGY-GLOBALIZATION` ferme le verrou énergétique sur
+une bande finie. `FAIL-NS-0085` interdit d'effacer la suitability ou de
+remplacer le contrôle des flux par une simple interpolation globale.

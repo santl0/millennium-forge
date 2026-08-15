@@ -1480,3 +1480,43 @@ sous-critique; elle ne ferme pas le raccord ancien endpoint.
 Le corpus atteint 191 sources et le registre 86 claims. Le claim
 `NS-WEAK-L3-DUHAMEL-L2-CORRECTOR` reste `COMPUTATION_ONLY`. Le verrou actif
 est raffiné en `GAP-TYPE-I-RELATIVE-ENERGY-GLOBALIZATION`.
+
+## Mise à jour 2026-08-15 — cycle 0049, globalisation de l'énergie relative
+
+Sur toute bande finie `[t_0,t_1]`, ajoutons aux sorties du cycle 0048 la
+suitability locale de `v` et la jauge globale
+`q=R_iR_j(v_iv_j)`. La combinaison de l'inégalité locale d'énergie de `v`,
+de l'égalité calorifique pour `V=S(t-t_0)v(t_0)` et de l'identité croisée
+donne une inégalité locale relative pour `w=v-V`, sans test global
+prématuré par `w`.
+
+Le taux indépendant `||w(t)||_2<=CM²(t-t_0)^(1/4)` rend intégrables les
+deux sources critiques :
+
+```text
+||V||_4^4 <= CM^4(t-t_0)^(-1/2),
+||V||_4^8||w||_2² <= CM^12(t-t_0)^(-1/2).
+```
+
+Une première passe de cutoff absorbe le flux total grâce à
+`q in L^(3/2,infinity)` et à Sobolev local, avec reste `O(R^-1)` indépendant
+du rayon. Elle donne `w in L2_t Hdot1_x`. Une seconde passe, sans majorer le
+transfert signé, donne l'inégalité globale perturbée
+
+```text
+||w(t)||_2²+2 integral_(t_0)^t||nabla w||_2²
+ <=2 integral_(t_0)^t integral
+      (V tensor w+V tensor V):nabla w.
+```
+
+Les clauses énergétiques laissées ouvertes dans la classe scindée de
+Barker--Seregin--Sverak (`NS-SRC-0188`) sont ainsi fermées au statut interne
+sur chaque bande finie. La constante dépend de sa longueur; aucun passage
+uniforme `t_0->-infinity`, continuité forte faible-`L3`, mildness bornée ou
+rigidité ancienne n'en découle. `FAIL-NS-0085` montre que la suitability et
+le contrôle Riesz ne peuvent être retirés : `L2 inter L^(3,infinity)` seul
+peut porter un flux cubique de cutoff non nul à toutes les grandes échelles.
+
+Le corpus passe à 192 sources et le registre à 87 claims. Le verrou actif se
+scinde en `GAP-TYPE-I-BSS-TO-STRONG-MILD-CONTINUITY` et
+`GAP-TYPE-I-BSS-ANCIENT-RIGIDITY`.

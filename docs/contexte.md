@@ -435,3 +435,14 @@ absentes. `FAIL-NS-0084` bloque le passage par le logarithme endpoint, le
 split énergétique naïf et l'inversion des quantificateurs. Le corpus compte
 191 sources et le registre 86 claims. Le verrou actif est
 `GAP-TYPE-I-RELATIVE-ENERGY-GLOBALIZATION`.
+
+Le cycle 0049 ferme conditionnellement ce verrou sur toute bande finie. La
+suitability locale, la pression globale de Riesz, le correcteur `C_tL2` et
+son taux `h^(1/4)` donnent une première inégalité relative coercive puis
+`w in L2_tHdot1_x`; une seconde passe fournit l'inégalité BSS signée.
+
+`FAIL-NS-0085` montre que cette fermeture n'est pas une interpolation des
+seules normes : un profil multi-annulaire garde un flux cubique diagonal non
+nul. Le corpus compte 192 sources et le registre 87 claims. Les verrous
+actifs sont `GAP-TYPE-I-BSS-ANCIENT-RIGIDITY` et
+`GAP-TYPE-I-BSS-TO-STRONG-MILD-CONTINUITY`.

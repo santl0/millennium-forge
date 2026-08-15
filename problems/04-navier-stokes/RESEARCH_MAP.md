@@ -1956,3 +1956,44 @@ La continuité faible-étoile et l'identité endpoint sont désormais des arête
 fermées conditionnellement au pipeline Type I. Les pertes restantes sont la
 continuité critique forte ou, sur la branche BSS sélectionnée, la dissipation
 globale, les flux de cutoff et la pression à l'infini.
+
+## Cycle 0049 — fermeture énergétique sur bande finie
+
+```text
+NS-WEAK-L3-DUHAMEL-L2-CORRECTOR
+  + suitability locale de v
+  + q=R_iR_j(v_iv_j) globalement
+  --> inégalité locale relative pour w=v-S(t-t_0)v(t_0)
+      [identité calorifique + identité croisée]
+
+||w(h)||_2=O(h^(1/4))
+  + ||V(h)||_4=O(h^(-1/8))
+  --> ||V||_4^4 + ||V||_4^8||w||_2² in L1_h
+      [singularité h^-1/2]
+
+cutoff chi_R + q in L^(3/2,infinity)
+  + inclusion locale L^(3/2,infinity)->L^(6/5)(A_R)
+  + Sobolev sur chi_R w
+  --> absorption locale + reste O(R^-1)
+  --> w in L2_tHdot1_x
+  --> seconde passe sans perte de signe
+  --> inégalité d'énergie perturbée globale BSS
+  --> NS-WEAK-L3-RELATIVE-ENERGY-GLOBALIZATION
+      [COMPUTATION_ONLY]
+
+C_tL2 inter Linfinity_tL^(3,infinity) seuls
+  -/-> disparition du flux cubique à l'infini
+      [FAIL-NS-0085: profil multi-annulaire, flux diagonal constant]
+
+classe scindée BSS sur chaque bande finie
+  -/-> cohérence uniforme quand t_0->-infinity
+  -?-> GAP-TYPE-I-BSS-ANCIENT-RIGIDITY
+  -?-> GAP-TYPE-I-BSS-TO-STRONG-MILD-CONTINUITY
+  -?-> rigidité ancienne
+  -?-> régularité Clay.
+```
+
+La dissipation et les flux de pression sont fermés conditionnellement sur
+chaque bande finie. La première perte restante est temporelle et globale :
+les constantes dépendent du temps de base et aucune unicité ne recolle les
+différentes scissions anciennes.

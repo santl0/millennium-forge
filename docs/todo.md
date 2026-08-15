@@ -291,3 +291,21 @@
   ou construire un contre-profil PDE-compatible d'influx à l'infini.
 - [ ] Ne promouvoir vers BSS qu'après obtention indépendante de
   `w in L2_tHdot1_x` et de l'inégalité d'énergie perturbée globale.
+
+### Cycle 0049
+
+- [x] Dériver l'inégalité relative locale par identité croisée, sans test
+  global prématuré par `w`.
+- [x] Absorber le flux total convection--pression avec constantes uniformes
+  en `R`, puis obtenir `w in L2_tHdot1_x` par Fatou.
+- [x] Repasser dans l'inégalité non majorée pour conserver le signe BSS.
+- [x] Certifier 97 assertions exactes et un contre-profil multi-annulaire à
+  flux cubique diagonal constant.
+- [x] Auditer BSS, Albritton--Barker et la veille 2025--2026; enregistrer
+  `NS-SRC-0192` sans attribuer la nouvelle dérivation à la littérature.
+- [ ] Comparer les scissions issues de deux temps de base distincts sans
+  supposer l'unicité des solutions faibles à grande donnée.
+- [ ] Tester si une différence calorifique explicite donne un cocycle
+  énergétique contrôlé uniformément quand `t_0->-infinity`.
+- [ ] Formuler puis attaquer un Liouville minimal pour ancienne faible-`L3`
+  munie de scissions BSS sur toutes les bandes finies.

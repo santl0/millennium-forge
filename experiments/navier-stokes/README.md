@@ -2,7 +2,7 @@
 
 Les expériences de ce répertoire sont des tests analytiques finis. Elles ne
 simulent pas une solution Navier–Stokes et ne constituent ni une preuve de
-régularité ni un blow-up. Les vingt-deux expériences indexées utilisent la graine « sans
+régularité ni un blow-up. Les vingt-trois expériences indexées utilisent la graine « sans
 objet » et écrivent
 leur rapport JSON sur la sortie standard.
 
@@ -32,6 +32,7 @@ leur rapport JSON sur la sortie standard.
 | `ANCIENT-ZERO-TRACE-RIGIDITY-AUDIT-1` | les hypothèses exactes « ancienne mild bornée + vraie trace `D'` nulle » franchissent-elles toutes les portes de rigidité, et les contre-profils usuels en violent-ils une explicitement ? | graphe d'obligations, ensembles finis et fractions rationnelles | `python -B experiments/navier-stokes/ancient-zero-trace-rigidity/rigidity_audit.py` | zéro échec d'assertion |
 | `MAXIMUM-ZOOM-TRACE-COMMUTATOR-1` | les limites du zoom KNSS commutent-elles au temps-record `s=0`, et que reste-t-il à contrôler au temps physique `T` ? | graphe d'obligations, exposants et résidus rationnels exacts; `pi` symbolique | `python -B experiments/navier-stokes/maximum-zoom-trace/commutator_audit.py` | zéro échec d'assertion |
 | `WEAK-L3-MILDNESS-AUDIT-1` | le Duhamel faible-L3 donne-t-il un gain sous-critique, une borne endpoint directe, une énergie globale ou un split radial uniforme ? | fractions rationnelles, exposants symboliques et coefficients exacts de `pi`; aucune grille | `python -B experiments/navier-stokes/weak-l3-mildness/weak_l3_mildness_audit.py` | 144 assertions exactes, résidu rationnel nul |
+| `RELATIVE-ENERGY-AUDIT-1` | les sources calorifiques sont-elles intégrables et les seules bornes `L2 inter faible-L3` annulent-elles les flux à l'infini ? | fractions rationnelles, sommes géométriques et ordres de limites exacts; aucune grille | `python -B experiments/navier-stokes/relative-energy/relative_energy_audit.py` | 97 assertions exactes, résidu rationnel nul, flux adverse un |
 
 Environnement reproduit au checkpoint initial : Windows, Python 3.13.14,
 bibliothèque standard uniquement. Les trois audits structurés lisent leur JSON
@@ -2121,3 +2122,28 @@ cellule reste donc `NOT_PROVIDED`.
 - Limites : le profil n'est pas une solution de Navier–Stokes et le script
   ne prouve ni l'estimation de Yamazaki, ni dissipation, ni rigidité, ni
   résultat Clay.
+
+## `RELATIVE-ENERGY-AUDIT-1` — compensation temporelle et flux diagonal
+
+- Question falsifiable : le taux `||w(h)||_2=O(h^(1/4))` rend-il les sources
+  relatives intégrables, et suffit-il avec `L2 inter L^(3,infinity)` à faire
+  disparaître les flux de cutoff ?
+- Équations réellement calculées : exposants calorifiques, intégrales de
+  monômes et profil fonctionnel multi-annulaire; aucune trajectoire
+  Navier–Stokes n'est discrétisée.
+- Résultat positif : `||V||_infinity²||w||_2²` et `||V||_4^4` ont tous deux
+  l'exposant temporel `-1/2`; les flux faciles ont les puissances exactes en
+  `h` et `R` attendues.
+- Résultat adverse : un champ solénoïdal dans
+  `L2 inter L^(3,infinity)` possède un flux cubique diagonal normalisé égal à
+  un sur chaque `R_n=4^n`. Sa dissipation diverge, ce qui localise la porte
+  PDE nécessaire.
+- Discrétisation et précision : aucune; bibliothèque standard et
+  `fractions.Fraction`, graine sans objet, aucune sortie lourde.
+- Commande :
+  `python -B experiments/navier-stokes/relative-energy/relative_energy_audit.py`.
+- Résidu certifié : 97 assertions exactes, zéro échec, résidu rationnel nul;
+  flux adverse normalisé un. Empreinte :
+  `b2ae64c546e0d155a305b43dd0d9f726aef67624af52d654091ca391467bd64d`.
+- Limites : le profil n'est pas une solution PDE; le script ne prouve ni la
+  suitability, ni l'inégalité relative, ni la dissipation, ni Clay.

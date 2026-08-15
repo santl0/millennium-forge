@@ -1255,3 +1255,30 @@ Les points 2, 5–8 forment le premier noyau compilable. Une formalisation de
 ces éléments certifierait le ledger d'exposants, pas l'estimation analytique
 de Yamazaki, la dissipation globale, la classe BSS, la rigidité ancienne ou
 le problème Clay.
+
+## Backlog issu du cycle 0049 — cutoff relatif et absorption endpoint
+
+1. définir le cutoff `chi_R`, ses supports emboîtés et les bornes
+   `|nabla chi_R|<=C/R`, `|Delta chi_R|<=C/R²`;
+2. formaliser l'identité relative lisse obtenue par polarisation entre une
+   solution suitable et un fond calorifique;
+3. isoler comme interface papier le passage de l'inégalité suitable à cette
+   identité pour des fonctions seulement énergétiques localement;
+4. encoder l'inclusion sur ensemble fini
+   `L^(3/2,infinity)(A_R)->L^(6/5)(A_R)` avec facteur `|A_R|^(1/6)`;
+5. combiner Sobolev sur `chi_R w` et Young pour obtenir le reste exact
+   `C_epsilon M^4/R` sans hypothèse de petitesse sur `M`;
+6. formaliser Gagliardo--Nirenberg
+   `||z||_4<=C||z||_2^(1/4)||nabla z||_2^(3/4)` et le résidu
+   `||V||_4^8||w||_2²`;
+7. vérifier les exposants temporels `-1/2` et la covariance d'échelle de la
+   borne finale en `T^(1/2)`;
+8. séparer dans le type logique la première passe coercive, qui perd le
+   signe, de la seconde passe donnant l'inégalité BSS exacte;
+9. encoder le contre-profil multi-annulaire comme réfutation d'une implication
+   purement fonctionnelle, sans lui attribuer le type de solution PDE.
+
+Les points 1, 4–9 forment un noyau algébrique stable. Les points 2–3 et les
+limites faibles restent des interfaces papier. Une compilation certifierait
+le ledger de cutoff, pas la suitability de la limite ancienne, la rigidité,
+la régularité Clay ou un blow-up.

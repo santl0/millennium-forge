@@ -1084,3 +1084,27 @@ solution ou précise qu'il s'agit seulement d'un champ test.
 - Résultat : `C_w*`, Duhamel Gelfand et correcteur `C_tL2` fermés; continuité
   forte critique, dissipation, énergie BSS, bornitude et rigidité absentes.
 - Pivot : `GAP-TYPE-I-RELATIVE-ENERGY-GLOBALIZATION`.
+
+## 2026-08-15 — énergie relative fermée, uniformité ancienne perdue
+
+- Objet : solution faible adaptée locale sur `R3`, viscosité un, non forcée,
+  pression globale de Riesz, uniformément faible-`L3` sur une bande finie.
+- Scaling : `||w||_2²` et `integral||nabla w||_2²` ont le poids longueur
+  `lambda^-1`; la longueur temporelle apparaît comme `T^(1/2)`.
+- Compensation temporelle : `||V||_4^8~h^-1` est critique, mais le taux
+  indépendant `||w||_2²=O(h^(1/2))` ramène le produit à `h^-1/2`.
+- Pression : `q in L^(3/2,infinity)` n'a pas de queue absolument continue.
+  Sur `A_R`, l'inclusion vers `L^(6/5)` coûte `R^(1/2)`; le gradient de
+  cutoff et Young laissent un reste `O(R^-1)` uniforme.
+- Dissipation : une première passe relative absorbée donne
+  `w in L2_tHdot1`; une seconde conserve le signe exact du transfert et
+  produit l'inégalité BSS.
+- Contre-profil : un empilement solénoïdal multi-annulaire appartient à
+  `L2 inter L^(3,infinity)` mais garde un flux cubique diagonal égal à un.
+  Son coût de gradient diverge; il isole la nécessité de la propriété PDE.
+- Résidu : 97 assertions symboliques exactes, résidu rationnel nul, flux
+  adverse normalisé un à chaque couronne.
+- Perte restante : constante non uniforme lorsque `t_0->-infinity`, absence
+  de cohérence entre redémarrages et de rigidité ancienne.
+- Pivot : `GAP-TYPE-I-BSS-ANCIENT-RIGIDITY`, avec branche parallèle de
+  continuité forte mild.
