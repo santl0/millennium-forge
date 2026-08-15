@@ -1,0 +1,57 @@
+{
+  "id": "NS-MOVING-SOLENOIDAL-CUTOFF-FORCED-EQUATION",
+  "problem": "navier-stokes",
+  "statement": "Soit u,p une solution classique de Navier–Stokes incompressible 3D non forcé de viscosité un sur R3 avant T_*, x_0 un centre fixe et R(t)>0 de classe C1. Pour le cutoff solénoïdal V=chi_R u-B_R(nabla chi_R dot u), les variables U=R u(x_0+Ry,t), P=R^2p(x_0+Ry,t), Z=chi U-B(a dot U), C=B(a dot U), d sigma/dt=R^-2 et kappa=-RR' satisfont exactement partial_t V-Delta V+(V dot nabla)V+nabla(chi_Rp)=R^-3 F, où F=(Z dot nabla)Z-chi(U dot nabla)U+P a+(kappa y dot a-Delta chi)U-2(a dot nabla)U-(partial_sigma-Delta+kappa(1+y dot nabla))C. La force est supportée dans la couronne mobile et tous ses termes ont l'échelle d'une force critique R^-3.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "u et p sont lisses dans un voisinage de l'union des boules Bbar(x_0,2R(t)) aux temps considérés et div u=0",
+    "la viscosité vaut un, le domaine est R3, la force extérieure initiale est nulle et il n'y a pas de frontière",
+    "x_0 est fixe; un centre mobile ajouterait un terme de transport",
+    "chi appartient à C_c^infinity(B_2), vaut un près de Bbar_1, a=nabla chi est supporté strictement dans la couronne unité",
+    "B est une réalisation linéaire fixe de Bogovskii sur la couronne unité, préservant le support lisse, et B_R est obtenue uniquement par conjugaison homothétique",
+    "la pression localisée est chi_R p; une projection de Leray de la force réintroduit une queue non locale",
+    "dans l'application Type I, R=2sqrt((T_*-t)/S_w^*(C_M M)) et kappa=2/S_w^*(C_M M)"
+  ],
+  "dependencies": [
+    "NS-SOLENOIDAL-ANNULAR-CUTOFF",
+    "NS-TYPE-I-WEAK-L3-PARABOLIC-CORE-CAPTURE"
+  ],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0042-moving-solenoidal-cutoff.md; conjugaison, dérivée temporelle, équation locale et scaling"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0042-analysis.md; recalcul indépendant de la dérivée de B_R et de la force",
+      "sha256": "79beb352f5e5f40419229df04270d75abd81b280f584fb9275ea34ca0cdc2629"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/moving-solenoidal-cutoff/moving_cutoff_audit.py; audit exact de l'horloge, des puissances et des jets d'un témoin solénoïdal",
+      "sha256": "2b9db146965fdd93c25573ed6117376fe7923010ce6c2bc2575fc3d79d803991"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0042-countermodel.md; témoin pure-swirl annulant le correcteur mais pas le coût mobile",
+      "sha256": "6fa41a55a177eca8c461d28d05039cf81713fac37d1cb111d382d7c1124dcbd5"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0042-literature.md; audit des inverses de divergence mobiles, de la pression locale et des limites des théorèmes de lissage",
+      "sha256": "190beaba2e1c3d860920490294f4a17d473c63eeefba2bb80fa9c65a651801c3"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0042-moving-solenoidal-cutoff"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Dérivation principale, audit analytique séparé et certificat rationnel; aucune revue humaine externe",
+    "notes": "Le claim est une identité de localisation conditionnelle à une solution lisse avant T_*. Il ne borne pas la force complète depuis la seule norme Type I, ne produit aucune limite ancienne et ne transforme pas V en solution non forcée."
+  }
+}

@@ -1912,3 +1912,32 @@ cellule reste donc `NOT_PROVIDED`.
 - Limites : le calcul certifie l'interface fonctionnelle seulement; le centre,
   le rayon et la concentration viennent d'un théorème publié conditionnel.
   Aucun résidu PDE ou passage au continuum n'est revendiqué.
+
+## `MOVING-SOLENOIDAL-CUTOFF-1` — horloge, jets et normes critiques
+
+- Question falsifiable : le rayon parabolique `R(t)->0` rend-il petit le
+  terme de frontière mobile ou la dérivée d'un correcteur de Bogovskii
+  homothétiquement conjugué ?
+- Équations réellement calculées : identités de scaling de
+  `R=c sqrt(T_*-t)`, du cutoff `chi(x/R)`, de `B_R`, et jets d'une famille
+  pure-swirl. Aucune intégration de Navier–Stokes.
+- Discrétisation : aucune; arithmétique rationnelle exacte sur 48 horloges,
+  36 configurations de jets et 64 coquilles logarithmiques.
+- Champ test : `U(y)=eta(|y|)(-y_2,y_1,0)`, lisse, compact,
+  divergence-free, avec `nabla chi dot U=0`. Le correcteur vaut donc zéro.
+- Résultat : au point `y_0=(3/2,0,0)`,
+  `R^3(partial_tchi_R)u_R=(0,-9c^2/4,0)`; temps, diffusion et convection ont
+  tous la puissance `R^-3`.
+- Normes : `L1:R^0`, faible-`L^(3/2):R^-1`, `Hdot^-1:R^-1/2`.
+  Les couples critiques `L2_tL^(3/2,infinity)_x`, `L1_tL3_x` et
+  `L4_tHdot^-1_x` portent un poids exact `tau^-1`.
+- Environnement : Python `3.13.14`, bibliothèque standard et
+  `fractions.Fraction`; calcul déterministe, aucune graine et aucune sortie
+  lourde.
+- Commande :
+  `python -B experiments/navier-stokes/moving-solenoidal-cutoff/moving_cutoff_audit.py`.
+- Résidu certifié : 499 assertions exactes, zéro échec. Empreinte :
+  `2b9db146965fdd93c25573ed6117376fe7923010ce6c2bc2575fc3d79d803991`.
+- Limites : le témoin n'est pas une trajectoire Navier–Stokes et aucune
+  pression non locale n'est résolue. Le certificat réfute la petitesse par
+  scaling, pas une cancellation PDE de la force complète.

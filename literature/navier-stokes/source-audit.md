@@ -1083,3 +1083,38 @@ concentration.
 Le corpus reste à 179 sources. Le résultat positif du cycle est une fermeture
 conditionnelle de la capture du numérateur Type I; le calcul de l'évolution
 du cutoff et le cas Type II restent hors des articles audités.
+
+## Audit ciblé du cycle 0042 — cutoff solénoïdal mobile
+
+- Saari–Schwarzacher (`0180`, Annals of PDE 2023) construit et différentie
+  un inverse de divergence sur des tranches dépendant du temps, avec poids de
+  distance au bord. Le résultat valide le besoin d'un commutateur temporel,
+  mais n'annonce aucune constante uniforme lorsqu'une tranche s'effondre.
+- Wolf (`0181`, Advances in Differential Equations 2017) sépare pression
+  harmonique locale et pression de force sur domaine fixe. Il interdit de
+  supprimer la composante non locale lors d'une localisation, sans fournir
+  de borne pour un cutoff mobile.
+- Kwon (`0182`, Journal of Differential Equations 2023) utilise une
+  projection de Leray localisée et une décomposition `u=v+h` pour des
+  solutions dissipatives. Le cutoff est fixe et la force perturbative reste
+  liée à la solution : aucun endpoint contractant n'est couvert.
+- Breit (`0183`, Journal of Differential Equations 2025) traite
+  Navier–Stokes sur un domaine physique mobile non dégénéré. Son hypothèse de
+  vitesse de bord en `L3_t` exclut exactement
+  `R'(t)~(T_*-t)^(-1/2)`.
+- Zhang (`0184`, arXiv:2411.13896v3) revendique un blow-up pour une équation
+  **forcée**. Sa convention critique `3/p+2/q=2` est celle du potentiel de
+  chaleur, non l'invariance de la force `2/q+3/p=3`; aucun transfert à Clay
+  non forcé n'est admis.
+- La conjugaison interne sur la couronne homothétique donne des constantes
+  spatiales uniformes, mais la force localisée complète garde l'ordre
+  `R^-3`. Toute norme forte sur la droite critique avec temps fini accumule
+  un logarithme si un profil persiste.
+- Aucun texte primaire 2025–2026 audité ne démontre une annulation universelle
+  de la force projetée complète, ni un lissage au collapse dans l'endpoint
+  faible en temps correspondant.
+
+La veille ajoute `NS-SRC-0180`–`0184` et porte le corpus à 184 sources. Les
+textes primaires, DOI, versions et limites de transfert ont été contrôlés le
+2026-08-15. Le résultat du cycle est une identité conditionnelle et un test
+d'échelle interne, pas un théorème de régularité publié.

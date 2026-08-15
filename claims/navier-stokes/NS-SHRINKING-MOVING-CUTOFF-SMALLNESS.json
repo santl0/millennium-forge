@@ -1,0 +1,37 @@
+{
+  "id": "NS-SHRINKING-MOVING-CUTOFF-SMALLNESS",
+  "problem": "navier-stokes",
+  "statement": "Pour toute famille de vitesses lisses divergence-free d'amplitude critique u_R(x)=R^-1U(x/R), le terme de frontière mobile (partial_t chi_R)u_R tend vers zéro dans L1 lorsque R(t)=c sqrt(T_*-t) tend vers zéro.",
+  "status": "REFUTED",
+  "hypotheses": [
+    "c>0, R(t)=c sqrt(T_*-t) et le centre est fixe",
+    "chi est le cutoff radial lisse explicite du contre-modèle, égal à un sur B_1 et nul hors B_2",
+    "U(y)=eta(|y|)(-y_2,y_1,0), avec eta lisse compacte et égale à un sur B_2",
+    "u_R est une famille cinématique lisse divergence-free; elle n'est pas supposée résoudre Navier–Stokes"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0042-countermodel.md; au point y_0=(3/2,0,0), R^3(partial_t chi_R)u_R=(0,-9c^2/4,0) et la norme L1 est invariante",
+      "sha256": "6fa41a55a177eca8c461d28d05039cf81713fac37d1cb111d382d7c1124dcbd5"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/moving-solenoidal-cutoff/moving_cutoff_audit.py; 499 assertions rationnelles exactes sur 48 horloges et 36 configurations du témoin",
+      "sha256": "2b9db146965fdd93c25573ed6117376fe7923010ce6c2bc2575fc3d79d803991"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0042-moving-cutoff-smallness-counterexample"
+  },
+  "review": {
+    "status": "replicated",
+    "reviewer": "Contre-modèle indépendant et certificat exact reproduit par l'agent principal; aucune revue humaine externe",
+    "notes": "La réfutation porte seulement sur la petitesse produite par le rayon et sur le terme de frontière pris isolément. Elle ne prouve pas que la force complète ne peut jamais s'annuler pour une vraie solution Navier–Stokes."
+  }
+}
