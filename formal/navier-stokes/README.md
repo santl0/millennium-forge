@@ -1524,3 +1524,29 @@ Le noyau désormais assez stable pour une formalisation isolée est :
 Le passage de la pression par dualité Lorentz, la suitability et la rigidité
 des solutions anciennes restent des interfaces papier. Aucun projet formel
 n'est créé dans ce cycle.
+
+## Backlog issu du cycle 0061 — modes SO(2) et enveloppe convexe
+
+Le noyau fonctionnel stabilisé à formaliser est :
+
+1. construire les projecteurs isotypiques réels d'une représentation unitaire
+   de SO(2), la somme orthogonale `H_0 direct_sum sum_(m>=1)H_m` et le domaine
+   du générateur `mathcal R|_(H_m)=mJ_m`;
+2. prouver Parseval pour `d=partial_sZ`, `g=mathcal RZ` et la formule
+   `beta=sum G_mbeta_m/sum G_m`, modes de Gram nul exclus;
+3. formaliser les repondérations scalaires positives des isotypes et
+   l'identité de moyenne convexe;
+4. prouver le critère exact
+   `inf_omega|beta_omega|>=B` si et seulement si tous les coefficients modaux
+   sont `>=B` ou tous `<=-B`;
+5. séparer métrique fixe, poids dans `[1,K]` et infimum sur toutes les
+   métriques, sans permuter limite en `n` et infimum essentiel temporel;
+6. encoder le contre-modèle sur `R2 direct sum R2` avec
+   `mathcal R=J direct sum 2J`, Grams unitaires et vitesses `+N,-N`, donnant
+   exactement `0` et `N/3` pour les poids `(1,1)` et `(2,1)`;
+7. isoler l'extension aux métriques invariantes générales sur les espaces de
+   multiplicité, distincte des seuls poids scalaires modaux.
+
+Le champ vectoriel instantané Navier--Stokes, la projection de Leray, la
+pression, les triades azimutales et le ledger suitable restent des interfaces
+papier. Aucun projet Lean, Isabelle ou Coq n'est créé dans ce cycle.

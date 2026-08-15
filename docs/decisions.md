@@ -786,3 +786,31 @@
 - La prochaine action teste la robustesse de la vitesse canonique sous les
   poids invariants. Le régime rapide doit devenir intrinsèque ou être
   abandonné comme artefact de métrique.
+
+### 2026-08-15 — vitesse modale convexe, intrinsécité abandonnée
+
+- Trois actions ont été notées : enveloppe métrique modale `20/20`,
+  coercivité PDE directe `16/20`, pivot RSS intermédiaire `14/20`.
+- La décomposition réelle en isotypes conserve les paires conjuguées
+  `+/-m`; le mode fixe et les Grams nuls sont retirés avant tout quotient.
+- Pour les poids scalaires positifs, `beta` est exactement une moyenne
+  convexe des vitesses modales. Une borne robuste toutes pondérations exige
+  un signe commun et un gap modal uniforme.
+- Métrique fixe, classe de conditionnement `K` et infimum sur toutes les
+  métriques sont trois quantificateurs distincts; ils ne sont pas permutés
+  avec `ess inf_s` ou `lim_n`.
+- `FAIL-NS-0097` abandonne l'intrinsécité : deux métriques fixes de
+  conditionnement relatif deux donnent `0` et `N/3` sur les mêmes modes
+  contre-rotatifs.
+- Les poids dépendant de `N` peuvent même transformer une vitesse `~N` en
+  limite un, mais ils sont exclus du Hilbert commun sans bornes topologiques
+  uniformes.
+- `NS-TYPE-I-CANONICAL-HILBERT-PHASE-COLLAPSE` est conservé pour une métrique
+  épinglée; seule la production robuste de sa prémisse est fermée
+  négativement.
+- `GAP-TYPE-I-METRIC-ROBUST-FAST-AXISYMMETRIZATION` est abandonné comme
+  conséquence automatique de la projection. Le verrou devient
+  `GAP-TYPE-I-INTRINSIC-AXISYMMETRY-DEFECT-OR-MODAL-SIGN-COHERENCE`.
+- La prochaine expérience injecte le champ vectoriel instantané complet de
+  Navier--Stokes dans deux modes de Schwartz divergence-free et cherche des
+  numérateurs modaux de signes opposés, pression de Leray comprise.

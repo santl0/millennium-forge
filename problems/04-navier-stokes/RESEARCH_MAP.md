@@ -2447,3 +2447,54 @@ forte `L3_loc`; elles ne produisent ni grande vitesse canonique ni
 stationnarité. Cette dernière n'est plus requise dans la branche exactement
 axisymétrique grâce à la chaîne publiée. La vitesse canonique reste dépendante
 de la métrique; son régime rapide n'est pas produit par le pipeline.
+
+## Cycle 0061 — enveloppe convexe des vitesses modales
+
+```text
+X Hilbert SO(2)-invariant
+  --> X=H_0 direct_sum sum_(m>=1) H_m
+  --> mathcal R|_(H_m)=mJ_m
+
+d=partial_sZ, g=mathcal RZ
+  --> G_m=||g_m||², beta_m=<d_m,g_m>/G_m
+  --> beta=sum_m G_m beta_m / sum_m G_m
+
+repondération scalaire omega_m>0 des isotypes
+  --> beta_omega=sum_m omega_mG_mbeta_m/sum_m omega_mG_m
+  --> closure{beta_omega}=conv{beta_m actifs}
+      [NS-TYPE-I-MODAL-METRIC-CONVEX-HULL]
+
+inf_omega|beta_omega|>=B
+  <--> tous les beta_m>=B
+       ou tous les beta_m<=-B
+      [critère pointwise; poids scalaires]
+
+deux modes, G_1=G_2=1, beta_1=N, beta_2=-N
+  --> beta_(1,1)=0
+  --> beta_(2,1)=N/3
+      [FAIL-NS-0097; métriques fixes, conditionnement 2]
+
+grande vitesse pour une métrique épinglée
+  -/-> grande vitesse intrinsèque
+  -/-> signe commun des vitesses modales
+  -/-> production par Navier--Stokes
+
+NS-TYPE-I-CANONICAL-HILBERT-PHASE-COLLAPSE
+  + ess inf|beta_n^M|->infinity pour une métrique M fixée
+  --> axisymétrie limite
+      [claim conservé, prémisse conditionnelle]
+
+champ lisse divergence-free multi-mode
+  + d=Delta Z-P div(Z tensor Z)-kappa(1+y dot nabla)Z
+  -?-> numérateurs modaux de signes opposés
+  -?-> GAP-TYPE-I-INTRINSIC-AXISYMMETRY-DEFECT-OR-MODAL-SIGN-COHERENCE
+  -?-> contradiction Clay.
+```
+
+L'enveloppe convexe est exacte snapshot par snapshot. Elle ne permet pas de
+permuter `inf_M`, `ess inf_s` et `lim_n`; une métrique du cycle 0059 est fixe
+sur la fenêtre et la suite. Les opérateurs invariants à l'intérieur d'un
+isotype de multiplicité supérieure à un élargissent encore la famille de
+coefficients. La prochaine arête falsifiable est donc PDE : tester le signe
+des numérateurs modaux du champ vectoriel instantané complet, pression de
+Leray comprise.

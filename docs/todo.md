@@ -524,3 +524,27 @@
   `ess inf|beta_n|->infinity` sous tout choix admissible de poids.
 - [ ] Si le régime rapide est un artefact métrique, pivoter vers un défaut
   d'axisymétrie intrinsèque ou la rigidité RSS faible-`L3`.
+
+### Cycle 0061
+
+- [x] Décomposer `partial_sZ` et `mathcal RZ` dans les isotypes réels SO(2),
+  paires `+/-m`, stabilisateur et domaine du générateur compris.
+- [x] Prouver que la vitesse canonique repondérée est une moyenne convexe des
+  vitesses modales avec poids de Gram.
+- [x] Caractériser le signe et le gap nécessaires et suffisants sous toutes
+  les pondérations scalaires positives.
+- [x] Séparer métrique fixe, classe uniformément conditionnée et infimum
+  pointwise; attaquer les permutations avec temps et indice de suite.
+- [x] Certifier sur deux isotypes `J direct sum 2J` les valeurs `0` et `N/3`
+  sous deux métriques fixes de conditionnement relatif deux.
+- [x] Certifier un mode lent invisible sous poids fixes et restauré, puis
+  dominant, sous poids dépendant de `N`, sans appeler ce dernier admissible.
+- [x] Auditer multiplicité interne, Gram nul, mesurabilité, jauge temporelle
+  et portée exacte vers Navier--Stokes.
+- [ ] Construire un champ de Schwartz divergence-free à au moins deux modes
+  azimutaux et calculer le champ vectoriel instantané renormalisé complet.
+- [ ] Recalculer séparément pression de Leray, diffusion, drift et triades
+  dans les numérateurs `Re<d_m,imZ_m>`.
+- [ ] Si des signes opposés survivent sur une donnée PDE lisse, abandonner la
+  cohérence modale universelle et pivoter vers un défaut Haar intrinsèque ou
+  la rigidité RSS faible-`L3` intermédiaire.

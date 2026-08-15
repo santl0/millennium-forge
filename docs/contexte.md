@@ -598,3 +598,23 @@ permis. La stationnarité n'est donc plus requise dans cette branche. Deux
 sources publiées portent le corpus à 223 et deux claims portent le registre à
 101. Le verrou remonte à
 `GAP-TYPE-I-METRIC-ROBUST-FAST-AXISYMMETRIZATION`.
+
+Le cycle 0061 décompose la dérivée et le générateur en isotypes SO(2). Pour
+les repondérations scalaires positives, la vitesse canonique est exactement
+la moyenne des vitesses modales avec poids `omega_m||mathcal RZ_m||²`.
+L'infimum pointwise sur toutes ces métriques est la distance de zéro à leur
+enveloppe convexe; une divergence uniforme exige un signe commun et un gap
+sur chaque mode actif.
+
+Un certificat de 1809 assertions exactes réalise deux isotypes de fréquences
+un et deux. Les poids fixes `(1,1)` annulent les vitesses `+N,-N`, tandis que
+`(2,1)` donnent `N/3`, avec conditionnement relatif deux. `FAIL-NS-0097`
+abandonne donc l'interprétation intrinsèque de la grande vitesse. Le collapse
+du cycle 0059 reste valide pour sa métrique épinglée, mais sa prémisse n'est
+pas produite automatiquement.
+
+Fedele--Abessi--Roberts 2015 fournit un antécédent publié de la même formule
+de moyenne dans une réduction de symétrie de données scalaires en pipe flow;
+il ne transfère ni `H^-3`, ni pression, ni suitability. Le corpus atteint 224
+sources et le registre 102 claims. Le verrou devient
+`GAP-TYPE-I-INTRINSIC-AXISYMMETRY-DEFECT-OR-MODAL-SIGN-COHERENCE`.

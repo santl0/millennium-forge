@@ -1925,3 +1925,54 @@ Le registre passe à 101 claims et le corpus à 223 sources, avec les nouveaux
 maillons Seregin 2020 et Lei--Ren 2024. Le verrou actif remonte à
 `GAP-TYPE-I-METRIC-ROBUST-FAST-AXISYMMETRIZATION` : produire le régime rapide
 depuis un blow-up général et le rendre robuste au choix de métrique.
+
+## Mise à jour 2026-08-15 — cycle 0061, obstruction modale à l'intrinsécité
+
+La représentation unitaire SO(2) du Hilbert négatif se décompose en blocs
+isotypiques réels `H_m`, sur lesquels
+`mathcal R=mJ_m`. Si `d=partial_sZ`, `g=mathcal RZ`, et
+
+```text
+G_m=||g_m||²,
+beta_m=<d_m,g_m>/G_m,
+```
+
+alors toute repondération scalaire positive des isotypes donne exactement
+
+```text
+beta_omega
+ =sum_m omega_mG_mbeta_m / sum_m omega_mG_m.
+```
+
+L'enveloppe des vitesses obtenues est l'enveloppe convexe fermée des
+`beta_m`. Une borne en module uniforme sur toutes les pondérations est donc
+équivalente, point par point, à un signe commun et à une minoration uniforme
+du module de toutes les vitesses modales actives. Dans un isotype de
+multiplicité supérieure à un, les métriques invariantes générales ont encore
+plus de liberté que ces poids scalaires.
+
+Cette distinction n'est pas seulement formelle. Deux modes de Gram un et de
+vitesses `+N,-N` donnent `beta_N=0` pour la métrique fixe de poids `(1,1)` et
+`beta_N=N/3` pour celle de poids `(2,1)`. Ces métriques sont indépendantes de
+`N,s` et leur conditionnement relatif est au plus deux. Ainsi la prémisse
+rapide du cycle 0059 peut être vraie pour un produit scalaire et fausse pour
+un autre uniformément équivalent.
+
+`FAIL-NS-0097` réfute donc l'interprétation intrinsèque de la vitesse
+canonique. Le collapse conditionnel du cycle 0059 reste valide pour la
+métrique épinglée : seule la production automatique et métriquement robuste
+de son hypothèse est abandonnée. Les infimums en temps, en métrique et en
+indice de suite ne commutent pas; des poids dépendant de `N` ne sont pas une
+métrique commune admissible sans nouveau contrôle topologique.
+
+Fedele--Abessi--Roberts 2015 fournit un antécédent publié exact de la formule
+de projection comme moyenne de vitesses de Fourier, dans un produit standard
+fini appliqué à un scalaire passif mesuré en pipe flow. Cette source confirme
+l'algèbre, pas le Hilbert `H^-3`, la pression, suitability ou le pipeline
+Clay.
+
+Le registre atteint 102 claims et le corpus 224 sources. Le verrou actif
+devient
+`GAP-TYPE-I-INTRINSIC-AXISYMMETRY-DEFECT-OR-MODAL-SIGN-COHERENCE` : soit
+Navier--Stokes impose un cône modal unilatéral, soit il faut remplacer la
+phase métrique par un défaut d'axisymétrie intrinsèque.

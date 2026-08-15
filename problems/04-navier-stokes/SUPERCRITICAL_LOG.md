@@ -1374,3 +1374,33 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   branche ancienne axisymétrique par Seregin puis Ożański--Palasek, sans
   stationnarité. Le pivot remonte à la robustesse métrique et à la production
   PDE du régime canonique rapide.
+
+## 2026-08-15 — vitesses modales et enveloppe métrique
+
+- Objet : `d=partial_sZ` et `g=mathcal RZ` dans le Hilbert négatif
+  SO(2)-invariant du cycle 0059, décomposés en isotypes azimutaux.
+- Identité : `beta_omega=sum omega_mG_mbeta_m/sum omega_mG_m`, avec
+  `G_m=||mathcal RZ_m||²`; aucune estimation ni perte de constante dans cette
+  formule.
+- Échelle : `beta_m` et `beta_omega` sont sans dimension en temps similaire.
+  Les Grams utilisent toutefois `H^-3` et des poids d'exhaustion
+  sous-critiques, donc ne sont pas des quantités Clay intrinsèques.
+- Critère : l'infimum pointwise sur tous les poids scalaires est la distance
+  de zéro à l'enveloppe convexe des vitesses modales. Une divergence robuste
+  exige un signe commun et un module minimal divergent.
+- Conditionnement : sous `1<=omega_m<=K`, l'intervalle accessible est plus
+  petit et dépend des Grams; l'infimum toutes métriques ne peut pas remplacer
+  une classe uniformément équivalente.
+- Contre-profil : deux modes de vitesses `+N,-N` donnent `beta=0` sous poids
+  `(1,1)` et `beta=N/3` sous `(2,1)`, malgré un conditionnement relatif deux.
+- Résidu : le certificat exact vérifie 1409 identités rationnelles de Gram,
+  projection, reconstruction et orthogonalité; aucune discrétisation PDE ni
+  flottant.
+- Pression : absente du lemme hilbertien. Dans la prochaine expérience elle
+  entre par le champ vectoriel instantané projeté de Leray et doit être
+  recalculée, pas éliminée par analogie modale.
+- Perte : aucune loi Navier--Stokes connue ne synchronise le signe des
+  numérateurs `Re<partial_sZ_m,imZ_m>`; les triades couplent les modes.
+- Pivot : fermer ou réfuter
+  `GAP-TYPE-I-INTRINSIC-AXISYMMETRY-DEFECT-OR-MODAL-SIGN-COHERENCE` sur une
+  famille divergence-free de Schwartz avec résidu PDE exact.

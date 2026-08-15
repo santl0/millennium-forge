@@ -947,3 +947,33 @@ coefficient, phase absolument continue ou stationnarité.
 Reynolds intérieur. `NS-AXISYMMETRIC-ANCIENT-WEAK-L3-RIGIDITY` ferme le
 raccord suitable ancien. Le défaut de Haar temporel n'est plus le verrou de
 cette branche; la grande vitesse canonique robuste reste ouverte.
+
+## Priorité active après le cycle 0061
+
+1. **`GAP-TYPE-I-INTRINSIC-AXISYMMETRY-DEFECT-OR-MODAL-SIGN-COHERENCE`.**
+   La projection rapide dans une métrique fixée reste suffisante, mais elle
+   n'est pas intrinsèque. Produire soit un défaut indépendant du produit
+   scalaire, soit un signe commun et un gap pour toutes les vitesses modales
+   actives.
+2. **Test PDE local.** Sur un champ de Schwartz divergence-free multi-mode,
+   calculer exactement les projections modales du champ vectoriel
+   `Delta Z-P div(Z tensor Z)-kappa(1+y dot nabla)Z`. Suivre diffusion,
+   drift, pression et triades séparément.
+3. **Conditionnement.** Pour une classe de métriques
+   `1<=omega_m<=K`, calculer l'intervalle exact `[L_K,U_K]`. Ne pas remplacer
+   ce problème par l'enveloppe convexe correspondant à `K=infinity`.
+4. **Multiplicité interne.** Les modes azimutaux sur `R3` ont une multiplicité
+   radiale, axiale et vectorielle. Une pondération scalaire par `m` ne couvre
+   pas tous les opérateurs positifs commutant avec SO(2).
+5. **Quantificateurs temporels.** Garder distincts
+   `inf_M essinf_s`, `essinf_s inf_M` et la limite en `n`. Une métrique mobile
+   créerait en plus des termes de dérivée de poids.
+6. **Alternative RSS.** Si le champ vectoriel instantané produit des signes
+   opposés sur une famille PDE lisse, abandonner la cohérence modale
+   universelle et revenir à la rigidité RSS faible-`L3` intermédiaire ou à
+   un observable Haar intrinsèque.
+
+`NS-TYPE-I-MODAL-METRIC-CONVEX-HULL` ferme le diagnostic métrique et
+`FAIL-NS-0097` interdit de présenter `beta` comme une vitesse physique sans
+métrique explicitement épinglée. Aucun de ces résultats ne produit un
+blow-up ni une borne globale Clay.

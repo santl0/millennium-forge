@@ -1505,3 +1505,41 @@ harmonique local doit être conservé. La rigidité ancienne suitable faible-
 `L3` est fermée par la composition de deux résultats publiés; l'arête
 manquante est désormais en amont, dans la production intrinsèque de
 l'axisymétrie rapide.
+
+## Cycle 0061 — dépendance de la phase aux poids isotypiques
+
+```text
+NS-TYPE-I-CANONICAL-HILBERT-PHASE-COLLAPSE
+  + décomposition X=H_0 direct_sum sum_(m>=1)H_m
+  --> beta_M est une moyenne des beta_m pondérée par les Grams
+
+poids scalaires invariants omega_m>0
+  --> beta_omega=sum omega_mG_mbeta_m/sum omega_mG_m
+  --> enveloppe convexe des vitesses modales
+      [NS-TYPE-I-MODAL-METRIC-CONVEX-HULL]
+
+signe commun + inf_m|beta_m|->infinity
+  --> grande vitesse uniforme sous tous les poids scalaires
+
+vitesses modales de signes opposés
+  --> un poids invariant annule beta
+      [FAIL-NS-0097]
+
+grande vitesse dans la métrique du cycle 0059
+  -/-> robustesse sous métriques uniformément équivalentes
+  -/-> signe modal PDE
+
+équation NS renormalisée + ledger Type I
+  -?-> cohérence de signe des
+       <P_m partial_sZ,mathcal RP_mZ>
+  -?-> défaut d'axisymétrie intrinsèque
+  -?-> GAP-TYPE-I-INTRINSIC-AXISYMMETRY-DEFECT-OR-MODAL-SIGN-COHERENCE
+  -?-> contradiction conditionnelle axisymétrique
+  -?-> régularité Clay.
+```
+
+La formule de moyenne est une arête analytique exacte. Le transfert à Clay
+reste manquant : la non-linéarité couple les modes par triades, la pression
+est non locale et aucune loi publiée ne place tous les numérateurs modaux
+dans un même demi-axe. La contre-expérience est hilbertienne et n'est pas une
+solution Navier--Stokes.
