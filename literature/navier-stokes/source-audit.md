@@ -1249,3 +1249,36 @@ singularité de l'endpoint, la mildness, Type II ou un résultat Clay.
 Le corpus atteint 189 sources. La conjugaison et la composition des lemmes
 restent `AI_INTERNAL_DERIVATION`; aucune source ne reçoit le statut de preuve
 du claim du cycle.
+
+## Audit ciblé du cycle 0048 — Duhamel endpoint et frontière mild
+
+- Yamazaki (`0118`, Math. Ann. 2000) fournit l'estimation intégrée critique
+  dans les espaces de Lorentz. Taniuchi (`0190`, Math. Ann. 2024), définition
+  1 et lemme 7, en donne un énoncé primaire directement contrôlé : un stress
+  dans `L-infinity_t L^(3/2,infinity)_x` définit test par test contre
+  `L^(3/2,1)` un terme de Duhamel borné dans `L^(3,infinity)`.
+- Cette estimation de Meyer--Yamazaki intègre **après** fixation du test. Elle
+  contourne la divergence logarithmique de la norme d'opérateur ponctuelle,
+  mais ne construit pas une intégrale de Bochner et ne fournit aucun facteur
+  tendant vers zéro avec la longueur de l'intervalle.
+- La définition mild de Taniuchi exige séparément
+  `C_t L^(3,infinity)` en norme. La trace `C_w*` et le Duhamel de Gelfand du
+  cycle restent donc strictement plus faibles; les théorèmes d'unicité mild
+  ne sont pas importés.
+- Barker–Seregin–Šverák (`0188`) exige en outre un correcteur dans
+  `L-infinity_tL2_x inter L2_tHdot1_x`, une inégalité d'énergie perturbée
+  globale et une inégalité locale. Le gain sous-critique interne donne bien
+  `C_tL2_x` avec trace nulle, mais pas la dissipation ni l'énergie globale.
+- Le champ solénoïdal homogène `(-x_2,x_1,0)/|x|^2` réfute un split radial
+  naïf en coeur `L2` et queue arbitrairement petite dans faible-`L3`; il ne
+  s'agit pas d'une trajectoire Navier–Stokes.
+- Jarrín (`0191`, arXiv:2607.03602v1) traite en 2026 la promotion de
+  solutions très faibles adaptées vers Leray sous donnée `L2`, trace forte
+  et contrôle Morrey local sous-critique. Ses corollaires Lorentz ne couvrent
+  ni le seul endpoint `L-infinity_tL^(3,infinity)_x`, ni une ancienne
+  d'énergie infinie; aucun raccord automatique n'en résulte.
+
+Le corpus atteint 191 sources. Le raccord endpoint et le gain `C_tL2` sont
+une dérivation IA appuyée sur des ingrédients publiés et restent
+`COMPUTATION_ONLY`; aucune régularité, rigidité ancienne ou conclusion Clay
+n'est obtenue.

@@ -1,0 +1,63 @@
+{
+  "id": "NS-WEAK-L3-DUHAMEL-L2-CORRECTOR",
+  "problem": "navier-stokes",
+  "statement": "Soit v une solution distributionnelle de Navier–Stokes incompressible standard non force sur R3 x [t0,t1], de viscosite un, divergence nulle, a pression globale q=R_iR_j(v_iv_j), telle que v appartient a L-infinity_t L^(3,infinity)_x. Alors v possede un representant C_w*([t0,t1];L^(3,infinity)); la formule de Duhamel vaut pour tous s<t comme egalite faible-etoile dans L^(3,infinity), le terme quadratique etant une integrale de Gelfand bornee par C||v||^2. De plus, pour 3/2<p<3, le correcteur B(v,v) appartient a C_tL^p_x et est borne par C_p||v||^2(t-t0)^((3-p)/(2p)); en particulier w=v-S(t-t0)v(t0) appartient a C_tL2_x, a trace forte nulle et satisfait ||w(t)||_2<=C||v||^2(t-t0)^(1/4). Ces conclusions ne donnent ni continuite forte L^(3,infinity), ni integrale de Bochner endpoint, ni dissipation L2_tHdot1_x, ni inegalite d'energie globale BSS, ni bornitude mild.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "domaine R3 sans frontiere, viscosite un, aucune force et bande temporelle finie [t0,t1]",
+    "v est une solution distributionnelle solenoidale et appartient a L-infinity([t0,t1];L^(3,infinity)(R3))",
+    "la pression est fixee dans la jauge globale q=R_iR_j(v_iv_j), donc l'equation projetee globale est identifiee",
+    "les espaces de Lorentz sont pris avec le predual L^(3/2,1) et l'integrale endpoint est interpretee au sens faible-etoile de Gelfand",
+    "pour l'application au pipeline Type I, v est la solution ancienne faible adaptee locale du claim precedent"
+  ],
+  "dependencies": [
+    "NS-TYPE-I-DERENORMALIZED-ANCIENT-LOCAL-SUITABLE"
+  ],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0118 et NS-SRC-0190; estimation integree de Meyer--Yamazaki, definition mild forte et borne endpoint test par test"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0188; definition de la classe scindee BSS et clauses energetiques non obtenues"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0048-weak-l3-duhamel-corrector.md; trace, Duhamel, gain sous-critique et frontiere energetique",
+      "sha256": "a45964c5b98544cab55375e5c6a35ca4937973d2652ae929b4271161d2edf35b"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0048-analysis.md; audit analytique des preduaux, quantificateurs et classes",
+      "sha256": "9e8611b92995571d39df8ddd7baa34f8998ca2c45a6461733b427687dfe5af93"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0048-literature.md; audit primaire BSS, Yamazaki, Taniuchi, KNSS et Albritton--Barker",
+      "sha256": "194af0236ccf2705a74a382db0875eaea3acce41a50cf223aebd6907527f7e76"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0048-countermodel.md; logarithme endpoint, traces faibles et profil solenoidal a queue critique",
+      "sha256": "df6da21a2562f93d14d9dddb6ac4da79cae03a81bc4ea078d6a4d05b109e1366"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/weak-l3-mildness/weak_l3_mildness_audit.py; 144 assertions exactes sur exposants, coquilles et fonctions de distribution",
+      "sha256": "c5fcfef5a5cb3202cbc55bc7656c03651e281679badb4561ae34eabd7414a902"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0048-weak-l3-duhamel-corrector"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Derivation principale, audit analytique, audit bibliographique et certificat adverse separes; aucune revue humaine externe",
+    "notes": "Le statut reste COMPUTATION_ONLY. L'estimation endpoint est publiee mais la construction du representant et sa composition avec le pipeline Type I sont des derivations IA. Les audits bloquent explicitement continuite forte, Bochner, dissipation, energie BSS, bornitude, rigidite, Type II et toute conclusion Clay."
+  }
+}
