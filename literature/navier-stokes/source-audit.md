@@ -1282,3 +1282,27 @@ Le corpus atteint 191 sources. Le raccord endpoint et le gain `C_tL2` sont
 une dérivation IA appuyée sur des ingrédients publiés et restent
 `COMPUTATION_ONLY`; aucune régularité, rigidité ancienne ou conclusion Clay
 n'est obtenue.
+
+## Audit ciblé du cycle 0049 — énergie relative et classe scindée
+
+- Barker--Seregin--Sverak (`0188`), définition 1.1, place déjà le correcteur
+  dans `L-infinity_tL2_x inter L2_tHdot1_x` et suppose l'inégalité globale
+  perturbée; son lemme 3.3 ne crée donc pas la dissipation recherchée.
+- Albritton--Barker (`0192`, ARMA 2019), proposition 3.2, est l'arête publiée
+  la plus proche : suitability et classe d'énergie complète impliquent
+  l'inégalité relative locale puis globale. Avec `p=4`, `k=0`, le fond est
+  exactement `V=exp(t Delta)a` pour `a in L^(3,infinity)`.
+- Les proposition 3.5 et corollaire 3.9 de `0192` atteignent le temps zéro et
+  le taux `t^(1/4)`, mais toujours dans une définition qui suppose déjà la
+  dissipation globale. Les employer pour la produire serait circulaire.
+- Les cadres local-energy de Jia--Sverak et Bradshaw--Tsai contrôlent trace,
+  pression et dissipation seulement localement; ils ne somment pas les
+  coquilles spatiales. Jarrín (`0191`) obtient en 2026 une promotion avec une
+  hypothèse Morrey stricte non impliquée par l'endpoint faible-`L3`.
+- La dérivation du cycle 0049 évite le coefficient critique non absorbable
+  `M||nabla w||_2²` : elle utilise séparément `V in L4`, Gagliardo--Nirenberg
+  et le taux déjà acquis `||w||_2=O(t^(1/4))`. Ce raccord ne figure dans
+  aucune source auditée et reste `AI_INTERNAL_DERIVATION`.
+
+Le corpus atteint 192 sources. La veille différentielle 2025--2026 ne
+fournit aucun théorème de rigidité ancienne dans la classe ainsi obtenue.

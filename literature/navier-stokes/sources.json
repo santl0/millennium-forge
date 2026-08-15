@@ -3960,6 +3960,26 @@
       "reproduction": {"status": "primary_arxiv_v1_metadata_abstract_and_theorem_scope_audited_cycle_0048"},
       "verification": {"level": "primary_preprint_full_text", "checked_on": "2026-08-15", "notes": "Version, auteur, date, résumé et portée du théorème 1.1 contrôlés sur arXiv; aucune validation indépendante de la preuve et aucun statut publié."},
       "tags": ["Navier_Stokes", "very_weak_suitable", "Leray", "Morrey", "Lorentz", "recent_preprint"]
+    },
+    {
+      "id": "NS-SRC-0192",
+      "title": "Global Weak Besov Solutions of the Navier–Stokes Equations and Applications",
+      "authors": ["Dallas Albritton", "Tobias Barker"],
+      "year": 2019,
+      "source_type": "journal_article",
+      "publication_status": "published",
+      "venue": "Archive for Rational Mechanics and Analysis 232, 197–263",
+      "identifiers": {"doi": "10.1007/s00205-018-1319-0", "arxiv": "1802.03164v2", "url": "https://doi.org/10.1007/s00205-018-1319-0"},
+      "equation": {"model": "Navier–Stokes incompressible standard, éventuellement avec force extérieure sous forme div F", "dimension": "3", "domain": "R3 x (0,T)", "boundary": "sans frontière physique", "forcing": "nulle dans la spécialisation du cycle; div F dans le cadre général", "viscosity": "normalisée à 1"},
+      "solution_notions": ["solution faible Besov", "solution scindée autour d'itérés de Picard", "solution faible adaptée"],
+      "result": "La proposition 3.2 transfère l'inégalité locale d'énergie vers le correcteur puis obtient son inégalité globale perturbée, sous appartenance préalable du correcteur à L-infinity_t L2_x inter L2_t Hdot1_x. La proposition 3.5 et le corollaire 3.9 donnent le taux initial et l'énergie depuis zéro dans cette classe. Pour a dans L^(3,infinity), le choix p=4 et k=0 spécialise le fond à V=exp(t Delta)a.",
+      "hypotheses": ["donnée dans un espace de Besov critique avec p>3", "correcteur déjà dans la classe d'énergie globale", "continuité faible L2 et trace forte nulle", "inégalité locale d'énergie pour la paire complète", "pression relative et défauts de Picard dans les espaces prescrits"],
+      "constants_uniformity": "Les estimations sont uniformes sur une fenêtre forward finie à paramètres et norme de donnée fixés. L'article ne promeut pas un correcteur seulement C_tL2 vers L2_tHdot1 et ne fournit pas d'uniformité lorsque le temps de base tend vers moins l'infini.",
+      "clay_relevance": "Source primaire du transfert local-vers-global une fois la dissipation du correcteur acquise. Elle valide la forme de l'inégalité BSS utilisée au cycle 0049, mais la création de la dissipation depuis suitability locale et C_tL2 reste une dérivation interne.",
+      "limitations": ["la dissipation globale est une hypothèse de la définition faible Besov", "aucune promotion abstraite depuis C_tL2 seul", "temps initial forward fixe", "aucune rigidité ancienne ni conclusion Clay"],
+      "reproduction": {"status": "primary_published_and_arxiv_v2_full_text_propositions_3_2_3_5_corollary_3_9_audited_cycle_0049"},
+      "verification": {"level": "primary_full_text", "checked_on": "2026-08-15", "notes": "Définition 1.5, proposition 3.2, proposition 3.5, corollaire 3.9 et spécialisation p=4, k=0 contrôlés; PDF arXiv SHA256 0834BAF4A72A9E8278EE9CF7EC80A87ADF2D00EC8624B6784E2069EA3BF7923D."},
+      "tags": ["Navier_Stokes", "Besov", "weak_solution", "local_energy", "global_perturbed_energy", "Calderon", "R3"]
     }
   ],
   "watchlist": [
@@ -4036,7 +4056,7 @@
     "Leray_Hopf": ["NS-SRC-0002", "NS-SRC-0003", "NS-SRC-0043", "NS-SRC-0058"],
     "suitable_partial_regularity": ["NS-SRC-0004", "NS-SRC-0005", "NS-SRC-0006", "NS-SRC-0187", "NS-SRC-0191"],
     "Prodi_Serrin_endpoint": ["NS-SRC-0007", "NS-SRC-0008", "NS-SRC-0009", "NS-SRC-0012", "NS-SRC-0013", "NS-SRC-0052", "NS-SRC-0053"],
-    "critical_spaces": ["NS-SRC-0010", "NS-SRC-0011", "NS-SRC-0014", "NS-SRC-0031", "NS-SRC-0035", "NS-SRC-0036", "NS-SRC-0044", "NS-SRC-0052", "NS-SRC-0053", "NS-SRC-0055", "NS-SRC-0056", "NS-SRC-0088", "NS-SRC-0118", "NS-SRC-0128", "NS-SRC-0129", "NS-SRC-0130", "NS-SRC-0188", "NS-SRC-0190"],
+    "critical_spaces": ["NS-SRC-0010", "NS-SRC-0011", "NS-SRC-0014", "NS-SRC-0031", "NS-SRC-0035", "NS-SRC-0036", "NS-SRC-0044", "NS-SRC-0052", "NS-SRC-0053", "NS-SRC-0055", "NS-SRC-0056", "NS-SRC-0088", "NS-SRC-0118", "NS-SRC-0128", "NS-SRC-0129", "NS-SRC-0130", "NS-SRC-0188", "NS-SRC-0190", "NS-SRC-0192"],
     "ancient_compactness_rigidity": ["NS-SRC-0012", "NS-SRC-0014", "NS-SRC-0015", "NS-SRC-0034", "NS-SRC-0045", "NS-SRC-0046", "NS-SRC-0048", "NS-SRC-0049", "NS-SRC-0050", "NS-SRC-0053", "NS-SRC-0088", "NS-SRC-0140", "NS-SRC-0141", "NS-SRC-0142", "NS-SRC-0143", "NS-SRC-0144", "NS-SRC-0145", "NS-SRC-0187", "NS-SRC-0188", "NS-SRC-0189", "NS-SRC-0190"],
     "profile_decomposition_and_selection": ["NS-SRC-0014", "NS-SRC-0140", "NS-SRC-0141", "NS-SRC-0142", "NS-SRC-0143", "NS-SRC-0144", "NS-SRC-0145", "NS-SRC-0146", "NS-SRC-0147", "NS-SRC-0150", "NS-SRC-0153", "NS-SRC-0156", "NS-SRC-0159"],
     "coarea_isoperimetry_and_level_selection": ["NS-SRC-0067", "NS-SRC-0069", "NS-SRC-0132", "NS-SRC-0148", "NS-SRC-0149", "NS-SRC-0150", "NS-SRC-0151", "NS-SRC-0152", "NS-SRC-0156", "NS-SRC-0157", "NS-SRC-0158", "NS-SRC-0159", "NS-SRC-0163", "NS-SRC-0166"],
@@ -4067,7 +4087,7 @@
     "moving_domains_and_time_dependent_divergence": ["NS-SRC-0180", "NS-SRC-0183"],
     "local_pressure_and_projection": ["NS-SRC-0181", "NS-SRC-0182", "NS-SRC-0186"],
     "outer_cutoff_and_far_field_pressure": ["NS-SRC-0069", "NS-SRC-0181", "NS-SRC-0182", "NS-SRC-0186"],
-    "weak_L3_local_compactness_and_trace": ["NS-SRC-0146", "NS-SRC-0187", "NS-SRC-0188"],
+    "weak_L3_local_compactness_and_trace": ["NS-SRC-0146", "NS-SRC-0187", "NS-SRC-0188", "NS-SRC-0192"],
     "forced_blowup_and_force_scaling": ["NS-SRC-0032", "NS-SRC-0033", "NS-SRC-0057", "NS-SRC-0175", "NS-SRC-0184"]
   },
   "unverified_zones": [

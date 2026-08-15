@@ -1,0 +1,61 @@
+{
+  "id": "NS-WEAK-L3-RELATIVE-ENERGY-GLOBALIZATION",
+  "problem": "navier-stokes",
+  "statement": "Soit v une solution faible adaptée locale de Navier–Stokes incompressible standard non force sur R3 x [t0,t1], de viscosite un, divergence nulle, a pression globale q=R_iR_j(v_iv_j), avec ess sup_t ||v(t)||_(L^(3,infinity))<=M. Si a=v(t0), V=exp((t-t0)Delta)a et le correcteur canonique w=v-V appartient a C_tL2_x, a trace forte nulle et satisfait ||w(t)||_2<=CM^2(t-t0)^(1/4), alors w appartient a L-infinity_tL2_x inter L2_tHdot1_x et satisfait, pour tout t de la bande, l'inegalite d'energie globale perturbee ||w(t)||_2^2+2 integral_(t0)^t||nabla w||_2^2 <= 2 integral_(t0)^t integral (V tensor w+V tensor V):nabla w. La conclusion vaut bande finie par bande finie; elle ne donne ni uniformite quand t0 tend vers moins l'infini, ni continuite forte L^(3,infinity), mildness bornee, unicite, rigidite ancienne ou resultat Clay.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "domaine R3 sans frontiere, viscosite un, force exterieure nulle et bande temporelle finie [t0,t1]",
+    "v est une solution faible adaptee locale au sens standard, avec energie et dissipation locales, pression q dans L^(3/2)_loc et inegalite locale d'energie",
+    "v appartient a L-infinity([t0,t1];L^(3,infinity)(R3)) et la pression est fixee globalement par q=R_iR_j(v_iv_j)",
+    "le representant, la formule de Duhamel et le correcteur C_tL2 avec taux (t-t0)^(1/4) sont ceux du claim NS-WEAK-L3-DUHAMEL-L2-CORRECTOR",
+    "les passages de cutoff utilisent l'inclusion locale L^(3/2,infinity)(A_R) vers L^(6/5)(A_R), Sobolev sur chi_R w et une identite faible-forte croisee, non une soustraction nue d'inegalites",
+    "aucune petitesse de M et aucune uniformite lorsque t1-t0 tend vers l'infini ne sont supposees ou conclues"
+  ],
+  "dependencies": [
+    "NS-WEAK-L3-DUHAMEL-L2-CORRECTOR",
+    "NS-TYPE-I-DERENORMALIZED-ANCIENT-LOCAL-SUITABLE"
+  ],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0188 et NS-SRC-0192; definition de la classe scindee et transfert local-global publie apres hypothese prealable de dissipation"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0049-relative-energy-globalization.md; identite relative, absorption de cutoff et seconde passe signee",
+      "sha256": "f2a909e16a02c9d58bd97589701cd7aed8bc3fc1d1a25670aa6c5cf9c75a3121"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0049-analysis.md; audit analytique independant de la circularite, de la pression et de la classe BSS",
+      "sha256": "4a358ac558a63043315f2e05c270008bf26a3739326887c6578ef4e79cd1c870"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0049-literature.md; audit primaire BSS, Albritton--Barker, local-energy et veille 2025--2026",
+      "sha256": "e113d3f2cafe70d801e51b2f83ad9fc62035556f29d22e2e3272f89a4834a9d2"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0049-countermodel.md; profil fonctionnel multi-annulaire et flux diagonal non nul sans dissipation",
+      "sha256": "e70c4e4f7c2fb62e78d601b82291b2211ebc10ae242f137e30e679e2a2c817bb"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/relative-energy/relative_energy_audit.py; 97 assertions exactes sur exposants, sommes et ordres de limites",
+      "sha256": "b2ae64c546e0d155a305b43dd0d9f726aef67624af52d654091ca391467bd64d"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0049-relative-energy-globalization"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Derivation principale, audit analytique, audit bibliographique et certificat adverse separes; aucune revue humaine externe",
+    "notes": "Le statut reste COMPUTATION_ONLY. Les sources publiees suppose la classe dissipative; la promotion depuis C_tL2 avec taux h^(1/4) est une derivation IA. L'audit bloque explicitement pression seulement locale, soustraction nue, test global premature, absorption critique CM, uniformite ancienne, mildness, rigidite et toute conclusion Clay."
+  }
+}
