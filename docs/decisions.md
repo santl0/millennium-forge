@@ -399,3 +399,24 @@
 - `GAP-WEAK-L3-CORE-CAPTURE-AT-PRESINGULAR-SCALE` devient actif. Une capture
   par grande boule est déclarée triviale; seul un rayon lié à une
   concentration et tendant vers zéro est admissible.
+
+### 2026-08-15 — fermeture conditionnelle de la capture Type I
+
+- L'audit et la composition du théorème publié Barker–Prange sont retenus
+  avec le score `18/20`; le contre-profil statique et l'inverse faible-HLS
+  restent des alternatives non sélectionnées.
+- Les constantes de l'extension Lorentz sont renommées `gamma_w,S_w^*`; elles
+  ne sont pas identifiées aux constantes du théorème `L3` imprimé.
+- La borne temporelle du claim est pointwise. Sous un simple supremum
+  essentiel, la fraction doit être formulée presque partout ou accompagnée
+  d'un lemme de représentant.
+- `GAP-WEAK-L3-CORE-CAPTURE-AT-PRESINGULAR-SCALE` est fermé sous borne Type I
+  globale, avec fraction `gamma_w/M`; il n'est pas déclaré fermé en Type II.
+- La concentration absolue sans borne globale est abandonnée comme source
+  d'une fraction : deux paquets disjoints exacts la réfutent.
+- Le claim de cutoff 0040 est généralisé aux champs localement lisses près de
+  la boule externe. L'absorption Biot–Savart demeure conditionnelle à des
+  normes globales.
+- `GAP-TYPE-I-LOCALIZED-EVOLUTION` devient actif : la prochaine dérivation
+  doit inclure `R'(t)`, la dépendance temporelle de Bogovskiĭ, la pression et
+  chaque puissance d'échelle.

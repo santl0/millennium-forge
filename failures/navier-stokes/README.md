@@ -1584,3 +1584,25 @@ claim éventuellement supersédé.
   conclusion dynamique Navier–Stokes.
 - Statut : gain d'échelle gratuit `REFUTED`; conserver une couronne de rapport
   fixé et suivre le coût critique.
+
+## `FAIL-NS-0077` — Concentration absolue prise pour fraction globale
+
+- Date : 2026-08-15.
+- Cible : déduire de `K_3(f;B_R)>=gamma` une constante universelle
+  `K_3(f;B_R)/K_3(f)>=c>0` sans contrôle de la queue.
+- Contre-profil exact : deux paquets constants disjoints, de volumes
+  `gamma^3` dans le coeur et `T^3` loin du coeur. La fraction cubée vaut
+  `gamma^3/(gamma^3+T^3)` et tend vers zéro lorsque `T->infinity`.
+- Premier quantificateur faux : la minoration locale absolue ne borne pas la
+  quasi-norme globale. La quasi-norme faible n'est pas additive; le calcul
+  emploie sa valeur exacte sur l'union des paquets.
+- Réparation : sous la borne Type I globale `K_3(f)<=M`, la fraction est au
+  moins `gamma/M`. Barker–Prange fournit séparément `gamma=gamma_w` au rayon
+  parabolique conditionnel.
+- Certificat : 1 346 assertions rationnelles exactes; empreinte
+  `8337e0aced23e4bd815f1d759e226a41a8867c4de826932dcf261aa3f051de76`.
+- Portée : contre-profil scalaire statique, ni divergence-free ni solution
+  Navier–Stokes. Il réfute uniquement l'implication fonctionnelle sans borne
+  globale.
+- Statut : capture relative sans Type I `REFUTED`; le cas Type II exige une
+  autre normalisation ou un mécanisme de compacité-rigidité.

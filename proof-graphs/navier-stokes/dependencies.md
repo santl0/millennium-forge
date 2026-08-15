@@ -709,3 +709,52 @@ pression, diffusion, non-linéarité, compacité temporelle : manquantes.
 1. Capture faible-`L3` à une échelle pré-singulière imposée.
 2. Contre-profil multi-échelle lisse testant toute gamme candidate de rayons.
 3. Équation forcée exacte du champ localisé, seulement si la capture survit.
+
+## Cycle 0041 — fermeture conditionnelle de la capture Type I
+
+```text
+borne pointwise sup_t ||u(t)||_(3,infinity)<=M
+  + inclusion de mesure finie, constante optimale 3
+  --> borne Morrey Type I A=C_M M
+      [dérivation exacte auditée]
+
+borne Morrey Type I + premier point singulier
+  + Barker-Prange 2020, théorème 2 et appendice B
+  --> K_3(u(t);B(x_*,R_M(t)))>gamma_w
+      pour tout 0<t<T_*
+      [classique sourcée, conditionnelle]
+
+concentration absolue + K_3(u(t))<=M
+  --> K_core/K_global>gamma_w/M
+      [dérivation exacte]
+
+capture Type I + cutoff solénoïdal local
+  --> champ test compact conservant le core
+      [dérivation statique]
+  -?-> GAP-TYPE-I-LOCALIZED-EVOLUTION
+      [dérivée temporelle, pression, force et commutateurs manquants]
+
+énergie Leray-Hopf
+  -/-> borne Type I faible-L3
+      [manquante; perte d'une puissance critique]
+
+Type II, M_j->infinity
+  -/-> fraction gamma_w/M_j uniforme
+  -/-> durée S_w^*(M_j) uniforme
+      [contre-ledger fonctionnel et dépendance source]
+  -?-> GAP-TYPE-II-RELATIVE-CORE-CAPTURE.
+```
+
+Nature des arêtes : la concentration Lorentz est publiée; la constante
+`C_M=sqrt(3)(4pi/3)^(1/6)` et la fraction relative sont des dérivations
+internes; le certificat exact ne simule aucune PDE. La capture ne fournit ni
+contrôle de vorticité au même centre, ni compacité forte, ni solution ancienne,
+ni rigidité.
+
+## Priorité après le cycle 0041
+
+1. Équation forcée exacte du cutoff mobile Type I et scaling de chaque terme.
+2. Contre-profil faisant diverger la force localisée, ou borne uniforme dans
+   un espace critique.
+3. Dégénérescence quantitative Type II de `S_w^*(M)` et des constantes de
+   propagation, sans inversion de quantificateurs temporels.

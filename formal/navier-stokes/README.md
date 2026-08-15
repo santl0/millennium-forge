@@ -1048,3 +1048,28 @@ bibliothèque épinglée du dépôt ne fournit encore l'opérateur de Bogovskiĭ
 une couronne Lipschitz avec support lisse. Une formalisation partielle ne
 certifierait ni la sélection d'une boule critique, ni une évolution
 Navier–Stokes.
+
+## Backlog issu du cycle 0041 — inclusion faible-`L3` et interface Type I
+
+Le noyau stable se décompose comme suit :
+
+1. définir la fonction de distribution et la quasi-norme
+   `K_3(f)=sup_s s mu_f(s)^(1/3)` sur un espace mesuré;
+2. prouver `mu_(f|E)(s)<=min(|E|,K_3(f)^3s^-3)`;
+3. intégrer les deux branches au seuil `s_0=K_3(f)|E|^-1/3` pour obtenir la
+   constante exacte trois;
+4. spécialiser à la boule de volume `(4pi/3)r^3` et vérifier l'homogénéité
+   `r^-1/2||f||_2<=sqrt(3)(4pi/3)^(1/6)K_3(f)`;
+5. formaliser les profils étagés finis et la formule rationnelle de leur
+   défaut à trois;
+6. formaliser l'algèbre `K_core>gamma`, `0<K_global<=M` implique
+   `K_core/K_global>gamma/M`;
+7. distinguer supremum temporel pointwise et supremum essentiel dans le type
+   du théorème importé;
+8. représenter Barker–Prange comme une interface papier versionnée avec
+   domaine, classe de solution, premier point singulier et dépendance
+   `S_w^*(A)`, sans la marquer comme preuve compilée.
+
+Les étapes 5 et 6 ont déjà un certificat rationnel de 1 346 assertions. Une
+formalisation de 1–6 certifierait l'inclusion et la composition algébrique,
+pas le théorème PDE publié, l'existence d'un blow-up, ni la régularité Clay.

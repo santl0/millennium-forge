@@ -1207,3 +1207,34 @@ Clay n'en résulte. Le premier quantificateur non trivial est désormais la
 capture d'une fraction du faible-`L3` par une boule à rayon pré-singulier
 `R(t)->0`; une grande boule capture trivialement un champ compact et ne doit
 pas être comptée comme progrès.
+
+## Cycle 0041 — concentration Type I au endpoint faible-`L3`
+
+Barker–Prange, ARMA 236 (2020), théorème 2 et appendice B, ferment le maillon
+de capture au rayon parabolique lorsque la solution de Leray–Hopf sur `R3`
+possède un premier point singulier et une borne Type I uniforme. L'hypothèse
+publiée est une borne Morrey-énergie locale à trois suprema. Avec la convention
+du registre,
+
+```text
+integral_E |u|^2 <= 3||u||_(3,infinity)^2|E|^(1/3)
+```
+
+montre que `sup_t||u(t)||_(3,infinity)<=M` l'implique avec
+`A=sqrt(3)(4pi/3)^(1/6)M`. Les constantes Lorentz `gamma_w,S_w^*` donnent à
+tout temps antérieur positif une boule centrée au point singulier de rayon
+`2sqrt((T_*-t)/S_w^*(A))` et une fraction locale strictement supérieure à
+`gamma_w/M`.
+
+Le résultat publié est conditionnel : il suppose la singularité et la borne
+Type I, n'exclut pas le blow-up et ne construit pas une singularité. La borne
+d'énergie Clay ne contrôle pas `M`. En Type II, `M_j` peut diverger, la durée
+normalisée dégénère et aucune fraction relative uniforme n'est obtenue.
+
+Barker–Prange, CMP 385 (2021), renforce sous Type I la concentration en une
+minoration logarithmique de `integral |u|^3` sur une boule
+super-parabolique. Il ne minore la norme `L3` que comme `log^(1/3)` et ce
+comportement est compatible avec une borne faible-`L3`, comme le profil
+tronqué `|x|^-1` le montre. La veille primaire 2025–2026 ne ferme aucun de
+ces trous; le catalogue reste à 179 sources après réaudit des notices 0146 et
+0147.

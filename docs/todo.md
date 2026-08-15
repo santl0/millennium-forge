@@ -126,3 +126,27 @@
   `MO>=4ab/(a+b)` dans un environnement épinglé.
 - [ ] Formaliser la rigidité sous récurrence de dilatation du cycle 0021.
 - [ ] Obtenir une revue externe indépendante du lemme du cycle 0018.
+
+### Cycle 0041
+
+- [x] Réauditer Barker–Prange 2020, théorème 2 et appendice B, avec hypothèse
+  Morrey exacte, rayon, temps et constantes Lorentz distinctes.
+- [x] Prouver et certifier l'inclusion
+  `||f||_2^2<=3K_3(f)^2|E|^(1/3)` et l'optimalité de trois.
+- [x] Fermer la capture relative au rayon parabolique sous borne Type I
+  pointwise : `K_core/K_global>gamma_w/M`.
+- [x] Réfuter la fraction relative tirée de la seule concentration absolue
+  par deux paquets disjoints exacts.
+- [x] Généraliser le cutoff solénoïdal aux champs lisses localement près de la
+  boule externe, sans généraliser silencieusement le corollaire Biot–Savart.
+- [ ] Calculer l'équation exacte de
+  `V(t)=chi_(R(t))u(t)-B_(R(t))(grad chi_(R(t)) dot u(t))`, avec
+  `R(t)=2sqrt((T_*-t)/S_w^*(C_MM))`.
+- [ ] Isoler la dérivée de l'opérateur de Bogovskiĭ sous homothétie et le
+  terme `R'(t)`; vérifier leur scaling dans un espace de force critique.
+- [ ] Recalculer la pression localisée et séparer projection de Leray, force
+  annulaire et non-linéarité de `V`.
+- [ ] Injecter une famille abstraite `M_j->infinity` dans les constantes
+  Barker–Prange pour localiser quantitativement le premier échec Type II.
+- [ ] Formaliser l'inclusion faible-`L3` de mesure finie et l'algèbre de la
+  fraction dans un environnement épinglé.

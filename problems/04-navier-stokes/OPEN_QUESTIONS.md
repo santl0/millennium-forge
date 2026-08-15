@@ -438,3 +438,25 @@ sont plus des hypothèses admissibles d'anti-annulation.
 cinématique solénoïdale ne requiert aucun axe. Il reste ouvert comme problème
 dynamique, car la sélection d'échelle, la pression et les commutateurs ne sont
 pas contrôlés.
+
+## Priorité active après le cycle 0041
+
+1. **`GAP-TYPE-I-LOCALIZED-EVOLUTION`.** Pour
+   `R(t)=2sqrt((T_*-t)/S_w^*(C_MM))`, calculer au sens exact l'équation de
+   `V=chi_Ru-B_R(grad chi_R dot u)`. Suivre `R'(t)`, la dérivée de l'opérateur
+   remis à l'échelle, diffusion, convection, pression et support de la force.
+2. **Uniformité critique.** Déterminer si la force localisée reste bornée dans
+   un espace invariant après remise à l'échelle par `R(t)`, ou produire un
+   profil admissible qui la fait diverger. Une constante dépendant de
+   `T_*-t` au-delà de sa puissance dimensionnelle ferme négativement l'axe.
+3. **`GAP-TYPE-II-RELATIVE-CORE-CAPTURE`.** Sans borne uniforme `M`, tester
+   quantitativement la dégénérescence de `S_w^*(M_j)` et des constantes de
+   Carleman pour `M_j->infinity`; ne pas remplacer une fenêtre temporelle par
+   une borne sur une seule tranche.
+4. **Formalisation.** Formaliser l'inclusion de mesure finie avec constante
+   trois et l'invariance d'échelle. L'interface Barker–Prange demeure un
+   axiome papier sourcé, non un théorème formel du dépôt.
+
+Le verrou de capture relative est fermé uniquement dans la branche Type I
+globale pointwise. Il reste ouvert en Type II et ne fournit ni contrôle de la
+vorticité au même centre, ni solution ancienne, ni rigidité.

@@ -1618,3 +1618,47 @@ solution réelle une boule dont le rayon appartient à la gamme de
 concentration et capture une fraction uniforme du numérateur critique. Une
 existence sans contrainte sur le rayon n'a aucune valeur, car le champ est
 compact.
+
+## Cycle 0041 — capture parabolique dans la branche Type I
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| composer la concentration Lorentz publiée avec l'inclusion locale | 3 | 5 | 5 | 5 | **18** |
+| construire un contre-profil statique à rayon imposé | 4 | 4 | 5 | 3 | 16 |
+| chercher un inverse faible-HLS sans hypothèse Type I | 5 | 2 | 4 | 5 | 16 |
+
+Pour la quasi-norme `K_3(f)=sup_s s|{|f|>s}|^(1/3)`, la formule des couches
+donne exactement
+
+```text
+integral_E |f|^2 <= 3 K_3(f)^2 |E|^(1/3),
+C_M=sqrt(3)(4pi/3)^(1/6).
+```
+
+Ainsi une borne pointwise `sup_t K_3(u(t))<=M` implique l'hypothèse Morrey
+Type I de Barker–Prange avec `A=C_M M`. Leur théorème 2 et son appendice B
+donnent, au premier point singulier, pour tout `0<t<T_*`,
+
+```text
+R_M(t)=2 sqrt((T_*-t)/S_w^*(C_M M)),
+K_3(u(t);B(x_*,R_M(t)))>gamma_w,
+K_core/K_global>gamma_w/M.
+```
+
+Les constantes `gamma_w,S_w^*` sont propres à l'extension Lorentz et ne sont
+pas identifiées aux constantes `L3`. Le certificat rationnel montre que la
+constante trois est optimale et qu'une concentration absolue ne donne aucune
+fraction sans borne globale.
+
+```text
+GAP-WEAK-L3-CORE-CAPTURE-AT-PRESINGULAR-SCALE
+  -- fermé sous borne Type I globale pointwise
+  --> GAP-TYPE-I-LOCALIZED-EVOLUTION
+       dérivée de R(t), Bogovskii dépendant du temps, pression et force;
+  --> GAP-TYPE-II-RELATIVE-CORE-CAPTURE
+       aucune constante M uniforme, fenêtre S_w^*(M) dégénérante.
+```
+
+Priorité : calculer l'équation forcée exacte du cutoff solénoïdal mobile dans
+la branche Type I. Le profil localisé est un champ test, pas une solution
+Navier–Stokes non forcée; le raccord Type II reste un verrou séparé.

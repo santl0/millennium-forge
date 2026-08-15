@@ -899,3 +899,23 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   échelle de concentration; une grande boule serait une capture triviale.
   Pression, temps, commutateurs et Type II sont absents.
 - Pivot : `GAP-WEAK-L3-CORE-CAPTURE-AT-PRESINGULAR-SCALE`.
+
+## 2026-08-15 — Capture Type I faible-`L3`
+
+- Objet : solution de Leray–Hopf non forcée sur `R3`, lisse avant un premier
+  temps singulier `T_*`, sous borne pointwise
+  `sup_t||u(t)||_(3,infinity)<=M`.
+- Inclusion critique exacte :
+  `||u||_(L2(B_r))^2<=3(4pi/3)^(1/3)M^2r`; aucune puissance d'échelle perdue.
+- Source : Barker–Prange 2020, théorème 2 plus appendice B. Le rayon est
+  `R_M(t)=2sqrt((T_*-t)/S_w^*(C_MM))`; `S_w^*` dépend de `M`.
+- Capture : `K_core>gamma_w` et `K_core/K_global>gamma_w/M` pour tout
+  `0<t<T_*` sous la convention temporelle pointwise.
+- Test : 1 346 assertions rationnelles; constante trois approchée par défaut
+  exact `0.023195958142` au cas `m=128,N=2048`; paquets disjoints exacts
+  forcent la fraction vers zéro en l'absence de borne globale.
+- Perte restante : le cutoff mobile ne satisfait pas l'équation non forcée;
+  sa dérivée temporelle, la pression et les commutateurs sont non calculés.
+  En Type II, la disparition de `M` détruit la fraction uniforme.
+- Pivot : `GAP-TYPE-I-LOCALIZED-EVOLUTION`, avec
+  `GAP-TYPE-II-RELATIVE-CORE-CAPTURE` conservé séparément.

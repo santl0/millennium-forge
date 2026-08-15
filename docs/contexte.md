@@ -306,3 +306,25 @@ une gamme dictée par la concentration et tendre vers zéro. Sans cette
 contrainte, une boule assez grande capture trivialement tout champ compact.
 Pression, temps et équation du champ localisé restent ouverts. Le corpus
 primaire compte 179 sources.
+
+Le cycle 0041 réaudite le raccord Type I au lieu de reconstruire une capture
+statique. Barker–Prange 2020, théorème 2 et appendice B, concentre le
+faible-`L3` au premier point singulier sur un rayon parabolique. L'inclusion
+exacte
+`integral_E|u|^2<=3K_3(u)^2|E|^(1/3)` transforme la borne globale pointwise
+`K_3(u(t))<=M` en leur hypothèse Morrey avec
+`C_M=sqrt(3)(4pi/3)^(1/6)`. On obtient pour tout `0<t<T_*` la fraction
+`K_core/K_global>gamma_w/M` au rayon
+`2sqrt((T_*-t)/S_w^*(C_MM))`.
+
+La constante trois est optimale et certifiée sur 1 346 assertions exactes.
+Deux paquets disjoints réfutent toute fraction sans borne globale. La veille
+2025–2026 n'ajoute aucune source et confirme la dégénérescence Type II. Le
+cutoff du cycle 0040 est en outre valable pour un champ seulement lisse au
+voisinage de `Bbar(x0,2R)`, puisque `chi_RU` est compact; seul son corollaire
+Biot–Savart exige des données globales.
+
+Le verrou actif est désormais `GAP-TYPE-I-LOCALIZED-EVOLUTION` : calculer
+l'équation exacte du cutoff mobile, sa pression et sa force. Le verrou
+`GAP-TYPE-II-RELATIVE-CORE-CAPTURE` reste séparé. Aucun résultat du cycle ne
+prouve ni blow-up ni régularité globale Clay.
