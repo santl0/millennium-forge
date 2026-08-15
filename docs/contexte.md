@@ -522,3 +522,19 @@ assertions exactes pourquoi la version approchée exige une borne des vitesses
 et un traitement séparé de `mathcal R U->0`. Le corpus atteint 208 sources,
 le registre passe à 95 claims et le verrou devient
 `GAP-TYPE-I-APPROXIMATE-ROTATION-MODULATION-COMPACTNESS`.
+
+Le cycle 0056 ferme le sous-cas où les vitesses de modulation sont
+uniformément bornées. La forte convergence `L3_loc`, la dualité du
+générateur contre les tests et `beta_n weak-* beta` donnent
+`partial_sZ=beta mathcal RZ`; une phase lipschitzienne reconstruite transforme
+la limite en une orbite exacte. L'autonomie ramène alors à la dichotomie du
+cycle 0055 : profil stationnaire ou RSS à vitesse constante.
+
+La transmission de suitability emploie explicitement un ledger uniforme
+d'énergie, dissipation et pression. La capture exclut la branche
+stationnaire via Guevara--Phuc, mais aucune rigidité publiée ne tue la RSS
+tournante faible-`L3` générale. `FAIL-NS-0092` certifie en 1288 assertions
+exactes l'échec faible--faible et sans borne de vitesse. Deux sources de
+reconstruction classique portent le corpus à 210; le registre passe à 96
+claims et le verrou devient
+`GAP-TYPE-I-UNBOUNDED-ROTATION-MODULATION-OR-RSS-RIGIDITY`.

@@ -1477,3 +1477,25 @@ pipeline Type I demeurent des trous explicites.
 Trois sources sont ajoutées; le corpus atteint 208 entrées. Le rapport
 primaire complet conserve les statuts, équations, quantificateurs et
 empreintes des textes audités.
+
+## Audit ciblé du cycle 0056 — fermeture de modulation bornée
+
+- La veille différentielle n'a identifié aucun théorème primaire publié
+  donnant, pour des solutions faibles adaptées Navier--Stokes sur `R3`, le
+  passage d'un défaut `partial_sZ_n-beta_n mathcal RZ_n->0` à une RSS exacte
+  sous forte `L3_loc` et borne `L-infinity` de `beta_n`.
+- Beyn--Thümmler (`0209`) et Rowley et al. (`0210`) décrivent des tranches et
+  phases pour systèmes équivariants ou approximations de dimension finie;
+  ils ne fournissent pas le passage faible-étoile--fort, le ledger de
+  pression suitable ni la rigidité RSS faible-`L3` requis ici.
+- Bradshaw--Tsai (`0206`) reste l'antériorité PDE pour les repères tournants
+  et Pineau--Vicol (`0051`) la prépublication récente pertinente pour des
+  exclusions RSS sous hypothèses Type I ponctuelles plus fortes. Field
+  (`0207`) et Krupa (`0208`) restent des cadres abstraits d'équivariance.
+- L'absence de théorème équivalent est un résultat de veille borné aux
+  bases et chaînes consultées, jamais une preuve d'inexistence. Le lemme du
+  cycle garde donc le statut `COMPUTATION_ONLY`.
+
+Deux sources primaires adjacentes et non redondantes sont ajoutées pour
+fixer exactement le domaine de la reconstruction de phase classique : le
+corpus atteint 210 entrées.

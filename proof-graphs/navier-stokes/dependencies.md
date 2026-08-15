@@ -1305,3 +1305,43 @@ L'autonomie et l'équivariance sont exactes sur `R3` pour les rotations
 centrées au point de rescaling. Une phase mesurable, un axe mobile, une
 pression seulement locale ou une RDSS générale ne sont pas des prémisses du
 lemme.
+
+## Cycle 0056 — fermeture faible--forte de la modulation bornée
+
+```text
+NS-TYPE-I-WEAK-L3-LOCAL-SUITABLE-COMPACTNESS
+  + NS-TYPE-I-PERSISTENT-CAPTURE-SPACETIME-NONTRIVIALITY
+  + sup_n||beta_n||_(L-infinity)<=B
+  + r_n=partial_sZ_n-beta_n mathcal RZ_n ->0 dans D'
+  --> beta_n weak-* -> beta
+  --> beta_n mathcal RZ_n -> beta mathcal RZ
+      [faible-* x fort; dérivation interne]
+  --> Z=Q_theta U, theta'=beta
+  --> NS-TYPE-I-BOUNDED-MODULATION-COMPACTNESS-TO-RSS
+
+NS-TYPE-I-EXACT-RELATIVE-ROTATION-CLASSIFICATION
+  + mathcal R U=0
+  --> profil stationnaire
+  + NS-BACKWARD-SELFSIMILAR-WEAK-L3-LIOUVILLE
+  + capture persistante
+  --> contradiction
+
+NS-TYPE-I-EXACT-RELATIVE-ROTATION-CLASSIFICATION
+  + mathcal R U!=0
+  --> beta=alpha constant
+  --> profil RSS exact non stationnaire
+  -?-> rigidité faible-L3 à rotation intermédiaire
+
+faible x faible / beta_n non borné / extraction dépendant du test
+  -/-> passage du produit modulé
+      [FAIL-NS-0092]
+
+profil Type I général
+  -?-> défaut modulé et vitesse uniformément bornée
+  -?-> GAP-TYPE-I-UNBOUNDED-ROTATION-MODULATION-OR-RSS-RIGIDITY
+  -?-> régularité Clay.
+```
+
+Le cœur cinématique est fermé sans division par le générateur. Les bornes
+uniformes suitable et de pression restent une arête séparée indispensable;
+le caractère suitable individuel des approximants ne les remplace pas.

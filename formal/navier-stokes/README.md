@@ -1419,3 +1419,24 @@ L'équivariance de la projection de Leray, la règle de chaîne dans les
 distributions, la pression de Riesz et le passage suitable vers `W1,2_loc`
 restent des interfaces papier. Aucun projet Lean, Isabelle ou Coq n'est
 modifié dans ce cycle.
+
+## Backlog issu du cycle 0056 — produit modulé et reconstruction de phase
+
+Le noyau stable se sépare en quatre lemmes courts :
+
+1. formaliser le passage
+   `beta_n weak-* beta`, `sup||beta_n||_infinity<=B`, `h_n->h` dans `L1`
+   implique `integral beta_n h_n -> integral beta h`;
+2. encoder l'adjoint du générateur centré
+   `mathcal R^*phi=-Jphi+(Jy dot nabla)phi`, puis le passage distributionnel
+   de `beta_n mathcal RZ_n` sans convergence des gradients;
+3. formaliser `partial_sZ=beta mathcal RZ`,
+   `theta(s)=integral beta` et `partial_s(Q_(-theta)Z)=0`, sans trace forte;
+4. raccorder cette représentation à la dichotomie formalisable du cycle
+   0055 : stabilisateur continu ou vitesse constante RSS.
+
+Le certificat dyadique `Fraction` fournit en plus des contre-exemples exacts
+aux variantes faible--faible, non bornée, test mobile et extraction non
+commune. La compacité suitable, la pression de Riesz, la capture et le
+Liouville de Guevara--Phuc restent des interfaces papier. Aucun projet Lean,
+Isabelle ou Coq n'est créé dans ce cycle.

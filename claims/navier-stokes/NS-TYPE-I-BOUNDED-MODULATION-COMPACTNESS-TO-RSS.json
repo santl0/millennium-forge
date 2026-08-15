@@ -1,0 +1,70 @@
+{
+  "id": "NS-TYPE-I-BOUNDED-MODULATION-COMPACTNESS-TO-RSS",
+  "problem": "navier-stokes",
+  "statement": "Soient kappa>0, I un intervalle connexe et Z_n des solutions renormalisees divergence-free sur R3 x I, de viscosite un et sans force, convergeant fortement vers Z dans L3_loc, avec un ledger suitable local uniforme, une borne globale uniforme L-infinity_s L^(3,infinity)_y, des vitesses beta_n uniformement bornees dans L-infinity(I), et r_n=partial_s Z_n-beta_n mathcal R Z_n tendant vers zero dans les distributions pour une rotation centree fixe. Apres extraction, beta_n converge faible-etoile vers beta, beta_n mathcal R Z_n tend vers beta mathcal R Z, et Z=Q_theta U avec theta'=beta et U spatialement fixe. L'autonomie classe la limite en profil stationnaire si mathcal R U=0, ou en RSS exacte avec beta=alpha constant presque partout si mathcal R U est non nul. Sous capture cylindrique persistante, suitability et faible-L3, la branche stationnaire est exclue par le Liouville publie, mais la trivialite du profil RSS tourne n'est pas demontree et aucune conclusion Clay ne suit.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "domaine R3 sans frontiere, viscosite un, force nulle et coefficient de drift renormalise kappa>0 fixe",
+    "I est connexe et l'action SO(2) est centree autour d'un axe fixe passant par l'origine du drift similaire",
+    "Z_n converge fortement vers Z dans L3 sur tout compact espace-temps, sur une sous-suite commune a tous les passages",
+    "pour chaque cylindre compact, les normes L-infinity_t L2_x, L2_t H1_x et L^(3/2) de la pression sont bornees uniformement afin de transmettre suitability; la forte L3 seule ne suffit pas",
+    "sup_n ess sup_s ||Z_n(s)||_(L^(3,infinity)(R3)) est fini et la pression globale est fixee par Riesz, avec les queues necessaires au passage global",
+    "beta_n appartient a L-infinity(I), avec sup_n ||beta_n||_infinity<=B; sur un intervalle non borne, une variante locale exige exhaustion et diagonale",
+    "r_n=partial_s Z_n-beta_n mathcal R Z_n tend vers zero dans D'(R3 x I), et non seulement reste borne",
+    "l'exclusion de la branche stationnaire demande en plus une capture L3 sur un cylindre centre commun de mesure temporelle positive"
+  ],
+  "dependencies": [
+    "NS-TYPE-I-WEAK-L3-LOCAL-SUITABLE-COMPACTNESS",
+    "NS-TYPE-I-PERSISTENT-CAPTURE-SPACETIME-NONTRIVIALITY",
+    "NS-TYPE-I-DERENORMALIZED-ANCIENT-LOCAL-SUITABLE",
+    "NS-TYPE-I-EXACT-RELATIVE-ROTATION-CLASSIFICATION",
+    "NS-BACKWARD-SELFSIMILAR-WEAK-L3-LIOUVILLE"
+  ],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0056-bounded-modulation-compactness.md; passage faible-etoile fois fort, reconstruction de phase et raccord stationnaire/RSS",
+      "sha256": "35a6ab6c76e4841259ee227c46617492307235a051c18f452579aac6452988dc"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0056-analysis.md; audit distributionnel du produit, des quantificateurs, de la pression, de suitability et de la capture",
+      "sha256": "69b2b338285bcfd6d72575bacdd38d0316e1eca2190615737b77d5bbeae07be1"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0056-literature.md; audit primaire de NS-SRC-0187, NS-SRC-0188, NS-SRC-0206 et NS-SRC-0209 a NS-SRC-0210",
+      "sha256": "31ba71fe15b8dd3e0289e442bc262da9bc9bf90eb967126e242deb48f890e8e6"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0056-countermodel.md; faible-faible, vitesse non bornee, generateur degenere et quantificateurs de sous-suite",
+      "sha256": "f679bd52d4ab84006b9a1f2a38b593329cf4f46905e24ab0deb3efd7a5f7e756"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/bounded-modulation-compactness/bounded_modulation_audit.py; 1288 assertions rationnelles exactes",
+      "sha256": "6ab32500ee3d2ab7d153e67b344b70197705407da4c3a5245c879daa896df06c"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0203; Guevara--Phuc, SIAM Journal on Mathematical Analysis 50 (2018), rigidite de la branche stationnaire seulement"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0051; Pineau--Vicol, arXiv:2607.09619v2, exclusions RSS sous borne Type I ponctuelle et rotations extremes seulement"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0056-bounded-modulation-compactness"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Derivation principale, audit analytique, veille primaire et contre-modeles exacts separes; aucune revue humaine externe",
+    "notes": "Le statut reste COMPUTATION_ONLY. Le coeur faible-etoile fois fort et la reconstruction de phase sont fermes conditionnellement, mais la suite doit deja fournir forte L3_loc, ledger suitable uniforme, pression controlee, capture et defaut modulant nul. La borne faible-L3 seule ne produit pas ces hypotheses, les vitesses non bornees ne passent pas, la RSS intermediaire reste ouverte et aucune implication Clay n'est revendiquee."
+  }
+}

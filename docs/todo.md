@@ -423,3 +423,23 @@
 - [ ] Tester séparément `|beta_n|->infinity`, moyenne axisymétrique et perte
   de phase, sans importer les estimations Type I ponctuelles depuis
   faible-`L3`.
+
+### Cycle 0056
+
+- [x] Extraire une sous-suite faible-étoile commune de vitesses de
+  modulation uniformément bornées.
+- [x] Prouver le passage de `beta_n mathcal RZ_n` par adjoint du générateur
+  et convergence forte locale, sans convergence des gradients.
+- [x] Reconstruire une phase `W^(1,infinity)` et un profil spatial fixe sans
+  supposer de trace forte.
+- [x] Fermer la dichotomie stationnaire/RSS et conserver séparément le
+  ledger uniforme requis pour suitability et pression.
+- [x] Certifier les frontières faible--faible, vitesse non bornée,
+  générateur dégénéré, sous-suite non commune et test mobile par 1288
+  assertions rationnelles exactes.
+- [ ] Déterminer si `|beta_n|->infinity` force une moyenne axisymétrique sous
+  les bornes Type I disponibles ou permet un produit compensé non nul.
+- [ ] Produire le défaut modulé depuis le pipeline Type I, au lieu de le
+  prendre comme hypothèse dynamique.
+- [ ] Attaquer la rigidité RSS faible-`L3` à rotation intermédiaire sans
+  importer une borne Type I ponctuelle absente.

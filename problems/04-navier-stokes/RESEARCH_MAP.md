@@ -2234,3 +2234,43 @@ stationnaire et RSS extrême ont des statuts distincts, publié et
 prépublication. L'arête manquante porte désormais sur la stabilité de la
 modulation sous compacité suitable, non sur la classification d'une orbite
 exacte déjà donnée.
+
+## Cycle 0056 — modulation bornée vers orbite exacte
+
+```text
+suite renormalisée Z_n sur R3 x I
+  + forte L3_loc commune
+  + ledger suitable/pression uniforme
+  + borne globale L^(3,infinity)
+  + sup_n||beta_n||_infinity<=B
+  + partial_sZ_n-beta_n mathcal RZ_n ->0 dans D'
+  --> beta_n weak-* -> beta
+  --> beta_n mathcal RZ_n -> beta mathcal RZ dans D'
+      [faible-* L-infinity x fort L1]
+  --> partial_sZ=beta mathcal RZ
+  --> Z=Q_theta U, theta'=beta
+
+Z=Q_theta U + équation autonome
+  --> mathcal R U=0 et Z stationnaire
+      ou beta=alpha constant et U RSS
+      [NS-TYPE-I-BOUNDED-MODULATION-COMPACTNESS-TO-RSS]
+
+capture cylindrique + branche stationnaire suitable faible-L3
+  --> U non nul et U=0
+      [contradiction via Guevara--Phuc]
+  --> RSS non stationnaire, sans trivialité connue
+
+faible x faible ou ||beta_n||_infinity non borné
+  -/-> passage du produit modulé
+      [FAIL-NS-0092; 1288 assertions exactes]
+
+vitesses divergentes / RSS intermédiaire
+  -?-> GAP-TYPE-I-UNBOUNDED-ROTATION-MODULATION-OR-RSS-RIGIDITY
+  -?-> rigidité ancienne / problème Clay.
+```
+
+L'arête faible--forte est une dérivation fonctionnelle interne; le passage
+de suitability reste conditionné au ledger uniforme déjà séparé. La
+branche stationnaire utilise une rigidité publiée, tandis que l'annulation
+d'une RSS tournée faible-`L3` et la production du défaut modulé depuis une
+singularité générale restent manquantes.

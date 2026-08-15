@@ -1250,3 +1250,29 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   discrétisation PDE.
 - Pivot : compacité des modulations approchées, avec trichotomie vitesse
   bornée, vitesse non bornée et générateur dégénéré.
+
+## 2026-08-15 — modulation bornée et produit faible-étoile--fort
+
+- Objet : suite renormalisée suitable locale sur `R3`, viscosité un, force
+  nulle, axe centré fixe, forte convergence `L3_loc` et défaut modulé nul à
+  la limite.
+- Échelle : `beta_n`, `alpha` et le temps similaire sont sans dimension;
+  les rotations préservent faible-`L3`, les boules centrées et la capture.
+- Gain : `sup||beta_n||_infinity=B` et la forte convergence du facteur test
+  donnent le passage exact de `beta_n mathcal RZ_n`; la constante perdue est
+  exactement `B`.
+- Reconstruction : `partial_sZ=beta mathcal RZ` donne
+  `Z=Q_theta U` sans trace forte; l'autonomie impose stationnarité ou RSS à
+  vitesse constante.
+- Suitability : la forte `L3_loc` ferme le stress mais non la dissipation.
+  Des bornes uniformes locales de vitesse, gradient et pression sont une
+  hypothèse distincte.
+- Contre-profils : Rademacher corrélés pour faible fois faible,
+  `beta_n=n`, `h_n=1/n` sans borne, et
+  `mathcal R U_n->0` avec `beta_n mathcal R U_n` non nul.
+- Résidu : 1288 assertions rationnelles exactes, zéro échec; aucun calcul
+  PDE ni arrondi.
+- Perte restante : aucune borne de vitesse n'est déduite du pipeline Type I,
+  et la RSS tournée faible-`L3` intermédiaire n'est pas rigide.
+- Pivot : moyenne angulaire lorsque `|beta_n|->infinity`, ou rigidité RSS
+  dans `GAP-TYPE-I-UNBOUNDED-ROTATION-MODULATION-OR-RSS-RIGIDITY`.

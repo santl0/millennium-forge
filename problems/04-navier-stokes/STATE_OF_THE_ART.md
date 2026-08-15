@@ -1754,3 +1754,40 @@ donc une borne des vitesses et une alternative quantitative lorsque le
 générateur rotationnel dégénère. Le registre passe à 95 claims, le corpus
 atteint 208 sources et le verrou devient
 `GAP-TYPE-I-APPROXIMATE-ROTATION-MODULATION-COMPACTNESS`.
+
+## Mise à jour 2026-08-15 — cycle 0056, modulation bornée compactifiée
+
+Soit `Z_n` une suite de solutions renormalisées sur `R3 x I`, de viscosité
+un et sans force, convergeant fortement dans `L3_loc`, munie d'un ledger
+suitable uniforme et d'une borne globale faible-`L3`. Si
+
+```text
+sup_n ||beta_n||_(L-infinity(I))<=B,
+partial_s Z_n-beta_n mathcal R Z_n ->0 dans D',
+```
+
+alors, après extraction, `beta_n` converge faible-étoile vers `beta` et le
+produit modulé passe à la limite. Le point exact est le lemme
+faible-étoile borné fois fort `L1`; le générateur est déplacé sur le test par
+`mathcal R^*phi=-Jphi+(Jy dot nabla)phi`. On obtient
+
+```text
+partial_s Z=beta(s) mathcal R Z,
+Z(s)=Q_(theta(s))U,
+theta'=beta.
+```
+
+L'autonomie du système et le cycle 0055 donnent ensuite la dichotomie : si
+`mathcal R U=0`, la limite est stationnaire; sinon `beta=alpha` presque
+partout et `U` satisfait l'équation RSS exacte. Une capture cylindrique
+persistante et le Liouville stationnaire publié éliminent la première
+branche, mais pas la RSS tournante faible-`L3`.
+
+La conclusion suitable demande des constantes uniformes locales d'énergie,
+de dissipation et de pression; le caractère suitable de chaque terme pris
+isolément ne suffit pas. Des contre-modèles dyadiques exacts réfutent les
+versions faible fois faible et vitesse non bornée. Le registre passe à 96
+claims; deux sources adjacentes sur la reconstruction de phase sont ajoutées
+et le corpus atteint 210.
+Le verrou devient
+`GAP-TYPE-I-UNBOUNDED-ROTATION-MODULATION-OR-RSS-RIGIDITY`.

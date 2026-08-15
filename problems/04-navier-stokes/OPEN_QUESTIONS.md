@@ -817,3 +817,30 @@ Navier--Stokes.
 `NS-TYPE-I-EXACT-RELATIVE-ROTATION-CLASSIFICATION` ferme la vitesse variable
 **exacte**. Il ne fournit aucune stabilité quantitative de cette
 classification.
+
+## Priorité active après le cycle 0056
+
+1. **`GAP-TYPE-I-UNBOUNDED-ROTATION-MODULATION-OR-RSS-RIGIDITY`.** Le cas
+   `sup_n||beta_n||_infinity<infinity` est fermé conditionnellement. Séparer
+   désormais vitesses divergentes, moyenne axisymétrique et RSS à rotation
+   intermédiaire.
+2. **Production de la modulation.** Déduire, depuis le pipeline Type I, une
+   même sous-suite avec forte `L3_loc`, ledger suitable uniforme et défaut
+   `partial_sZ_n-beta_n mathcal RZ_n->0`; ces hypothèses ne sont pas encore
+   produites par une singularité générale.
+3. **Vitesses non bornées.** Tester si `|beta_n|->infinity` impose, après
+   moyennage angulaire, `mathcal R Z=0`, ou si une compensation
+   `beta_n mathcal R Z_n=O(1)` survit comme dans le contre-modèle exact.
+4. **Pression et capture.** Conserver une jauge globale de Riesz, les queues,
+   les bornes locales uniformes et la capture sur un cylindre centré dans
+   chaque extraction.
+5. **RSS intermédiaire.** Même une RSS exacte non stationnaire faible-`L3`
+   n'est pas éliminée par les théorèmes actuels sans borne Type I ponctuelle
+   supplémentaire et régime de rotation extrême.
+6. **Critère d'abandon.** Pivoter après trois mécanismes distincts échouant
+   à contrôler la vitesse non bornée; conserver alors l'obstruction comme
+   séparation nette entre compacité cinématique et rigidité PDE.
+
+`NS-TYPE-I-BOUNDED-MODULATION-COMPACTNESS-TO-RSS` ferme le sous-cas borné,
+sans division par `||mathcal R U||`. `FAIL-NS-0092` interdit d'étendre ce
+passage à faible fois faible ou à une modulation non uniformément bornée.

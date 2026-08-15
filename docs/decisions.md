@@ -695,3 +695,22 @@
   compacité des profils et alternative lorsque `mathcal R U` dégénère.
 - Le verrou devient
   `GAP-TYPE-I-APPROXIMATE-ROTATION-MODULATION-COMPACTNESS`.
+
+### 2026-08-15 — modulation bornée fermée, vitesses divergentes séparées
+
+- Trois actions ont été notées : compacité d'une modulation bornée `19/20`,
+  coordonnée locale de phase `17/20`, moyenne angulaire à vitesse divergente
+  `16/20`.
+- La borne `sup||beta_n||_infinity=B` est le coefficient critique : elle
+  fournit à la fois Banach--Alaoglu et l'erreur
+  `B||h_n-h||_1` du produit faible-étoile--fort.
+- La phase est reconstruite après le passage à la limite; aucune convergence
+  des phases `theta_n` ni trace temporelle forte n'est supposée.
+- Le cas `mathcal R U=0` est routé vers le profil stationnaire sans division
+  par le générateur. La vitesse y demeure une jauge non identifiable.
+- La suitability de la limite exige un ledger uniforme; la forte `L3_loc`
+  seule ne contrôle ni gradients ni pression locale.
+- `FAIL-NS-0092` abandonne les variantes faible--faible, modulation non
+  bornée, sous-suites dépendantes des tests et tests mobiles.
+- Le prochain test sélectionné porte sur `|beta_n|->infinity` : moyenne
+  angulaire vers un profil axisymétrique ou contre-profil de compensation.

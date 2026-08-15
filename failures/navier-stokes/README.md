@@ -1972,3 +1972,29 @@ claim éventuellement supersédé.
   lorsque compacité, continuité et non-dégénérescence sont démontrées.
 - Statut : version approchée naïve `REFUTED`; continuer avec
   `GAP-TYPE-I-APPROXIMATE-ROTATION-MODULATION-COMPACTNESS`.
+
+## `FAIL-NS-0092` — produit modulé sans facteur fort ou borne uniforme
+
+- Date : 2026-08-15.
+- Cible : passer à la limite dans `beta_n mathcal RZ_n` avec deux facteurs
+  seulement faibles, une vitesse non bornée, des sous-suites propres à
+  chaque test ou un générateur dégénérant sans taux.
+- Cas positif exact : si `beta_n weak-* -> beta` dans `L-infinity`,
+  `sup||beta_n||_infinity<=B` et `h_n->h` dans `L1`, alors
+  `integral beta_nh_n->integral beta h`; l'erreur forte est au plus
+  `B||h_n-h||_1`.
+- Faible fois faible : pour les Rademacher dyadiques `r_n`, les deux
+  facteurs convergent faiblement vers zéro mais `integral r_n²=1`.
+- Modulation divergente : `beta_n=n`, `h_n=1/n` donnent un produit égal à
+  un malgré `h_n->0` fortement. De même,
+  `mathcal R U_n=e_2/n` mais `beta_n mathcal R U_n=e_2`.
+- Quantificateurs : des extractions paires et impaires adaptées à deux tests
+  ne donnent pas une sous-suite commune; la convergence faible-étoile ne se
+  teste pas contre le test mobile `h_n=beta_n`.
+- Résidu : 1288 assertions rationnelles exactes, empreinte
+  `6ab32500ee3d2ab7d153e67b344b70197705407da4c3a5245c879daa896df06c`.
+- Portée : calcul scalaire/dimension finie, sans divergence, pression ni
+  équation Navier--Stokes. Il réfute les raccourcis fonctionnels, pas le
+  lemme PDE sous forte `L3_loc` et ledger suitable uniforme.
+- Statut : variantes faible--faible et non bornée `REFUTED`; continuer avec
+  `GAP-TYPE-I-UNBOUNDED-ROTATION-MODULATION-OR-RSS-RIGIDITY`.

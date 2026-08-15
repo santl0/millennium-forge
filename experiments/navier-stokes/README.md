@@ -2304,3 +2304,31 @@ cellule reste donc `NOT_PROVIDED`.
   `c9a2ca834951ea18ac5fca89d06d24cd73601181b99268a50f1749f21c9bb207`.
 - Limites : modèle fini abstrait; aucune pression, projection de Leray,
   non-linéarité NS, ancienne suitable, singularité ou conclusion Clay.
+
+## `BOUNDED-MODULATION-COMPACTNESS-AUDIT-1` — produit faible-étoile--fort
+
+- Question falsifiable : une borne faible-étoile des vitesses et une
+  convergence forte `L1` du facteur testé suffisent-elles au produit, et
+  quelles suppressions d'hypothèses le font échouer ?
+- Équations réellement calculées : identité bilinéaire scalaire sur
+  `[0,1)`, oscillations de Rademacher et action du générateur plan
+  `R e1=e2`; aucune trajectoire PDE n'est intégrée.
+- Discrétisation : aucune approximation. Les fonctions sont constantes sur
+  des cellules dyadiques et toutes les intégrales sont des `Fraction`
+  exactes; graine sans objet.
+- Résultat : passage positif faible-étoile borné fois fort `L1`, erreur
+  saturée `1/n`; produits faible--faible et non borné égaux à un;
+  générateur dégénéré compensé; défauts de sous-suite et de test mobile.
+- Résolution et sensibilité : niveaux dyadiques jusqu'aux profondeurs du
+  script, 1288 assertions couvrant annulations, normes, produits et
+  quantificateurs; les identités fermées valent au-delà du balayage.
+- Précision et erreur : arithmétique rationnelle exacte, zéro échec et
+  résidu rationnel nul.
+- Commande :
+  `python -B experiments/navier-stokes/bounded-modulation-compactness/bounded_modulation_audit.py`.
+- Environnement : Python standard, sans dépendance externe ni aléa.
+- Empreinte :
+  `6ab32500ee3d2ab7d153e67b344b70197705407da4c3a5245c879daa896df06c`.
+- Limites : aucune vitesse tridimensionnelle, pression, divergence ou
+  solution NS; le certificat valide une porte fonctionnelle, pas la
+  production PDE de la modulation ni une conclusion Clay.
