@@ -738,3 +738,30 @@ borne uniforme de fenêtre depuis la seule taille faible-`L3`.
 `FAIL-NS-0088` abandonne les valeurs absolues et le signe triadique
 universel. La prochaine expérience doit porter sur une corrélation
 temporelle d'une même trajectoire ancienne.
+
+## Priorité active après le cycle 0053
+
+1. **`GAP-TYPE-I-RENORMALIZED-GENERATOR-TO-SIGNED-FLUX`.** Relier la
+   minoration locale du générateur renormalisé à la densité signée `Phi_a`
+   du temps de base, ou construire une orbite compatible où le générateur
+   reste non nul mais tangent à une récurrence sans gain infrarouge.
+2. **Fonctionnelle coercive.** Chercher une fonctionnelle locale, critique et
+   intégrable au passé dont la dissipation domine un `D_R`; une telle borne
+   forcerait une sous-suite presque stationnaire et fermerait la branche par
+   le Liouville publié.
+3. **Pression et endpoint.** Conserver les tests
+   `W_0^(1,(3,1))`, la pression globale de Riesz et les queues de ses
+   transformées. Toute utilisation de `W_0^(1,3)` doit d'abord exploiter
+   explicitement l'énergie suitable locale.
+4. **Récurrence.** Ne pas confondre retour de l'état et petit générateur :
+   l'orbite exacte `z'=Jz` est périodique avec générateur de norme un.
+5. **Compacité.** Toute extraction doit préserver dans une même sous-suite
+   la forte `L3_loc`, la capture sur une fenêtre et tous les rayons fixes;
+   aucune uniformité en rayon ne vient de la seule diagonale.
+6. **Branches séparées.** La minoration ne traite que le scénario Type I
+   capturé. Elle ne couvre ni Type II, ni DSS arbitraire, ni les données Clay
+   générales.
+
+`NS-TYPE-I-RENORMALIZED-GENERATOR-NONVANISHING` ferme le raccord
+« petit générateur sur toutes les boules -> profil BSS interdit ». Il ne
+contrôle pas encore le flux signé ni l'énergie globale.

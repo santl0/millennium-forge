@@ -1356,3 +1356,23 @@ Les points 1--3 et 5--8 forment un noyau algébrique stable. Les mappings
 Lorentz et le passage de l'équation faible au Duhamel lissé restent des
 interfaces papier. Une compilation ne certifierait ni cancellation
 temporelle, ni rigidité ancienne, ni Clay.
+
+## Backlog issu du cycle 0053 — défaut distributionnel et diagonale
+
+Le noyau stable à formaliser est logique et fonctionnel, sans importer la
+preuve PDE complète :
+
+1. définir une famille monotone de semi-normes distributionnelles `D_R` sur
+   des fenêtres unitaires et tests `W_0^(1,(3,1))(B_R)`;
+2. prouver que la négation de
+   `exists R, epsilon, S, forall s<=S, D_R(s)>=epsilon` fournit une suite
+   unique `s_n->-infinity` avec `D_R(s_n)->0` pour chaque rayon fixe;
+3. formaliser `partial_t U=0` à partir de l'annulation des appariements
+   contre les produits de tests temps--espace;
+4. formaliser séparément l'invariance de `L^(3,infinity)` sous
+   `U(y)=lambda V(lambda y)` et la normalisation
+   `lambda=sqrt(2kappa)` du drift.
+
+Le passage suitable, la compacité forte `L3_loc`, la pression de Riesz et le
+théorème de Guevara--Phuc restent des dépendances papier non encodées. Aucun
+objet Lean, Isabelle ou Coq n'est modifié dans ce cycle.

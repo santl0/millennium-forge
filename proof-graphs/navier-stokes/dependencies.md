@@ -1197,3 +1197,37 @@ Arête publiée : Liouville du profil stationnaire de Leray dans les classes
 Lorentz indiquées. Arête interne : identité de flux. Arêtes réfutées :
 variation absolue et positivité triadique universelle. Arête manquante :
 cancellation temporelle quantitative d'une même orbite ancienne.
+
+## Cycle 0053 — pont compactité--stationnarité
+
+```text
+NS-TYPE-I-WEAK-L3-LOCAL-SUITABLE-COMPACTNESS
+  + NS-TYPE-I-PERSISTENT-CAPTURE-SPACETIME-NONTRIVIALITY
+  + pression globale de Riesz
+  + kappa>0 fixe
+  + défauts D_R(s_n)->0 sur une suite commune
+  --> limite stationnaire non nulle
+      [dérivation interne; forte L3 locale]
+
+limite stationnaire
+  + W1,2_loc inter L^(3,infinity)
+  --> NS-BACKWARD-SELFSIMILAR-WEAK-L3-LIOUVILLE
+      [Guevara--Phuc; SOURCE_VERIFIED]
+  --> contradiction
+  --> NS-TYPE-I-RENORMALIZED-GENERATOR-NONVANISHING
+
+faible-L3 seul
+  -/-> dual (W_0^(1,3))*
+      [FAIL-NS-0089; endpoint Lorentz requis]
+
+NS-TYPE-I-RENORMALIZED-GENERATOR-NONVANISHING
+  -?-> GAP-TYPE-I-RENORMALIZED-GENERATOR-TO-SIGNED-FLUX
+  -?-> NS-WEAK-L3-ANCIENT-INFRARED-CRITERION
+  -?-> rigidité ancienne / régularité Clay.
+```
+
+Arêtes classiques et sourcées : Liouville du profil stationnaire après
+normalisation de `kappa`. Arêtes internes : compacité suitable, passage de
+la capture et diagonale des défauts. Arête réfutée : promotion depuis la
+seule borne faible-`L3` ou une simple récurrence. Arête manquante : toute
+coercivité reliant générateur local et flux infrarouge signé.

@@ -1,0 +1,63 @@
+{
+  "id": "NS-TYPE-I-RENORMALIZED-GENERATOR-NONVANISHING",
+  "problem": "navier-stokes",
+  "statement": "Soit Z une solution ancienne renormalisee faible adaptee locale sur R3 x (-infinity,0], de pression globale de Riesz, satisfaisant partial_s Z-Delta Z+div(Z tensor Z)+nabla Pi+kappa(1+y dot nabla)Z=0 avec kappa>0 fixe, une borne uniforme L-infinity_s L^(3,infinity)_y, le paquet de compacite locale suitable sous translations et la capture persistante integral_(J x B1)|Z|^3>=|J|gamma^3. Pour D_R(s) defini comme le supremum de l'action integree de partial_s Z sur les tests lisses de B_R x (s-1,s) uniformement bornes dans W_0^(1,(3,1))(B_R), il existe R_* fini, epsilon_*>0 et S_*<0 tels que D_(R_*)(s)>=epsilon_* pour tout s<=S_*. Sinon une diagonale de translations converge fortement dans L3_loc vers un profil stationnaire non nul dans W1,2_loc inter L^(3,infinity), contredisant le Liouville publie de Guevara--Phuc apres normalisation de kappa. Cette minoration ne controle ni le flux infrarouge signe, ni Type II, ni le probleme Clay.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "domaine R3 sans frontiere, viscosite un, aucune force physique et temps renormalise ancien (-infinity,0]",
+    "Z est une solution faible adaptee locale de l'equation renormalisee autonome avec coefficient kappa>0 fixe et divergence nulle",
+    "Pi=R_iR_j(Z_iZ_j) dans la jauge globale et sup_(s<=0)||Z(s)||_(L^(3,infinity))<=M",
+    "les translations temporelles de Z satisfont uniformement sur chaque cylindre compact le paquet d'energie, pression et compacite forte L3_loc de NS-TYPE-I-WEAK-L3-LOCAL-SUITABLE-COMPACTNESS",
+    "il existe gamma>0 tel que integral_(J x B1)|Z|^3>=|J|gamma^3 pour tout intervalle borne non degenere J subset (-infinity,0]",
+    "D_R emploie les tests Lorentz-Sobolev W_0^(1,(3,1)); aucune appartenance au dual de W_0^(1,3) n'est deduite du seul faible-L3",
+    "les rayons sont diagonalises par une meme suite de temps et aucune uniformite de R_* ou epsilon_* sur toutes les orbites n'est affirmee"
+  ],
+  "dependencies": [
+    "NS-TYPE-I-WEAK-L3-LOCAL-SUITABLE-COMPACTNESS",
+    "NS-TYPE-I-PERSISTENT-CAPTURE-SPACETIME-NONTRIVIALITY",
+    "NS-BACKWARD-SELFSIMILAR-WEAK-L3-LIOUVILLE"
+  ],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0053-stationary-subsequence-gap.md; definition endpoint, diagonale, compacite, capture et contradiction de Liouville",
+      "sha256": "0ea8d8f052b116886e8f4e73ea811a4f87ecaf521c9e30bc961ef54c645d684e"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0053-analysis.md; audit independant du dual Lorentz, de la pression, de la diagonale et de la normalisation de kappa",
+      "sha256": "26b7bc5d6d9009d6fe0bf7356dddfb0c1d03bd6d9e69c89200a86b1b42b4154e"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0203; Guevara--Phuc, SIAM Journal on Mathematical Analysis 50 (2018), theoreme 1.3, DOI 10.1137/16M110099X"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0053-literature.md; audit primaire des rigidites BSS/DSS et du critere de generateur 2026",
+      "sha256": "48b2bb642aa92d9ffe35ac7a3da0d98ea8180dbc53da7a660d2207c792ae5c60"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0053-countermodel.md; concentration, fuite, recurrence et erreurs de diagonale",
+      "sha256": "ad35bef2d2c21bd396b1e49e89f8d67be920a21be809a6eaec9d819df00af7f0"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/stationary-subsequence/stationary_subsequence_audit.py; 1814 assertions exactes",
+      "sha256": "8d6f53023bd21f0aad817c77f004ee6420d8688f73695dbc44289ff9ade3e702"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0053-stationary-subsequence"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Derivation principale, audit analytique, audit bibliographique et contre-modeles exacts separes; aucune revue humaine externe",
+    "notes": "Le statut reste COMPUTATION_ONLY. Le pairing endpoint, la mesurabilite distributionnelle, le produit quadratique, la pression non locale, la capture espace-temps, la diagonale commune et kappa>0 ont ete attaques. Le resultat est conditionnel au pipeline Type I et ne fournit ni coercivite du flux signe, ni rigidite des orbites non stationnaires, ni regularite Clay."
+  }
+}

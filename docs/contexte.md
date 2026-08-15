@@ -483,3 +483,16 @@ La littérature ferme le profil backward auto-similaire exact faible-`L3`,
 mais pas la récurrence faible d'une ancienne générale. Le corpus compte 205
 sources et 92 claims; le verrou actif devient
 `GAP-TYPE-I-ANCIENT-SIGNED-BASE-FLUX-CANCELLATION`.
+
+Le cycle 0053 ferme conditionnellement le premier raccord vers cette
+rigidité. Si le générateur de la limite ancienne renormalisée devenait petit
+sur toutes les boules et des fenêtres unitaires le long d'une même suite, la
+compacité suitable et la capture persistante produiraient un profil
+stationnaire faible-`L3` non nul, interdit par Guevara--Phuc. Un rayon fixe
+voit donc une activité temporelle uniformément positive au passé.
+
+`FAIL-NS-0089` sépare compacité critique, tightness, petit générateur et
+diagonale commune au moyen de 1814 assertions exactes. Le corpus reste à 205
+sources et le registre passe à 93 claims. Le verrou actif devient
+`GAP-TYPE-I-RENORMALIZED-GENERATOR-TO-SIGNED-FLUX`; aucune conclusion Type
+II, Clay ou de blow-up admissible n'est revendiquée.

@@ -1398,3 +1398,28 @@ backward SS/DSS exact ou en primitive de flux calorifiée bornée. C'est un
 constat de corpus, non une preuve d'absence. Le corpus atteint 205 sources.
 `NS-BACKWARD-SELFSIMILAR-WEAK-L3-LIOUVILLE` est `SOURCE_VERIFIED`; l'identité
 de flux du cycle reste `COMPUTATION_ONLY`.
+
+## Audit ciblé du cycle 0053 — raccord presque stationnaire
+
+- Guevara--Phuc (`0203`) reste la source primaire du dernier maillon : son
+  théorème 1.3 couvre le profil faible stationnaire de Leray dans
+  `W1,2_loc inter L^(3,infinity)` après normalisation de tout coefficient de
+  drift strictement positif.
+- Chae--Wolf (`0204`) confirme une famille d'exclusions Lorentz, mais ses
+  hypothèses d'auto-similarité ou d'asymptotique structurée ne remplacent pas
+  la construction de la sous-suite stationnaire.
+- Pineau--Vicol (`0051`, `arXiv:2607.09619v2`) fournit en prépublication un
+  critère différent : petit générateur à une tranche, solution lisse, borne
+  Type I ponctuelle et contrôle annulaire de pression. Il ne part ni d'une
+  ancienne faible-`L3`, ni de la compacité/capture du pipeline.
+- Aucun résultat publié identifié ne rend une simple récurrence, une
+  convergence faible-étoile ou des retours DSS arbitraires équivalents à
+  l'annulation du générateur local. Le pont compactité--stationnarité du
+  cycle reste donc une dérivation interne.
+- La notice `NS-SRC-0019` est corrigée après contrôle primaire : le second
+  auteur est Ruo Li; la référence confirmée est le volume 18(4), DOI
+  `10.3934/dcds.2007.18.637`.
+
+Aucune source nouvelle n'est ajoutée : le corpus reste à 205 entrées. Ce
+constat différentiel est borné aux sources primaires inspectées et ne prouve
+pas l'inexistence d'un résultat extérieur au corpus.

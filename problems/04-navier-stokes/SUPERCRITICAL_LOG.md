@@ -1180,3 +1180,29 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   aucun arrondi, résidu rationnel nul.
 - Pivot : conserver somme, phases et temps sur la même orbite dans
   `GAP-TYPE-I-ANCIENT-SIGNED-BASE-FLUX-CANCELLATION`.
+
+## 2026-08-15 — défaut de générateur et rigidité stationnaire
+
+- Objet : limite ancienne renormalisée suitable du pipeline Type I, avec
+  drift positif fixe, borne faible-`L3`, pression globale et capture
+  persistante.
+- Échelle : `L^(3,infinity)` et la norme de capture `L3` sont critiques;
+  une translation du temps similaire correspond à une dilatation
+  parabolique et conserve le coefficient du drift ainsi que la fenêtre
+  unitaire.
+- Endpoint : le stress et la pression ont l'échelle
+  `L^(3/2,infinity)`; leur espace test exact est `L^(3,1)`. Le défaut
+  `D_R` est donc défini distributionnellement sur
+  `W_0^(1,(3,1))(B_R)`.
+- Gain : si tous les défauts locaux s'annulent sur une même suite reculée,
+  la limite compacte est un profil stationnaire non nul, interdit par le
+  Liouville faible-`L3` publié.
+- Conclusion : un rayon fixe voit une activité temporelle minorée sur toute
+  fenêtre suffisamment reculée. Aucune constante uniforme en rayon ou en
+  solution n'est produite.
+- Contre-profils : concentration `nA(nx)`, translation de masse, rotation
+  périodique et défauts diagonaux séparent les quatre portes logiques.
+- Résidu : 1814 assertions exactes, zéro échec, résidu rationnel nul.
+- Perte restante : aucune implication connue entre activité locale du
+  générateur, signe du flux calorifique et contrôle infrarouge.
+- Pivot : `GAP-TYPE-I-RENORMALIZED-GENERATOR-TO-SIGNED-FLUX`.

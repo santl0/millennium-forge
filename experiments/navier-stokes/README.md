@@ -2230,3 +2230,29 @@ cellule reste donc `NOT_PROVIDED`.
 - Limites : tore fixe, algèbre instantanée, support non invariant. Le calcul
   ne certifie ni solution ancienne `R3`, ni suitability, ni transfert
   cumulé, ni blow-up, ni Clay.
+
+## `STATIONARY-SUBSEQUENCE-AUDIT-1` — portes d'une limite stationnaire
+
+- Question falsifiable : borne faible-`L3`, récurrence ou extractions
+  séparées suffisent-elles à produire une sous-suite compacte, stationnaire
+  et non triviale dans un repère fixe ?
+- Équations réellement calculées : lois d'échelle de `nA(nx)`, géométrie de
+  supports translatés, système exact `z'=Jz` et familles discrètes de
+  défauts; aucune trajectoire Navier--Stokes n'est simulée.
+- Données : atome lisse solénoïdal symbolique supporté dans `B_(1/4)`,
+  translations de `2ne_1`, quatre phases rationnelles de la rotation et
+  défauts de divisibilité/parité.
+- Discrétisation : aucune PDE. Balayages finis de paramètres pour vérifier
+  des identités fermées valables pour tout entier; graine sans objet.
+- Résultat : concentration critique sans forte compacité `L3`, fuite de
+  masse malgré générateur nul, récurrence avec générateur non nul, diagonale
+  seulement test-fixe et absence de sous-suite commune.
+- Précision et erreur : bibliothèque standard et `fractions.Fraction`;
+  1814 assertions exactes, zéro échec et résidu rationnel nul.
+- Commande :
+  `python -B experiments/navier-stokes/stationary-subsequence/stationary_subsequence_audit.py`.
+- Empreinte :
+  `8d6f53023bd21f0aad817c77f004ee6420d8688f73695dbc44289ff9ade3e702`.
+- Limites : les champs et l'orbite sont des contre-tests fonctionnels ou
+  logiques. Le certificat ne prouve ni compacité suitable, ni pression PDE,
+  ni Liouville, ni régularité ou blow-up Clay.

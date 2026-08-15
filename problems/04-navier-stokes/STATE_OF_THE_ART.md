@@ -1645,3 +1645,32 @@ ou discrètement auto-similaire sans hypothèses supplémentaires.
 
 Le corpus atteint 205 sources et le registre 92 claims. Le verrou actif est
 raffiné en `GAP-TYPE-I-ANCIENT-SIGNED-BASE-FLUX-CANCELLATION`.
+
+## Mise à jour 2026-08-15 — cycle 0053, sous-suite stationnaire interdite
+
+Soit `Z` la limite ancienne renormalisée du pipeline Type I, suitable locale,
+uniformément bornée dans `L^(3,infinity)` et munie de la capture persistante
+du cycle 0046. Pour un rayon `R`, le défaut distributionnel `D_R(s)` mesure
+`partial_s Z` sur la fenêtre `[s-1,s]` contre les tests de
+`W_0^(1,(3,1))(B_R)`. Ce choix Lorentz est obligatoire : le stress et la
+pression ne sont a priori que dans `L^(3/2,infinity)`.
+
+Si `D_R(s_n)->0` pour tous les rayons le long d'une même suite reculée, la
+compacité suitable locale donne une limite forte `L3_loc`, indépendante du
+temps. La capture la rend non nulle, tandis que la jauge globale de Riesz et
+la limite d'énergie donnent un profil de Leray
+`W1,2_loc inter L^(3,infinity)`. Après normalisation du coefficient positif
+du drift, Guevara--Phuc impose que ce profil soit nul. Par diagonalisation
+monotone, il existe donc `R_*`, `epsilon_*>0` et `S_*<0` tels que
+
+```text
+D_(R_*)(s)>=epsilon_* pour tout s<=S_*.
+```
+
+Le résultat est une dérivation IA conditionnelle au paquet de compacité déjà
+construit, pas une conséquence du seul faible-`L3`. Les contre-tests exacts
+montrent séparément que concentration critique, fuite spatiale, récurrence
+non stationnaire et extractions non emboîtées invalident les raccourcis
+correspondants. Le corpus reste à 205 sources; le registre passe à 93 claims.
+Le verrou est raffiné en
+`GAP-TYPE-I-RENORMALIZED-GENERATOR-TO-SIGNED-FLUX`.

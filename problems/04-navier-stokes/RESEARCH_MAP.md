@@ -2122,3 +2122,42 @@ L'identité de flux ne crée aucune nouvelle estimation : elle expose le
 quantificateur et les corrélations à préserver. La seule arête publiée
 ajoutée ferme le sous-cas auto-similaire exact; le raccord depuis le scénario
 Type I vers ce sous-cas est manquant.
+
+## Cycle 0053 — activité renormalisée persistante
+
+```text
+limite Type I renormalisée suitable
+  + borne uniforme L^(3,infinity)
+  + capture persistante dans B_1
+  + compacité forte L3_loc des translations
+  + pression globale de Riesz
+  --> si D_R(s_n)->0 pour tout R sur une même suite
+  --> profil stationnaire U non nul
+      dans W1,2_loc inter L^(3,infinity)
+
+profil stationnaire + kappa>0
+  --> normalisation au profil backward SS
+  --> U=0 [Guevara--Phuc, SOURCE_VERIFIED]
+  --> contradiction
+  --> NS-TYPE-I-RENORMALIZED-GENERATOR-NONVANISHING
+      [COMPUTATION_ONLY]
+
+borne faible-L3 seule
+  -/-> dual (W_0^(1,3))*
+      [contre-profil endpoint; FAIL-NS-0089]
+
+récurrence exacte / extraction séparée / capture sans tightness
+  -/-> sous-suite stationnaire non triviale
+      [1814 assertions exactes; résidu nul]
+
+activité locale persistante du générateur
+  -?-> flux calorifique signé non compensé
+      [GAP-TYPE-I-RENORMALIZED-GENERATOR-TO-SIGNED-FLUX]
+  -?-> critère infrarouge / L2 / rigidité ancienne / problème Clay.
+```
+
+Les arêtes compactes et le raccord suitable sont internes; la dernière
+rigidité stationnaire est publiée. L'arête nouvelle exclut seulement une
+asymptotique stationnaire globale sur une sous-suite de fenêtres. Elle ne
+produit aucune borne quantitative universelle et laisse possibles les
+orbites récurrentes non stationnaires, DSS, apériodiques et Type II.

@@ -637,3 +637,24 @@
   faible-étoile n'est attribuée aux sources.
 - Le prochain verrou est un gain dyadique après somme dynamique et
   intégration temporelle, avec pression et loi d'échelle suivies.
+
+### 2026-08-15 — sous-suite stationnaire exclue, générateur retenu
+
+- Trois actions ont été notées : raccord petit générateur--profil
+  stationnaire `19/20`, triade visqueuse intégrée `17/20`, cancellation
+  dyadique directe `16/20`.
+- Le défaut temporel est défini distributionnellement contre
+  `W_0^(1,(3,1))`; cette décision évite une fausse dualité entre
+  `L^(3/2,infinity)` et `L3` et toute hypothèse de mesurabilité forte dans un
+  dual endpoint.
+- La diagonale utilise la monotonie en rayon et une même suite de temps. La
+  forte `L3_loc` et la capture sur une fenêtre de mesure positive sont
+  conservées avant d'invoquer la rigidité.
+- Le coefficient positif du drift est normalisé explicitement au coefficient
+  `1/2`; aucune extension du théorème de Guevara--Phuc à `kappa=0` n'est
+  supposée.
+- `FAIL-NS-0089` abandonne récurrence seule, faible-`L3` seul et sous-suites
+  choisies indépendamment comme portes vers la stationnarité.
+- Le prochain verrou est
+  `GAP-TYPE-I-RENORMALIZED-GENERATOR-TO-SIGNED-FLUX` : déterminer si
+  l'activité locale persistante force un transfert signé détectable.

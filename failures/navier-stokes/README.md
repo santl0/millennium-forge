@@ -1902,3 +1902,26 @@ claim éventuellement supersédé.
 - Statut : les deux raccourcis sont `REFUTED`. Une cancellation temporelle
   d'une même orbite reste ouverte dans
   `GAP-TYPE-I-ANCIENT-SIGNED-BASE-FLUX-CANCELLATION`.
+
+## `FAIL-NS-0089` — récurrence ou faible-`L3` pris pour sous-suite stationnaire
+
+- Date : 2026-08-15.
+- Cible : déduire un profil stationnaire non trivial d'une borne critique,
+  d'une récurrence abstraite ou de sous-suites choisies séparément, sans
+  compacité critique, tightness, petit générateur et diagonale commune.
+- Endpoint : `Z tensor Z` et la pression de Riesz sont seulement dans
+  `L^(3/2,infinity)`; ils ne définissent pas en général un élément du dual de
+  `W_0^(1,3)`. Le test robuste emploie `W_0^(1,(3,1))`, ou bien doit d'abord
+  utiliser l'énergie suitable pour améliorer l'intégrabilité locale.
+- Contre-profils : `C_n=nA(nx)` conserve faible-`L3` et masse `L3` locale
+  mais coûte `||nabla C_n||_2²~n`; des translations stationnaires perdent
+  toute capture fixe; `z'=Jz` est exactement périodique avec générateur de
+  norme un; une diagonale annule chaque test fixe sans contrôler le test
+  mobile, et les sous-suites paires/impaires n'ont aucun raffinement commun.
+- Résidu : 1814 assertions rationnelles exactes, zéro échec; empreinte
+  `8d6f53023bd21f0aad817c77f004ee6420d8688f73695dbc44289ff9ade3e702`.
+- Portée : les témoins sont fonctionnels ou de dimension finie, pas des
+  solutions anciennes de Navier--Stokes. Ils réfutent les raccourcis, pas le
+  lemme PDE qui conserve suitability, capture et compacité forte.
+- Statut : raccourcis `REFUTED`; continuer avec
+  `GAP-TYPE-I-RENORMALIZED-GENERATOR-TO-SIGNED-FLUX`.

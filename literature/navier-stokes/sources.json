@@ -388,11 +388,11 @@
     {
       "id": "NS-SRC-0019",
       "title": "Nonexistence of locally self-similar blow-up for the 3D incompressible Navier–Stokes equations",
-      "authors": ["Thomas Y. Hou", "Congming Li"],
+      "authors": ["Thomas Y. Hou", "Ruo Li"],
       "year": 2007,
       "source_type": "journal_article",
       "publication_status": "published",
-      "venue": "Discrete and Continuous Dynamical Systems 18, 637–642",
+      "venue": "Discrete and Continuous Dynamical Systems 18(4), 637–642",
       "identifiers": {"doi": "10.3934/dcds.2007.18.637", "url": "https://doi.org/10.3934/dcds.2007.18.637"},
       "equation": {"model": "Navier–Stokes incompressible standard", "dimension": "3", "domain": "R³/local autour du point", "boundary": "aucune", "forcing": "non forcée", "viscosity": "ν>0"},
       "solution_notions": ["solution classique avant blow-up hypothétique"],
@@ -402,7 +402,7 @@
       "clay_relevance": "Exclut une autre famille structurée de singularités.",
       "limitations": ["Ne couvre pas les scénarios Type II ou sans profil limite."],
       "reproduction": {"status": "paper_not_reproved"},
-      "verification": {"level": "primary_abstract", "checked_on": "2026-08-14", "notes": "Page éditeur primaire contrôlée."},
+      "verification": {"level": "primary_full_text", "checked_on": "2026-08-15", "notes": "Page éditeur et texte primaire contrôlés; correction de l'auteur Ruo Li et ajout du numéro d'issue 18(4)."},
       "tags": ["local_selfsimilarity", "blowup_profile"]
     },
     {

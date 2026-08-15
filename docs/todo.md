@@ -365,3 +365,22 @@
   orbite ancienne, sans la supposer auto-similaire.
 - [ ] Ne pas réutiliser une valeur absolue, une triade instantanée isolée ou
   un théorème DSS à petit paramètre comme rigidité générale.
+
+### Cycle 0053
+
+- [x] Définir un défaut de générateur sur fenêtres avec le partenaire
+  Lorentz endpoint exact de la pression faible-`L^(3/2)`.
+- [x] Vérifier la diagonale commune en rayon et le passage
+  `petit générateur -> limite stationnaire`.
+- [x] Conserver la capture espace-temps par forte convergence `L3_loc` et
+  normaliser explicitement le coefficient positif du drift.
+- [x] Auditer Guevara--Phuc, Chae--Wolf et la veille récente sans ajouter de
+  source redondante.
+- [x] Certifier concentration, fuite, récurrence et erreurs de diagonale par
+  1814 assertions rationnelles exactes.
+- [ ] Relier une minoration de `D_R` à une composante signée du flux
+  calorifique `Phi_a`, avec pression et changement de variables suivis.
+- [ ] Construire ou exclure une orbite récurrente non stationnaire où le
+  générateur reste actif mais la primitive infrarouge demeure bornée.
+- [ ] Ne pas promouvoir la dérivation au-delà de `COMPUTATION_ONLY` sans
+  revue humaine ou formalisation du paquet compactité--pression.
