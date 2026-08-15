@@ -556,3 +556,27 @@ ne comporte aucune dérivée temporelle.
 `FAIL-NS-0081` réfute la transmission automatique d'une norme terminale par
 la seule compacité volumique. Le produit et l'énergie locale sont désormais
 fermés; la trace, pas la compacité intérieure, est le premier verrou.
+
+## Priorité active après le cycle 0046
+
+1. **`GAP-TYPE-I-DERENORMALIZATION-CLASS`.** Partir de
+   `partial_sZ-Delta Z+div(Z tensor Z)+nabla Pi+kappa DZ=0` et vérifier dans
+   les distributions, avec pression et inégalité d'énergie locale, la
+   transformation `R=e^(-kappa s)`, `dt/ds=R²`,
+   `u=R^-1Z(dot/R,s)` vers Navier–Stokes standard ancien.
+2. **Classe globale.** Déterminer si la sortie est seulement faible adaptée
+   locale, dissipative, Leray–Hopf locale ou mild; ne pas importer une
+   rigidité dont les hypothèses de pression, décroissance ou énergie globale
+   ne sont pas satisfaites.
+3. **`GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY`.** Classifier ou exclure une
+   solution ancienne standard non triviale uniformément bornée dans
+   faible-`L3`, sans supposer auto-similarité, axisymétrie ou bornitude.
+4. **Singularité terminale optionnelle.** Si la rigidité choisie exige un
+   point singulier à l'endpoint, tester séparément Albritton–Barker A.5; la
+   non-trivialité intégrée du cycle 0046 ne donne pas cette propriété.
+5. **Type II.** Reste hors de la branche : `M_j`, `S_w^*(M_j)`, `kappa_j` et
+   les constantes de compacité ne sont pas uniformes.
+
+`FAIL-NS-0082` réfute la nécessité d'un moment signé porté par l'ancien temps
+terminal dans la branche Type I persistante. Il ne réfute pas les
+contre-profils de tranche de `FAIL-NS-0081` et ne ferme aucune rigidité.

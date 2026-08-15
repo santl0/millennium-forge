@@ -233,3 +233,23 @@
   d'Albritton–Barker A.5 sur la suite réelle.
 - [ ] Dérenormaliser seulement après obtention d'une trace non nulle et
   conserver séparé le cas Type II.
+
+### Cycle 0046
+
+- [x] Recalculer l'horloge translatée et vérifier
+  `R(sigma_j+s)/R_j=exp(-kappa s)` avec le bon ordre des quantificateurs.
+- [x] Transporter la capture Barker–Prange au même `B_1` sur toute fenêtre
+  normalisée fixe et vérifier `Q_(L_j)=I` dans ce coeur.
+- [x] Composer cette capture avec la forte `L3_loc` du cycle 0045 pour
+  obtenir une limite renormalisée non triviale.
+- [x] Certifier l'inégalité optimale en mesure-temps, ses contre-profils et
+  l'horloge sur 417 assertions exactes.
+- [x] Corriger la portée de `FAIL-NS-0081` et enregistrer `FAIL-NS-0082`
+  sans supprimer l'historique.
+- [ ] Dérenormaliser la limite avec `R=e^(-kappa s)` et `dt/ds=R²`; passer
+  l'équation, la pression et l'inégalité d'énergie locale dans les
+  distributions.
+- [ ] Identifier la classe standard obtenue avant de choisir un théorème de
+  rigidité ancienne faible-`L3`.
+- [ ] Garder séparées non-trivialité, trace à l'ancien endpoint et
+  persistance d'un point singulier.

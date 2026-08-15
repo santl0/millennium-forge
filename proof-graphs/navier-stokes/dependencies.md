@@ -934,3 +934,43 @@ NS-TYPE-I-WEAK-L3-PARABOLIC-CORE-CAPTURE
 La compacité intérieure, le produit et l'admissibilité sont fermés sous les
 hypothèses du claim. La nouvelle arête manquante est linéaire et terminale :
 elle doit empêcher concentration, oscillation ou fuite contre tout test fixe.
+
+## Cycle 0046 — arête de non-trivialité intégrée
+
+```text
+Barker-Prange, théorème 2 + appendice B
+  --> K_3(u(t);B(x_*,R(t)))>gamma_w pour tout temps tardif
+      [classique sourcée, conditionnelle au blow-up Type I]
+
+R²=4(T_*-t)/S_w^*(C_MM)
+  + d sigma/dt=R^-2
+  --> d(log R)/d sigma=-kappa
+  --> chaque fenêtre translatée fixe reste dans (0,T_*)
+      [calcul exact]
+
+zoom mobile au centre x_*
+  + Q_(L_j)=I dans B_1
+  --> K_3(Z_j(s);B_1)>gamma_w pour tout/a.e. s dans J
+      [dérivation interne]
+
+NS-TYPE-I-WEAK-L3-LOCAL-SUITABLE-COMPACTNESS
+  + K_3(f;B_1)^3<=integral_(B_1)|f|³
+  --> integral_(J x B_1)|Z|³>=|J|gamma_w³>0
+  --> NS-TYPE-I-PERSISTENT-CAPTURE-SPACETIME-NONTRIVIALITY
+      [COMPUTATION_ONLY, revue contradictoire]
+
+Z non triviale dans le volume
+  -/-> Z(0) non nulle à l'ancien endpoint
+  -/-> (0,0) singulier
+      [conclusions plus fortes, non obtenues]
+
+Z ancienne renormalisée non triviale
+  -?-> solution ancienne standard de classe identifiée
+      [GAP-TYPE-I-DERENORMALIZATION-CLASS]
+  -?-> GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY
+  -?-> problème Clay.
+```
+
+`FAIL-NS-0081` conserve l'arête négative pour une tranche isolée.
+`FAIL-NS-0082` retire seulement l'exigence injustifiée d'un moment terminal
+avant la non-trivialité espace–temps.

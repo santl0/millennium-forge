@@ -1014,3 +1014,27 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   trace réfutée.
 - Pivot : `GAP-TYPE-I-CRITICAL-TRACE-PERSISTENCE`, puis dérenormalisation et
   `GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY`.
+
+## 2026-08-15 — Capture persistante, non-trivialité conservée
+
+- Objet : même branche Type I, suite exacte des translations de la
+  trajectoire renormalisée mobile et cutoffs externes constants par fenêtre.
+- Quantificateur récupéré : Barker–Prange donne la capture au point fixe pour
+  tout temps; elle n'est pas limitée à la tranche terminale.
+- Horloge : `d(log R)/d sigma=-kappa`, donc le rapport de rayons sur une
+  fenêtre fixe est `exp(-kappa s)` et la fenêtre ne se contracte pas.
+- Scaling : `K_3(Ru(x_*+R dot);B_1)=K_3(u;B(x_*,R))`; `Q_L=I` dans `B_1`.
+- Gain critique : `K_3³<=||.||_3³` par tranche, donc la capture persistante
+  paie au moins `|J|gamma_w³` dans la forte `L3` espace–temps. Cette masse
+  passe à la limite.
+- Frontière optimale : sur un ensemble de temps `E_j`, le coût exact minimal
+  est `|E_j|gamma_j³`; une tranche isolée ou une fenêtre contractante peut
+  encore disparaître.
+- Certificat : 417 assertions rationnelles exactes, aucune discrétisation ni
+  simulation PDE.
+- Résultat : limite ancienne renormalisée non triviale; moment signé à
+  l'ancien endpoint non nécessaire à cette conclusion.
+- Perte restante : dérenormalisation distributionnelle, classe globale de la
+  solution standard, mildness et rigidité faible-`L3`.
+- Pivot : `GAP-TYPE-I-DERENORMALIZATION-CLASS`, puis
+  `GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY`.

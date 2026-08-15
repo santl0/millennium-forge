@@ -1853,3 +1853,39 @@ Les arêtes énergie–compacité–produit sont internes et revues
 contradictoirement; Simon, Albritton–Barker et Barker–Seregin–Šverák sont les
 ingrédients publiés voisins. L'arête de trace demeure manquante et ne peut
 être remplacée par une simple semi-continuité de norme.
+
+## Cycle 0046 — non-trivialité sans trace prescrite
+
+```text
+NS-TYPE-I-WEAK-L3-PARABOLIC-CORE-CAPTURE
+  + R²=4(T_*-t)/S_w^*(C_MM)
+  + d sigma/dt=R^-2
+  --> R(sigma_j+s)/R_j=exp(-kappa s)
+  --> capture dans B_1 pour tout/a.e. s d'une fenêtre fixe
+      [quantificateur publié + horloge interne]
+
+Q_(L_j)=I dans B_1
+  + forte Z_j->Z dans L3(J x B_1)
+  + K_3(f;B_1)^3<=integral_(B_1)|f|³
+  --> integral_(J x B_1)|Z|³>=|J|gamma_w³
+  --> Z non identiquement nulle
+      [NS-TYPE-I-PERSISTENT-CAPTURE-SPACETIME-NONTRIVIALITY]
+
+capture sur une tranche isolée
+  -/-> non-trivialité espace-temps
+      [FAIL-NS-0081, toujours valide]
+
+moment signé à l'ancien endpoint
+  -/-> nécessaire à la seule non-trivialité
+      [FAIL-NS-0082]
+
+limite ancienne renormalisée non triviale
+  -?-> dérenormalisation standard avec classe exacte
+      [GAP-TYPE-I-DERENORMALIZATION-CLASS]
+  -?-> rigidité ancienne faible-L3
+      [GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY]
+  -?-> problème Clay.
+```
+
+La forte `L3` espace–temps ne conserve ni un point singulier terminal ni la
+valeur de l'ancien endpoint. Ces conclusions plus fortes restent séparées.

@@ -395,3 +395,16 @@ trace critique. Le verrou actif devient
 `GAP-TYPE-I-CRITICAL-TRACE-PERSISTENCE` : construire un moment signé contre
 un test fixe, ou une compacité forte de trace, avant toute dérenormalisation
 et rigidité ancienne. Le corpus compte 188 sources.
+
+Le cycle 0046 corrige cette dernière priorité sans effacer l'échec de trace.
+La capture Barker–Prange vaut à tout temps et l'horloge mobile la transporte
+dans `B_1` sur chaque fenêtre renormalisée fixe. La forte `L3` du cycle 0045
+donne alors `integral|Z|³>=|J|gamma_w³`; la limite ancienne renormalisée est
+non triviale même si l'ancien endpoint reste nul.
+
+`FAIL-NS-0082` réfute le moment signé terminal comme porte nécessaire à la
+seule non-trivialité. Le verrou actif devient
+`GAP-TYPE-I-DERENORMALIZATION-CLASS`, puis la rigidité ancienne faible-`L3`.
+La veille n'ajoute aucune source et le corpus reste à 188. Aucun résultat
+Clay, aucune persistance de singularité terminale et aucune mildness globale
+ne sont revendiqués.

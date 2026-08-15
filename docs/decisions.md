@@ -507,3 +507,23 @@
   montre qu'elle n'impose aucun moment fixe.
 - `GAP-TYPE-I-CRITICAL-TRACE-PERSISTENCE` devient actif, avant horloge,
   mildness et rigidité ancienne faible-`L3`.
+
+### 2026-08-15 — non-trivialité intégrée sous capture Type I persistante
+
+- L'intégration de la capture obtient `19/20`; la persistance A.5 et la
+  construction directe d'un moment signé obtiennent chacune `15/20`.
+- Le quantificateur « tout temps tardif » de Barker–Prange est conservé. Il
+  ne doit plus être réduit à une information sur la tranche terminale.
+- L'horloge est fixée par `d(log R)/d sigma=-kappa`; sur une fenêtre fixe,
+  `R(sigma_j+s)/R_j=exp(-kappa s)`.
+- `Q_(L_j)` est exactement l'identité dans `B_1`; aucune convergence de
+  cutoff ni centre mobile n'est utilisée pour la capture.
+- La forte `L3` espace–temps conserve la masse cubique intégrée. Une trace
+  prescrite au temps zéro n'est pas nécessaire pour conclure que la limite
+  ancienne est non nulle.
+- `FAIL-NS-0081` reste valide pour une tranche isolée. `FAIL-NS-0082` réfute
+  uniquement la nécessité du moment signé dans la suite Type I persistante.
+- Le claim reste `COMPUTATION_ONLY` : la composition est interne, même si la
+  capture est publiée et les ingrédients de compacité sont sourcés.
+- Le verrou actif devient `GAP-TYPE-I-DERENORMALIZATION-CLASS`; la
+  singularité terminale, la mildness et la rigidité restent séparées.
