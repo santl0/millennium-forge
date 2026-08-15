@@ -1,0 +1,45 @@
+{
+  "arithmetic": "Fraction",
+  "assertions": 1201,
+  "drift_field_sha256": "68ffac0d31e24cf6b86aac8d4c52410356ba95cb2fd176369b23c49027540896",
+  "family_1": {
+    "modes": [1, 2],
+    "relation": "C2=2*C1",
+    "status": "no opposite signs",
+    "trials": 576
+  },
+  "family_2": {
+    "C_normalized_by_(pi/3)^(3/2)": ["-8/9", "16/9", "-16/3"],
+    "Gram_normalized_by_(pi/2)^(3/2)": ["2", "12", "54"],
+    "coefficients": [[-1, -1], [-1, -1], [-1, 1]],
+    "diffusion_pairings": ["0", "0", "0"],
+    "modes": [1, 2, 3],
+    "similarity_pairings": ["0", "0", "0"],
+    "status": "opposite signs",
+    "successful_trial": 3
+  },
+  "family_3": {
+    "C_at_kappa_1_normalized_by_(pi/2)^(3/2)": ["7/2", "-99/2"],
+    "Gram_normalized_by_(pi/2)^(3/2)": ["39/16", "2349/16"],
+    "convection_pairings": ["0", "0"],
+    "diffusion_pairings": ["0", "0"],
+    "drift_pairings": ["-7/2", "99/2"],
+    "modes": [1, 3],
+    "status": "opposite signs"
+  },
+  "field_sha256": "457e520e86f78565a4a7a3e0242b6b60b7c101bcc6acc352f65624381498a72a",
+  "git_diff_check": "PASS",
+  "pressure_pairing": "0 by exact solenoidal tangents",
+  "quadrature": "none",
+  "residuals": {
+    "divergence": "0",
+    "isotype": "0",
+    "reported_pairing_identities": "0"
+  },
+  "scope": "exact instantaneous NS vector field; no time integration / no ancient or Type-I orbit",
+  "script": "instantaneous_modal_sign.py",
+  "script_sha256": "41bd221e7408fc1b02a2bc93ee6d08abe61e4e3533ba09eca1dbb5c7d3dedca4",
+  "search_sha256": "553a558c8cb794a876ea612c8ecc186961337707a2867a5b29e2fae47686594d",
+  "seed": "n/a",
+  "status": "PASS"
+}
