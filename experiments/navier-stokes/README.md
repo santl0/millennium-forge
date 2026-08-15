@@ -2386,3 +2386,29 @@ cellule reste donc `NOT_PROVIDED`.
 - Environnement : Python standard, sans dépendance externe ni aléa.
 - Limites : aucune vitesse 3D, pression, divergence ou solution NS n'est
   calculée; le certificat valide et attaque un lemme fonctionnel uniquement.
+
+## `CANONICAL-HILBERT-PHASE-AUDIT-1` — projection, Gram et défaut de Haar
+
+- Question falsifiable : la projection de `d=partial_sZ` sur
+  `g=mathcal RZ` borne-t-elle le produit tangent sans constante inverse de
+  Gram, et suffit-elle à stabiliser `beta` ou la partie invariante du défaut ?
+- Équations réellement calculées : `beta=(d dot g)/(g dot g)`,
+  `r=d-beta g`, représentation rationnelle de SO(2) sur
+  `ker R direct_sum span(e_1,e_2)`; aucune PDE n'est intégrée.
+- Discrétisation : dimensions 2 à 6, dénominateurs rationnels 2 à 13,
+  compétiteurs de moindres carrés, sept échelles dyadiques et quarts de tour;
+  `Fraction`, aucune graine ni flottant.
+- Cas positif : orthogonalité, reconstruction, Pythagore, minimisation et
+  `||beta g||<=||d||` sont vérifiés exactement.
+- Cas adverses : Gram `N^-2`, perturbation tangentielle mal conditionnée,
+  Gram nul, et courbe `s e_0+N^-2Q_(Ns)e_1` dont le défaut de Haar reste
+  `e_0` malgré `beta=N` et `g->0`.
+- Convergence et résidu : 37763 assertions rationnelles exactes, zéro échec,
+  SHA-256
+  `e20050eecda07b8776b3a420a5b69b7a149c38bcb2117759330eb661109885b4`.
+- Commande :
+  `python -B experiments/navier-stokes/canonical-hilbert-phase/canonical_phase_audit.py`.
+- Environnement : Python standard, sans dépendance externe ni aléa.
+- Limites : aucune vitesse 3D, pression, divergence ou solution NS; la
+  trajectoire trigonométrique est dérivée analytiquement et la grille
+  rationnelle certifie seulement les identités de phase indépendantes.

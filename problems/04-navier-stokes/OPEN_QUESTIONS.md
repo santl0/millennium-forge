@@ -896,3 +896,27 @@ vitesse de phase.
 `NS-TYPE-I-BOCHNER-FAST-ROTATION-COLLAPSE` remplace le lemme BV dans le
 pipeline PDE. `FAIL-NS-0094` interdit de confondre axisymétrie et
 stationnarité lorsque seule la norme du défaut est bornée.
+
+## Priorité active après le cycle 0059
+
+1. **`GAP-TYPE-I-HAAR-DEFECT-DECAY-OR-RSS-RIGIDITY`.** La projection
+   canonique borne maintenant le défaut sur toute l'exhaustion. Le verrou est
+   la composante exacte `mathcal A r_n=partial_s mathcal A Z_n`.
+2. **Identité PDE moyenne.** Appliquer `mathcal A` à l'équation renormalisée,
+   recalculer le stress moyen et la pression, puis chercher un signe, une
+   monotonie ou une dissipation qui force `mathcal A r_n->0`.
+3. **Grande vitesse canonique.** Déterminer si un scénario Type I produit
+   réellement `ess inf|beta_n|->infinity`; la projection ne crée pas cette
+   divergence.
+4. **Phase versus connexion.** Ne reconstruire `theta_n` que si
+   `beta_n in L1_loc`; la borne du produit tangent ne suffit pas.
+5. **Dépendance métrique.** Tester la robustesse qualitative de la branche
+   grande vitesse sous plusieurs poids invariants épinglés, sans présenter
+   `beta_n` comme quantité intrinsèque.
+6. **Pivot.** Si trois mécanismes PDE distincts échouent à annuler le défaut
+   de Haar, documenter l'obstacle et attaquer la rigidité RSS faible-`L3` à
+   rotation intermédiaire.
+
+`NS-TYPE-I-CANONICAL-HILBERT-PHASE-COLLAPSE` ferme la borne du défaut pour
+une métrique fixée. `FAIL-NS-0095` interdit d'en déduire stabilité du
+coefficient, phase absolument continue ou stationnarité.

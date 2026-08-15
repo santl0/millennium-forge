@@ -753,3 +753,20 @@
 - La prochaine expérience construit une phase depuis le champ total et suit
   son défaut jusqu'à la dégénérescence de la matrice de Gram. Après trois
   sélections distinctes en échec, pivot vers la rigidité RSS intermédiaire.
+
+### 2026-08-15 — épingler une connexion hilbertienne sur l'exhaustion
+
+- Trois actions ont été notées : projection tangentielle dans un Hilbert
+  négatif `19/20`, tranche à gabarit fixe `17/20`, synchronisation directe de
+  phases locales `15/20`.
+- La première est sélectionnée. Le Hilbert global est défini précisément
+  comme sous-espace fermé des familles locales compatibles; les poids sont
+  positifs, fixes sur la fenêtre et indépendants de `n,s`.
+- Pythagore ferme la borne du défaut sans inverse de Gram. La vitesse est
+  qualifiée de canonique seulement relativement à la métrique épinglée.
+- Aucune phase n'est revendiquée sans `beta in L1_loc`; Beyn--Thümmler
+  confirment que leur condition adaptative exige une reconstruction séparée.
+- `FAIL-NS-0095` abandonne la stabilité du coefficient et la stationnarité
+  depuis la seule projection; la composante de Haar est le nouveau verrou.
+- La prochaine action applique la moyenne de Haar à l'équation complète et
+  cherche une identité PDE coercive pour `partial_s mathcal A Z_n`.

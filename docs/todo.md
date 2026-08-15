@@ -482,3 +482,22 @@
   `||mathcal RZ_n||` près du stabilisateur.
 - [ ] Si trois choix de phase distincts échouent, documenter l'obstacle et
   pivoter vers la rigidité RSS faible-`L3` à rotation intermédiaire.
+
+### Cycle 0059
+
+- [x] Construire un Hilbert `H^-3` compatible sur l'exhaustion avec produits
+  SO(2)-invariants et poids fixes suivis.
+- [x] Définir la vitesse tangentielle par projection orthogonale et prouver
+  Pythagore, mesurabilité et covariance de jauge.
+- [x] Fermer automatiquement la borne du défaut et du produit tangent au Gram
+  dégénéré.
+- [x] Certifier Gram mal conditionné, non-intégrabilité potentielle et défaut
+  de Haar non nul par 37763 assertions rationnelles exactes.
+- [x] Séparer les antécédents classiques de freezing/connexion mécanique du
+  passage suitable et du problème Clay.
+- [ ] Dériver l'équation exacte vérifiée par `mathcal A Z_n`, stress et
+  pression moyens inclus.
+- [ ] Tester trois mécanismes distincts pour forcer
+  `partial_s mathcal A Z_n->0`: dissipation, asymptotique ancienne et capture.
+- [ ] En cas de triple échec, consigner l'obstacle et pivoter vers la rigidité
+  RSS faible-`L3` intermédiaire.

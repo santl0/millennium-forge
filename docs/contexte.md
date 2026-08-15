@@ -567,3 +567,18 @@ primaires sur la compacité/dérivée et le passage suitable portent le corpus �
 219; le registre atteint 98 claims, dont le lemme 0057 marqué `SUPERSEDED`.
 Le verrou actif est
 `GAP-TYPE-I-CANONICAL-PHASE-DEFECT-BOUND-OR-RSS-RIGIDITY`.
+
+Le cycle 0059 construit la vitesse depuis le champ total. Les enveloppes du
+ledger sur une exhaustion de boules définissent un sous-espace fermé de
+familles compatibles dans une somme pondérée de `H^-3`; une seule métrique
+SO(2)-invariante est ainsi fixée pour toute la suite. La projection de
+`partial_sZ_n` sur `mathcal RZ_n` donne Pythagore et borne automatiquement le
+produit tangent et le défaut, même au Gram dégénéré.
+
+Si la vitesse canonique a un infimum essentiel divergent, la limite est
+axisymétrique. Le coefficient reste métrique-dépendant, peut ne pas être
+`L1` et ne reconstruit pas automatiquement une phase. Un certificat de 37763
+assertions montre surtout que `mathcal A r_n` peut rester non nul et porter
+une limite invariante non stationnaire. Deux sources primaires supplémentaires
+portent le corpus à 221; le registre atteint 99 claims. Le verrou devient
+`GAP-TYPE-I-HAAR-DEFECT-DECAY-OR-RSS-RIGIDITY`.

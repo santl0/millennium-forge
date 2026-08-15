@@ -4520,6 +4520,46 @@
       "reproduction": {"status": "primary_full_text_audited_not_rerun"},
       "verification": {"level": "primary_full_text", "checked_on": "2026-08-15", "notes": "Theoreme 1.1 et proposition 4.4 controles dans le texte integral au cycle 0058; DOI et arXiv v2 controles."},
       "tags": ["suitable_weak_solution", "finite_elements", "time_derivative", "pressure", "compactness"]
+    },
+    {
+      "id": "NS-SRC-0220",
+      "title": "Reconstruction Equations and the Karhunen-Loeve Expansion for Systems with Symmetry",
+      "authors": ["Clarence W. Rowley", "Jerrold E. Marsden"],
+      "year": 2000,
+      "source_type": "journal_article",
+      "publication_status": "published",
+      "venue": "Physica D 142(1-2), 1-19",
+      "identifiers": {"doi": "10.1016/S0167-2789(00)00042-7", "url": "https://doi.org/10.1016/S0167-2789(00)00042-7"},
+      "equation": {"model": "systemes dynamiques equivariants avec application a Kuramoto-Sivashinsky", "dimension": "abstraite et reductions finies", "domain": "periodique dans l'application PDE", "boundary": "periodique", "forcing": "selon le modele", "viscosity": "sans objet pour le cadre abstrait"},
+      "solution_notions": ["trajectoires classiques sur varietes lisses", "dynamique reduite et reconstruction"],
+      "result": "L'article distingue les tranches a gabarit fixe et la connexion mecanique; l'appendice B donne la vitesse de reconstruction comme quotient du produit avec la tangente courante par son Gram.",
+      "hypotheses": ["action lisse libre et propre dans le cadre de connexion", "metrique riemannienne ou produit L2", "trajectoires classiques"],
+      "constants_uniformity": "Construction locale; le Gram ou un Gram croise peut degenerer et aucune constante uniforme pres d'un stabilisateur n'est fournie.",
+      "clay_relevance": "Antecedent geometrique direct de la projection tangentielle du cycle 0059; aucun espace negatif, pression, suitability ou limite de blow-up.",
+      "limitations": ["cadre lisse", "metrique choisie", "action libre/propre", "pas de Navier-Stokes suitable", "aucun raccord Clay"],
+      "reproduction": {"status": "primary_full_text_audited_not_reproved"},
+      "verification": {"level": "primary_full_text", "checked_on": "2026-08-15", "notes": "Condition de tranche, equation (2.16), connexion mecanique et equations (B.2)-(B.4) controlees au cycle 0059."},
+      "tags": ["mechanical_connection", "phase_condition", "symmetry_reduction", "Gram_degeneracy"]
+    },
+    {
+      "id": "NS-SRC-0221",
+      "title": "Revealing the state space of turbulent pipe flow by symmetry reduction",
+      "authors": ["Ashley P. Willis", "Predrag Cvitanovic", "Marc Avila"],
+      "year": 2013,
+      "source_type": "journal_article",
+      "publication_status": "published",
+      "venue": "Journal of Fluid Mechanics 721, 514-540",
+      "identifiers": {"doi": "10.1017/jfm.2013.75", "arxiv": "1203.3701v1", "url": "https://arxiv.org/abs/1203.3701"},
+      "equation": {"model": "Navier-Stokes incompressible pour la deviation a Hagen-Poiseuille", "dimension": "3", "domain": "tuyau periodique axialement", "boundary": "sans glissement au bord radial", "forcing": "gradient de pression/debit impose", "viscosity": "1/Re"},
+      "solution_notions": ["DNS spectrale-differences finies", "trajectoires et orbites relatives numeriques"],
+      "result": "Applique la methode des tranches aux translations et rotations du pipe flow; la vitesse de phase est un quotient de produits d'energie et les frontieres de carte sont suivies par un atlas de gabarits.",
+      "hypotheses": ["geometrie de tuyau", "debit impose", "resolution numerique finie", "sous-espace shift-reflect dans les exemples"],
+      "constants_uniformity": "Calcul flottant a Re=2400 dans les configurations de l'article; aucune borne d'erreur continuum ou d'intervalle.",
+      "clay_relevance": "Antecedent Navier-Stokes direct des conditions de phase, mais equation forcee avec bord et DNS non certifiee; aucun transfert vers R3/T3 Clay.",
+      "limitations": ["domaine borne avec bord", "force/debit impose", "discretisation finie", "pas de suitable faible", "pas de calcul valide", "aucun raccord Clay"],
+      "reproduction": {"status": "primary_full_text_audited_not_rerun"},
+      "verification": {"level": "primary_full_text", "checked_on": "2026-08-15", "notes": "Equation du pipe flow, discretisation, equations de tranche (3.3)-(3.6), atlas et limites numeriques controles au cycle 0059."},
+      "tags": ["Navier_Stokes_numerics", "pipe_flow", "method_of_slices", "phase_condition", "nontransfer"]
     }
   ],
   "watchlist": [
@@ -4632,7 +4672,8 @@
     "outer_cutoff_and_far_field_pressure": ["NS-SRC-0069", "NS-SRC-0181", "NS-SRC-0182", "NS-SRC-0186"],
     "weak_L3_local_compactness_and_trace": ["NS-SRC-0146", "NS-SRC-0187", "NS-SRC-0188", "NS-SRC-0192"],
     "forced_blowup_and_force_scaling": ["NS-SRC-0032", "NS-SRC-0033", "NS-SRC-0057", "NS-SRC-0175", "NS-SRC-0184"],
-    "bochner_compactness_and_time_derivatives": ["NS-SRC-0187", "NS-SRC-0218", "NS-SRC-0219"]
+    "bochner_compactness_and_time_derivatives": ["NS-SRC-0187", "NS-SRC-0218", "NS-SRC-0219"],
+    "phase_conditions_and_mechanical_connection": ["NS-SRC-0209", "NS-SRC-0210", "NS-SRC-0220", "NS-SRC-0221"]
   },
   "unverified_zones": [
     "Le domaine et la plage d'exposants exacts des articles historiques Prodi et Ladyzhenskaya doivent être réextraits des originaux avant création d'un claim formel.",

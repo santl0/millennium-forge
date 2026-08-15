@@ -1325,3 +1325,26 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   `ad8474fa672697a9239a2d8567d122c631818021c6ebc3065695652d3ef7a8a5`.
 - Pivot : construire une phase canonique et borner son défaut près de la
   dégénérescence de Gram; sinon rigidité RSS faible-`L3` intermédiaire.
+
+## 2026-08-15 — projection tangentielle dans un Hilbert négatif pondéré
+
+- Objet : dérivée renormalisée et générateur de rotation placés dans une
+  somme compatible de `H^-3(B_m)` à produit SO(2)-invariant.
+- Gain : le produit tangent et le résidu orthogonal satisfont exactement
+  `||beta mathcal RZ||²+||r||²=||partial_sZ||²`; aucune constante inverse de
+  Gram ne pollue ces deux quantités.
+- Échelle : `beta` est sans dimension en temps similaire, mais `H^-3` est
+  local et sous-critique. Une force physique porte le facteur homogène
+  `lambda^(-3/2)`; les poids et constantes dépendent de la fenêtre.
+- Exhaustion : `w_m=2^-m/(1+D_m²+G_m²)` donne une seule vitesse commune; la
+  restriction à `B_m` coûte explicitement `w_m^(-1/2)`.
+- Pression : le dual complet emploie la jauge de Riesz. Une projection
+  solénoïdale peut changer `beta` et laisser un gradient harmonique.
+- Perte : `beta` dépend du produit scalaire, peut ne pas être `L1` et ne
+  reconstruit pas une phase. Le défaut de Haar reste entier.
+- Contre-profil : `Z_N=s e_0+N^-2 Q_(Ns)e_1` donne `beta_N=N`,
+  `mathcal RZ_N->0`, mais `mathcal A r_N=e_0`.
+- Résidu : 37763 assertions rationnelles exactes, zéro échec, empreinte
+  `e20050eecda07b8776b3a420a5b69b7a149c38bcb2117759330eb661109885b4`.
+- Pivot : identifier une identité PDE coercive pour
+  `partial_s mathcal A Z`; sinon rigidité RSS intermédiaire.

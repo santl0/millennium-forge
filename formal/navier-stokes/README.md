@@ -1482,3 +1482,24 @@ Le noyau stable remplace la dépendance à l'inverse absolument continu :
 Les bornes PDE dans `W^(-2,4/3)`, la pression de Riesz, suitability, capture
 et le Liouville de Guevara--Phuc restent des interfaces papier. Aucun projet
 Lean, Isabelle ou Coq n'est modifié dans ce cycle.
+
+## Backlog issu du cycle 0059 — projecteur tangent et somme hilbertienne
+
+Le noyau stable à formaliser est :
+
+1. le théorème de projection sur la droite `span(g)` dans un Hilbert réel,
+   avec convention au Gram nul, mesurabilité et identité de Pythagore;
+2. la moyenne d'un produit scalaire sous une action compacte SO(2), son
+   équivalence de norme et l'unitarité résultante;
+3. la fermeture du sous-espace compatible dans la somme hilbertienne
+   `ell2(w_m;H^-3(B_m))`, avec continuité de chaque restriction;
+4. le choix de poids depuis des enveloppes dénombrables et la forte
+   mesurabilité dans la somme;
+5. la loi de jauge `beta_tilde=beta+gamma'`, `r_tilde=Q_gamma r`, hors du
+   stabilisateur;
+6. les contre-modèles exacts : Gram mal conditionné, `beta=1/s` non `L1` et
+   dérive non stationnaire dans `ker mathcal R`.
+
+Le plongement `W^(-2,4/3)->H^-3`, la pression vectorielle complète,
+suitability, capture et le Liouville restent des interfaces papier. Aucun
+projet Lean, Isabelle ou Coq n'est modifié dans ce cycle.

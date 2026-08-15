@@ -1,0 +1,72 @@
+{
+  "id": "NS-TYPE-I-CANONICAL-HILBERT-PHASE-COLLAPSE",
+  "problem": "navier-stokes",
+  "statement": "Sur une fenetre bornee, soit Z_n une suite de solutions renormalisees divergence-free sur R3 dont le ledger complet borne partial_s Z_n dans W^(-2,4/3) et Z_n dans L2 sur chaque boule centree. Une somme hilbertienne ponderee et SO(2)-invariante des espaces H^-3 locaux fournit un meme espace X sur toute l'exhaustion. En posant d_n=partial_s Z_n, g_n=mathcal R Z_n et beta_n=<d_n,g_n>_X/||g_n||_X^2 hors de g_n=0, le defaut r_n=d_n-beta_n g_n et le produit beta_n g_n sont bornes point par point par ||d_n||_X. Si ess inf |beta_n| tend vers l'infini et Z_n converge dans les distributions, alors mathcal R Z=0. La stationnarite exige encore mathcal A r_n vers zero. La vitesse depend de la metrique et peut ne pas etre integrable; aucune phase absolue continue ni conclusion Clay generale ne suit.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "domaine R3 sans frontiere, viscosite un, coefficient renormalise kappa>0; force de cutoff localement uniforme et pression complete dans la jauge globale de Riesz",
+    "J est une fenetre temporelle bornee et les boules B_m sont centrees sur un axe SO(2) fixe commun",
+    "pour chaque m, partial_s Z_n est uniformement borne dans L-infinity(J;W^(-2,4/3)(B_m)) et Z_n dans L-infinity(J;L2(B_m))",
+    "le Hilbert X est le sous-espace ferme des familles compatibles de la somme ponderee des H^-3(B_m), avec produits scalaires moyennes sous SO(2) et poids positifs w_m=2^-m/(1+D_m^2+G_m^2) epingles avant la projection",
+    "beta_n vaut le coefficient de projection orthogonale de d_n sur la droite engendree par g_n=mathcal R Z_n, et vaut zero lorsque g_n=0",
+    "b_(n,J)=ess inf_J |beta_n| tend vers infinity et Z_n converge au moins dans les distributions",
+    "la stationnarite requiert en plus mathcal A r_n vers zero dans les distributions; l'endgame requiert separement suitability, pression, borne globale faible-L3 et capture"
+  ],
+  "dependencies": [
+    "NS-TYPE-I-BOCHNER-FAST-ROTATION-COLLAPSE",
+    "NS-TYPE-I-WEAK-L3-LOCAL-SUITABLE-COMPACTNESS",
+    "NS-TYPE-I-PERSISTENT-CAPTURE-SPACETIME-NONTRIVIALITY",
+    "NS-BACKWARD-SELFSIMILAR-WEAK-L3-LIOUVILLE"
+  ],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0059-canonical-hilbert-phase.md; construction du Hilbert pondere, projection tangentielle, equivariance et collapse conditionnel",
+      "sha256": "f5a4b84f4f2325c68abc4159b6e42975913b4b3b3f756551c47bbfa972e4aa2f"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0059-analysis.md; audit du plongement, de la mesurabilite, de la somme compatible, de la pression et des quantificateurs",
+      "sha256": "d8e22b344d36a6cd46c6c60b04e0dfb42e788b5426f7df4d373b8f033270ee4f"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0059-literature.md; audit des antecedents de freezing, connexion mecanique et methodes de tranches, sans transfert Clay",
+      "sha256": "6af03e1b89053ced57f9379e4454837e27f5fde4fe05234bbbd22d17d354ecc4"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0059-countermodel.md; Gram degenere, instabilite du coefficient et derive dans le sous-espace de Haar",
+      "sha256": "a232260456d4b2ef0e7e7c53823af2904ca2285aef073276153fc06f91a15466"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/canonical-hilbert-phase/canonical_phase_audit.py; 37763 assertions rationnelles exactes",
+      "sha256": "e20050eecda07b8776b3a420a5b69b7a149c38bcb2117759330eb661109885b4"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0209; Beyn--Thummler 2004, condition de phase adaptative par moindres carres, reconstruction classique non transferee"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0220; Rowley--Marsden 2000, connexion mecanique et degenerescence des tranches"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0221; Willis--Cvitanovic--Avila 2013, methode des tranches numerique pour pipe flow, sans preuve continuum"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0059-canonical-hilbert-phase"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Derivation principale, audit analytique, veille primaire et certificat exact separes; aucune revue humaine externe",
+    "notes": "Le statut reste COMPUTATION_ONLY. Le coefficient est canonique seulement pour la metrique et les poids epingles. Le produit tangent et le residu sont stables au Gram nul, mais beta peut diverger ou ne pas etre L1 et ne reconstruit pas automatiquement une phase. FAIL-NS-0095 refute la stationnarite depuis la seule projection. La grande vitesse canonique et la decroissance de la composante de Haar ne sont pas produites par un blow-up arbitraire."
+  }
+}

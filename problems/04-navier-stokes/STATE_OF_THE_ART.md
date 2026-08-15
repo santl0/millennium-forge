@@ -1857,3 +1857,33 @@ borne faible-`L3` et la capture, Guevara--Phuc ferme alors l'endgame.
 Le registre atteint 98 claims; le lemme adiabatique du cycle 0057 est
 conservé mais marqué `SUPERSEDED`. Le verrou actif devient
 `GAP-TYPE-I-CANONICAL-PHASE-DEFECT-BOUND-OR-RSS-RIGIDITY`.
+
+## Mise à jour 2026-08-15 — cycle 0059, projection tangentielle canonique
+
+Le ledger local peut être placé dans un unique Hilbert négatif invariant :
+on moyenne les produits de `H^-3(B_m)` sous SO(2), puis on somme les normes
+avec des poids positifs décroissant plus vite que les enveloppes locales de
+`partial_sZ_n` et `mathcal RZ_n`. Cette fermeture compatible conserve toutes
+les restrictions et fournit une même métrique sur l'exhaustion.
+
+Dans ce Hilbert épinglé, la définition
+
+```text
+beta_n=<partial_sZ_n,mathcal RZ_n>/||mathcal RZ_n||^2,
+r_n=partial_sZ_n-beta_n mathcal RZ_n
+```
+
+donne exactement Pythagore. Ainsi `||r_n||` et
+`||beta_n mathcal RZ_n||` sont majorés par `||partial_sZ_n||`, même lorsque
+le Gram dégénère. Si `ess inf|beta_n|->infinity`, la limite est
+axisymétrique sans supposer séparément la borne du défaut.
+
+Cette vitesse est métrique-dépendante et peut ne pas appartenir à `L1`; la
+projection instantanée ne reconstruit donc pas automatiquement une phase.
+Surtout, `mathcal A r_n=partial_s mathcal A Z_n` peut rester non nul. Un
+contre-profil SO(2) exact a `beta_n->infinity`,
+`mathcal RZ_n->0`, mais une limite invariante non stationnaire. La
+stationnarité exige toujours `mathcal A r_n->0`.
+
+Le registre atteint 99 claims et le corpus 221 sources. Le verrou actif
+devient `GAP-TYPE-I-HAAR-DEFECT-DECAY-OR-RSS-RIGIDITY`.

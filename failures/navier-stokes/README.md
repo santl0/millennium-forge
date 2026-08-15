@@ -2055,3 +2055,26 @@ n'est ni supprimé ni réinterprété comme solution Navier--Stokes.
   solution ancienne globale.
 - Statut : stationnarité depuis résidu borné `REFUTED`; poursuivre par une
   sélection de phase contrôlant à la fois le défaut et sa composante moyenne.
+
+## `FAIL-NS-0095` — projection tangentielle prise pour phase stable ou stationnarité
+
+- Date : 2026-08-15.
+- Cible : déduire de la projection hilbertienne canonique une borne uniforme
+  de `beta`, une phase absolument continue ou l'annulation du défaut de Haar.
+- Gram dégénéré : `g_N=N^-1 e_1` et un `d_N` à composante tangentielle fixe
+  donnent `beta_N=N`; une perturbation de `d_N` de norme `N^-1` change
+  `beta_N` de un. Seul le produit `beta_N g_N` est stable.
+- Non-intégrabilité : `g(s)=s²e_1`, `d(s)=s e_1` donnent
+  `beta(s)=1/s`, produit tangent borné et résidu nul, mais aucune phase AC sur
+  `[0,1]`.
+- Défaut de Haar : dans `ker R direct_sum R²`, la courbe
+  `Z_N(s)=s e_0+N^-2 Q_(Ns)e_1` a la vitesse canonique `N`,
+  `mathcal RZ_N->0` et `beta_N mathcal RZ_N->0`, tandis que
+  `mathcal A r_N=e_0` et la limite `s e_0` n'est pas stationnaire.
+- Résidu : 37763 assertions rationnelles exactes, zéro échec, empreinte
+  `e20050eecda07b8776b3a420a5b69b7a149c38bcb2117759330eb661109885b4`.
+- Portée : modèles hilbertiens exacts de dimension finie, sans convection,
+  viscosité, pression ni solution Navier--Stokes. Ils réfutent l'inférence
+  fonctionnelle; une rigidité PDE additionnelle reste possible.
+- Statut : phase stable et stationnarité automatiques `REFUTED`; conserver le
+  projecteur pour le collapse, attaquer séparément `mathcal A r_n`.

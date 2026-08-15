@@ -1422,3 +1422,44 @@ profil Type I général
 `NS-TYPE-I-ADIABATIC-FAST-ROTATION-COLLAPSE` reste historiquement vrai mais
 est `SUPERSEDED` : sa variation inverse est une perte du test temporel mobile,
 pas une hypothèse nécessaire lorsque le ledger de Bochner est exploité.
+
+## Cycle 0059 — phase métrique canonique et composante invariante
+
+```text
+ledger local complet + axe centré fixe
+  --> X_m=H^-3(B_m), produits moyens SO(2)
+  --> X compatible pondere sur l'exhaustion
+
+d_n=partial_sZ_n, g_n=mathcal RZ_n
+  --> beta_n=<d_n,g_n>/||g_n||²
+  --> ||beta_ng_n||_X²+||r_n||_X²=||d_n||_X²
+      [NS-TYPE-I-CANONICAL-HILBERT-PHASE-COLLAPSE]
+
+ess inf|beta_n|->infinity
+  --> g_n->0 dans X et localement
+  --> mathcal RZ=0
+
+mathcal A r_n->0
+  --> partial_sZ=0
+  + NS-BACKWARD-SELFSIMILAR-WEAK-L3-LIOUVILLE
+  + NS-TYPE-I-PERSISTENT-CAPTURE-SPACETIME-NONTRIVIALITY
+  --> contradiction
+
+projection tangentielle / Gram petit
+  -/-> beta stable
+  -/-> beta in L1
+  -/-> mathcal A r_n->0
+  -/-> stationnarité
+      [FAIL-NS-0095]
+
+profil Type I général
+  -?-> ess inf de la vitesse métrique canonique diverge
+  -?-> identité coercive pour partial_s mathcal A Z_n
+  -?-> GAP-TYPE-I-HAAR-DEFECT-DECAY-OR-RSS-RIGIDITY
+  -?-> régularité Clay.
+```
+
+Beyn--Thümmler et Rowley--Marsden sourcent la projection/connexion classique,
+mais pas sa reconstruction à régularité négative. Willis--Cvitanović--Avila
+est un antécédent Navier--Stokes numérique avec bord et force, sans passage
+continuum certifié.

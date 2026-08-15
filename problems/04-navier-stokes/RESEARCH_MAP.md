@@ -2357,3 +2357,45 @@ L'arête de division est locale, exacte et ne perd que
 nécessaire pour fermer le stress, transmettre suitability et conserver la
 capture. La norme négative n'est pas critique et ses constantes ne sont pas
 uniformes lorsque le rayon tend vers l'infini.
+
+## Cycle 0059 — connexion hilbertienne et défaut de Haar
+
+```text
+ledger complet sur chaque B_m
+  --> d_n=partial_sZ_n et g_n=mathcal RZ_n bornés dans H^-3(B_m)
+  --> Hilbert compatible X=sum_m w_m H^-3(B_m)
+      [poids positifs; une seule métrique SO(2)-invariante]
+
+beta_n=<d_n,g_n>_X/||g_n||_X^2, beta_n=0 si g_n=0
+  --> d_n=beta_n g_n+r_n, <r_n,g_n>=0
+  --> ||beta_n g_n||_X,||r_n||_X<=||d_n||_X
+      [NS-TYPE-I-CANONICAL-HILBERT-PHASE-COLLAPSE]
+
+ess inf_J|beta_n|->infinity
+  --> ||mathcal RZ_n||_X<=||partial_sZ_n||_X/ess inf|beta_n|
+  --> mathcal RZ=0
+
+mathcal A r_n=partial_s mathcal A Z_n
+  -/-> 0 par orthogonalité tangentielle
+      [FAIL-NS-0095; 37763 assertions exactes]
+
+mathcal A r_n->0
+  --> Z stationnaire
+  + suitable + pression + faible-L3 + capture
+  --> contradiction stationnaire publiée
+
+projection instantanée
+  -/-> beta_n in L1 ni phase AC
+      [Beyn--Thümmler audité; contre-test beta=1/s]
+
+singularité Type I générale
+  -?-> grande vitesse canonique
+  -?-> décroissance du défaut de Haar
+  -?-> GAP-TYPE-I-HAAR-DEFECT-DECAY-OR-RSS-RIGIDITY
+  -?-> régularité Clay.
+```
+
+Le gain ferme la dépendance incohérente en rayon par une somme pondérée, mais
+la vitesse dépend de la métrique et de la fenêtre. Les antécédents classiques
+de freezing et connexion mécanique ne fournissent ni phase à la régularité
+du ledger, ni pression, ni suitability.

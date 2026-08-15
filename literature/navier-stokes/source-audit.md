@@ -1564,3 +1564,31 @@ cinématique est une dérivation du laboratoire.
 Deux sources publiées non redondantes sont ajoutées : le corpus atteint 219
 entrées. Le lemme reste `COMPUTATION_ONLY`; la veille d'absence est bornée et
 ne prouve pas l'inexistence absolue d'un résultat équivalent.
+
+## Audit ciblé du cycle 0059 — conditions de phase et connexion mécanique
+
+- Beyn--Thümmler (`0209`, SIAM JADS 2004, DOI
+  `10.1137/030600515`) donnent l'antécédent exact de la projection
+  hilbertienne adaptative par leurs équations normales (2.30)--(2.33).
+  Leur théorème 2.9 ne couvre pas cette contrainte dépendant de la vitesse de
+  groupe; la reconstruction utilise une ODE séparée et plus de régularité.
+- Rowley--Marsden (`0220`, *Physica D* 142, DOI
+  `10.1016/S0167-2789(00)00042-7`) distinguent tranche fixe et connexion
+  mécanique. Le Gram courant donne le même quotient, tandis qu'un Gram croisé
+  peut s'annuler à une frontière de carte sans stabilisateur infinitésimal.
+- Willis--Cvitanović--Avila (`0221`, *J. Fluid Mech.* 721, DOI
+  `10.1017/jfm.2013.75`) appliquent des tranches à une DNS de pipe flow 3D.
+  Domaine à bord, forçage à débit, viscosité `1/Re`, sous-espace de symétrie
+  et calcul flottant séparent ce travail du problème Clay.
+- La projection instantanée transfère son algèbre à un Hilbert `H^-3`
+  épinglé. Elle ne donne pas `beta in L1`, une phase AC, la suitability, la
+  pression ou la compacité de blow-up.
+- Un stabilisateur fini n'annule pas nécessairement la tangente
+  infinitésimale; `mathcal RZ=0` correspond au stabilisateur continu local.
+- Le produit scalaire et la pression complète influencent le coefficient.
+  L'invariance SO(2) ne rend pas automatiquement gradients et champs
+  solénoïdaux orthogonaux dans le Hilbert négatif choisi.
+
+Deux sources publiées non redondantes sont ajoutées : le corpus atteint 221
+entrées. Aucun résultat primaire ne fournit la grande vitesse canonique ou
+la décroissance du défaut de Haar depuis une singularité Type I.
