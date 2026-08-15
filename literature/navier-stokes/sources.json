@@ -4600,6 +4600,26 @@
       "reproduction": {"status": "primary_full_text_audited_not_reproved"},
       "verification": {"level": "primary_full_text", "checked_on": "2026-08-15", "notes": "Article publie, arXiv v1 et theoreme D controles au cycle 0060; PDF primaire SHA256 7BB1A326176812F59B489BDE04D791B4A56DC3A8DF219EDF3B354D4AB05F800B."},
       "tags": ["quantitative_partial_regularity", "axisymmetric", "suitable_weak", "Type_I", "logarithmic_improvement"]
+    },
+    {
+      "id": "NS-SRC-0224",
+      "title": "Symmetry reduction of turbulent pipe flows",
+      "authors": ["Francesco Fedele", "Ozeair Abessi", "Philip J. Roberts"],
+      "year": 2015,
+      "source_type": "journal_article",
+      "publication_status": "published",
+      "venue": "Journal of Fluid Mechanics 779, 390-410",
+      "identifiers": {"doi": "10.1017/jfm.2015.423", "arxiv": "1412.6711v3", "url": "https://arxiv.org/abs/1412.6711"},
+      "equation": {"model": "scalaire passif d'advection-diffusion avec sources dans un ecoulement de pipe; le champ porteur satisfait Navier-Stokes avec paroi", "dimension": "champ 3D formule abstraite puis donnees LIF planaires et troncature de Fourier streamwise", "domain": "pipe avec direction streamwise homogene et fenetre de Fourier", "boundary": "no-slip pour la vitesse aux parois; conditions du scalaire et periodicite/troncature selon la reduction", "forcing": "sources et puits possibles pour le scalaire; ecoulement de pipe entretenu", "viscosity": "diffusivite scalaire D et viscosite du pipe flow non identifiee a la viscosite Clay"},
+      "solution_notions": ["orbite finie de coefficients de Fourier d'un scalaire mesure", "reduction de symetrie par translation", "calcul experimental et numerique non certifie"],
+      "result": "Les equations (4.17)-(4.23) donnent la projection comobile U_d=Re<T(z),dot z>/||T(z)||^2, avec T(z)_m=i m k0 z_m. Pour z_m=a_m exp(i theta_m), le coefficient est une moyenne des vitesses de phase theta_dot_m/(m k0), ponderee par m^2 k0^2 a_m^2; le texte note que d'autres produits scalaires filtrent differemment les echelles.",
+      "hypotheses": ["symetrie de translation streamwise", "troncature de Fourier finie et tangente de groupe non nulle", "produit scalaire standard pour les formules appliquees", "donnees de scalaire passif, pas vitesse Navier-Stokes suitable sur R3"],
+      "constants_uniformity": "L'identite de projection est exacte dans l'espace de Fourier fini choisi. Aucune constante uniforme de passage N vers l'infini, de changement vers H^-3 ou de controle d'erreur continuum n'est fournie.",
+      "clay_relevance": "Antecedent publie exact de la formule modale de vitesse projetee et de sa dependance au produit scalaire. Ne fournit ni pression de Leray, ni suitability, ni compacite de blow-up, ni loi de signe modale pour Navier-Stokes 3D sur R3.",
+      "limitations": ["scalaire passif et pipe a paroi", "troncature finie", "donnees experimentales LIF", "produit standard", "aucune conclusion de regularite ou blow-up"],
+      "reproduction": {"status": "primary_full_text_equations_audited_not_experiment_reproduced"},
+      "verification": {"level": "primary_published_full_text", "checked_on": "2026-08-15", "notes": "Metadonnees Cambridge et arXiv v3, equations (4.17)-(4.23), poids de Fourier et remarque sur le choix de produit scalaire controles au cycle 0061; les donnees LIF ne sont pas reproduites."},
+      "tags": ["phase_condition", "mechanical_connection", "Fourier_modes", "pipe_flow", "passive_scalar", "metric_dependence", "nontransfer"]
     }
   ],
   "watchlist": [
@@ -4713,7 +4733,7 @@
     "weak_L3_local_compactness_and_trace": ["NS-SRC-0146", "NS-SRC-0187", "NS-SRC-0188", "NS-SRC-0192"],
     "forced_blowup_and_force_scaling": ["NS-SRC-0032", "NS-SRC-0033", "NS-SRC-0057", "NS-SRC-0175", "NS-SRC-0184"],
     "bochner_compactness_and_time_derivatives": ["NS-SRC-0187", "NS-SRC-0218", "NS-SRC-0219"],
-    "phase_conditions_and_mechanical_connection": ["NS-SRC-0209", "NS-SRC-0210", "NS-SRC-0220", "NS-SRC-0221"]
+    "phase_conditions_and_mechanical_connection": ["NS-SRC-0209", "NS-SRC-0210", "NS-SRC-0220", "NS-SRC-0221", "NS-SRC-0224"]
   },
   "unverified_zones": [
     "Le domaine et la plage d'exposants exacts des articles historiques Prodi et Ladyzhenskaya doivent être réextraits des originaux avant création d'un claim formel.",

@@ -1626,3 +1626,38 @@ la décroissance du défaut de Haar depuis une singularité Type I.
 Deux sources publiées sont ajoutées; le corpus atteint 223 entrées. Le maillon
 ancien axisymétrique devient `SOURCE_VERIFIED`, tandis que le lemme interne de
 fermeture du stress reste `COMPUTATION_ONLY`.
+
+## Audit ciblé du cycle 0061 — projection modale et dépendance métrique
+
+- Fedele--Abessi--Roberts (`0224`, *Journal of Fluid Mechanics* 779,
+  DOI `10.1017/jfm.2015.423`, arXiv `1412.6711v3`) est l'antécédent publié le
+  plus proche de la formule calculée dans ce cycle. Leurs équations
+  (4.17)--(4.23) posent `T(z)_m=i m k0 z_m` et
+  `U_d=Re<T(z),dot z>/||T(z)||²`. Après
+  `z_m=a_m exp(i theta_m)`, `U_d` est la moyenne des vitesses
+  `theta_dot_m/(m k0)` avec poids `m²k0²a_m²`.
+- Le texte précise aussi que changer le produit scalaire peut filtrer
+  différemment grandes et petites échelles. Il soutient donc exactement
+  l'arrière-plan algébrique « vitesse projetée = moyenne modale pondérée » et
+  la non-canonicité métrique.
+- Le transfert s'arrête avant Navier--Stokes Clay : l'objet projeté est une
+  troncature finie des coefficients de Fourier d'un scalaire passif mesuré
+  dans un pipe à paroi. Il n'y a ni Hilbert négatif sur `R3`, ni pression de
+  Riesz, ni solution suitable, ni passage certifié `N->infinity`.
+- Beyn--Thümmler (`0209`), Rowley--Marsden (`0220`) et
+  Willis--Cvitanović--Avila (`0221`) restent les sources de condition de
+  phase, connexion mécanique et tranche Navier--Stokes numérique. Aucune ne
+  donne un signe commun ou une minoration des vitesses azimutales d'une suite
+  Type I.
+- La veille différentielle vérifie Pineau--Vicol (`0051`) dans sa version
+  `arXiv:2607.09619v2` du 6 août 2026. Les nouveaux commentaires et le critère
+  local n'étendent pas leur rigidité aux rotations intermédiaires, à une
+  modulation arbitraire, au faible-`L3` sans borne Type I ponctuelle ou au
+  Type II.
+- Aucune annonce primaire 2025--2026 inspectée ne transforme la condition de
+  phase métrique en observable intrinsèque d'un blow-up admissible.
+
+Une source publiée non redondante est ajoutée; le corpus atteint 224 entrées.
+Le lemme d'enveloppe convexe reste `COMPUTATION_ONLY` : la source confirme la
+formule finie, pas son extension `H^-3`, ses quantificateurs ni sa connexion
+au pipeline Clay.
