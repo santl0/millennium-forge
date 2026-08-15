@@ -2037,3 +2037,31 @@ cellule reste donc `NOT_PROVIDED`.
   `100bb5ee2be5cddd2c3ea6b22b4ef23ddd52464d57ad53e9567548ed367ef25b`.
 - Limites : les profils certifient la séparation entre compacité volumique,
   trace et résidu. Aucun n'est un blow-up admissible non forcé sur `R3`.
+
+## `TRACE-PERSISTENCE-1` — capture faible-`L3` contre forte `L3` espace–temps
+
+- Question falsifiable : une suite peut-elle converger fortement vers zéro
+  dans `L3(I x B_1)` tout en gardant
+  `K_3(Z_j(s);B_1)>=gamma>0` sur une portion temporelle de mesure uniforme ?
+- Équations réellement calculées : aucune intégration de Navier–Stokes;
+  fonctions de répartition atomiques, ledger temporel exact, horloge
+  `R²=a(T_*-t)` et scaling critique du zoom mobile.
+- Résultat :
+  `integral_(E_j x B_1)|Z_j|³>=|E_j|gamma_j³`. Pour `|E_j|>=delta>0`
+  et `gamma_j>=gamma>0`, la convergence forte vers zéro est impossible.
+- Optimalité : les profils spatiaux à un niveau atteignent la constante un;
+  une impulsion temporelle triangulaire coûte exactement
+  `gamma³delta/2`. Le seuil de disparition est
+  `|E_j|gamma_j³->0`.
+- Horloge : le script vérifie exactement
+  `d(log R)/d sigma=-kappa`, `kappa=2/S_w^*`, et
+  `K_3(Ru(x_*+R dot);B_1)=K_3(u;B(x_*,R))` sur les profils atomiques.
+- Discrétisation et précision : aucune; `fractions.Fraction`, bibliothèque
+  standard, calcul déterministe, aucune graine ni sortie lourde.
+- Commande :
+  `python -B experiments/navier-stokes/trace-persistence/trace_persistence_audit.py`.
+- Résidu certifié : 417 assertions exactes, zéro échec. L'empreinte finale
+  est enregistrée dans le claim du cycle 0046.
+- Limites : le certificat ne prouve ni le théorème de capture publié, ni la
+  compacité PDE du cycle 0045. Il certifie leur maillon fonctionnel et les
+  deux identités d'échelle, pas une simulation ni un résultat Clay.

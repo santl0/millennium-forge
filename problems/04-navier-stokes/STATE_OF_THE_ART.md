@@ -1365,3 +1365,42 @@ Albritton–Barker 2020 et Barker–Seregin–Šverák 2018 sont ajoutés comme
 `NS-SRC-0187`–`0188`. Le corpus atteint 188 sources. Aucun résultat du cycle
 ne dérenormalise encore la limite, ne la rend non triviale, ni ne résout une
 branche du problème Clay.
+
+## Mise à jour 2026-08-15 — cycle 0046, non-trivialité intégrée Type I
+
+La porte de trace du cycle 0045 était surdimensionnée pour la seule
+non-trivialité. Barker–Prange (`0146`) concentre la quasi-norme faible-`L3`
+au point singulier fixe pour tout temps tardif; sous la borne globale du
+programme, `r_0=infinity` et la fenêtre commence à zéro. L'horloge mobile
+
+```text
+R²=4(T_*-t)/S_w^*(C_MM),
+d sigma/dt=R^-2,
+d(log R)/d sigma=-kappa,
+kappa=2/S_w^*(C_MM)
+```
+
+transporte cette minoration dans le même `B_1` pour presque tout temps de
+toute fenêtre renormalisée fixe. Comme `Q_(L_j)=I` dans `B_1`,
+
+```text
+K_3(Z_j(s);B_1)>gamma_w
+```
+
+sur toute la fenêtre. La forte `L3_loc` du cycle 0045 et l'inégalité optimale
+`K_3(f;B_1)^3<=integral_(B_1)|f|³` donnent alors
+
+```text
+integral_(J x B_1)|Z|³>=|J|gamma_w³>0.
+```
+
+La limite ancienne renormalisée est non triviale sans compacité forte d'une
+tranche. Une tranche non nulle peut être choisie après la limite et placée en
+zéro par translation de l'équation autonome; cela ne prouve ni que l'ancien
+endpoint est non nul, ni que la limite y reste singulière.
+
+Le claim interne
+`NS-TYPE-I-PERSISTENT-CAPTURE-SPACETIME-NONTRIVIALITY` reste
+`COMPUTATION_ONLY`. Aucune source nouvelle n'est ajoutée : le corpus reste à
+188. Le verrou actif devient la dérenormalisation exacte de l'équation avec
+drift, puis la classification ou rigidité de la classe ancienne obtenue.

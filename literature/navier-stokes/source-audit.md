@@ -1196,3 +1196,30 @@ reçoit pas `PAPER_PROOF` et ne résout aucun cas Clay.
 La veille ajoute `NS-SRC-0187`–`0188` et porte le corpus à 188 sources. Le
 claim de compacité adaptée reste `COMPUTATION_ONLY`; les théorèmes publiés
 servent d'ingrédients et de contrôles, pas de substitution à la dérivation.
+
+## Audit ciblé du cycle 0046 — quantificateur temporel et non-trivialité
+
+- Barker–Prange (`0146`) énonce au théorème 2 la concentration `L3` au point
+  singulier fixe pour tout temps assez proche du premier blow-up. Lorsque le
+  rayon extérieur de l'hypothèse Morrey est infini, leur `t_*=0`.
+- Le cas faible-`L3` n'est pas réénoncé comme un second théorème autonome.
+  L'introduction affirme l'extension de la concentration et l'appendice B
+  remplace les blocs de lissage, pression, mild petit et extension locale.
+  Les constantes Lorentz `gamma_w,S_w^*` doivent rester distinctes des
+  constantes imprimées du cas fort.
+- L'implication
+  `capture pour tout temps + forte L3 espace-temps -> limite non nulle` est
+  une dérivation interne. Elle n'est attribuée ni à Barker–Prange, ni à
+  Albritton–Barker (`0187`), ni à Barker–Seregin–Šverák (`0188`).
+- Albritton–Barker A.5 conserve un **point singulier** sous explosion
+  `L-infinity` persistante et compacité vitesse/pression. Cette conclusion
+  est plus forte et ses hypothèses ne sont pas déduites de la seule capture
+  faible-`L3` positive.
+- La veille primaire 2025–2026 a contrôlé les versions récentes sur Type II,
+  axisymétrie approximative et auto-similarité tournée. Aucun texte ne
+  dérenormalise automatiquement la classe faible adaptée locale construite
+  ici ni ne fournit une rigidité générale ancienne faible-`L3`.
+
+Aucune source nouvelle n'est ajoutée; le corpus reste à 188. Le claim du
+cycle est `COMPUTATION_ONLY`. Il préserve une non-trivialité intégrée, pas la
+singularité de l'endpoint, la mildness, Type II ou un résultat Clay.

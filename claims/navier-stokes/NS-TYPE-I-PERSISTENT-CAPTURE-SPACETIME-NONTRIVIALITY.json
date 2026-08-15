@@ -1,0 +1,64 @@
+{
+  "id": "NS-TYPE-I-PERSISTENT-CAPTURE-SPACETIME-NONTRIVIALITY",
+  "problem": "navier-stokes",
+  "statement": "Soit u une solution de Leray-Hopf de Navier-Stokes incompressible 3D non force sur R3, lisse avant son premier temps singulier T_*, avec point singulier fixe x_* et borne uniforme L-infinity_t L^(3,infinity)_x. Pour le rayon Barker-Prange R(t), l'horloge d sigma/dt=R^(-2), les translations sigma_j vers l'infini et les cutoffs externes Z_j(s)=Q_(L_j)U(sigma_j+s), la capture K_3(Z_j(s);B_1)>gamma_w vaut pour tout ou presque tout s de chaque fenetre renormalisee fixe. Si la compacite locale adaptee donne Z_j vers Z fortement dans L3, alors integral_(J x B_1)|Z|^3>=|J|gamma_w^3 pour tout intervalle non degenere J de la diagonale; la limite ancienne renormalisee est donc non identiquement nulle. Cette conclusion ne conserve ni l'ancien endpoint, ni un point singulier terminal, et ne derenormalise pas la limite.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "domaine R3 sans frontiere, viscosite un, aucune force; u est Leray-Hopf et lisse sur (0,T_*)",
+    "T_* est le premier temps singulier et (x_*,T_*) est un point singulier fixe",
+    "sup_(0<t<T_*) K_3(u(t);R3)<=M<infinity avec le representant pointwise classique avant T_*",
+    "R(t)=2sqrt((T_*-t)/S_w^*(C_M M)), d sigma/dt=R(t)^(-2) et kappa=2/S_w^*(C_M M)",
+    "U(y,sigma)=R(t)u(x_*+R(t)y,t) et Z_j(s)=Q_(L_j)U(sigma_j+s), avec sigma_j vers l'infini, L_j vers l'infini et L_jR_j vers zero",
+    "L_j est constant sur chaque fenetre et Q_(L_j) est exactement l'identite dans B_(L_j)",
+    "la force tronquee tend vers zero dans C-infinity spatial local uniformement en temps et la pression est gardee dans la jauge globale de Riesz",
+    "la conclusion de NS-TYPE-I-WEAK-L3-LOCAL-SUITABLE-COMPACTNESS est appliquee sur chaque fenetre fixe puis diagonalisee"
+  ],
+  "dependencies": [
+    "NS-TYPE-I-WEAK-L3-PARABOLIC-CORE-CAPTURE",
+    "NS-TYPE-I-OUTER-CUTOFF-LOCAL-FORCE-ESCAPE",
+    "NS-TYPE-I-WEAK-L3-LOCAL-SUITABLE-COMPACTNESS"
+  ],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0146; Barker-Prange, ARMA 236 (2020), theoreme 2 et appendice B: concentration au point singulier fixe pour tout temps tardif, avec extension critique L^(3,infinity)"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0046-persistent-capture-nontriviality.md; horloge exacte, transport dans B_1 et composition forte L3",
+      "sha256": "c6968cde0f981d3a7946c12dd6cbd84d021274b7f27323b8b8e1d77273ef47d0"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0046-analysis.md; audit independant des translations, de la diagonale physique et des quantificateurs",
+      "sha256": "b9ca53bb4c7bcdc0695f263fc48b26dc5d44fb24e789dc2f6f3661cc1c285e92"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0046-literature.md; reaudit primaire Barker-Prange et veille differentielle 2025-2026",
+      "sha256": "4765ef7166955ff8788f6b9285e5992baec598e5777dc286bcc30b76c120f757"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0046-countermodel.md; seuil optimal |E_j|gamma_j^3, tranches isolees et fenetres contractantes",
+      "sha256": "53bd44f7a530f7ebdd8bf3454826298287522427683e25a049623941f7c57c65"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/trace-persistence/trace_persistence_audit.py; 417 assertions rationnelles sur mesure-temps, horloge et scaling critique",
+      "sha256": "26b93eb4c751d3a366340bae21ddb8803e601a4801b275b45936969109ff42f6"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0046-persistent-capture-nontriviality"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Derivation principale, audit analytique, audit bibliographique et contre-profils separes de meme famille de modeles; aucune revue humaine externe",
+    "notes": "Le statut reste COMPUTATION_ONLY. La capture temporelle est publiee, mais la composition avec l'horloge mobile, le cutoff externe et la compacite locale est une derivation IA. Le claim est conditionnel a un blow-up Type I et ne prouve ni singularite terminale de la limite, ni derenormalisation, mildness, rigidite, Type II ou regularite Clay."
+  }
+}

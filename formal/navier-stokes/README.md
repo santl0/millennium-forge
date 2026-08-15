@@ -1180,3 +1180,28 @@ interfaces papier tant qu'aucune bibliothèque épinglée n'en porte les
 versions requises. Leur compilation ne certifierait ni l'existence d'un
 moment fixe issu de Barker–Prange, ni la dérenormalisation, ni un résultat
 Clay.
+
+## Backlog issu du cycle 0046 — persistance mesurée et horloge Type I
+
+Le noyau élémentaire remplace la porte de moment signé dans la branche Type I :
+
+1. définir la quasi-norme locale
+   `K_3(f;E)=sup_(lambda>0) lambda |{|f|>lambda} inter E|^(1/3)`;
+2. formaliser `K_3(f;E)^3<=integral_E|f|^3` par Chebyshev;
+3. intégrer sur un ensemble temporel mesurable et obtenir
+   `|J|gamma³<=||f||_(L3(J x E))³`;
+4. formaliser la conservation de cette minoration sous convergence forte
+   `L3`;
+5. vérifier l'invariance exacte de `K_3` sous
+   `f(y)=R u(x_*+Ry)`;
+6. vérifier, depuis `R²=a(T_*-t)` et `d sigma/dt=R^-2`, que
+   `d(log R)/d sigma=-a/2=-kappa`;
+7. formaliser : une fonction non nulle dans `L3(I x E)` possède une tranche
+   de Lebesgue non nulle;
+8. formaliser la translation temporelle de l'équation autonome avec drift
+   constant.
+
+Les points 1–8 sont indépendants de Calderón–Zygmund et de Simon. Le théorème
+Barker–Prange et le claim de compacité restent des interfaces papier. Leur
+composition formelle certifierait une limite renormalisée non triviale, pas
+sa dérenormalisation, sa mildness, sa rigidité ni un résultat Clay.

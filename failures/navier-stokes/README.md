@@ -1695,7 +1695,10 @@ claim éventuellement supersédé.
   à une tranche n'impose aucun observable linéaire fixe.
 - Réparation minimale : exhiber `psi` fixe et `c_*>0` tels que
   `|<Z_j(0),psi>|>=c_*`, ou obtenir une compacité forte des traces par une
-  estimation supplémentaire.
+  estimation supplémentaire. Correction du cycle 0046 : cette réparation
+  n'est minimale que si l'information est portée par la tranche isolée. Une
+  capture uniforme sur un ensemble temporel de mesure positive, jointe à la
+  forte `L3` espace–temps, conserve directement la non-trivialité.
 - Certificat : 401 assertions rationnelles exactes; empreinte
   `100bb5ee2be5cddd2c3ea6b22b4ef23ddd52464d57ad53e9567548ed367ef25b`.
 - Portée : les profils ne satisfont pas la topologie forte de résidu PDE du
@@ -1703,4 +1706,34 @@ claim éventuellement supersédé.
   raccourci fonctionnel, pas la compacité adaptée démontrée ni le problème
   Clay.
 - Statut : transmission automatique d'une norme terminale `REFUTED`; pivot
-  vers `GAP-TYPE-I-CRITICAL-TRACE-PERSISTENCE`.
+  historique vers `GAP-TYPE-I-CRITICAL-TRACE-PERSISTENCE`; ce gap est fermé
+  au cycle 0046 dans la branche Type I persistante, pas pour une tranche
+  arbitraire.
+
+## `FAIL-NS-0082` — Moment signé terminal supposé nécessaire
+
+- Date : 2026-08-15.
+- Cible : imposer un test fixe `psi` et
+  `|<Z_j(0),psi>|>=c_*>0` comme seule porte possible vers une limite Type I
+  non triviale.
+- Premier quantificateur oublié : Barker–Prange donne la capture au point
+  singulier fixe pour **tout** temps physique antérieur au premier blow-up;
+  l'horloge Type I transforme donc tout intervalle renormalisé fixe en un
+  ensemble de temps capturés de même mesure normalisée.
+- Réfutation fonctionnelle :
+  `K_3(Z_j(s);B_1)>=gamma_w` presque partout sur `I` implique
+  `integral_(I x B_1)|Z_j|^3>=|I|gamma_w^3`. La forte `L3` locale conserve
+  cette minoration dans la limite.
+- Test de frontière : une capture à un temps isolé ou sur des intervalles de
+  longueur `delta_j->0` peut disparaître; le seuil exact est
+  `delta_j gamma_j^3->0`. L'échec `FAIL-NS-0081` reste donc valide dans son
+  domaine initial.
+- Réparation : choisir après le passage à la limite un temps de Lebesgue où
+  `Z` est non nul, puis translater l'équation renormalisée autonome pour
+  placer cette tranche en zéro.
+- Certificat : 417 assertions rationnelles exactes; empreinte consignée dans
+  le claim et le checkpoint du cycle 0046.
+- Portée : la correction ne dérenormalise pas le drift, ne produit aucune
+  rigidité ancienne, ne traite pas Type II et ne résout pas le problème Clay.
+- Statut : nécessité d'un moment signé au temps terminal initial `REFUTED`
+  dans la branche Type I persistante; pivot vers l'horloge inverse.
