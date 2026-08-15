@@ -3840,6 +3840,26 @@
       "reproduction": {"status": "primary_author_full_text_theorem_2_5_audited_cycle_0043"},
       "verification": {"level": "primary_full_text", "checked_on": "2026-08-15", "notes": "Énoncé, plage s>-2+1/p, convention des espaces négatifs, compatibilité de moyenne et construction par recollement contrôlés sur le texte primaire."},
       "tags": ["divergence", "Bogovskii", "negative_Sobolev", "support", "Lipschitz_domain"]
+    },
+    {
+      "id": "NS-SRC-0186",
+      "title": "On the Local Pressure Expansion for the Navier–Stokes Equations",
+      "authors": ["Zachary Bradshaw", "Tai-Peng Tsai"],
+      "year": 2022,
+      "source_type": "journal_article",
+      "publication_status": "published",
+      "venue": "Journal of Mathematical Fluid Mechanics 24, article 3",
+      "identifiers": {"doi": "10.1007/s00021-021-00637-4", "arxiv": "2001.11526v1", "url": "https://doi.org/10.1007/s00021-021-00637-4"},
+      "equation": {"model": "Navier–Stokes incompressible standard et formulation mild/local pressure expansion", "dimension": "3", "domain": "R3 et domaines locaux de l'espace entier selon l'énoncé", "boundary": "sans frontière physique", "forcing": "cadre distributionnel avec les termes de l'équation représentés dans l'expansion; l'usage de ce cycle porte sur le stress quadratique", "viscosity": "positive, normalisable à un"},
+      "solution_notions": ["solution distributionnelle", "solution mild", "solution avec expansion locale de pression"],
+      "result": "Les théorèmes 1.4 et 1.5 relient, sous leurs hypothèses, formulation mild et expansion locale de pression. Le noyau K_ij=partial_i partial_j(4pi|x|)^(-1) est homogène de degré -3 et la soustraction lointaine K_ij(x-y)-K_ij(x_0-y) gagne une puissance de décroissance, de l'ordre |y|^-4.",
+      "hypotheses": ["hypothèses d'intégrabilité et de formulation précisées dans les théorèmes 1.4 et 1.5", "jauge de pression locale fixée par soustraction d'une valeur de référence", "équation incompressible sur l'espace entier"],
+      "constants_uniformity": "Les estimations locales dépendent de la région et de la jauge choisies. L'article ne revendique pas le lemme uniforme faible-L^(3/2) de queue extérieure formulé au cycle 0044.",
+      "clay_relevance": "Source primaire du gain lointain de la pression et de la non-localité de la projection de Leray. Elle fournit un ingrédient du lemme de fuite locale, mais ni compacité endpoint, ni solution ancienne non triviale, ni régularité Clay.",
+      "limitations": ["n'énonce pas textuellement la borne Lorentz L^(-3) pour un stress extérieur arbitraire", "ne passe pas le produit quadratique sous seule convergence faible-étoile L^(3,infinity)", "aucun théorème de rigidité ancienne faible-L3 général"],
+      "reproduction": {"status": "primary_arxiv_v1_full_text_scope_and_kernel_audited_cycle_0044"},
+      "verification": {"level": "primary_full_text", "checked_on": "2026-08-15", "notes": "Métadonnées de publication, théorèmes 1.4–1.5, noyau de pression et soustraction de champ lointain contrôlés; PDF arXiv SHA256 C264534A59BA09E2AFC9C5CFE3AA6FDC8EDFBC8C35C5207C174D6ACA83D267AF."},
+      "tags": ["Navier_Stokes", "local_pressure", "mild_solution", "Leray_projection", "far_field", "R3"]
     }
   ],
   "watchlist": [
@@ -3945,7 +3965,8 @@
     "solenoidal_localization_and_bogovskii": ["NS-SRC-0103", "NS-SRC-0111", "NS-SRC-0154", "NS-SRC-0176", "NS-SRC-0177", "NS-SRC-0178", "NS-SRC-0179", "NS-SRC-0180", "NS-SRC-0183", "NS-SRC-0185"],
     "negative_sobolev_divergence": ["NS-SRC-0103", "NS-SRC-0180", "NS-SRC-0185"],
     "moving_domains_and_time_dependent_divergence": ["NS-SRC-0180", "NS-SRC-0183"],
-    "local_pressure_and_projection": ["NS-SRC-0181", "NS-SRC-0182"],
+    "local_pressure_and_projection": ["NS-SRC-0181", "NS-SRC-0182", "NS-SRC-0186"],
+    "outer_cutoff_and_far_field_pressure": ["NS-SRC-0069", "NS-SRC-0181", "NS-SRC-0182", "NS-SRC-0186"],
     "forced_blowup_and_force_scaling": ["NS-SRC-0032", "NS-SRC-0033", "NS-SRC-0057", "NS-SRC-0175", "NS-SRC-0184"]
   },
   "unverified_zones": [

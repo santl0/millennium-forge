@@ -1969,3 +1969,40 @@ cellule reste donc `NOT_PROVIDED`.
   `df0e6cd76ccd21fe64a1d8f426408afc9f807f33354fe139383330b976380707`.
 - Limites : le certificat ne calcule ni la pression ni la force complète;
   leur borne est une dérivation analytique séparée.
+
+## `OUTER-CUTOFF-1` — queue de Leray et budget externe
+
+- Question falsifiable : un stress faible-`L^(3/2)` situé hors de `B_L`
+  produit-il sur `B_1` une queue de `P_L div` d'ordre `L^-3`, tandis que le
+  budget global de dilatation peut croître sur un profil critique ?
+- Équations calculées : dérivées troisième et quatrième du noyau
+  `N(x)=1/(4pi|x|)`, inclusion faible-Lorentz sur coquille, séries dyadiques
+  et ledger scalaire d'un profil annulaire `1/r`. Aucune intégration de
+  Navier–Stokes.
+- Discrétisation, résolution et temps : aucune discrétisation spatiale ou
+  temporelle; coquilles dyadiques finies vérifiées jusqu'à 128 termes et
+  formule de somme infinie contrôlée exactement.
+- Précision : `fractions.Fraction`, bibliothèque standard Python; aucune
+  erreur d'arrondi, aucune graine aléatoire et aucune sortie lourde.
+- Conventions : source tensorielle mesurée par la somme `l1` de ses neuf
+  composantes, sortie par le maximum des composantes; la partie delta de
+  Leray est exclue seulement parce que le support source est séparé de
+  `B_1`.
+- Résultat : pour `m=0,1`, les constantes rationnelles certifiées sont
+  `A_0=11904/35` et `A_1=134912/25` dans
+  `sup_(B_1)|nabla^m P_L div S|<=A_m K_(3/2)(S)L^(-3-m)`.
+- Test adverse : la taille faible-`L3` du ledger reste uniforme, mais le
+  coût `L1` du terme de dilatation externe vaut `7epsilon L²`. Une somme
+  terme à terme des stresses peut croître logarithmiquement alors que la
+  quasi-norme de leur union reste uniforme; cette somme n'est donc pas une
+  minoration de la norme quotient.
+- Sensibilité : les puissances sont vérifiées pour `L=2,4,16,256,4096`,
+  plusieurs tailles faibles et les dérivées `m=0,1`.
+- Commande :
+  `python -B experiments/navier-stokes/outer-cutoff/outer_cutoff_audit.py`.
+- Résidu certifié : 253 assertions exactes, zéro échec. Empreinte :
+  `48ef31abefe4b63dcd42771480b5a257d588c70849b169e979c332cb859da2af`.
+- Limites : le ledger annulaire n'est ni une solution Navier–Stokes, ni une
+  donnée d'énergie uniformément bornée. Le script certifie le noyau et les
+  puissances, pas la compacité temporelle, le passage à la limite ou la
+  rigidité ancienne.

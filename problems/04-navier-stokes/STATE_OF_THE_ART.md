@@ -1296,3 +1296,42 @@ Le catalogue atteint 185 sources après ajout de la source négative de
 Geißert–Heck–Hieber. Le nouveau trou n'est plus la bornitude instantanée :
 il est la compacité dans un espace non réflexif, puis la rigidité avec force
 critique ou l'échappement contrôlé de la couronne à l'infini.
+
+## Cycle 0044 — fuite locale critique, obstruction globale
+
+Pour une troncation solénoïdale sur la couronne externe
+`A_L={L<|y|<2L}`, la conjugaison exacte de Bogovskii conserve uniformément
+la borne faible-`L3`. Sur tout compact `B_rho`, `L>=2rho`, l'équation
+renormalisée donne exactement
+
+```text
+F_L=P div(Z_L tensor Z_L-U tensor U).
+```
+
+Le tenseur entre parenthèses est nul dans `B_L` et uniformément borné dans
+`L^(3/2,infinity)`. Le noyau non local de `P div` est une troisième dérivée
+du potentiel newtonien, homogène de degré `-4`; une somme sur couronnes
+donne, pour tout multi-indice spatial `alpha`,
+
+```text
+||partial^alpha F_L||_Linf(B_rho)
+  <= C_alpha(1+C_Q^2)M^2 L^(-3-|alpha|).
+```
+
+La force disparaît donc dans `C^infinity_x,loc`, uniformément sur la fenêtre
+temporelle. Bradshaw–Tsai (`0186`) source le gain lointain de pression par
+soustraction de jauge; Wolf (`0181`) et Kwon (`0182`) sourcent les corrections
+locales. La borne Lorentz complète reste une dérivation interne auditée, pas
+un théorème cité.
+
+Cette fuite est strictement locale. Un témoin pure-swirl critique donne pour
+la force complète, si le drift `kappa` est non nul,
+`||F_L||_(L1+div L^(3/2,infinity))>=c|kappa|L^2-C`. Il réfute la convergence
+globale dans cet espace tout en restant compatible avec la disparition sur
+les compacts.
+
+Le catalogue atteint 186 sources. Le verrou suivant est un ledger de
+compacité locale : dérivée temporelle, pression, passage du produit,
+inégalité d'énergie locale et trace non triviale. Même après ce passage, il
+faut dérenormaliser exactement le drift puis traiter la rigidité des solutions
+anciennes faible-`L3`; aucune de ces arêtes n'est fermée par ce cycle.

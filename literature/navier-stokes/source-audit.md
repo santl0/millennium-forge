@@ -1147,3 +1147,26 @@ La veille ajoute `NS-SRC-0185` et porte le corpus à 185 sources. La borne
 critique uniforme du cycle est une dérivation interne conditionnée au choix
 fixe de l'opérateur; elle ne fournit ni petitesse, ni compacité, ni limite
 ancienne non forcée.
+
+## Audit ciblé du cycle 0044 — fuite locale de la force projetée
+
+- Bradshaw–Tsai (`0186`, J. Math. Fluid Mech. 2022) relie formulation mild
+  et expansion locale de pression. La différence du noyau lointain
+  `K_ij(x-y)-K_ij(x_0-y)` gagne une puissance et fournit l'ingrédient publié
+  d'ordre `|y|^-4` le plus proche de la queue calculée dans ce cycle.
+- Wolf (`0181`) et Kwon (`0182`) confirment que la pression locale comporte
+  une correction harmonique et qu'un projecteur localisé ne doit pas être
+  confondu avec la projection globale de Leray.
+- Hunt (`0069`) fournit l'inégalité de Lorentz sur les couronnes. La somme
+  dyadique qui en déduit
+  `||partial^alpha P div E_L||_Linf(B_rho)<=C_alpha K L^(-3-|alpha|)`
+  est une dérivation interne : aucune source auditée ne l'énonce mot pour
+  mot.
+- La veille primaire 2025–2026 n'a trouvé aucun théorème transformant une
+  seule borne `Linf_t L^(3,infinity)_x` en solution ancienne Navier–Stokes
+  admissible et non triviale. Le déficit est la compacité locale forte, le
+  passage du produit et de l'énergie locale, puis la persistance d'une trace.
+
+La veille ajoute `NS-SRC-0186` et porte le corpus à 186 sources. Le statut du
+lemme de queue reste `PUBLISHED_INGREDIENTS + AI_INTERNAL_DERIVATION`; il ne
+reçoit pas `PAPER_PROOF` et ne résout aucun cas Clay.
