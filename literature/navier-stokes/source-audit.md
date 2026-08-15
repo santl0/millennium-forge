@@ -1700,3 +1700,33 @@ Le détail des équations, domaines, versions, empreintes documentaires et
 non-transferts est dans
 `docs/reports/navier-stokes/reviews/cycle-0062-literature.md`. Le corpus
 structuré ajoute `NS-SRC-0225` à `NS-SRC-0227` et atteint 227 sources.
+
+## Audit ciblé du cycle 0063 — tangence et régions invariantes
+
+Quatre sources primaires sont ajoutées : Nagumo 1942 (`NS-SRC-0228`) et
+Brezis 1970 (`NS-SRC-0229`) pour la caractérisation d'un fermé invariant
+par tangence en dimension finie; Pavel 1977 (`NS-SRC-0230`) pour les
+équations d'évolution semi-linéaires; Zgliczyński 2003, version corrigée
+(`NS-SRC-0231`), pour des régions piégeantes spectrales quantitatives dans
+Navier--Stokes périodique.
+
+Le transfert contrôlé est le suivant : à une face régulière
+`{C_j=0,C_i>0}`, l'invariance locale impose `C'_j>=0`. En revanche, les
+extensions PDE exigent un espace de phase fermé, un semi-groupe ou résolvant
+compatible, des domaines communs et des hypothèses de continuité qui ne sont
+pas automatiques pour l'intersection infinie des contraintes modales. Les
+régions spectrales publiées bornent des magnitudes; les sous-espaces
+homochiraux invariants appartiennent à des équations décimées; aucun article
+localisé n'établit le cône de signes `C_m>=0` pour Navier--Stokes 3D complet.
+
+La veille 2025--2026 ne trouve pas de résultat primaire comblant ce trou.
+Pineau--Vicol v2 reste un théorème RSS/RDSS conditionnel sous Type I, non un
+théorème de viabilité. Mahalov--Titi--Leibovich et Biferale--Titi séparent
+respectivement sous-espaces hélicoïdaux particuliers et modèle décimé du
+système Clay complet.
+
+Le contre-test interne du cycle 0063 réalise exactement la violation de
+tangence sur trois modes de Schwartz, mais sa preuve n'est attribuée à
+aucune source. Le détail des versions, hypothèses et non-transferts est dans
+`docs/reports/navier-stokes/reviews/cycle-0063-literature.md`. Le corpus
+structuré atteint 231 sources.
