@@ -1,0 +1,66 @@
+{
+  "arithmetic": "Fraction",
+  "assertions": 1173,
+  "candidate": {
+    "C_normalized_by_(pi/3)^(3/2)": [
+      "8/9",
+      "16/9",
+      "0"
+    ],
+    "C3prime": {
+      "local_normalized_by_pi^(3/2)": "-675/256",
+      "local_rates_before_gaussian_factor": {
+        "2": "0",
+        "3": "0",
+        "4": "-675/32"
+      },
+      "pressure_normalized_by_pi^(3/2)": "575457/320320",
+      "total_normalized_by_pi^(3/2)": "-1076547/1281280"
+    },
+    "cone": "C1>=0, C2>=0, C3>=0",
+    "kappa": "0",
+    "modes": [
+      1,
+      2,
+      3
+    ],
+    "orientations": [
+      [-1, -1],
+      [-1, -1],
+      [-1, 0]
+    ],
+    "status": "strict outward derivative at active face C3=0"
+  },
+  "core_dependency": {
+    "path": "../instantaneous-modal-sign/instantaneous_modal_sign.py",
+    "sha256": "41bd221e7408fc1b02a2bc93ee6d08abe61e4e3533ba09eca1dbb5c7d3dedca4"
+  },
+  "failed_family": {
+    "modes": [
+      1,
+      2
+    ],
+    "relation": "C2=2*C1",
+    "status": "boundary only at apex",
+    "trials": 576
+  },
+  "field_sha256": "c6a5442603d162cfaddefdcccdada9ec35d82bd777b6a1be229197ec4c45e5e2",
+  "git_diff_check": "PASS",
+  "pressure": {
+    "method": "exact Fourier multiplier 1/|xi|^2",
+    "pointwise_reconstruction": false,
+    "sha256_of_source_and_test_polynomials": "c7e2e87880097a10f417d209e4d09a97c496d73cefc3c96aa660a765a934e87a"
+  },
+  "quadrature": "none",
+  "residuals": {
+    "divergence": "0",
+    "fourier_imaginary_part": "0",
+    "isotype": "0",
+    "manufactured_inverse_laplacian_identity": "0"
+  },
+  "scope": "exact instantaneous NS vector field; no time integration / no ancient or Type-I orbit",
+  "script": "dynamic_modal_cone.py",
+  "script_sha256": "e80705842d6dad373328a67ce30d475b590e780ba454deffdf88e340bea29662",
+  "seed": "n/a",
+  "status": "PASS"
+}
