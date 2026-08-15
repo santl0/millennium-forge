@@ -484,3 +484,26 @@
   variable n'est introduite.
 - Le prochain verrou est `GAP-TYPE-I-LOCAL-COMPACTNESS-TRACE`, avant
   dérenormalisation et rigidité ancienne faible-`L3`.
+
+### 2026-08-15 — compacité adaptée locale et pivot vers la trace
+
+- La passe contradictoire corrige le brouillon initial : faible-`L3` seul ne
+  donne pas d'énergie, mais faible-`L3` **plus l'équation lisse**, la pression
+  de Riesz et la force localement bornée ferment une Caccioppoli uniforme.
+- Le remplissage des trous est retenu avec le score `19/20`; la régularité
+  parabolique sous-critique reste une route de secours et aucun endpoint
+  Calderón–Zygmund parabolique n'est invoqué.
+- Simon est appliqué avec les triplets exacts
+  `L2 compact->H^-1->W^(-2,4/3)` puis
+  `H1 compact->L2->W^(-2,4/3)`.
+- La convergence est forte dans tout `Lq_loc`, `q<10/3`, donc dans `L3`; le
+  produit converge dans `L^(3/2)` et l'énergie locale passe.
+- La pression complète n'est pas déclarée fortement compacte : sa partie
+  proche converge fortement et sa partie harmonique passe faible-étoile.
+- `GAP-TYPE-I-LOCAL-DISTRIBUTIONAL-COMPACTNESS` et
+  `GAP-TYPE-I-LOCAL-SUITABILITY-ENERGY` sont fermés au statut interne
+  `COMPUTATION_ONLY`.
+- La transmission d'une norme terminale est abandonnée : `FAIL-NS-0081`
+  montre qu'elle n'impose aucun moment fixe.
+- `GAP-TYPE-I-CRITICAL-TRACE-PERSISTENCE` devient actif, avant horloge,
+  mildness et rigidité ancienne faible-`L3`.

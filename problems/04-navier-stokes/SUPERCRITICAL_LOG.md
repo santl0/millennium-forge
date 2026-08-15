@@ -988,3 +988,29 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   inégalité d'énergie limite, trace non nulle ou dérenormalisation ancienne.
 - Pivot : `GAP-TYPE-I-LOCAL-COMPACTNESS-TRACE`, puis
   `GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY`.
+
+## 2026-08-15 — Énergie locale récupérée, trace critique perdue
+
+- Objet : suites classiques de l'équation renormalisée sur `R3`, sous borne
+  `L-infinity_tL^(3,infinity)_x`, pression de Riesz et force localement
+  évanescente.
+- Gain PDE : la norme critique donne localement vitesse `L2` et pression
+  `L^(4/3)`; le test d'énergie absorbe le cubique et le flux de pression puis
+  le remplissage des trous fournit `L2_tH1_x` uniformément.
+- Compacité : Simon donne forte `L2`; l'énergie parabolique donne une borne
+  `L^(10/3)` et donc forte `L3`, suffisante pour le produit et l'énergie
+  locale.
+- Pression : la partie de Riesz proche converge fortement; la queue
+  harmonique reste faible-étoile mais spatialement lisse. Aucune localisation
+  abusive de l'opérateur non local n'est faite.
+- Perte critique : `C_n=nV(n dot)` conserve `K_3`, tend vers zéro dans tous
+  les espaces sous-critiques et contre chaque test fixe, tandis que son
+  enstrophie diverge. Son résidu d'échelle `n^3` montre pourquoi la PDE est
+  indispensable à l'énergie, sans réparer la trace.
+- Couche terminale : une solution forcée périodique exacte a volume `L2`
+  tendant vers zéro et trace constante; une force petite seulement dans
+  `L1_tH^-1_x` est insuffisante.
+- Résultat : compacité adaptée locale fermée, transmission automatique de la
+  trace réfutée.
+- Pivot : `GAP-TYPE-I-CRITICAL-TRACE-PERSISTENCE`, puis dérenormalisation et
+  `GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY`.

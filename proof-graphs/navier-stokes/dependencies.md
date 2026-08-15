@@ -897,3 +897,40 @@ force locale ->0
 L'arête vers zéro est spatiale et locale. Elle ne porte aucune dérivée
 temporelle et ne peut pas être remplacée par une convergence dans le `X`
 global, explicitement fausse pour `kappa!=0`.
+
+## Cycle 0045 — arête de compacité adaptée
+
+```text
+NS-TYPE-I-OUTER-CUTOFF-LOCAL-FORCE-ESCAPE
+  + borne uniforme K_3(Z_j)
+  + jauge de Riesz Pi_j=R_iR_j(Z_j tensor Z_j)
+  --> vitesse L2_loc, pression L4/3_loc
+  --> Caccioppoli + hole-filling
+  --> grad Z_j dans L2_loc
+      [COMPUTATION_ONLY, revue contradictoire]
+
+grad Z_j dans L2_loc
+  + partial_s Z_j dans W^(-2,4/3)_loc
+  --> forte L2_loc par Simon
+  + borne L10/3_loc
+  --> forte L3_loc
+  --> Z_j tensor Z_j fort L3/2_loc
+  --> inégalité d'énergie locale avec pression proche/harmonique
+  --> NS-TYPE-I-WEAK-L3-LOCAL-SUITABLE-COMPACTNESS
+
+C_tH^-1_loc + forte espace-temps
+  -/-> norme terminale non nulle
+      [FAIL-NS-0081]
+
+NS-TYPE-I-WEAK-L3-PARABOLIC-CORE-CAPTURE
+  -?-> moment signé contre un test fixe
+      [GAP-TYPE-I-CRITICAL-TRACE-PERSISTENCE]
+  -?-> limite ancienne renormalisée non triviale
+  -?-> dérenormalisation mild
+  -?-> GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY
+  -?-> problème Clay.
+```
+
+La compacité intérieure, le produit et l'admissibilité sont fermés sous les
+hypothèses du claim. La nouvelle arête manquante est linéaire et terminale :
+elle doit empêcher concentration, oscillation ou fuite contre tout test fixe.

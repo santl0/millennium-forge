@@ -206,10 +206,30 @@
   rationnelles.
 - [x] Construire le contre-profil global
   `F_L=L^-3B_0(dot/L)+kappa L^-1A(dot/L)` et suivre sa norme quotient.
-- [ ] Écrire un ledger Aubin–Lions local avec espaces exacts pour
+- [x] Écrire un ledger Aubin–Lions local avec espaces exacts pour
   `partial_sigma Z_j`, pression, force et produit quadratique.
-- [ ] Construire ou exclure une concentration temporelle qui préserve les
+- [x] Construire ou exclure une concentration temporelle qui préserve les
   bornes spatiales disponibles mais empêche la compacité forte locale.
 - [ ] Transporter la capture du core vers une trace non triviale de la limite.
 - [ ] Dérenormaliser l'équation à drift avec l'horloge exacte avant toute
   application d'un théorème sur les solutions anciennes.
+
+### Cycle 0045
+
+- [x] Fermer une Caccioppoli locale uniforme par pression `L^(4/3)`,
+  Gagliardo–Nirenberg, Young et remplissage des trous.
+- [x] Appliquer Simon avec les espaces exacts et obtenir forte `L2_loc`, puis
+  forte `L3_loc` par interpolation sous `L^(10/3)`.
+- [x] Passer le produit quadratique, la pression proche/harmonique et
+  l'inégalité d'énergie locale de l'équation renormalisée.
+- [x] Certifier 401 assertions exactes sur oscillation, couche terminale et
+  concentration critique compacte.
+- [x] Réfuter la transmission automatique d'une norme terminale par la
+  compacité volumique (`FAIL-NS-0081`).
+- [ ] Déduire de la capture Type I un moment fixe
+  `|<Z_j(0),psi>|>=c_*`, ou construire une cascade PDE-compatible qui
+  l'interdit.
+- [ ] Tester quantitativement la condition de persistance de singularité
+  d'Albritton–Barker A.5 sur la suite réelle.
+- [ ] Dérenormaliser seulement après obtention d'une trace non nulle et
+  conserver séparé le cas Type II.

@@ -380,3 +380,18 @@ Le verrou actif devient `GAP-TYPE-I-LOCAL-COMPACTNESS-TRACE` : compacité
 forte locale, passage de l'énergie et trace non triviale sur une diagonale
 `L_j->infinity`, `L_jR_j->0`. La dérenormalisation puis la rigidité ancienne
 faible-`L3` restent séparées; aucun résultat Clay n'est obtenu.
+
+Le cycle 0045 ferme la partie compacité de ce verrou. La borne faible-`L3`,
+la pression de Riesz locale `L^(4/3)` et l'équation lisse permettent un test
+de Caccioppoli avec absorption puis remplissage des trous. On obtient
+uniformément `L-infinity_tL2_x,loc inter L2_tH1_x,loc`. Simon et
+l'interpolation parabolique donnent forte `L3_loc`; le produit et
+l'inégalité d'énergie locale passent après décomposition de la pression en
+partie proche et harmonique.
+
+La limite est faible adaptée pour l'équation renormalisée non forcée, mais
+sa trace peut encore être nulle. `FAIL-NS-0081` sépare compacité volumique et
+trace critique. Le verrou actif devient
+`GAP-TYPE-I-CRITICAL-TRACE-PERSISTENCE` : construire un moment signé contre
+un test fixe, ou une compacité forte de trace, avant toute dérenormalisation
+et rigidité ancienne. Le corpus compte 188 sources.

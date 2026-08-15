@@ -531,3 +531,28 @@ caractère qualitatif `C_c^infinity->C_c^infinity` ne suffirait pas.
 `FAIL-NS-0080` exclut une convergence dans le `X` global quand
 `kappa!=0`. Le résultat positif du cycle est strictement local en espace et
 ne comporte aucune dérivée temporelle.
+
+## Priorité active après le cycle 0045
+
+1. **`GAP-TYPE-I-CRITICAL-TRACE-PERSISTENCE`.** Déduire de la capture Type I
+   un test fixe `psi` et `c_*>0` tels que
+   `|<Z_j(0),psi>|>=c_*`, ou une topologie de trace assez forte pour
+   conserver une minoration non signée.
+2. **Test adverse PDE-compatible.** Construire ou exclure une cascade de
+   solutions qui conserve `K_3` à la tranche, respecte la force
+   `C^infinity_x,loc->0` uniforme en temps, mais annule chaque observable
+   fixe. Les profils purement fonctionnels ne suffisent plus.
+3. **Persistance publiée.** Tester si la condition d'explosion persistante de
+   la proposition A.5 d'Albritton–Barker peut être dérivée du premier temps
+   singulier et de la normalisation actuelle, avec pression endpoint suivie.
+4. **Horloge.** Une fois la trace non nulle obtenue, dérenormaliser
+   `+kappa D` sur tout `(-infinity,0]` avant d'appliquer une rigidité standard.
+5. **`GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY`.** Ne devient actif qu'après
+   non-trivialité, dérenormalisation et identification de la classe adaptée
+   ou mild.
+6. **Type II.** Reste séparé : aucune constante de capture ni `kappa(M)`
+   n'est uniforme pour `M_j->infinity`.
+
+`FAIL-NS-0081` réfute la transmission automatique d'une norme terminale par
+la seule compacité volumique. Le produit et l'énergie locale sont désormais
+fermés; la trace, pas la compacité intérieure, est le premier verrou.

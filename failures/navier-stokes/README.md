@@ -1677,3 +1677,30 @@ claim éventuellement supersédé.
   tirée de la seule taille critique.
 - Statut : borne globale uniforme sous `L->infinity` `REFUTED`; pivot vers
   compacité locale et contrôle de trace.
+
+## `FAIL-NS-0081` — Compacité volumique prise pour persistance de trace
+
+- Date : 2026-08-15.
+- Cible : déduire d'une convergence forte locale espace-temps, jointe à une
+  minoration faible-`L3` ou `L2` sur la tranche terminale, que la limite a une
+  trace non nulle.
+- Contre-profil critique : `C_n(x)=nV(nx)` conserve exactement `K_3`, tend
+  fortement vers zéro dans tout `L^p`, `p<3`, et dans `W^(-1,q)`, tandis que
+  chaque moment contre une fonction test fixe tend vers zéro.
+- Contre-profil temporel : le cisaillement forcé
+  `(1+n²t)_+sin(nx_1)e_2` tend vers zéro dans `L2` espace-temps mais garde une
+  trace `L2²=1/2`; sa force peut même tendre vers zéro dans `L1_tH^-1_x`.
+- Premier quantificateur faux : la compacité de Simon dans le volume ou dans
+  `C_tH^-1_x` ne donne pas de compacité forte `C_tL2_x`. Une norme non signée
+  à une tranche n'impose aucun observable linéaire fixe.
+- Réparation minimale : exhiber `psi` fixe et `c_*>0` tels que
+  `|<Z_j(0),psi>|>=c_*`, ou obtenir une compacité forte des traces par une
+  estimation supplémentaire.
+- Certificat : 401 assertions rationnelles exactes; empreinte
+  `100bb5ee2be5cddd2c3ea6b22b4ef23ddd52464d57ad53e9567548ed367ef25b`.
+- Portée : les profils ne satisfont pas la topologie forte de résidu PDE du
+  cycle; le profil compact a un résidu principal `n^3`. Ils réfutent le
+  raccourci fonctionnel, pas la compacité adaptée démontrée ni le problème
+  Clay.
+- Statut : transmission automatique d'une norme terminale `REFUTED`; pivot
+  vers `GAP-TYPE-I-CRITICAL-TRACE-PERSISTENCE`.

@@ -1817,3 +1817,39 @@ La diagonale admissible doit satisfaire simultanément `L_j->infinity` et
 `L_jR_j->0`. Le prochain lemme ne porte plus sur la taille instantanée de la
 force, mais sur la compacité forte locale, l'inégalité d'énergie et la
 non-trivialité de la trace.
+
+## Cycle 0045 — compacité adaptée fermée, trace ouverte
+
+```text
+borne Type I faible-L3
+  + pression globale de Riesz faible-L3/2
+  + force F_j->0 dans C-infinity_x,loc uniformément en temps
+  + solutions tronquées lisses
+  --> Caccioppoli + absorption + remplissage des trous
+  --> L-infinity_tL2_x,loc inter L2_tH1_x,loc
+      [dérivation interne]
+
+énergie locale + dérivée W^(-2,4/3)
+  --> Simon: forte L2_loc
+  --> interpolation: forte L3_loc
+  --> produit fort L3/2_loc, aucun défaut de Reynolds
+  --> pression proche + harmonique
+  --> solution faible adaptée renormalisée non forcée
+      [NS-TYPE-I-WEAK-L3-LOCAL-SUITABLE-COMPACTNESS]
+
+forte espace-temps + C_tH^-1_loc
+  -/-> trace critique non nulle
+      [FAIL-NS-0081]
+
+capture Type I non signée
+  -?-> moment fixe |<Z_j(0),psi>|>=c_*
+      [GAP-TYPE-I-CRITICAL-TRACE-PERSISTENCE]
+  -?-> dérenormalisation ancienne non triviale
+  -?-> GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY
+  -?-> régularité Clay.
+```
+
+Les arêtes énergie–compacité–produit sont internes et revues
+contradictoirement; Simon, Albritton–Barker et Barker–Seregin–Šverák sont les
+ingrédients publiés voisins. L'arête de trace demeure manquante et ne peut
+être remplacée par une simple semi-continuité de norme.

@@ -1146,3 +1146,37 @@ Les points 3–5 possèdent un certificat rationnel de 253 assertions. Leur
 formalisation certifierait une estimation de noyau et un contre-scaling, pas
 la compacité d'une suite de solutions, l'inégalité d'énergie locale, une
 trace terminale ou un résultat Clay.
+
+## Backlog issu du cycle 0045 — énergie locale et porte de trace
+
+Le noyau stable est à formaliser avant toute tentative sur une solution
+ancienne complète :
+
+1. formaliser l'inclusion de mesure finie
+   `L^(3,infinity)(E)->L2(E)` avec constante `sqrt(3)|E|^(1/6)`;
+2. enregistrer la bornitude papier des Riesz
+   `L^(3/2,infinity)->L^(3/2,infinity)` et l'inclusion locale vers `L^(4/3)`;
+3. vérifier l'identité du drift
+   `Z dot (Z+y dot nabla Z)=div(y|Z|²/2)-|Z|²/2` en dimension trois;
+4. formaliser les estimations de Gagliardo–Nirenberg conduisant à
+   l'absorption de `||Z||_3³` et `||Pi Z||_1`;
+5. isoler un lemme abstrait de remplissage des trous avec toutes les
+   puissances de `(rho-r)^-1` et aucune dépendance de la borne extérieure;
+6. encoder les inclusions
+   `L2 compact->H^-1->W^(-2,4/3)` et
+   `H1 compact->L2->W^(-2,4/3)` comme interfaces de Simon;
+7. formaliser l'interpolation : convergence forte `L2` plus borne
+   `L^(10/3)` implique convergence forte `Lq` pour tout `q<10/3`;
+8. séparer dans le type de pression la partie de Riesz proche et la partie
+   harmonique, sans déclarer la pression complète fortement compacte;
+9. formaliser le lemme de trace élémentaire : convergence dans `H^-1` et
+   minoration d'un moment contre un test fixe impliquent une limite non nulle;
+10. conserver comme contre-objets les scalings exacts de `C_n=nV(n dot)` et
+    de la couche terminale forcée.
+
+Les points 1, 3, 7, 9 et 10 sont les premières cibles élémentaires. Simon,
+Calderón–Zygmund et le passage complet de l'inégalité d'énergie restent des
+interfaces papier tant qu'aucune bibliothèque épinglée n'en porte les
+versions requises. Leur compilation ne certifierait ni l'existence d'un
+moment fixe issu de Barker–Prange, ni la dérenormalisation, ni un résultat
+Clay.
