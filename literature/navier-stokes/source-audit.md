@@ -1223,3 +1223,29 @@ servent d'ingrédients et de contrôles, pas de substitution à la dérivation.
 Aucune source nouvelle n'est ajoutée; le corpus reste à 188. Le claim du
 cycle est `COMPUTATION_ONLY`. Il préserve une non-trivialité intégrée, pas la
 singularité de l'endpoint, la mildness, Type II ou un résultat Clay.
+
+## Audit ciblé du cycle 0047 — ancienne adaptée contre rigidités publiées
+
+- Albritton–Barker (`0189`, JMFM 2019) est distinct de leur article JDE 2020
+  (`0187`). Son théorème 1.1 équivaut un point Type I suitable à une ancienne
+  **mild bornée** non triviale avec quantité Type I finie; son théorème 1.2
+  annule une ancienne mild sous borne `L3` forte le long d'une suite
+  `t_k->-infinity`.
+- KNSS (`0015`) distingue anciennes faibles bornées et anciennes mild : les
+  pressions affines parasites illustrent que l'équation locale ne suffit pas
+  à la mildness.
+- Barker–Seregin–Šverák (`0188`) fournit une stabilité endpoint dans une
+  classe forward scindée en flot calorique et correcteur énergétique. Cette
+  scission fait partie des hypothèses, elle n'est pas la seule borne
+  `L-infinity_tL^(3,infinity)_x`.
+- La branche réelle du cycle ajoute un ledger faible-étoile global : le
+  produit converge dans `L^(3/2,infinity)` et la covariance des Riesz fixe la
+  pression après dérenormalisation. Cette étape est interne et n'implique pas
+  Duhamel.
+- La veille primaire 2025–2026 ne fournit aucune rigidité générale pour une
+  ancienne 3D suitable locale à pression de Riesz seulement bornée dans
+  faible-`L3`.
+
+Le corpus atteint 189 sources. La conjugaison et la composition des lemmes
+restent `AI_INTERNAL_DERIVATION`; aucune source ne reçoit le statut de preuve
+du claim du cycle.

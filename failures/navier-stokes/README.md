@@ -1737,3 +1737,27 @@ claim éventuellement supersédé.
   rigidité ancienne, ne traite pas Type II et ne résout pas le problème Clay.
 - Statut : nécessité d'un moment signé au temps terminal initial `REFUTED`
   dans la branche Type I persistante; pivot vers l'horloge inverse.
+
+## `FAIL-NS-0083` — Faible-`L3` adapté pris pour Leray–Hopf ou mild
+
+- Date : 2026-08-15.
+- Cible : promouvoir automatiquement une ancienne suitable locale,
+  uniformément `L^(3,infinity)` et à pression de Riesz, en solution
+  Leray–Hopf globale ou mild/scindée.
+- Obstruction énergétique : un champ solénoïdal lisse près de l'origine et
+  égal à `(a cross x)/|x|²` à l'infini appartient à
+  `L^(3,infinity)(R3)` mais pas à `L2(R3)`. Il réfute l'inclusion
+  fonctionnelle requise pour Leray–Hopf.
+- Obstruction mild : la formulation distributionnelle et l'inégalité locale
+  n'imposent pas la forte continuité du semi-groupe sur tout faible-`L3`, ni
+  l'annulation d'un reste calorique homogène à un temps de redémarrage.
+- Pression : la jauge globale de Riesz élimine le parasite affine de pression
+  dans la branche réelle, mais ne construit pas la formule de Duhamel.
+- Source de frontière : Albritton–Barker (`0189`) exige mildness et
+  bornitude, ou mildness et `L3` fort le long d'une suite reculée; ces clauses
+  ne découlent pas du claim 0047.
+- Portée : le témoin `|x|^-1` est cinématique, pas une solution ancienne. Il
+  réfute Leray–Hopf comme implication fonctionnelle automatique, pas
+  l'éventuelle promotion PDE vers une classe mild/scindée.
+- Statut : promotion automatique `REFUTED`; le raccord PDE reste
+  `GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY-OR-MILDNESS`.

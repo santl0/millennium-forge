@@ -1205,3 +1205,22 @@ Les points 1–8 sont indépendants de Calderón–Zygmund et de Simon. Le théo
 Barker–Prange et le claim de compacité restent des interfaces papier. Leur
 composition formelle certifierait une limite renormalisée non triviale, pas
 sa dérenormalisation, sa mildness, sa rigidité ni un résultat Clay.
+
+## Backlog issu du cycle 0047 — conjugaison du drift
+
+1. formaliser `r_s=-kappa r`, `tau_s=r²` et la bijection des demi-droites;
+2. formaliser les identités de chaîne pour `Z=r v(x_0+ry,tau)`;
+3. vérifier les puissances communes `r³` de l'équation et `r²` de la
+   divergence;
+4. formaliser `dx d tau=r^5dy ds` et le pullback `r²phi` des tests faibles;
+5. prouver en dimension trois
+   `kappa div(yE)-kappa E=kappa(2E+y dot nabla E)`;
+6. formaliser `L_Z=r^4L_v` et le pullback positif `r phi` des tests d'énergie;
+7. formaliser l'invariance de la fonction de distribution faible-`L3`;
+8. encoder séparément les contre-exposants du certificat et le témoin
+   `L^(3,infinity)` non inclus dans `L2`.
+
+Les points 1–7 sont stables et élémentaires. La continuité faible-étoile des
+Riesz, la suitability issue de compacité et toute mildness restent des
+interfaces papier. Compiler ce noyau certifierait la conjugaison, pas le
+claim conditionnel complet ni Clay.

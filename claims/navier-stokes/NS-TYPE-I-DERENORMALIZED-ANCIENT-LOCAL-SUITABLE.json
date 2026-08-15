@@ -1,0 +1,60 @@
+{
+  "id": "NS-TYPE-I-DERENORMALIZED-ANCIENT-LOCAL-SUITABLE",
+  "problem": "navier-stokes",
+  "statement": "Soit Z une limite ancienne renormalisee non triviale sur R3 x (-infinity,0], faible adaptee locale, uniformement bornee dans L-infinity_s L^(3,infinity)_y, avec pression globale Pi=R_aR_b(Z_aZ_b), et satisfaisant partial_s Z-Delta Z+div(Z tensor Z)+nabla Pi+kappa(1+y dot nabla)Z=0 pour kappa>0. Alors r=exp(-kappa s), tau=(1-r^2)/(2kappa), x=x_0+ry, v=r^(-1)Z et q=r^(-2)Pi definissent une solution ancienne standard non triviale, faible adaptee locale, uniformement bornee dans L-infinity_tau L^(3,infinity)_x, avec q=R_aR_b(v_av_b), sur R3 x (-infinity,0]. Cette transformation ne donne pas automatiquement une solution de Leray-Hopf, local-energy avec trace forte, mild, bornee ou singuliere au temps zero.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "domaine R3 sans frontiere, viscosite un, aucune force; kappa>0",
+    "Z est distributionnelle, divergence nulle et faible adaptee locale pour l'equation renormalisee avec drift +kappa(1+y dot nabla)",
+    "Z appartient a L-infinity_s L^(3,infinity)_y au sens essentiel et n'est pas identiquement nulle",
+    "la pression est heritee dans la jauge globale Pi=R_aR_b(Z_aZ_b) par extraction faible-etoile globale du produit",
+    "le domaine temporel renormalise est exactement (-infinity,0]"
+  ],
+  "dependencies": [
+    "NS-TYPE-I-WEAK-L3-LOCAL-SUITABLE-COMPACTNESS",
+    "NS-TYPE-I-PERSISTENT-CAPTURE-SPACETIME-NONTRIVIALITY"
+  ],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0015, NS-SRC-0187, NS-SRC-0188 et NS-SRC-0189; dictionnaire des classes anciennes, suitable, weak-L3 et mild, sans theoreme couvrant la sortie du claim"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0047-derenormalized-ancient-class.md; equation, pression globale, energie locale, domaine et classe exacte",
+      "sha256": "86ea8dd35ed309238ae153d5eecc2bee48ac4141a30d8d8384288895cefb84b1"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0047-analysis.md; revue contradictoire distributionnelle, pression, energie et classes",
+      "sha256": "6b1320f6e44a34bbf25e1378d5e47ccfcd79f2600e911c55d72154e313ba1c89"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0047-literature.md; audit des rigidites et veille primaire 2025-2026",
+      "sha256": "c4cb26834beb6e66eedb9018ef5d9295902487c79d7563f75b48b9070f46ab48"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0047-countermodel.md; mauvais signes, exposants, horloge, energie et frontieres de classe",
+      "sha256": "b63e96b783343dc7baf0b2af04dac8e515e51e27a7ebea9083f223a4050686da"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/derenormalization/derenormalization_audit.py; 420 assertions rationnelles sur horloge, PDE, divergence, jacobien, energie locale et residus adverses",
+      "sha256": "dcb59c2a926846be15d2f088ffbd4484b8b2838ce24c6a2e721d5f1404872050"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0047-derenormalized-ancient-class"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Derivation principale, audit analytique, audit bibliographique et certificat adverse separes; aucune revue humaine externe",
+    "notes": "Le statut reste COMPUTATION_ONLY. Le changement de variables est exact et la pression globale est identifiee dans la branche reelle, mais la composition est une derivation IA conditionnelle au blow-up Type I. Aucune energie globale, mildness, bornitude, singularite terminale, rigidite faible-L3, Type II ou conclusion Clay n'est obtenue."
+  }
+}

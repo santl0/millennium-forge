@@ -2065,3 +2065,29 @@ cellule reste donc `NOT_PROVIDED`.
 - Limites : le certificat ne prouve ni le théorème de capture publié, ni la
   compacité PDE du cycle 0045. Il certifie leur maillon fonctionnel et les
   deux identités d'échelle, pas une simulation ni un résultat Clay.
+
+## `DERENORMALIZATION-1` — drift, pression et énergie locale
+
+- Question falsifiable : la transformation proposée annule-t-elle exactement
+  `+kappa(1+y dot nabla)Z` tout en conservant divergence, suitability locale
+  et quantité critique, ou laisse-t-elle un résidu d'échelle ?
+- Équations réellement calculées : identité de chaîne pour Navier–Stokes
+  incompressible renormalisé et opérateur distributionnel d'énergie locale;
+  aucune intégration temporelle de la PDE.
+- Transformation : `r=e^(-kappa s)`, `tau=(1-r²)/(2kappa)`, `x=ry`,
+  `v=r^-1Z`, `q=r^-2Pi`.
+- Résultat : `N_standard=r^-3N_renormalise`,
+  `div_xv=r^-2div_yZ`, `dx d tau=r^5dy ds` et
+  `L_standard=r^-4L_renormalise`. Le test d'énergie se relève avec le poids
+  positif `r`.
+- Tests adverses : mauvais signe d'échelle `-2kappa r^-3DZ`, mauvais signe
+  du drift `+2kappa r^-3DZ`, horloge gelée `r²-1`, amplitude ou pression
+  erronée avec coefficients non nuls.
+- Discrétisation et précision : aucune; `fractions.Fraction`, bibliothèque
+  standard, déterministe, aucune graine, erreur d'arrondi nulle.
+- Commande :
+  `python -B experiments/navier-stokes/derenormalization/derenormalization_audit.py`.
+- Résidu certifié : 420 assertions exactes, zéro échec. Empreinte :
+  `dcb59c2a926846be15d2f088ffbd4484b8b2838ce24c6a2e721d5f1404872050`.
+- Limites : certificat algébrique, pas simulation, CAP continuum, preuve de
+  mildness, rigidité ancienne ou résultat Clay.
