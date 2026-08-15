@@ -552,3 +552,18 @@ exacte montre toutefois que `min beta_n->infinity` ne contrôle pas
 orbite non axisymétrique avec variation inverse divergente. Le registre passe
 à 97 claims; le verrou devient
 `GAP-TYPE-I-FAST-ROTATION-STROBOSCOPIC-OR-RSS-RIGIDITY`.
+
+Le cycle 0058 exploite une information PDE déjà disponible mais non utilisée
+au cycle précédent : `partial_sZ_n` est uniformément borné dans un dual de
+Bochner complet local. L'identité modulée se divise alors presque partout et
+donne `mathcal RZ_n->0` dès que le défaut est borné dans le même espace et
+que `ess inf|beta_n|->infinity`, sans `BV(1/beta_n)`.
+
+L'audit contradictoire sépare axisymétrie et stationnarité : une solution
+axisymétrique non stationnaire répétée avec `beta_n=n` satisfait toutes les
+bornes de collapse mais conserve `partial_sZ!=0`. La condition minimale est
+`mathcal A r_n->0`. Le certificat exact compte 586 assertions. Deux sources
+primaires sur la compacité/dérivée et le passage suitable portent le corpus à
+219; le registre atteint 98 claims, dont le lemme 0057 marqué `SUPERSEDED`.
+Le verrou actif est
+`GAP-TYPE-I-CANONICAL-PHASE-DEFECT-BOUND-OR-RSS-RIGIDITY`.

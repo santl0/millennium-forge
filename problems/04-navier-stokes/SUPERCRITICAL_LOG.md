@@ -1300,3 +1300,28 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   `Var(1/beta_n)` pour une phase sélectionnée près d'un stabilisateur.
 - Pivot : stroboscopie PDE ou rigidité RSS dans
   `GAP-TYPE-I-FAST-ROTATION-STROBOSCOPIC-OR-RSS-RIGIDITY`.
+
+## 2026-08-15 — rotation rapide et division dans un dual de Bochner
+
+- Objet : suite renormalisée sur `R3`, axe centré fixe, viscosité un,
+  vitesse mesurable divergente et défaut modulé borné localement.
+- Gain : le ledger PDE borne `partial_sZ_n` dans
+  `L-infinity_tW^(-2,4/3)_loc`; avec `r_n` borné dans le même dual,
+  `||mathcal RZ_n||<=b_n^(-1)(C_dot+C_r)` sans aucune variation inverse.
+- Échelle : `beta_n` est sans dimension en temps similaire; la norme locale
+  négative n'est pas critique et la constante dépend du rayon et de la
+  fenêtre. Pour une force physique redimensionnée, le facteur homogène est
+  `lambda^(-5/4)`.
+- Pression : la borne vectorielle complète utilise la jauge globale de
+  Riesz; le dual solénoïdal seul peut laisser une ambiguïté de gradient
+  harmonique locale.
+- Perte : l'axisymétrie ne donne pas la stationnarité. La quantité exacte
+  manquante est `mathcal A r_n`, moyenne de Haar du défaut.
+- Contre-profils : la stroboscopie a une dérivée de norme `N^2`; une vraie
+  solution axisymétrique non stationnaire réfute la stationnarité depuis un
+  défaut seulement borné; le stabilisateur rend `beta_n` non identifiable.
+- Résidu : 586 assertions rationnelles exactes, zéro échec; aucun calcul PDE
+  ni arrondi, empreinte
+  `ad8474fa672697a9239a2d8567d122c631818021c6ebc3065695652d3ef7a8a5`.
+- Pivot : construire une phase canonique et borner son défaut près de la
+  dégénérescence de Gram; sinon rigidité RSS faible-`L3` intermédiaire.

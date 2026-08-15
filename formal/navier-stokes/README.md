@@ -1460,3 +1460,25 @@ Le noyau stable comporte les lemmes suivants :
 Le passage du stress, la pression de Riesz, suitability, capture et le
 Liouville de Guevara--Phuc restent des interfaces papier. Aucun projet Lean,
 Isabelle ou Coq n'est modifié dans ce cycle.
+
+## Backlog issu du cycle 0058 — division de Bochner et moyenne du défaut
+
+Le noyau stable remplace la dépendance à l'inverse absolument continu :
+
+1. formaliser, pour un Banach `X`, la multiplication par une fonction
+   mesurable `1/beta` dans `L^p(J;X)` avec norme opérateur
+   `1/ess inf_J|beta|`;
+2. déduire de `beta RZ=partial_sZ-r` le majorant commun en `L^p`, y compris
+   les facteurs exacts de `|J|` lorsque les exposants temporels diffèrent;
+3. encoder le générateur d'une action SO(2), sa continuité distributionnelle
+   et `mathcal A mathcal R=0` pour la moyenne de Haar;
+4. distinguer formellement les deux conclusions
+   `mathcal RZ=0` et `partial_sZ=0`, la seconde utilisant précisément
+   `mathcal A r_n->0`;
+5. formaliser le contre-modèle abstrait où `mathcal RZ=0` mais
+   `partial_sZ=r!=0`, et conserver la stroboscopie comme violation de la
+   borne séparée sur `partial_sZ`.
+
+Les bornes PDE dans `W^(-2,4/3)`, la pression de Riesz, suitability, capture
+et le Liouville de Guevara--Phuc restent des interfaces papier. Aucun projet
+Lean, Isabelle ou Coq n'est modifié dans ce cycle.

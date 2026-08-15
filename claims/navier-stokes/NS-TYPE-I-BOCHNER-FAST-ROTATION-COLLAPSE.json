@@ -1,0 +1,73 @@
+{
+  "id": "NS-TYPE-I-BOCHNER-FAST-ROTATION-COLLAPSE",
+  "problem": "navier-stokes",
+  "statement": "Soient kappa>0 et Z_n des solutions renormalisees divergence-free sur R3 x I, de viscosite un, pour une rotation SO(2) centree autour d'un axe fixe. Sur chaque fenetre compacte et boule centree, supposons partial_s Z_n et r_n=partial_s Z_n-beta_n mathcal R Z_n uniformement bornes dans le meme espace de Bochner L1_s W^(-2,4/3)_y, beta_n mesurable et ess inf |beta_n| tendant vers l'infini, et Z_n convergeant dans les distributions. Alors mathcal R Z=0 sans regularite ni variation de 1/beta_n. Si de plus la moyenne de Haar mathcal A r_n tend vers zero dans les distributions, alors Z est stationnaire. Avec le ledger suitable, pression de Riesz, borne globale faible-L3 et capture persistante, Guevara--Phuc donne une contradiction. Aucune conclusion Clay generale ne suit, car la modulation et la borne de son defaut ne sont pas produites par un blow-up arbitraire.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "domaine R3 sans frontiere, viscosite un, coefficient de drift renormalise kappa>0; la force de cutoff est uniformement bornee localement et tend vers zero dans le pipeline, l'equation limite et le probleme Clay sont non forces",
+    "action SO(2) centree autour d'un axe fixe commun; mathcal R est son generateur et la conclusion autorise le swirl",
+    "pour chaque J compactement inclus dans I et R fini, partial_s Z_n et r_n sont representes dans L1(J;W^(-2,4/3)(B_R)) avec des normes uniformes",
+    "beta_n est mesurable et b_(n,J)=ess inf_J |beta_n| tend vers infinity; aucun signe, W1,1 ou controle BV du reciproque n'est requis",
+    "Z_n converge vers Z dans les distributions; la forte L3_loc du pipeline est reservee au stress quadratique, a suitability et a la capture",
+    "la stationnarite exige mathcal A r_n vers zero dans les distributions; la seule bornitude de r_n ne suffit pas",
+    "l'endgame exige le ledger suitable uniforme, la pression globale normalisee par Riesz, une borne globale L-infinity_s L^(3,infinity)_y et une capture L3 sur un cylindre centre commun"
+  ],
+  "dependencies": [
+    "NS-TYPE-I-WEAK-L3-LOCAL-SUITABLE-COMPACTNESS",
+    "NS-TYPE-I-PERSISTENT-CAPTURE-SPACETIME-NONTRIVIALITY",
+    "NS-TYPE-I-DERENORMALIZED-ANCIENT-LOCAL-SUITABLE",
+    "NS-BACKWARD-SELFSIMILAR-WEAK-L3-LIOUVILLE"
+  ],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0058-bochner-fast-rotation-collapse.md; division presque partout dans un dual de Bochner commun, moyenne de Haar et raccord conditionnel",
+      "sha256": "704097367f6e503d7d0d8b7cd6682541924855e576282877f9585e7c910617e8"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0058-analysis.md; audit des espaces, constantes temporelles, pression, suitability, capture et contre-exemple PDE a la stationnarite",
+      "sha256": "353777524a2a040096594c5065f2baf7200416f83a7a9db23d5e1a1030abb155"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0058-literature.md; audit primaire Simon, Berselli--Fagioli--Spirito, Albritton--Barker et non-transferts Coriolis",
+      "sha256": "e6a47dd5289a2dfd2599ea3712302833aff687edc71a68d6935296170258f660"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0058-countermodel.md; stroboscopie, compensations et stabilisateur en arithmetique exacte",
+      "sha256": "b10660ece092929c1fbe8e62f61d0872257e4beea9616b997834eec70c35f784"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/bochner-fast-rotation/bochner_rotation_audit.py; 586 assertions rationnelles exactes",
+      "sha256": "ad8474fa672697a9239a2d8567d122c631818021c6ebc3065695652d3ef7a8a5"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0203; Guevara--Phuc, SIAM Journal on Mathematical Analysis 50 (2018), rigidite du profil stationnaire de Leray dans W1,2_loc inter L^(3,infinity)"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0218; Simon, Annali di Matematica Pura ed Applicata 146, corollaire 4 de compacite Bochner, sans creation de la borne de derivee"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0219; Berselli--Fagioli--Spirito, J. Math. Pures Appl. 125 (2019), ledger discret de derivee negative, pression, compacite et suitability"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0058-bochner-fast-rotation-collapse"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Derivation principale, audit analytique, veille primaire et contre-modeles exacts separes; aucune revue humaine externe",
+    "notes": "Le statut reste COMPUTATION_ONLY. Le collapse axisymetrique est une implication fonctionnelle exacte sous bornes de Bochner communes. La stationnarite depuis un residu seulement borne est refutee par FAIL-NS-0094 et requiert mathcal A r_n vers zero. La production d'une phase canonique, de son defaut uniforme, le cas Type II, les axes mobiles et la rigidite RSS intermediaire restent ouverts."
+  },
+  "supersedes": "NS-TYPE-I-ADIABATIC-FAST-ROTATION-COLLAPSE"
+}

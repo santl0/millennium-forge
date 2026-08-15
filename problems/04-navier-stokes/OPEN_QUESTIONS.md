@@ -871,3 +871,28 @@ passage à faible fois faible ou à une modulation non uniformément bornée.
 `NS-TYPE-I-ADIABATIC-FAST-ROTATION-COLLAPSE` ferme le régime adiabatique.
 `FAIL-NS-0093` interdit d'inférer l'axisymétrie de la seule grandeur de la
 vitesse de phase.
+
+## Priorité active après le cycle 0058
+
+1. **`GAP-TYPE-I-CANONICAL-PHASE-DEFECT-BOUND-OR-RSS-RIGIDITY`.** La
+   variation de `1/beta_n` n'est plus le verrou. Il faut produire depuis le
+   champ une phase canonique dont
+   `r_n=partial_sZ_n-beta_n mathcal RZ_n` reste uniformément borné dans le
+   même `L1_tW^(-2,4/3)_loc` que la dérivée PDE.
+2. **Moyenne du défaut.** Pour obtenir un profil stationnaire, contrôler
+   exactement `mathcal A r_n->0`; la bornitude de `r_n` ne suffit pas.
+3. **Dégénérescence de Gram.** Quantifier la sélection de phase lorsque
+   `mathcal RZ_n->0`, sans diviser par une norme susceptible de s'annuler et
+   sans rendre `beta_n` artificiellement grand.
+4. **Pression et localisation.** Garder une jauge globale de Riesz ou suivre
+   explicitement le gradient harmonique; toutes les constantes restent
+   locales en rayon et fenêtre.
+5. **RSS intermédiaire.** Si trois sélections canoniques distinctes échouent
+   à borner le défaut, pivoter vers la rigidité des profils RSS faibles-`L3`
+   pour vitesses d'ordre un.
+6. **Portée.** Le nouveau lemme ne produit ni la modulation, ni Type I depuis
+   une singularité générale, et ne traite pas Type II.
+
+`NS-TYPE-I-BOCHNER-FAST-ROTATION-COLLAPSE` remplace le lemme BV dans le
+pipeline PDE. `FAIL-NS-0094` interdit de confondre axisymétrie et
+stationnarité lorsque seule la norme du défaut est bornée.

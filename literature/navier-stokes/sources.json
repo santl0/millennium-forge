@@ -4480,6 +4480,46 @@
       "reproduction": {"status": "primary_html_audited_not_reproved"},
       "verification": {"level": "primary_full_text", "checked_on": "2026-08-15", "notes": "HTML editeur, equation (1.1), theoremes 1.1-1.2, date de publication et DOI controles; le PDF editeur n'a pas ete compte comme verifie."},
       "tags": ["stationary_Liouville", "head_pressure", "recent_2026", "nontransfer"]
+    },
+    {
+      "id": "NS-SRC-0218",
+      "title": "Compact Sets in the Space L^p(0,T;B)",
+      "authors": ["Jacques Simon"],
+      "year": 1986,
+      "source_type": "journal_article",
+      "publication_status": "published",
+      "venue": "Annali di Matematica Pura ed Applicata 146, 65-96",
+      "identifiers": {"doi": "10.1007/BF01762360", "url": "https://doi.org/10.1007/BF01762360"},
+      "equation": {"model": "theoreme abstrait de compacite", "dimension": "sans objet", "domain": "intervalle temporel et triplet d'espaces de Banach", "boundary": "sans objet", "forcing": "sans objet", "viscosity": "sans objet"},
+      "solution_notions": ["familles bornees dans des espaces de Bochner"],
+      "result": "Le corollaire 4 donne notamment la compacite forte dans L^p_t B sous X compactement inclus dans B inclus dans Y, borne L^p_t X et derivee bornee dans L1_t Y; il donne aussi une branche de compacite continue avec borne temporelle plus forte.",
+      "hypotheses": ["X compactement inclus dans B et B continument inclus dans Y", "bornes de Bochner et de derivee exactes du corollaire 4"],
+      "constants_uniformity": "Theoreme fonctionnel qualitatif; les constantes d'application aux cylindres Navier-Stokes dependent des domaines et des plongements choisis.",
+      "clay_relevance": "Justifie le maillon de compacite temporelle locale utilise dans le pipeline, mais ne produit ni borne de derivee, ni pression, ni suitability, ni rotation de profil.",
+      "limitations": ["aucune equation PDE", "aucune pression", "aucun passage de l'inegalite d'energie locale", "aucune conclusion Clay"],
+      "reproduction": {"status": "primary_full_text_audited_not_reproved"},
+      "verification": {"level": "primary_full_text", "checked_on": "2026-08-15", "notes": "Corollaire 4 controle dans le texte integral au cycle 0058; metadonnees bibliographiques de l'article publie controlees."},
+      "tags": ["Aubin_Lions_Simon", "Bochner", "time_derivative", "compactness"]
+    },
+    {
+      "id": "NS-SRC-0219",
+      "title": "Suitable weak solutions of the Navier-Stokes equations constructed by a space-time numerical discretization",
+      "authors": ["Luigi C. Berselli", "Simone Fagioli", "Stefano Spirito"],
+      "year": 2019,
+      "source_type": "journal_article",
+      "publication_status": "published",
+      "venue": "Journal de Mathematiques Pures et Appliquees 125, 189-208",
+      "identifiers": {"doi": "10.1016/j.matpur.2018.09.004", "arxiv": "1710.01579v2", "url": "https://arxiv.org/abs/1710.01579"},
+      "equation": {"model": "Navier-Stokes incompressible", "dimension": "3", "domain": "T3", "boundary": "periodique", "forcing": "nulle dans le corps principal; extension indiquee dans la remarque 1.2", "viscosity": "1"},
+      "solution_notions": ["approximations theta-elements finis", "solution faible adaptee limite"],
+      "result": "La proposition 4.4 suit des bornes uniformes d'energie, pression et derivee negative pour le schema; le theoreme 1.1 extrait une limite forte L2 et etablit separement la convenabilite.",
+      "hypotheses": ["donnee initiale divergence-free H1", "1/2<theta<=1", "familles d'elements finis satisfaisant les proprietes de commutation et stabilite de l'article"],
+      "constants_uniformity": "Bornes uniformes en h et Delta t dans la discretisation structuree; aucune uniformite pour une suite arbitraire de solutions suitable ou une penalisation beta mathcal R.",
+      "clay_relevance": "Exemple primaire reproductible du ledger derivee negative, pression, compacite forte et passage suitable; ne transfere pas au probleme Clay sans production analytique de ce paquet pour la suite de blow-up.",
+      "limitations": ["suite discrete structuree", "domaine periodique", "aucun generateur de rotation de profil", "aucun grand coefficient beta", "pas de resolution Clay"],
+      "reproduction": {"status": "primary_full_text_audited_not_rerun"},
+      "verification": {"level": "primary_full_text", "checked_on": "2026-08-15", "notes": "Theoreme 1.1 et proposition 4.4 controles dans le texte integral au cycle 0058; DOI et arXiv v2 controles."},
+      "tags": ["suitable_weak_solution", "finite_elements", "time_derivative", "pressure", "compactness"]
     }
   ],
   "watchlist": [
@@ -4591,7 +4631,8 @@
     "local_pressure_and_projection": ["NS-SRC-0181", "NS-SRC-0182", "NS-SRC-0186"],
     "outer_cutoff_and_far_field_pressure": ["NS-SRC-0069", "NS-SRC-0181", "NS-SRC-0182", "NS-SRC-0186"],
     "weak_L3_local_compactness_and_trace": ["NS-SRC-0146", "NS-SRC-0187", "NS-SRC-0188", "NS-SRC-0192"],
-    "forced_blowup_and_force_scaling": ["NS-SRC-0032", "NS-SRC-0033", "NS-SRC-0057", "NS-SRC-0175", "NS-SRC-0184"]
+    "forced_blowup_and_force_scaling": ["NS-SRC-0032", "NS-SRC-0033", "NS-SRC-0057", "NS-SRC-0175", "NS-SRC-0184"],
+    "bochner_compactness_and_time_derivatives": ["NS-SRC-0187", "NS-SRC-0218", "NS-SRC-0219"]
   },
   "unverified_zones": [
     "Le domaine et la plage d'exposants exacts des articles historiques Prodi et Ladyzhenskaya doivent être réextraits des originaux avant création d'un claim formel.",

@@ -463,3 +463,22 @@
 - [ ] Auditer le raccord exact « limite suitable axisymétrique faible-`L3`
   -> ancienne classique » avant d'utiliser Ożański--Palasek sans
   stationnarité.
+
+### Cycle 0058
+
+- [x] Extraire du ledger PDE une borne vectorielle complète de
+  `partial_sZ_n` dans `L-infinity_tW^(-2,4/3)_loc`, pression incluse.
+- [x] Prouver la division de Bochner avec constante exacte
+  `(C_dot+C_r)/ess inf|beta_n|`, sans signe ni variation du réciproque.
+- [x] Distinguer l'axisymétrie de la stationnarité et isoler la condition
+  minimale `mathcal A r_n->0`.
+- [x] Réfuter la stationnarité depuis résidu borné par une solution PDE
+  axisymétrique locale non stationnaire.
+- [x] Certifier stroboscopie, compensations et stabilisateur par 586
+  assertions rationnelles exactes.
+- [ ] Construire une première condition de phase canonique depuis `Z_n` et
+  calculer son défaut dans `L1_tW^(-2,4/3)_loc`.
+- [ ] Suivre la matrice de Gram jusqu'à sa dégénérescence, sans diviser par
+  `||mathcal RZ_n||` près du stabilisateur.
+- [ ] Si trois choix de phase distincts échouent, documenter l'obstacle et
+  pivoter vers la rigidité RSS faible-`L3` à rotation intermédiaire.

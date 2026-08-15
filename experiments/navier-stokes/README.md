@@ -2359,3 +2359,30 @@ cellule reste donc `NOT_PROVIDED`.
 - Limites : aucune vitesse NS tridimensionnelle, pressure ou suitability;
   le certificat sépare les quantificateurs, sans prouver une stroboscopie
   compatible avec Navier--Stokes ni un résultat Clay.
+
+## `BOCHNER-FAST-ROTATION-AUDIT-1` — division, stroboscopie et compensations
+
+- Question falsifiable : des bornes séparées de `partial_sZ_n` et du défaut
+  dans un même espace de Bochner, avec `ess inf|beta_n|->infinity`,
+  suffisent-elles à forcer `mathcal RZ_n->0`, et quelles suppressions de ces
+  bornes rendent l'implication fausse ?
+- Équations réellement calculées : identité abstraite
+  `beta RZ=partial_sZ-r`, quadrature rationnelle pondérée, orbites périodiques
+  et suites scalaires de compensation; aucune PDE n'est intégrée.
+- Discrétisation : grilles rationnelles finies et arithmétique `Fraction`;
+  aucune graine, aucun flottant.
+- Cas positif : le majorant `L1` est vérifié point par point et sur toutes les
+  grilles pondérées testées.
+- Cas adverses : la stroboscopie converge fortement dans tout `L^p` fini mais
+  a `||partial_sZ_N||_L1=N^2`; deux compensations séparent différence bornée,
+  termes séparément bornés et contrôle seulement relatif à `beta`; le
+  stabilisateur `RZ=0` rend `beta` non identifiable.
+- Résolution et convergence : 586 assertions rationnelles exactes; le cœur
+  est une identité fermée, le balayage vérifie les quantificateurs finis.
+- Résidu et précision : zéro échec, SHA-256
+  `ad8474fa672697a9239a2d8567d122c631818021c6ebc3065695652d3ef7a8a5`.
+- Commande :
+  `python -B experiments/navier-stokes/bochner-fast-rotation/bochner_rotation_audit.py`.
+- Environnement : Python standard, sans dépendance externe ni aléa.
+- Limites : aucune vitesse 3D, pression, divergence ou solution NS n'est
+  calculée; le certificat valide et attaque un lemme fonctionnel uniquement.

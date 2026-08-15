@@ -1536,3 +1536,31 @@ primaire complète conserve équations, domaines, notions de solution,
 quantificateurs, empreintes disponibles et non-transferts. Le lemme du cycle
 reste `COMPUTATION_ONLY` : la veille différentielle est bornée et la preuve
 cinématique est une dérivation du laboratoire.
+
+## Audit ciblé du cycle 0058 — dérivée de Bochner et rotation de profil
+
+- Aucun théorème primaire identifié n'assemble le paquet exact
+  `beta_n mathcal RZ_n=partial_sZ_n-r_n`,
+  `ess inf|beta_n|->infinity`, bornes dans un dual de Bochner complet,
+  passage suitable, stationnarité et contradiction de blow-up.
+- Simon (`0218`, *Annali di Matematica Pura ed Applicata* 146, DOI
+  `10.1007/BF01762360`) fournit la compacité fonctionnelle à partir des
+  bornes de Bochner; il ne crée ni la dérivée, ni la pression, ni suitability.
+- Berselli--Fagioli--Spirito (`0219`, *J. Math. Pures Appl.* 125, DOI
+  `10.1016/j.matpur.2018.09.004`) suivent, pour un schéma périodique
+  structuré, énergie, pression, dérivée négative, compacité forte et passage
+  séparé de l'inégalité locale d'énergie. Leur suite discrète ne porte aucun
+  grand générateur de rotation.
+- Albritton--Barker (`0187`) reste la source publiée de compacité locale
+  suitable avec pression sous bornes fortes `L3/L^(3/2)`; elle ne produit pas
+  ces bornes depuis le seul endpoint faible-`L3`.
+- Les travaux Coriolis (`0211`, `0212`) sélectionnent le noyau d'un opérateur
+  projeté différent. Ils ne donnent généralement pas une borne uniforme de
+  la dérivée non filtrée, et leur noyau n'est pas `ker(mathcal R)`.
+- Une estimation seulement contre des tests solénoïdaux peut laisser un
+  gradient harmonique local. La conclusion vectorielle exige la pression
+  complète ou une condition globale éliminant ce gradient.
+
+Deux sources publiées non redondantes sont ajoutées : le corpus atteint 219
+entrées. Le lemme reste `COMPUTATION_ONLY`; la veille d'absence est bornée et
+ne prouve pas l'inexistence absolue d'un résultat équivalent.

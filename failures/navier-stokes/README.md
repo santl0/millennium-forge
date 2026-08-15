@@ -2025,3 +2025,33 @@ claim éventuellement supersédé.
   l'inférence cinématique, pas une coercivité PDE encore à découvrir.
 - Statut : grandeur de vitesse seule `REFUTED`; continuer avec
   `GAP-TYPE-I-FAST-ROTATION-STROBOSCOPIC-OR-RSS-RIGIDITY`.
+
+### Raffinement du cycle 0058
+
+La stroboscopie reste un contre-exemple valide à une implication purement
+cinématique sans borne temporelle PDE. Elle n'est pas compatible avec le
+ledger du cycle 0045 : pour `Z_N=Q_(theta_N)U` et `r_N=0`,
+`||partial_sZ_N||_(L1X)=N^2||mathcal RU||_X`. Ainsi la variation inverse
+n'est plus nécessaire dans le pipeline Bochner, mais l'échec historique
+n'est ni supprimé ni réinterprété comme solution Navier--Stokes.
+
+## `FAIL-NS-0094` — résidu borné pris pour stationnarité
+
+- Date : 2026-08-15.
+- Cible : inférer `partial_sZ=0` de `mathcal RZ=0`, de l'autonomie de
+  Navier--Stokes et de la seule bornitude de
+  `r_n=partial_sZ_n-beta_n mathcal RZ_n`.
+- Contre-exemple PDE local : prendre une solution renormalisée lisse,
+  axisymétrique et non stationnaire sur une fenêtre compacte, poser
+  `Z_n=Z`, `beta_n=n`. Alors `mathcal RZ_n=0`,
+  `r_n=partial_sZ` est uniformément borné dans les espaces locaux de
+  Bochner, et même `Var(1/beta_n)=0`, mais `partial_sZ!=0`.
+- Identité décisive : la moyenne de Haar donne exactement
+  `partial_s mathcal AZ_n=mathcal A r_n`; borné n'implique pas nul.
+- Réparation minimale : exiger `mathcal A r_n->0` dans `D'`; la condition
+  plus forte `r_n->0` suffit.
+- Portée : le contre-exemple utilise une vraie solution locale de l'équation
+  renormalisée, mais ne construit ni blow-up, ni singularité Clay, ni
+  solution ancienne globale.
+- Statut : stationnarité depuis résidu borné `REFUTED`; poursuivre par une
+  sélection de phase contrôlant à la fois le défaut et sa composante moyenne.

@@ -1827,3 +1827,33 @@ exacte à vitesses positives `N` et `N^4` a `||q_N||_infinity=1/N`, mais
 fortement vers un profil non axisymétrique. Ce modèle n'est pas une solution
 Navier--Stokes. Le registre passe à 97 claims. Le verrou devient
 `GAP-TYPE-I-FAST-ROTATION-STROBOSCOPIC-OR-RSS-RIGIDITY`.
+
+## Mise à jour 2026-08-15 — cycle 0058, collapse par dérivée de Bochner
+
+Le ledger PDE du cycle 0045 fournit sur chaque cylindre fixé une borne
+uniforme de `partial_s Z_n` dans
+`L-infinity_s W^(-2,4/3)_y`. Si le défaut
+`r_n=partial_s Z_n-beta_n mathcal R Z_n` est borné dans le même dual en
+`L1_s` et si `ess inf |beta_n|->infinity`, la division presque partout donne
+
+```text
+||mathcal R Z_n||_(L1 W^(-2,4/3))
+ <=(||partial_sZ_n||+||r_n||)/ess inf|beta_n| ->0.
+```
+
+La vitesse peut être seulement mesurable : aucune dérivée ni variation de
+`1/beta_n` n'est utilisée. Toute limite distributionnelle est donc exactement
+axisymétrique, swirl permis. La stroboscopie du cycle 0057 reste valide comme
+contre-modèle cinématique, mais viole précisément le ledger PDE puisque sa
+norme `L1` de dérivée croît comme `N^2`.
+
+La bornitude du défaut ne rend toutefois pas la limite stationnaire. Une
+solution renormalisée axisymétrique lisse non stationnaire, répétée avec
+`beta_n=n`, donne `r_n=partial_sZ`. La condition correcte est
+`mathcal A r_n->0`, où `mathcal A` est la moyenne de Haar; elle entraîne
+`partial_sZ=0`. Sous le reste du ledger suitable, la pression de Riesz, la
+borne faible-`L3` et la capture, Guevara--Phuc ferme alors l'endgame.
+
+Le registre atteint 98 claims; le lemme adiabatique du cycle 0057 est
+conservé mais marqué `SUPERSEDED`. Le verrou actif devient
+`GAP-TYPE-I-CANONICAL-PHASE-DEFECT-BOUND-OR-RSS-RIGIDITY`.

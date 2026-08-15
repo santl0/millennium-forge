@@ -2313,3 +2313,47 @@ contrôle PDE de Var(1/beta_n)
 Le collapse est cinématique jusqu'au passage stationnaire de l'équation.
 La rigidité finale est publiée, mais la condition BV inverse et la norme
 forte du défaut ne sont pas produites par une singularité générale.
+
+## Cycle 0058 — collapse Bochner sans variation inverse
+
+```text
+équation renormalisée + ledger faible-L3/pression/force local
+  --> partial_s Z_n borné dans L-infinity_t W^(-2,4/3)_loc
+      [cycle 0045; dérivation PDE avec pression de Riesz]
+
+r_n=partial_sZ_n-beta_n mathcal RZ_n borné dans L1 du même dual
+  + ess inf_J|beta_n|->infinity
+  --> ||mathcal RZ_n||_(L1 W^(-2,4/3))
+      <=(C_dot+C_r)/ess inf_J|beta_n| ->0
+  --> mathcal RZ=0
+      [NS-TYPE-I-BOCHNER-FAST-ROTATION-COLLAPSE]
+
+mathcal A r_n->0 dans D'
+  --> partial_s mathcal A Z=0
+  + mathcal AZ=Z
+  --> Z stationnaire
+
+ledger suitable + pression Riesz + faible-L3 + capture
+  --> profil stationnaire non nul
+  --> U=0 [Guevara--Phuc; SOURCE_VERIFIED]
+  --> contradiction
+
+r_n seulement borné
+  -/-> stationnarité
+      [FAIL-NS-0094; solution PDE axisymétrique non stationnaire]
+
+stroboscopie du cycle 0057
+  -/-> ledger PDE uniforme
+      [||partial_sZ_N||_L1=N^2||mathcal RU||]
+
+singularité Type I générale
+  -?-> phase canonique + défaut uniformément borné + mathcal A r_n->0
+  -?-> GAP-TYPE-I-CANONICAL-PHASE-DEFECT-BOUND-OR-RSS-RIGIDITY
+  -?-> régularité Clay.
+```
+
+L'arête de division est locale, exacte et ne perd que
+`1/ess inf|beta_n|`. Elle ne requiert aucune compacité forte; celle-ci reste
+nécessaire pour fermer le stress, transmettre suitability et conserver la
+capture. La norme négative n'est pas critique et ses constantes ne sont pas
+uniformes lorsque le rayon tend vers l'infini.

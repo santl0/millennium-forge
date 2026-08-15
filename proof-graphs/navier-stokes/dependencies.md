@@ -1385,3 +1385,40 @@ L'arête de collapse est interne et quantitative. La rigidité stationnaire
 est publiée; la production des hypothèses de phase depuis la dynamique Type I
 reste une arête manquante. Les résultats de rotation physique avec Coriolis
 ne raccordent pas cette action de profil en temps similaire.
+
+## Cycle 0058 — dérivée PDE et division de Bochner
+
+```text
+NS-TYPE-I-WEAK-L3-LOCAL-SUITABLE-COMPACTNESS
+  + jauge de Riesz + cutoff local uniforme
+  --> partial_sZ_n borné dans L-infinity W^(-2,4/3)_loc
+
+partial_sZ_n et r_n bornés dans un même L1_tX_R
+  + b_(n,J)=ess inf_J|beta_n|->infinity
+  --> mathcal RZ_n->0 dans L1_tX_R
+  --> mathcal RZ=0 dans D'
+      [NS-TYPE-I-BOCHNER-FAST-ROTATION-COLLAPSE]
+
+mathcal A r_n->0
+  --> partial_s mathcal AZ=0
+  + mathcal AZ=Z
+  --> profil stationnaire
+  + NS-BACKWARD-SELFSIMILAR-WEAK-L3-LIOUVILLE
+  + NS-TYPE-I-PERSISTENT-CAPTURE-SPACETIME-NONTRIVIALITY
+  --> contradiction
+
+r_n borné
+  -/-> mathcal A r_n->0
+  -/-> stationnarité
+      [FAIL-NS-0094]
+
+profil Type I général
+  -?-> phase canonique et défaut Bochner uniforme
+  -?-> annulation de la composante moyenne du défaut
+  -?-> GAP-TYPE-I-CANONICAL-PHASE-DEFECT-BOUND-OR-RSS-RIGIDITY
+  -?-> régularité Clay.
+```
+
+`NS-TYPE-I-ADIABATIC-FAST-ROTATION-COLLAPSE` reste historiquement vrai mais
+est `SUPERSEDED` : sa variation inverse est une perte du test temporel mobile,
+pas une hypothèse nécessaire lorsque le ledger de Bochner est exploité.

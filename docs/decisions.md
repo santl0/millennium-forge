@@ -733,3 +733,23 @@
 - La prochaine action cherche une estimation PDE de
   `Var(1/beta_n)` pour une condition de phase canonique, avec matrice de Gram
   et dégénérescence suivies.
+
+### 2026-08-15 — remplacer la variation inverse par le ledger de Bochner
+
+- Trois actions ont été notées : dérivée de Bochner issue de la PDE `20/20`,
+  phase canonique par condition de Gram `17/20`, rigidité RSS extrême puis
+  intermédiaire `14/20`.
+- La première est sélectionnée. L'identité modulée est divisée comme égalité
+  presque partout dans `L1_tW^(-2,4/3)_loc`; aucune intégration par parties
+  temporelle et aucune dérivée de `1/beta_n` ne subsistent.
+- La pression est conservée dans la jauge de Riesz afin d'obtenir un dual
+  vectoriel complet. Un dual seulement solénoïdal peut laisser un gradient
+  harmonique local.
+- La conclusion positive est seulement `mathcal RZ=0`. La stationnarité
+  requiert séparément `mathcal A r_n->0`; la version depuis résidu borné est
+  abandonnée et enregistrée comme `FAIL-NS-0094`.
+- Le claim du cycle 0057 est conservé mais marqué `SUPERSEDED`; le nouveau
+  claim reste `COMPUTATION_ONLY`, sans promotion rhétorique.
+- La prochaine expérience construit une phase depuis le champ total et suit
+  son défaut jusqu'à la dégénérescence de la matrice de Gram. Après trois
+  sélections distinctes en échec, pivot vers la rigidité RSS intermédiaire.
