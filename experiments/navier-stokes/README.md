@@ -2280,3 +2280,27 @@ cellule reste donc `NOT_PROVIDED`.
   `d5de9de189ed2f2a2db7887b88aa6530a6fe365388c6db0de99ce2c30814693e`.
 - Limites : contre-modèle Hilbert/Galerkin sur `T3`, pas une ancienne
   suitable sur `R3`, pas un blow-up et pas une preuve Clay.
+
+## `RELATIVE-ROTATION-AUDIT-1` — dichotomie exacte et portes de stabilité
+
+- Question falsifiable : une orbite exacte d'un opérateur autonome
+  équivariant peut-elle tourner à vitesse variable, et la conclusion
+  persiste-t-elle uniformément sous petit résidu ?
+- Équations calculées : action rationnelle SO(2) sur `Q3`, générateur `R`,
+  réduction `beta R U+F(U)=0` pour opérateurs linéaire et polynomial
+  équivariants. Aucun opérateur n'est Navier--Stokes.
+- Discrétisation : aucune. `Fraction`, rotations paramétrées rationnellement,
+  profils et vitesses multi-échelles exacts; graine sans objet.
+- Résultat exact : `R U!=0` force `beta` constante; `R U=0` rend l'orbite
+  stationnaire. Avec résidu `epsilon`, seule
+  `|beta(s)-beta(t)| ||R U||<=2epsilon` subsiste.
+- Passe adverse : opérateur non autonome, générateur dégénéré, profils non
+  compacts et opérateur singulier au noyau montrent séparément quelles
+  constantes manquent à une version approchée.
+- Précision : 960 assertions rationnelles exactes, résidu nul.
+- Commande :
+  `python -B experiments/navier-stokes/relative-rotation/relative_rotation_audit.py`.
+- Empreinte :
+  `c9a2ca834951ea18ac5fca89d06d24cd73601181b99268a50f1749f21c9bb207`.
+- Limites : modèle fini abstrait; aucune pression, projection de Leray,
+  non-linéarité NS, ancienne suitable, singularité ou conclusion Clay.

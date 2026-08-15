@@ -1448,3 +1448,32 @@ pas l'inexistence d'un résultat extérieur au corpus.
 Aucune source n'est ajoutée : le corpus reste à 205 entrées. Le statut de
 `0051` reste `preprint_v2`; le régime intermédiaire et le raccord depuis le
 pipeline Type I demeurent des trous explicites.
+
+## Audit ciblé du cycle 0055 — orbites relatives et vitesse modulée
+
+- Bradshaw--Tsai (`0206`, *Comm. PDE* 2017, DOI
+  `10.1080/03605302.2017.1323922`) est l'antériorité publiée directe. Ils
+  dérivent le repère similaire avec `dot(theta)` variable et la phase
+  logarithmique des RSS depuis la covariance pour tout facteur d'échelle.
+  Leurs constructions sont forward; elles ne donnent pas la réciproque
+  distributionnelle pour une ancienne suitable faible-`L3`.
+- Pineau--Vicol (`0051`, `arXiv:2607.09619v2`) mentionne dans la remarque 1.8
+  une classification voisine des solitons, sous vitesse bornée et pression
+  décroissante. Le statut reste prépublication, la classification est une
+  remarque et les théorèmes RSS demandent une borne Type I ponctuelle.
+- Field (`0207`, *Trans. AMS* 1980) et Krupa (`0208`, *SIAM J. Math. Anal.*
+  1990) fournissent la structure abstraite des flots équivariants, de
+  l'isotropie et des équilibres relatifs. Leurs cadres sont classiques et de
+  dimension finie, sans passage aux solutions faibles Navier--Stokes.
+- Aucun théorème publié identifié ne fournit dans la classe suitable
+  faible-`L3` le relèvement de phase `W^(1,1)_loc`, la constance de vitesse
+  modulo stabilisateur et la rigidité du profil RSS tourné. Cette absence est
+  bornée aux bases, chaînes et textes primaires consignés dans la revue 0055.
+- Les deux trous sont séparés : `(L2)` construire un relèvement AC depuis
+  l'appartenance à l'orbite; `(L1)` annuler le profil RSS faible-`L3`, surtout
+  à rotation intermédiaire. Le lemme interne ferme seulement l'algèbre entre
+  `(L2)` et `(L1)`.
+
+Trois sources sont ajoutées; le corpus atteint 208 entrées. Le rapport
+primaire complet conserve les statuts, équations, quantificateurs et
+empreintes des textes audités.

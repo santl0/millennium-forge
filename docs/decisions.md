@@ -678,3 +678,20 @@
   leurs hypothèses Type I ponctuelles.
 - Le verrou devient
   `GAP-TYPE-I-RENORMALIZED-TANGENTIAL-ACTIVITY-CLASSIFICATION`.
+
+### 2026-08-15 — orbites exactes classifiées, modulation approchée retenue
+
+- Trois actions ont été notées : classification SO(2) exacte `19/20`,
+  observabilité pondérée faible-`L3` `16/20`, flux RSS direct `15/20`.
+- L'action de rotation est centrée à l'origine du drift et la pression est
+  traitée par projection globale; un axe mobile ou une pression seulement
+  locale change l'énoncé.
+- `theta in W^(1,1)_loc` suffit à la règle de chaîne distributionnelle. Si
+  `mathcal R U!=0`, un unique test compact force `theta'=alpha` constant;
+  si `mathcal R U=0`, la phase est une jauge et le champ est stationnaire.
+- Une symétrie discrète du profil ne permet pas de modulation AC; elle ne
+  change que la phase constante modulo le stabilisateur.
+- `FAIL-NS-0091` abandonne toute stabilité uniforme sans borne sur `beta`,
+  compacité des profils et alternative lorsque `mathcal R U` dégénère.
+- Le verrou devient
+  `GAP-TYPE-I-APPROXIMATE-ROTATION-MODULATION-COMPACTNESS`.

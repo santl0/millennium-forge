@@ -1228,3 +1228,25 @@ solution ou précise qu'il s'agit seulement d'un champ test.
 - Pivot : classifier l'activité tangentielle PDE, d'abord par les orbites
   relatives RSS, dans
   `GAP-TYPE-I-RENORMALIZED-TANGENTIAL-ACTIVITY-CLASSIFICATION`.
+
+## 2026-08-15 — vitesse de rotation exacte et dégénérescence modulée
+
+- Objet : solution distributionnelle de l'équation renormalisée autonome
+  sur `R3`, écrite sur une unique orbite SO(2) centrée, avec phase
+  `W^(1,1)_loc`.
+- Échelle : l'angle et `alpha=dtheta/ds` sont sans dimension; rotations,
+  faible-`L3`, capture sur boule centrée et `W1,2_loc` sont invariants.
+- Gain : l'équation se réduit à
+  `theta' mathcal R U+F_kappa(U)=0`; elle force stationnarité si
+  `mathcal R U=0`, sinon une vitesse constante et l'équation RSS.
+- Pression : l'équivariance est formulée avec la projection de Leray globale
+  ou la jauge de Riesz. Une pression locale suitable ne suffit pas seule.
+- Perte : pour un résidu `epsilon`, seule la borne
+  `|beta(s)-beta(t)| ||mathcal R U||<=2epsilon` est disponible. La constante
+  explose près du sous-espace axisymétrique.
+- Contre-tests : non-autonomie, résidu petit, profils non compacts et
+  opérateur discontinu au stabilisateur séparent les hypothèses nécessaires.
+- Résidu : 960 assertions rationnelles exactes, zéro échec, aucune
+  discrétisation PDE.
+- Pivot : compacité des modulations approchées, avec trichotomie vitesse
+  bornée, vitesse non bornée et générateur dégénéré.

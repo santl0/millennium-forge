@@ -508,3 +508,17 @@ La réalisation périodique ne résout pas Navier--Stokes et n'est donc qu'un
 test de logique. Le corpus reste à 205 sources, le registre passe à 94
 claims et le verrou actif devient
 `GAP-TYPE-I-RENORMALIZED-TANGENTIAL-ACTIVITY-CLASSIFICATION`.
+
+Le cycle 0055 ferme la cinématique exacte de ce verrou. Pour une phase
+`W^(1,1)_loc`, toute solution de la forme `Z=Q_theta U` est stationnaire si
+`mathcal R U=0`, ou possède une vitesse constante et satisfait l'équation
+RSS. L'argument est distributionnel, conserve la projection globale et ne
+demande pas de régularité classique du profil.
+
+Sous suitability et faible-`L3`, la branche stationnaire rejoint le
+Liouville publié; la branche tournante ne rejoint Pineau--Vicol v2 qu'avec
+leur borne Type I ponctuelle supplémentaire. `FAIL-NS-0091` montre par 960
+assertions exactes pourquoi la version approchée exige une borne des vitesses
+et un traitement séparé de `mathcal R U->0`. Le corpus atteint 208 sources,
+le registre passe à 95 claims et le verrou devient
+`GAP-TYPE-I-APPROXIMATE-ROTATION-MODULATION-COMPACTNESS`.

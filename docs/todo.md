@@ -403,3 +403,23 @@
   flux calorifié, en séparant calcul de découverte et preuve PDE.
 - [ ] Ne pas présenter l'exclusion RSS exacte comme exclusion des orbites
   apériodiques, Type II ou du problème Clay.
+
+### Cycle 0055
+
+- [x] Vérifier l'équivariance de l'opérateur renormalisé, projection de
+  Leray, pression de Riesz, drift et terme quadratique compris.
+- [x] Prouver distributionnellement la dichotomie orbite stationnaire ou RSS
+  à vitesse constante sous une phase `W^(1,1)_loc`.
+- [x] Traiter séparément stabilisateur continu, stabilisateur discret,
+  rotation centrée et convention de signe.
+- [x] Raccorder sans promotion abusive la branche stationnaire à
+  Guevara--Phuc et la branche RSS extrême à Pineau--Vicol v2.
+- [x] Certifier les limites de la version approchée par 960 assertions
+  rationnelles exactes.
+- [ ] Prouver le passage au profil RSS lorsque `beta_n` est uniformément
+  borné et que le défaut modulé tend vers zéro sur toute boule fixe.
+- [ ] Construire l'alternative compacte lorsque
+  `mathcal R Z_n->0`, sans diviser par une constante angulaire dégénérée.
+- [ ] Tester séparément `|beta_n|->infinity`, moyenne axisymétrique et perte
+  de phase, sans importer les estimations Type I ponctuelles depuis
+  faible-`L3`.

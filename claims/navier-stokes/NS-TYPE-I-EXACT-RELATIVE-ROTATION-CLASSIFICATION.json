@@ -1,0 +1,67 @@
+{
+  "id": "NS-TYPE-I-EXACT-RELATIVE-ROTATION-CLASSIFICATION",
+  "problem": "navier-stokes",
+  "statement": "Soit kappa>0 et Z une solution distributionnelle divergence-free de partial_s Z+F_kappa(Z)=0 sur R3 x I, I intervalle connexe, ou F_kappa(U)=-Delta U+P div(U tensor U)+kappa(1+y dot nabla)U utilise la projection de Leray globale. Fixons les rotations centrees Q_theta U(y)=R_theta U(R_(-theta)y), de generateur mathcal R U=J U-(J y dot nabla)U. Si Z(s)=Q_(theta(s))U avec theta dans W^(1,1)_loc(I) et U dans L^(3,infinity), alors soit mathcal R U=0, Q_theta U=U pour tout theta et Z est stationnaire avec F_kappa(U)=0, soit mathcal R U est non nulle, theta(s)=alpha s+theta_0 avec alpha constant et U satisfait l'equation RSS exacte F_kappa(U)+alpha mathcal R U=0. La classification ne donne ni le relevement de phase depuis une simple appartenance a l'orbite, ni la stabilite sous petit residu, ni la trivialite d'un profil RSS tourne faible-L3, ni une conclusion Clay.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "domaine R3 sans frontiere, viscosite un, force nulle et equation renormalisee autonome de coefficient kappa>0",
+    "I est un intervalle connexe et la rotation SO(2) est autour d'un axe fixe passant par l'origine du drift similaire",
+    "U est divergence-free dans L^(3,infinity)(R3), donc temperee, localement L2 et avec U tensor U localement integrable",
+    "la projection de Leray est globale, ou la pression est fixee dans la jauge de Riesz compatible avec les rotations",
+    "l'ansatz Z(s)=Q_(theta(s))U est exact dans les distributions pour un profil U fixe",
+    "theta appartient a W^(1,1)_loc(I), de sorte que la regle de chaine distributionnelle vaut presque partout",
+    "aucune stabilite quantitative, borne ponctuelle Type I, petitesse ou grandeur de alpha n'est deduite"
+  ],
+  "dependencies": [
+    "NS-TYPE-I-DERENORMALIZED-ANCIENT-LOCAL-SUITABLE",
+    "NS-TYPE-I-RENORMALIZED-GENERATOR-NONVANISHING",
+    "NS-BACKWARD-SELFSIMILAR-WEAK-L3-LIOUVILLE"
+  ],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0055-exact-relative-rotation-classification.md; regle de chaine, equivariance, stabilisateur et dichotomie distributionnelle",
+      "sha256": "30aa9dc7f4b017817e70e0a52f4ea5949b9797c548627564745bef042826aa78"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0055-analysis.md; audit separe de W1,1, de la pression, du centrage, des ensembles exceptionnels et des raccords Liouville",
+      "sha256": "3cf2ed174c3a3d7b8a61c2ce020809f3bf74619ace7f154d65f7b08d54c6f825"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0055-literature.md; NS-SRC-0206 a NS-SRC-0208 et NS-SRC-0051, audit des antecedents publies et prepublies",
+      "sha256": "61230e9ddd52eed2bb3f01a265758c14718d5197fb14a8db9584615ec066d302"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0055-countermodel.md; non-autonomie, petit residu, generateur degenere et vitesses non bornees",
+      "sha256": "db2d7f8f412f8b7f4192afc43484df07e14ef7df104beb5aa39ab0e2bc21b92e"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/relative-rotation/relative_rotation_audit.py; 960 assertions rationnelles exactes",
+      "sha256": "c9a2ca834951ea18ac5fca89d06d24cd73601181b99268a50f1749f21c9bb207"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0203; Guevara--Phuc, SIAM Journal on Mathematical Analysis 50 (2018), theoreme 1.3 pour la branche stationnaire seulement"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0051; Pineau--Vicol, arXiv:2607.09619v2, remarque 1.8 et theoremes RSS sous hypothese Type I plus forte"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0055-exact-relative-rotation"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Derivation principale, audit distributionnel, veille primaire et contre-modeles exacts separes; aucune revue humaine externe",
+    "notes": "Le statut reste COMPUTATION_ONLY malgre l'algebre fermee. Bradshaw--Tsai publie le repere tournant et la phase RSS, Field et Krupa le cadre equivariant abstrait, et Pineau--Vicol v2 mentionne une classification voisine dans une remarque de prepublication. La contribution interne est bornee au passage distributionnel exact sous relevement AC. La stability, le relevement depuis une orbite ensembliste et le Liouville RSS faible-L3 restent ouverts."
+  }
+}

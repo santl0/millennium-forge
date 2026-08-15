@@ -1268,3 +1268,40 @@ compatibilité PDE de l'activité tangentielle
 L'identité exacte décrit une projection radiale calorifiée du résidu, pas
 une norme du générateur. L'arête manquante est désormais angulaire et PDE :
 elle doit exploiter l'équation, la dissipation ou la géométrie du stress.
+
+## Cycle 0055 — orbite SO(2) exacte vers RSS
+
+```text
+NS-TYPE-I-DERENORMALIZED-ANCIENT-LOCAL-SUITABLE
+  + équation renormalisée autonome projetée
+  + ansatz exact Z=Q_theta U, theta in W1,1_loc
+  --> theta' mathcal R U+F_kappa(U)=0
+  --> NS-TYPE-I-EXACT-RELATIVE-ROTATION-CLASSIFICATION
+
+mathcal R U=0
+  + suitability locale
+  --> U in W1,2_loc inter L^(3,infinity)
+  --> NS-BACKWARD-SELFSIMILAR-WEAK-L3-LIOUVILLE
+  --> U=0
+
+mathcal R U!=0
+  --> theta'=alpha constant
+  --> profil RSS exact
+  + borne Type I ponctuelle et rotation extrême
+  --> trivialité [NS-SRC-0051; PREPRINT_CLAIM]
+
+défaut modulé r_n->0
+  + beta_n borné + forte L3_loc + pression compacte
+  -?-> limite RSS
+      [GAP-TYPE-I-APPROXIMATE-ROTATION-MODULATION-COMPACTNESS]
+
+mathcal R U_n->0 ou |beta_n|->infinity
+  -/-> convergence de beta_n par l'algèbre seule
+      [contre-modèles exacts; constante angulaire dégénérée]
+  -?-> profil stationnaire ou moyenne axisymétrique.
+```
+
+L'autonomie et l'équivariance sont exactes sur `R3` pour les rotations
+centrées au point de rescaling. Une phase mesurable, un axe mobile, une
+pression seulement locale ou une RDSS générale ne sont pas des prémisses du
+lemme.

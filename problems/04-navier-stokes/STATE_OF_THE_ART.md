@@ -1715,3 +1715,42 @@ des orbites RSS Type I pour rotation suffisamment petite ou grande, mais
 laisse le régime intermédiaire ouvert et n'obtient pas son hypothèse
 ponctuelle Type I depuis le seul faible-`L3`. Le verrou devient
 `GAP-TYPE-I-RENORMALIZED-TANGENTIAL-ACTIVITY-CLASSIFICATION`.
+
+## Mise à jour 2026-08-15 — cycle 0055, orbites relatives exactes
+
+Pour l'opérateur autonome renormalisé
+
+```text
+F_kappa(U)=-Delta U+P div(U tensor U)+kappa(1+y dot nabla)U,
+```
+
+fixons l'action de rotation centrée
+`Q_theta U(y)=R_theta U(R_(-theta)y)` et son générateur
+`mathcal R U=J U-(J y dot nabla)U`. L'opérateur est exactement équivariant,
+pression de Riesz comprise.
+
+Si une solution distributionnelle a la forme
+`Z(s)=Q_(theta(s))U` avec `theta in W^(1,1)_loc`, alors
+
+```text
+theta'(s) mathcal R U+F_kappa(U)=0 p.p.
+```
+
+Deux branches seulement subsistent. Si `mathcal R U=0`, l'orbite est
+stationnaire et `F_kappa(U)=0`. Sinon, un test compact détectant
+`mathcal R U` force `theta'=alpha` constant presque partout et `U` satisfait
+l'équation RSS exacte. Une symétrie de rotation discrète ne crée aucune
+vitesse variable sous une phase absolument continue.
+
+Avec suitability locale, le profil appartient à `W1,2_loc`. La branche
+stationnaire faible-`L3` est alors annulée par Guevara--Phuc. La branche RSS
+non stationnaire n'est exclue par Pineau--Vicol v2 que sous leur borne Type I
+ponctuelle et pour rotations suffisamment petites ou grandes. Faible-`L3`
+ne fournit pas cette borne, et la rotation intermédiaire reste ouverte.
+
+Le contre-audit exact montre qu'un résidu `epsilon` contrôle seulement
+`|beta(s)-beta(t)| ||mathcal R U||<=2epsilon`. Toute version compacte exige
+donc une borne des vitesses et une alternative quantitative lorsque le
+générateur rotationnel dégénère. Le registre passe à 95 claims, le corpus
+atteint 208 sources et le verrou devient
+`GAP-TYPE-I-APPROXIMATE-ROTATION-MODULATION-COMPACTNESS`.

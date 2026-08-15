@@ -1397,3 +1397,25 @@ Le noyau algébrique stable peut être séparé des mappings PDE :
 La covariance du semi-groupe, les espaces de Lorentz, la projection de
 Leray globale et l'absolue continuité `L2` restent des interfaces papier.
 Aucun projet formel n'est modifié dans ce cycle.
+
+## Backlog issu du cycle 0055 — orbites de groupe exactes
+
+Le noyau abstrait est stable et indépendant de Navier--Stokes :
+
+1. définir une action différentiable d'un groupe à un paramètre `Q_theta` et
+   son générateur `R`;
+2. formaliser l'équivariant autonome `F(Q_theta U)=Q_theta F(U)`;
+3. prouver la règle de chaîne pour une phase absolument continue dans un
+   espace vectoriel topologique ou dans chaque appariement scalaire;
+4. dériver `theta' R U+F(U)=0` et la dichotomie
+   `R U=0` ou `theta'=alpha` presque partout;
+5. formaliser le stabilisateur fini contre continu et l'unicité de la
+   dérivée des relèvements AC;
+6. encoder la borne adverse
+   `|beta(s)-beta(t)| ||R U||<=2epsilon` et sa dégénérescence lorsque
+   `||R U||->0`.
+
+L'équivariance de la projection de Leray, la règle de chaîne dans les
+distributions, la pression de Riesz et le passage suitable vers `W1,2_loc`
+restent des interfaces papier. Aucun projet Lean, Isabelle ou Coq n'est
+modifié dans ce cycle.

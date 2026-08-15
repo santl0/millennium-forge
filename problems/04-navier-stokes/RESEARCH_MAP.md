@@ -2196,3 +2196,41 @@ est fonctionnel et sa réalisation de Galerkin ne résout pas Navier--Stokes.
 Les exclusions RSS de Pineau--Vicol v2 sont une prépublication sur des
 régimes de rotation extrêmes sous borne Type I ponctuelle; elles ne ferment
 ni l'angle général, ni le régime intermédiaire, ni Type II.
+
+## Cycle 0055 — classification des orbites relatives exactes
+
+```text
+équation renormalisée autonome sur R3
+  + action Q_theta centrée à l'origine
+  + équivariance de Delta, D, P et du stress
+  + Z(s)=Q_(theta(s))U, theta AC
+  --> theta' mathcal R U+F_kappa(U)=0
+
+mathcal R U=0
+  --> Q_theta U=U pour tout theta
+  --> profil stationnaire
+  --> U=0 sous W1,2_loc inter L^(3,infinity)
+      [Guevara--Phuc; SOURCE_VERIFIED]
+
+mathcal R U!=0
+  --> theta'=alpha constant p.p.
+  --> équation RSS exacte
+      [NS-TYPE-I-EXACT-RELATIVE-ROTATION-CLASSIFICATION]
+
+RSS + borne Type I ponctuelle + |alpha| petit ou grand
+  --> U=0 [Pineau--Vicol v2; PREPRINT_CLAIM]
+  -/-> rotation intermédiaire
+  -/-> faible-L3 seul
+
+petit défaut modulé
+  -/-> vitesse presque constante sans ||mathcal R U||>=c
+      [960 assertions exactes]
+  -?-> GAP-TYPE-I-APPROXIMATE-ROTATION-MODULATION-COMPACTNESS
+  -?-> rigidité ancienne / problème Clay.
+```
+
+L'arête cinématique exacte est interne et auditée. Les arêtes de Liouville
+stationnaire et RSS extrême ont des statuts distincts, publié et
+prépublication. L'arête manquante porte désormais sur la stabilité de la
+modulation sous compacité suitable, non sur la classification d'une orbite
+exacte déjà donnée.

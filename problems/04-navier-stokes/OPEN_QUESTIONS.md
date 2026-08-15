@@ -791,3 +791,29 @@ contrôle pas encore le flux signé ni l'énergie globale.
 `FAIL-NS-0090` interdit désormais d'inférer la petitesse du générateur depuis
 un flux scalaire instantané ou intégrable sans inégalité angulaire propre à
 Navier--Stokes.
+
+## Priorité active après le cycle 0055
+
+1. **`GAP-TYPE-I-APPROXIMATE-ROTATION-MODULATION-COMPACTNESS`.** Transformer
+   un petit défaut
+   `partial_s Z_n-beta_n mathcal R Z_n` sur toutes les boules en limite RSS
+   ou stationnaire, avec une même sous-suite et le stress quadratique fermé.
+2. **Vitesses bornées.** Prouver d'abord la variante où `beta_n` reste dans
+   un compact : extraction `beta_n->alpha`, forte `L3_loc`, passage de la
+   pression de Riesz et conservation de la capture.
+3. **Générateur dégénéré.** Si `mathcal R Z_n->0`, éviter toute division par
+   sa norme et raccorder directement la limite axisymétrique/stationnaire au
+   Liouville faible-`L3`.
+4. **Vitesses non bornées.** Déterminer si l'équation et les bornes Type I
+   interdisent `|beta_n|->infinity`, ou si une moyenne angulaire compacte
+   remplace la convergence des phases.
+5. **RSS intermédiaire.** Ne réattaquer la rigidité de profil qu'après cette
+   réduction; Pineau--Vicol v2 laisse `|alpha|` d'ordre un ouvert sous sa
+   borne ponctuelle plus forte.
+6. **Critère d'abandon.** Pivoter si les trois régimes `beta_n` borné,
+   non borné et `mathcal R Z_n` dégénéré ne peuvent être séparés par des
+   constantes uniformes issues du paquet suitable.
+
+`NS-TYPE-I-EXACT-RELATIVE-ROTATION-CLASSIFICATION` ferme la vitesse variable
+**exacte**. Il ne fournit aucune stabilité quantitative de cette
+classification.

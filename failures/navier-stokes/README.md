@@ -1947,3 +1947,28 @@ claim éventuellement supersédé.
   découvrir.
 - Statut : raccord direct norme--flux `REFUTED`; continuer avec
   `GAP-TYPE-I-RENORMALIZED-TANGENTIAL-ACTIVITY-CLASSIFICATION`.
+
+## `FAIL-NS-0091` — stabilité d'une orbite relative déduite d'un petit résidu
+
+- Date : 2026-08-15.
+- Cible : promouvoir la dichotomie exacte
+  `beta mathcal R U+F(U)=0` en classification compacte uniforme sans borner
+  `beta` ni séparer le noyau de `mathcal R`.
+- Borne exacte : si deux temps ont des résidus de norme au plus `epsilon`,
+  alors seulement
+  `|beta(s)-beta(t)| ||mathcal R U||<=2epsilon`.
+- Dégénérescence : `U_epsilon=epsilon e1` et `beta=+1,-1` donnent des
+  résidus `epsilon` avec vitesses séparées de deux. Un produit
+  `beta_n mathcal R U_n` peut rester d'ordre un lorsque
+  `|beta_n|->infinity` et `mathcal R U_n->0`.
+- Autres portes : un opérateur équivariant mais non autonome suit toute
+  vitesse variable; des profils non compacts permettent des vitesses exactes
+  non bornées; une discontinuité de `F` au stabilisateur détruit le passage à
+  la limite.
+- Résidu : 960 assertions rationnelles exactes, empreinte
+  `c9a2ca834951ea18ac5fca89d06d24cd73601181b99268a50f1749f21c9bb207`.
+- Portée : modèles abstraits finis, pas l'opérateur Navier--Stokes. Ils
+  réfutent une inférence uniforme sans hypothèses, pas la convergence PDE
+  lorsque compacité, continuité et non-dégénérescence sont démontrées.
+- Statut : version approchée naïve `REFUTED`; continuer avec
+  `GAP-TYPE-I-APPROXIMATE-ROTATION-MODULATION-COMPACTNESS`.
