@@ -57,6 +57,6 @@
   "review": {
     "status": "adversarial_pass",
     "reviewer": "Derivation principale, audit formel, veille primaire et certificat exact separes; aucune revue humaine externe",
-    "notes": "Le statut reste COMPUTATION_ONLY. Le critere convexe est exact pour les reponderations scalaires d'un bloc fini et pointwise dans le temps. Il ne commute pas automatiquement infimum en metrique et infimum essentiel temporel. Les operateurs invariants sur un isotype de multiplicite superieure peuvent modifier meme la vitesse modale. Le contre-mode est hilbertien et ne satisfait aucune PDE; il refute l'intrinsecite fonctionnelle, pas une loi de signe Navier--Stokes encore inconnue."
+    "notes": "Le statut reste COMPUTATION_ONLY. Le critere convexe est exact pour les reponderations scalaires d'un bloc fini et pointwise dans le temps. Il ne commute pas automatiquement infimum en metrique et infimum essentiel temporel. Les operateurs invariants sur un isotype de multiplicite superieure peuvent modifier meme la vitesse modale. Le contre-mode du cycle 0061 est hilbertien. Le cycle 0062 refute en plus une loi de signe universelle instantanee sur des donnees de Schwartz pour le champ vectoriel Navier--Stokes renormalise; seule une contrainte dynamique supplementaire propre aux orbites anciennes Type I reste ouverte."
   }
 }

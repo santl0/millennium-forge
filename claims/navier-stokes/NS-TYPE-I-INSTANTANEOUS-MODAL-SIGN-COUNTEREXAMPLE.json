@@ -1,0 +1,61 @@
+{
+  "id": "NS-TYPE-I-INSTANTANEOUS-MODAL-SIGN-COUNTEREXAMPLE",
+  "problem": "navier-stokes",
+  "statement": "Pour le champ vectoriel renormalise d(Z)=Delta Z-P div(Z tensor Z)-kappa(1+y dot nabla)Z sur R3, la structure instantanee de Navier--Stokes n'impose pas un signe commun aux numerateurs azimutaux C_m=<P_m d(Z),R Z_m>_L2. Un champ divergence-free de Schwartz a modes m=1,2,3 donne exactement (C_1,C_2,C_3)=(-8/9,16/9,-16/3)(pi/3)^(3/2), diffusion et drift projetes nuls. Un second champ a modes m=1,3 donne a kappa=1 (C_1,C_3)=(7/2,-99/2)(pi/2)^(3/2), diffusion et convection projetees nulles. La pression globale de Leray ne contribue pas contre R Z_m, certifie divergence-free. Le resultat refute une coherence de signe universelle instantanee, mais aucune coherence additionnelle propre aux orbites anciennes Type I, a la capture ou a la minimalite.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "le domaine est R3 sans frontiere, la viscosite vaut un, la force exterieure est nulle et kappa est fixe",
+    "les champs sont reels, divergence-free, polynomial--gaussiens de Schwartz et contiennent les isotypes reels SO(2) annonces autour de l'axe e3",
+    "P est la projection de Leray globale L2 et la pression emploie la jauge de Riesz sur R3",
+    "les appariements sont globaux dans L2; aucune suppression locale de la pression n'est revendiquee",
+    "les moments gaussiens et coefficients polynomiaux sont evalues exactement avec Fraction",
+    "le calcul est instantane et ne suppose ni ne construit une solution ancienne suitable, une capture Type I ou un element minimal de blow-up"
+  ],
+  "dependencies": [
+    "NS-TYPE-I-MODAL-METRIC-CONVEX-HULL",
+    "NS-TYPE-I-WEAK-L3-LOCAL-SUITABLE-COMPACTNESS"
+  ],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0062-instantaneous-modal-sign.md; formulation, decomposition, echelle, quantificateurs et decision",
+      "sha256": "3c0ad4c57e358c11e28c70f55a42e5978638c037881ea48eb4ec11d109d78a10"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0062-formal.md; formules modales, Leray, triades, drift, scaling et passe contradictoire",
+      "sha256": "8708260e974bf04bc6d1d58aef6343906131b641776bcb25c74b2555434308d5"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0062-countermodel.md; trois familles polynomial--gaussiennes et portee instantanee",
+      "sha256": "ffc91693057c30bd135c24a09dc0c8b3c3d5b406889743fe969c88e7292833d3"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/instantaneous-modal-sign/instantaneous_modal_sign.py; 1201 assertions rationnelles exactes",
+      "sha256": "41bd221e7408fc1b02a2bc93ee6d08abe61e4e3533ba09eca1dbb5c7d3dedca4"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0225, NS-SRC-0226, NS-SRC-0227, NS-SRC-0221 et NS-SRC-0051; cancellations radiales, moment angulaire, action modale et couplage RSS, sans loi de signe tangentielle"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0062-literature.md; veille primaire 2025-2026, implications et non-transferts",
+      "sha256": "e8b2d7f5d147a62946cbd5df27df15f5b0d9bbe5333af79c701abfbf369da985"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0062-instantaneous-modal-sign"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Derivation formelle et contre-calcul exact conduits separement; veille primaire independante; aucune revue humaine externe",
+    "notes": "La contre-famille triadique isole la convection; la contre-famille tordue isole le drift. Diffusion, Leray et projections sont recalcules. L'exemple est une donnee de Schwartz admissible pour la theorie locale, mais aucun passage vers une orbite ancienne, Type I, suitable ou minimale n'est fourni. Le claim demeure COMPUTATION_ONLY."
+  }
+}
