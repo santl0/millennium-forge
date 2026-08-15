@@ -32,7 +32,7 @@
     {
       "kind": "primary_source",
       "reference": "docs/reports/navier-stokes/reviews/cycle-0059-literature.md; audit des antecedents de freezing, connexion mecanique et methodes de tranches, sans transfert Clay",
-      "sha256": "6af03e1b89053ced57f9379e4454837e27f5fde4fe05234bbbd22d17d354ecc4"
+      "sha256": "d4487a1a72ef7c58b33553f3d95191d6b4db06396f9b7a2e8360265ae5b764fe"
     },
     {
       "kind": "counterexample",

@@ -492,4 +492,3 @@ la pression jauge-fixée donnent un contrôle vérifiable de
 `partial_s A Z_n=A r_n` (où `A` est la moyenne de Haar), ou produire un
 contre-profil PDE compatible avec tout le ledger montrant que ce contrôle est
 impossible sans hypothèse asymptotique supplémentaire.
-
