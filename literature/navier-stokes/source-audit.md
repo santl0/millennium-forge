@@ -1056,3 +1056,30 @@ textes primaires, DOI, versions et usages ciblés ont été contrôlés le
 2026-08-15. Aucun développement 2025–2026 audité ne fournit la capture
 intrinsèque d'une fraction de la norme faible-`L3` à une échelle de
 concentration.
+
+## Audit ciblé du cycle 0041 — concentration Type I faible-`L3`
+
+- Barker–Prange 2020 (`NS-SRC-0146`) est réaudité sur arXiv v2, version
+  auteur acceptée et publication. Le théorème 2 est formulé en `L3`; la
+  phrase suivant la concentration et l'appendice B transportent le mécanisme
+  à `L^(3,infinity)`. Les constantes faibles sont donc notées séparément
+  `gamma_w,S_w^*`.
+- L'hypothèse exacte est une borne uniforme
+  `sup_x sup_(r<r0) sup_(T_*-r^2<t<T_*) r^-1/2||u||_2<=A`. Une borne globale
+  pointwise faible-`L3` l'implique avec
+  `A=sqrt(3)(4pi/3)^(1/6)M`. Pour `r0=infinity`, le temps inférieur est zéro.
+- Barker–Prange 2021 (`NS-SRC-0147`) minore `integral |u|^3` par un logarithme,
+  pas la norme `L3` par ce logarithme. La norme ne reçoit qu'une racine
+  cubique. Les constantes se détériorent fortement avec `M`, notamment
+  `S^sharp(M)=O(M^-100)`.
+- Le profil tronqué `a/|x|` conserve une borne faible-`L3` mais accumule une
+  intégrale cubique logarithmique. C'est un contre-profil fonctionnel interne,
+  non une solution Navier–Stokes.
+- La veille différentielle 2025–2026 n'a trouvé aucun transfert uniforme au
+  Type II ni aucune implication depuis l'énergie Clay. Les sources récentes
+  pertinentes étaient déjà cataloguées sous `0032`, `0034`, `0035`, `0045`,
+  `0048`, `0051` et `0059`; aucun identifiant nouveau n'est créé.
+
+Le corpus reste à 179 sources. Le résultat positif du cycle est une fermeture
+conditionnelle de la capture du numérateur Type I; le calcul de l'évolution
+du cutoff et le cas Type II restent hors des articles audités.

@@ -1885,3 +1885,30 @@ cellule reste donc `NOT_PROVIDED`.
 - Limites : ni l'opérateur de Bogovskiĭ, ni pression, temps, viscosité ou
   résidu PDE ne sont certifiés. Le calcul réfute seulement un gain
   `o_R(1)` fondé sur l'échelle.
+
+## `TYPE-I-CORE-CAPTURE-1` — inclusion Lorentz et contre-paquets exacts
+
+- Question falsifiable : la constante trois de
+  `||f||_2^2<=3K_3(f)^2|E|^(1/3)` est-elle exacte, et une minoration locale
+  absolue implique-t-elle une fraction globale sans borne Type I ?
+- Objet calculé : profils scalaires étagés de distribution, sans équation
+  Navier–Stokes, sans discrétisation spatiale ou temporelle.
+- Arithmétique : `fractions.Fraction`, bibliothèque standard Python; aucune
+  erreur d'arrondi dans les assertions.
+- Environnement : Python `3.13.14`; calcul déterministe, aucune graine
+  aléatoire, aucun fichier de sortie lourd et aucune dépendance tierce.
+- Profils : `q=(m+1)/m`, amplitudes `q^k`, masses télescopiques
+  `q^(-3k)-q^(-3(k+1))`, et masse terminale `q^(-3N)`.
+- Résultat : `K_3=1` exactement et
+  `L2^2=(1+q^-1+q^-2)(1-q^-N)+q^-N<3`. Pour `m=128,N=2048`,
+  `L2^2=2.976804041858`, écart `0.023195958142`.
+- Test adverse : deux paquets constants disjoints de volumes `gamma^3,T^3`
+  donnent une fraction cubée `gamma^3/(gamma^3+T^3)->0`; sous
+  `K_global<=M`, la fraction est au moins `gamma/M`.
+- Commande :
+  `python -B experiments/navier-stokes/type-i-core-capture/type_i_capture_audit.py`.
+- Résidu certifié : `1346` assertions exactes, zéro échec. Empreinte :
+  `8337e0aced23e4bd815f1d759e226a41a8867c4de826932dcf261aa3f051de76`.
+- Limites : le calcul certifie l'interface fonctionnelle seulement; le centre,
+  le rayon et la concentration viennent d'un théorème publié conditionnel.
+  Aucun résidu PDE ou passage au continuum n'est revendiqué.
