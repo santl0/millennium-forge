@@ -618,3 +618,26 @@ de moyenne dans une réduction de symétrie de données scalaires en pipe flow;
 il ne transfère ni `H^-3`, ni pression, ni suitability. Le corpus atteint 224
 sources et le registre 102 claims. Le verrou devient
 `GAP-TYPE-I-INTRINSIC-AXISYMMETRY-DEFECT-OR-MODAL-SIGN-COHERENCE`.
+
+Le cycle 0062 injecte enfin l'opérateur renormalisé complet dans des champs
+3D divergence-free de Schwartz. La diffusion est tangentiellement nulle mode
+par mode; Leray est retiré seulement contre les tangentes globales
+solénoïdales; drift et phases triadiques restent signés.
+
+Une triade exacte `m=1,2,3` donne les numérateurs
+`(-8/9,16/9,-16/3)(pi/3)^(3/2)`. Une seconde famille `m=1,3` isole le drift
+et donne à `kappa=1` `(7/2,-99/2)(pi/2)^(3/2)`. Le certificat compte 1201
+assertions `Fraction` et zéro résidu annoncé. La famille initiale `m=1,2`
+échoue sur 576 orientations avec `C_2=2C_1`; l'échec est conservé.
+
+`FAIL-NS-0098` abandonne donc une cohérence de signe issue de la seule
+structure instantanée. Les données sont admissibles pour la théorie forte
+locale, mais ne constituent ni une orbite ancienne, ni un scénario Type I.
+Le registre atteint 103 claims. Le verrou devient
+`GAP-TYPE-I-DYNAMIC-MODAL-CONE-OR-INTRINSIC-HAAR-DEFECT` : tester la tangence
+d'un cône sous le flot, puis pivoter si cette troisième stratégie modale
+échoue.
+
+Waleffe 1992, Charnyi et al. 2017 et Yeung--Chu--Schmidt 2026 sont ajoutés
+au catalogue : ils séparent cancellation d'énergie, moment angulaire rigide
+et tangente d'orbite. Le corpus atteint 227 sources.

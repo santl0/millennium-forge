@@ -814,3 +814,24 @@
 - La prochaine expérience injecte le champ vectoriel instantané complet de
   Navier--Stokes dans deux modes de Schwartz divergence-free et cherche des
   numérateurs modaux de signes opposés, pression de Leray comprise.
+
+### 2026-08-15 — signe modal instantané réfuté, dynamique isolée
+
+- Trois actions ont été notées : contre-test PDE exact `20/20`, défaut de
+  Haar critique `16/20`, coercivité triadique directe `15/20`.
+- Le test emploie l'opérateur renormalisé complet sur `R3` et des données de
+  Schwartz. La pression n'est retirée que par auto-adjonction globale de
+  Leray contre `mathcal RZ_m`, certifié divergence-free.
+- La diffusion s'annule mode par mode. La covariance sélectionne les triades
+  `k+l=m`, mais ne signe pas leur phase; le drift de similarité est une forme
+  dilatation--rotation sans signe.
+- Une triade `m=1,2,3` donne `(-,+,-)` et une famille de drift `m=1,3`
+  donne `(+,-)`. Les deux mécanismes sont certifiés séparément.
+- La recherche initiale `m=1,2` est conservée comme échec informatif : 576
+  orientations satisfont exactement `C_2=2C_1`.
+- `FAIL-NS-0098` abandonne symétrie, énergie et moment angulaire comme source
+  d'un signe universel instantané. Il ne réfute pas une contrainte propre aux
+  orbites anciennes Type I ou minimales.
+- Le prochain test dérive `dC_m/ds` et attaque l'invariance locale d'un cône
+  modal. Un nouvel échec déclenchera le pivot vers un défaut de Haar critique
+  intrinsèque ou la rigidité RSS faible-`L3` intermédiaire.

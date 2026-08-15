@@ -2147,3 +2147,35 @@ n'est ni supprimé ni réinterprété comme solution Navier--Stokes.
   `GAP-TYPE-I-METRIC-ROBUST-FAST-AXISYMMETRIZATION` comme conséquence
   automatique de la projection. Pivoter vers
   `GAP-TYPE-I-INTRINSIC-AXISYMMETRY-DEFECT-OR-MODAL-SIGN-COHERENCE`.
+
+## `FAIL-NS-0098` — cohérence de signe déduite du champ vectoriel instantané
+
+- Date : 2026-08-15.
+- Cible : obtenir un signe commun des numérateurs
+  `C_m=<P_m d(Z),mathcal RZ_m>_L2` depuis la seule covariance SO(2),
+  l'énergie, le moment angulaire ou la structure instantanée de
+  `d=Delta-P div(Z tensor Z)-kappa(1+y dot nabla)`.
+- Premier échec utile : sur 576 orientations polynomial--gaussiennes à
+  modes `m=1,2`, le calcul exact donne `C_2=2C_1`; cette famille trop pauvre
+  ne rompt pas le signe.
+- Contre-modèle convectif : les modes `m=1,2,3` avec orientations
+  `(-1,-1),(-1,-1),(-1,1)` donnent
+  `C=(-8/9,16/9,-16/3)*(pi/3)^(3/2)`, diffusion et drift projetés nuls.
+- Contre-modèle de drift : les modes `m=1,3` issus de
+  `Re[(x+iy)^m(1+i a|y|²)]`, avec `a=1,-1`, donnent à `kappa=1`
+  `C=(7/2,-99/2)*(pi/2)^(3/2)`, diffusion et convection projetées nulles.
+- Pression : `P` n'est retiré qu'après certification que
+  `mathcal RZ_m` est globalement divergence-free; aucune annulation locale
+  de pression n'est utilisée.
+- Certificat : 1201 assertions `Fraction`, aucune quadrature ni graine;
+  résidus de divergence, isotypie et appariements annoncés exactement nuls;
+  empreinte script
+  `41bd221e7408fc1b02a2bc93ee6d08abe61e4e3533ba09eca1dbb5c7d3dedca4`.
+- Portée : champs de Schwartz admissibles comme données fortes locales, mais
+  aucun prolongement ancien, Type I, suitable, capturé ou minimal. L'échec
+  porte sur une loi universelle instantanée, pas sur une contrainte dynamique
+  encore inconnue du sous-ensemble critique.
+- Décision : abandonner les seules symétries et lois de conservation comme
+  source du signe. Tester une dernière stratégie réellement dynamique par
+  tangence à un cône modal; en cas d'échec, pivoter vers un défaut de Haar
+  critique intrinsèque ou la rigidité RSS intermédiaire.

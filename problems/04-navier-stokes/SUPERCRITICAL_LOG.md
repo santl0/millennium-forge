@@ -1404,3 +1404,30 @@ solution ou précise qu'il s'agit seulement d'un champ test.
 - Pivot : fermer ou réfuter
   `GAP-TYPE-I-INTRINSIC-AXISYMMETRY-DEFECT-OR-MODAL-SIGN-COHERENCE` sur une
   famille divergence-free de Schwartz avec résidu PDE exact.
+
+## 2026-08-15 — numérateurs modaux du champ vectoriel exact
+
+- Objet : `C_m=<P_m d(Z),mathcal RZ_m>_L2` pour
+  `d=Delta Z-P div(Z tensor Z)-kappa(1+y dot nabla)Z` sur des champs de
+  Schwartz divergence-free.
+- Décomposition : diffusion nulle; convection en triades `k+l=m`; drift
+  égal à la forme dilatation--rotation signée. Leray est retiré uniquement
+  dans l'appariement global avec la tangente solénoïdale.
+- Échelle : sous `Z_lambda=lambda Z(lambda y)`, le Gram porte
+  `lambda^-1`, la convection `lambda` et le drift `lambda^-1`. La vitesse
+  convective porte `lambda^2`; la vitesse de drift est invariante.
+- Contre-profil convectif : modes `1,2,3`, coefficients exacts
+  `(-8/9,16/9,-16/3)*(pi/3)^(3/2)`, avec diffusion et drift nuls.
+- Contre-profil de similarité : modes `1,3`, coefficients à `kappa=1`
+  `(7/2,-99/2)*(pi/2)^(3/2)`, avec diffusion et convection nulles.
+- Échec utile : 576 orientations à modes `1,2` satisfont `C_2=2C_1`; une
+  famille sans triade fermée suffisante masque l'obstruction.
+- Résidu : 1201 assertions `Fraction`, aucune quadrature; divergences,
+  isotypes, orthogonalités et appariements annoncés exactement nuls;
+  empreinte
+  `41bd221e7408fc1b02a2bc93ee6d08abe61e4e3533ba09eca1dbb5c7d3dedca4`.
+- Perte : le contre-profil est instantané. Aucune constante uniforme ne le
+  raccorde à une orbite ancienne Type I, une capture ou un élément minimal.
+- Décision : la structure instantanée ne produit pas le signe robuste. Tester
+  l'invariance dynamique d'un cône une dernière fois, puis pivoter vers un
+  défaut de Haar critique intrinsèque ou la rigidité RSS intermédiaire.

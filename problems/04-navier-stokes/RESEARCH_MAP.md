@@ -2498,3 +2498,50 @@ isotype de multiplicité supérieure à un élargissent encore la famille de
 coefficients. La prochaine arête falsifiable est donc PDE : tester le signe
 des numérateurs modaux du champ vectoriel instantané complet, pression de
 Leray comprise.
+
+## Cycle 0062 — champ vectoriel instantané et phases triadiques
+
+```text
+Z divergence-free de Schwartz sur R3
+  + d(Z)=Delta Z-P div(Z tensor Z)-kappa(1+y dot nabla)Z
+  --> C_m=<P_m d(Z),mathcal RZ_m>
+
+commutation Delta--mathcal R + antisymetrie
+  --> C_m^diff=0
+
+mathcal RZ_m divergence-free global
+  --> <P F,mathcal RZ_m>=<F,mathcal RZ_m>
+      [pression de Riesz recalculee; pas de suppression locale]
+
+drift de similarite
+  --> C_m^drift=-kappa m<(y dot nabla)Z_m,J_mZ_m>
+  -/-> signe fixe
+
+convection SO(2)-equivariante
+  --> triades k+l=m
+  -/-> phase imaginaire signee
+
+champ exact m=1,2,3
+  --> C=(-8/9,16/9,-16/3)*(pi/3)^(3/2)
+      [diffusion=drift=0]
+
+champ exact m=1,3 a phase radiale tordue
+  --> C=(7/2,-99/2)*(pi/2)^(3/2) a kappa=1
+      [diffusion=convection=0]
+
+structure instantanee Navier--Stokes
+  -/-> coherence universelle de signe modal
+      [FAIL-NS-0098]
+
+orbite ancienne Type I minimale et capturee
+  -?-> cone modal unilateral dynamiquement invariant
+  -?-> defaut de Haar critique intrinseque
+  -?-> GAP-TYPE-I-DYNAMIC-MODAL-CONE-OR-INTRINSIC-HAAR-DEFECT
+  -?-> axisymetrie puis rigidite ancienne faible-L3
+  -?-> regularite Clay.
+```
+
+Le maillon négatif est exact mais instantané. L'arête manquante ne peut plus
+être une identité algébrique du champ vectoriel : elle doit employer une
+propriété dynamique de l'orbite critique, ou abandonner les vitesses modales
+au profit d'un observable d'axisymétrie indépendant de la métrique.

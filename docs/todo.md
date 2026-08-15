@@ -548,3 +548,27 @@
 - [ ] Si des signes opposés survivent sur une donnée PDE lisse, abandonner la
   cohérence modale universelle et pivoter vers un défaut Haar intrinsèque ou
   la rigidité RSS faible-`L3` intermédiaire.
+
+### Cycle 0062
+
+- [x] Construire des champs polynomial--gaussiens divergence-free contenant
+  au moins deux isotypes azimutaux réels.
+- [x] Décomposer exactement les numérateurs en diffusion, convection, drift
+  et projection de Leray globale.
+- [x] Certifier une triade `m=1,2,3` de signes `(-,+,-)` avec diffusion et
+  drift projetés nuls.
+- [x] Certifier une famille `m=1,3` de signes `(+,-)` à `kappa=1` avec
+  diffusion et convection projetées nulles.
+- [x] Conserver l'échec de 576 orientations à modes `1,2`, toutes soumises à
+  `C_2=2C_1`.
+- [x] Vérifier divergence, isotypie, Grams, pression/Leray et moments par
+  1201 assertions rationnelles exactes.
+- [x] Séparer explicitement donnée instantanée forte locale, orbite ancienne,
+  suitable, Type I, capture et élément minimal.
+- [ ] Dériver `dC_m/ds` le long du flot renormalisé, pression et dérivée de la
+  tangente comprises.
+- [ ] Chercher une donnée sur la frontière d'un cône modal unilatéral avec
+  dérivée sortante certifiée.
+- [ ] Si l'invariance dynamique échoue, enregistrer le troisième blocage et
+  pivoter vers un défaut de Haar critique intrinsèque ou la rigidité RSS à
+  vitesse intermédiaire.

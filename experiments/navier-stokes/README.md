@@ -2464,3 +2464,37 @@ cellule reste donc `NOT_PROVIDED`.
 - Limites : représentation finie, aucun champ 3D divergence-free, aucune
   pression, viscosité, solution NS ou conclusion Clay. Les poids dépendant
   de `N` sont explicitement hors de la métrique commune du cycle 0059.
+
+## `INSTANTANEOUS-MODAL-SIGN-1` — signe modal du champ vectoriel renormalisé
+
+- Question falsifiable : l'opérateur Navier--Stokes renormalisé impose-t-il
+  un signe commun aux `C_m=<P_m d(Z),mathcal RZ_m>` sur toute donnée de
+  Schwartz divergence-free ?
+- Équation calculée :
+  `d(Z)=Delta Z-P div(Z tensor Z)-kappa(1+y dot nabla)Z` sur `R3`, viscosité
+  un, force nulle, sans frontière. Le calcul est instantané.
+- Données : curls de potentiels axiaux polynomial--gaussiens. Famille
+  convective à modes `1,2,3`; famille à phase radiale tordue aux modes `1,3`.
+- Divergence et pression : divergence de chaque champ et de chaque tangente
+  rotationnelle exactement nulle; Leray retiré seulement dans l'appariement
+  global par auto-adjonction.
+- Discrétisation : aucune. Polynômes exacts, coefficients `Fraction`, moments
+  gaussiens tensoriels exacts; précision flottante et graine non applicables.
+- Résultat : signes `(-,+,-)` pour la triade et `(+,-)` pour le drift à
+  `kappa=1`. Une recherche séparée de 576 orientations à modes `1,2` échoue
+  avec `C_2=2C_1`.
+- Convergence : aucune limite numérique. Les facteurs `(pi/2)^(3/2)` et
+  `(pi/3)^(3/2)` sont symboliques; tous les résidus annoncés sont zéro.
+- Commande :
+  `python -B experiments/navier-stokes/instantaneous-modal-sign/instantaneous_modal_sign.py`.
+- Environnement : Python 3.11 ou ultérieur, bibliothèque standard seulement;
+  1201 assertions exactes.
+- Empreintes : script
+  `41bd221e7408fc1b02a2bc93ee6d08abe61e4e3533ba09eca1dbb5c7d3dedca4`,
+  champ triadique
+  `457e520e86f78565a4a7a3e0242b6b60b7c101bcc6acc352f65624381498a72a`,
+  champ de drift
+  `68ffac0d31e24cf6b86aac8d4c52410356ba95cb2fd176369b23c49027540896`.
+- Limites : donnée instantanée admissible, sans intégration temporelle,
+  trajectoire ancienne, orbite Type I, calcul de continuum ou conclusion
+  Clay.

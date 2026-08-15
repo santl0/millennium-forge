@@ -1976,3 +1976,54 @@ devient
 `GAP-TYPE-I-INTRINSIC-AXISYMMETRY-DEFECT-OR-MODAL-SIGN-COHERENCE` : soit
 Navier--Stokes impose un cône modal unilatéral, soit il faut remplacer la
 phase métrique par un défaut d'axisymétrie intrinsèque.
+
+## Mise à jour 2026-08-15 — cycle 0062, signe modal instantané réfuté
+
+Pour l'opérateur renormalisé global sur `R3`
+
+```text
+d(Z)=Delta Z-P div(Z tensor Z)-kappa(1+y dot nabla)Z,
+C_m=<P_m d(Z),mathcal RZ_m>_L2,
+```
+
+la diffusion donne `C_m^diff=0`. La projection de Leray peut être retirée de
+ce seul appariement global parce que `mathcal RZ_m` est divergence-free; la
+pression de Riesz n'est ni locale ni supprimée de l'équation. Le drift porte
+la forme signée
+`-kappa m <(y dot nabla)Z_m,J_mZ_m>`. La convection obéit à la règle
+triadique `k+l=m`, sans positivité de phase.
+
+Deux champs polynomial--gaussiens de Schwartz donnent des contre-tests
+indépendants. Une triade `m=1,2,3` produit exactement
+
+```text
+(C_1,C_2,C_3)=(-8/9,16/9,-16/3)*(pi/3)^(3/2),
+```
+
+avec diffusion et drift projetés nuls. Une torsion radiale de phase sur les
+modes `1,3` produit à `kappa=1`
+
+```text
+(C_1,C_3)=(7/2,-99/2)*(pi/2)^(3/2),
+```
+
+avec diffusion et convection projetées nulles. Les résidus de divergence,
+d'isotypie, d'orthogonalité et d'appariement sont exactement nuls dans 1201
+assertions `Fraction`.
+
+`FAIL-NS-0098` réfute donc toute cohérence de signe déduite des seules
+symétries, de l'énergie, du moment angulaire ou du champ vectoriel
+instantané. Une famille plus pauvre à modes `1,2` échoue toutefois à rompre
+le signe sur 576 orientations, avec l'identité exacte `C_2=2C_1`; cet échec
+est conservé comme information triadique.
+
+Le contre-exemple est une donnée de Schwartz admissible pour la théorie
+forte locale, mais il n'est ni ancien, ni Type I, ni capturé, ni minimal. Il
+ne réfute donc pas une contrainte dynamique spéciale aux orbites de blow-up.
+Le registre atteint 103 claims; le verrou est resserré en
+`GAP-TYPE-I-DYNAMIC-MODAL-CONE-OR-INTRINSIC-HAAR-DEFECT`.
+
+La veille primaire distingue les cancellations radiales de Waleffe et
+Yeung--Chu--Schmidt, le champ de Killing du moment angulaire chez Charnyi et
+al., et le couplage tangent RSS de Pineau--Vicol. Trois sources structurées
+sont ajoutées; le corpus atteint 227 entrées.

@@ -1543,3 +1543,44 @@ reste manquant : la non-linéarité couple les modes par triades, la pression
 est non locale et aucune loi publiée ne place tous les numérateurs modaux
 dans un même demi-axe. La contre-expérience est hilbertienne et n'est pas une
 solution Navier--Stokes.
+
+## Cycle 0062 — obstruction instantanée au cône modal
+
+```text
+NS-TYPE-I-MODAL-METRIC-CONVEX-HULL
+  + signe commun et gap de tous les modes actifs
+  --> vitesse rapide robuste sous repondération scalaire
+
+champ vectoriel renormalise exact sur R3
+  --> C_m^diff=0
+  --> C_m^drift forme dilatation--rotation sans signe
+  --> C_m^conv somme des triades k+l=m sans signe de phase
+
+pression globale de Riesz
+  + mathcal RZ_m de Schwartz divergence-free
+  --> <P div(Z tensor Z),mathcal RZ_m>
+      =<div(Z tensor Z),mathcal RZ_m>
+      [classique global; pas local]
+
+NS-TYPE-I-INSTANTANEOUS-MODAL-SIGN-COUNTEREXAMPLE
+  --> triade (m=1,2,3) de signes (-,+,-)
+  --> drift (m=1,3) de signes (+,-)
+  --> FAIL-NS-0098
+  --> structure instantanee -/-> cone modal unilateral
+
+ancienne suitable + Type I + capture + minimalite
+  -?-> invariance dynamique d'un cone modal
+  -?-> GAP-TYPE-I-DYNAMIC-MODAL-CONE-OR-INTRINSIC-HAAR-DEFECT
+  -?-> NS-TYPE-I-CANONICAL-HILBERT-PHASE-COLLAPSE
+  --> ancienne suitable axisymetrique faible-L3
+  --> nulle [Seregin 2020; Ożański--Palasek 2023]
+  + capture non triviale
+  --> contradiction conditionnelle
+  -?-> regularite Clay.
+```
+
+La contre-arête ferme seulement le quantificateur « tout état lisse ». Elle
+ne ferme pas le sous-ensemble inconnu des états appartenant à une orbite
+ancienne critique. Le prochain test doit donc porter sur la tangence du
+champ vectoriel à la frontière d'un cône, et non sur un nouveau snapshot
+générique.

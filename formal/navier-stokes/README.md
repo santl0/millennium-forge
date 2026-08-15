@@ -1550,3 +1550,29 @@ Le noyau fonctionnel stabilisé à formaliser est :
 Le champ vectoriel instantané Navier--Stokes, la projection de Leray, la
 pression, les triades azimutales et le ledger suitable restent des interfaces
 papier. Aucun projet Lean, Isabelle ou Coq n'est créé dans ce cycle.
+
+## Backlog issu du cycle 0062 — numérateurs modaux instantanés
+
+Le noyau algébrique stabilisé à formaliser est :
+
+1. définir l'action covariante SO(2) sur les champs vectoriels de Schwartz,
+   son générateur et les projecteurs isotypiques réels;
+2. formaliser les commutations de `mathcal R` avec `Delta`, divergence,
+   gradient, Leray global et dilatation `y dot nabla`;
+3. prouver `C_m^diff=0` par auto-adjonction et antisymétrie, sans omettre une
+   hypothèse de domaine;
+4. prouver la réduction globale
+   `<P F,mathcal RZ_m>=<F,mathcal RZ_m>` et documenter pourquoi une coupure
+   locale ajoute des termes de pression;
+5. encoder la sélection triadique complexe `k+l=m`, les paires réelles
+   `+m,-m` et le facteur deux de la convention complexe;
+6. formaliser la forme de drift
+   `-kappa m<(y dot nabla)Z_m,J_mZ_m>` et son absence de signe général;
+7. porter les polynômes-gaussiens des familles `m=1,2,3` et `m=1,3`, avec
+   les moments rationnels normalisés et les résidus exacts;
+8. séparer comme propositions formelles « contre-exemple instantané » et
+   « aucune conclusion sur une orbite ancienne Type I ».
+
+L'inversion globale du Laplacien, les espaces de Riesz, la théorie forte
+locale et le raccord suitable restent des interfaces papier. Aucun projet
+Lean, Isabelle ou Coq n'est créé dans ce cycle.

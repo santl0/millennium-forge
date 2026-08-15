@@ -977,3 +977,32 @@ cette branche; la grande vitesse canonique robuste reste ouverte.
 `FAIL-NS-0097` interdit de présenter `beta` comme une vitesse physique sans
 métrique explicitement épinglée. Aucun de ces résultats ne produit un
 blow-up ni une borne globale Clay.
+
+## Priorité active après le cycle 0062
+
+1. **`GAP-TYPE-I-DYNAMIC-MODAL-CONE-OR-INTRINSIC-HAAR-DEFECT`.** La
+   cohérence de signe est fausse sur l'espace instantané des données de
+   Schwartz. Seule une restriction dynamique propre aux orbites anciennes
+   Type I, capturées ou minimales pourrait encore créer un cône unilatéral.
+2. **Tangence du cône.** Dériver `dC_m/ds` pour
+   `C_m=<P_md(Z),mathcal RZ_m>` le long de l'équation renormalisée. Chercher
+   exactement une donnée sur la frontière `C_j=0`, les autres de même signe,
+   avec dérivée sortante.
+3. **Pression dans la dérivée.** L'appariement instantané élimine Leray
+   contre une tangente solénoïdale, mais `dC_m/ds` différencie aussi la
+   tangente et le projecteur appliqué au champ vectoriel. Refaire la réduction
+   globale avant toute localisation.
+4. **Quantificateur critique.** Un contre-test local dans le temps réfuterait
+   l'invariance d'un cône pour toutes les solutions fortes, mais pas une
+   propriété asymptotique d'un élément minimal. Garder ces assertions
+   séparées.
+5. **Pivot après troisième stratégie.** Si le cône dynamique échoue, ne pas
+   chercher une nouvelle phase pondérée. Construire un défaut de Haar dans
+   une norme critique intrinsèque, ou attaquer directement la rigidité RSS
+   faible-`L3` à vitesse intermédiaire.
+6. **Portée.** Le cycle 0062 ne traite ni Type II, ni axe mobile, ni
+   frontières, ni construction de blow-up admissible.
+
+`NS-TYPE-I-INSTANTANEOUS-MODAL-SIGN-COUNTEREXAMPLE` ferme le signe universel
+instantané. Il ne fournit aucun cône invariant, aucune axisymétrisation et
+aucun raccord nouveau au problème Clay.
