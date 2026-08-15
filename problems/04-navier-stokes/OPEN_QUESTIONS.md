@@ -1006,3 +1006,37 @@ blow-up ni une borne globale Clay.
 `NS-TYPE-I-INSTANTANEOUS-MODAL-SIGN-COUNTEREXAMPLE` ferme le signe universel
 instantané. Il ne fournit aucun cône invariant, aucune axisymétrisation et
 aucun raccord nouveau au problème Clay.
+
+## Cycle 0063 — le cône modal dynamique est-il invariant ?
+
+**Question fermée négativement.** Pour le flot fort local non forcé sur
+`R3`, l'orthant fini `C_1,C_2,C_3 >= 0` n'est pas positivement invariant.
+Une donnée divergence-free de Schwartz vérifie
+
+```text
+(C_1,C_2,C_3)=(8/9,16/9,0)(pi/3)^(3/2),
+C'_3=-(1076547/1281280)pi^(3/2)<0.
+```
+
+Le point de frontière est régulier (`Z_3 != 0`) et l'existence classique
+locale donne donc `C_3(t)<0` pour tout temps positif assez petit. La
+contribution de pression, calculée globalement par le multiplicateur
+`1/|xi|^2`, est positive mais insuffisante pour inverser le signe.
+
+Après les trois échecs réellement distincts des cycles 0061--0063
+(robustesse métrique, cohérence instantanée, invariance dynamique), la piste
+des phases modales est abandonnée. La question prioritaire devient :
+
+1. **`GAP-TYPE-I-CRITICAL-WEIGHTED-HAAR-DEFECT-OR-RSS-INTERMEDIATE-RIGIDITY`.**
+   Pour `A` moyenne covariante de Haar autour d'un axe fixé, le défaut
+   `D_H(Z)=integral |(I-A)Z(y)|^2/|y| dy` est critique sous
+   `Z_lambda=lambda Z(lambda y)`. Son budget complet, pression pondérée
+   comprise, possède-t-il une coercivité sur une classe Type I, ou des
+   contre-profils de Schwartz donnent-ils immédiatement les deux signes ?
+2. **Test d'abandon.** Deux champs divergence-free de Schwartz donnant des
+   dérivées strictement opposées de `D_H`, avec tous les termes recalculés,
+   réfutent toute monotonie universelle et déclenchent le pivot direct vers
+   la rigidité RSS faible-`L3` à vitesse intermédiaire.
+3. **Portée.** Le contre-exemple du cône est local et de dimension modale
+   finie. Il n'exclut ni un cône défini par tous les modes, ni une contrainte
+   propre aux solutions anciennes, suitable, Type I ou minimales.

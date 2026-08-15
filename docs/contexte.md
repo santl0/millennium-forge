@@ -641,3 +641,25 @@ d'un cône sous le flot, puis pivoter si cette troisième stratégie modale
 Waleffe 1992, Charnyi et al. 2017 et Yeung--Chu--Schmidt 2026 sont ajoutés
 au catalogue : ils séparent cancellation d'énergie, moment angulaire rigide
 et tangente d'orbite. Le corpus atteint 227 sources.
+
+Le cycle 0063 attaque la dernière stratégie modale, désormais dynamique.
+Pour `F(Z)=Delta Z-P div(Z tensor Z)` sur `R3`, il différencie
+`C_m=<P_mF(Z),mathcal RZ_m>` le long de la solution forte locale. Un champ
+de Schwartz à trois isotypes satisfait
+`C=(8/9,16/9,0)(pi/3)^(3/2)` mais
+`C'_3=-(1076547/1281280)pi^(3/2)<0`. L'orthant modal fini est donc quitté
+immédiatement.
+
+La pression a été recalculée globalement en Fourier. Une passe adversariale
+a corrigé le partage local/pression après détection de l'erreur
+`div(Delta Z-(Z dot nabla)Z) != 0`; le total a été confirmé symboliquement
+et pseudo-spectralement. Le registre atteint 104 claims et le corpus 231
+sources.
+
+`FAIL-NS-0099` constitue la troisième stratégie modale distincte échouée
+après robustesse métrique et cohérence instantanée. Le chantier pivote vers
+`GAP-TYPE-I-CRITICAL-WEIGHTED-HAAR-DEFECT-OR-RSS-INTERMEDIATE-RIGIDITY` :
+calculer le budget exact de
+`D_H(Z)=integral |(I-A)Z(y)|^2/|y| dy`, observable critique, pression
+pondérée comprise; si son signe universel échoue, attaquer directement la
+rigidité RSS faible-`L3` à vitesse intermédiaire.

@@ -572,3 +572,28 @@
 - [ ] Si l'invariance dynamique échoue, enregistrer le troisième blocage et
   pivoter vers un défaut de Haar critique intrinsèque ou la rigidité RSS à
   vitesse intermédiaire.
+
+### Cycle 0063
+
+- [x] Dériver `dC_m/ds` le long du flot fort local, dérivée de la tangente
+  et projection de Leray comprises.
+- [x] Construire une donnée de Schwartz solénoïdale sur la face régulière
+  `C_3=0`, avec `C_1,C_2>0`.
+- [x] Certifier le signe sortant
+  `C'_3=-(1076547/1281280)pi^(3/2)` par 1173 assertions exactes.
+- [x] Recalculer la pression globalement par le multiplicateur
+  `1/|xi|^2`; corriger le faux postulat de divergence nulle de la partie
+  locale.
+- [x] Contrôler indépendamment le total par une recomposition symbolique et
+  un test pseudo-spectral `N=80`, `L=8`.
+- [x] Enregistrer `FAIL-NS-0099` et abandonner la piste modale après trois
+  stratégies distinctes bloquées.
+- [x] Auditer Nagumo--Brezis, Pavel et les régions piégeantes spectrales;
+  séparer EDO, évolution semi-linéaire, modèle décimé et NS Clay.
+- [ ] Dériver le budget de
+  `D_H(Z)=integral |(I-A)Z(y)|^2/|y| dy`, pression pondérée comprise, et
+  vérifier explicitement son invariance d'échelle.
+- [ ] Chercher deux champs de Schwartz divergence-free donnant des dérivées
+  opposées de `D_H` avec résidus exacts ou intervalles certifiés.
+- [ ] Si les signes s'opposent, abandonner la monotonie du défaut de Haar et
+  formuler le lemme RSS faible-`L3` à vitesse intermédiaire minimal.

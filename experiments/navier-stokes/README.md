@@ -2498,3 +2498,35 @@ cellule reste donc `NOT_PROVIDED`.
 - Limites : donnée instantanée admissible, sans intégration temporelle,
   trajectoire ancienne, orbite Type I, calcul de continuum ou conclusion
   Clay.
+
+## `DYNAMIC-MODAL-CONE-1` — test exact de tangence sous le flot NS
+
+- Question falsifiable : l'orthant fini `C_1,C_2,C_3 >= 0`, avec
+  `C_m=<P_mF(Z),mathcal RZ_m>`, est-il forward invariant ?
+- Équation : NS incompressible standard non forcé sur `R3`, viscosité un,
+  `F(Z)=Delta Z-P div(Z tensor Z)` et théorie forte locale.
+- Donnée : somme de trois curls de polynômes--gaussiens, orientations
+  `(-1,-1),(-1,-1),(-1,0)` pour `m=1,2,3`; divergence nulle exactement.
+- Discrétisation principale : aucune. Arithmétique `Fraction`, moments
+  gaussiens exacts et inversion de pression en Fourier par `1/|xi|^2`.
+- Résultat :
+  `C=(8/9,16/9,0)(pi/3)^(3/2)` et
+  `C'_3=-(1076547/1281280)pi^(3/2)<0`; sortie locale du cône.
+- Résidus et précision : 1173 assertions exactes; divergence, isotypie,
+  partie imaginaire de Fourier et identités annoncées nulles. Aucun pas de
+  temps, aucune graine et aucune quadrature.
+- Vérification indépendante non certifiante : pseudo-spectral `N=80`,
+  boîte `[-8,8]^3`, erreur absolue `1.123e-5` sur `C'_3` et
+  `||div F||_2=5.521e-12`.
+- Sensibilité : le signe exact est strict et homogène sous remise à
+  l'échelle; la vérification flottante ne sert pas de preuve.
+- Commande :
+  `python -B experiments/navier-stokes/dynamic-modal-cone/dynamic_modal_cone.py`.
+- Empreintes : script
+  `e80705842d6dad373328a67ce30d475b590e780ba454deffdf88e340bea29662`,
+  champ
+  `c6a5442603d162cfaddefdcccdada9ec35d82bd777b6a1be229197ec4c45e5e2`,
+  noyau
+  `41bd221e7408fc1b02a2bc93ee6d08abe61e4e3533ba09eca1dbb5c7d3dedca4`.
+- Limites : contre-exemple local et fini-dimensional; aucune solution
+  ancienne, suitable, Type I, minimale ou singularité Clay n'est construite.

@@ -1431,3 +1431,39 @@ solution ou précise qu'il s'agit seulement d'un champ test.
 - Décision : la structure instantanée ne produit pas le signe robuste. Tester
   l'invariance dynamique d'un cône une dernière fois, puis pivoter vers un
   défaut de Haar critique intrinsèque ou la rigidité RSS intermédiaire.
+
+## 2026-08-15 — sortie exacte d'un cône modal dynamique
+
+- Cadre : Navier--Stokes incompressible non forcé sur `R3`, viscosité un,
+  donnée de Schwartz divergence-free et solution classique locale.
+- Observable : `C_m=<P_mF(Z),mathcal RZ_m>` pour
+  `F(Z)=Delta Z-P div(Z tensor Z)`.
+- Échelle : sous `Z_lambda(y)=lambda Z(lambda y)`, `C_m` porte `lambda` et
+  sa dérivée le long du flot porte `lambda^3`; le signe de sortie est donc
+  invariant par remise à l'échelle positive, sans produire de borne
+  critique.
+- Formule :
+  `C'_m=<P_m DF(Z)[F(Z)],mathcal RZ_m>`; le terme issu de la tangente vaut
+  `<P_mF,mathcal R P_mF>=0` après différentiation complète.
+- Contre-profil : orientations `m_1=(-1,-1)`, `m_2=(-1,-1)`,
+  `m_3=(-1,0)` donnent
+  `(C_1,C_2,C_3)=(8/9,16/9,0)(pi/3)^(3/2)` et
+  `C'_3=-(1076547/1281280)pi^(3/2)`.
+- Pression non locale : partie locale
+  `-(675/256)pi^(3/2)`, partie pression
+  `+(575457/320320)pi^(3/2)`. L'inversion de `-Delta` est calculée en
+  Fourier avec `1/|xi|^2`, pas supprimée point par point.
+- Échec adversarial conservé : traiter le champ local non projeté comme
+  divergence-free donnait deux contributions erronées. Une recomposition
+  indépendante a corrigé le partage, tandis que le total exact est resté
+  inchangé.
+- Certificat : 1173 assertions `Fraction`, aucune quadrature; divergence,
+  isotypie, parité de Fourier et identités annoncées exactement nulles.
+  Une vérification pseudo-spectrale indépendante `N=80`, `L=8` trouve
+  `C'_3=-4.678565508144`, contre `-4.678576735768` exactement, erreur
+  absolue `1.123e-5`, et `||div F||_2=5.521e-12`.
+- Perte : aucun contrôle d'une trajectoire ancienne, suitable ou Type I;
+  aucune compacité et aucun passage au continuum numérique ne sont invoqués.
+- Décision : `FAIL-NS-0099` clôt la troisième stratégie modale. Le verrou
+  actif devient le budget du défaut de Haar pondéré critique, puis, si sa
+  monotonie échoue, la rigidité RSS intermédiaire.

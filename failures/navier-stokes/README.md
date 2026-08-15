@@ -2179,3 +2179,34 @@ n'est ni supprimé ni réinterprété comme solution Navier--Stokes.
   source du signe. Tester une dernière stratégie réellement dynamique par
   tangence à un cône modal; en cas d'échec, pivoter vers un défaut de Haar
   critique intrinsèque ou la rigidité RSS intermédiaire.
+
+## `FAIL-NS-0099` — l'orthant modal fini n'est pas invariant sous le flot
+
+- **Stratégie réfutée :** réparer l'absence de signe instantané en supposant
+  que le flot Navier--Stokes reste dans un cône
+  `{C_1,C_2,C_3 >= 0}` après entrée éventuelle.
+- **Cadre exact :** `R3`, viscosité un, force nulle, donnée initiale de
+  Schwartz divergence-free; solution forte/classique locale unique.
+- **Test de tangence :** à un point où `C_3=0` et `C_1,C_2>0`, la condition
+  nécessaire de Nagumo est `C'_3>=0`.
+- **Contre-exemple exact :** les trois modes polynomial--gaussiens certifiés
+  donnent
+  `(C_1,C_2,C_3)=(8/9,16/9,0)(pi/3)^(3/2)` et
+  `C'_3=-(1076547/1281280)pi^(3/2)<0`.
+- **Pression :** elle contribue
+  `+(575457/320320)pi^(3/2)` mais la partie locale vaut
+  `-(675/256)pi^(3/2)`; le bilan reste strictement sortant.
+- **Attaque ayant corrigé le calcul :** `Delta Z-(Z dot nabla)Z` n'est pas
+  divergence-free. Les contributions locale et pression ont été
+  recomputées séparément; le total a été confirmé par une seconde voie
+  symbolique puis par un test pseudo-spectral non certifiant.
+- **Certificat :** 1173 assertions rationnelles exactes, résidus annoncés
+  nuls, aucune quadrature. Script
+  `experiments/navier-stokes/dynamic-modal-cone/dynamic_modal_cone.py`.
+- **Portée négative exacte :** un orthant construit avec ces trois
+  numérateurs n'est pas forward invariant pour toutes les solutions fortes
+  locales. Cela ne réfute pas un cône infini, une propriété asymptotique ou
+  une restriction au sous-ensemble ancien/Type I/minimal.
+- **Décision :** troisième stratégie distincte bloquée après `FAIL-NS-0097`
+  et `FAIL-NS-0098`; abandonner la piste de phase modale et pivoter vers le
+  défaut de Haar pondéré critique ou la rigidité RSS intermédiaire.

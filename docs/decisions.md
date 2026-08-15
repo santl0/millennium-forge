@@ -835,3 +835,26 @@
 - Le prochain test dérive `dC_m/ds` et attaque l'invariance locale d'un cône
   modal. Un nouvel échec déclenchera le pivot vers un défaut de Haar critique
   intrinsèque ou la rigidité RSS faible-`L3` intermédiaire.
+
+### 2026-08-15 — cône modal dynamique réfuté, pivot obligatoire
+
+- Trois actions ont été notées : contre-test exact de tangence `20/20`,
+  condition suffisante abstraite de viabilité `15/20`, recherche temporelle
+  flottante `12/20`. Le contre-test exact est sélectionné.
+- L'équation est NS incompressible standard non forcé sur `R3`, viscosité
+  un; la notion utilisée est la solution forte/classique locale issue d'une
+  donnée de Schwartz solénoïdale.
+- La dérivée complète inclut le champ linéarisé et la tangente mobile. Le
+  second terme s'annule par antisymétrie, pas par gel de la tangente.
+- Sur la face régulière `C_3=0`, le certificat trouve `C_1,C_2>0` et
+  `C'_3<0`; le critère de Nagumo est violé et l'orthant fini n'est pas
+  forward invariant.
+- La pression est conservée dans `F`. Le partage local/pression a été
+  corrigé après une attaque indépendante; seules les valeurs recomputées
+  sont enregistrées.
+- `FAIL-NS-0099` ferme la phase modale après trois stratégies différentes :
+  repondération métrique, signe instantané, puis invariance dynamique.
+- Le nouvel observable est le défaut de Haar pondéré critique
+  `D_H=integral |(I-A)Z|^2/|y|`. La prochaine action dérive son budget exact
+  et cherche deux contre-profils de signes opposés avant tout argument de
+  compacité.

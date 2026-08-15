@@ -1576,3 +1576,26 @@ Le noyau algébrique stabilisé à formaliser est :
 L'inversion globale du Laplacien, les espaces de Riesz, la théorie forte
 locale et le raccord suitable restent des interfaces papier. Aucun projet
 Lean, Isabelle ou Coq n'est créé dans ce cycle.
+
+## Backlog issu du cycle 0063 — tangence dynamique et pression exacte
+
+Le noyau stabilisé à formaliser est :
+
+1. différencier la fonctionnelle
+   `C_m(Z)=<P_mF(Z),mathcal RZ_m>` sur les champs de Schwartz solénoïdaux;
+2. prouver l'annulation antisymétrique
+   `<P_mF(Z),mathcal R P_mF(Z)>=0`;
+3. relier `C_j=0`, `C_i>0` et `C'_j<0` à la sortie locale de l'orthant par
+   différentiabilité de la solution forte;
+4. formaliser la transformée de Fourier des polynômes--gaussiens et le
+   multiplicateur positif `(-Delta)^-1` avec singularité intégrable en zéro;
+5. certifier séparément les contributions
+   `-(675/256)pi^(3/2)` et
+   `+(575457/320320)pi^(3/2)`, puis leur somme;
+6. exprimer comme proposition bornée que cet orthant fini n'est pas forward
+   invariant, sans généralisation à tous les modes ou aux solutions
+   anciennes Type I.
+
+La théorie locale complète, la viabilité en dimension infinie et le raccord
+avec une limite suitable restent des interfaces papier. Aucun projet Lean,
+Isabelle ou Coq n'est créé dans ce cycle.
