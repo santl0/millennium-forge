@@ -1584,3 +1584,46 @@ ne ferme pas le sous-ensemble inconnu des états appartenant à une orbite
 ancienne critique. Le prochain test doit donc porter sur la tangence du
 champ vectoriel à la frontière d'un cône, et non sur un nouveau snapshot
 générique.
+
+## Cycle 0063 — sortie du cône et pivot critique de Haar
+
+```text
+NS-TYPE-I-INSTANTANEOUS-MODAL-SIGN-COUNTEREXAMPLE
+  + differentielle de F et C_m
+  --> C'_m=<P_mDF(Z)[F(Z)],mathcal RZ_m>
+
+Nagumo--Brezis [NS-SRC-0228, NS-SRC-0229]
+  + face reguliere C_j=0
+  + invariance positive
+  --> C'_j>=0
+
+NS-DYNAMIC-MODAL-CONE-OUTWARD-CROSSING
+  --> C_1,C_2>0, C_3=0, C'_3<0
+  --> K_{1,2,3}^+ non invariant
+  --> FAIL-NS-0099
+
+pression globale interne
+  --> contribution positive exacte
+      +(575457/320320)*pi^(3/2)
+  + contribution locale exacte
+      -(675/256)*pi^(3/2)
+  --> total strictement negatif
+
+robustesse metrique -/-> [FAIL-NS-0097]
+signe instantane -/-> [FAIL-NS-0098]
+invariance dynamique -/-> [FAIL-NS-0099]
+  --> phase modale abandonnee apres trois strategies distinctes
+
+D_H(Z)=integral |(I-A)Z|^2/|y|
+  --> quantite critique sous l'echelle Clay
+  -?-> budget de Haar avec pression ponderee
+  -?-> coercivite ou contre-signes
+  -?-> GAP-TYPE-I-CRITICAL-WEIGHTED-HAAR-DEFECT-OR-RSS-INTERMEDIATE-RIGIDITY
+  -?-> rigidite axisymetrique ancienne
+  -?-> regularite Clay.
+```
+
+Les régions de Zgliczyński (`NS-SRC-0231`) montrent qu'un vrai passage
+Galerkin--continuum exige tangence uniforme, contrôle des queues et fermeture
+forte. Le contre-exemple présent agit directement sur une donnée du
+continuum; il n'apporte cependant aucune coercivité critique de prolongement.

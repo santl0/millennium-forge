@@ -1,0 +1,60 @@
+{
+  "id": "NS-DYNAMIC-MODAL-CONE-OUTWARD-CROSSING",
+  "problem": "navier-stokes",
+  "statement": "Pour Navier--Stokes incompressible 3D standard, non force, de viscosite un sur R3, il existe une donnee initiale reelle divergence-free de Schwartz a isotypes azimutaux m=1,2,3 telle que les numerateurs C_m=<P_m(Delta Z-P div(Z tensor Z)),R Z_m>_L2 valent (8/9,16/9,0)(pi/3)^(3/2), tandis que la derivee le long du flot satisfait C'_3=-(1076547/1281280)pi^(3/2)<0. La contribution locale vaut -(675/256)pi^(3/2) et la pression globale de Leray +(575457/320320)pi^(3/2), toutes deux calculees exactement. Par la theorie forte locale et la differentiabilite de C_m, la preimage de l'orthant C_1,C_2,C_3>=0 n'est pas positivement invariante. Le resultat refute un cone modal universel, pas une propriete asymptotique reservee a une orbite ancienne Type I ou minimale.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "le domaine est R3 sans frontiere, la viscosite vaut un, kappa=0 et la force exterieure est nulle",
+    "la donnee est le champ polynomial--gaussien explicite curl(h_m exp(-|x|^2)e3) avec orientations m1=(-1,-1), m2=(-1,-1), m3=(-1,0)",
+    "P_m est le projecteur isotypique reel de l'action covariante SO(2) autour de e3 et R son generateur sur les champs vectoriels",
+    "la pression est la jauge globale p=(-Delta)^(-1) div((Z dot nabla)Z) et son appariement est calcule par le multiplicateur Fourier 1/|xi|^2",
+    "la solution locale issue de la donnee de Schwartz est classique assez longtemps pour que C_m soit differentiable a t=0",
+    "l'inference d'invariance ne porte que sur l'ensemble fini K={C_1>=0,C_2>=0,C_3>=0} dans l'espace de phase fort local"
+  ],
+  "dependencies": [
+    "NS-TYPE-I-INSTANTANEOUS-MODAL-SIGN-COUNTEREXAMPLE"
+  ],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0063-dynamic-modal-cone.md; formule de derivee, critere de tangence, pression, echelle et pivot",
+      "sha256": "29e0abb4d6d8dc52c6fe4948647c9b3e5a32dd83748189bb03bed73b4c935123"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0063-formal.md; differentielle complete, Nagumo, domaines, Grams et quantificateurs",
+      "sha256": "5d04b2ad7482ff28990340e3a7ccd4473928fa056afa2426c311eaf326b9ac88"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0063-countermodel.md; face active, correction de l'erreur div A et certificat non local",
+      "sha256": "b00c8eb21b1cb00008e2e1a3c2e1e9e7e639827459c9bd81b92ba42ed0ed23c0"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/dynamic-modal-cone/dynamic_modal_cone.py; 1173 assertions rationnelles exactes et multiplicateur de pression certifie",
+      "sha256": "e80705842d6dad373328a67ce30d475b590e780ba454deffdf88e340bea29662"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0010, NS-SRC-0228, NS-SRC-0229, NS-SRC-0230 et NS-SRC-0231; theorie forte locale, tangence, viabilite de semi-groupes et precedent de regions spectrales"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0063-literature.md; veille primaire sur Nagumo, regions invariantes et non-transferts Navier--Stokes",
+      "sha256": "8d11d42de3863caaf35cc362f88e3d2606e9d7532ec0b02e50534300fad812ef"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0063-dynamic-modal-cone"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Derivation formelle, veille primaire et certificat exact conduits separement; controle pseudospectral flottant independant; aucune revue humaine externe",
+    "notes": "Le premier calcul separait illegalement A=Delta Z-(Z dot nabla)Z comme champ solenoidal; les contributions locale et de pression ont ete corrigees et figees separement. Le total est exact et negatif. L'existence qualitative d'un temps de sortie suit de C'_3(0)<0 et de la differentiabilite, sans borne numerique explicite sur ce temps. Le claim ne passe ni aux solutions faibles, ni a tous les modes, ni aux orbites anciennes critiques et reste COMPUTATION_ONLY."
+  }
+}

@@ -2027,3 +2027,45 @@ La veille primaire distingue les cancellations radiales de Waleffe et
 Yeung--Chu--Schmidt, le champ de Killing du moment angulaire chez Charnyi et
 al., et le couplage tangent RSS de Pineau--Vicol. Trois sources structurées
 sont ajoutées; le corpus atteint 227 entrées.
+
+## Mise à jour 2026-08-15 — cycle 0063, orthant modal non invariant
+
+Pour `kappa=0`, donc pour le champ vectoriel Navier--Stokes standard sur
+`R3`, la dérivée du numérateur le long du flot est
+
+```text
+C'_m=<P_m DF(Z)[F(Z)],mathcal RZ_m>.
+```
+
+La dérivée de la tangente est présente avant simplification et s'annule par
+antisymétrie. La projection de Leray extérieure disparaît dans
+l'appariement global, mais la pression contenue dans `F(Z)` reste dans la
+convection linéarisée.
+
+Un champ polynomial--gaussien explicite aux modes `m=1,2,3` donne
+
+```text
+(C_1,C_2,C_3)=(8/9,16/9,0)*(pi/3)^(3/2),
+C'_3=-(1076547/1281280)*pi^(3/2)<0.
+```
+
+La partie locale corrigée vaut `-(675/256)pi^(3/2)` et la pression globale
+`+(575457/320320)pi^(3/2)`. Cette dernière est évaluée exactement par le
+multiplicateur Fourier `1/|xi|²`, sans reconstruire la pression pointwise.
+Les 1173 assertions `Fraction` vérifient en particulier la normalisation de
+l'inverse du Laplacien sur des solutions manufacturées.
+
+La donnée est sur une face régulière de l'orthant fini et la théorie forte
+locale rend `C_3` différentiable. Elle quitte donc immédiatement la région
+`C_1,C_2,C_3>=0`. `FAIL-NS-0099` réfute l'invariance dynamique universelle.
+
+Une passe contradictoire a rejeté un premier découpage local qui traitait
+à tort `A=Delta Z-(Z dot nabla)Z` comme divergence-free. Les contributions
+locale et de pression ont été corrigées séparément; le total, recalculé, est
+resté négatif avec la même valeur exacte.
+
+Après les échecs distincts de robustesse métrique, signe instantané et cône
+dynamique, la piste de phase modale est abandonnée. Le registre atteint 104
+claims. Quatre sources sur Nagumo, viabilité semi-linéaire et régions de
+piégeage portent le corpus à 231 entrées. Le verrou devient
+`GAP-TYPE-I-CRITICAL-WEIGHTED-HAAR-DEFECT-OR-RSS-INTERMEDIATE-RIGIDITY`.

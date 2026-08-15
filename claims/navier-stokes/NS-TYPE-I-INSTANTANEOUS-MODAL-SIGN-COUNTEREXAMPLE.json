@@ -56,6 +56,6 @@
   "review": {
     "status": "adversarial_pass",
     "reviewer": "Derivation formelle et contre-calcul exact conduits separement; veille primaire independante; aucune revue humaine externe",
-    "notes": "La contre-famille triadique isole la convection; la contre-famille tordue isole le drift. Diffusion, Leray et projections sont recalcules. L'exemple est une donnee de Schwartz admissible pour la theorie locale, mais aucun passage vers une orbite ancienne, Type I, suitable ou minimale n'est fourni. Le claim demeure COMPUTATION_ONLY."
+    "notes": "La contre-famille triadique isole la convection; la contre-famille tordue isole le drift. Diffusion, Leray et projections sont recalcules. L'exemple est une donnee de Schwartz admissible pour la theorie locale, mais aucun passage vers une orbite ancienne, Type I, suitable ou minimale n'est fourni. Le cycle 0063 construit en outre une face active avec derivee sortante et refute l'invariance locale de l'orthant fini; une propriete asymptotique du sous-ensemble critique reste distincte. Le claim demeure COMPUTATION_ONLY."
   }
 }

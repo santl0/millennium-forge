@@ -2545,3 +2545,47 @@ Le maillon négatif est exact mais instantané. L'arête manquante ne peut plus
 être une identité algébrique du champ vectoriel : elle doit employer une
 propriété dynamique de l'orbite critique, ou abandonner les vitesses modales
 au profit d'un observable d'axisymétrie indépendant de la métrique.
+
+## Cycle 0063 — tangence sortante et abandon de la phase modale
+
+```text
+F(Z)=Delta Z-P div(Z tensor Z), kappa=0
+  --> C_m=<P_mF(Z),mathcal RZ_m>
+  --> C'_m=<P_mDF(Z)[F(Z)],mathcal RZ_m>
+      [derivee de la tangente presente puis nulle]
+
+K^+={C_1>=0,C_2>=0,C_3>=0}
+  + face reguliere C_3=0
+  + invariance positive
+  --> C'_3>=0
+      [necessite de Nagumo]
+
+champ de Schwartz exact m=1,2,3
+  --> (C_1,C_2,C_3)=(8/9,16/9,0)*(pi/3)^(3/2)
+  --> C'_3=-(1076547/1281280)*pi^(3/2)<0
+      [local -675/256; pression +575457/320320]
+  --> FAIL-NS-0099
+  --> K^+ -/-> region positivement invariante
+
+pression interne
+  --> S=div((Z dot nabla)Z), -Delta p=S
+  --> <p,Q>=Fourier[hat S conjugate(hat Q)/|xi|^2]
+      [moments exacts; pas de reconstruction pointwise]
+
+cycle 0061: robustesse metrique refutee
+cycle 0062: signe instantane refute
+cycle 0063: invariance dynamique refutee
+  --> abandon de la strategie de phase modale
+
+defaut critique de Haar
+  -?-> D_H(Z)=integral |(I-A)Z|^2/|y|
+  -?-> budget signe, pression ponderee comprise
+  -?-> GAP-TYPE-I-CRITICAL-WEIGHTED-HAAR-DEFECT-OR-RSS-INTERMEDIATE-RIGIDITY
+  -?-> axisymetrisation ou pivot RSS
+  -?-> regularite Clay.
+```
+
+Le contre-exemple ferme une région universelle du semiflot fort, pas une
+propriété asymptotique d'un élément minimal ancien. Le pivot impose désormais
+un observable critique et métriquement intrinsèque, au lieu d'une correction
+supplémentaire des vitesses de phase.
