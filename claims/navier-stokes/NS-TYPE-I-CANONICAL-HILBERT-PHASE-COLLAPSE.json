@@ -1,7 +1,7 @@
 {
   "id": "NS-TYPE-I-CANONICAL-HILBERT-PHASE-COLLAPSE",
   "problem": "navier-stokes",
-  "statement": "Sur une fenetre bornee, soit Z_n une suite de solutions renormalisees divergence-free sur R3 dont le ledger complet borne partial_s Z_n dans W^(-2,4/3) et Z_n dans L2 sur chaque boule centree. Une somme hilbertienne ponderee et SO(2)-invariante des espaces H^-3 locaux fournit un meme espace X sur toute l'exhaustion. En posant d_n=partial_s Z_n, g_n=mathcal R Z_n et beta_n=<d_n,g_n>_X/||g_n||_X^2 hors de g_n=0, le defaut r_n=d_n-beta_n g_n et le produit beta_n g_n sont bornes point par point par ||d_n||_X. Si ess inf |beta_n| tend vers l'infini et Z_n converge dans les distributions, alors mathcal R Z=0. La stationnarite exige encore mathcal A r_n vers zero. La vitesse depend de la metrique et peut ne pas etre integrable; aucune phase absolue continue ni conclusion Clay generale ne suit.",
+  "statement": "Sur une fenetre bornee, soit Z_n une suite de solutions renormalisees divergence-free sur R3 dont le ledger complet borne partial_s Z_n dans W^(-2,4/3) et Z_n dans L2 sur chaque boule centree. Une somme hilbertienne ponderee et SO(2)-invariante des espaces H^-3 locaux fournit un meme espace X sur toute l'exhaustion. En posant d_n=partial_s Z_n, g_n=mathcal R Z_n et beta_n=<d_n,g_n>_X/||g_n||_X^2 hors de g_n=0, le defaut r_n=d_n-beta_n g_n et le produit beta_n g_n sont bornes point par point par ||d_n||_X. Si ess inf |beta_n| tend vers l'infini et Z_n converge dans les distributions, alors mathcal R Z=0. La stationnarite exigerait encore mathcal A r_n vers zero, mais elle n'est pas necessaire a l'endgame lorsque la de-renormalisation donne une ancienne suitable axisymetrique uniformement faible-L3: Seregin puis Ozanski--Palasek imposent directement sa nullite. La vitesse depend de la metrique et peut ne pas etre integrable; aucune phase absolue continue ni conclusion Clay generale ne suit.",
   "status": "COMPUTATION_ONLY",
   "hypotheses": [
     "domaine R3 sans frontiere, viscosite un, coefficient renormalise kappa>0; force de cutoff localement uniforme et pression complete dans la jauge globale de Riesz",
@@ -15,6 +15,7 @@
   "dependencies": [
     "NS-TYPE-I-BOCHNER-FAST-ROTATION-COLLAPSE",
     "NS-TYPE-I-WEAK-L3-LOCAL-SUITABLE-COMPACTNESS",
+    "NS-AXISYMMETRIC-ANCIENT-WEAK-L3-RIGIDITY",
     "NS-TYPE-I-PERSISTENT-CAPTURE-SPACETIME-NONTRIVIALITY",
     "NS-BACKWARD-SELFSIMILAR-WEAK-L3-LIOUVILLE"
   ],
@@ -55,6 +56,10 @@
     {
       "kind": "primary_source",
       "reference": "NS-SRC-0221; Willis--Cvitanovic--Avila 2013, methode des tranches numerique pour pipe flow, sans preuve continuum"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-AXISYMMETRIC-ANCIENT-WEAK-L3-RIGIDITY; correction du cycle 0060, endgame publie sans stationnarite"
     }
   ],
   "provenance": {
@@ -67,6 +72,6 @@
   "review": {
     "status": "adversarial_pass",
     "reviewer": "Derivation principale, audit analytique, veille primaire et certificat exact separes; aucune revue humaine externe",
-    "notes": "Le statut reste COMPUTATION_ONLY. Le coefficient est canonique seulement pour la metrique et les poids epingles. Le produit tangent et le residu sont stables au Gram nul, mais beta peut diverger ou ne pas etre L1 et ne reconstruit pas automatiquement une phase. FAIL-NS-0095 refute la stationnarite depuis la seule projection. La grande vitesse canonique et la decroissance de la composante de Haar ne sont pas produites par un blow-up arbitraire."
+    "notes": "Le statut reste COMPUTATION_ONLY. Le coefficient est canonique seulement pour la metrique et les poids epingles. Le produit tangent et le residu sont stables au Gram nul, mais beta peut diverger ou ne pas etre L1 et ne reconstruit pas automatiquement une phase. FAIL-NS-0095 refute la stationnarite depuis la seule projection; le cycle 0060 montre qu'elle n'est plus requise dans l'endgame axisymetrique suitable faible-L3. La grande vitesse canonique robuste n'est toujours pas produite par un blow-up arbitraire."
   }
 }

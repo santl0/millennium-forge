@@ -1592,3 +1592,37 @@ ne prouve pas l'inexistence absolue d'un résultat équivalent.
 Deux sources publiées non redondantes sont ajoutées : le corpus atteint 221
 entrées. Aucun résultat primaire ne fournit la grande vitesse canonique ou
 la décroissance du défaut de Haar depuis une singularité Type I.
+
+## Audit ciblé du cycle 0060 — moyenne de Haar et rigidité axisymétrique
+
+- Ożański--Palasek (`0088`, *Annals of PDE* 2023, DOI
+  `10.1007/s40818-023-00156-7`) supposent une solution **classique**
+  axisymétrique, swirl permis, avant d'obtenir leurs bornes quantitatives
+  depuis `L-infinity_t L^(3,infinity)_x`. La trivialité ancienne est une
+  conséquence écrite dans le texte, pas un corollaire numéroté : sur
+  `[s,t]`, leur borne est `C(A)(t-s)^(-1/2)`, puis `s->-infinity`.
+- Seregin (`0222`, *Analysis and Mathematical Physics* 2020, DOI
+  `10.1007/s13324-020-00392-1`) fournit le raccord publié qui manquait à la
+  carte. Le théorème 2.1 exclut Type I pour une paire suitable
+  axisymétrique; la section 3 montre qu'une borne locale
+  `L-infinity_t L^(3,infinity)_x` borne les quantités invariantes et exclut
+  Type II. La solution est donc régulière, swirl compris.
+- La chaîne publiée est désormais exacte : ancienne suitable à pression
+  axisymétrique, axisymétrie autour d'un axe fixe et borne globale uniforme
+  faible-`L3` impliquent classicalité par Seregin, puis nullité par
+  Ożański--Palasek. Ni stationnarité ni absence de swirl ne sont nécessaires.
+- Lei--Ren (`0223`, *Advances in Mathematics* 2024, DOI
+  `10.1016/j.aim.2024.109654`) renforcent le volet local suitable par un
+  critère axisymétrique logarithmiquement au-delà du seuil Type I. Ce résultat
+  confirme la frontière mais n'est pas requis pour la chaîne de nullité.
+- Wang--Yang (`0046`, `arXiv:2608.06040v1`) était déjà catalogué. Son audit
+  complet confirme des critères pour D-solutions stationnaires avec
+  décroissance cylindrique; il ne participe pas à l'endgame ancien.
+- Le transfert Clay reste conditionnel : la projection canonique ne produit
+  pas encore `ess inf|beta_n|->infinity` depuis un blow-up général, et le
+  pipeline doit toujours conserver suitability, pression de Riesz, borne
+  globale faible-`L3` et capture.
+
+Deux sources publiées sont ajoutées; le corpus atteint 223 entrées. Le maillon
+ancien axisymétrique devient `SOURCE_VERIFIED`, tandis que le lemme interne de
+fermeture du stress reste `COMPUTATION_ONLY`.

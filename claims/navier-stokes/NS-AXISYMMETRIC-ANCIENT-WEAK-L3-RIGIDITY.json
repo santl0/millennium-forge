@@ -1,0 +1,41 @@
+{
+  "id": "NS-AXISYMMETRIC-ANCIENT-WEAK-L3-RIGIDITY",
+  "problem": "navier-stokes",
+  "statement": "Toute paire faible adaptee ancienne de Navier-Stokes incompressible 3D non force sur R3, de viscosite un, exactement axisymetrique autour d'un axe spatial fixe, swirl permis, a pression axisymetrique et uniformement bornee dans L-infinity((-infinity,0);L^(3,infinity)(R3)), est classique puis identiquement nulle. La regularite suitable-vers-classique vient de Seregin 2020; la nullite vient de la borne quantitative d'Ozanski--Palasek 2023 appliquee sur [s,t] puis de la limite s vers -infinity.",
+  "status": "SOURCE_VERIFIED",
+  "hypotheses": [
+    "equation Navier-Stokes incompressible standard sur R3 x (-infinity,0), sans frontiere, sans force et de viscosite un",
+    "paire vitesse-pression faible adaptee sur tout cylindre compact",
+    "axisymetrie exacte autour d'un axe spatial fixe, composante de swirl autorisee, et pression axisymetrique",
+    "une constante A_* finie borne ess sup_(t<0)||u(t)||_(L^(3,infinity)(R3)) sur tout le passe",
+    "la conclusion ne couvre pas une axisymetrie approchee, un axe mobile, une borne seulement par fenetre ou une ancienne solution non suitable"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0222; Seregin 2020, definition suitable, theoreme 2.1 et section 3: regularite locale axisymetrique depuis la borne faible-L3"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0088; Ozanski--Palasek 2023, theoreme 1.1 classique et consequence ancienne uniforme"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0060-literature.md; audit independant des classes, du swirl, des constantes, de la pression et de la composition",
+      "sha256": "3006363ff3cf710a47d4a657a8ec7f96929d8ab18b42230188e94fc08c47d492"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0060-axisymmetric-ancient-rigidity-audit"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Audit primaire independant puis controle de la composition; aucune revue humaine externe",
+    "notes": "Le statut SOURCE_VERIFIED porte sur la composition de deux resultats publies et leurs quantificateurs. Ozanski--Palasek seuls exigent la classicalite; Seregin fournit le raccord suitable. Aucune implication Clay generale, car axisymetrie exacte et borne faible-L3 uniforme restent des hypotheses."
+  }
+}
