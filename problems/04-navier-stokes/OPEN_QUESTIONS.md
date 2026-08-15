@@ -580,3 +580,28 @@ fermés; la trace, pas la compacité intérieure, est le premier verrou.
 `FAIL-NS-0082` réfute la nécessité d'un moment signé porté par l'ancien temps
 terminal dans la branche Type I persistante. Il ne réfute pas les
 contre-profils de tranche de `FAIL-NS-0081` et ne ferme aucune rigidité.
+
+## Priorité active après le cycle 0047
+
+1. **`GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY-OR-MILDNESS`.** Décider si une
+   ancienne adaptée locale, à pression de Riesz et uniformément
+   `L^(3,infinity)`, admet sur chaque bande forward la scission calorique et
+   le correcteur énergétique de Barker–Seregin–Šverák.
+2. **Trace de redémarrage.** Identifier la topologie minimale à un temps
+   fini `tau_0<0` qui annule tout reste calorique homogène dans Duhamel sans
+   invoquer la forte continuité, fausse sur tout `L^(3,infinity)`.
+3. **Test adverse admissible.** Chercher une solution ancienne suitable à
+   pression de Riesz dont les queues faibles-L3 interdisent une énergie
+   globale du correcteur; un simple champ cinématique `|x|^-1` ne suffit pas
+   pour réfuter le raccord PDE.
+4. **Rigidités plus fortes.** Tester séparément les portes `L3` fort sur une
+   suite reculée, bornitude mild, axisymétrie exacte ou récurrence de
+   dilatation. Ne transférer aucun théorème sans sa porte.
+5. **Endpoint singulier.** Ne le réintroduire que si le théorème choisi
+   l'exige; la non-trivialité volumique ne donne pas une singularité à zéro.
+6. **Type II.** Reste séparé : le pipeline dépend d'une borne Type I finie et
+   ses constantes ne sont pas uniformes lorsque cette borne diverge.
+
+`GAP-TYPE-I-DERENORMALIZATION-CLASS` est fermé au statut interne par le claim
+0047. `FAIL-NS-0083` bloque seulement la promotion fonctionnelle automatique
+vers Leray–Hopf; la question PDE de mildness reste ouverte.

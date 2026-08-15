@@ -989,6 +989,26 @@ solution ou précise qu'il s'agit seulement d'un champ test.
 - Pivot : `GAP-TYPE-I-LOCAL-COMPACTNESS-TRACE`, puis
   `GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY`.
 
+## 2026-08-15 — Dérenormalisation exacte, dette globale inchangée
+
+- Objet : inverse exact du drift Type I constant sur toute la diagonale
+  ancienne, sans supposer une trace terminale non nulle.
+- Scaling : `v=r^-1Z`, `q=r^-2Pi`, `d tau=r²ds`, `dx=r³dy`; `K_3` est
+  exactement invariant, l'énergie locale normalisée aussi.
+- Énergie locale : l'opérateur standard coûte `r^-4`; le jacobien donne au
+  test renormalisé le poids positif `r`. Aucun coefficient de Grönwall ni
+  constante de troncature n'intervient dans cette conjugaison.
+- Pression : le contrôle global faible-`L^(3/2)` passe faible-étoile par les
+  Riesz; la convergence forte locale identifie le produit, sans prétendre à
+  une compacité forte globale.
+- Gain : ancienne standard suitable locale, faible-`L3`, non nulle, pression
+  de Riesz.
+- Perte restante : faible-`L3` n'est pas à queue absolument continue et ne
+  fournit ni énergie globale, ni trace forte, ni formule mild compatible.
+- Certificat : 420 assertions rationnelles; zéro discrétisation, zéro erreur
+  d'arrondi, résidus adverses explicites.
+- Pivot : `GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY-OR-MILDNESS`.
+
 ## 2026-08-15 — Énergie locale récupérée, trace critique perdue
 
 - Objet : suites classiques de l'équation renormalisée sur `R3`, sous borne

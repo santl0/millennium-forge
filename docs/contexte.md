@@ -408,3 +408,17 @@ seule non-trivialité. Le verrou actif devient
 La veille n'ajoute aucune source et le corpus reste à 188. Aucun résultat
 Clay, aucune persistance de singularité terminale et aucune mildness globale
 ne sont revendiqués.
+
+Le cycle 0047 ferme la conjugaison du drift. Avec
+`r=e^(-kappa s)`, `tau=(1-r²)/(2kappa)`, `v=r^-1Z` et `q=r^-2Pi`,
+l'équation, la divergence et l'inégalité d'énergie locale deviennent
+exactement celles de Navier–Stokes standard sur `R3 x (-infinity,0]`. La
+pression de Riesz passe par extraction faible-étoile globale et la borne
+faible-`L3` ainsi que la non-trivialité sont conservées.
+
+La sortie est seulement ancienne suitable locale, faible-`L3`, non nulle;
+pas Leray–Hopf, local-energy avec trace forte, mild, bornée ou singulière à
+zéro. `NS-SRC-0189` documente que les rigidités Albritton–Barker exigent des
+classes plus fortes. Le corpus atteint 189 sources et le registre 85 claims.
+Le verrou actif est
+`GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY-OR-MILDNESS`.

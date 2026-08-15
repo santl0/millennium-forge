@@ -1889,3 +1889,29 @@ limite ancienne renormalisée non triviale
 
 La forte `L3` espace–temps ne conserve ni un point singulier terminal ni la
 valeur de l'ancien endpoint. Ces conclusions plus fortes restent séparées.
+
+## Cycle 0047 — conjugaison vers la classe ancienne standard
+
+```text
+NS-TYPE-I-PERSISTENT-CAPTURE-SPACETIME-NONTRIVIALITY
+  + NS-TYPE-I-WEAK-L3-LOCAL-SUITABLE-COMPACTNESS
+  + extraction faible-étoile globale du produit et pression de Riesz
+  --> Z ancienne renormalisée suitable locale, faible-L3, non nulle
+
+r=e^(-kappa s), tau=(1-r²)/(2kappa), x=x_0+ry
+  + v=r^-1Z, q=r^-2Pi
+  + dx d tau=r^5dy ds
+  --> équation NS standard, divergence et énergie locale
+  --> NS-TYPE-I-DERENORMALIZED-ANCIENT-LOCAL-SUITABLE
+      [COMPUTATION_ONLY, double revue contradictoire]
+
+ancienne standard suitable locale + Riesz + Linfinity_t L^(3,infinity)_x
+  -/-> Leray-Hopf global          [FAIL-NS-0083: queue |x|^-1]
+  -/-> mild/scindée               [trace et identité de Duhamel absentes]
+  -?-> GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY-OR-MILDNESS
+  -?-> problème Clay.
+```
+
+Les pertes de signe, jacobien, pression et énergie locale sont fermées. La
+première perte restante n'est plus une puissance d'échelle : c'est la
+structure globale de Cauchy à l'endpoint faible-Lorentz, puis la rigidité.

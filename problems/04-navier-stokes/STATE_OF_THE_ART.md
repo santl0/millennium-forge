@@ -1404,3 +1404,36 @@ Le claim interne
 `COMPUTATION_ONLY`. Aucune source nouvelle n'est ajoutée : le corpus reste à
 188. Le verrou actif devient la dérenormalisation exacte de l'équation avec
 drift, puis la classification ou rigidité de la classe ancienne obtenue.
+
+## Mise à jour 2026-08-15 — cycle 0047, classe ancienne standard exacte
+
+La conjugaison du drift est maintenant calculée dans les distributions. Si
+`r=exp(-kappa s)`, `tau=(1-r²)/(2kappa)`, `x=x_0+ry`,
+`v=r^-1Z` et `q=r^-2Pi`, alors `s in (-infinity,0]` correspond exactement à
+`tau in (-infinity,0]` et
+
+```text
+N_renormalise[Z,Pi]=r³ N_standard[v,q],
+div_y Z=r² div_x v,
+L_renormalise=r^4 L_standard.
+```
+
+Le jacobien `dx d tau=r^5dy ds` transforme un test faible par le poids `r²`
+et un test d'énergie locale par le poids positif `r`. L'inégalité locale
+d'énergie est conservée sans résidu. Une extraction faible-étoile globale du
+produit dans `L-infinity L^(3/2,infinity)`, identifiée par la forte `L3_loc`,
+conserve aussi la jauge `Pi=R_iR_j(Z_iZ_j)`. La quasi-norme faible-`L3` est
+exactement invariante et la non-trivialité espace–temps persiste.
+
+La sortie exacte est une solution ancienne standard non triviale **faible
+adaptée locale**, uniformément faible-`L3`, avec pression globale de Riesz.
+Elle n'est pas automatiquement Leray–Hopf, local-energy avec trace forte,
+mild, bornée ou singulière au temps zéro. Albritton–Barker (`0189`) exige
+mildness et bornitude pour son équivalence Type I, ou mildness et `L3` fort
+sur une suite reculée pour son Liouville. Le corpus atteint 189 sources;
+aucun théorème audité ne rigidifie la classe faible-`L3` obtenue.
+
+Le claim `NS-TYPE-I-DERENORMALIZED-ANCIENT-LOCAL-SUITABLE` reste
+`COMPUTATION_ONLY`. `GAP-TYPE-I-DERENORMALIZATION-CLASS` est fermé au statut
+interne; le verrou devient
+`GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY-OR-MILDNESS`.

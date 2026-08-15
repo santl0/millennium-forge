@@ -527,3 +527,22 @@
   capture est publiée et les ingrédients de compacité sont sourcés.
 - Le verrou actif devient `GAP-TYPE-I-DERENORMALIZATION-CLASS`; la
   singularité terminale, la mildness et la rigidité restent séparées.
+
+### 2026-08-15 — classe dérenormalisée fixée avant rigidité
+
+- La conjugaison exacte de l'équation, de la pression et de l'énergie locale
+  obtient `18/20`; la promotion mild et l'application directe d'une rigidité
+  obtiennent chacune `15/20` et ne sont pas sélectionnées.
+- L'horloge est fixée par `tau=(1-e^(-2kappa s))/(2kappa)`; sur `s<=0`, elle
+  couvre exactement `tau<=0`. Le signe, l'amplitude, la pression et le
+  jacobien sont désormais des invariants testés, pas des conventions libres.
+- La pression globale de Riesz est retenue seulement après extraction
+  faible-étoile du produit dans `L^(3/2,infinity)` et identification par la
+  forte convergence locale.
+- `NS-TYPE-I-DERENORMALIZED-ANCIENT-LOCAL-SUITABLE` reste
+  `COMPUTATION_ONLY`; une identité algébrique et deux revues IA ne valent pas
+  une preuve publiée indépendante.
+- `FAIL-NS-0083` interdit les promotions automatiques vers Leray–Hopf ou
+  mild. Il ne réfute pas un raccord PDE futur vers une classe scindée.
+- `GAP-TYPE-I-DERENORMALIZATION-CLASS` est fermé au statut interne. Le verrou
+  actif devient `GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY-OR-MILDNESS`.

@@ -974,3 +974,28 @@ Z ancienne renormalisée non triviale
 `FAIL-NS-0081` conserve l'arête négative pour une tranche isolée.
 `FAIL-NS-0082` retire seulement l'exigence injustifiée d'un moment terminal
 avant la non-trivialité espace–temps.
+
+## Cycle 0047 — dérenormalisation et frontière de classe
+
+```text
+NS-TYPE-I-WEAK-L3-LOCAL-SUITABLE-COMPACTNESS
+  + NS-TYPE-I-PERSISTENT-CAPTURE-SPACETIME-NONTRIVIALITY
+  + Pi_j=R_iR_j(Z_j tensor Z_j), faible-étoile global
+  --> Z ancienne renormalisée, suitable locale, faible-L3, non nulle
+
+N_s[Z,Pi]=0
+  + r_s/r=-kappa, tau_s=r²
+  + N_s=r³N_tau, div_yZ=r²div_xv, E_s=r^4E_tau
+  --> NS-TYPE-I-DERENORMALIZED-ANCIENT-LOCAL-SUITABLE
+      [COMPUTATION_ONLY]
+
+NS-TYPE-I-DERENORMALIZED-ANCIENT-LOCAL-SUITABLE
+  -/-> Leray-Hopf                    [énergie globale absente]
+  -/-> local-energy avec trace forte [clause de Cauchy absente]
+  -/-> mild/scindée                  [Duhamel endpoint absent]
+  -?-> rigidité ancienne faible-L3   [GAP actif]
+  -?-> régularité Clay.
+```
+
+`NS-SRC-0189` ferme seulement la documentation de la cible mild bornée et
+de son Liouville `L3` fort; ses hypothèses ne sont pas héritées.

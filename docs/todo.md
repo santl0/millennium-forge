@@ -253,3 +253,21 @@
   rigidité ancienne faible-`L3`.
 - [ ] Garder séparées non-trivialité, trace à l'ancien endpoint et
   persistance d'un point singulier.
+
+### Cycle 0047
+
+- [x] Dérenormaliser exactement le drift avec domaine temporel, jacobien,
+  divergence et pression suivis.
+- [x] Transporter l'inégalité d'énergie locale dans les distributions et
+  certifier le poids positif de la fonction test.
+- [x] Identifier la sortie comme ancienne faible adaptée locale,
+  uniformément faible-`L3`, non triviale et à pression de Riesz.
+- [x] Certifier 420 assertions rationnelles et les résidus des mauvais
+  signes, amplitudes, horloges et puissances de pression.
+- [x] Refuser les promotions automatiques Leray–Hopf, local-energy avec trace
+  forte et mild; enregistrer `FAIL-NS-0083`.
+- [ ] Tester sur une bande forward finie si l'ancienne obtenue admet la
+  scission calorique plus correcteur énergétique de `NS-SRC-0188`.
+- [ ] Identifier ou réfuter une condition de trace faible-étoile annulant le
+  reste calorique homogène à l'endpoint `L^(3,infinity)`.
+- [ ] Garder séparées rigidité faible-`L3`, singularité terminale et Type II.
