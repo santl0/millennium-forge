@@ -1,0 +1,62 @@
+{
+  "id": "NS-TYPE-I-MODAL-METRIC-CONVEX-HULL",
+  "problem": "navier-stokes",
+  "statement": "Dans un Hilbert reel muni d'une action unitaire SO(2), soit d=partial_s Z et g=mathcal R Z. Sur tout ensemble fini d'isotypes azimutaux actifs et pour les produits scalaires invariants obtenus en reponderant chaque paire de modes +/-k par un scalaire positif lambda_k, la vitesse canonique beta_lambda=<d,g>_lambda/||g||_lambda^2 est exactement une moyenne convexe des vitesses modales b_k. L'infimum pointwise de |beta_lambda| sur tous ces poids est la distance de zero a l'enveloppe convexe des b_k. Ainsi un regime rapide uniforme sur ces metriques exige que les vitesses actives aient un meme signe et que leur module minimal diverge. Deux modes contre-rotatifs fournissent deux metriques fixes de conditionnement au plus deux pour lesquelles beta_n vaut respectivement zero et n/3. Le collapse du cycle 0059 reste valide pour une metrique epinglee, mais sa premisse rapide n'est pas une quantite intrinseque et n'est pas produite automatiquement par Navier--Stokes.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "X est un Hilbert reel separable avec representation fortement continue et unitaire de SO(2); Z appartient au domaine du generateur et d=partial_sZ appartient a X",
+    "la complexification est decomposee par les projecteurs de Fourier P_k et seuls un nombre fini d'isotypes de Gram non nul est utilise dans l'identite d'enveloppe convexe",
+    "les changements de metrique consideres pour le critere exact sont les reponderations scalaires positives des paires reelles +/-k; une multiplicite interne autorise encore plus de produits invariants",
+    "les poids sont fixes lorsqu'un meme Hilbert est utilise sur une fenetre; l'infimum pointwise sur les poids est distingue de la quantification sur une metrique fixe",
+    "le cadre renormalise conserve un axe et un repere similaire fixes; une jauge temporelle ajoute sa vitesse a tous les coefficients modaux",
+    "le transfert au pipeline Type I exige separement que la PDE produise une coherence de signe modale ou un defaut d'axisymetrie intrinseque"
+  ],
+  "dependencies": [
+    "NS-TYPE-I-CANONICAL-HILBERT-PHASE-COLLAPSE",
+    "NS-TYPE-I-BOCHNER-FAST-ROTATION-COLLAPSE",
+    "NS-TYPE-I-WEAK-L3-LOCAL-SUITABLE-COMPACTNESS"
+  ],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0061-modal-metric-robustness.md; decomposition isotypique, formule de moyenne convexe et audit des quantificateurs",
+      "sha256": "20289ba878fcca1826c146801b62cd89fbe56f009ac4ea640d95363703baf723"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0061-formal.md; audit independant des isotypes, conditionnement, multiplicite, mesurabilite et quantificateurs",
+      "sha256": "de32bbdd38bea2628361dae96ba0c5ceacab8cfe6e1266867f58909fdb66e2e1"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0061-countermodel.md; deux modes, metriques fixes equivalentes et mode lent",
+      "sha256": "22b6bb5396590ae9982d7767ef2583007fc55b07b5cd9fcc49e23da4b6899273"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/modal-metric-robustness/modal_metric_robustness.py; 1809 assertions rationnelles exactes",
+      "sha256": "e38b2c7ff22c0821b28c71b2067543a2c5cd186362db88bb7b5039df44cafbe3"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0224; Fedele--Abessi--Roberts 2015, formule de projection modale finie et dependance au produit scalaire"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0061-literature.md; audit primaire de la formule modale, Pineau--Vicol v2 et non-transferts",
+      "sha256": "8b03372ff0f57e477b44a3923e7a101f84d9064f42e1c5644e93082c5fad5397"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0061-modal-metric-robustness"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Derivation principale, audit formel, veille primaire et certificat exact separes; aucune revue humaine externe",
+    "notes": "Le statut reste COMPUTATION_ONLY. Le critere convexe est exact pour les reponderations scalaires d'un bloc fini et pointwise dans le temps. Il ne commute pas automatiquement infimum en metrique et infimum essentiel temporel. Les operateurs invariants sur un isotype de multiplicite superieure peuvent modifier meme la vitesse modale. Le contre-mode est hilbertien et ne satisfait aucune PDE; il refute l'intrinsecite fonctionnelle, pas une loi de signe Navier--Stokes encore inconnue."
+  }
+}

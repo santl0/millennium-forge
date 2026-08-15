@@ -2108,3 +2108,42 @@ n'est ni supprimé ni réinterprété comme solution Navier--Stokes.
 - Décision : abandonner le mécanisme « dissipation seule » pour annuler
   `partial_s mathcal AZ`; conserver l'équation moyenne exacte et tester
   l'asymptotique ancienne.
+
+## `FAIL-NS-0097` — grande vitesse canonique prise pour quantité intrinsèque
+
+- Date : 2026-08-15.
+- Cible : considérer la divergence de
+  `beta=<partial_sZ,mathcal RZ>/||mathcal RZ||²` dans une métrique
+  SO(2)-invariante épinglée comme une propriété intrinsèque du champ ou de la
+  dynamique.
+- Formule exacte : sous repondération scalaire positive des blocs
+  isotypiques,
+
+  ```text
+  beta_lambda
+   =sum_k lambda_k G_k beta_k / sum_k lambda_k G_k.
+  ```
+
+  L'ensemble de ces valeurs est dense dans l'enveloppe convexe des vitesses
+  modales actives. Des signes opposés permettent donc une annulation.
+- Contre-modèle : deux modes de Gram un et de vitesses `+N,-N` donnent
+  `beta_N=0` pour les poids fixes `(1,1)`, mais `beta_N=N/3` pour les poids
+  fixes `(2,1)`. Les deux produits sont invariants, indépendants de `N,s` et
+  ont un rapport de conditionnement au plus deux.
+- Quantificateurs : le collapse du cycle 0059 reste correct pour une métrique
+  fixée. L'échec porte sur le passage de « rapide pour cette métrique » à
+  « rapide intrinsèquement ». Un poids dépendant de `N` est une obstruction
+  différente et n'est pas admissible dans le Hilbert commun sans nouveau
+  contrôle de topologie.
+- Certificat : 1809 assertions rationnelles exactes sur Grams, projections,
+  reconstruction, orthogonalité et Pythagore; zéro erreur arithmétique,
+  empreinte
+  `e38b2c7ff22c0821b28c71b2067543a2c5cd186362db88bb7b5039df44cafbe3`.
+- Portée : représentation hilbertienne finie, sans champ 3D, divergence,
+  pression, viscosité ni solution Navier--Stokes. Le résultat réfute
+  l'intrinsécité fonctionnelle, pas une éventuelle cohérence de signe modale
+  produite par la PDE.
+- Décision : abandonner
+  `GAP-TYPE-I-METRIC-ROBUST-FAST-AXISYMMETRIZATION` comme conséquence
+  automatique de la projection. Pivoter vers
+  `GAP-TYPE-I-INTRINSIC-AXISYMMETRY-DEFECT-OR-MODAL-SIGN-COHERENCE`.

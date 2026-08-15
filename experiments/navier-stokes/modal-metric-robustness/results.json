@@ -1,0 +1,21 @@
+{
+  "arithmetic": "Fraction",
+  "assertions": 1809,
+  "case_sha256": "9d36b7f8992dc961a4882ed2475303e4aa004bcc40f5c87e7f998f4a73fa286c",
+  "fixed_metric_beta_slow_model": "(N^3+1)/(N^2+1)",
+  "fixed_metric_slow_gram_share": "1/(N^2+1)",
+  "git_diff_check": "PASS",
+  "identity_residual": "0",
+  "n_dependent_metric_beta_slow_model": "(N+1)/2",
+  "n_dependent_metric_slow_gram_share": "1/2",
+  "n_fourth_metric_beta_slow_model": "(N^2+N)/(N^2+1)",
+  "n_fourth_metric_slow_gram_share": "N^2/(N^2+1)",
+  "opposed_equal_weights_beta": "0",
+  "opposed_weights_2_to_1_beta": "N/3",
+  "orthogonality_residual": "0",
+  "scope": "SO(2) isotypes k=1 and k=2; no PDE realization",
+  "script": "modal_metric_robustness.py",
+  "script_sha256": "e38b2c7ff22c0821b28c71b2067543a2c5cd186362db88bb7b5039df44cafbe3",
+  "seed": "n/a",
+  "status": "PASS"
+}

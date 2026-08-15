@@ -60,6 +60,10 @@
     {
       "kind": "primary_source",
       "reference": "NS-AXISYMMETRIC-ANCIENT-WEAK-L3-RIGIDITY; correction du cycle 0060, endgame publie sans stationnarite"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "FAIL-NS-0097 et NS-TYPE-I-MODAL-METRIC-CONVEX-HULL; la divergence de beta peut changer sous deux metriques invariantes fixes de conditionnement relatif deux"
     }
   ],
   "provenance": {
@@ -72,6 +76,6 @@
   "review": {
     "status": "adversarial_pass",
     "reviewer": "Derivation principale, audit analytique, veille primaire et certificat exact separes; aucune revue humaine externe",
-    "notes": "Le statut reste COMPUTATION_ONLY. Le coefficient est canonique seulement pour la metrique et les poids epingles. Le produit tangent et le residu sont stables au Gram nul, mais beta peut diverger ou ne pas etre L1 et ne reconstruit pas automatiquement une phase. FAIL-NS-0095 refute la stationnarite depuis la seule projection; le cycle 0060 montre qu'elle n'est plus requise dans l'endgame axisymetrique suitable faible-L3. La grande vitesse canonique robuste n'est toujours pas produite par un blow-up arbitraire."
+    "notes": "Le statut reste COMPUTATION_ONLY. Le coefficient est canonique seulement pour la metrique et les poids epingles. Le produit tangent et le residu sont stables au Gram nul, mais beta peut diverger ou ne pas etre L1 et ne reconstruit pas automatiquement une phase. FAIL-NS-0095 refute la stationnarite depuis la seule projection; le cycle 0060 montre qu'elle n'est plus requise dans l'endgame axisymetrique suitable faible-L3. Le cycle 0061 conserve le collapse pour une metrique fixee mais FAIL-NS-0097 refute l'intrinsecite de sa premisse rapide sous reponderation invariante."
   }
 }

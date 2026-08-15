@@ -2433,3 +2433,34 @@ cellule reste donc `NOT_PROVIDED`.
 - Environnement : Python standard, sans dépendance externe ni aléa.
 - Limites : champs tests statiques, pas solutions NS; le certificat élimine
   seulement un argument de signe structurel.
+
+## `MODAL-METRIC-ROBUSTNESS-1` — poids isotypiques et phase canonique
+
+- Question falsifiable : la divergence de
+  `beta=<partial_sZ,mathcal RZ>/||mathcal RZ||²` survit-elle à deux métriques
+  SO(2)-invariantes fixes et uniformément équivalentes ?
+- Équations réellement calculées : projection orthogonale dans
+  `R2 direct sum R2` avec générateur `J direct sum 2J`, repondération des deux
+  isotypes, reconstruction et Pythagore; aucune PDE n'est intégrée.
+- Cas opposé : amplitudes `1,1/2`, Grams tangentiels unitaires et vitesses
+  `+N,-N`; les poids `(1,1)` donnent `beta_N=0`, les poids `(2,1)` donnent
+  `beta_N=N/3`.
+- Cas lent : `G_1=1`, `G_2=N^-2`, vitesses `N,1`. Les poids fixes donnent
+  `(N³+1)/(N²+1)`, les poids mobiles `(1,N²)` rendent le mode lent visible à
+  part `1/2`, et `(1,N^4)` rendent `beta_N=(N²+N)/(N²+1)->1`.
+- Discrétisation : aucune approximation de continuum. Quatre orientations de
+  quart de tour, dix échelles dyadiques et arithmétique `Fraction`; aucune
+  graine ni flottant.
+- Convergence et résidu : 1809 assertions rationnelles exactes; erreurs de
+  reconstruction et d'orthogonalité nulles. Le résidu transverse canonique
+  n'est pas confondu avec ces erreurs.
+- Commande :
+  `python -B experiments/navier-stokes/modal-metric-robustness/modal_metric_robustness.py`.
+- Environnement : Python standard, sans dépendance externe ni aléa.
+- Empreinte :
+  `e38b2c7ff22c0821b28c71b2067543a2c5cd186362db88bb7b5039df44cafbe3`;
+  cas exacts
+  `9d36b7f8992dc961a4882ed2475303e4aa004bcc40f5c87e7f998f4a73fa286c`.
+- Limites : représentation finie, aucun champ 3D divergence-free, aucune
+  pression, viscosité, solution NS ou conclusion Clay. Les poids dépendant
+  de `N` sont explicitement hors de la métrique commune du cycle 0059.
