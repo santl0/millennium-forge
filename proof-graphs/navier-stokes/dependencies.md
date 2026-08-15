@@ -858,3 +858,42 @@ il ne constitue donc pas une arête négative vers l'espace `X`.
 2. Tester l'échappement de la force sur les compacts quand `L->infinity`.
 3. Si l'échappement échoue, isoler la topologie faible-étoile minimale dans
    laquelle pression et produits quadratiques passent à la limite.
+
+## Cycle 0044 — arête locale de la force vers zéro
+
+```text
+Q_L, même opérateur unité dilaté
+  --> Q_LW=W dans B_L
+      [classique + conjugaison exacte]
+  --> K_L=0 et Q_LH=H dans B_L
+      [dérivation interne]
+
+H=P_L div(U tensor U), jauge de Riesz
+  + Z_L=U dans B_L
+  --> F_L=P_L div(E_L) dans B_rho, E_L=0 dans B_L
+      [dérivation interne, L>=2rho]
+
+K_(3/2)(E_L)<=C(1+C_Q²)M²
+  + |partial^alpha nabla^3N(y)|<=C_alpha|y|^(-4-|alpha|)
+  + L^(3/2,infinity)-L^(3,1)
+  --> ||partial^alpha F_L||_Linf(B_rho)
+      <=C_alpha M²L^(-3-|alpha|)
+      [COMPUTATION_ONLY]
+  --> GAP-TYPE-I-FORCE-LOCAL-ESCAPE fermé
+
+kappa[D,Q_L] sur U_L=L^-1U_*(dot/L)
+  --> amplitude L^-1, pairing dual de taille L²
+  --> norme globale X non uniforme
+      [REFUTED comme estimation universelle]
+
+force locale ->0
+  -?-> compacité forte locale des vitesses
+  -?-> passage de l'énergie et trace non nulle
+      [GAP-TYPE-I-LOCAL-COMPACTNESS-TRACE]
+  -?-> solution ancienne faible-L3 et rigidité
+      [GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY].
+```
+
+L'arête vers zéro est spatiale et locale. Elle ne porte aucune dérivée
+temporelle et ne peut pas être remplacée par une convergence dans le `X`
+global, explicitement fausse pour `kappa!=0`.

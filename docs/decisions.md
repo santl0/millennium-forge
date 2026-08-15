@@ -459,3 +459,28 @@
   `GAP-TYPE-I-FORCE-COMPACTNESS` devient actif avant la rigidité forcée.
 - La prochaine expérience déplace la couronne vers le facteur externe `L`
   et suit toutes les constantes avant tout passage `L->infinity`.
+
+### 2026-08-15 — échappement local de la force, borne globale réfutée
+
+- L'estimation directe de la queue de Leray est retenue avec le score
+  `19/20`; la borne globale uniforme (`15/20`) et la topologie faible-étoile
+  abstraite (`13/20`) ne sont pas sélectionnées.
+- Un même opérateur de Bogovskii est dilaté. Changer de réalisation avec `L`
+  n'est pas admis comme preuve d'une constante uniforme.
+- Dans tout compact contenu dans `B_L`, `Q_LH=H` et les deux commutateurs
+  s'annulent exactement. La pression globale de Riesz reste indispensable
+  pour identifier `H=P_L div(U tensor U)`.
+- La queue tensorielle n'est pas compacte : elle vaut `-U tensor U` au-delà
+  de `B_(2L)`. Toutes les coquilles sont sommées, sans supposer l'absolue
+  continuité du faible-Lorentz.
+- `GAP-TYPE-I-FORCE-LOCAL-ESCAPE` est fermé avec taux spatial
+  `L^(-3-|alpha|)`.
+- La borne globale en `X` est abandonnée : `FAIL-NS-0080` donne une
+  minoration `c|kappa|L²-C` pour la force complète sur un pure-swirl
+  cinématique.
+- Le signe du drift est fixé à `+kappa D` au membre gauche; le signe opposé
+  détecté pendant la passe formelle est rejeté.
+- La diagonale physique doit vérifier `L_jR_j->0`; aucune fonction `L(t)`
+  variable n'est introduite.
+- Le prochain verrou est `GAP-TYPE-I-LOCAL-COMPACTNESS-TRACE`, avant
+  dérenormalisation et rigidité ancienne faible-`L3`.

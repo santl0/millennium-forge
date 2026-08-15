@@ -362,3 +362,21 @@ ce faux contre-test. Le corpus atteint 185 sources.
 `GAP-TYPE-I-MOVING-COMMUTATOR-BOUND` est fermé pour l'opérateur fixé. Le
 verrou actif devient `GAP-TYPE-I-FORCE-COMPACTNESS`, suivi de la rigidité
 forcée. Aucune petitesse, convergence forte ou régularité Clay n'est obtenue.
+
+Le cycle 0044 dilate la transition à la couronne
+`A_L={L<|y|<2L}` sans modifier la capture dans `B_1`. Sur tout compact, les
+commutateurs et `Q_LH-H` s'annulent exactement; la seule contribution est la
+queue de Leray du tenseur `Z_L tensor Z_L-U tensor U`, nul dans `B_L`. Son
+noyau d'ordre quatre donne
+`||partial^alpha F_L||_infinity<=C M²L^(-3-|alpha|)`.
+
+Le gain est strictement local. Un pure-swirl critique à l'échelle `L` donne
+pour la force complète
+`F_L=L^-3B_0(dot/L)+kappa L^-1A(dot/L)` et donc
+`||F_L||_X>=c|kappa|L²-C`. La convergence globale dans `X` est réfutée.
+Le certificat dyadique porte 253 assertions exactes.
+
+Le verrou actif devient `GAP-TYPE-I-LOCAL-COMPACTNESS-TRACE` : compacité
+forte locale, passage de l'énergie et trace non triviale sur une diagonale
+`L_j->infinity`, `L_jR_j->0`. La dérenormalisation puis la rigidité ancienne
+faible-`L3` restent séparées; aucun résultat Clay n'est obtenu.

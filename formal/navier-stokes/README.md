@@ -1122,3 +1122,27 @@ Les points 4 et la bornitude négative de Bogovskii restent des interfaces de
 source, non des théorèmes présents dans une bibliothèque formelle épinglée.
 Une compilation de 1–9 certifierait la composition fonctionnelle, pas la
 compacité temporelle, la convergence des produits ou la rigidité forcée.
+
+## Backlog issu du cycle 0044 — queue externe de Leray
+
+Le noyau stable à formaliser est séparé de la PDE :
+
+1. définir `Q_L` par conjugaison et prouver `Q_LW=W` dans `B_L`;
+2. montrer que la partie locale de `P_L div T` est nulle lorsque
+   `supp T` est séparé du compact observé;
+3. formaliser les dérivées troisième et quatrième de
+   `N(x)=1/(4pi|x|)` avec les majorants rationnels `2|x|^-4` et
+   `17|x|^-5`;
+4. prouver `||f||_L1(E)<=3|E|^(1/3)K_(3/2)(f)` par couches;
+5. sommer les coquilles et obtenir `11904/35` puis `134912/25`;
+6. encoder l'invariance des normes du test `psi(y/L)` dans la dualité de
+   `X=L1+div L^(3/2,infinity)`;
+7. vérifier l'identité de scaling
+   `F_L=L^-3B_0(y/L)+kappa L^-1A(y/L)` et la minoration quadratique;
+8. garder comme interfaces papier la borne uniforme de `Q_L`, la pression de
+   Riesz et la dualité Lorentz.
+
+Les points 3–5 possèdent un certificat rationnel de 253 assertions. Leur
+formalisation certifierait une estimation de noyau et un contre-scaling, pas
+la compacité d'une suite de solutions, l'inégalité d'énergie locale, une
+trace terminale ou un résultat Clay.

@@ -1649,3 +1649,31 @@ claim éventuellement supersédé.
 - Statut : stratégie haute fréquence positive `ABANDONNÉE`; le choix
   pseudodifférentiel fixé ferme ensuite la borne négative et déplace le verrou
   vers la compacité.
+
+## `FAIL-NS-0080` — Facteur externe supposé gratuit dans la norme globale
+
+- Date : 2026-08-15.
+- Cible : envoyer la transition du cutoff à la distance normalisée `L` tout
+  en conservant une borne uniforme globale dans
+  `X=L1+div L^(3/2,infinity)` depuis la seule borne faible-`L3`.
+- Contre-profil : pour un pure-swirl lisse `V` dans la transition radiale,
+  `U_L(y)=L^-1V(y/L)` garde exactement sa taille faible-`L3` et annule les
+  entrées de Bogovskii.
+- Première puissance perdue : la diffusion et la non-linéarité se dilatent
+  comme une force, `L^-3`, mais
+  `[D,Q_L]U_L=L^-1[D,Q_1]V(y/L)`. Le drift manque deux puissances de `L`.
+- Minoration quotient : un test `psi_L(y)=psi(y/L)` garde simultanément ses
+  normes `L-infinity` et `nabla psi_L` dans `L^(3,1)`. La dualité de Lorentz
+  donne pour la force complète
+  `||F_L||_X>=c|kappa|L²-C` si `kappa!=0`.
+- Résultat positif conservé : sur chaque compact, les termes locaux sont
+  exactement nuls et la queue de Leray décroît comme `L^-3`; l'échec est
+  global, pas local.
+- Certificat auxiliaire : 253 assertions rationnelles pour le noyau et les
+  budgets, empreinte
+  `48ef31abefe4b63dcd42771480b5a257d588c70849b169e979c332cb859da2af`.
+- Portée : le profil est cinématique et n'est ni une solution ancienne, ni
+  une trajectoire renormalisée. Il réfute une estimation spatiale universelle
+  tirée de la seule taille critique.
+- Statut : borne globale uniforme sous `L->infinity` `REFUTED`; pivot vers
+  compacité locale et contrôle de trace.

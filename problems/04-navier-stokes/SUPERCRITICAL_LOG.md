@@ -965,3 +965,26 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   aucune convergence forte des produits n'est acquise.
 - Pivot : `GAP-TYPE-I-FORCE-COMPACTNESS`, puis
   `GAP-TYPE-I-FORCED-RIGIDITY`.
+
+## 2026-08-15 — Cutoff externe : gain local, perte globale
+
+- Objet : transition homothétique sur `A_L={L<|y|<2L}`, avec core Type I
+  inchangé dans `B_1` et même inverse de divergence conjugué.
+- Gain local : le stress extérieur est faible-`L^(3/2)` et le noyau de
+  `P_L div` a le degré `-4`; la force décroît comme `L^-3` sur les compacts,
+  et sa dérivée spatiale d'ordre `m` comme `L^(-3-m)`.
+- Constantes certifiées : `11904/35` pour `m=0` et `134912/25` pour `m=1`
+  dans la convention tensorielle du ledger; 253 assertions rationnelles.
+- Perte globale : sur `U_L=L^-1U_*(dot/L)`, le terme de drift vaut
+  `kappa L^-1[D,Q]U_*(dot/L)`, deux puissances au-dessus du scaling d'une
+  force. La dualité de `X` impose `||F_L||_X>=c|kappa|L²-C`.
+- Faux raccourci éliminé : la somme des budgets par coquille peut croître
+  logarithmiquement alors que la quasi-norme faible de leur union reste
+  uniforme; seule la minoration duale donne un échec global robuste.
+- Diagonale physique : exiger `L_j->infinity` et `L_jR_j->0`; le choix
+  `L_j=R_j^-1` est rejeté.
+- Résultat : fuite locale fermée, convergence globale réfutée.
+- Perte restante : aucune compacité temporelle, convergence forte du produit,
+  inégalité d'énergie limite, trace non nulle ou dérenormalisation ancienne.
+- Pivot : `GAP-TYPE-I-LOCAL-COMPACTNESS-TRACE`, puis
+  `GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY`.

@@ -184,11 +184,32 @@
   dans `L1+div L^(3/2,infinity)`.
 - [x] Composer commutateur, pression, non-linéarité et projection de Leray
   pour obtenir une borne critique uniforme en `R`.
-- [ ] Introduire une transition externe à facteur `L` et suivre la croissance
+- [x] Introduire une transition externe à facteur `L` et suivre la croissance
   de toutes les constantes géométriques et pseudodifférentielles.
-- [ ] Tester si la force annulaire disparaît sur chaque compact lorsque
+- [x] Tester si la force annulaire disparaît sur chaque compact lorsque
   `L->infinity`, sans perdre la capture du core.
-- [ ] Si elle ne disparaît pas, définir la topologie faible-étoile exacte de
-  `X` et construire un test de passage des produits quadratiques.
+- [x] Réfuter une borne globale uniforme dans `X` sous `L->infinity` par une
+  minoration duale quadratique sur un pure-swirl critique.
+- [ ] Définir la topologie distributionnelle locale compatible avec `X` et
+  construire un test de passage des produits quadratiques.
 - [ ] Conserver le cas Type II séparé jusqu'à un contrôle uniforme des
   constantes Barker–Prange et de `kappa(M)`.
+
+### Cycle 0044
+
+- [x] Prouver l'identité locale
+  `F_L=P_L div(Z_L tensor Z_L-U tensor U)` et conserver la queue extérieure
+  non compacte.
+- [x] Établir le taux `L^(-3-|alpha|)` sur tout compact par dualité Lorentz
+  et somme dyadique.
+- [x] Certifier les constantes du noyau pour `|alpha|=0,1` sur 253 assertions
+  rationnelles.
+- [x] Construire le contre-profil global
+  `F_L=L^-3B_0(dot/L)+kappa L^-1A(dot/L)` et suivre sa norme quotient.
+- [ ] Écrire un ledger Aubin–Lions local avec espaces exacts pour
+  `partial_sigma Z_j`, pression, force et produit quadratique.
+- [ ] Construire ou exclure une concentration temporelle qui préserve les
+  bornes spatiales disponibles mais empêche la compacité forte locale.
+- [ ] Transporter la capture du core vers une trace non triviale de la limite.
+- [ ] Dérenormaliser l'équation à drift avec l'horloge exacte avant toute
+  application d'un théorème sur les solutions anciennes.

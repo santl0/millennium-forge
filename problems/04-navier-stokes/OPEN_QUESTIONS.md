@@ -505,3 +505,29 @@ divergence de stress faible-`L^(3/2)`, et elle est exactement critique.
 Le sous-gap `GAP-TYPE-I-MOVING-COMMUTATOR-BOUND` est fermé uniquement pour la
 réalisation exacte, supportée et pseudodifférentielle fixée au cycle 0043. Le
 caractère qualitatif `C_c^infinity->C_c^infinity` ne suffirait pas.
+
+## Priorité active après le cycle 0044
+
+1. **`GAP-TYPE-I-LOCAL-COMPACTNESS-TRACE`.** Sur une diagonale
+   `R_j->0`, `L_j->infinity`, `L_jR_j->0`, obtenir des bornes locales de
+   temps suffisantes pour une compacité forte de `Z_j` et le passage de
+   `Z_j tensor Z_j`, sans réintroduire une norme globale qui croît comme
+   `L_j²`.
+2. **Inégalité d'énergie.** Vérifier que la force localement évanescente et
+   les pressions de Riesz permettent de passer l'inégalité d'énergie locale;
+   suivre toutes les fonctions tests et les queues harmoniques.
+3. **Trace non triviale.** Transporter la fraction Type I capturée dans
+   `B_1` jusqu'à une trace de la limite. Une borne pointwise à des temps
+   variables ne suffit pas sans compacité temporelle.
+4. **Horloge.** Dérenormaliser l'équation avec drift `+kappa D` vers une
+   solution ancienne standard, avec domaines temporels et facteur de
+   viscosité exacts.
+5. **`GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY`.** Classifier ou exclure une
+   limite ancienne non triviale seulement bornée dans faible-`L3`; ne pas
+   supposer auto-similarité, axisymétrie ou bornitude `L-infinity`.
+6. **Type II.** Garder `M_j->infinity` hors de cette branche : ni la capture,
+   ni `kappa(M_j)`, ni les constantes locales ne sont uniformes.
+
+`FAIL-NS-0080` exclut une convergence dans le `X` global quand
+`kappa!=0`. Le résultat positif du cycle est strictement local en espace et
+ne comporte aucune dérivée temporelle.

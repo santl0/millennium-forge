@@ -1765,3 +1765,55 @@ borne dans X
 Priorité : déplacer la couronne externe vers `|y|~L`, suivre les constantes
 en `L` et déterminer si la force disparaît sur tout compact lorsque
 `L->infinity`, avant de chercher une rigidité globale forcée.
+
+## Cycle 0044 — fuite locale, croissance globale
+
+La même réalisation de Bogovskii est dilatée sur
+`A_L={L<|y|<2L}`. Le cutoff `Q_L` est l'identité dans `B_L` et reste borné
+sur faible-`L3` avec une constante indépendante de `L`. Pour tout compact
+`B_rho`, `L>=2rho` donne exactement
+
+```text
+F_L=P_L div(Z_L tensor Z_L-U tensor U) dans B_rho.
+```
+
+Le tenseur entre parenthèses est nul dans `B_L`, mais vaut
+`-U tensor U` hors de `B_(2L)`. Le noyau extérieur de `P_L div` est d'ordre
+quatre. Une somme sur toutes les coquilles donne
+
+```text
+||partial^alpha F_L||_(L-infinity(B_rho))
+ <=C_alpha(1+C_Q²)M²L^(-3-|alpha|).
+```
+
+Le graphe adaptatif devient
+
+```text
+capture Type I dans B_1
+  + Q_L=I dans B_L
+  --> termes locaux de cutoff nuls sur tout compact
+      [identité interne exacte]
+
+stress extérieur faible-L3/2
+  + noyau de P_L div de degré -4
+  --> F_L->0 dans C^infinity_(x,loc)
+      [NS-TYPE-I-OUTER-CUTOFF-LOCAL-FORCE-ESCAPE]
+  --> GAP-TYPE-I-FORCE-LOCAL-ESCAPE fermé
+
+pure-swirl U_L=L^-1U_*(dot/L), kappa!=0
+  --> F_L=L^-3B_0(dot/L)+kappa L^-1A(dot/L)
+  --> ||F_L||_X>=c|kappa|L²-C
+      [FAIL-NS-0080]
+  -/-> convergence globale dans X
+
+fuite locale de la force
+  -?-> GAP-TYPE-I-LOCAL-COMPACTNESS-TRACE
+  -?-> dérenormalisation ancienne
+  -?-> GAP-TYPE-I-ANCIENT-WEAK-L3-RIGIDITY
+  -?-> régularité Clay.
+```
+
+La diagonale admissible doit satisfaire simultanément `L_j->infinity` et
+`L_jR_j->0`. Le prochain lemme ne porte plus sur la taille instantanée de la
+force, mais sur la compacité forte locale, l'inégalité d'énergie et la
+non-trivialité de la trace.
