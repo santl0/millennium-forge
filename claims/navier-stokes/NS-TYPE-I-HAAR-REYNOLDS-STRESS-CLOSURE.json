@@ -1,0 +1,58 @@
+{
+  "id": "NS-TYPE-I-HAAR-REYNOLDS-STRESS-CLOSURE",
+  "problem": "navier-stokes",
+  "statement": "Soit Z_n une suite de solutions renormalisees classiques du pipeline Type I sur R3 x J, a axe SO(2) fixe, pression globale de Riesz, borne globale uniforme L-infinity_t L^(3,infinity)_x et convergence forte L3_loc vers Z. Posons V_n=mathcal A Z_n, W_n=(I-mathcal A)Z_n et Sigma_n=mathcal A_2(W_n tensor W_n). Si le collapse canonique rapide donne mathcal RZ=0, alors W_n tend fortement vers zero dans L3_loc, Sigma_n tend fortement vers zero dans L^(3/2)_loc et sa pression de Riesz tend vers zero dans les distributions. La limite est une solution renormalisee axisymetrique sans defaut de Reynolds interieur. Sous de-renormalisation, suitability, borne faible-L3 uniforme et capture, la rigidite publiee ancienne axisymetrique impose la nullite sans exiger stationnarite. La positivite de Sigma_n ne donne aucun signe au transfert integral Sigma_n:nabla V_n.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "domaine R3 sans frontiere, viscosite un, drift kappa(1+y dot nabla) centre a l'origine et force de cutoff tendant localement vers zero",
+    "axe SO(2) spatial fixe commun; actions covariantes distinctes sur scalaires, vecteurs et tenseurs",
+    "Z_n converge fortement dans L3_loc et est uniformement borne dans L-infinity_t L^(3,infinity)_x global",
+    "la branche canonique rapide du cycle 0059 fournit mathcal RZ=0, donc mathcal AZ=Z",
+    "la pression est dans la jauge globale de Riesz; une pression seulement locale exige un reste harmonique separe",
+    "l'endgame requiert en plus de-renormalisation exacte, limite suitable ancienne, borne faible-L3 uniforme sur tout le passe et capture non triviale"
+  ],
+  "dependencies": [
+    "NS-TYPE-I-CANONICAL-HILBERT-PHASE-COLLAPSE",
+    "NS-TYPE-I-WEAK-L3-LOCAL-SUITABLE-COMPACTNESS",
+    "NS-AXISYMMETRIC-ANCIENT-WEAK-L3-RIGIDITY",
+    "NS-TYPE-I-PERSISTENT-CAPTURE-SPACETIME-NONTRIVIALITY"
+  ],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0060-haar-reynolds-closure.md; equations moyenne/fluctuation, fermeture L3-L^(3/2), pression et raccord conditionnel",
+      "sha256": "af289f44c338aa98a867db5dfde9638ce6eaac845206a4c54ac45008ec6fddfd"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0060-formal.md; audit covariant, Leray, budgets et portee faible-L3",
+      "sha256": "12ade2a9142f17debeed59683de28b181c3d2b00cc6a7c6a42bbaa2caabb16d0"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0060-countermodel.md; champs de Schwartz divergence-free et transfert de deux signes",
+      "sha256": "c08c18ef1070f91ab1c533001cb04c5cdee79a7776a7073c109614a92c842192"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/haar-reynolds-transfer/haar_reynolds_transfer.py; 20 assertions exactes polynomial-gaussiennes",
+      "sha256": "2295e890391f8ed34044a1e35ca16a90748f27743ea0a081a677ff590df5fc50"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "NS-AXISYMMETRIC-ANCIENT-WEAK-L3-RIGIDITY; composition publiee Seregin 2020 puis Ozanski--Palasek 2023"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0060-haar-reynolds-stress-closure"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Derivation principale, audit formel, audit primaire et certificat exact separes; aucune revue humaine externe",
+    "notes": "Le statut reste COMPUTATION_ONLY pour le lemme interne. La fermeture du stress utilise la forte L3 locale et la pression utilise en plus la borne globale Lorentz. FAIL-NS-0096 refute seulement un signe structurel. Le regime canonique rapide n'est pas produit par un blow-up arbitraire et depend encore de la metrique epinglee."
+  }
+}

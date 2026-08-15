@@ -1,0 +1,14 @@
+{
+  "arithmetic": "Fraction",
+  "assertions": 20,
+  "field_sha256": "5123d2008f8b1fe4196c01e3c181dc090ad3b90cc1148d2361cbbcb3464e4437",
+  "gaussian_factor": "(pi/3)^(3/2)",
+  "git_diff_check": "PASS",
+  "normalized_transfer": "-8/27",
+  "normalized_transfer_after_V_sign_flip": "8/27",
+  "scope": "exact polynomial-Gaussian test fields; no Navier-Stokes PDE claim",
+  "script": "haar_reynolds_transfer.py",
+  "script_sha256": "2295e890391f8ed34044a1e35ca16a90748f27743ea0a081a677ff590df5fc50",
+  "seed": "n/a",
+  "status": "PASS"
+}
