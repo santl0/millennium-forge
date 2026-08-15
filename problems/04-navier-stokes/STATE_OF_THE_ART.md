@@ -1559,3 +1559,45 @@ rebasage fini dans une classe supercritique, sans uniformité ancienne. Le
 corpus atteint 193 sources et le registre 88 claims. Le verrou de cohérence
 algébrique est fermé; restent `GAP-TYPE-I-ANCIENT-QUOTIENT-RIGIDITY` et
 `GAP-TYPE-I-BSS-ENERGY-TAIL-TIGHTNESS`.
+
+## Mise à jour 2026-08-15 — cycle 0051, saturation PDE et critère infrarouge
+
+Jia--Sverak (`NS-SRC-0194`) construisent une solution exacte forward
+auto-similaire de Leray locale depuis
+`a=(-x_2,x_1,0)/|x|²`. Pour son profil relatif
+`W=mathcal U-S(1)a`, la décroissance publiée donne
+`W in L2 inter Hdot1`. Le calcul
+`curl((a dot nabla)a)=4x_3(-x_2,x_1,0)/|x|^6` exclut `W=0`; par conséquent
+
+```text
+||u(t)-S(t)a||_2=||W||_2 t^(1/4),
+integral_0^T||nabla(u-S(t)a)||_2²=2T^(1/2)||nabla W||_2².
+```
+
+La norme faible-`L3` reste uniforme. Cette vraie dynamique réfute donc toute
+borne de correcteur forward, uniforme en horizon et dépendant seulement de
+la norme critique. Les translations temporelles sont toutefois une famille
+de solutions forward, non les restrictions d'une même solution ancienne;
+la donnée est singulière et d'énergie infinie, donc non Clay.
+
+Indépendamment, le Duhamel dyadique de toute ancienne conditionnelle donne
+
+```text
+||Delta_jg_(s,r)||_2
+ <=CM²2^(-j/2)min(1,(r-s)2^(2j)),
+sup_(s<r)sum_(j>J)||Delta_jg_(s,r)||_2²<=CM^4 2^(-J).
+```
+
+Toutes les hautes fréquences sont ainsi uniformément fermées. La porte
+`liminf_s||g_(s,r)||_2<infinity` est équivalente à la bornitude de la somme
+des blocs `j<=J` pour un seuil fixe, ou à celle de `||S(a)g_(s,r)||_2` pour
+un unique `a>0` fixe. Le verrou est exactement l'annulation infrarouge du
+stress sur une même orbite ancienne.
+
+La veille ajoute `NS-SRC-0194` à `NS-SRC-0202`, couvrant saturation SS/DSS,
+décroissance spatiale, espaces Herz/Besov et un Liouville axisymétrique à
+queue imposée. Le corpus atteint 202 sources et le registre 90 claims. Les
+deux nouveaux claims restent `COMPUTATION_ONLY`. `FAIL-NS-0087` clôt la
+borne forward universelle; restent
+`GAP-TYPE-I-SINGLE-ANCIENT-ORBIT-RECURRENCE` et
+`GAP-TYPE-I-ANCIENT-INFRARED-STRESS-DEPLETION`.

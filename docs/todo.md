@@ -326,3 +326,24 @@
   qui réduirait `||g_(s,r)||_2` le long d'une suite `s->-infinity`.
 - [ ] Ne pas utiliser de compacité quotient sans fermeture ni confondre
   classe quotient nulle et appartenance `L2`.
+
+### Cycle 0051
+
+- [x] Auditer Jia--Sverak et cataloguer les sources SS/DSS, Herz/Besov et
+  Liouville spatialement pertinentes (`NS-SRC-0194` à `NS-SRC-0202`).
+- [x] Construire un saturateur Navier--Stokes forward exact et prouver
+  `W!=0` sans supposer l'unicité.
+- [x] Établir `||w(t)||_2=C_*t^(1/4)` et la dissipation exacte, puis
+  enregistrer `FAIL-NS-0087` avec sa portée non ancienne et non Clay.
+- [x] Dériver la borne dyadique du correcteur et fermer uniformément toutes
+  les fréquences `j>J`.
+- [x] Réduire le critère `liminf L2` à un cutoff bas fixe, ou à un unique
+  lissage calorifique `S(a)` fixé avant la limite.
+- [x] Certifier 615 assertions rationnelles sur la fuite infrarouge et les
+  ordres de limites.
+- [ ] Tester un gain signé `2^(epsilon(j-J))` pour les intégrales vectorielles
+  basses `B_j` d'une même orbite ancienne.
+- [ ] Déterminer si une annulation de moment, une déplétion triadique ou une
+  récurrence de blow-down est héritée du scénario Type I.
+- [ ] Ne jamais remplacer l'orbite ancienne par une famille de solutions
+  forward translatées ni sommer les normes avant les phases.

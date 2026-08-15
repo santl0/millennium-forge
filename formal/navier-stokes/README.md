@@ -1304,3 +1304,29 @@ la régularité Clay ou un blow-up.
 Les points 1--6 constituent le prochain noyau stable. Leur compilation
 certifierait l'obstruction fonctionnelle, pas la pression PDE, la tightness
 ancienne, la rigidité ou le problème Clay.
+
+## Backlog issu du cycle 0051 — saturation et critère infrarouge
+
+1. formaliser le scaling `t^(-1/2)W(x/sqrt(t))` dans `L2` et `Hdot1`, avec
+   les puissances exactes `t^(1/4)` et `t^(-1/2)`;
+2. encoder le calcul polynomial-rationnel de
+   `curl((a dot nabla)a)=4x_3(-x_2,x_1,0)/|x|^6` hors origine;
+3. laisser comme interface papier l'existence Jia--Sverak, la classe
+   `N(a)` et la décroissance du profil;
+4. formaliser le ledger de noyau
+   `2^j * 2^(j/2) * integral_0^h exp(-ct2^(2j))dt` et ses deux branches;
+5. sommer exactement la queue haute `sum_(j>J)2^(-j)` et les deux branches
+   autour de `2^(2j_*) comparable h^(-1)`;
+6. formaliser l'équivalence Littlewood--Paley uniquement pour le correcteur
+   `L2`, avec un type empêchant de l'appliquer aux traces séparées;
+7. encoder la borne
+   `||(I-S(a))g||_2<=CM²a^(1/4)` et les quantificateurs « un `a` fixe, une
+   suite ancienne »;
+8. intégrer le certificat rationnel des coquilles, du proxy `15/7` et des
+   limites non commutatives;
+9. typer la famille forward translatée séparément d'une orbite ancienne.
+
+Les points 1--2 et 4--9 forment un noyau algébrique stable. Une compilation
+certifierait les exposants, sommes et quantificateurs; elle ne certifierait
+ni le théorème d'existence publié, ni le mapping Lorentz, ni l'annulation
+infrarouge manquante, ni Clay.

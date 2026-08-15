@@ -1852,3 +1852,27 @@ claim éventuellement supersédé.
   fermé algébriquement puis remplacé par
   `GAP-TYPE-I-ANCIENT-QUOTIENT-RIGIDITY` et
   `GAP-TYPE-I-BSS-ENERGY-TAIL-TIGHTNESS`.
+
+## `FAIL-NS-0087` — norme faible-`L3` et suitability prises pour uniformité forward
+
+- Date : 2026-08-15.
+- Cible : déduire une borne finie `F(M)` de
+  `||u(t)-S(t-s)u(s)||_2` valable pour toute solution forward de Leray locale
+  suitable, toute longueur de bande et une borne critique
+  `sup_t||u(t)||_(3,infinity)<=M`.
+- Contre-exemple PDE : appliquer le théorème publié de Jia--Sverak à
+  `a=(-x_2,x_1,0)/|x|²`. Le profil relatif
+  `W=mathcal U-S(1)a` est dans `L2 inter Hdot1` et non nul, car
+  `curl((a dot nabla)a)=4x_3(-x_2,x_1,0)/|x|^6`.
+- Résidu : le correcteur vaut exactement
+  `t^(-1/2)W(x/sqrt(t))`, donc sa norme est `C_*t^(1/4)` avec
+  `C_*=||W||_2>0`, tandis que la norme faible-`L3` est constante.
+- Portée : la famille de bandes translatées est constituée de vraies
+  solutions Navier--Stokes forward. Elle n'est pas une même solution
+  ancienne; la donnée est singulière, d'énergie infinie et non Clay.
+- Passe endpoint : 615 assertions exactes montrent séparément la fuite vers
+  `|xi| comparable t^(-1/2)` et la non-commutation des limites; ce certificat
+  fonctionnel ne certifie pas le théorème PDE.
+- Statut : estimation forward universelle `REFUTED`. Continuer seulement
+  avec une propriété propre à une orbite ancienne cohérente, par exemple une
+  déplétion infrarouge signée du stress.

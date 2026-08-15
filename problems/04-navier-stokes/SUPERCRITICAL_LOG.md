@@ -1130,3 +1130,30 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   résultat est fonctionnel, non une exclusion PDE.
 - Pivot : `GAP-TYPE-I-BSS-ENERGY-TAIL-TIGHTNESS`, puis
   `GAP-TYPE-I-ANCIENT-QUOTIENT-RIGIDITY`.
+
+## 2026-08-15 — saturation PDE et fermeture des hautes fréquences
+
+- Objet forward adverse : solution auto-similaire de Leray locale, suitable,
+  non forcée sur `R3`, issue d'une donnée moins-un homogène faible-`L3`.
+- Scaling : `||u||_(3,infinity)` est critique; le correcteur relatif a le
+  poids `lambda^(-1/2)` en `L2`, donc `t^(1/4)` en norme et `t^(1/2)` en
+  énergie.
+- Saturation : `W!=0` par le curl du terme convectif; exactement
+  `||w(t)||_2=||W||_2t^(1/4)`. La PDE, la pression et la suitability forward
+  ne suppriment pas cette croissance.
+- Haute fréquence : le noyau de
+  `Delta_jS(h)Pdiv : L^(3/2,infinity)->L2` coûte
+  `2^(3j/2)e^(-ch2^(2j))`; après intégration, la queue `j>J` est uniformément
+  `O(M^4 2^(-J))` en énergie.
+- Perte exacte : les modes actifs glissent vers
+  `2^j comparable (r-s)^(-1/2)`. Le faible-`L3`, Herz/Besov avec indice
+  infini et Morrey critique contrôlent une échelle à la fois, sans somme
+  infrarouge.
+- Certificat : 615 assertions rationnelles exactes; proxy total
+  `(15/7)2^n`, enveloppe calorifique `[1/3,4/3]2^n`, résidu de limite
+  `15/7` et résidu rationnel nul.
+- Limite : le saturateur est une famille forward singulière, non une ancienne
+  unique et non une donnée Clay. Le calcul spectral séparé n'est pas une
+  trajectoire Navier--Stokes.
+- Pivot : `GAP-TYPE-I-ANCIENT-INFRARED-STRESS-DEPLETION`, puis
+  `GAP-TYPE-I-SINGLE-ANCIENT-ORBIT-RECURRENCE`.

@@ -461,3 +461,16 @@ limites itérées `8pi/3`. Ils ne satisfont pas Navier--Stokes. Le corpus
 compte 193 sources et le registre 88 claims. Les verrous actifs deviennent
 `GAP-TYPE-I-ANCIENT-QUOTIENT-RIGIDITY` et
 `GAP-TYPE-I-BSS-ENERGY-TAIL-TIGHTNESS`.
+
+Le cycle 0051 remplace le contre-profil seulement calorifique par une vraie
+solution forward de Navier--Stokes issue du théorème de Jia--Sverak. Son
+correcteur non nul sature exactement `t^(1/4)` à norme faible-`L3` fixe : une
+borne universelle en longueur de fenêtre est donc réfutée même avec PDE et
+suitability. Cette famille forward n'est pas une solution ancienne unique.
+
+La passe dyadique ferme uniformément toutes les hautes fréquences du
+correcteur ancien et montre que la porte `liminf L2` équivaut à un contrôle
+sur les seules basses fréquences, ou sur `S(a)g` pour un `a>0` fixe. Le
+corpus compte 202 sources et le registre 90 claims. Les verrous actifs sont
+`GAP-TYPE-I-ANCIENT-INFRARED-STRESS-DEPLETION` et
+`GAP-TYPE-I-SINGLE-ANCIENT-ORBIT-RECURRENCE`.

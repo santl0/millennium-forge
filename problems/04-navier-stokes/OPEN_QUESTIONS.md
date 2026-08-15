@@ -682,3 +682,32 @@ remplacer le contrôle des flux par une simple interpolation globale.
 `FAIL-NS-0086` ferme la stratégie purement semi-groupale. La prochaine
 expérience doit mesurer une quantité PDE sensible aux queues, pas répéter le
 cocycle calorique.
+
+## Priorité active après le cycle 0051
+
+1. **`GAP-TYPE-I-ANCIENT-INFRARED-STRESS-DEPLETION`.** Pour
+   `B_j(s,r)=-integral_s^r Delta_jS(r-tau)Pdiv(v tensor v)(tau)dtau`, obtenir
+   le long d'une suite ancienne un gain signé
+   `||B_j||_2<=C_r2^(epsilon(j-J))` pour `j<=J`, ou le réfuter par une même
+   orbite ancienne admissible.
+2. **`GAP-TYPE-I-SINGLE-ANCIENT-ORBIT-RECURRENCE`.** Identifier une propriété
+   de cohérence au passé qui distingue une solution ancienne unique des
+   translations de la solution forward Jia--Sverak.
+3. **Critère calorifique minimal.** Il suffit de trouver un seul `a>0` et une
+   suite `s_n->-infinity` avec `||S(a)g_(s_n,r)||_2` borné. Ne pas imposer
+   inutilement une uniformité en `a` ou en tout temps de base.
+4. **Phases avant normes.** Le critère exact porte sur les intégrales
+   vectorielles `B_j`. Sommer les normes temporelles absolues détruit les
+   cancellations et ne donne qu'une condition suffisante beaucoup plus
+   forte.
+5. **Queues critiques.** Tester si une condition Herz/Besov à indice fini,
+   un moment nul du stress ou une identité de flux signée est héritée par la
+   réduction Type I; l'ajouter comme hypothèse sans héritage ne ferme rien.
+6. **Branches séparées.** La solution forward saturante n'est ni ancienne,
+   ni Leray--Hopf globale, ni issue d'une donnée Clay. Type II reste hors du
+   pipeline.
+
+`NS-WEAK-L3-ANCIENT-INFRARED-CRITERION` ferme les hautes fréquences mais pas
+le critère bas. `NS-FORWARD-SELFSIMILAR-CORRECTOR-SATURATION` et
+`FAIL-NS-0087` interdisent désormais toute nouvelle tentative d'obtenir une
+borne uniforme de fenêtre depuis la seule taille faible-`L3`.

@@ -1116,3 +1116,43 @@ cocycle appliqué au représentant `C_w*`, convergence locale et critère
 `liminf`. Arêtes réfutées : uniformité ou rigidité depuis les seules données
 fonctionnelles. Arêtes manquantes : toute amélioration exploitant le transfert
 non linéaire, la pression ou la suitability.
+
+## Cycle 0051 — saturateur PDE et critère infrarouge minimal
+
+```text
+NS-SRC-0194 [Jia--Sverak, publié]
+  --> solution forward SS dans N(a), lisse t>0
+  --> W=U-S(1)a in L2 inter Hdot1
+
+curl((a dot nabla)a)!=0 [dérivation]
+  --> W!=0
+  --> correcteur C_*t^(1/4), C_*>0
+  --> FAIL-NS-0087
+      [réfute borne forward universelle en horizon]
+
+NS-WEAK-L3-DUHAMEL-L2-CORRECTOR
+  + pression globale de Riesz
+  + stress dans L^(3/2,infinity)
+  --> estimation dyadique du correcteur
+      [dérivation; noyau Lorentz L^(6/5,1)]
+  --> queue haute uniforme
+  --> critère bas LP / critère S(a)
+  --> NS-WEAK-L3-ANCIENT-INFRARED-CRITERION
+
+critère S(a) borné sur une suite ancienne
+  --> trace v(r) in L2
+  -?-> rigidité d'une ancienne L2
+  -?-> Liouville
+  -?-> régularité Clay
+
+même orbite ancienne
+  -?-> annulation signée des B_j
+      [GAP-TYPE-I-ANCIENT-INFRARED-STRESS-DEPLETION]
+  -?-> exclusion de la dilation forward
+      [GAP-TYPE-I-SINGLE-ANCIENT-ORBIT-RECURRENCE]
+```
+
+La première branche est publiée jusqu'à l'existence/décroissance puis
+interne pour la non-nullité. La seconde est entièrement interne au-dessus
+des claims 0048--0050. La contre-implication ne concerne que les solutions
+forward quantifiées sur toutes bandes; le maillon ancien reste manquant.

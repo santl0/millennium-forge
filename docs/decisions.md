@@ -599,3 +599,23 @@
 - `GAP-TYPE-I-BSS-BASE-TIME-COHERENCE` est fermé algébriquement. Le prochain
   test doit exploiter un effet PDE de tightness des queues ou de basse
   fréquence; rejouer la contraction calorifique seule est abandonné.
+
+### 2026-08-15 — saturateur forward sélectionné, infrarouge isolé
+
+- Trois actions ont été notées : saturateur NS forward `19/20`, critère
+  dyadique basse fréquence `17/20`, tightness annulaire par énergie locale
+  `16/20`. Le saturateur est sélectionné comme expérience décisive.
+- Jia--Sverak est utilisé seulement pour existence, classe local Leray et
+  décroissance. La non-nullité de `W` et la loi exacte du correcteur sont
+  maintenues comme dérivations IA `COMPUTATION_ONLY`.
+- `FAIL-NS-0087` clôt toute borne forward uniforme dépendant seulement de
+  `M`; la traduction d'une famille de bandes en une ancienne unique est
+  explicitement interdite.
+- La passe contradictoire dyadique montre que la PDE contrôle uniformément
+  les hautes fréquences. Le cutoff `J`, ou le temps calorifique `a`, doit
+  être fixé avant la limite ancienne.
+- Le critère exact conserve les phases des intégrales `B_j`; la variante
+  prenant les normes avant l'intégration n'est que suffisante.
+- La prochaine action autonome teste un gain infrarouge signé sur les
+  triades du stress d'une même orbite ancienne. Les approches forward
+  uniformes en horizon sont abandonnées.

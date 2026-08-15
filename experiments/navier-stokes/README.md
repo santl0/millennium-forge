@@ -2172,3 +2172,32 @@ cellule reste donc `NOT_PROVIDED`.
 - Limites : les profils ne sont pas des solutions Navier--Stokes et le
   certificat ne prouve ni tightness PDE, ni mildness ancienne, ni rigidité,
   ni résultat Clay.
+
+## `LOW-FREQUENCY-TAIL-AUDIT-1` — ledger dyadique infrarouge
+
+- Question falsifiable : des blocs faibles-`L3` contrôlés, le cocycle et une
+  formule de Duhamel calorifique permettent-ils de passer uniformément la
+  limite du temps de base sous une somme d'énergie basse fréquence ?
+- Équations réellement calculées : multiplicateur de chaleur appliqué au
+  champ homogène `U=(-x_2,x_1,0)/|x|²`, séries dyadiques et semi-groupe
+  rationnel discret; aucune trajectoire Navier--Stokes n'est discrétisée.
+- Discrétisation : coquilles exactes
+  `I_j=[2^(-j-1),2^(-j)]`, temps `T_n=4^n`; proxy rationnel
+  `min(1,T_n2^(-2j))`. Aucune troncature n'est utilisée dans les formules
+  fermées.
+- Résultat : masse de coquille `2^j`, proxy total `(15/7)2^n`, énergie
+  calorifique radiale certifiée entre `(1/3)2^n` et `(4/3)2^n`; les deux
+  ordres de limites donnent `15/7` et `0`.
+- Précision et erreur : `fractions.Fraction`, 615 assertions exactes, résidu
+  rationnel nul; largeur de l'enveloppe vraie `2^n`, soit un après
+  normalisation. Pas de graine ni de flottants.
+- Sensibilité : les indices `n,J`, les durées du cocycle et cinq facteurs de
+  semi-groupe rationnels sont balayés; les identités closes valent hors de
+  ces échantillons.
+- Commande :
+  `python -B experiments/navier-stokes/low-frequency-tail/low_frequency_tail_audit.py`.
+- Empreinte :
+  `5d6aa3c61cd3a67445c7e1eb760d704b581c54acb43afe12b329d5d21e5b19c2`.
+- Limites : le script certifie une obstruction fonctionnelle et l'ordre des
+  limites, pas la solution Jia--Sverak, la pression, la suitability, une
+  ancienne unique, un blow-up ou Clay.

@@ -2038,3 +2038,50 @@ cocycle + énergie bande par bande + faible-L3
 La cohérence algébrique est fermée. La première arête manquante est désormais
 PDE : une tightness des queues ou une annulation basse fréquence uniforme
 qui améliore le coût `h^(1/4)` le long d'une suite ancienne.
+
+## Cycle 0051 — saturation forward et localisation infrarouge
+
+```text
+Jia--Sverak NS-SRC-0194
+  + a=(-x_2,x_1,0)/|x|²
+  --> solution forward auto-similaire local Leray/suitable
+  --> W=U-S(1)a in L2 inter Hdot1
+
+curl((a dot nabla)a) != 0
+  --> W != 0
+  --> ||u(t)-S(t)a||_2=C_*t^(1/4)
+  --> dissipation relative=2t^(1/2)||nabla W||_2²
+  --> NS-FORWARD-SELFSIMILAR-CORRECTOR-SATURATION
+      [COMPUTATION_ONLY]
+
+borne faible-L3 + PDE forward + suitability sur chaque bande
+  -/-> borne de correcteur uniforme en longueur
+      [FAIL-NS-0087; famille de bandes, pas ancienne unique]
+
+Duhamel global de l'ancienne conditionnelle
+  + v tensor v in L^(3/2,infinity)
+  + noyau dyadique dans L^(6/5,1)
+  --> ||Delta_jg||_2<=CM²2^(-j/2)min(1,h2^(2j))
+  --> sup_s sum_(j>J)||Delta_jg||_2²<=CM^4 2^(-J)
+  --> NS-WEAK-L3-ANCIENT-INFRARED-CRITERION
+      [COMPUTATION_ONLY]
+
+un a>0 fixe + une suite s_n->-infinity
+  + sup_n||S(a)g_(s_n,r)||_2<infinity
+  --> sup_n||g_(s_n,r)||_2<infinity
+  --> v(r) in L2(R3)
+      [interne; pas encore vérifié pour l'orbite ancienne]
+
+structure d'une même orbite ancienne
+  -?-> gain signé des B_j aux basses fréquences
+      [GAP-TYPE-I-ANCIENT-INFRARED-STRESS-DEPLETION]
+  -?-> récurrence/cohérence au passé
+      [GAP-TYPE-I-SINGLE-ANCIENT-ORBIT-RECURRENCE]
+  -?-> rigidité L2 ancienne / Liouville / problème Clay.
+```
+
+Arêtes publiées : existence et décroissance forward de Jia--Sverak. Arêtes
+internes : non-nullité du profil, saturation exacte, noyau dyadique et
+critère calorifique. Arête réfutée : uniformité forward dépendant seulement
+de la norme critique. Arête manquante : toute annulation infrarouge propre à
+une même trajectoire ancienne.
