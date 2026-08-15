@@ -420,3 +420,23 @@
 - `GAP-TYPE-I-LOCALIZED-EVOLUTION` devient actif : la prochaine dérivation
   doit inclure `R'(t)`, la dépendance temporelle de Bogovskiĭ, la pression et
   chaque puissance d'échelle.
+
+### 2026-08-15 — équation forcée du cutoff mobile
+
+- La conjugaison exacte et la PDE forcée sont retenues avec le score `19/20`;
+  la borne directe en espace critique et le saut Type II obtiennent `16/20`.
+- Un même opérateur de Bogovskii unité est fixé puis conjugué. Toute dérivée
+  omettant son commutateur de dilatation est déclarée fausse.
+- La forme locale conserve le support annulaire au prix d'une force non
+  solénoïdale; la forme projetée conserve la divergence nulle au prix d'une
+  queue de Leray. Ces formulations ne sont pas confondues.
+- La petitesse fondée sur `R(t)->0` est abandonnée : le transport de frontière
+  est `R^-3` et sa norme `L1` est critique, même lorsque le correcteur vaut
+  exactement zéro.
+- Le contre-profil ne réfute pas une cancellation de la somme complète pour
+  une vraie solution; cette réserve reste explicite dans les deux claims.
+- `GAP-TYPE-I-LOCALIZED-EVOLUTION` est raffiné en
+  `GAP-TYPE-I-MOVING-COMMUTATOR-BOUND` puis
+  `GAP-TYPE-I-FORCED-RIGIDITY`.
+- La prochaine action fixe une formule intégrale de Bogovskii et teste les
+  commutateurs sur une famille pure-swirl haute fréquence.

@@ -919,3 +919,26 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   En Type II, la disparition de `M` détruit la fraction uniforme.
 - Pivot : `GAP-TYPE-I-LOCALIZED-EVOLUTION`, avec
   `GAP-TYPE-II-RELATIVE-CORE-CAPTURE` conservé séparément.
+
+## 2026-08-15 — Force du cutoff mobile Type I
+
+- Objet : même branche Type I que le cycle 0041, centre singulier fixe et
+  rayon `R=2sqrt((T_*-t)/S_w^*(C_MM))`.
+- Horloge : `R'/R=-1/[2(T_*-t)]` et
+  `kappa=-RR'=2/S_w^*(C_MM)`.
+- Identité : le cutoff solénoïdal satisfait une équation forcée locale; la
+  dérivée de `B_R` contient le commutateur avec le générateur de dilatation.
+- Scaling : force `R^-3`, norme `L1` invariante, norme
+  faible-`L^(3/2)` d'une force brute comme `R^-1`, norme `Hdot^-1` comme
+  `R^-1/2`; un stress `R^-2` est critique en faible-`L^(3/2)`.
+- Témoin : swirl radial compact avec défaut de divergence nul, mais
+  `R^3(partial_tchi_R)u_R=(0,-9c^2/4,0)` au point normalisé choisi.
+- Certificat : 499 assertions rationnelles exactes; 48 horloges, 36 jets
+  remis à l'échelle et 64 coquilles critiques, zéro échec.
+- Résultat négatif : le rétrécissement du support ne produit aucune petitesse
+  et les normes espace-temps critiques finies accumulent logarithmiquement si
+  le profil persiste.
+- Perte restante : cancellation éventuelle de la force complète, pression
+  projetée et commutateurs de Bogovskii dans les espaces négatifs.
+- Pivot : `GAP-TYPE-I-MOVING-COMMUTATOR-BOUND`, puis
+  `GAP-TYPE-I-FORCED-RIGIDITY`.

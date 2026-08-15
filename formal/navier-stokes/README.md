@@ -1073,3 +1073,28 @@ Le noyau stable se décompose comme suit :
 Les étapes 5 et 6 ont déjà un certificat rationnel de 1 346 assertions. Une
 formalisation de 1–6 certifierait l'inclusion et la composition algébrique,
 pas le théorème PDE publié, l'existence d'un blow-up, ni la régularité Clay.
+
+## Backlog issu du cycle 0042 — opérateur mobile et équation forcée
+
+Le noyau formalisable se décompose ainsi :
+
+1. définir les opérateurs de pullback/pushforward associés à
+   `x=x_0+Ry` et prouver leurs règles de composition;
+2. vérifier `B_Rg=R B(g sharp)` et `div B_Rg=g`;
+3. formaliser la dérivée
+   `partial_tB_Rg=B_Rg_t+R'[Bh-y·nabla Bh+B(y·nabla h)]`;
+4. formaliser `partial_tQ_Ru=Q_Ru_t+(R'/R^2)[Q,1+y·nabla]U` pour des entrées
+   divergence-free et toutes les conditions de moyenne;
+5. vérifier `R'/R=-1/(2tau)` et `-RR'=c^2/2` pour `R=c sqrt(tau)`;
+6. développer la règle du produit de `(partial_t-Delta)(chi_Ru)` et la jauge
+   de pression `chi_Rp`;
+7. prouver l'identité (42.11)–(42.12) du rapport principal;
+8. certifier les lois de normes
+   `L1:R^0`, faible-`L^(3/2):R^-1` et `Hdot^-1:R^-1/2`;
+9. maintenir comme interface papier la bornitude de Bogovskii et de ses
+   commutateurs sur les espaces de Lorentz/Sobolev négatifs.
+
+Les étapes 5 et 8, ainsi que les jets du témoin, sont couvertes par 499
+assertions rationnelles. Une compilation de 1–8 certifierait une identité de
+changement d'échelle et une équation forcée, pas la bornitude uniforme des
+commutateurs, la convergence vers une solution ancienne ou un résultat Clay.

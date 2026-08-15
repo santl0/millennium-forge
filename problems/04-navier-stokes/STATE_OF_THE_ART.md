@@ -1238,3 +1238,35 @@ comportement est compatible avec une borne faible-`L3`, comme le profil
 tronqué `|x|^-1` le montre. La veille primaire 2025–2026 ne ferme aucun de
 ces trous; le catalogue reste à 179 sources après réaudit des notices 0146 et
 0147.
+
+## Cycle 0042 — ce que coûte réellement une localisation mobile
+
+La littérature de localisation solénoïdale justifie un opérateur de
+Bogovskii sur une couronne fixe et sa conjugaison homothétique, mais elle ne
+permet pas d'ignorer sa dérivée temporelle. Pour
+`B_Rg=R B[g(x_*+R dot)]((x-x_*)/R)`, la dérivée contient exactement un terme
+de dilatation et le commutateur de l'opérateur unité avec `y dot nabla`.
+
+Composée avec le rayon Type I du cycle 0041, cette identité donne une équation
+Navier–Stokes **forcée** pour le champ localisé. La force locale est supportée
+dans la couronne mobile et possède l'amplitude `R^-3`; sa norme `L1` est donc
+invariante. La forme projetée par Leray est divergence-free mais acquiert une
+queue non locale.
+
+Un témoin pure-swirl lisse, compact et divergence-free vérifie
+`nabla chi_R dot u_R=0`, donc annule tout correcteur de Bogovskii, tandis que
+`R^3(partial_t chi_R)u_R` reste explicitement non nul. Le rayon décroissant
+ne fournit donc aucune petitesse. Les couples critiques à exposant temporel
+fini accumulent même un poids logarithmique si le profil annulaire persiste.
+
+La borne Type I faible-`L3` contrôle le champ localisé, la pression faible-
+`L^(3/2)` dans la jauge de Riesz et les termes d'ordre zéro. Elle ne contrôle
+pas, sans nouveau lemme, les commutateurs de diffusion et de dilatation dans
+un espace négatif critique. Même une telle borne produirait une limite forcée,
+pas le problème ancien non forcé requis par les rigidités usuelles.
+
+La veille ajoute Saari–Schwarzacher sur les inverses de divergence mobiles,
+Wolf et Kwon sur la pression locale, Breit sur la régularité au bord mobile,
+et la prépublication forcée de Zhang (`0180`–`0184`). Le catalogue atteint
+184 sources. Le rayon parabolique viole l'hypothèse de vitesse de bord
+`L3_t` de Breit, et aucune source ne fournit l'annulation critique manquante.

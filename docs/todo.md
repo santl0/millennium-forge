@@ -139,14 +139,37 @@
   par deux paquets disjoints exacts.
 - [x] Généraliser le cutoff solénoïdal aux champs lisses localement près de la
   boule externe, sans généraliser silencieusement le corollaire Biot–Savart.
-- [ ] Calculer l'équation exacte de
+- [x] Calculer l'équation exacte de
   `V(t)=chi_(R(t))u(t)-B_(R(t))(grad chi_(R(t)) dot u(t))`, avec
   `R(t)=2sqrt((T_*-t)/S_w^*(C_MM))`.
-- [ ] Isoler la dérivée de l'opérateur de Bogovskiĭ sous homothétie et le
+- [x] Isoler la dérivée de l'opérateur de Bogovskiĭ sous homothétie et le
   terme `R'(t)`; vérifier leur scaling dans un espace de force critique.
-- [ ] Recalculer la pression localisée et séparer projection de Leray, force
+- [x] Recalculer la pression localisée et séparer projection de Leray, force
   annulaire et non-linéarité de `V`.
 - [ ] Injecter une famille abstraite `M_j->infinity` dans les constantes
   Barker–Prange pour localiser quantitativement le premier échec Type II.
 - [ ] Formaliser l'inclusion faible-`L3` de mesure finie et l'algèbre de la
   fraction dans un environnement épinglé.
+
+### Cycle 0042
+
+- [x] Conjuguer explicitement `B_R` depuis une réalisation unité fixe et
+  calculer sa dérivée temporelle complète.
+- [x] Dériver l'équation locale forcée de `V=chi_Ru-B_R(nabla chi_R dot u)`
+  avec pression, diffusion, convection et terme `R'(t)`.
+- [x] Distinguer la force annulaire locale de sa projection solénoïdale non
+  locale.
+- [x] Certifier les puissances `R^-3`, les normes spatiales et l'accumulation
+  logarithmique sur un témoin pure-swirl annulant le correcteur.
+- [x] Réfuter la petitesse de force fondée uniquement sur `R(t)->0`.
+- [ ] Fixer une formule intégrale support-lisse précise de Bogovskii sur la
+  couronne unité et établir ses bornes dans les espaces négatifs de Lorentz.
+- [ ] Calculer `[Delta,Q]U` et `[D,Q]U` sur
+  `U_N=epsilon phi(r,z)sin(Nz)e_theta`; suivre le terme principal en `N` dans
+  la somme complète.
+- [ ] Prouver ou réfuter une borne uniforme
+  `L1+div L^(3/2,infinity)` dépendant seulement de la taille Type I `M`.
+- [ ] Si cette borne tient, formuler un problème de rigidité pour une solution
+  ancienne avec force annulaire critique non évanescente.
+- [ ] Garder le passage Type II séparé : injecter `M_j->infinity` seulement
+  après fermeture ou réfutation du commutateur Type I.

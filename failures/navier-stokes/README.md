@@ -1606,3 +1606,24 @@ claim éventuellement supersédé.
   globale.
 - Statut : capture relative sans Type I `REFUTED`; le cas Type II exige une
   autre normalisation ou un mécanisme de compacité-rigidité.
+
+## `FAIL-NS-0078` — Support mobile rétréci pris pour petite force
+
+- Date : 2026-08-15.
+- Cible : conclure de `R(t)->0` que les erreurs du cutoff solénoïdal mobile
+  tendent vers zéro dans une norme critique de force.
+- Premier coefficient oublié : pour `R=c sqrt(T_*-t)`,
+  `|partial_tchi_R|~|R'|/R~R^-2`. Une vitesse Type I d'amplitude `R^-1`
+  produit donc une force `R^-3` sur un volume `R^3`.
+- Contre-profil : `U=eta(|y|)(-y_2,y_1,0)` et cutoff radial. Le champ est
+  lisse, compact, divergence-free et `nabla chi dot U=0`, donc le correcteur
+  de Bogovskii s'annule exactement; néanmoins
+  `R^3(partial_tchi_R)u_R(3R/2,0,0)=(0,-9c^2/4,0)`.
+- Résultat : la norme `L1` est constante, les normes critiques à exposant
+  temporel fini accumulent un logarithme si le profil persiste.
+- Certificat : 499 assertions rationnelles, empreinte
+  `2b9db146965fdd93c25573ed6117376fe7923010ce6c2bc2575fc3d79d803991`.
+- Portée : la famille est cinématique et ne réfute pas une cancellation de la
+  somme complète imposée par Navier–Stokes et sa pression.
+- Statut : petitesse tirée du seul rayon `REFUTED`; pivot vers
+  `GAP-TYPE-I-MOVING-COMMUTATOR-BOUND`.

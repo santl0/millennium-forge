@@ -328,3 +328,25 @@ Le verrou actif est désormais `GAP-TYPE-I-LOCALIZED-EVOLUTION` : calculer
 l'équation exacte du cutoff mobile, sa pression et sa force. Le verrou
 `GAP-TYPE-II-RELATIVE-CORE-CAPTURE` reste séparé. Aucun résultat du cycle ne
 prouve ni blow-up ni régularité globale Clay.
+
+Le cycle 0042 calcule l'équation jusque-là manquante. La conjugaison
+homothétique de l'opérateur de Bogovskii montre que sa dérivée temporelle
+contient un commutateur avec le générateur de dilatation. Pour
+`R=2sqrt((T_*-t)/S_w^*(C_MM))`, le coefficient renormalisé
+`kappa=-RR'=2/S_w^*(C_MM)` est constant dans le temps mais dépend de `M`.
+
+Le champ `V=chi_Ru-B_R(nabla chi_R dot u)` satisfait une équation forcée
+exacte avec pression locale `chi_Rp` et force annulaire `R^-3F`. La forme
+projetée est solénoïdale mais non locale. Un témoin pure-swirl lisse annule le
+correcteur tout en gardant un coût de frontière mobile non nul et une norme
+`L1` constante; 499 assertions rationnelles certifient l'horloge, les jets et
+les normes. Le rétrécissement du support ne fournit donc aucune petitesse.
+
+Deux verrous remplacent `GAP-TYPE-I-LOCALIZED-EVOLUTION` :
+`GAP-TYPE-I-MOVING-COMMUTATOR-BOUND`, puis
+`GAP-TYPE-I-FORCED-RIGIDITY`. La borne Type I contrôle les termes d'ordre
+zéro mais pas encore les commutateurs de diffusion/dilatation dans un espace
+négatif critique. Aucune annulation de la force complète, compacité forte ou
+rigidité ancienne n'est revendiquée. La veille ajoute cinq sources primaires
+sur domaines mobiles, pression locale et blow-up forcé; le corpus atteint 184
+sources sans théorème couvrant le collapse parabolique.

@@ -758,3 +758,58 @@ ni rigidité.
    un espace critique.
 3. Dégénérescence quantitative Type II de `S_w^*(M)` et des constantes de
    propagation, sans inversion de quantificateurs temporels.
+
+## Cycle 0042 — de la capture Type I à une équation forcée critique
+
+```text
+NS-TYPE-I-WEAK-L3-PARABOLIC-CORE-CAPTURE
+  + NS-SOLENOIDAL-ANNULAR-CUTOFF
+  + B_R obtenu par conjugaison d'un B unité fixe
+  --> V(t)=chi_Ru-B_R(nabla chi_R dot u)
+  --> NS-MOVING-SOLENOIDAL-CUTOFF-FORCED-EQUATION
+      [identité interne auditée]
+
+R=c sqrt(T_*-t)
+  --> R'/R=-1/[2(T_*-t)]
+  --> kappa=-RR'=2/S_w^*(C_MM)
+  --> force physique=R^-3 F(y,sigma)
+      [scaling exact]
+
+support annulaire de volume O(R^3)
+  -/-> petitesse de la force
+  --> norme L1 critique constante
+      [NS-SHRINKING-MOVING-CUTOFF-SMALLNESS, REFUTED]
+
+forme locale avec pression chi_Rp
+  --> force annulaire non solénoïdale;
+projection globale de Leray
+  --> force solénoïdale avec queue non locale;
+localité + solénoïdalité compacte simultanées
+  -?-> manquantes.
+
+borne Type I faible-L3
+  --> U,Z dans faible-L3 et P dans faible-L3/2
+  --> budgets d'ordre zéro critiques
+  -?-> [Delta,Q]U et [D,Q]U
+      dans L1+div L^(3/2,infinity)
+      [GAP-TYPE-I-MOVING-COMMUTATOR-BOUND]
+  -?-> compacité forte d'une suite renormalisée
+  -?-> rigidité avec force critique
+      [GAP-TYPE-I-FORCED-RIGIDITY].
+```
+
+Nature des arêtes : la conjugaison de Bogovskii repose sur les sources
+elliptiques déjà cataloguées; la dérivée, la PDE et le scaling sont des
+dérivations internes; le témoin pure-swirl est un contre-profil cinématique,
+pas une solution Navier–Stokes. La cancellation de la somme complète n'est
+ni démontrée ni réfutée.
+
+## Priorité après le cycle 0042
+
+1. Fixer un noyau intégral de Bogovskii et calculer les symboles principaux
+   de `[Delta,Q]` et `[D,Q]`.
+2. Tester la famille pure-swirl haute fréquence sur la somme complète dans
+   `L1+div L^(3/2,infinity)`.
+3. Si la borne critique tient, formuler un théorème de rigidité forcé; sinon,
+   enregistrer le contre-profil et pivoter vers une localisation intrinsèque
+   sans frontière mobile.

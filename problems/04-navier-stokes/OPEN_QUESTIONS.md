@@ -460,3 +460,26 @@ pas contrôlés.
 Le verrou de capture relative est fermé uniquement dans la branche Type I
 globale pointwise. Il reste ouvert en Type II et ne fournit ni contrôle de la
 vorticité au même centre, ni solution ancienne, ni rigidité.
+
+## Priorité active après le cycle 0042
+
+1. **`GAP-TYPE-I-MOVING-COMMUTATOR-BOUND`.** Pour la réalisation
+   support-lisse fixée de Bogovskii, établir ou réfuter
+   `||[Delta,Q]U-kappa[D,Q]U||_(L1+div L^(3/2,infinity))<=C(M)` sans utiliser
+   une borne de dérivées déjà équivalente à la régularité recherchée.
+2. **Test haute fréquence complet.** Injecter
+   `U_N=epsilon phi(r,z)sin(Nz)e_theta` dans la formule intégrale de `B` et
+   déterminer si le terme `O(N)` survit dans la somme complète, pas seulement
+   terme par terme.
+3. **`GAP-TYPE-I-FORCED-RIGIDITY`.** Si la borne critique survit, classifier
+   les solutions anciennes de l'équation renormalisée avec force annulaire
+   critique. Une borne grande ne constitue pas une petitesse perturbative.
+4. **Pression.** Comparer la forme locale avec pression `chi_Rp` à la forme
+   projetée non locale; suivre la jauge de pression et les queues de Leray.
+5. **Type II.** Conserver séparément
+   `GAP-TYPE-II-RELATIVE-CORE-CAPTURE`; aucune formule 0042 ne répare la
+   dépendance dégénérante en `M`.
+
+La simple implication `R(t)->0` vers une force de cutoff `o(1)` est fermée
+négativement. L'échelle instantanée naturelle de la force est `L1`, ou une
+divergence de stress faible-`L^(3/2)`, et elle est exactement critique.

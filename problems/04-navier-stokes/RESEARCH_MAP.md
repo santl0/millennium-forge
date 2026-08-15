@@ -1662,3 +1662,53 @@ GAP-WEAK-L3-CORE-CAPTURE-AT-PRESINGULAR-SCALE
 Priorité : calculer l'équation forcée exacte du cutoff solénoïdal mobile dans
 la branche Type I. Le profil localisé est un champ test, pas une solution
 Navier–Stokes non forcée; le raccord Type II reste un verrou séparé.
+
+## Cycle 0042 — cutoff mobile et force critique annulaire
+
+| Action candidate | Nouveauté | Tractabilité | Falsifiabilité | Levier | Total |
+|---|---:|---:|---:|---:|---:|
+| conjuguer le cutoff mobile et calculer sa PDE exacte | 4 | 5 | 5 | 5 | **19** |
+| borner directement la force dans un espace critique mixte | 4 | 3 | 4 | 5 | 16 |
+| injecter une famille Type II dans les constantes | 4 | 3 | 5 | 4 | 16 |
+
+Pour `U=Ru(x_*+Ry,t)`, `P=R^2p`,
+`Z=chi U-B(nabla chi dot U)`, `d sigma/dt=R^-2` et `kappa=-RR'`, la
+localisation physique `V=R^-1Z` satisfait exactement
+
+```text
+partial_t V-Delta V+(V dot nabla)V+nabla(chi_Rp)=R^-3 F,
+
+F=(Z dot nabla)Z-chi(U dot nabla)U+P nabla chi
+  +(kappa y dot nabla chi-Delta chi)U
+  -2(nabla chi dot nabla)U
+  -(partial_sigma-Delta+kappa(1+y dot nabla))
+      B(nabla chi dot U).
+```
+
+Pour le rayon Barker–Prange,
+`kappa=2/S_w^*(C_MM)` est constant en temps mais dépend de `M`. La forme
+locale a une force annulaire non solénoïdale; sa projection de Leray est
+solénoïdale mais non compacte.
+
+```text
+capture Type I au rayon R(t)
+  + cutoff solénoïdal statique
+  + conjugaison B_R
+  --> NS-MOVING-SOLENOIDAL-CUTOFF-FORCED-EQUATION
+      [COMPUTATION_ONLY]
+
+R(t)->0
+  -/-> petitesse du terme (partial_t chi_R)u
+      [NS-SHRINKING-MOVING-CUTOFF-SMALLNESS, REFUTED]
+
+borne Type I faible-L3
+  --> termes d'ordre zéro critiques contrôlés
+  -?-> GAP-TYPE-I-MOVING-COMMUTATOR-BOUND
+      [Delta,Q]U et [D,Q]U dans L1+div L^(3/2,infinity)
+  -?-> GAP-TYPE-I-FORCED-RIGIDITY.
+```
+
+Priorité : choisir une formule intégrale précise de Bogovskii, intégrer par
+parties dans les commutateurs et tester une famille pure-swirl haute fréquence.
+Même une borne critique uniforme ne supprimerait pas la force et demanderait
+ensuite un théorème de rigidité forcé distinct.
