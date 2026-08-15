@@ -1,0 +1,48 @@
+{
+  "id": "NS-FORWARD-SELFSIMILAR-CORRECTOR-SATURATION",
+  "problem": "navier-stokes",
+  "statement": "Sur R3 x (0,infinity), pour la donnee a(x)=(-x_2,x_1,0)/|x|^2, le theoreme publie de Jia-Sverak fournit au moins une solution globale forward auto-similaire de Leray locale et faible adaptee, lisse pour t>0, u(x,t)=t^(-1/2)U(x/sqrt(t)). Avec A=exp(Delta)a et W=U-A, la decroissance publiee donne W dans L2 inter Hdot1, tandis que curl((a dot nabla)a)=4x_3(-x_2,x_1,0)/|x|^6 force W non nul. Le correcteur canonique w(t)=u(t)-exp(tDelta)a verifie donc exactement ||w(t)||_2=C_*t^(1/4), C_*=||W||_2 dans (0,infinity), et integral_0^T||nabla w||_2^2=2T^(1/2)||nabla W||_2^2. La norme L^(3,infinity) de u est uniforme; aucune borne finie dependante seulement de cette norme ne peut donc controler les correcteurs de toutes les solutions forward sur tous les horizons. Les translations produisent une famille de bandes, pas une solution ancienne unique, et la donnee singuliere d'energie infinie n'est pas Clay.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "Navier-Stokes incompressible standard non force sur R3, viscosite un et aucun bord",
+    "donnee a moins-un homogene, lisse hors de l'origine, solenoidale et dans L^(3,infinity), mais non L2",
+    "solution forward auto-similaire appartenant a la classe local Leray N(a) construite par NS-SRC-0194",
+    "profil relatif W soumis a la decroissance publiee (1+|x|)^(-3) avec gradient d'ordre (1+|x|)^(-4)",
+    "le calcul de curl et la conclusion W non nul sont des derivations internes, sans hypothese d'unicite",
+    "la conclusion uniforme est quantifiee sur toute la classe forward et tous horizons, non sur une meme orbite ancienne"
+  ],
+  "dependencies": [],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0194; Jia-Sverak, Inventiones Mathematicae 196 (2014), definition 3.1 et theoremes 4.1 et 5.1"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0051-forward-selfsimilar-pde-saturation.md; specialisation, non-nullite et lois exactes d'echelle",
+      "sha256": "5735c0ae6de047b6d9e4fa9ee279b2645ce495684c8115afa6cdb2e8dba0eb19"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0051-literature.md; audit independant de Jia-Sverak, des constructions SS-DSS et des limites endpoint",
+      "sha256": "a5cb002626ae8394e6104a0b09b3daeb1e182afd23f3e9659282a3c8d6b1a99d"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0051-analysis.md; distinction forward-ancien et reduction frequencielle du reliquat",
+      "sha256": "8f3f5d66ef8761a3e694900d29c176f9a95e16b479681ccacd7a7fea1db8f312"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0051-forward-selfsimilar-corrector-saturation"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Derivation principale, audit bibliographique primaire et audit analytique separes; aucune revue humaine externe",
+    "notes": "Le statut reste COMPUTATION_ONLY parce que la specialisation non nulle et l'implication uniforme sont nouvelles et produites par IA. L'existence, la classe locale de Leray et la decroissance sont publiees. L'audit exclut explicitement unicite, Leray-Hopf global, anciennete, donnees Clay, blow-up, valeur numerique de C_* et toute extrapolation Type II."
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "NS-WEAK-L3-ANCIENT-INFRARED-CRITERION",
+  "problem": "navier-stokes",
+  "statement": "Soit v une solution ancienne faible adaptee locale de Navier-Stokes incompressible standard non force sur R3 x (-infinity,T), de viscosite un, a pression globale de Riesz, avec sup_t ||v(t)||_(L^(3,infinity))<=M, et soit g_(s,r)=v(r)-exp((r-s)Delta)v(s) le correcteur L2 des cycles 0048-0050. Pour toute decomposition de Littlewood-Paley homogene, ||Delta_j g_(s,r)||_2<=C M^2 2^(-j/2) min(1,(r-s)2^(2j)) et sup_(s<r) sum_(j>J)||Delta_jg_(s,r)||_2^2<=C M^4 2^(-J). Ainsi la bornitude ou le liminf L2 lorsque s tend vers moins l'infini est equivalent, pour un unique seuil J fixe, au meme critere sur la somme des blocs j<=J; equivalemment, pour un unique a>0 fixe, il est equivalent au critere sur ||exp(aDelta)g_(s,r)||_2, car ||(I-exp(aDelta))g_(s,r)||_2<=C M^2a^(1/4). Ce lemme isole exactement le verrou infrarouge mais ne prouve pas que le critere est satisfait par une orbite ancienne.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "domaine R3 sans frontiere, viscosite un, force exterieure nulle et temps anciens (-infinity,T)",
+    "v est une solution faible adaptee locale, globalement bornee dans L-infinity_t L^(3,infinity)_x, avec pression globale q=R_iR_j(v_iv_j)",
+    "le representant temporel et la formule globale de Duhamel sont ceux du claim NS-WEAK-L3-DUHAMEL-L2-CORRECTOR",
+    "pour chaque s<r<T, g_(s,r) appartient a L2 et la decomposition homogene de Littlewood-Paley est appliquee au correcteur complet, jamais aux deux traces separees",
+    "le seuil J et le temps calorifique a sont fixes avant la limite s vers moins l'infini",
+    "la conclusion ne contient aucune sommabilite basse frequence automatique"
+  ],
+  "dependencies": [
+    "NS-WEAK-L3-DUHAMEL-L2-CORRECTOR",
+    "NS-WEAK-L3-HEAT-COCYCLE-QUOTIENT-OBSTRUCTION"
+  ],
+  "evidence": [
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0051-forward-selfsimilar-pde-saturation.md; reduction du reliquat a la partie infrarouge",
+      "sha256": "5735c0ae6de047b6d9e4fa9ee279b2645ce495684c8115afa6cdb2e8dba0eb19"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0051-analysis.md; noyau Lorentz, Duhamel dyadique, equivalences LP et calorifique et passe adverse",
+      "sha256": "8f3f5d66ef8761a3e694900d29c176f9a95e16b479681ccacd7a7fea1db8f312"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0051-countermodel.md; fuite basse frequence, non-commutation des limites et faux usages endpoint",
+      "sha256": "76079ab801c823818d3c47e3e4a506125da10e52b385491b337f40fa57f32279"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/low-frequency-tail/low_frequency_tail_audit.py; 615 assertions rationnelles exactes sur coquilles, proxy, cocycle et ordres de limites",
+      "sha256": "5d6aa3c61cd3a67445c7e1eb760d704b581c54acb43afe12b329d5d21e5b19c2"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0051-ancient-infrared-criterion"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Derivation principale, audit analytique et contre-modele exact separes; aucune revue humaine externe",
+    "notes": "Le statut reste COMPUTATION_ONLY. La borne haute utilise reellement la PDE projetee et le stress dans L^(3/2,infinity), mais le critere bas n'est pas etabli. Le cutoff fixe, la frequence zero, les traces non L2, l'ordre limite-somme, le defaut ell-infinity vers ell2 et la jauge de pression ont ete attaques explicitement. Aucune rigidite ancienne, regularite Clay ou singularite admissible n'est conclue."
+  }
+}

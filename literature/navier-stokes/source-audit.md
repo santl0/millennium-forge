@@ -1331,3 +1331,39 @@ Le corpus atteint 193 sources. Aucun théorème primaire localisé ne fournit
 la tightness énergétique, l'annulation de la classe quotient ou la mildness
 ancienne depuis les seules sorties des cycles 0048--0050. Il s'agit d'une
 absence de théorème localisé, non d'une preuve d'impossibilité.
+
+## Audit ciblé du cycle 0051 — saturation forward et verrou infrarouge
+
+- Jia--Sverak (`0194`, Invent. Math. 2014, DOI
+  `10.1007/s00222-013-0468-x`) traitent Navier--Stokes incompressible 3D
+  standard, non forcé, sur `R3 x (0,infinity)`. Leur définition 3.1 est une
+  classe de Leray locale avec inégalité locale d'énergie; leur théorème 5.1
+  construit au moins une solution forward auto-similaire globale et lisse
+  pour `t>0` depuis toute donnée solénoïdale moins-un homogène et lisse hors
+  de l'origine.
+- Les théorèmes 4.1 et 5.1 contrôlent le profil relatif
+  `W=mathcal U-exp(Delta)u_0` par
+  `|partial^alpha W(x)|<=C(1+|x|)^(-3-|alpha|)`. Ils donnent donc
+  `W in L2 inter Hdot1`, mais aucune constante indépendante de la donnée,
+  aucune unicité à grande donnée et aucune orbite ancienne.
+- Pour la donnée tournante explicite du cycle, la non-nullité de `W` n'est
+  pas attribuée à l'article : elle est démontrée en calculant
+  `curl((a dot nabla)a)` puis en excluant que le flot calorifique résolve
+  Navier--Stokes. La croissance exacte `||w(t)||_2=C_*t^(1/4)` est également
+  une conséquence interne de l'auto-similarité.
+- Le résultat publié permet ainsi un test PDE authentique des estimations
+  forward uniformes en longueur. Il ne donne pas une même solution sur
+  `(-infinity,0]`; translater des bandes de longueur croissante ne commute
+  pas le quantificateur d'ancienneté.
+- La veille primaire n'a localisé aucun théorème transformant une borne
+  uniforme faible-`L3`, la suitability locale et les scissions énergétiques
+  bande par bande en domination sommable des modes infrarouges le long
+  d'une même orbite ancienne. Cette absence reste un constat de corpus, pas
+  une impossibilité.
+
+Le corpus atteint 202 sources. `NS-SRC-0194` à `NS-SRC-0202` cataloguent le
+saturateur Jia--Sverak, les constructions et décroissances SS/DSS, les
+cadres Herz/Besov et un contraste Liouville axisymétrique. Les
+spécialisations, l'estimation dyadique du correcteur et le contre-exemple à
+une borne forward universelle restent des dérivations IA et ne sont pas
+promus en preuve papier.
