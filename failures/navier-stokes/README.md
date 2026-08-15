@@ -1825,3 +1825,30 @@ claim éventuellement supersédé.
 - Statut : implication fonctionnelle `REFUTED`; le raccord PDE conditionnel
   sur bande finie est conservé dans
   `NS-WEAK-L3-RELATIVE-ENERGY-GLOBALIZATION`.
+
+## `FAIL-NS-0086` — cocycle calorique pris pour uniformité ancienne
+
+- Date : 2026-08-15.
+- Cible : déduire du cocycle exact des redémarrages, de la régularité
+  `C_tL2 inter L2_tHdot1` sur chaque bande et de la borne faible-`L3` une
+  borne uniforme de `||v(r)-S(r-s)v(s)||_2` lorsque `s->-infinity`.
+- Contre-profils : `U=(-x_2,x_1,0)/|x|²` et sa coupure lisse radiale
+  `U_sharp`. Ils vérifient exactement le cocycle calorique; pour le second,
+  chaque incrément appartient à la classe d'énergie sur toute bande finie.
+- Résidu : `||(I-S(h))U||_2=C_U h^(1/4)` avec
+  `C_U²=(8pi^(5/2)/3)(1-1/sqrt(2))`; les limites spatiale et de temps long de
+  l'énergie normalisée ne commutent pas, avec résidu exact `8pi/3`.
+- Quotient : `L^(3,infinity)/(L2 inter L^(3,infinity))` est seulement
+  algébrique et non séparé. Même dans le quotient séparé par la fermeture,
+  `U` et `U_sharp` ont une classe fixe non nulle.
+- Portée : aucun des deux profils ne résout Navier--Stokes non forcé; une
+  circulation azimutale non nulle exclut une compensation par pression loin
+  du cutoff. L'échec réfute uniquement l'inférence fonctionnelle et
+  semi-groupale, pas une amélioration utilisant suitability, pression et
+  transfert non linéaire.
+- Certificat : 161 assertions symboliques exactes, zéro échec, empreinte
+  `2b463738f3bc415c1a3ae90c843ca87661a62538f17514bc777e1570326129a6`.
+- Statut : raccourci `REFUTED`; `GAP-TYPE-I-BSS-BASE-TIME-COHERENCE` est
+  fermé algébriquement puis remplacé par
+  `GAP-TYPE-I-ANCIENT-QUOTIENT-RIGIDITY` et
+  `GAP-TYPE-I-BSS-ENERGY-TAIL-TIGHTNESS`.

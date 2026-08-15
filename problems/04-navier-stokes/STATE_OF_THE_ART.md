@@ -1520,3 +1520,42 @@ peut porter un flux cubique de cutoff non nul à toutes les grandes échelles.
 Le corpus passe à 192 sources et le registre à 87 claims. Le verrou actif se
 scinde en `GAP-TYPE-I-BSS-TO-STRONG-MILD-CONTINUITY` et
 `GAP-TYPE-I-BSS-ANCIENT-RIGIDITY`.
+
+## Mise à jour 2026-08-15 — cycle 0050, cocycle et obstruction quotient
+
+Pour `s<r<t`, les correcteurs canoniques issus d'une même solution ancienne
+vérifient exactement
+
+```text
+g_(s,t)=g_(r,t)+S(t-r)g_(s,r).
+```
+
+La transition est calorifique et conserve exactement son énergie initiale.
+Lorsque `s->-infinity`, le fond `S(t-s)v(s)` tend vers zéro localement; une
+seule sous-suite uniformément bornée de `g_(s,r)` dans `L2` forcerait donc
+`v(r) in L2(R3)`. Le taux disponible `O((r-s)^(1/4))` ne fournit pas cette
+porte.
+
+Le quotient algébrique
+`L^(3,infinity)/(L2 inter L^(3,infinity))` n'est pas séparé; le quotient de
+Banach correct utilise la fermeture du dénominateur. Dans les deux objets, le
+profil `U=(-x_2,x_1,0)/|x|²` et sa variante lisse `U_sharp` portent une classe
+fixe non nulle. Ils satisfont
+
+```text
+||(I-S(h))U||_2=C_U h^(1/4),
+C_U²=(8pi^(5/2)/3)(1-1/sqrt(2)),
+```
+
+et produisent un défaut exact de commutation des limites égal à `8pi/3`.
+`U_sharp` appartient à `tilde L^(3,infinity) inter Hdot1`, et ses incréments
+sont énergétiques sur toute bande finie. Aucun profil n'est une solution
+Navier--Stokes : une circulation azimutale non nulle exclut une pression
+compensatrice.
+
+Taniuchi (`NS-SRC-0190`) impose déjà la mildness cohérente et des conditions
+au passé dans ses rigidités. Bradshaw--Hudson (`NS-SRC-0193`) confirme le
+rebasage fini dans une classe supercritique, sans uniformité ancienne. Le
+corpus atteint 193 sources et le registre 88 claims. Le verrou de cohérence
+algébrique est fermé; restent `GAP-TYPE-I-ANCIENT-QUOTIENT-RIGIDITY` et
+`GAP-TYPE-I-BSS-ENERGY-TAIL-TIGHTNESS`.

@@ -1997,3 +1997,44 @@ La dissipation et les flux de pression sont fermés conditionnellement sur
 chaque bande finie. La première perte restante est temporelle et globale :
 les constantes dépendent du temps de base et aucune unicité ne recolle les
 différentes scissions anciennes.
+
+## Cycle 0050 — cocycle exact et obstruction de quotient
+
+```text
+scissions BSS de la même solution ancienne sur toutes bandes finies
+  --> g_(s,t)=g_(r,t)+S(t-r)g_(s,r)
+      [identité exacte; pas d'unicité grande donnée]
+  --> transition calorifique avec énergie exacte
+  --> S(t-s)v(s)->0 localement quand s->-infinity
+
+liminf_(s->-infinity)||g_(s,r)||_2<infinity
+  --> v(r) in L2(R3)
+      [convergence locale + monotonie des boules]
+
+X=L^(3,infinity)_sigma, Y=L2_sigma inter X
+  --> orbite dans Q_alg=X/Y
+  --> orbite dans Q_H=X/closure_X(Y)
+      [Q_alg non séparé; Q_H banachique]
+
+U=(-x_2,x_1,0)/|x|², U_sharp=chi U
+  --> [S(h)U]=[U] !=0 dans Q_alg et Q_H
+  --> ||(I-S(h))U||_2=C_U h^(1/4)
+  --> incréments de U_sharp dans C_tL2 inter L2_tHdot1
+  --> limites itérées 0 contre 8pi/3
+      [HEAT-COCYCLE-AUDIT-1; FAIL-NS-0086]
+
+profils calorifiques
+  -/-> solutions Navier--Stokes
+      [circulation azimutale du résidu non nulle]
+
+cocycle + énergie bande par bande + faible-L3
+  -/-> uniformité L2 au passé
+  -/-> annulation quotient / mildness / rigidité
+  -?-> GAP-TYPE-I-BSS-ENERGY-TAIL-TIGHTNESS
+  -?-> GAP-TYPE-I-ANCIENT-QUOTIENT-RIGIDITY
+  -?-> problème Clay.
+```
+
+La cohérence algébrique est fermée. La première arête manquante est désormais
+PDE : une tightness des queues ou une annulation basse fréquence uniforme
+qui améliore le coût `h^(1/4)` le long d'une suite ancienne.

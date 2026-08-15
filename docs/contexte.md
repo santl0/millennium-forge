@@ -446,3 +446,18 @@ seules normes : un profil multi-annulaire garde un flux cubique diagonal non
 nul. Le corpus compte 192 sources et le registre 87 claims. Les verrous
 actifs sont `GAP-TYPE-I-BSS-ANCIENT-RIGIDITY` et
 `GAP-TYPE-I-BSS-TO-STRONG-MILD-CONTINUITY`.
+
+Le cycle 0050 établit l'identité exacte de cocycle entre tous les
+redémarrages et l'énergie calorifique de leur transition. Lorsque la base
+recule, le fond calorifique disparaît localement; une seule sous-suite de
+correcteurs uniformément bornée en `L2` forcerait déjà une trace globale
+`L2`.
+
+Cette uniformité ne suit pas de la structure semi-groupale. Les profils
+`U=(-x_2,x_1,0)/|x|²` et `U_sharp` saturent exactement `h^(1/4)`, conservent
+une classe non nulle même dans le quotient séparé
+`L^(3,infinity)/closure(L2 inter L^(3,infinity))`, et donnent un résidu de
+limites itérées `8pi/3`. Ils ne satisfont pas Navier--Stokes. Le corpus
+compte 193 sources et le registre 88 claims. Les verrous actifs deviennent
+`GAP-TYPE-I-ANCIENT-QUOTIENT-RIGIDITY` et
+`GAP-TYPE-I-BSS-ENERGY-TAIL-TIGHTNESS`.

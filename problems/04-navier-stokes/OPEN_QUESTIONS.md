@@ -1,6 +1,6 @@
 # Questions ouvertes priorisées
 
-Mise à jour : 2026-08-14. Une question descend dans la liste lorsqu'un test
+Mise à jour : 2026-08-15. Une question descend dans la liste lorsqu'un test
 réduit son incertitude ou lorsqu'un verrou préalable est découvert. L'historique
 des décisions reste dans les checkpoints.
 
@@ -655,3 +655,30 @@ dissipation globale ou un split énergétique naïf.
 `NS-WEAK-L3-RELATIVE-ENERGY-GLOBALIZATION` ferme le verrou énergétique sur
 une bande finie. `FAIL-NS-0085` interdit d'effacer la suitability ou de
 remplacer le contrôle des flux par une simple interpolation globale.
+
+## Priorité active après le cycle 0050
+
+1. **`GAP-TYPE-I-BSS-ENERGY-TAIL-TIGHTNESS`.** Chercher une identité issue
+   du transfert non linéaire, de la pression de Riesz ou d'une annulation de
+   basse fréquence qui force
+   `liminf_(s->-infinity)||v(r)-S(r-s)v(s)||_2<infinity`.
+2. **`GAP-TYPE-I-ANCIENT-QUOTIENT-RIGIDITY`.** Classifier les orbites PDE
+   dans le quotient séparé
+   `L^(3,infinity)/closure(L2 inter L^(3,infinity))`; la seule dynamique
+   calorifique admet des classes fixes non nulles.
+3. **Test adverse PDE.** Modifier le profil à queue `|x|^-1` seulement si le
+   résidu Navier--Stokes, la pression et l'inégalité locale d'énergie sont
+   tous suivis; un contre-profil cinématique supplémentaire n'a plus de
+   valeur informationnelle.
+4. **Mildness.** La continuité forte dans `tilde L^(3,infinity)` à temps fini
+   ne contrôle pas le passé. Toute promotion doit produire l'identité mild
+   entre temps finis puis une hypothèse quantitative au passé.
+5. **Critère de sortie positif.** Une seule suite reculée de correcteurs
+   uniformément `L2` suffit à obtenir une trace énergétique globale; viser ce
+   quantificateur minimal plutôt qu'une borne pour tous les temps de base.
+6. **Branches séparées.** Type II et le problème Clay général restent hors
+   de cette réduction Type I conditionnelle.
+
+`FAIL-NS-0086` ferme la stratégie purement semi-groupale. La prochaine
+expérience doit mesurer une quantité PDE sensible aux queues, pas répéter le
+cocycle calorique.

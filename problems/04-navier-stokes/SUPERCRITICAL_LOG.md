@@ -1108,3 +1108,25 @@ solution ou précise qu'il s'agit seulement d'un champ test.
   de cohérence entre redémarrages et de rigidité ancienne.
 - Pivot : `GAP-TYPE-I-BSS-ANCIENT-RIGIDITY`, avec branche parallèle de
   continuité forte mild.
+
+## 2026-08-15 — cocycle exact, énergie de queue non uniforme
+
+- Objet : même ancienne suitable locale, faible-`L3`, pression de Riesz;
+  correcteur canonique `g_(s,t)=v(t)-S(t-s)v(s)` sur toute bande finie.
+- Scaling : `L^(3,infinity)` est critique, tandis que
+  `||g||_2` a le poids longueur `lambda^-1/2`; le temps long autorise donc la
+  croissance dimensionnelle `h^(1/4)`.
+- Gain : le cocycle est exact et la transition calorifique conserve son
+  énergie. Le fond disparaît localement lorsque la base recule.
+- Porte forte : `liminf||g_(s,r)||_2<infinity` le long d'une suite force
+  `v(r) in L2`; aucune borne du ledger ne satisfait cette porte.
+- Contre-profils : `U` et `U_sharp` saturent `h^(1/4)`. Le second est lisse,
+  borné, dans `tilde L^(3,infinity) inter Hdot1`, avec incréments énergétiques
+  sur chaque bande.
+- Quotient : le dénominateur énergétique n'est pas fermé; même après passage
+  au quotient séparé, la classe du profil reste non nulle et fixe.
+- Résidu : 161 assertions exactes; limites itérées `0` contre `8pi/3`.
+- Limite : les profils échouent Navier--Stokes par circulation non nulle; le
+  résultat est fonctionnel, non une exclusion PDE.
+- Pivot : `GAP-TYPE-I-BSS-ENERGY-TAIL-TIGHTNESS`, puis
+  `GAP-TYPE-I-ANCIENT-QUOTIENT-RIGIDITY`.

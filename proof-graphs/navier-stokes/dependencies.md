@@ -1081,3 +1081,38 @@ L'arête énergétique est interne et conditionnelle, non `PAPER_PROOF`. Les
 interfaces publiées sont la classe BSS (`NS-SRC-0188`), le transfert
 énergétique après hypothèse dissipative (`NS-SRC-0192`) et les estimations
 endpoint du cycle 0048.
+
+## Cycle 0050 — cocycle, quotient et tightness manquante
+
+```text
+NS-WEAK-L3-RELATIVE-ENERGY-GLOBALIZATION sur chaque [s,T]
+  --> g_(s,t)=g_(r,t)+S(t-r)g_(s,r)
+      [classique et démontré algébriquement]
+  --> énergie exacte de S(t-r)g_(s,r)
+      [classique et sourcée par le semi-groupe]
+  --> g_(s,t)->v(t) dans L2_loc quand s->-infinity
+      [dérivation interne]
+
+liminf_s ||g_(s,r)||_2<infinity
+  --> v(r) in L2(R3)
+      [dérivation interne; critère suffisant]
+
+orbite dans X/Y et X/closure_X(Y)
+  -/-> annulation de classe
+      [FAIL-NS-0086: U et U_sharp, classe fixe non nulle]
+  -/-> borne L2 uniforme
+      [croissance exacte C_U(r-s)^(1/4)]
+
+structure PDE complète
+  -?-> tightness des queues / annulation basse fréquence
+      [GAP-TYPE-I-BSS-ENERGY-TAIL-TIGHTNESS]
+  -?-> rigidité du quotient ancien
+      [GAP-TYPE-I-ANCIENT-QUOTIENT-RIGIDITY]
+  -?-> mildness ancienne / Liouville / problème Clay.
+```
+
+Arêtes classiques : semi-groupe et énergie calorifique. Arêtes internes :
+cocycle appliqué au représentant `C_w*`, convergence locale et critère
+`liminf`. Arêtes réfutées : uniformité ou rigidité depuis les seules données
+fonctionnelles. Arêtes manquantes : toute amélioration exploitant le transfert
+non linéaire, la pression ou la suitability.

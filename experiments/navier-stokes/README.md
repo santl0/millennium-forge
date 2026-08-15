@@ -2,7 +2,7 @@
 
 Les expériences de ce répertoire sont des tests analytiques finis. Elles ne
 simulent pas une solution Navier–Stokes et ne constituent ni une preuve de
-régularité ni un blow-up. Les vingt-trois expériences indexées utilisent la graine « sans
+régularité ni un blow-up. Les vingt-quatre expériences indexées utilisent la graine « sans
 objet » et écrivent
 leur rapport JSON sur la sortie standard.
 
@@ -33,6 +33,7 @@ leur rapport JSON sur la sortie standard.
 | `MAXIMUM-ZOOM-TRACE-COMMUTATOR-1` | les limites du zoom KNSS commutent-elles au temps-record `s=0`, et que reste-t-il à contrôler au temps physique `T` ? | graphe d'obligations, exposants et résidus rationnels exacts; `pi` symbolique | `python -B experiments/navier-stokes/maximum-zoom-trace/commutator_audit.py` | zéro échec d'assertion |
 | `WEAK-L3-MILDNESS-AUDIT-1` | le Duhamel faible-L3 donne-t-il un gain sous-critique, une borne endpoint directe, une énergie globale ou un split radial uniforme ? | fractions rationnelles, exposants symboliques et coefficients exacts de `pi`; aucune grille | `python -B experiments/navier-stokes/weak-l3-mildness/weak_l3_mildness_audit.py` | 144 assertions exactes, résidu rationnel nul |
 | `RELATIVE-ENERGY-AUDIT-1` | les sources calorifiques sont-elles intégrables et les seules bornes `L2 inter faible-L3` annulent-elles les flux à l'infini ? | fractions rationnelles, sommes géométriques et ordres de limites exacts; aucune grille | `python -B experiments/navier-stokes/relative-energy/relative_energy_audit.py` | 97 assertions exactes, résidu rationnel nul, flux adverse un |
+| `HEAT-COCYCLE-AUDIT-1` | le cocycle et l'énergie sur chaque bande imposent-ils une borne uniforme lorsque la base recule ? | fractions, radicaux et identités spectrales exacts; aucune grille | `python -B experiments/navier-stokes/heat-cocycle/heat_cocycle_audit.py` | 161 assertions exactes, résidu de limites itérées `8pi/3` |
 
 Environnement reproduit au checkpoint initial : Windows, Python 3.13.14,
 bibliothèque standard uniquement. Les trois audits structurés lisent leur JSON
@@ -2147,3 +2148,27 @@ cellule reste donc `NOT_PROVIDED`.
   `b2ae64c546e0d155a305b43dd0d9f726aef67624af52d654091ca391467bd64d`.
 - Limites : le profil n'est pas une solution PDE; le script ne prouve ni la
   suitability, ni l'inégalité relative, ni la dissipation, ni Clay.
+
+## `HEAT-COCYCLE-AUDIT-1` — cocycle exact et fuite d'énergie ancienne
+
+- Question falsifiable : le cocycle calorique et la classe d'énergie sur
+  chaque bande forcent-ils une borne `L2` uniforme lorsque le temps de base
+  recule ?
+- Équations réellement calculées : semi-groupe de la chaleur, fonctions de
+  distribution et sommes spectrales exactes; aucune trajectoire
+  Navier--Stokes n'est discrétisée.
+- Profils : `U=(-x_2,x_1,0)/|x|²` et une coupure radiale lisse conservant la
+  divergence nulle et la queue critique.
+- Quantités certifiées : `K_3(U)^3=pi²/4`, énergie locale `(8pi/3)R`,
+  cocycle triple, constante exacte `C_U`, identité énergétique calorifique,
+  croissance `h^(1/4)`, résidu de limites itérées `8pi/3` et circulation NS
+  adverse non nulle.
+- Discrétisation et précision : aucune; arithmétique rationnelle et radicaux
+  exacts de la bibliothèque standard, aucune graine et aucune sortie lourde.
+- Commande :
+  `python -B experiments/navier-stokes/heat-cocycle/heat_cocycle_audit.py`.
+- Résidu certifié : 161 assertions exactes, zéro échec. Empreinte :
+  `2b463738f3bc415c1a3ae90c843ca87661a62538f17514bc777e1570326129a6`.
+- Limites : les profils ne sont pas des solutions Navier--Stokes et le
+  certificat ne prouve ni tightness PDE, ni mildness ancienne, ni rigidité,
+  ni résultat Clay.

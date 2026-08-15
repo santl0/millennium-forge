@@ -1282,3 +1282,25 @@ Les points 1, 4–9 forment un noyau algébrique stable. Les points 2–3 et les
 limites faibles restent des interfaces papier. Une compilation certifierait
 le ledger de cutoff, pas la suitability de la limite ancienne, la rigidité,
 la régularité Clay ou un blow-up.
+
+## Backlog issu du cycle 0050 — cocycle et quotient faible-`L3`
+
+1. formaliser l'identité de cocycle pour une famille dans un espace de
+   distributions munie d'un semi-groupe;
+2. encoder l'identité énergétique exacte de `S(t)f` pour `f in L2`;
+3. formaliser le critère compact-local : convergence `L2_loc` plus borne
+   `L2` le long d'une suite implique que la limite est dans `L2`;
+4. distinguer dans les types le quotient algébrique `X/Y` du quotient séparé
+   `X/closure(Y)` et interdire toute norme sur le premier;
+5. encoder l'homogénéité de `U`, sa fonction de distribution, son énergie
+   locale et le calcul spectral de `||(I-S(h))U||_2`;
+6. formaliser la coupure radiale solénoïdale `U_sharp`, ses incréments
+   énergétiques et la non-commutation des limites;
+7. isoler comme interface papier les propriétés de Lorentz, la transformée
+   de Fourier de `log|x|` et les sorties BSS des cycles précédents;
+8. typer explicitement les profils comme contre-modèles calorifiques, jamais
+   comme solutions de Navier--Stokes.
+
+Les points 1--6 constituent le prochain noyau stable. Leur compilation
+certifierait l'obstruction fonctionnelle, pas la pression PDE, la tightness
+ancienne, la rigidité ou le problème Clay.

@@ -309,3 +309,20 @@
   énergétique contrôlé uniformément quand `t_0->-infinity`.
 - [ ] Formuler puis attaquer un Liouville minimal pour ancienne faible-`L3`
   munie de scissions BSS sur toutes les bandes finies.
+
+### Cycle 0050
+
+- [x] Comparer exactement les scissions issues de trois temps de base et
+  établir leur cocycle dans `L2 inter L^(3,infinity)`.
+- [x] Séparer quotient algébrique non fermé et quotient de Banach par la
+  fermeture du sous-espace énergétique.
+- [x] Construire et auditer `U` puis `U_sharp`, avec saturation `h^(1/4)`,
+  classe quotient fixe et résidu de limites itérées `8pi/3`.
+- [x] Vérifier par circulation que les contre-profils ne satisfont pas
+  Navier--Stokes non forcé.
+- [x] Auditer Taniuchi, KNSS, Albritton--Barker, BSS et ajouter
+  Bradshaw--Hudson `NS-SRC-0193` comme prépublication v1.
+- [ ] Tester une identité PDE de basse fréquence ou une tightness annulaire
+  qui réduirait `||g_(s,r)||_2` le long d'une suite `s->-infinity`.
+- [ ] Ne pas utiliser de compacité quotient sans fermeture ni confondre
+  classe quotient nulle et appartenance `L2`.

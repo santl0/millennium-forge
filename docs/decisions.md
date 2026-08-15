@@ -584,3 +584,18 @@
   promotion depuis les seules normes fonctionnelles.
 - Le prochain verrou est la cohérence des scissions quand le temps de base
   tend vers moins l'infini, puis la rigidité ancienne ou la mildness forte.
+
+### 2026-08-15 — cocycle exact, uniformité ancienne réfutée fonctionnellement
+
+- Le cocycle des correcteurs et l'énergie de la transition calorifique sont
+  retenus comme lemmes exacts; aucune unicité faible à grande donnée n'est
+  utilisée.
+- Le quotient `X/(L2 inter X)` reste algébrique et non séparé. Toute
+  formulation topologique passe par `X/closure_X(L2 inter X)`.
+- `U` et `U_sharp` sont conservés comme contre-profils calorifiques. Leur
+  croissance `h^(1/4)` et le résidu `8pi/3` interdisent d'inférer une borne
+  ancienne uniforme depuis le seul cocycle, mais leur défaut PDE interdit
+  toute conclusion sur une vraie solution Navier--Stokes.
+- `GAP-TYPE-I-BSS-BASE-TIME-COHERENCE` est fermé algébriquement. Le prochain
+  test doit exploiter un effet PDE de tightness des queues ou de basse
+  fréquence; rejouer la contraction calorifique seule est abandonné.
