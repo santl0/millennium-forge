@@ -3980,6 +3980,26 @@
       "reproduction": {"status": "primary_published_and_arxiv_v2_full_text_propositions_3_2_3_5_corollary_3_9_audited_cycle_0049"},
       "verification": {"level": "primary_full_text", "checked_on": "2026-08-15", "notes": "Définition 1.5, proposition 3.2, proposition 3.5, corollaire 3.9 et spécialisation p=4, k=0 contrôlés; PDF arXiv SHA256 0834BAF4A72A9E8278EE9CF7EC80A87ADF2D00EC8624B6784E2069EA3BF7923D."},
       "tags": ["Navier_Stokes", "Besov", "weak_solution", "local_energy", "global_perturbed_energy", "Calderon", "R3"]
+    },
+    {
+      "id": "NS-SRC-0193",
+      "title": "Time asymptotics, time regularity and separation rates for Navier-Stokes flows in supercritical solution classes",
+      "authors": ["Zachary Bradshaw", "Joshua Hudson"],
+      "year": 2025,
+      "source_type": "preprint",
+      "publication_status": "preprint",
+      "venue": "arXiv:2508.00714v1",
+      "identifiers": {"arxiv": "2508.00714v1", "url": "https://arxiv.org/abs/2508.00714v1"},
+      "equation": {"model": "Navier–Stokes incompressible standard non forcé", "dimension": "3", "domain": "R3 sur une fenêtre forward", "boundary": "sans frontière physique", "forcing": "nulle", "viscosity": "normalisée à 1"},
+      "solution_notions": ["solution faible globale L^(p,infinity) scindée autour du flot calorique", "solution faible adaptée avec correcteur énergétique"],
+      "result": "Étend la théorie faible scindée de Barker–Seregin–Šverák aux données supercritiques L^(p,infinity), 2<p<3, avec borne énergétique a priori, stabilité faible-étoile et applications à la régularité temporelle. La preuve permet de rebaser la solution à un temps intérieur fini et de réappliquer la borne sur la nouvelle fenêtre.",
+      "hypotheses": ["donnée initiale solénoïdale dans L^(p,infinity)(R3), 2<p<3", "classe faible scindée et énergétique imposée sur une fenêtre forward", "temps de rebasage fini intérieur à l'intervalle de définition"],
+      "constants_uniformity": "Les bornes comportent une puissance positive du temps écoulé. Aucun énoncé audité ne les rend uniformes lorsque le temps de base tend vers moins l'infini.",
+      "clay_relevance": "Confirme un rebasage fini dans une extension supercritique de la classe BSS, mais ne construit ni limite projective ancienne, ni correcteur L2 uniforme sur tout le passé, ni rigidité faible-L3.",
+      "limitations": ["prépublication arXiv v1 non publiée", "plage principale 2<p<3 plutôt que l'endpoint critique p=3", "fenêtre forward finie", "aucune mildness ancienne, aucun théorème de Liouville et aucune conclusion Clay"],
+      "reproduction": {"status": "primary_arxiv_v1_full_text_definition_1_2_theorems_1_4_1_10_and_rebasing_argument_audited_cycle_0050"},
+      "verification": {"level": "primary_preprint_full_text", "checked_on": "2026-08-15", "notes": "Auteurs, version v1 du 1er août 2025, 38 pages, résumé, définition 1.2, théorèmes 1.4 et 1.10 et rebasage à un temps intérieur contrôlés; aucune validation indépendante de la preuve et aucun statut publié."},
+      "tags": ["Navier_Stokes", "weak_Lp", "supercritical", "weak_solution", "time_rebasing", "local_energy", "R3", "recent_preprint"]
     }
   ],
   "watchlist": [
@@ -4056,8 +4076,8 @@
     "Leray_Hopf": ["NS-SRC-0002", "NS-SRC-0003", "NS-SRC-0043", "NS-SRC-0058"],
     "suitable_partial_regularity": ["NS-SRC-0004", "NS-SRC-0005", "NS-SRC-0006", "NS-SRC-0187", "NS-SRC-0191"],
     "Prodi_Serrin_endpoint": ["NS-SRC-0007", "NS-SRC-0008", "NS-SRC-0009", "NS-SRC-0012", "NS-SRC-0013", "NS-SRC-0052", "NS-SRC-0053"],
-    "critical_spaces": ["NS-SRC-0010", "NS-SRC-0011", "NS-SRC-0014", "NS-SRC-0031", "NS-SRC-0035", "NS-SRC-0036", "NS-SRC-0044", "NS-SRC-0052", "NS-SRC-0053", "NS-SRC-0055", "NS-SRC-0056", "NS-SRC-0088", "NS-SRC-0118", "NS-SRC-0128", "NS-SRC-0129", "NS-SRC-0130", "NS-SRC-0188", "NS-SRC-0190", "NS-SRC-0192"],
-    "ancient_compactness_rigidity": ["NS-SRC-0012", "NS-SRC-0014", "NS-SRC-0015", "NS-SRC-0034", "NS-SRC-0045", "NS-SRC-0046", "NS-SRC-0048", "NS-SRC-0049", "NS-SRC-0050", "NS-SRC-0053", "NS-SRC-0088", "NS-SRC-0140", "NS-SRC-0141", "NS-SRC-0142", "NS-SRC-0143", "NS-SRC-0144", "NS-SRC-0145", "NS-SRC-0187", "NS-SRC-0188", "NS-SRC-0189", "NS-SRC-0190"],
+    "critical_spaces": ["NS-SRC-0010", "NS-SRC-0011", "NS-SRC-0014", "NS-SRC-0031", "NS-SRC-0035", "NS-SRC-0036", "NS-SRC-0044", "NS-SRC-0052", "NS-SRC-0053", "NS-SRC-0055", "NS-SRC-0056", "NS-SRC-0088", "NS-SRC-0118", "NS-SRC-0128", "NS-SRC-0129", "NS-SRC-0130", "NS-SRC-0188", "NS-SRC-0190", "NS-SRC-0192", "NS-SRC-0193"],
+    "ancient_compactness_rigidity": ["NS-SRC-0012", "NS-SRC-0014", "NS-SRC-0015", "NS-SRC-0034", "NS-SRC-0045", "NS-SRC-0046", "NS-SRC-0048", "NS-SRC-0049", "NS-SRC-0050", "NS-SRC-0053", "NS-SRC-0088", "NS-SRC-0140", "NS-SRC-0141", "NS-SRC-0142", "NS-SRC-0143", "NS-SRC-0144", "NS-SRC-0145", "NS-SRC-0187", "NS-SRC-0188", "NS-SRC-0189", "NS-SRC-0190", "NS-SRC-0193"],
     "profile_decomposition_and_selection": ["NS-SRC-0014", "NS-SRC-0140", "NS-SRC-0141", "NS-SRC-0142", "NS-SRC-0143", "NS-SRC-0144", "NS-SRC-0145", "NS-SRC-0146", "NS-SRC-0147", "NS-SRC-0150", "NS-SRC-0153", "NS-SRC-0156", "NS-SRC-0159"],
     "coarea_isoperimetry_and_level_selection": ["NS-SRC-0067", "NS-SRC-0069", "NS-SRC-0132", "NS-SRC-0148", "NS-SRC-0149", "NS-SRC-0150", "NS-SRC-0151", "NS-SRC-0152", "NS-SRC-0156", "NS-SRC-0157", "NS-SRC-0158", "NS-SRC-0159", "NS-SRC-0163", "NS-SRC-0166"],
     "selfsimilar_TypeI_TypeII": ["NS-SRC-0016", "NS-SRC-0017", "NS-SRC-0018", "NS-SRC-0019", "NS-SRC-0020", "NS-SRC-0032", "NS-SRC-0034", "NS-SRC-0045", "NS-SRC-0047", "NS-SRC-0048", "NS-SRC-0051", "NS-SRC-0054", "NS-SRC-0085", "NS-SRC-0086", "NS-SRC-0087", "NS-SRC-0189"],

@@ -1306,3 +1306,28 @@ n'est obtenue.
 
 Le corpus atteint 192 sources. La veille différentielle 2025--2026 ne
 fournit aucun théorème de rigidité ancienne dans la classe ainsi obtenue.
+
+## Audit ciblé du cycle 0050 — cocycle ancien et quotient énergétique
+
+- Le cocycle entre deux scissions BSS est une identité interne de
+  semi-groupe; ni Barker--Seregin--Sverak (`0188`), ni
+  Albritton--Barker (`0192`) ne rendent la norme `L2` du correcteur uniforme
+  lorsque le temps initial recule vers moins l'infini.
+- Taniuchi (`0190`) impose déjà la mildness cohérente entre tous temps finis.
+  Son espace `tilde L^(3,infinity)` assure la continuité forte aux temps
+  finis; ses résultats anciens ajoutent petitesse, décroissance ou
+  approximation au passé. Il ne transforme pas des scissions finies en
+  correcteur énergétique ancien uniforme.
+- Koch--Nadirashvili--Seregin--Sverak (`0015`) et
+  Albritton--Barker (`0189`) travaillent avec des objets anciens mild et des
+  portes supplémentaires. Leur appliquer la seule borne faible-`L3`
+  inverserait une hypothèse.
+- Bradshaw--Hudson (`0193`, arXiv:2508.00714v1) étendent la classe faible
+  scindée à `L^(p,infinity)`, `2<p<3`, et justifient un rebasage à un temps
+  intérieur fini. Leurs estimations gardent une puissance positive du temps
+  écoulé et ne ferment aucune limite ancienne.
+
+Le corpus atteint 193 sources. Aucun théorème primaire localisé ne fournit
+la tightness énergétique, l'annulation de la classe quotient ou la mildness
+ancienne depuis les seules sorties des cycles 0048--0050. Il s'agit d'une
+absence de théorème localisé, non d'une preuve d'impossibilité.

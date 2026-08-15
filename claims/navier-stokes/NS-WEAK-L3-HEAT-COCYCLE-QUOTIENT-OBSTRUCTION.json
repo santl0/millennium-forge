@@ -1,0 +1,61 @@
+{
+  "id": "NS-WEAK-L3-HEAT-COCYCLE-QUOTIENT-OBSTRUCTION",
+  "problem": "navier-stokes",
+  "statement": "Soit v une solution ancienne faible adaptee locale de Navier--Stokes incompressible standard non force sur R3 x (-infinity,0], de viscosite un, divergence nulle, pression q=R_iR_j(v_iv_j) et uniformement bornee dans L^(3,infinity). Pour g_(s,t)=v(t)-exp((t-s)Delta)v(s), les sorties des claims precedents donnent sur chaque bande finie le cocycle exact g_(s,t)=g_(r,t)+exp((t-r)Delta)g_(s,r), une transition calorifique a energie exacte et g_(s,t)->v(t) fortement dans L2_loc lorsque s tend vers moins l'infini. Si liminf_(s->-infinity)||g_(s,r)||_2 est fini pour un r, alors v(r) appartient a L2(R3). Cette uniformite ne decoule pas des seules proprietes fonctionnelles precedentes: les champs cinematiques U=(-x_2,x_1,0)/|x|^2 et U_sharp=chi U ont une classe fixe non nulle dans les quotients algebrique et separe de L^(3,infinity) modulo le sous-espace energetique, tandis que ||(I-exp(hDelta))U||_2=C_U h^(1/4), C_U^2=(8 pi^(5/2)/3)(1-1/sqrt(2)). Ces champs ne satisfont pas Navier--Stokes et ne refutent donc qu'une inference semi-groupale, pas une rigidite PDE ni le probleme Clay.",
+  "status": "COMPUTATION_ONLY",
+  "hypotheses": [
+    "domaine R3 sans frontiere, viscosite un, force exterieure nulle et temps anciens (-infinity,0]",
+    "v est une solution faible adaptee locale, globalement bornee dans L-infinity_t L^(3,infinity)_x, avec pression globale de Riesz",
+    "le representant C_w* et la formule de Duhamel sont ceux du claim NS-WEAK-L3-DUHAMEL-L2-CORRECTOR",
+    "sur chaque bande finie, le correcteur appartient a C_tL2_x inter L2_tHdot1_x et satisfait l'energie perturbee du claim NS-WEAK-L3-RELATIVE-ENERGY-GLOBALIZATION",
+    "X=L^(3,infinity)_sigma, Y=X inter L2_sigma; X/Y est utilise seulement algebriquement et le quotient separe est X/closure_X(Y)",
+    "U et U_sharp sont des contre-profils calorifiques, non des solutions de Navier--Stokes"
+  ],
+  "dependencies": [
+    "NS-WEAK-L3-DUHAMEL-L2-CORRECTOR",
+    "NS-WEAK-L3-RELATIVE-ENERGY-GLOBALIZATION"
+  ],
+  "evidence": [
+    {
+      "kind": "primary_source",
+      "reference": "NS-SRC-0188, NS-SRC-0190, NS-SRC-0192 et NS-SRC-0193; classes scindees sur fenetres finies, mildness forte et rebasage fini, sans uniformite ancienne publiee"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/cycle-0050-heat-cocycle-quotient-obstruction.md; cocycle, convergence locale, critere liminf et obstruction quotient",
+      "sha256": "e8e4cc3168919fe52dbd76c49a351027a28e45630a650bd4ef20803cdae20833"
+    },
+    {
+      "kind": "derivation",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0050-analysis.md; audit des traces, des quotients, de la constante spectrale et de la faille PDE",
+      "sha256": "22bcaf4c9a3655ce174fe1a9e481beb43b5d5b099fb6c7e6e7ca2a9c89434156"
+    },
+    {
+      "kind": "primary_source",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0050-literature.md; audit primaire de BSS, Taniuchi, KNSS, Albritton--Barker et Bradshaw--Hudson",
+      "sha256": "5795e7303dfba2d8061f4c764492cf51100debf0d509663e94db4bd9a519f2bc"
+    },
+    {
+      "kind": "counterexample",
+      "reference": "docs/reports/navier-stokes/reviews/cycle-0050-countermodel.md; audit exact des contre-profils et de leur residu Navier--Stokes",
+      "sha256": "819996a84624d70589d0f36334bb1b808ba992af77255aabd97dc6be33966c7b"
+    },
+    {
+      "kind": "computation",
+      "reference": "experiments/navier-stokes/heat-cocycle/heat_cocycle_audit.py; 161 assertions exactes sur echelle, cocycle, energie, limites et circulation",
+      "sha256": "2b463738f3bc415c1a3ae90c843ca87661a62538f17514bc777e1570326129a6"
+    }
+  ],
+  "provenance": {
+    "created_at": "2026-08-15",
+    "producer_type": "ai",
+    "producer": "Millennium Forge et OpenAI Codex",
+    "model": "GPT-5",
+    "prompt_or_run": "navier-stokes-cycle-0050-heat-cocycle-quotient-obstruction"
+  },
+  "review": {
+    "status": "adversarial_pass",
+    "reviewer": "Derivation principale, audit analytique, audit bibliographique et certificat adverse separes; aucune revue humaine externe",
+    "notes": "Le statut reste COMPUTATION_ONLY. Le quotient algebrique n'est pas norme; le quotient separe n'identifie pas sa classe nulle a L2. Les profils ne satisfont ni l'equation Navier--Stokes, ni sa pression, ni la suitability. Le claim ne conclut donc ni mildness ancienne, ni Liouville, ni regularite Clay, ni blow-up admissible."
+  }
+}
